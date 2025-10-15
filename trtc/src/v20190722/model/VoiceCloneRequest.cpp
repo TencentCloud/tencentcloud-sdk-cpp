@@ -24,9 +24,9 @@ using namespace std;
 
 VoiceCloneRequest::VoiceCloneRequest() :
     m_sdkAppIdHasBeenSet(false),
-    m_aPIKeyHasBeenSet(false),
     m_voiceNameHasBeenSet(false),
     m_promptAudioHasBeenSet(false),
+    m_aPIKeyHasBeenSet(false),
     m_promptTextHasBeenSet(false)
 {
 }
@@ -46,14 +46,6 @@ string VoiceCloneRequest::ToJsonString() const
         d.AddMember(iKey, m_sdkAppId, allocator);
     }
 
-    if (m_aPIKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "APIKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_aPIKey.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_voiceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,6 +60,14 @@ string VoiceCloneRequest::ToJsonString() const
         string key = "PromptAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_promptAudio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aPIKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APIKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aPIKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_promptTextHasBeenSet)
@@ -102,22 +102,6 @@ bool VoiceCloneRequest::SdkAppIdHasBeenSet() const
     return m_sdkAppIdHasBeenSet;
 }
 
-string VoiceCloneRequest::GetAPIKey() const
-{
-    return m_aPIKey;
-}
-
-void VoiceCloneRequest::SetAPIKey(const string& _aPIKey)
-{
-    m_aPIKey = _aPIKey;
-    m_aPIKeyHasBeenSet = true;
-}
-
-bool VoiceCloneRequest::APIKeyHasBeenSet() const
-{
-    return m_aPIKeyHasBeenSet;
-}
-
 string VoiceCloneRequest::GetVoiceName() const
 {
     return m_voiceName;
@@ -148,6 +132,22 @@ void VoiceCloneRequest::SetPromptAudio(const string& _promptAudio)
 bool VoiceCloneRequest::PromptAudioHasBeenSet() const
 {
     return m_promptAudioHasBeenSet;
+}
+
+string VoiceCloneRequest::GetAPIKey() const
+{
+    return m_aPIKey;
+}
+
+void VoiceCloneRequest::SetAPIKey(const string& _aPIKey)
+{
+    m_aPIKey = _aPIKey;
+    m_aPIKeyHasBeenSet = true;
+}
+
+bool VoiceCloneRequest::APIKeyHasBeenSet() const
+{
+    return m_aPIKeyHasBeenSet;
 }
 
 string VoiceCloneRequest::GetPromptText() const

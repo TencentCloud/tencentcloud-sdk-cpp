@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DBHasBeenSet() const;
 
                     /**
-                     * 获取线程的操作状态。
-                     * @return State 线程的操作状态。
+                     * 获取线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。
+                     * @return State 线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置线程的操作状态。
-                     * @param _state 线程的操作状态。
+                     * 设置线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。
+                     * @param _state 线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取线程的执行类型。
-                     * @return Command 线程的执行类型。
+                     * 获取线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。
+                     * @return Command 线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置线程的执行类型。
-                     * @param _command 线程的执行类型。
+                     * 设置线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。
+                     * @param _command 线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -214,6 +214,31 @@ namespace TencentCloud
                      */
                     bool InfoHasBeenSet() const;
 
+                    /**
+                     * 获取sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SqlType sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSqlType() const;
+
+                    /**
+                     * 设置sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sqlType sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSqlType(const std::string& _sqlType);
+
+                    /**
+                     * 判断参数 SqlType 是否已赋值
+                     * @return SqlType 是否已赋值
+                     * 
+                     */
+                    bool SqlTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,13 +266,13 @@ namespace TencentCloud
                     bool m_dBHasBeenSet;
 
                     /**
-                     * 线程的操作状态。
+                     * 线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 线程的执行类型。
+                     * 线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -263,6 +288,13 @@ namespace TencentCloud
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
+
+                    /**
+                     * sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sqlType;
+                    bool m_sqlTypeHasBeenSet;
 
                 };
             }

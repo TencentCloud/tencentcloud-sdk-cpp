@@ -294,6 +294,31 @@ namespace TencentCloud
                      */
                     bool ChildrenHasBeenSet() const;
 
+                    /**
+                     * 获取父文件夹路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentFolderPath 父文件夹路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentFolderPath() const;
+
+                    /**
+                     * 设置父文件夹路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentFolderPath 父文件夹路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentFolderPath(const std::string& _parentFolderPath);
+
+                    /**
+                     * 判断参数 ParentFolderPath 是否已赋值
+                     * @return ParentFolderPath 是否已赋值
+                     * 
+                     */
+                    bool ParentFolderPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +390,13 @@ namespace TencentCloud
                      */
                     std::vector<CodeFolderNode> m_children;
                     bool m_childrenHasBeenSet;
+
+                    /**
+                     * 父文件夹路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentFolderPath;
+                    bool m_parentFolderPathHasBeenSet;
 
                 };
             }

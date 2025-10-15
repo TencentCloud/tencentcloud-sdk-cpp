@@ -85,25 +85,41 @@ namespace TencentCloud
                     bool UserUinHasBeenSet() const;
 
                     /**
-                     * 获取角色id
-                     * @return RoleId 角色id
+                     * 获取角色id列表，目前支持的项目角色有
+- 308335260274237440 (项目管理员)
+- 308335260676890624 (数据工程师)
+- 308335260844662784 (运维工程师)
+- 308335260945326080 (普通成员)
+                     * @return RoleIds 角色id列表，目前支持的项目角色有
+- 308335260274237440 (项目管理员)
+- 308335260676890624 (数据工程师)
+- 308335260844662784 (运维工程师)
+- 308335260945326080 (普通成员)
                      * 
                      */
-                    std::string GetRoleId() const;
+                    std::vector<std::string> GetRoleIds() const;
 
                     /**
-                     * 设置角色id
-                     * @param _roleId 角色id
+                     * 设置角色id列表，目前支持的项目角色有
+- 308335260274237440 (项目管理员)
+- 308335260676890624 (数据工程师)
+- 308335260844662784 (运维工程师)
+- 308335260945326080 (普通成员)
+                     * @param _roleIds 角色id列表，目前支持的项目角色有
+- 308335260274237440 (项目管理员)
+- 308335260676890624 (数据工程师)
+- 308335260844662784 (运维工程师)
+- 308335260945326080 (普通成员)
                      * 
                      */
-                    void SetRoleId(const std::string& _roleId);
+                    void SetRoleIds(const std::vector<std::string>& _roleIds);
 
                     /**
-                     * 判断参数 RoleId 是否已赋值
-                     * @return RoleId 是否已赋值
+                     * 判断参数 RoleIds 是否已赋值
+                     * @return RoleIds 是否已赋值
                      * 
                      */
-                    bool RoleIdHasBeenSet() const;
+                    bool RoleIdsHasBeenSet() const;
 
                 private:
 
@@ -120,10 +136,14 @@ namespace TencentCloud
                     bool m_userUinHasBeenSet;
 
                     /**
-                     * 角色id
+                     * 角色id列表，目前支持的项目角色有
+- 308335260274237440 (项目管理员)
+- 308335260676890624 (数据工程师)
+- 308335260844662784 (运维工程师)
+- 308335260945326080 (普通成员)
                      */
-                    std::string m_roleId;
-                    bool m_roleIdHasBeenSet;
+                    std::vector<std::string> m_roleIds;
+                    bool m_roleIdsHasBeenSet;
 
                 };
             }

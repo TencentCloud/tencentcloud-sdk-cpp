@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return WorkflowRun 总数
+                     * 获取工作流的详情
+                     * @return WorkflowRun 工作流的详情
                      * 
                      */
                     WorkflowRunDetail GetWorkflowRun() const;
@@ -76,7 +76,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 工作流的详情
                      */
                     WorkflowRunDetail m_workflowRun;
                     bool m_workflowRunHasBeenSet;

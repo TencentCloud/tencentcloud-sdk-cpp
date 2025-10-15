@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取TTS的API密钥
-                     * @return APIKey TTS的API密钥
-                     * 
-                     */
-                    std::string GetAPIKey() const;
-
-                    /**
-                     * 设置TTS的API密钥
-                     * @param _aPIKey TTS的API密钥
-                     * 
-                     */
-                    void SetAPIKey(const std::string& _aPIKey);
-
-                    /**
-                     * 判断参数 APIKey 是否已赋值
-                     * @return APIKey 是否已赋值
-                     * 
-                     */
-                    bool APIKeyHasBeenSet() const;
-
-                    /**
                      * 获取声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      * @return VoiceName 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      * 
@@ -127,6 +106,27 @@ namespace TencentCloud
                     bool PromptAudioHasBeenSet() const;
 
                     /**
+                     * 获取TTS的API密钥
+                     * @return APIKey TTS的API密钥
+                     * 
+                     */
+                    std::string GetAPIKey() const;
+
+                    /**
+                     * 设置TTS的API密钥
+                     * @param _aPIKey TTS的API密钥
+                     * 
+                     */
+                    void SetAPIKey(const std::string& _aPIKey);
+
+                    /**
+                     * 判断参数 APIKey 是否已赋值
+                     * @return APIKey 是否已赋值
+                     * 
+                     */
+                    bool APIKeyHasBeenSet() const;
+
+                    /**
                      * 获取声音克隆的参考文本，为参考音频对应的文字。
                      * @return PromptText 声音克隆的参考文本，为参考音频对应的文字。
                      * 
@@ -156,12 +156,6 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * TTS的API密钥
-                     */
-                    std::string m_aPIKey;
-                    bool m_aPIKeyHasBeenSet;
-
-                    /**
                      * 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
                      */
                     std::string m_voiceName;
@@ -172,6 +166,12 @@ namespace TencentCloud
                      */
                     std::string m_promptAudio;
                     bool m_promptAudioHasBeenSet;
+
+                    /**
+                     * TTS的API密钥
+                     */
+                    std::string m_aPIKey;
+                    bool m_aPIKeyHasBeenSet;
 
                     /**
                      * 声音克隆的参考文本，为参考音频对应的文字。

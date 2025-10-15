@@ -255,6 +255,49 @@ EsClient::GetDocumentParseResultOutcomeCallable EsClient::GetDocumentParseResult
     return task->get_future();
 }
 
+EsClient::GetMultiModalEmbeddingOutcome EsClient::GetMultiModalEmbedding(const GetMultiModalEmbeddingRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMultiModalEmbedding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMultiModalEmbeddingResponse rsp = GetMultiModalEmbeddingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMultiModalEmbeddingOutcome(rsp);
+        else
+            return GetMultiModalEmbeddingOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMultiModalEmbeddingOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::GetMultiModalEmbeddingAsync(const GetMultiModalEmbeddingRequest& request, const GetMultiModalEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetMultiModalEmbedding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::GetMultiModalEmbeddingOutcomeCallable EsClient::GetMultiModalEmbeddingCallable(const GetMultiModalEmbeddingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetMultiModalEmbeddingOutcome()>>(
+        [this, request]()
+        {
+            return this->GetMultiModalEmbedding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::GetTextEmbeddingOutcome EsClient::GetTextEmbedding(const GetTextEmbeddingRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTextEmbedding");

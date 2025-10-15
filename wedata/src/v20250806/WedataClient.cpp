@@ -1588,6 +1588,92 @@ WedataClient::GetCodeFileOutcomeCallable WedataClient::GetCodeFileCallable(const
     return task->get_future();
 }
 
+WedataClient::GetCodeFolderOutcome WedataClient::GetCodeFolder(const GetCodeFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCodeFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCodeFolderResponse rsp = GetCodeFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCodeFolderOutcome(rsp);
+        else
+            return GetCodeFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCodeFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetCodeFolderAsync(const GetCodeFolderRequest& request, const GetCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCodeFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetCodeFolderOutcomeCallable WedataClient::GetCodeFolderCallable(const GetCodeFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCodeFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCodeFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::GetDataBackfillPlanOutcome WedataClient::GetDataBackfillPlan(const GetDataBackfillPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDataBackfillPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDataBackfillPlanResponse rsp = GetDataBackfillPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDataBackfillPlanOutcome(rsp);
+        else
+            return GetDataBackfillPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDataBackfillPlanOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetDataBackfillPlanAsync(const GetDataBackfillPlanRequest& request, const GetDataBackfillPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDataBackfillPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetDataBackfillPlanOutcomeCallable WedataClient::GetDataBackfillPlanCallable(const GetDataBackfillPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDataBackfillPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDataBackfillPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::GetDataSourceOutcome WedataClient::GetDataSource(const GetDataSourceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDataSource");
@@ -2011,6 +2097,49 @@ WedataClient::GetResourceGroupMetricsOutcomeCallable WedataClient::GetResourceGr
         [this, request]()
         {
             return this->GetResourceGroupMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::GetSQLFolderOutcome WedataClient::GetSQLFolder(const GetSQLFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSQLFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSQLFolderResponse rsp = GetSQLFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSQLFolderOutcome(rsp);
+        else
+            return GetSQLFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSQLFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetSQLFolderAsync(const GetSQLFolderRequest& request, const GetSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSQLFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::GetSQLFolderOutcomeCallable WedataClient::GetSQLFolderCallable(const GetSQLFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSQLFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSQLFolder(request);
         }
     );
 
@@ -4247,6 +4376,49 @@ WedataClient::SetSuccessTaskInstancesAsyncOutcomeCallable WedataClient::SetSucce
         [this, request]()
         {
             return this->SetSuccessTaskInstancesAsync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::StartOpsTasksOutcome WedataClient::StartOpsTasks(const StartOpsTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartOpsTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartOpsTasksResponse rsp = StartOpsTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartOpsTasksOutcome(rsp);
+        else
+            return StartOpsTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return StartOpsTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::StartOpsTasksAsync(const StartOpsTasksRequest& request, const StartOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartOpsTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::StartOpsTasksOutcomeCallable WedataClient::StartOpsTasksCallable(const StartOpsTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartOpsTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->StartOpsTasks(request);
         }
     );
 

@@ -45,19 +45,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取主题ID
+- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * @return TopicId 主题ID
+- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置主题ID
+- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * @param _topicId 主题ID
+- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -70,12 +70,12 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称
+                     * 获取主题名称
 输入限制：
 - 不能为空字符串
 - 不能包含字符'|'
 - 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
-                     * @return TopicName 日志主题名称
+                     * @return TopicName 主题名称
 输入限制：
 - 不能为空字符串
 - 不能包含字符'|'
@@ -85,12 +85,12 @@ namespace TencentCloud
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题名称
+                     * 设置主题名称
 输入限制：
 - 不能为空字符串
 - 不能包含字符'|'
 - 不能使用以下名称["cls_service_log","loglistener_status","loglistener_alarm","loglistener_business","cls_service_metric"]
-                     * @param _topicName 日志主题名称
+                     * @param _topicName 主题名称
 输入限制：
 - 不能为空字符串
 - 不能包含字符'|'
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。
-                     * @return Tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。
+                     * 获取标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。
+                     * @return Tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。
-                     * @param _tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。
+                     * 设置标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。
+                     * @param _tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool AutoSplitHasBeenSet() const;
 
                     /**
-                     * 获取若开启最大分裂，该主题能够能够允许的最大分区数；
+                     * 获取若开启最大分裂，该主题能够允许的最大分区数；
 默认为50；必须为正数
-                     * @return MaxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数；
+                     * @return MaxSplitPartitions 若开启最大分裂，该主题能够允许的最大分区数；
 默认为50；必须为正数
                      * 
                      */
                     int64_t GetMaxSplitPartitions() const;
 
                     /**
-                     * 设置若开启最大分裂，该主题能够能够允许的最大分区数；
+                     * 设置若开启最大分裂，该主题能够允许的最大分区数；
 默认为50；必须为正数
-                     * @param _maxSplitPartitions 若开启最大分裂，该主题能够能够允许的最大分区数；
+                     * @param _maxSplitPartitions 若开启最大分裂，该主题能够允许的最大分区数；
 默认为50；必须为正数
                      * 
                      */
@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取日志主题描述
-                     * @return Describes 日志主题描述
+                     * 获取主题描述
+                     * @return Describes 主题描述
                      * 
                      */
                     std::string GetDescribes() const;
 
                     /**
-                     * 设置日志主题描述
-                     * @param _describes 日志主题描述
+                     * 设置主题描述
+                     * @param _describes 主题描述
                      * 
                      */
                     void SetDescribes(const std::string& _describes);
@@ -241,19 +241,23 @@ namespace TencentCloud
                     bool DescribesHasBeenSet() const;
 
                     /**
-                     * 获取0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
-                     * @return HotPeriod 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     * 获取0：日志主题关闭日志沉降。
+非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效，指标主题不支持该配置。
+                     * @return HotPeriod 0：日志主题关闭日志沉降。
+非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效，指标主题不支持该配置。
                      * 
                      */
                     uint64_t GetHotPeriod() const;
 
                     /**
-                     * 设置0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
-                     * @param _hotPeriod 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     * 设置0：日志主题关闭日志沉降。
+非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效，指标主题不支持该配置。
+                     * @param _hotPeriod 0：日志主题关闭日志沉降。
+非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效，指标主题不支持该配置。
                      * 
                      */
                     void SetHotPeriod(const uint64_t& _hotPeriod);
@@ -291,15 +295,15 @@ namespace TencentCloud
                     bool IsWebTrackingHasBeenSet() const;
 
                     /**
-                     * 获取日志主题扩展信息
-                     * @return Extends 日志主题扩展信息
+                     * 获取主题扩展信息
+                     * @return Extends 主题扩展信息
                      * 
                      */
                     TopicExtendInfo GetExtends() const;
 
                     /**
-                     * 设置日志主题扩展信息
-                     * @param _extends 日志主题扩展信息
+                     * 设置主题扩展信息
+                     * @param _extends 主题扩展信息
                      * 
                      */
                     void SetExtends(const TopicExtendInfo& _extends);
@@ -312,13 +316,13 @@ namespace TencentCloud
                     bool ExtendsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题分区数量。
+                     * 获取主题分区数量。
 默认为1；
 取值范围及约束：
 - 当输入值<=0，系统自动调整为1。
 - 如果未传MaxSplitPartitions，需要PartitionCount<=50；
 - 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
-                     * @return PartitionCount 日志主题分区数量。
+                     * @return PartitionCount 主题分区数量。
 默认为1；
 取值范围及约束：
 - 当输入值<=0，系统自动调整为1。
@@ -329,13 +333,13 @@ namespace TencentCloud
                     uint64_t GetPartitionCount() const;
 
                     /**
-                     * 设置日志主题分区数量。
+                     * 设置主题分区数量。
 默认为1；
 取值范围及约束：
 - 当输入值<=0，系统自动调整为1。
 - 如果未传MaxSplitPartitions，需要PartitionCount<=50；
 - 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；
-                     * @param _partitionCount 日志主题分区数量。
+                     * @param _partitionCount 主题分区数量。
 默认为1；
 取值范围及约束：
 - 当输入值<=0，系统自动调整为1。
@@ -380,14 +384,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 主题ID
+- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志主题名称
+                     * 主题名称
 输入限制：
 - 不能为空字符串
 - 不能包含字符'|'
@@ -397,7 +401,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。
+                     * 标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -416,7 +420,7 @@ namespace TencentCloud
                     bool m_autoSplitHasBeenSet;
 
                     /**
-                     * 若开启最大分裂，该主题能够能够允许的最大分区数；
+                     * 若开启最大分裂，该主题能够允许的最大分区数；
 默认为50；必须为正数
                      */
                     int64_t m_maxSplitPartitions;
@@ -429,14 +433,15 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 日志主题描述
+                     * 主题描述
                      */
                     std::string m_describes;
                     bool m_describesHasBeenSet;
 
                     /**
-                     * 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     * 0：日志主题关闭日志沉降。
+非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效，指标主题不支持该配置。
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
@@ -449,13 +454,13 @@ namespace TencentCloud
                     bool m_isWebTrackingHasBeenSet;
 
                     /**
-                     * 日志主题扩展信息
+                     * 主题扩展信息
                      */
                     TopicExtendInfo m_extends;
                     bool m_extendsHasBeenSet;
 
                     /**
-                     * 日志主题分区数量。
+                     * 主题分区数量。
 默认为1；
 取值范围及约束：
 - 当输入值<=0，系统自动调整为1。

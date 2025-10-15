@@ -515,6 +515,20 @@ API：通过API手动注册
                      */
                     bool MessageRateHasBeenSet() const;
 
+                    /**
+                     * 获取服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * @return TransportLayerSecurity 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * 
+                     */
+                    std::string GetTransportLayerSecurity() const;
+
+                    /**
+                     * 判断参数 TransportLayerSecurity 是否已赋值
+                     * @return TransportLayerSecurity 是否已赋值
+                     * 
+                     */
+                    bool TransportLayerSecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +733,12 @@ API：通过API手动注册
                      */
                     int64_t m_messageRate;
                     bool m_messageRateHasBeenSet;
+
+                    /**
+                     * 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     */
+                    std::string m_transportLayerSecurity;
+                    bool m_transportLayerSecurityHasBeenSet;
 
                 };
             }

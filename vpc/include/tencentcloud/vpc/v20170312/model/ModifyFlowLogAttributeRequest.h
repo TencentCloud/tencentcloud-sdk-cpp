@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool FlowLogDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * @return Period 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    uint64_t GetPeriod() const;
+
+                    /**
+                     * 设置流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * @param _period 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    void SetPeriod(const uint64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;
+
+                    /**
+                     * 流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。
+                     */
+                    uint64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

@@ -25,7 +25,7 @@ using namespace std;
 RemoveMemberProjectRoleRequest::RemoveMemberProjectRoleRequest() :
     m_projectIdHasBeenSet(false),
     m_userUinHasBeenSet(false),
-    m_roleIdHasBeenSet(false)
+    m_roleIdsHasBeenSet(false)
 {
 }
 
@@ -52,12 +52,17 @@ string RemoveMemberProjectRoleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userUin.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_roleIdHasBeenSet)
+    if (m_roleIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RoleId";
+        string key = "RoleIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_roleId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_roleIds.begin(); itr != m_roleIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -100,20 +105,20 @@ bool RemoveMemberProjectRoleRequest::UserUinHasBeenSet() const
     return m_userUinHasBeenSet;
 }
 
-string RemoveMemberProjectRoleRequest::GetRoleId() const
+vector<string> RemoveMemberProjectRoleRequest::GetRoleIds() const
 {
-    return m_roleId;
+    return m_roleIds;
 }
 
-void RemoveMemberProjectRoleRequest::SetRoleId(const string& _roleId)
+void RemoveMemberProjectRoleRequest::SetRoleIds(const vector<string>& _roleIds)
 {
-    m_roleId = _roleId;
-    m_roleIdHasBeenSet = true;
+    m_roleIds = _roleIds;
+    m_roleIdsHasBeenSet = true;
 }
 
-bool RemoveMemberProjectRoleRequest::RoleIdHasBeenSet() const
+bool RemoveMemberProjectRoleRequest::RoleIdsHasBeenSet() const
 {
-    return m_roleIdHasBeenSet;
+    return m_roleIdsHasBeenSet;
 }
 
 

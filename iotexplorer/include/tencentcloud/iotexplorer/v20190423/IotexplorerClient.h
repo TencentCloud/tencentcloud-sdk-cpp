@@ -85,6 +85,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
@@ -231,6 +233,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
@@ -281,6 +285,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
@@ -337,6 +343,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigV2Request.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
@@ -496,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTWeTalkProductConfigResponse> CreateTWeTalkProductConfigOutcome;
                 typedef std::future<CreateTWeTalkProductConfigOutcome> CreateTWeTalkProductConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkProductConfigRequest&, CreateTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeTalkProductConfigV2Response> CreateTWeTalkProductConfigV2Outcome;
+                typedef std::future<CreateTWeTalkProductConfigV2Outcome> CreateTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkProductConfigV2Request&, CreateTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
                 typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
@@ -715,6 +726,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTWeTalkProductConfigResponse> DescribeTWeTalkProductConfigOutcome;
                 typedef std::future<DescribeTWeTalkProductConfigOutcome> DescribeTWeTalkProductConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkProductConfigRequest&, DescribeTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeTalkProductConfigV2Response> DescribeTWeTalkProductConfigV2Outcome;
+                typedef std::future<DescribeTWeTalkProductConfigV2Outcome> DescribeTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkProductConfigV2Request&, DescribeTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicPolicyResponse> DescribeTopicPolicyOutcome;
                 typedef std::future<DescribeTopicPolicyOutcome> DescribeTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicPolicyRequest&, DescribeTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicPolicyAsyncHandler;
@@ -790,6 +804,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTWeTalkProductConfigListResponse> GetTWeTalkProductConfigListOutcome;
                 typedef std::future<GetTWeTalkProductConfigListOutcome> GetTWeTalkProductConfigListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkProductConfigListRequest&, GetTWeTalkProductConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkProductConfigListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTWeTalkProductConfigListV2Response> GetTWeTalkProductConfigListV2Outcome;
+                typedef std::future<GetTWeTalkProductConfigListV2Outcome> GetTWeTalkProductConfigListV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkProductConfigListV2Request&, GetTWeTalkProductConfigListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkProductConfigListV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
@@ -874,6 +891,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTWeTalkProductConfigResponse> ModifyTWeTalkProductConfigOutcome;
                 typedef std::future<ModifyTWeTalkProductConfigOutcome> ModifyTWeTalkProductConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkProductConfigRequest&, ModifyTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkProductConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeTalkProductConfigV2Response> ModifyTWeTalkProductConfigV2Outcome;
+                typedef std::future<ModifyTWeTalkProductConfigV2Outcome> ModifyTWeTalkProductConfigV2OutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkProductConfigV2Request&, ModifyTWeTalkProductConfigV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkProductConfigV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicPolicyResponse> ModifyTopicPolicyOutcome;
                 typedef std::future<ModifyTopicPolicyOutcome> ModifyTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicPolicyRequest&, ModifyTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicPolicyAsyncHandler;
@@ -1235,6 +1255,15 @@ namespace TencentCloud
                 CreateTWeTalkProductConfigOutcome CreateTWeTalkProductConfig(const Model::CreateTWeTalkProductConfigRequest &request);
                 void CreateTWeTalkProductConfigAsync(const Model::CreateTWeTalkProductConfigRequest& request, const CreateTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTWeTalkProductConfigOutcomeCallable CreateTWeTalkProductConfigCallable(const Model::CreateTWeTalkProductConfigRequest& request);
+
+                /**
+                 *用于配置TWeTalk服务连接产品配置信息。
+                 * @param req CreateTWeTalkProductConfigV2Request
+                 * @return CreateTWeTalkProductConfigV2Outcome
+                 */
+                CreateTWeTalkProductConfigV2Outcome CreateTWeTalkProductConfigV2(const Model::CreateTWeTalkProductConfigV2Request &request);
+                void CreateTWeTalkProductConfigV2Async(const Model::CreateTWeTalkProductConfigV2Request& request, const CreateTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeTalkProductConfigV2OutcomeCallable CreateTWeTalkProductConfigV2Callable(const Model::CreateTWeTalkProductConfigV2Request& request);
 
                 /**
                  *本接口（CreateTopicPolicy）用于创建一个Topic
@@ -1896,6 +1925,15 @@ namespace TencentCloud
                 DescribeTWeTalkProductConfigOutcomeCallable DescribeTWeTalkProductConfigCallable(const Model::DescribeTWeTalkProductConfigRequest& request);
 
                 /**
+                 *用于查询TWeTalk服务连接产品配置信息。
+                 * @param req DescribeTWeTalkProductConfigV2Request
+                 * @return DescribeTWeTalkProductConfigV2Outcome
+                 */
+                DescribeTWeTalkProductConfigV2Outcome DescribeTWeTalkProductConfigV2(const Model::DescribeTWeTalkProductConfigV2Request &request);
+                void DescribeTWeTalkProductConfigV2Async(const Model::DescribeTWeTalkProductConfigV2Request& request, const DescribeTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeTalkProductConfigV2OutcomeCallable DescribeTWeTalkProductConfigV2Callable(const Model::DescribeTWeTalkProductConfigV2Request& request);
+
+                /**
                  *本接口（DescribeTopicPolicy）用于查看Topic详细信息
                  * @param req DescribeTopicPolicyRequest
                  * @return DescribeTopicPolicyOutcome
@@ -2119,6 +2157,15 @@ namespace TencentCloud
                 GetTWeTalkProductConfigListOutcome GetTWeTalkProductConfigList(const Model::GetTWeTalkProductConfigListRequest &request);
                 void GetTWeTalkProductConfigListAsync(const Model::GetTWeTalkProductConfigListRequest& request, const GetTWeTalkProductConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTWeTalkProductConfigListOutcomeCallable GetTWeTalkProductConfigListCallable(const Model::GetTWeTalkProductConfigListRequest& request);
+
+                /**
+                 *用于查询TWeTalk服务连接产品配置信息。
+                 * @param req GetTWeTalkProductConfigListV2Request
+                 * @return GetTWeTalkProductConfigListV2Outcome
+                 */
+                GetTWeTalkProductConfigListV2Outcome GetTWeTalkProductConfigListV2(const Model::GetTWeTalkProductConfigListV2Request &request);
+                void GetTWeTalkProductConfigListV2Async(const Model::GetTWeTalkProductConfigListV2Request& request, const GetTWeTalkProductConfigListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTWeTalkProductConfigListV2OutcomeCallable GetTWeTalkProductConfigListV2Callable(const Model::GetTWeTalkProductConfigListV2Request& request);
 
                 /**
                  *获取规则列表
@@ -2371,6 +2418,15 @@ namespace TencentCloud
                 ModifyTWeTalkProductConfigOutcome ModifyTWeTalkProductConfig(const Model::ModifyTWeTalkProductConfigRequest &request);
                 void ModifyTWeTalkProductConfigAsync(const Model::ModifyTWeTalkProductConfigRequest& request, const ModifyTWeTalkProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTWeTalkProductConfigOutcomeCallable ModifyTWeTalkProductConfigCallable(const Model::ModifyTWeTalkProductConfigRequest& request);
+
+                /**
+                 *用于修改配置TWeTalk服务连接产品配置信息。
+                 * @param req ModifyTWeTalkProductConfigV2Request
+                 * @return ModifyTWeTalkProductConfigV2Outcome
+                 */
+                ModifyTWeTalkProductConfigV2Outcome ModifyTWeTalkProductConfigV2(const Model::ModifyTWeTalkProductConfigV2Request &request);
+                void ModifyTWeTalkProductConfigV2Async(const Model::ModifyTWeTalkProductConfigV2Request& request, const ModifyTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeTalkProductConfigV2OutcomeCallable ModifyTWeTalkProductConfigV2Callable(const Model::ModifyTWeTalkProductConfigV2Request& request);
 
                 /**
                  *本接口（UpdateTopicPolicy）用于更新Topic信息

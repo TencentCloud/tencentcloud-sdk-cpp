@@ -22,12 +22,13 @@ set(gwlb_public_header_model
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusRequest.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupListResponse.h
   include/tencentcloud/gwlb/v20240906/model/DisassociateTargetGroupsResponse.h
+  include/tencentcloud/gwlb/v20240906/model/InquirePriceCreateGatewayLoadBalancerResponse.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupListRequest.h
   include/tencentcloud/gwlb/v20240906/model/ModifyGatewayLoadBalancerAttributeRequest.h
   include/tencentcloud/gwlb/v20240906/model/ModifyTargetGroupInstancesWeightResponse.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupsRequest.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTaskStatusResponse.h
-  include/tencentcloud/gwlb/v20240906/model/InquirePriceCreateGatewayLoadBalancerResponse.h
+  include/tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesRequest.h
   include/tencentcloud/gwlb/v20240906/model/CreateTargetGroupResponse.h
   include/tencentcloud/gwlb/v20240906/model/TargetGroupBackend.h
   include/tencentcloud/gwlb/v20240906/model/TargetGroupHealthCheck.h
@@ -38,6 +39,7 @@ set(gwlb_public_header_model
   include/tencentcloud/gwlb/v20240906/model/DeleteGatewayLoadBalancerRequest.h
   include/tencentcloud/gwlb/v20240906/model/TagInfo.h
   include/tencentcloud/gwlb/v20240906/model/AssociateTargetGroupsRequest.h
+  include/tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesResponse.h
   include/tencentcloud/gwlb/v20240906/model/DeregisterTargetGroupInstancesRequest.h
   include/tencentcloud/gwlb/v20240906/model/GatewayLoadBalancer.h
   include/tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersRequest.h
@@ -50,6 +52,7 @@ set(gwlb_public_header_model
   include/tencentcloud/gwlb/v20240906/model/DisassociateTargetGroupsRequest.h
   include/tencentcloud/gwlb/v20240906/model/Filter.h
   include/tencentcloud/gwlb/v20240906/model/TargetGroupInstanceStatus.h
+  include/tencentcloud/gwlb/v20240906/model/ZoneResource.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusResponse.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstancesRequest.h
   include/tencentcloud/gwlb/v20240906/model/DescribeTaskStatusRequest.h
@@ -74,12 +77,13 @@ set(gwlb_src
   src/v20240906/model/DescribeTargetGroupInstanceStatusRequest.cpp
   src/v20240906/model/DescribeTargetGroupListResponse.cpp
   src/v20240906/model/DisassociateTargetGroupsResponse.cpp
+  src/v20240906/model/InquirePriceCreateGatewayLoadBalancerResponse.cpp
   src/v20240906/model/DescribeTargetGroupListRequest.cpp
   src/v20240906/model/ModifyGatewayLoadBalancerAttributeRequest.cpp
   src/v20240906/model/ModifyTargetGroupInstancesWeightResponse.cpp
   src/v20240906/model/DescribeTargetGroupsRequest.cpp
   src/v20240906/model/DescribeTaskStatusResponse.cpp
-  src/v20240906/model/InquirePriceCreateGatewayLoadBalancerResponse.cpp
+  src/v20240906/model/DescribeGatewayLoadBalancersResourcesRequest.cpp
   src/v20240906/model/CreateTargetGroupResponse.cpp
   src/v20240906/model/TargetGroupBackend.cpp
   src/v20240906/model/TargetGroupHealthCheck.cpp
@@ -90,6 +94,7 @@ set(gwlb_src
   src/v20240906/model/DeleteGatewayLoadBalancerRequest.cpp
   src/v20240906/model/TagInfo.cpp
   src/v20240906/model/AssociateTargetGroupsRequest.cpp
+  src/v20240906/model/DescribeGatewayLoadBalancersResourcesResponse.cpp
   src/v20240906/model/DeregisterTargetGroupInstancesRequest.cpp
   src/v20240906/model/GatewayLoadBalancer.cpp
   src/v20240906/model/DescribeGatewayLoadBalancersRequest.cpp
@@ -102,6 +107,7 @@ set(gwlb_src
   src/v20240906/model/DisassociateTargetGroupsRequest.cpp
   src/v20240906/model/Filter.cpp
   src/v20240906/model/TargetGroupInstanceStatus.cpp
+  src/v20240906/model/ZoneResource.cpp
   src/v20240906/model/DescribeTargetGroupInstanceStatusResponse.cpp
   src/v20240906/model/DescribeTargetGroupInstancesRequest.cpp
   src/v20240906/model/DescribeTaskStatusRequest.cpp

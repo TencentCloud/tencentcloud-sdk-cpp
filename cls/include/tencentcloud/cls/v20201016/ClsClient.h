@@ -858,7 +858,7 @@ namespace TencentCloud
                 CreateShipperOutcomeCallable CreateShipperCallable(const Model::CreateShipperRequest& request);
 
                 /**
-                 *本接口用于创建日志主题。
+                 *本接口用于创建日志或指标主题。
                  * @param req CreateTopicRequest
                  * @return CreateTopicOutcome
                  */
@@ -1065,7 +1065,7 @@ namespace TencentCloud
                 DeleteShipperOutcomeCallable DeleteShipperCallable(const Model::DeleteShipperRequest& request);
 
                 /**
-                 *本接口用于删除日志主题。
+                 *本接口用于删除日志或指标主题。
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
                  */
@@ -1363,7 +1363,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeShippersOutcomeCallable DescribeShippersCallable(const Model::DescribeShippersRequest& request);
 
                 /**
-                 *本接口用于获取日志主题列表，支持分页
+                 *本接口用于获取日志或指标主题列表，支持分页
                  * @param req DescribeTopicsRequest
                  * @return DescribeTopicsOutcome
                  */
@@ -1580,7 +1580,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyShipperOutcomeCallable ModifyShipperCallable(const Model::ModifyShipperRequest& request);
 
                 /**
-                 *本接口用于修改日志主题。
+                 *本接口用于修改日志或指标主题。
                  * @param req ModifyTopicRequest
                  * @return ModifyTopicOutcome
                  */

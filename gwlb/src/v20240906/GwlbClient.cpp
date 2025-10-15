@@ -341,6 +341,49 @@ GwlbClient::DescribeGatewayLoadBalancersOutcomeCallable GwlbClient::DescribeGate
     return task->get_future();
 }
 
+GwlbClient::DescribeGatewayLoadBalancersResourcesOutcome GwlbClient::DescribeGatewayLoadBalancersResources(const DescribeGatewayLoadBalancersResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayLoadBalancersResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayLoadBalancersResourcesResponse rsp = DescribeGatewayLoadBalancersResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayLoadBalancersResourcesOutcome(rsp);
+        else
+            return DescribeGatewayLoadBalancersResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayLoadBalancersResourcesOutcome(outcome.GetError());
+    }
+}
+
+void GwlbClient::DescribeGatewayLoadBalancersResourcesAsync(const DescribeGatewayLoadBalancersResourcesRequest& request, const DescribeGatewayLoadBalancersResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayLoadBalancersResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GwlbClient::DescribeGatewayLoadBalancersResourcesOutcomeCallable GwlbClient::DescribeGatewayLoadBalancersResourcesCallable(const DescribeGatewayLoadBalancersResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayLoadBalancersResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayLoadBalancersResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GwlbClient::DescribeTargetGroupInstanceStatusOutcome GwlbClient::DescribeTargetGroupInstanceStatus(const DescribeTargetGroupInstanceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTargetGroupInstanceStatus");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @return ClusterId 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @param _clusterId 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取addon名称
-                     * @return AddonName addon名称
+                     * 获取addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @return AddonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     std::string GetAddonName() const;
 
                     /**
-                     * 设置addon名称
-                     * @param _addonName addon名称
+                     * 设置addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @param _addonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     void SetAddonName(const std::string& _addonName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * addon名称
+                     * addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      */
                     std::string m_addonName;
                     bool m_addonNameHasBeenSet;

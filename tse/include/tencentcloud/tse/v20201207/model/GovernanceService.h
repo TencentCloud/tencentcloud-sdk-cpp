@@ -446,6 +446,48 @@ namespace TencentCloud
                      */
                     bool SyncToGlobalRegistryHasBeenSet() const;
 
+                    /**
+                     * 获取隔离实例数
+                     * @return IsolateInstanceCount 隔离实例数
+                     * 
+                     */
+                    uint64_t GetIsolateInstanceCount() const;
+
+                    /**
+                     * 设置隔离实例数
+                     * @param _isolateInstanceCount 隔离实例数
+                     * 
+                     */
+                    void SetIsolateInstanceCount(const uint64_t& _isolateInstanceCount);
+
+                    /**
+                     * 判断参数 IsolateInstanceCount 是否已赋值
+                     * @return IsolateInstanceCount 是否已赋值
+                     * 
+                     */
+                    bool IsolateInstanceCountHasBeenSet() const;
+
+                    /**
+                     * 获取服务健康状态
+                     * @return ServiceStatus 服务健康状态
+                     * 
+                     */
+                    int64_t GetServiceStatus() const;
+
+                    /**
+                     * 设置服务健康状态
+                     * @param _serviceStatus 服务健康状态
+                     * 
+                     */
+                    void SetServiceStatus(const int64_t& _serviceStatus);
+
+                    /**
+                     * 判断参数 ServiceStatus 是否已赋值
+                     * @return ServiceStatus 是否已赋值
+                     * 
+                     */
+                    bool ServiceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +603,18 @@ namespace TencentCloud
                      */
                     bool m_syncToGlobalRegistry;
                     bool m_syncToGlobalRegistryHasBeenSet;
+
+                    /**
+                     * 隔离实例数
+                     */
+                    uint64_t m_isolateInstanceCount;
+                    bool m_isolateInstanceCountHasBeenSet;
+
+                    /**
+                     * 服务健康状态
+                     */
+                    int64_t m_serviceStatus;
+                    bool m_serviceStatusHasBeenSet;
 
                 };
             }

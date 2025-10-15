@@ -76,15 +76,23 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时子任务是否有失败。
-                     * @return SubTaskHasFailed 任务结束时子任务是否有失败。
+                     * 获取任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * @return SubTaskHasFailed 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
                      * 
                      */
                     bool GetSubTaskHasFailed() const;
 
                     /**
-                     * 设置任务结束时子任务是否有失败。
-                     * @param _subTaskHasFailed 任务结束时子任务是否有失败。
+                     * 设置任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
+                     * @param _subTaskHasFailed 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
                      * 
                      */
                     void SetSubTaskHasFailed(const bool& _subTaskHasFailed);
@@ -192,7 +200,9 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务结束时子任务是否有失败。
+                     * 任务结束时子任务是否有失败。如果不传则忽略。
+<li>false: 过滤子任务没有失败的任务；</li>
+<li>true: 过滤子任务有失败的任务。</li>
                      */
                     bool m_subTaskHasFailed;
                     bool m_subTaskHasFailedHasBeenSet;

@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ProcessListHasBeenSet() const;
 
                     /**
-                     * 获取sql会话统计信息。
-                     * @return Statistics sql会话统计信息。
+                     * 获取sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
+                     * @return Statistics sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
                      * 
                      */
                     std::vector<StatisticInfo> GetStatistics() const;
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_processListHasBeenSet;
 
                     /**
-                     * sql会话统计信息。
+                     * sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
                      */
                     std::vector<StatisticInfo> m_statistics;
                     bool m_statisticsHasBeenSet;

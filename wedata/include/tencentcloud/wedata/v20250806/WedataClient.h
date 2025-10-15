@@ -95,6 +95,10 @@
 #include <tencentcloud/wedata/v20250806/model/GetAlarmMessageResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetCodeFileRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetCodeFileResponse.h>
+#include <tencentcloud/wedata/v20250806/model/GetCodeFolderRequest.h>
+#include <tencentcloud/wedata/v20250806/model/GetCodeFolderResponse.h>
+#include <tencentcloud/wedata/v20250806/model/GetDataBackfillPlanRequest.h>
+#include <tencentcloud/wedata/v20250806/model/GetDataBackfillPlanResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetDataSourceRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetDataSourceResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetDataSourceRelatedTasksRequest.h>
@@ -115,6 +119,8 @@
 #include <tencentcloud/wedata/v20250806/model/GetResourceFileResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetResourceGroupMetricsRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetResourceGroupMetricsResponse.h>
+#include <tencentcloud/wedata/v20250806/model/GetSQLFolderRequest.h>
+#include <tencentcloud/wedata/v20250806/model/GetSQLFolderResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLScriptRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLScriptResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetTableRequest.h>
@@ -219,6 +225,8 @@
 #include <tencentcloud/wedata/v20250806/model/RunSQLScriptResponse.h>
 #include <tencentcloud/wedata/v20250806/model/SetSuccessTaskInstancesAsyncRequest.h>
 #include <tencentcloud/wedata/v20250806/model/SetSuccessTaskInstancesAsyncResponse.h>
+#include <tencentcloud/wedata/v20250806/model/StartOpsTasksRequest.h>
+#include <tencentcloud/wedata/v20250806/model/StartOpsTasksResponse.h>
 #include <tencentcloud/wedata/v20250806/model/StopOpsTasksAsyncRequest.h>
 #include <tencentcloud/wedata/v20250806/model/StopOpsTasksAsyncResponse.h>
 #include <tencentcloud/wedata/v20250806/model/StopSQLScriptRunRequest.h>
@@ -375,6 +383,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetCodeFileResponse> GetCodeFileOutcome;
                 typedef std::future<GetCodeFileOutcome> GetCodeFileOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetCodeFileRequest&, GetCodeFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCodeFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCodeFolderResponse> GetCodeFolderOutcome;
+                typedef std::future<GetCodeFolderOutcome> GetCodeFolderOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetCodeFolderRequest&, GetCodeFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCodeFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDataBackfillPlanResponse> GetDataBackfillPlanOutcome;
+                typedef std::future<GetDataBackfillPlanOutcome> GetDataBackfillPlanOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetDataBackfillPlanRequest&, GetDataBackfillPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDataBackfillPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDataSourceResponse> GetDataSourceOutcome;
                 typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetDataSourceRequest&, GetDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDataSourceAsyncHandler;
@@ -405,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetResourceGroupMetricsResponse> GetResourceGroupMetricsOutcome;
                 typedef std::future<GetResourceGroupMetricsOutcome> GetResourceGroupMetricsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetResourceGroupMetricsRequest&, GetResourceGroupMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceGroupMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSQLFolderResponse> GetSQLFolderOutcome;
+                typedef std::future<GetSQLFolderOutcome> GetSQLFolderOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetSQLFolderRequest&, GetSQLFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetSQLScriptResponse> GetSQLScriptOutcome;
                 typedef std::future<GetSQLScriptOutcome> GetSQLScriptOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetSQLScriptRequest&, GetSQLScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLScriptAsyncHandler;
@@ -561,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetSuccessTaskInstancesAsyncResponse> SetSuccessTaskInstancesAsyncOutcome;
                 typedef std::future<SetSuccessTaskInstancesAsyncOutcome> SetSuccessTaskInstancesAsyncOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SetSuccessTaskInstancesAsyncRequest&, SetSuccessTaskInstancesAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetSuccessTaskInstancesAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartOpsTasksResponse> StartOpsTasksOutcome;
+                typedef std::future<StartOpsTasksOutcome> StartOpsTasksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::StartOpsTasksRequest&, StartOpsTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOpsTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopOpsTasksAsyncResponse> StopOpsTasksAsyncOutcome;
                 typedef std::future<StopOpsTasksAsyncOutcome> StopOpsTasksAsyncOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::StopOpsTasksAsyncRequest&, StopOpsTasksAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopOpsTasksAsyncAsyncHandler;
@@ -940,6 +960,24 @@ namespace TencentCloud
                 GetCodeFileOutcomeCallable GetCodeFileCallable(const Model::GetCodeFileRequest& request);
 
                 /**
+                 *获取sql文件夹详情
+                 * @param req GetCodeFolderRequest
+                 * @return GetCodeFolderOutcome
+                 */
+                GetCodeFolderOutcome GetCodeFolder(const Model::GetCodeFolderRequest &request);
+                void GetCodeFolderAsync(const Model::GetCodeFolderRequest& request, const GetCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCodeFolderOutcomeCallable GetCodeFolderCallable(const Model::GetCodeFolderRequest& request);
+
+                /**
+                 *获取补录计划详情
+                 * @param req GetDataBackfillPlanRequest
+                 * @return GetDataBackfillPlanOutcome
+                 */
+                GetDataBackfillPlanOutcome GetDataBackfillPlan(const Model::GetDataBackfillPlanRequest &request);
+                void GetDataBackfillPlanAsync(const Model::GetDataBackfillPlanRequest& request, const GetDataBackfillPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDataBackfillPlanOutcomeCallable GetDataBackfillPlanCallable(const Model::GetDataBackfillPlanRequest& request);
+
+                /**
                  *该接口用于查看指定数据源的详细信息
                  * @param req GetDataSourceRequest
                  * @return GetDataSourceOutcome
@@ -1028,6 +1066,15 @@ namespace TencentCloud
                 GetResourceGroupMetricsOutcome GetResourceGroupMetrics(const Model::GetResourceGroupMetricsRequest &request);
                 void GetResourceGroupMetricsAsync(const Model::GetResourceGroupMetricsRequest& request, const GetResourceGroupMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetResourceGroupMetricsOutcomeCallable GetResourceGroupMetricsCallable(const Model::GetResourceGroupMetricsRequest& request);
+
+                /**
+                 *获取sql文件夹详情
+                 * @param req GetSQLFolderRequest
+                 * @return GetSQLFolderOutcome
+                 */
+                GetSQLFolderOutcome GetSQLFolder(const Model::GetSQLFolderRequest &request);
+                void GetSQLFolderAsync(const Model::GetSQLFolderRequest& request, const GetSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSQLFolderOutcomeCallable GetSQLFolderCallable(const Model::GetSQLFolderRequest& request);
 
                 /**
                  *查询脚本详情
@@ -1496,6 +1543,15 @@ namespace TencentCloud
                 SetSuccessTaskInstancesAsyncOutcome SetSuccessTaskInstancesAsync(const Model::SetSuccessTaskInstancesAsyncRequest &request);
                 void SetSuccessTaskInstancesAsyncAsync(const Model::SetSuccessTaskInstancesAsyncRequest& request, const SetSuccessTaskInstancesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetSuccessTaskInstancesAsyncOutcomeCallable SetSuccessTaskInstancesAsyncCallable(const Model::SetSuccessTaskInstancesAsyncRequest& request);
+
+                /**
+                 *异步批量启动任务
+                 * @param req StartOpsTasksRequest
+                 * @return StartOpsTasksOutcome
+                 */
+                StartOpsTasksOutcome StartOpsTasks(const Model::StartOpsTasksRequest &request);
+                void StartOpsTasksAsync(const Model::StartOpsTasksRequest& request, const StartOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartOpsTasksOutcomeCallable StartOpsTasksCallable(const Model::StartOpsTasksRequest& request);
 
                 /**
                  *异步批量下线任务

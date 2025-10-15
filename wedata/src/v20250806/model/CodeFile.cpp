@@ -31,7 +31,8 @@ CodeFile::CodeFile() :
     m_updateTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_accessScopeHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_parentFolderPathHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome CodeFile::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentFolderPath") && !value["ParentFolderPath"].IsNull())
+    {
+        if (!value["ParentFolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeFile.ParentFolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentFolderPath = string(value["ParentFolderPath"].GetString());
+        m_parentFolderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void CodeFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentFolderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentFolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentFolderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void CodeFile::SetPath(const string& _path)
 bool CodeFile::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string CodeFile::GetParentFolderPath() const
+{
+    return m_parentFolderPath;
+}
+
+void CodeFile::SetParentFolderPath(const string& _parentFolderPath)
+{
+    m_parentFolderPath = _parentFolderPath;
+    m_parentFolderPathHasBeenSet = true;
+}
+
+bool CodeFile::ParentFolderPathHasBeenSet() const
+{
+    return m_parentFolderPathHasBeenSet;
 }
 

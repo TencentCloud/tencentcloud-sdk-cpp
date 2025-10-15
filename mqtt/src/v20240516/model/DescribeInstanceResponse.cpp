@@ -56,7 +56,8 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_trustedCaLimitHasBeenSet(false),
     m_serverCertLimitHasBeenSet(false),
     m_topicPrefixSlashLimitHasBeenSet(false),
-    m_messageRateHasBeenSet(false)
+    m_messageRateHasBeenSet(false),
+    m_transportLayerSecurityHasBeenSet(false)
 {
 }
 
@@ -424,6 +425,16 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_messageRateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TransportLayerSecurity") && !rsp["TransportLayerSecurity"].IsNull())
+    {
+        if (!rsp["TransportLayerSecurity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransportLayerSecurity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transportLayerSecurity = string(rsp["TransportLayerSecurity"].GetString());
+        m_transportLayerSecurityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -696,6 +707,14 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "MessageRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageRate, allocator);
+    }
+
+    if (m_transportLayerSecurityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransportLayerSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transportLayerSecurity.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1038,6 +1057,16 @@ int64_t DescribeInstanceResponse::GetMessageRate() const
 bool DescribeInstanceResponse::MessageRateHasBeenSet() const
 {
     return m_messageRateHasBeenSet;
+}
+
+string DescribeInstanceResponse::GetTransportLayerSecurity() const
+{
+    return m_transportLayerSecurity;
+}
+
+bool DescribeInstanceResponse::TransportLayerSecurityHasBeenSet() const
+{
+    return m_transportLayerSecurityHasBeenSet;
 }
 
 

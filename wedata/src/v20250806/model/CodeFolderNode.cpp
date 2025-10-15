@@ -31,7 +31,8 @@ CodeFolderNode::CodeFolderNode() :
     m_ownerUinHasBeenSet(false),
     m_createUserUinHasBeenSet(false),
     m_nodePermissionHasBeenSet(false),
-    m_childrenHasBeenSet(false)
+    m_childrenHasBeenSet(false),
+    m_parentFolderPathHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome CodeFolderNode::Deserialize(const rapidjson::Value &value)
         m_childrenHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentFolderPath") && !value["ParentFolderPath"].IsNull())
+    {
+        if (!value["ParentFolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeFolderNode.ParentFolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentFolderPath = string(value["ParentFolderPath"].GetString());
+        m_parentFolderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void CodeFolderNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_parentFolderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentFolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentFolderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void CodeFolderNode::SetChildren(const vector<CodeFolderNode>& _children)
 bool CodeFolderNode::ChildrenHasBeenSet() const
 {
     return m_childrenHasBeenSet;
+}
+
+string CodeFolderNode::GetParentFolderPath() const
+{
+    return m_parentFolderPath;
+}
+
+void CodeFolderNode::SetParentFolderPath(const string& _parentFolderPath)
+{
+    m_parentFolderPath = _parentFolderPath;
+    m_parentFolderPathHasBeenSet = true;
+}
+
+bool CodeFolderNode::ParentFolderPathHasBeenSet() const
+{
+    return m_parentFolderPathHasBeenSet;
 }
 

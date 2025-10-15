@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID（仅支持标准tke集群）
-                     * @return ClusterId 集群ID（仅支持标准tke集群）
+                     * 获取集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @return ClusterId 集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID（仅支持标准tke集群）
-                     * @param _clusterId 集群ID（仅支持标准tke集群）
+                     * 设置集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @param _clusterId 集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取addon名称
-                     * @return AddonName addon名称
+                     * 获取addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @return AddonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     std::string GetAddonName() const;
 
                     /**
-                     * 设置addon名称
-                     * @param _addonName addon名称
+                     * 设置addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @param _addonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     void SetAddonName(const std::string& _addonName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RawValuesHasBeenSet() const;
 
                     /**
-                     * 获取是否仅做安装检查，设置为true时仅做检查，不会安装组件
-                     * @return DryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * 获取是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。
+                     * @return DryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否仅做安装检查，设置为true时仅做检查，不会安装组件
-                     * @param _dryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * 设置是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。
+                     * @param _dryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -150,13 +150,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID（仅支持标准tke集群）
+                     * 集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * addon名称
+                     * addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      */
                     std::string m_addonName;
                     bool m_addonNameHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_rawValuesHasBeenSet;
 
                     /**
-                     * 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * 是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

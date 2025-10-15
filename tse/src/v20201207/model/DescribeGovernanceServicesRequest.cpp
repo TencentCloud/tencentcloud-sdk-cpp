@@ -33,7 +33,8 @@ DescribeGovernanceServicesRequest::DescribeGovernanceServicesRequest() :
     m_businessHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_onlyExistHealthyInstanceHasBeenSet(false),
-    m_syncToGlobalRegistryHasBeenSet(false)
+    m_syncToGlobalRegistryHasBeenSet(false),
+    m_statusFilterHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,21 @@ string DescribeGovernanceServicesRequest::ToJsonString() const
         string key = "SyncToGlobalRegistry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_syncToGlobalRegistry.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statusFilter.begin(); itr != m_statusFilter.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -321,6 +337,22 @@ void DescribeGovernanceServicesRequest::SetSyncToGlobalRegistry(const string& _s
 bool DescribeGovernanceServicesRequest::SyncToGlobalRegistryHasBeenSet() const
 {
     return m_syncToGlobalRegistryHasBeenSet;
+}
+
+vector<Filter> DescribeGovernanceServicesRequest::GetStatusFilter() const
+{
+    return m_statusFilter;
+}
+
+void DescribeGovernanceServicesRequest::SetStatusFilter(const vector<Filter>& _statusFilter)
+{
+    m_statusFilter = _statusFilter;
+    m_statusFilterHasBeenSet = true;
+}
+
+bool DescribeGovernanceServicesRequest::StatusFilterHasBeenSet() const
+{
+    return m_statusFilterHasBeenSet;
 }
 
 

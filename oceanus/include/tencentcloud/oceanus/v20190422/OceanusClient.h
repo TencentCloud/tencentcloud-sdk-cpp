@@ -41,6 +41,8 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateVariableRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateVariableResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteFoldersRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeVariablesRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeVariablesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
@@ -150,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceConfigResponse> CreateResourceConfigOutcome;
                 typedef std::future<CreateResourceConfigOutcome> CreateResourceConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateResourceConfigRequest&, CreateResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVariableResponse> CreateVariableOutcome;
+                typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateVariableRequest&, CreateVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVariableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkSpaceResponse> CreateWorkSpaceOutcome;
                 typedef std::future<CreateWorkSpaceOutcome> CreateWorkSpaceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateWorkSpaceRequest&, CreateWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkSpaceAsyncHandler;
@@ -216,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTreeResourcesResponse> DescribeTreeResourcesOutcome;
                 typedef std::future<DescribeTreeResourcesOutcome> DescribeTreeResourcesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeTreeResourcesRequest&, DescribeTreeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTreeResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVariablesResponse> DescribeVariablesOutcome;
+                typedef std::future<DescribeVariablesOutcome> DescribeVariablesOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeVariablesRequest&, DescribeVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkSpacesResponse> DescribeWorkSpacesOutcome;
                 typedef std::future<DescribeWorkSpacesOutcome> DescribeWorkSpacesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeWorkSpacesRequest&, DescribeWorkSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkSpacesAsyncHandler;
@@ -335,6 +345,15 @@ namespace TencentCloud
                 CreateResourceConfigOutcome CreateResourceConfig(const Model::CreateResourceConfigRequest &request);
                 void CreateResourceConfigAsync(const Model::CreateResourceConfigRequest& request, const CreateResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateResourceConfigOutcomeCallable CreateResourceConfigCallable(const Model::CreateResourceConfigRequest& request);
+
+                /**
+                 *创建变量 
+                 * @param req CreateVariableRequest
+                 * @return CreateVariableOutcome
+                 */
+                CreateVariableOutcome CreateVariable(const Model::CreateVariableRequest &request);
+                void CreateVariableAsync(const Model::CreateVariableRequest& request, const CreateVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVariableOutcomeCallable CreateVariableCallable(const Model::CreateVariableRequest& request);
 
                 /**
                  *创建工作空间
@@ -533,6 +552,15 @@ namespace TencentCloud
                 DescribeTreeResourcesOutcome DescribeTreeResources(const Model::DescribeTreeResourcesRequest &request);
                 void DescribeTreeResourcesAsync(const Model::DescribeTreeResourcesRequest& request, const DescribeTreeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTreeResourcesOutcomeCallable DescribeTreeResourcesCallable(const Model::DescribeTreeResourcesRequest& request);
+
+                /**
+                 *变量列表展示
+                 * @param req DescribeVariablesRequest
+                 * @return DescribeVariablesOutcome
+                 */
+                DescribeVariablesOutcome DescribeVariables(const Model::DescribeVariablesRequest &request);
+                void DescribeVariablesAsync(const Model::DescribeVariablesRequest& request, const DescribeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVariablesOutcomeCallable DescribeVariablesCallable(const Model::DescribeVariablesRequest& request);
 
                 /**
                  *授权工作空间列表

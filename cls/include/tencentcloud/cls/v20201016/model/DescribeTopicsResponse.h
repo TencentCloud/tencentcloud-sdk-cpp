@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题列表
-                     * @return Topics 日志主题列表
+                     * 获取主题列表
+                     * @return Topics 主题列表
                      * 
                      */
                     std::vector<TopicInfo> GetTopics() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题列表
+                     * 主题列表
                      */
                     std::vector<TopicInfo> m_topics;
                     bool m_topicsHasBeenSet;

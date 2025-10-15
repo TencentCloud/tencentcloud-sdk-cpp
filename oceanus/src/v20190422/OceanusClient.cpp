@@ -427,6 +427,49 @@ OceanusClient::CreateResourceConfigOutcomeCallable OceanusClient::CreateResource
     return task->get_future();
 }
 
+OceanusClient::CreateVariableOutcome OceanusClient::CreateVariable(const CreateVariableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVariable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVariableResponse rsp = CreateVariableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVariableOutcome(rsp);
+        else
+            return CreateVariableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVariableOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateVariableAsync(const CreateVariableRequest& request, const CreateVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVariable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CreateVariableOutcomeCallable OceanusClient::CreateVariableCallable(const CreateVariableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVariableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVariable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::CreateWorkSpaceOutcome OceanusClient::CreateWorkSpace(const CreateWorkSpaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkSpace");
@@ -1366,6 +1409,49 @@ OceanusClient::DescribeTreeResourcesOutcomeCallable OceanusClient::DescribeTreeR
         [this, request]()
         {
             return this->DescribeTreeResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeVariablesOutcome OceanusClient::DescribeVariables(const DescribeVariablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVariables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVariablesResponse rsp = DescribeVariablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVariablesOutcome(rsp);
+        else
+            return DescribeVariablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVariablesOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeVariablesAsync(const DescribeVariablesRequest& request, const DescribeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVariables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeVariablesOutcomeCallable OceanusClient::DescribeVariablesCallable(const DescribeVariablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVariablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVariables(request);
         }
     );
 
