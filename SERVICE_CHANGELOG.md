@@ -1,4 +1,4 @@
-# Release 3.1.95
+# Release 3.1.96
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
