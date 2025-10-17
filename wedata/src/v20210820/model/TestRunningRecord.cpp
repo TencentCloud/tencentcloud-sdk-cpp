@@ -35,7 +35,8 @@ TestRunningRecord::TestRunningRecord() :
     m_ownerUinHasBeenSet(false),
     m_subRecordListHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
+    m_bucketNameHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome TestRunningRecord::Deserialize(const rapidjson::Value &value
         m_bucketNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
+    {
+        if (!value["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestRunningRecord.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(value["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void TestRunningRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BucketName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void TestRunningRecord::SetBucketName(const string& _bucketName)
 bool TestRunningRecord::BucketNameHasBeenSet() const
 {
     return m_bucketNameHasBeenSet;
+}
+
+string TestRunningRecord::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+void TestRunningRecord::SetErrorMessage(const string& _errorMessage)
+{
+    m_errorMessage = _errorMessage;
+    m_errorMessageHasBeenSet = true;
+}
+
+bool TestRunningRecord::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 

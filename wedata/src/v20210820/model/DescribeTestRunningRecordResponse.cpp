@@ -24,7 +24,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTestRunningRecordResponse::DescribeTestRunningRecordResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_totalPagesHasBeenSet(false),
+    m_totalItemsHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeTestRunningRecordResponse::Deserialize(const string 
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalPages") && !rsp["TotalPages"].IsNull())
+    {
+        if (!rsp["TotalPages"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalPages` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalPages = rsp["TotalPages"].GetInt64();
+        m_totalPagesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalItems") && !rsp["TotalItems"].IsNull())
+    {
+        if (!rsp["TotalItems"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalItems` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalItems = rsp["TotalItems"].GetInt64();
+        m_totalItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeTestRunningRecordResponse::ToJsonString() const
         }
     }
 
+    if (m_totalPagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPages, allocator);
+    }
+
+    if (m_totalItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalItems, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<TestRunningRecord> DescribeTestRunningRecordResponse::GetData() const
 bool DescribeTestRunningRecordResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t DescribeTestRunningRecordResponse::GetTotalPages() const
+{
+    return m_totalPages;
+}
+
+bool DescribeTestRunningRecordResponse::TotalPagesHasBeenSet() const
+{
+    return m_totalPagesHasBeenSet;
+}
+
+int64_t DescribeTestRunningRecordResponse::GetTotalItems() const
+{
+    return m_totalItems;
+}
+
+bool DescribeTestRunningRecordResponse::TotalItemsHasBeenSet() const
+{
+    return m_totalItemsHasBeenSet;
 }
 
 

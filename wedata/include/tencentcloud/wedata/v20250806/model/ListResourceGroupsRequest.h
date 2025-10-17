@@ -43,12 +43,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行资源组类型，不能为空
+                     * 获取执行资源组类型
 
 - Schedule --- 调度资源组
 - Integration --- 集成资源组
 - DataService -- 数据服务资源组
-                     * @return Type 执行资源组类型，不能为空
+                     * @return Type 执行资源组类型
 
 - Schedule --- 调度资源组
 - Integration --- 集成资源组
@@ -58,12 +58,12 @@ namespace TencentCloud
                     std::string GetType() const;
 
                     /**
-                     * 设置执行资源组类型，不能为空
+                     * 设置执行资源组类型
 
 - Schedule --- 调度资源组
 - Integration --- 集成资源组
 - DataService -- 数据服务资源组
-                     * @param _type 执行资源组类型，不能为空
+                     * @param _type 执行资源组类型
 
 - Schedule --- 调度资源组
 - Integration --- 集成资源组
@@ -187,7 +187,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行资源组类型，不能为空
+                     * 执行资源组类型
 
 - Schedule --- 调度资源组
 - Integration --- 集成资源组

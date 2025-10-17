@@ -47,15 +47,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
-                     * @return TypeName 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * 获取售卖实例名称。
+Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
+CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
+TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
+CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
+CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
+ECONOMICAL：表示经济型。
+                     * @return TypeName 售卖实例名称。
+Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
+CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
+TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
+CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
+CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
+ECONOMICAL：表示经济型。
                      * 
                      */
                     std::string GetTypeName() const;
 
                     /**
-                     * 设置售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
-                     * @param _typeName 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * 设置售卖实例名称。
+Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
+CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
+TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
+CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
+CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
+ECONOMICAL：表示经济型。
+                     * @param _typeName 售卖实例名称。
+Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
+CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
+TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
+CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
+CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
+ECONOMICAL：表示经济型。
                      * 
                      */
                     void SetTypeName(const std::string& _typeName);
@@ -112,7 +136,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * 售卖实例名称。
+Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
+CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
+TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
+CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
+CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
+ECONOMICAL：表示经济型。
                      */
                     std::string m_typeName;
                     bool m_typeNameHasBeenSet;

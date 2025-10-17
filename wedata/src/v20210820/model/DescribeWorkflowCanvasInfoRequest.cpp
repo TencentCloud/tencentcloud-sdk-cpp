@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeWorkflowCanvasInfoRequest::DescribeWorkflowCanvasInfoRequest() :
     m_workflowIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_requestFromSourceHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeWorkflowCanvasInfoRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeWorkflowCanvasInfoRequest::SetProjectId(const string& _projectId)
 bool DescribeWorkflowCanvasInfoRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeWorkflowCanvasInfoRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void DescribeWorkflowCanvasInfoRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool DescribeWorkflowCanvasInfoRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
 }
 
 

@@ -85,7 +85,9 @@ InstanceOpsDto::InstanceOpsDto() :
     m_circulateInstanceListHasBeenSet(false),
     m_concurrentStrategyHasBeenSet(false),
     m_scheduleRunTypeHasBeenSet(false),
-    m_allowRedoTypeHasBeenSet(false)
+    m_allowRedoTypeHasBeenSet(false),
+    m_instanceCycleTypeHasBeenSet(false),
+    m_instanceSchedulerDescHasBeenSet(false)
 {
 }
 
@@ -781,6 +783,26 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_allowRedoTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceCycleType") && !value["InstanceCycleType"].IsNull())
+    {
+        if (!value["InstanceCycleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.InstanceCycleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCycleType = string(value["InstanceCycleType"].GetString());
+        m_instanceCycleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceSchedulerDesc") && !value["InstanceSchedulerDesc"].IsNull())
+    {
+        if (!value["InstanceSchedulerDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.InstanceSchedulerDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceSchedulerDesc = string(value["InstanceSchedulerDesc"].GetString());
+        m_instanceSchedulerDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1327,6 +1349,22 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AllowRedoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceCycleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCycleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceCycleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceSchedulerDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceSchedulerDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceSchedulerDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2370,5 +2408,37 @@ void InstanceOpsDto::SetAllowRedoType(const string& _allowRedoType)
 bool InstanceOpsDto::AllowRedoTypeHasBeenSet() const
 {
     return m_allowRedoTypeHasBeenSet;
+}
+
+string InstanceOpsDto::GetInstanceCycleType() const
+{
+    return m_instanceCycleType;
+}
+
+void InstanceOpsDto::SetInstanceCycleType(const string& _instanceCycleType)
+{
+    m_instanceCycleType = _instanceCycleType;
+    m_instanceCycleTypeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::InstanceCycleTypeHasBeenSet() const
+{
+    return m_instanceCycleTypeHasBeenSet;
+}
+
+string InstanceOpsDto::GetInstanceSchedulerDesc() const
+{
+    return m_instanceSchedulerDesc;
+}
+
+void InstanceOpsDto::SetInstanceSchedulerDesc(const string& _instanceSchedulerDesc)
+{
+    m_instanceSchedulerDesc = _instanceSchedulerDesc;
+    m_instanceSchedulerDescHasBeenSet = true;
+}
+
+bool InstanceOpsDto::InstanceSchedulerDescHasBeenSet() const
+{
+    return m_instanceSchedulerDescHasBeenSet;
 }
 

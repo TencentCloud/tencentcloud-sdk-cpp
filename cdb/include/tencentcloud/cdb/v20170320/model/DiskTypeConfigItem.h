@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘对应的实例类型。仅支持单节点基础型和集群版。
-                     * @return DeviceType 磁盘对应的实例类型。仅支持单节点基础型和集群版。
+                     * 获取磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。
+                     * @return DeviceType 磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置磁盘对应的实例类型。仅支持单节点基础型和集群版。
-                     * @param _deviceType 磁盘对应的实例类型。仅支持单节点基础型和集群版。
+                     * 设置磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。
+                     * @param _deviceType 磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘对应的实例类型。仅支持单节点基础型和集群版。
+                     * 磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

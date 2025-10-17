@@ -599,6 +599,49 @@ EssClient::CreateBatchSignUrlOutcomeCallable EssClient::CreateBatchSignUrlCallab
     return task->get_future();
 }
 
+EssClient::CreateContractComparisonTaskOutcome EssClient::CreateContractComparisonTask(const CreateContractComparisonTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateContractComparisonTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateContractComparisonTaskResponse rsp = CreateContractComparisonTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateContractComparisonTaskOutcome(rsp);
+        else
+            return CreateContractComparisonTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateContractComparisonTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateContractComparisonTaskAsync(const CreateContractComparisonTaskRequest& request, const CreateContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateContractComparisonTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateContractComparisonTaskOutcomeCallable EssClient::CreateContractComparisonTaskCallable(const CreateContractComparisonTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateContractComparisonTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateContractComparisonTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateContractDiffTaskWebUrlOutcome EssClient::CreateContractDiffTaskWebUrl(const CreateContractDiffTaskWebUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContractDiffTaskWebUrl");
@@ -4591,6 +4634,49 @@ EssClient::DisableUserAutoSignOutcomeCallable EssClient::DisableUserAutoSignCall
         [this, request]()
         {
             return this->DisableUserAutoSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::ExportContractComparisonTaskOutcome EssClient::ExportContractComparisonTask(const ExportContractComparisonTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportContractComparisonTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportContractComparisonTaskResponse rsp = ExportContractComparisonTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportContractComparisonTaskOutcome(rsp);
+        else
+            return ExportContractComparisonTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportContractComparisonTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ExportContractComparisonTaskAsync(const ExportContractComparisonTaskRequest& request, const ExportContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportContractComparisonTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ExportContractComparisonTaskOutcomeCallable EssClient::ExportContractComparisonTaskCallable(const ExportContractComparisonTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportContractComparisonTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportContractComparisonTask(request);
         }
     );
 

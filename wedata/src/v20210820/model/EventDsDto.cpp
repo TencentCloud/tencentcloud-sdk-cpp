@@ -34,7 +34,11 @@ EventDsDto::EventDsDto() :
     m_descriptionHasBeenSet(false),
     m_listenersHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_validConsumeCountHasBeenSet(false),
+    m_eventIdHasBeenSet(false),
+    m_bundleIdHasBeenSet(false),
+    m_bundleInfoHasBeenSet(false)
 {
 }
 
@@ -193,6 +197,46 @@ CoreInternalOutcome EventDsDto::Deserialize(const rapidjson::Value &value)
         m_projectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ValidConsumeCount") && !value["ValidConsumeCount"].IsNull())
+    {
+        if (!value["ValidConsumeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDsDto.ValidConsumeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validConsumeCount = value["ValidConsumeCount"].GetInt64();
+        m_validConsumeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDsDto.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleId") && !value["BundleId"].IsNull())
+    {
+        if (!value["BundleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDsDto.BundleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleId = string(value["BundleId"].GetString());
+        m_bundleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleInfo") && !value["BundleInfo"].IsNull())
+    {
+        if (!value["BundleInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDsDto.BundleInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleInfo = string(value["BundleInfo"].GetString());
+        m_bundleInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +361,38 @@ void EventDsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validConsumeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidConsumeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validConsumeCount, allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +620,69 @@ void EventDsDto::SetProjectName(const string& _projectName)
 bool EventDsDto::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+int64_t EventDsDto::GetValidConsumeCount() const
+{
+    return m_validConsumeCount;
+}
+
+void EventDsDto::SetValidConsumeCount(const int64_t& _validConsumeCount)
+{
+    m_validConsumeCount = _validConsumeCount;
+    m_validConsumeCountHasBeenSet = true;
+}
+
+bool EventDsDto::ValidConsumeCountHasBeenSet() const
+{
+    return m_validConsumeCountHasBeenSet;
+}
+
+string EventDsDto::GetEventId() const
+{
+    return m_eventId;
+}
+
+void EventDsDto::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool EventDsDto::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
+}
+
+string EventDsDto::GetBundleId() const
+{
+    return m_bundleId;
+}
+
+void EventDsDto::SetBundleId(const string& _bundleId)
+{
+    m_bundleId = _bundleId;
+    m_bundleIdHasBeenSet = true;
+}
+
+bool EventDsDto::BundleIdHasBeenSet() const
+{
+    return m_bundleIdHasBeenSet;
+}
+
+string EventDsDto::GetBundleInfo() const
+{
+    return m_bundleInfo;
+}
+
+void EventDsDto::SetBundleInfo(const string& _bundleInfo)
+{
+    m_bundleInfo = _bundleInfo;
+    m_bundleInfoHasBeenSet = true;
+}
+
+bool EventDsDto::BundleInfoHasBeenSet() const
+{
+    return m_bundleInfoHasBeenSet;
 }
 

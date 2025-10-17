@@ -89,6 +89,31 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。
+注：`详细结果数据量可能较大，请按需开启。`
+                     * @return ShowDetail 是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。
+注：`详细结果数据量可能较大，请按需开启。`
+                     * 
+                     */
+                    bool GetShowDetail() const;
+
+                    /**
+                     * 设置是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。
+注：`详细结果数据量可能较大，请按需开启。`
+                     * @param _showDetail 是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。
+注：`详细结果数据量可能较大，请按需开启。`
+                     * 
+                     */
+                    void SetShowDetail(const bool& _showDetail);
+
+                    /**
+                     * 判断参数 ShowDetail 是否已赋值
+                     * @return ShowDetail 是否已赋值
+                     * 
+                     */
+                    bool ShowDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +128,13 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。
+注：`详细结果数据量可能较大，请按需开启。`
+                     */
+                    bool m_showDetail;
+                    bool m_showDetailHasBeenSet;
 
                 };
             }

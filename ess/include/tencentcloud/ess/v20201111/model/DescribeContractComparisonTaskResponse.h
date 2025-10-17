@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/ComparisonDetail.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,20 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取对比差异详情，请求参数ShowDetail为true时返回。
+                     * @return ComparisonDetail 对比差异详情，请求参数ShowDetail为true时返回。
+                     * 
+                     */
+                    std::vector<ComparisonDetail> GetComparisonDetail() const;
+
+                    /**
+                     * 判断参数 ComparisonDetail 是否已赋值
+                     * @return ComparisonDetail 是否已赋值
+                     * 
+                     */
+                    bool ComparisonDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -302,6 +317,12 @@ namespace TencentCloud
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 对比差异详情，请求参数ShowDetail为true时返回。
+                     */
+                    std::vector<ComparisonDetail> m_comparisonDetail;
+                    bool m_comparisonDetailHasBeenSet;
 
                 };
             }

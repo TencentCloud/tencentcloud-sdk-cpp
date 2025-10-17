@@ -33,7 +33,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_descriptionTaskHasBeenSet(false),
     m_horizontalToVerticalTaskHasBeenSet(false),
     m_dubbingTaskHasBeenSet(false),
-    m_videoRemakeTaskHasBeenSet(false)
+    m_videoRemakeTaskHasBeenSet(false),
+    m_videoComprehensionTaskHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_videoRemakeTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoComprehensionTask") && !value["VideoComprehensionTask"].IsNull())
+    {
+        if (!value["VideoComprehensionTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.VideoComprehensionTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoComprehensionTask.Deserialize(value["VideoComprehensionTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoComprehensionTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +395,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoRemakeTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoComprehensionTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoComprehensionTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoComprehensionTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -588,5 +615,21 @@ void AiAnalysisResult::SetVideoRemakeTask(const AiAnalysisTaskVideoRemakeResult&
 bool AiAnalysisResult::VideoRemakeTaskHasBeenSet() const
 {
     return m_videoRemakeTaskHasBeenSet;
+}
+
+AiAnalysisTaskVideoComprehensionResult AiAnalysisResult::GetVideoComprehensionTask() const
+{
+    return m_videoComprehensionTask;
+}
+
+void AiAnalysisResult::SetVideoComprehensionTask(const AiAnalysisTaskVideoComprehensionResult& _videoComprehensionTask)
+{
+    m_videoComprehensionTask = _videoComprehensionTask;
+    m_videoComprehensionTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::VideoComprehensionTaskHasBeenSet() const
+{
+    return m_videoComprehensionTaskHasBeenSet;
 }
 

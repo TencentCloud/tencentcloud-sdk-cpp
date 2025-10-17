@@ -32,7 +32,8 @@ RegisterDsEventRequest::RegisterDsEventRequest() :
     m_descriptionHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventBroadcastTypeHasBeenSet(false),
-    m_dimensionFormatHasBeenSet(false)
+    m_dimensionFormatHasBeenSet(false),
+    m_validConsumeCountHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string RegisterDsEventRequest::ToJsonString() const
         string key = "DimensionFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dimensionFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validConsumeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidConsumeCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validConsumeCount, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void RegisterDsEventRequest::SetDimensionFormat(const string& _dimensionFormat)
 bool RegisterDsEventRequest::DimensionFormatHasBeenSet() const
 {
     return m_dimensionFormatHasBeenSet;
+}
+
+int64_t RegisterDsEventRequest::GetValidConsumeCount() const
+{
+    return m_validConsumeCount;
+}
+
+void RegisterDsEventRequest::SetValidConsumeCount(const int64_t& _validConsumeCount)
+{
+    m_validConsumeCount = _validConsumeCount;
+    m_validConsumeCountHasBeenSet = true;
+}
+
+bool RegisterDsEventRequest::ValidConsumeCountHasBeenSet() const
+{
+    return m_validConsumeCountHasBeenSet;
 }
 
 

@@ -2692,29 +2692,29 @@ CI/CD工程生成的bundle唯一标识
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取Bundle名称
+                     * 获取bundle信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BundleName Bundle名称
+                     * @return BundleInfo bundle信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetBundleName() const;
+                    std::string GetBundleInfo() const;
 
                     /**
-                     * 设置Bundle名称
+                     * 设置bundle信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bundleName Bundle名称
+                     * @param _bundleInfo bundle信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBundleName(const std::string& _bundleName);
+                    void SetBundleInfo(const std::string& _bundleInfo);
 
                     /**
-                     * 判断参数 BundleName 是否已赋值
-                     * @return BundleName 是否已赋值
+                     * 判断参数 BundleInfo 是否已赋值
+                     * @return BundleInfo 是否已赋值
                      * 
                      */
-                    bool BundleNameHasBeenSet() const;
+                    bool BundleInfoHasBeenSet() const;
 
                 private:
 
@@ -3454,11 +3454,11 @@ CI/CD工程生成的bundle唯一标识
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * Bundle名称
+                     * bundle信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_bundleName;
-                    bool m_bundleNameHasBeenSet;
+                    std::string m_bundleInfo;
+                    bool m_bundleInfoHasBeenSet;
 
                 };
             }

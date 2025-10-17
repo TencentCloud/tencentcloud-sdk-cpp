@@ -60,6 +60,38 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalPages 总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTotalPages() const;
+
+                    /**
+                     * 判断参数 TotalPages 是否已赋值
+                     * @return TotalPages 是否已赋值
+                     * 
+                     */
+                    bool TotalPagesHasBeenSet() const;
+
+                    /**
+                     * 获取总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalItems 总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTotalItems() const;
+
+                    /**
+                     * 判断参数 TotalItems 是否已赋值
+                     * @return TotalItems 是否已赋值
+                     * 
+                     */
+                    bool TotalItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +100,20 @@ namespace TencentCloud
                      */
                     std::vector<TestRunningRecord> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 总页数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalPages;
+                    bool m_totalPagesHasBeenSet;
+
+                    /**
+                     * 总条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalItems;
+                    bool m_totalItemsHasBeenSet;
 
                 };
             }

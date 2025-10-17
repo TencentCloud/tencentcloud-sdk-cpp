@@ -124,13 +124,11 @@ namespace TencentCloud
                      * 获取用于描述字段信息。
 
 注意：
-1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`
-2、描述字段不能超过100个字符
+1、描述字段不能超过100个字符
                      * @return Description 用于描述字段信息。
 
 注意：
-1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`
-2、描述字段不能超过100个字符
+1、描述字段不能超过100个字符
                      * 
                      */
                     std::string GetDescription() const;
@@ -139,13 +137,11 @@ namespace TencentCloud
                      * 设置用于描述字段信息。
 
 注意：
-1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`
-2、描述字段不能超过100个字符
+1、描述字段不能超过100个字符
                      * @param _description 用于描述字段信息。
 
 注意：
-1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`
-2、描述字段不能超过100个字符
+1、描述字段不能超过100个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -178,6 +174,27 @@ namespace TencentCloud
                      */
                     bool ValuesHasBeenSet() const;
 
+                    /**
+                     * 获取当字段类型`Type`为OPTION时为必输项，输入选项值
+                     * @return ChoiceList 当字段类型`Type`为OPTION时为必输项，输入选项值
+                     * 
+                     */
+                    std::vector<std::string> GetChoiceList() const;
+
+                    /**
+                     * 设置当字段类型`Type`为OPTION时为必输项，输入选项值
+                     * @param _choiceList 当字段类型`Type`为OPTION时为必输项，输入选项值
+                     * 
+                     */
+                    void SetChoiceList(const std::vector<std::string>& _choiceList);
+
+                    /**
+                     * 判断参数 ChoiceList 是否已赋值
+                     * @return ChoiceList 是否已赋值
+                     * 
+                     */
+                    bool ChoiceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,8 +221,7 @@ namespace TencentCloud
                      * 用于描述字段信息。
 
 注意：
-1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`
-2、描述字段不能超过100个字符
+1、描述字段不能超过100个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -215,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 当字段类型`Type`为OPTION时为必输项，输入选项值
+                     */
+                    std::vector<std::string> m_choiceList;
+                    bool m_choiceListHasBeenSet;
 
                 };
             }

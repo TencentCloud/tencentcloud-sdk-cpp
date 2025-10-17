@@ -49,6 +49,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlRequest.h>
@@ -235,6 +237,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h>
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
@@ -322,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchSignUrlResponse> CreateBatchSignUrlOutcome;
                 typedef std::future<CreateBatchSignUrlOutcome> CreateBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchSignUrlRequest&, CreateBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateContractComparisonTaskResponse> CreateContractComparisonTaskOutcome;
+                typedef std::future<CreateContractComparisonTaskOutcome> CreateContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateContractComparisonTaskRequest&, CreateContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateContractDiffTaskWebUrlResponse> CreateContractDiffTaskWebUrlOutcome;
                 typedef std::future<CreateContractDiffTaskWebUrlOutcome> CreateContractDiffTaskWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateContractDiffTaskWebUrlRequest&, CreateContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractDiffTaskWebUrlAsyncHandler;
@@ -601,6 +608,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableUserAutoSignResponse> DisableUserAutoSignOutcome;
                 typedef std::future<DisableUserAutoSignOutcome> DisableUserAutoSignOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DisableUserAutoSignRequest&, DisableUserAutoSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableUserAutoSignAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportContractComparisonTaskResponse> ExportContractComparisonTaskOutcome;
+                typedef std::future<ExportContractComparisonTaskOutcome> ExportContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ExportContractComparisonTaskRequest&, ExportContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskResultApiResponse> GetTaskResultApiOutcome;
                 typedef std::future<GetTaskResultApiOutcome> GetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::GetTaskResultApiRequest&, GetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskResultApiAsyncHandler;
@@ -881,6 +891,16 @@ namespace TencentCloud
                 CreateBatchSignUrlOutcome CreateBatchSignUrl(const Model::CreateBatchSignUrlRequest &request);
                 void CreateBatchSignUrlAsync(const Model::CreateBatchSignUrlRequest& request, const CreateBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchSignUrlOutcomeCallable CreateBatchSignUrlCallable(const Model::CreateBatchSignUrlRequest& request);
+
+                /**
+                 *此接口（CreateContractComparisonTask）用于创建合同对比任务。
+适用场景：对比两份合同中字段（如：金额、日期、甲方名称等）的内容差异。
+                 * @param req CreateContractComparisonTaskRequest
+                 * @return CreateContractComparisonTaskOutcome
+                 */
+                CreateContractComparisonTaskOutcome CreateContractComparisonTask(const Model::CreateContractComparisonTaskRequest &request);
+                void CreateContractComparisonTaskAsync(const Model::CreateContractComparisonTaskRequest& request, const CreateContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateContractComparisonTaskOutcomeCallable CreateContractComparisonTaskCallable(const Model::CreateContractComparisonTaskRequest& request);
 
                 /**
                  *接口（CreateContractDiffTaskWebUrl）用于创建合同对比的可嵌入web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
@@ -2509,6 +2529,15 @@ namespace TencentCloud
                 DisableUserAutoSignOutcome DisableUserAutoSign(const Model::DisableUserAutoSignRequest &request);
                 void DisableUserAutoSignAsync(const Model::DisableUserAutoSignRequest& request, const DisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableUserAutoSignOutcomeCallable DisableUserAutoSignCallable(const Model::DisableUserAutoSignRequest& request);
+
+                /**
+                 *本接口（ExportContractComparisonTask）用于导出指定的合同对比任务的结果文件。任务完成后，用户可根据不同的使用场景，选择导出可视化对比报告（PDF）或结构化差异明细（EXCEL）。
+                 * @param req ExportContractComparisonTaskRequest
+                 * @return ExportContractComparisonTaskOutcome
+                 */
+                ExportContractComparisonTaskOutcome ExportContractComparisonTask(const Model::ExportContractComparisonTaskRequest &request);
+                void ExportContractComparisonTaskAsync(const Model::ExportContractComparisonTaskRequest& request, const ExportContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportContractComparisonTaskOutcomeCallable ExportContractComparisonTaskCallable(const Model::ExportContractComparisonTaskRequest& request);
 
                 /**
                  *此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务接口</a>进行资源文件的转换操作<br />

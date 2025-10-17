@@ -189,6 +189,48 @@ namespace TencentCloud
                      */
                     bool RecordIdListHasBeenSet() const;
 
+                    /**
+                     * 获取分页大小
+                     * @return PageSize 分页大小
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置分页大小
+                     * @param _pageSize 分页大小
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取分页索引
+                     * @return PageIndex 分页索引
+                     * 
+                     */
+                    int64_t GetPageIndex() const;
+
+                    /**
+                     * 设置分页索引
+                     * @param _pageIndex 分页索引
+                     * 
+                     */
+                    void SetPageIndex(const int64_t& _pageIndex);
+
+                    /**
+                     * 判断参数 PageIndex 是否已赋值
+                     * @return PageIndex 是否已赋值
+                     * 
+                     */
+                    bool PageIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +274,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_recordIdList;
                     bool m_recordIdListHasBeenSet;
+
+                    /**
+                     * 分页大小
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 分页索引
+                     */
+                    int64_t m_pageIndex;
+                    bool m_pageIndexHasBeenSet;
 
                 };
             }

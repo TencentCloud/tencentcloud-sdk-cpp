@@ -148,6 +148,27 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
+                     * 获取数据库类型
+                     * @return Type 数据库类型
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置数据库类型
+                     * @param _type 数据库类型
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取责任人
                      * @return Incharge 责任人
                      * 
@@ -283,6 +304,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 数据库类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * 责任人

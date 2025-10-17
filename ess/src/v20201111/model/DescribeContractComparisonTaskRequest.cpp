@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeContractComparisonTaskRequest::DescribeContractComparisonTaskRequest() :
     m_operatorHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_showDetailHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeContractComparisonTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showDetail, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeContractComparisonTaskRequest::SetTaskId(const string& _taskId)
 bool DescribeContractComparisonTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+bool DescribeContractComparisonTaskRequest::GetShowDetail() const
+{
+    return m_showDetail;
+}
+
+void DescribeContractComparisonTaskRequest::SetShowDetail(const bool& _showDetail)
+{
+    m_showDetail = _showDetail;
+    m_showDetailHasBeenSet = true;
+}
+
+bool DescribeContractComparisonTaskRequest::ShowDetailHasBeenSet() const
+{
+    return m_showDetailHasBeenSet;
 }
 
 

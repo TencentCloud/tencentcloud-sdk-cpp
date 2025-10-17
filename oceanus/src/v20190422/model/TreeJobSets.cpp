@@ -29,7 +29,8 @@ TreeJobSets::TreeJobSets() :
     m_scalingTypeHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
     m_runningMemHasBeenSet(false),
-    m_decodeSqlCodeHasBeenSet(false)
+    m_decodeSqlCodeHasBeenSet(false),
+    m_publishedJobConfigIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TreeJobSets::Deserialize(const rapidjson::Value &value)
         m_decodeSqlCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("PublishedJobConfigId") && !value["PublishedJobConfigId"].IsNull())
+    {
+        if (!value["PublishedJobConfigId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.PublishedJobConfigId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishedJobConfigId = value["PublishedJobConfigId"].GetInt64();
+        m_publishedJobConfigIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TreeJobSets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "DecodeSqlCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_decodeSqlCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishedJobConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishedJobConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publishedJobConfigId, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TreeJobSets::SetDecodeSqlCode(const string& _decodeSqlCode)
 bool TreeJobSets::DecodeSqlCodeHasBeenSet() const
 {
     return m_decodeSqlCodeHasBeenSet;
+}
+
+int64_t TreeJobSets::GetPublishedJobConfigId() const
+{
+    return m_publishedJobConfigId;
+}
+
+void TreeJobSets::SetPublishedJobConfigId(const int64_t& _publishedJobConfigId)
+{
+    m_publishedJobConfigId = _publishedJobConfigId;
+    m_publishedJobConfigIdHasBeenSet = true;
+}
+
+bool TreeJobSets::PublishedJobConfigIdHasBeenSet() const
+{
+    return m_publishedJobConfigIdHasBeenSet;
 }
 

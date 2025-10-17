@@ -473,6 +473,27 @@ namespace TencentCloud
                      */
                     bool SortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取有效次数
+                     * @return ConsumeCount 有效次数
+                     * 
+                     */
+                    std::string GetConsumeCount() const;
+
+                    /**
+                     * 设置有效次数
+                     * @param _consumeCount 有效次数
+                     * 
+                     */
+                    void SetConsumeCount(const std::string& _consumeCount);
+
+                    /**
+                     * 判断参数 ConsumeCount 是否已赋值
+                     * @return ConsumeCount 是否已赋值
+                     * 
+                     */
+                    bool ConsumeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,6 +617,12 @@ namespace TencentCloud
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
+
+                    /**
+                     * 有效次数
+                     */
+                    std::string m_consumeCount;
+                    bool m_consumeCountHasBeenSet;
 
                 };
             }

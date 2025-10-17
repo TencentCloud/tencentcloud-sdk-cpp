@@ -45,7 +45,9 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_tableNameHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_groupConfigHasBeenSet(false),
+    m_engineParamHasBeenSet(false)
 {
 }
 
@@ -317,6 +319,33 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupConfig") && !value["GroupConfig"].IsNull())
+    {
+        if (!value["GroupConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.GroupConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_groupConfig.Deserialize(value["GroupConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_groupConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineParam") && !value["EngineParam"].IsNull())
+    {
+        if (!value["EngineParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.EngineParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineParam = string(value["EngineParam"].GetString());
+        m_engineParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -534,6 +563,23 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_groupConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_engineParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -937,5 +983,37 @@ void RuleGroupExecStrategy::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool RuleGroupExecStrategy::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+RuleGroupConfig RuleGroupExecStrategy::GetGroupConfig() const
+{
+    return m_groupConfig;
+}
+
+void RuleGroupExecStrategy::SetGroupConfig(const RuleGroupConfig& _groupConfig)
+{
+    m_groupConfig = _groupConfig;
+    m_groupConfigHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::GroupConfigHasBeenSet() const
+{
+    return m_groupConfigHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetEngineParam() const
+{
+    return m_engineParam;
+}
+
+void RuleGroupExecStrategy::SetEngineParam(const string& _engineParam)
+{
+    m_engineParam = _engineParam;
+    m_engineParamHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::EngineParamHasBeenSet() const
+{
+    return m_engineParamHasBeenSet;
 }
 

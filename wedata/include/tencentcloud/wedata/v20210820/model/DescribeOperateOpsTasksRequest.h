@@ -631,6 +631,27 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取根据任务优先级筛选
+                     * @return RunPriorityList 根据任务优先级筛选
+                     * 
+                     */
+                    std::vector<int64_t> GetRunPriorityList() const;
+
+                    /**
+                     * 设置根据任务优先级筛选
+                     * @param _runPriorityList 根据任务优先级筛选
+                     * 
+                     */
+                    void SetRunPriorityList(const std::vector<int64_t>& _runPriorityList);
+
+                    /**
+                     * 判断参数 RunPriorityList 是否已赋值
+                     * @return RunPriorityList 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -800,6 +821,12 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 根据任务优先级筛选
+                     */
+                    std::vector<int64_t> m_runPriorityList;
+                    bool m_runPriorityListHasBeenSet;
 
                 };
             }

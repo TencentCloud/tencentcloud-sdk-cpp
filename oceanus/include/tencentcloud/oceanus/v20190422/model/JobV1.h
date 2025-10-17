@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取最新配置版本号
+                     * 获取最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestJobConfigVersion 最新配置版本号
+                     * @return LatestJobConfigVersion 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatestJobConfigVersion() const;
 
                     /**
-                     * 设置最新配置版本号
+                     * 设置最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestJobConfigVersion 最新配置版本号
+                     * @param _latestJobConfigVersion 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,6 +497,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LatestJobConfigVersionHasBeenSet() const;
+
+                    /**
+                     * 获取最新的版本号，不包括已经删除的版本号
+                     * @return LatestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 
+                     */
+                    int64_t GetLatestValidJobConfigVersion() const;
+
+                    /**
+                     * 设置最新的版本号，不包括已经删除的版本号
+                     * @param _latestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 
+                     */
+                    void SetLatestValidJobConfigVersion(const int64_t& _latestValidJobConfigVersion);
+
+                    /**
+                     * 判断参数 LatestValidJobConfigVersion 是否已赋值
+                     * @return LatestValidJobConfigVersion 是否已赋值
+                     * 
+                     */
+                    bool LatestValidJobConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取已发布的配置版本
@@ -1048,6 +1069,27 @@ namespace TencentCloud
                      */
                     bool ContinueAlarmHasBeenSet() const;
 
+                    /**
+                     * 获取作业重启次数
+                     * @return RestartCount 作业重启次数
+                     * 
+                     */
+                    int64_t GetRestartCount() const;
+
+                    /**
+                     * 设置作业重启次数
+                     * @param _restartCount 作业重启次数
+                     * 
+                     */
+                    void SetRestartCount(const int64_t& _restartCount);
+
+                    /**
+                     * 判断参数 RestartCount 是否已赋值
+                     * @return RestartCount 是否已赋值
+                     * 
+                     */
+                    bool RestartCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1170,11 +1212,17 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 最新配置版本号
+                     * 最新配置版本号，包括已经删除的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latestJobConfigVersion;
                     bool m_latestJobConfigVersionHasBeenSet;
+
+                    /**
+                     * 最新的版本号，不包括已经删除的版本号
+                     */
+                    int64_t m_latestValidJobConfigVersion;
+                    bool m_latestValidJobConfigVersionHasBeenSet;
 
                     /**
                      * 已发布的配置版本
@@ -1329,6 +1377,12 @@ namespace TencentCloud
                      */
                     int64_t m_continueAlarm;
                     bool m_continueAlarmHasBeenSet;
+
+                    /**
+                     * 作业重启次数
+                     */
+                    int64_t m_restartCount;
+                    bool m_restartCountHasBeenSet;
 
                 };
             }

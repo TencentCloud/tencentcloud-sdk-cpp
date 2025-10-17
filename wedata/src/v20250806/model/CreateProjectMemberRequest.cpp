@@ -24,7 +24,7 @@ using namespace std;
 
 CreateProjectMemberRequest::CreateProjectMemberRequest() :
     m_projectIdHasBeenSet(false),
-    m_useUinsHasBeenSet(false),
+    m_userUinsHasBeenSet(false),
     m_roleIdsHasBeenSet(false)
 {
 }
@@ -44,14 +44,14 @@ string CreateProjectMemberRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_useUinsHasBeenSet)
+    if (m_userUinsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UseUins";
+        string key = "UserUins";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_useUins.begin(); itr != m_useUins.end(); ++itr)
+        for (auto itr = m_userUins.begin(); itr != m_userUins.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,20 +94,20 @@ bool CreateProjectMemberRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
-vector<string> CreateProjectMemberRequest::GetUseUins() const
+vector<string> CreateProjectMemberRequest::GetUserUins() const
 {
-    return m_useUins;
+    return m_userUins;
 }
 
-void CreateProjectMemberRequest::SetUseUins(const vector<string>& _useUins)
+void CreateProjectMemberRequest::SetUserUins(const vector<string>& _userUins)
 {
-    m_useUins = _useUins;
-    m_useUinsHasBeenSet = true;
+    m_userUins = _userUins;
+    m_userUinsHasBeenSet = true;
 }
 
-bool CreateProjectMemberRequest::UseUinsHasBeenSet() const
+bool CreateProjectMemberRequest::UserUinsHasBeenSet() const
 {
-    return m_useUinsHasBeenSet;
+    return m_userUinsHasBeenSet;
 }
 
 vector<string> CreateProjectMemberRequest::GetRoleIds() const

@@ -33,7 +33,8 @@ SearchColumnDocVO::SearchColumnDocVO() :
     m_isPartitionHasBeenSet(false),
     m_columnKeyHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_specificationHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome SearchColumnDocVO::Deserialize(const rapidjson::Value &value
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Specification") && !value["Specification"].IsNull())
+    {
+        if (!value["Specification"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchColumnDocVO.Specification` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specification = string(value["Specification"].GetString());
+        m_specificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void SearchColumnDocVO::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Specification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specification.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void SearchColumnDocVO::SetModifiedTime(const string& _modifiedTime)
 bool SearchColumnDocVO::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+string SearchColumnDocVO::GetSpecification() const
+{
+    return m_specification;
+}
+
+void SearchColumnDocVO::SetSpecification(const string& _specification)
+{
+    m_specification = _specification;
+    m_specificationHasBeenSet = true;
+}
+
+bool SearchColumnDocVO::SpecificationHasBeenSet() const
+{
+    return m_specificationHasBeenSet;
 }
 

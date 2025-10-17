@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 迁移集群版校验结果
+                * 迁移云盘版校验结果
                 */
                 class CheckMigrateResult : public AbstractModel
                 {

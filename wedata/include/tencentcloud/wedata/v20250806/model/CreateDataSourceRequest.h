@@ -144,6 +144,7 @@ namespace TencentCloud
 - GDB
 - TDENGINE
 - TDSQLC
+- FileSystem
 
                      * @return Type 数据源类型:枚举值
 
@@ -203,6 +204,7 @@ namespace TencentCloud
 - GDB
 - TDENGINE
 - TDSQLC
+- FileSystem
 
                      * 
                      */
@@ -267,6 +269,7 @@ namespace TencentCloud
 - GDB
 - TDENGINE
 - TDSQLC
+- FileSystem
 
                      * @param _type 数据源类型:枚举值
 
@@ -326,6 +329,7 @@ namespace TencentCloud
 - GDB
 - TDENGINE
 - TDSQLC
+- FileSystem
 
                      * 
                      */
@@ -989,6 +993,7 @@ cos:
 - GDB
 - TDENGINE
 - TDSQLC
+- FileSystem
 
                      */
                     std::string m_type;

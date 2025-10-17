@@ -168,18 +168,38 @@ blacklist：黑名单
                     bool FilterRulesHasBeenSet() const;
 
                     /**
-                     * 获取IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * 获取IP 黑白名单验证失败时返回的状态码。
+注意：
+请求拒绝时，平台默认响应514状态。
+支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.
+非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。
+若您开启了自定义状态码，则默认您认同<a href="https://cloud.tencent.com/document/product/228/75563">HTTPS计费规则</a>。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReturnCode IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * @return ReturnCode IP 黑白名单验证失败时返回的状态码。
+注意：
+请求拒绝时，平台默认响应514状态。
+支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.
+非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。
+若您开启了自定义状态码，则默认您认同<a href="https://cloud.tencent.com/document/product/228/75563">HTTPS计费规则</a>。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
-                     * 设置IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * 设置IP 黑白名单验证失败时返回的状态码。
+注意：
+请求拒绝时，平台默认响应514状态。
+支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.
+非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。
+若您开启了自定义状态码，则默认您认同<a href="https://cloud.tencent.com/document/product/228/75563">HTTPS计费规则</a>。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _returnCode IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * @param _returnCode IP 黑白名单验证失败时返回的状态码。
+注意：
+请求拒绝时，平台默认响应514状态。
+支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.
+非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。
+若您开启了自定义状态码，则默认您认同<a href="https://cloud.tencent.com/document/product/228/75563">HTTPS计费规则</a>。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,7 +248,12 @@ blacklist：黑名单
                     bool m_filterRulesHasBeenSet;
 
                     /**
-                     * IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * IP 黑白名单验证失败时返回的状态码。
+注意：
+请求拒绝时，平台默认响应514状态。
+支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.
+非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。
+若您开启了自定义状态码，则默认您认同<a href="https://cloud.tencent.com/document/product/228/75563">HTTPS计费规则</a>。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_returnCode;

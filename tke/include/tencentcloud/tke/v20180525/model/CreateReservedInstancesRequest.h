@@ -149,6 +149,31 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * @return DryRun 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * 
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * @param _dryRun 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * 
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     * 
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +205,13 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

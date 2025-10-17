@@ -41,7 +41,8 @@ DescribeEventCasesRequest::DescribeEventCasesRequest() :
     m_dimensionHasBeenSet(false),
     m_timeToLiveHasBeenSet(false),
     m_sortItemHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_consumeCountHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string DescribeEventCasesRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consumeCount.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void DescribeEventCasesRequest::SetSortType(const string& _sortType)
 bool DescribeEventCasesRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+string DescribeEventCasesRequest::GetConsumeCount() const
+{
+    return m_consumeCount;
+}
+
+void DescribeEventCasesRequest::SetConsumeCount(const string& _consumeCount)
+{
+    m_consumeCount = _consumeCount;
+    m_consumeCountHasBeenSet = true;
+}
+
+bool DescribeEventCasesRequest::ConsumeCountHasBeenSet() const
+{
+    return m_consumeCountHasBeenSet;
 }
 
 

@@ -39,6 +39,7 @@ JobV1::JobV1() :
     m_lastOpResultHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_latestJobConfigVersionHasBeenSet(false),
+    m_latestValidJobConfigVersionHasBeenSet(false),
     m_publishedJobConfigVersionHasBeenSet(false),
     m_runningCuNumHasBeenSet(false),
     m_cuMemHasBeenSet(false),
@@ -60,7 +61,8 @@ JobV1::JobV1() :
     m_runningMemHasBeenSet(false),
     m_openJobDefaultAlarmHasBeenSet(false),
     m_progressDescHasBeenSet(false),
-    m_continueAlarmHasBeenSet(false)
+    m_continueAlarmHasBeenSet(false),
+    m_restartCountHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         }
         m_latestJobConfigVersion = value["LatestJobConfigVersion"].GetInt64();
         m_latestJobConfigVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestValidJobConfigVersion") && !value["LatestValidJobConfigVersion"].IsNull())
+    {
+        if (!value["LatestValidJobConfigVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.LatestValidJobConfigVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestValidJobConfigVersion = value["LatestValidJobConfigVersion"].GetInt64();
+        m_latestValidJobConfigVersionHasBeenSet = true;
     }
 
     if (value.HasMember("PublishedJobConfigVersion") && !value["PublishedJobConfigVersion"].IsNull())
@@ -486,6 +498,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_continueAlarmHasBeenSet = true;
     }
 
+    if (value.HasMember("RestartCount") && !value["RestartCount"].IsNull())
+    {
+        if (!value["RestartCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartCount = value["RestartCount"].GetInt64();
+        m_restartCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -635,6 +657,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "LatestJobConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latestJobConfigVersion, allocator);
+    }
+
+    if (m_latestValidJobConfigVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestValidJobConfigVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latestValidJobConfigVersion, allocator);
     }
 
     if (m_publishedJobConfigVersionHasBeenSet)
@@ -819,6 +849,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ContinueAlarm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_continueAlarm, allocator);
+    }
+
+    if (m_restartCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_restartCount, allocator);
     }
 
 }
@@ -1110,6 +1148,22 @@ void JobV1::SetLatestJobConfigVersion(const int64_t& _latestJobConfigVersion)
 bool JobV1::LatestJobConfigVersionHasBeenSet() const
 {
     return m_latestJobConfigVersionHasBeenSet;
+}
+
+int64_t JobV1::GetLatestValidJobConfigVersion() const
+{
+    return m_latestValidJobConfigVersion;
+}
+
+void JobV1::SetLatestValidJobConfigVersion(const int64_t& _latestValidJobConfigVersion)
+{
+    m_latestValidJobConfigVersion = _latestValidJobConfigVersion;
+    m_latestValidJobConfigVersionHasBeenSet = true;
+}
+
+bool JobV1::LatestValidJobConfigVersionHasBeenSet() const
+{
+    return m_latestValidJobConfigVersionHasBeenSet;
 }
 
 int64_t JobV1::GetPublishedJobConfigVersion() const
@@ -1462,5 +1516,21 @@ void JobV1::SetContinueAlarm(const int64_t& _continueAlarm)
 bool JobV1::ContinueAlarmHasBeenSet() const
 {
     return m_continueAlarmHasBeenSet;
+}
+
+int64_t JobV1::GetRestartCount() const
+{
+    return m_restartCount;
+}
+
+void JobV1::SetRestartCount(const int64_t& _restartCount)
+{
+    m_restartCount = _restartCount;
+    m_restartCountHasBeenSet = true;
+}
+
+bool JobV1::RestartCountHasBeenSet() const
+{
+    return m_restartCountHasBeenSet;
 }
 

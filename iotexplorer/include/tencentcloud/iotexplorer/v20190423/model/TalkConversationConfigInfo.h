@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TTS配置信息。
+                * 会话配置信息。
                 */
                 class TalkConversationConfigInfo : public AbstractModel
                 {
@@ -152,6 +152,48 @@ namespace TencentCloud
                      */
                     bool EmotionEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用语义vad
+                     * @return SemanticVADEnabled 是否启用语义vad
+                     * 
+                     */
+                    bool GetSemanticVADEnabled() const;
+
+                    /**
+                     * 设置是否启用语义vad
+                     * @param _semanticVADEnabled 是否启用语义vad
+                     * 
+                     */
+                    void SetSemanticVADEnabled(const bool& _semanticVADEnabled);
+
+                    /**
+                     * 判断参数 SemanticVADEnabled 是否已赋值
+                     * @return SemanticVADEnabled 是否已赋值
+                     * 
+                     */
+                    bool SemanticVADEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用噪声过滤
+                     * @return NoiseFilterEnabled 是否启用噪声过滤
+                     * 
+                     */
+                    bool GetNoiseFilterEnabled() const;
+
+                    /**
+                     * 设置是否启用噪声过滤
+                     * @param _noiseFilterEnabled 是否启用噪声过滤
+                     * 
+                     */
+                    void SetNoiseFilterEnabled(const bool& _noiseFilterEnabled);
+
+                    /**
+                     * 判断参数 NoiseFilterEnabled 是否已赋值
+                     * @return NoiseFilterEnabled 是否已赋值
+                     * 
+                     */
+                    bool NoiseFilterEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +225,18 @@ namespace TencentCloud
                      */
                     bool m_emotionEnabled;
                     bool m_emotionEnabledHasBeenSet;
+
+                    /**
+                     * 是否启用语义vad
+                     */
+                    bool m_semanticVADEnabled;
+                    bool m_semanticVADEnabledHasBeenSet;
+
+                    /**
+                     * 是否启用噪声过滤
+                     */
+                    bool m_noiseFilterEnabled;
+                    bool m_noiseFilterEnabledHasBeenSet;
 
                 };
             }

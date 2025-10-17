@@ -23,7 +23,7 @@ using namespace std;
 EngineTaskInfo::EngineTaskInfo() :
     m_engineSubmitTimeHasBeenSet(false),
     m_engineExeTimeHasBeenSet(false),
-    m_engineExeTimesHasBeenSet(false),
+    m_engineExeTimeCostHasBeenSet(false),
     m_cuConsumeHasBeenSet(false),
     m_resourceUsageHasBeenSet(false),
     m_engineNameHasBeenSet(false),
@@ -74,14 +74,14 @@ CoreInternalOutcome EngineTaskInfo::Deserialize(const rapidjson::Value &value)
         m_engineExeTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("EngineExeTimes") && !value["EngineExeTimes"].IsNull())
+    if (value.HasMember("EngineExeTimeCost") && !value["EngineExeTimeCost"].IsNull())
     {
-        if (!value["EngineExeTimes"].IsUint64())
+        if (!value["EngineExeTimeCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.EngineExeTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.EngineExeTimeCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_engineExeTimes = value["EngineExeTimes"].GetUint64();
-        m_engineExeTimesHasBeenSet = true;
+        m_engineExeTimeCost = value["EngineExeTimeCost"].GetDouble();
+        m_engineExeTimeCostHasBeenSet = true;
     }
 
     if (value.HasMember("CuConsume") && !value["CuConsume"].IsNull())
@@ -327,12 +327,12 @@ void EngineTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_engineExeTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_engineExeTimesHasBeenSet)
+    if (m_engineExeTimeCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EngineExeTimes";
+        string key = "EngineExeTimeCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_engineExeTimes, allocator);
+        value.AddMember(iKey, m_engineExeTimeCost, allocator);
     }
 
     if (m_cuConsumeHasBeenSet)
@@ -546,20 +546,20 @@ bool EngineTaskInfo::EngineExeTimeHasBeenSet() const
     return m_engineExeTimeHasBeenSet;
 }
 
-uint64_t EngineTaskInfo::GetEngineExeTimes() const
+double EngineTaskInfo::GetEngineExeTimeCost() const
 {
-    return m_engineExeTimes;
+    return m_engineExeTimeCost;
 }
 
-void EngineTaskInfo::SetEngineExeTimes(const uint64_t& _engineExeTimes)
+void EngineTaskInfo::SetEngineExeTimeCost(const double& _engineExeTimeCost)
 {
-    m_engineExeTimes = _engineExeTimes;
-    m_engineExeTimesHasBeenSet = true;
+    m_engineExeTimeCost = _engineExeTimeCost;
+    m_engineExeTimeCostHasBeenSet = true;
 }
 
-bool EngineTaskInfo::EngineExeTimesHasBeenSet() const
+bool EngineTaskInfo::EngineExeTimeCostHasBeenSet() const
 {
-    return m_engineExeTimesHasBeenSet;
+    return m_engineExeTimeCostHasBeenSet;
 }
 
 uint64_t EngineTaskInfo::GetCuConsume() const

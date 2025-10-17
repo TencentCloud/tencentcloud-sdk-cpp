@@ -65,24 +65,24 @@ namespace TencentCloud
 
                     /**
                      * 获取用户id
-                     * @return UseUins 用户id
+                     * @return UserUins 用户id
                      * 
                      */
-                    std::vector<std::string> GetUseUins() const;
+                    std::vector<std::string> GetUserUins() const;
 
                     /**
                      * 设置用户id
-                     * @param _useUins 用户id
+                     * @param _userUins 用户id
                      * 
                      */
-                    void SetUseUins(const std::vector<std::string>& _useUins);
+                    void SetUserUins(const std::vector<std::string>& _userUins);
 
                     /**
-                     * 判断参数 UseUins 是否已赋值
-                     * @return UseUins 是否已赋值
+                     * 判断参数 UserUins 是否已赋值
+                     * @return UserUins 是否已赋值
                      * 
                      */
-                    bool UseUinsHasBeenSet() const;
+                    bool UserUinsHasBeenSet() const;
 
                     /**
                      * 获取角色id
@@ -116,8 +116,8 @@ namespace TencentCloud
                     /**
                      * 用户id
                      */
-                    std::vector<std::string> m_useUins;
-                    bool m_useUinsHasBeenSet;
+                    std::vector<std::string> m_userUins;
+                    bool m_userUinsHasBeenSet;
 
                     /**
                      * 角色id

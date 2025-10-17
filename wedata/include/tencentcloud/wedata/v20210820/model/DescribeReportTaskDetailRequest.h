@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取租户id
-                     * @return TenantId 租户id
-                     * 
-                     */
-                    std::string GetTenantId() const;
-
-                    /**
-                     * 设置租户id
-                     * @param _tenantId 租户id
-                     * 
-                     */
-                    void SetTenantId(const std::string& _tenantId);
-
-                    /**
-                     * 判断参数 TenantId 是否已赋值
-                     * @return TenantId 是否已赋值
-                     * 
-                     */
-                    bool TenantIdHasBeenSet() const;
-
-                    /**
                      * 获取引擎任务id
                      * @return EngineTaskId 引擎任务id
                      * 
@@ -85,12 +64,6 @@ namespace TencentCloud
                     bool EngineTaskIdHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 租户id
-                     */
-                    std::string m_tenantId;
-                    bool m_tenantIdHasBeenSet;
 
                     /**
                      * 引擎任务id

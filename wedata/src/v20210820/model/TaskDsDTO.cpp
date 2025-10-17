@@ -123,7 +123,7 @@ TaskDsDTO::TaskDsDTO() :
     m_templateIdHasBeenSet(false),
     m_allowRedoTypeHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
-    m_bundleNameHasBeenSet(false)
+    m_bundleInfoHasBeenSet(false)
 {
 }
 
@@ -1256,14 +1256,14 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_bundleIdHasBeenSet = true;
     }
 
-    if (value.HasMember("BundleName") && !value["BundleName"].IsNull())
+    if (value.HasMember("BundleInfo") && !value["BundleInfo"].IsNull())
     {
-        if (!value["BundleName"].IsString())
+        if (!value["BundleInfo"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.BundleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.BundleInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_bundleName = string(value["BundleName"].GetString());
-        m_bundleNameHasBeenSet = true;
+        m_bundleInfo = string(value["BundleInfo"].GetString());
+        m_bundleInfoHasBeenSet = true;
     }
 
 
@@ -2154,12 +2154,12 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bundleNameHasBeenSet)
+    if (m_bundleInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BundleName";
+        string key = "BundleInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_bundleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3797,19 +3797,19 @@ bool TaskDsDTO::BundleIdHasBeenSet() const
     return m_bundleIdHasBeenSet;
 }
 
-string TaskDsDTO::GetBundleName() const
+string TaskDsDTO::GetBundleInfo() const
 {
-    return m_bundleName;
+    return m_bundleInfo;
 }
 
-void TaskDsDTO::SetBundleName(const string& _bundleName)
+void TaskDsDTO::SetBundleInfo(const string& _bundleInfo)
 {
-    m_bundleName = _bundleName;
-    m_bundleNameHasBeenSet = true;
+    m_bundleInfo = _bundleInfo;
+    m_bundleInfoHasBeenSet = true;
 }
 
-bool TaskDsDTO::BundleNameHasBeenSet() const
+bool TaskDsDTO::BundleInfoHasBeenSet() const
 {
-    return m_bundleNameHasBeenSet;
+    return m_bundleInfoHasBeenSet;
 }
 

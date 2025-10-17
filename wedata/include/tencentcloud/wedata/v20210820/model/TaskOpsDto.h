@@ -2332,6 +2332,31 @@ no：任务无需满足自依赖
                      */
                     bool AllowRedoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerId 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerId() const;
+
+                    /**
+                     * 设置负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerId 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerId(const std::string& _ownerId);
+
+                    /**
+                     * 判断参数 OwnerId 是否已赋值
+                     * @return OwnerId 是否已赋值
+                     * 
+                     */
+                    bool OwnerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2971,6 +2996,13 @@ no：任务无需满足自依赖
                      */
                     std::string m_allowRedoType;
                     bool m_allowRedoTypeHasBeenSet;
+
+                    /**
+                     * 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerId;
+                    bool m_ownerIdHasBeenSet;
 
                 };
             }

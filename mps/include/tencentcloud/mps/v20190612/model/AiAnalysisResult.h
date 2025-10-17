@@ -36,6 +36,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDubbingResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoComprehensionResult.h>
 
 
 namespace TencentCloud
@@ -69,6 +70,7 @@ namespace TencentCloud
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
+<li>VideoComprehension: 视频（音频）理解</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -79,6 +81,7 @@ namespace TencentCloud
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
+<li>VideoComprehension: 视频（音频）理解</li>
                      * 
                      */
                     std::string GetType() const;
@@ -94,6 +97,7 @@ namespace TencentCloud
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
+<li>VideoComprehension: 视频（音频）理解</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -104,6 +108,7 @@ namespace TencentCloud
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
+<li>VideoComprehension: 视频（音频）理解</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -415,6 +420,31 @@ namespace TencentCloud
                      */
                     bool VideoRemakeTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoComprehensionTask 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskVideoComprehensionResult GetVideoComprehensionTask() const;
+
+                    /**
+                     * 设置视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoComprehensionTask 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoComprehensionTask(const AiAnalysisTaskVideoComprehensionResult& _videoComprehensionTask);
+
+                    /**
+                     * 判断参数 VideoComprehensionTask 是否已赋值
+                     * @return VideoComprehensionTask 是否已赋值
+                     * 
+                     */
+                    bool VideoComprehensionTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -428,6 +458,7 @@ namespace TencentCloud
 <li>Description：大模型摘要</li>
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
+<li>VideoComprehension: 视频（音频）理解</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -515,6 +546,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskVideoRemakeResult m_videoRemakeTask;
                     bool m_videoRemakeTaskHasBeenSet;
+
+                    /**
+                     * 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskVideoComprehensionResult m_videoComprehensionTask;
+                    bool m_videoComprehensionTaskHasBeenSet;
 
                 };
             }

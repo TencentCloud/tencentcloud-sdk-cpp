@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TextTypeHasBeenSet() const;
 
                     /**
-                     * 获取说明：自定义任务指令词，当且仅当TextType=query时，生效
-                     * @return Instruction 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * 获取说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效
+                     * @return Instruction 说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效
                      * 
                      */
                     std::string GetInstruction() const;
 
                     /**
-                     * 设置说明：自定义任务指令词，当且仅当TextType=query时，生效
-                     * @param _instruction 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * 设置说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效
+                     * @param _instruction 说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效
                      * 
                      */
                     void SetInstruction(const std::string& _instruction);
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_textTypeHasBeenSet;
 
                     /**
-                     * 说明：自定义任务指令词，当且仅当TextType=query时，生效
+                     * 说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效
                      */
                     std::string m_instruction;
                     bool m_instructionHasBeenSet;

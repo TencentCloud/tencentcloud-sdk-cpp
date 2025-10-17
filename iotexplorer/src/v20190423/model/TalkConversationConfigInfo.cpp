@@ -25,7 +25,9 @@ TalkConversationConfigInfo::TalkConversationConfigInfo() :
     m_interruptionEnabledHasBeenSet(false),
     m_maxContextTokensHasBeenSet(false),
     m_idleDetectionHasBeenSet(false),
-    m_emotionEnabledHasBeenSet(false)
+    m_emotionEnabledHasBeenSet(false),
+    m_semanticVADEnabledHasBeenSet(false),
+    m_noiseFilterEnabledHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,26 @@ CoreInternalOutcome TalkConversationConfigInfo::Deserialize(const rapidjson::Val
         m_emotionEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("SemanticVADEnabled") && !value["SemanticVADEnabled"].IsNull())
+    {
+        if (!value["SemanticVADEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkConversationConfigInfo.SemanticVADEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_semanticVADEnabled = value["SemanticVADEnabled"].GetBool();
+        m_semanticVADEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoiseFilterEnabled") && !value["NoiseFilterEnabled"].IsNull())
+    {
+        if (!value["NoiseFilterEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkConversationConfigInfo.NoiseFilterEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_noiseFilterEnabled = value["NoiseFilterEnabled"].GetBool();
+        m_noiseFilterEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +159,22 @@ void TalkConversationConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "EmotionEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_emotionEnabled, allocator);
+    }
+
+    if (m_semanticVADEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemanticVADEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_semanticVADEnabled, allocator);
+    }
+
+    if (m_noiseFilterEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoiseFilterEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noiseFilterEnabled, allocator);
     }
 
 }
@@ -220,5 +258,37 @@ void TalkConversationConfigInfo::SetEmotionEnabled(const bool& _emotionEnabled)
 bool TalkConversationConfigInfo::EmotionEnabledHasBeenSet() const
 {
     return m_emotionEnabledHasBeenSet;
+}
+
+bool TalkConversationConfigInfo::GetSemanticVADEnabled() const
+{
+    return m_semanticVADEnabled;
+}
+
+void TalkConversationConfigInfo::SetSemanticVADEnabled(const bool& _semanticVADEnabled)
+{
+    m_semanticVADEnabled = _semanticVADEnabled;
+    m_semanticVADEnabledHasBeenSet = true;
+}
+
+bool TalkConversationConfigInfo::SemanticVADEnabledHasBeenSet() const
+{
+    return m_semanticVADEnabledHasBeenSet;
+}
+
+bool TalkConversationConfigInfo::GetNoiseFilterEnabled() const
+{
+    return m_noiseFilterEnabled;
+}
+
+void TalkConversationConfigInfo::SetNoiseFilterEnabled(const bool& _noiseFilterEnabled)
+{
+    m_noiseFilterEnabled = _noiseFilterEnabled;
+    m_noiseFilterEnabledHasBeenSet = true;
+}
+
+bool TalkConversationConfigInfo::NoiseFilterEnabledHasBeenSet() const
+{
+    return m_noiseFilterEnabledHasBeenSet;
 }
 

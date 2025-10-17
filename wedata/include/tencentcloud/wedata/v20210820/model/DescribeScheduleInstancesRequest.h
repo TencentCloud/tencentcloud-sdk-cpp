@@ -67,15 +67,19 @@ namespace TencentCloud
                     bool RequestFromSourceHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
-                     * @return Instances 实例列表
+                     * 获取【已废弃参数，新用户接入无需关注】
+实例列表过滤条件
+                     * @return Instances 【已废弃参数，新用户接入无需关注】
+实例列表过滤条件
                      * 
                      */
                     std::vector<InstanceOpsDto> GetInstances() const;
 
                     /**
-                     * 设置实例列表
-                     * @param _instances 实例列表
+                     * 设置【已废弃参数，新用户接入无需关注】
+实例列表过滤条件
+                     * @param _instances 【已废弃参数，新用户接入无需关注】
+实例列表过滤条件
                      * 
                      */
                     void SetInstances(const std::vector<InstanceOpsDto>& _instances);
@@ -88,15 +92,19 @@ namespace TencentCloud
                     bool InstancesHasBeenSet() const;
 
                     /**
-                     * 获取检查父任务类型, true: 检查父任务; false: 不检查父任务 
-                     * @return CheckFather 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 获取【已废弃参数，新用户接入无需关注】
+检查父任务类型,  true: 检查父任务类型;  false: 不检查父任务类型
+                     * @return CheckFather 【已废弃参数，新用户接入无需关注】
+检查父任务类型,  true: 检查父任务类型;  false: 不检查父任务类型
                      * 
                      */
                     bool GetCheckFather() const;
 
                     /**
-                     * 设置检查父任务类型, true: 检查父任务; false: 不检查父任务 
-                     * @param _checkFather 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 设置【已废弃参数，新用户接入无需关注】
+检查父任务类型,  true: 检查父任务类型;  false: 不检查父任务类型
+                     * @param _checkFather 【已废弃参数，新用户接入无需关注】
+检查父任务类型,  true: 检查父任务类型;  false: 不检查父任务类型
                      * 
                      */
                     void SetCheckFather(const bool& _checkFather);
@@ -109,15 +117,19 @@ namespace TencentCloud
                     bool CheckFatherHasBeenSet() const;
 
                     /**
-                     * 获取重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
-                     * @return RerunType 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 获取【已废弃参数，新用户接入无需关注】
+重跑类型, 1: 仅重跑当前实例; 2: 重跑当前实例及其子实例; 3: 仅重跑子实例
+                     * @return RerunType 【已废弃参数，新用户接入无需关注】
+重跑类型, 1: 仅重跑当前实例; 2: 重跑当前实例及其子实例; 3: 仅重跑子实例
                      * 
                      */
                     std::string GetRerunType() const;
 
                     /**
-                     * 设置重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
-                     * @param _rerunType 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 设置【已废弃参数，新用户接入无需关注】
+重跑类型, 1: 仅重跑当前实例; 2: 重跑当前实例及其子实例; 3: 仅重跑子实例
+                     * @param _rerunType 【已废弃参数，新用户接入无需关注】
+重跑类型, 1: 仅重跑当前实例; 2: 重跑当前实例及其子实例; 3: 仅重跑子实例
                      * 
                      */
                     void SetRerunType(const std::string& _rerunType);
@@ -130,15 +142,19 @@ namespace TencentCloud
                     bool RerunTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 
-                     * @return DependentWay 实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 
+                     * 获取【已废弃参数，新用户接入无需关注】
+实例依赖方式, 1: 任务自依赖; 2: 任务上游依赖; 3: 自依赖及其上游依赖 
+                     * @return DependentWay 【已废弃参数，新用户接入无需关注】
+实例依赖方式, 1: 任务自依赖; 2: 任务上游依赖; 3: 自依赖及其上游依赖 
                      * 
                      */
                     std::string GetDependentWay() const;
 
                     /**
-                     * 设置实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 
-                     * @param _dependentWay 实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 
+                     * 设置【已废弃参数，新用户接入无需关注】
+实例依赖方式, 1: 任务自依赖; 2: 任务上游依赖; 3: 自依赖及其上游依赖 
+                     * @param _dependentWay 【已废弃参数，新用户接入无需关注】
+实例依赖方式, 1: 任务自依赖; 2: 任务上游依赖; 3: 自依赖及其上游依赖 
                      * 
                      */
                     void SetDependentWay(const std::string& _dependentWay);
@@ -151,15 +167,19 @@ namespace TencentCloud
                     bool DependentWayHasBeenSet() const;
 
                     /**
-                     * 获取重跑忽略事件监听与否 
-                     * @return SkipEventListening 重跑忽略事件监听与否 
+                     * 获取【已废弃参数，新用户接入无需关注】
+重跑时是否忽略事件监听
+                     * @return SkipEventListening 【已废弃参数，新用户接入无需关注】
+重跑时是否忽略事件监听
                      * 
                      */
                     bool GetSkipEventListening() const;
 
                     /**
-                     * 设置重跑忽略事件监听与否 
-                     * @param _skipEventListening 重跑忽略事件监听与否 
+                     * 设置【已废弃参数，新用户接入无需关注】
+重跑时是否忽略事件监听
+                     * @param _skipEventListening 【已废弃参数，新用户接入无需关注】
+重跑时是否忽略事件监听
                      * 
                      */
                     void SetSkipEventListening(const bool& _skipEventListening);
@@ -172,15 +192,19 @@ namespace TencentCloud
                     bool SkipEventListeningHasBeenSet() const;
 
                     /**
-                     * 获取下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
-                     * @return SonInstanceType 下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
+                     * 获取【已废弃参数，新用户接入无需关注】
+下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
+                     * @return SonInstanceType 【已废弃参数，新用户接入无需关注】
+下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
                      * 
                      */
                     std::string GetSonInstanceType() const;
 
                     /**
-                     * 设置下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
-                     * @param _sonInstanceType 下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
+                     * 设置【已废弃参数，新用户接入无需关注】
+下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
+                     * @param _sonInstanceType 【已废弃参数，新用户接入无需关注】
+下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
                      * 
                      */
                     void SetSonInstanceType(const std::string& _sonInstanceType);
@@ -214,15 +238,19 @@ namespace TencentCloud
                     bool SearchConditionHasBeenSet() const;
 
                     /**
-                     * 获取访问类型
-                     * @return OptType 访问类型
+                     * 获取【已废弃参数，新用户接入无需关注】
+访问类型
+                     * @return OptType 【已废弃参数，新用户接入无需关注】
+访问类型
                      * 
                      */
                     std::string GetOptType() const;
 
                     /**
-                     * 设置访问类型
-                     * @param _optType 访问类型
+                     * 设置【已废弃参数，新用户接入无需关注】
+访问类型
+                     * @param _optType 【已废弃参数，新用户接入无需关注】
+访问类型
                      * 
                      */
                     void SetOptType(const std::string& _optType);
@@ -235,15 +263,19 @@ namespace TencentCloud
                     bool OptTypeHasBeenSet() const;
 
                     /**
-                     * 获取操作者名称
-                     * @return OperatorName 操作者名称
+                     * 获取【已废弃参数，新用户接入无需关注】
+操作者名称
+                     * @return OperatorName 【已废弃参数，新用户接入无需关注】
+操作者名称
                      * 
                      */
                     std::string GetOperatorName() const;
 
                     /**
-                     * 设置操作者名称
-                     * @param _operatorName 操作者名称
+                     * 设置【已废弃参数，新用户接入无需关注】
+操作者名称
+                     * @param _operatorName 【已废弃参数，新用户接入无需关注】
+操作者名称
                      * 
                      */
                     void SetOperatorName(const std::string& _operatorName);
@@ -256,15 +288,19 @@ namespace TencentCloud
                     bool OperatorNameHasBeenSet() const;
 
                     /**
-                     * 获取操作者id
-                     * @return OperatorId 操作者id
+                     * 获取【已废弃参数，新用户接入无需关注】
+操作者id
+                     * @return OperatorId 【已废弃参数，新用户接入无需关注】
+操作者id
                      * 
                      */
                     std::string GetOperatorId() const;
 
                     /**
-                     * 设置操作者id
-                     * @param _operatorId 操作者id
+                     * 设置【已废弃参数，新用户接入无需关注】
+操作者id
+                     * @param _operatorId 【已废弃参数，新用户接入无需关注】
+操作者id
                      * 
                      */
                     void SetOperatorId(const std::string& _operatorId);
@@ -277,15 +313,15 @@ namespace TencentCloud
                     bool OperatorIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置项目ID
+                     * @param _projectId 项目ID
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -298,15 +334,19 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目标志
-                     * @return ProjectIdent 项目标志
+                     * 获取【必要参数】
+项目ID
+                     * @return ProjectIdent 【必要参数】
+项目ID
                      * 
                      */
                     std::string GetProjectIdent() const;
 
                     /**
-                     * 设置项目标志
-                     * @param _projectIdent 项目标志
+                     * 设置【必要参数】
+项目ID
+                     * @param _projectIdent 【必要参数】
+项目ID
                      * 
                      */
                     void SetProjectIdent(const std::string& _projectIdent);
@@ -319,15 +359,19 @@ namespace TencentCloud
                     bool ProjectIdentHasBeenSet() const;
 
                     /**
-                     * 获取项目名称
-                     * @return ProjectName 项目名称
+                     * 获取【已废弃参数，新用户接入无需关注】
+项目名称
+                     * @return ProjectName 【已废弃参数，新用户接入无需关注】
+项目名称
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目名称
-                     * @param _projectName 项目名称
+                     * 设置【已废弃参数，新用户接入无需关注】
+项目名称
+                     * @param _projectName 【已废弃参数，新用户接入无需关注】
+项目名称
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -340,15 +384,19 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取索引页码
-                     * @return PageIndex 索引页码
+                     * 获取【必要参数】
+分页查询开始页页码，默认值为 1
+                     * @return PageIndex 【必要参数】
+分页查询开始页页码，默认值为 1
                      * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
-                     * 设置索引页码
-                     * @param _pageIndex 索引页码
+                     * 设置【必要参数】
+分页查询开始页页码，默认值为 1
+                     * @param _pageIndex 【必要参数】
+分页查询开始页页码，默认值为 1
                      * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
@@ -361,15 +409,19 @@ namespace TencentCloud
                     bool PageIndexHasBeenSet() const;
 
                     /**
-                     * 获取页面大小
-                     * @return PageSize 页面大小
+                     * 获取【必要参数】
+分页查询每页返回的结果行数，默认值为 10
+                     * @return PageSize 【必要参数】
+分页查询每页返回的结果行数，默认值为 10
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置页面大小
-                     * @param _pageSize 页面大小
+                     * 设置【必要参数】
+分页查询每页返回的结果行数，默认值为 10
+                     * @param _pageSize 【必要参数】
+分页查询每页返回的结果行数，默认值为 10
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -382,15 +434,19 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取数据总数
-                     * @return Count 数据总数
+                     * 获取【已废弃参数，新用户接入无需关注】
+数据总数
+                     * @return Count 【已废弃参数，新用户接入无需关注】
+数据总数
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置数据总数
-                     * @param _count 数据总数
+                     * 设置【已废弃参数，新用户接入无需关注】
+数据总数
+                     * @param _count 【已废弃参数，新用户接入无需关注】
+数据总数
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -403,15 +459,19 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取基础请求信息
-                     * @return RequestBaseInfo 基础请求信息
+                     * 获取【已废弃参数，新用户接入无需关注】
+基础请求信息
+                     * @return RequestBaseInfo 【已废弃参数，新用户接入无需关注】
+基础请求信息
                      * 
                      */
                     ProjectBaseInfoOpsRequest GetRequestBaseInfo() const;
 
                     /**
-                     * 设置基础请求信息
-                     * @param _requestBaseInfo 基础请求信息
+                     * 设置【已废弃参数，新用户接入无需关注】
+基础请求信息
+                     * @param _requestBaseInfo 【已废弃参数，新用户接入无需关注】
+基础请求信息
                      * 
                      */
                     void SetRequestBaseInfo(const ProjectBaseInfoOpsRequest& _requestBaseInfo);
@@ -424,15 +484,19 @@ namespace TencentCloud
                     bool RequestBaseInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否计算总数
-                     * @return IsCount 是否计算总数
+                     * 获取【已废弃参数，新用户接入无需关注】
+是否计算总数
+                     * @return IsCount 【已废弃参数，新用户接入无需关注】
+是否计算总数
                      * 
                      */
                     bool GetIsCount() const;
 
                     /**
-                     * 设置是否计算总数
-                     * @param _isCount 是否计算总数
+                     * 设置【已废弃参数，新用户接入无需关注】
+是否计算总数
+                     * @param _isCount 【已废弃参数，新用户接入无需关注】
+是否计算总数
                      * 
                      */
                     void SetIsCount(const bool& _isCount);
@@ -445,15 +509,19 @@ namespace TencentCloud
                     bool IsCountHasBeenSet() const;
 
                     /**
-                     * 获取项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
-                     * @return ProjectIds 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * 获取【已废弃参数，新用户接入无需关注】
+项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * @return ProjectIds 【已废弃参数，新用户接入无需关注】
+项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
                      * 
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
-                     * 设置项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
-                     * @param _projectIds 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * 设置【已废弃参数，新用户接入无需关注】
+项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * @param _projectIds 【已废弃参数，新用户接入无需关注】
+项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
                      * 
                      */
                     void SetProjectIds(const std::vector<std::string>& _projectIds);
@@ -474,37 +542,43 @@ namespace TencentCloud
                     bool m_requestFromSourceHasBeenSet;
 
                     /**
-                     * 实例列表
+                     * 【已废弃参数，新用户接入无需关注】
+实例列表过滤条件
                      */
                     std::vector<InstanceOpsDto> m_instances;
                     bool m_instancesHasBeenSet;
 
                     /**
-                     * 检查父任务类型, true: 检查父任务; false: 不检查父任务 
+                     * 【已废弃参数，新用户接入无需关注】
+检查父任务类型,  true: 检查父任务类型;  false: 不检查父任务类型
                      */
                     bool m_checkFather;
                     bool m_checkFatherHasBeenSet;
 
                     /**
-                     * 重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 
+                     * 【已废弃参数，新用户接入无需关注】
+重跑类型, 1: 仅重跑当前实例; 2: 重跑当前实例及其子实例; 3: 仅重跑子实例
                      */
                     std::string m_rerunType;
                     bool m_rerunTypeHasBeenSet;
 
                     /**
-                     * 实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 
+                     * 【已废弃参数，新用户接入无需关注】
+实例依赖方式, 1: 任务自依赖; 2: 任务上游依赖; 3: 自依赖及其上游依赖 
                      */
                     std::string m_dependentWay;
                     bool m_dependentWayHasBeenSet;
 
                     /**
-                     * 重跑忽略事件监听与否 
+                     * 【已废弃参数，新用户接入无需关注】
+重跑时是否忽略事件监听
                      */
                     bool m_skipEventListening;
                     bool m_skipEventListeningHasBeenSet;
 
                     /**
-                     * 下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
+                     * 【已废弃参数，新用户接入无需关注】
+下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目
                      */
                     std::string m_sonInstanceType;
                     bool m_sonInstanceTypeHasBeenSet;
@@ -516,73 +590,84 @@ namespace TencentCloud
                     bool m_searchConditionHasBeenSet;
 
                     /**
-                     * 访问类型
+                     * 【已废弃参数，新用户接入无需关注】
+访问类型
                      */
                     std::string m_optType;
                     bool m_optTypeHasBeenSet;
 
                     /**
-                     * 操作者名称
+                     * 【已废弃参数，新用户接入无需关注】
+操作者名称
                      */
                     std::string m_operatorName;
                     bool m_operatorNameHasBeenSet;
 
                     /**
-                     * 操作者id
+                     * 【已废弃参数，新用户接入无需关注】
+操作者id
                      */
                     std::string m_operatorId;
                     bool m_operatorIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * 项目ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目标志
+                     * 【必要参数】
+项目ID
                      */
                     std::string m_projectIdent;
                     bool m_projectIdentHasBeenSet;
 
                     /**
-                     * 项目名称
+                     * 【已废弃参数，新用户接入无需关注】
+项目名称
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 索引页码
+                     * 【必要参数】
+分页查询开始页页码，默认值为 1
                      */
                     int64_t m_pageIndex;
                     bool m_pageIndexHasBeenSet;
 
                     /**
-                     * 页面大小
+                     * 【必要参数】
+分页查询每页返回的结果行数，默认值为 10
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 数据总数
+                     * 【已废弃参数，新用户接入无需关注】
+数据总数
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 基础请求信息
+                     * 【已废弃参数，新用户接入无需关注】
+基础请求信息
                      */
                     ProjectBaseInfoOpsRequest m_requestBaseInfo;
                     bool m_requestBaseInfoHasBeenSet;
 
                     /**
-                     * 是否计算总数
+                     * 【已废弃参数，新用户接入无需关注】
+是否计算总数
                      */
                     bool m_isCount;
                     bool m_isCountHasBeenSet;
 
                     /**
-                     * 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * 【已废弃参数，新用户接入无需关注】
+项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;

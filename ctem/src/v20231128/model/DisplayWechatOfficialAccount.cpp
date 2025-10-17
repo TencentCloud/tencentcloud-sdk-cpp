@@ -27,7 +27,8 @@ DisplayWechatOfficialAccount::DisplayWechatOfficialAccount() :
     m_logoHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_qrCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_recordSubjectHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome DisplayWechatOfficialAccount::Deserialize(const rapidjson::V
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordSubject") && !value["RecordSubject"].IsNull())
+    {
+        if (!value["RecordSubject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWechatOfficialAccount.RecordSubject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordSubject = string(value["RecordSubject"].GetString());
+        m_recordSubjectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void DisplayWechatOfficialAccount::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordSubject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordSubject.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void DisplayWechatOfficialAccount::SetDescription(const string& _description)
 bool DisplayWechatOfficialAccount::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string DisplayWechatOfficialAccount::GetRecordSubject() const
+{
+    return m_recordSubject;
+}
+
+void DisplayWechatOfficialAccount::SetRecordSubject(const string& _recordSubject)
+{
+    m_recordSubject = _recordSubject;
+    m_recordSubjectHasBeenSet = true;
+}
+
+bool DisplayWechatOfficialAccount::RecordSubjectHasBeenSet() const
+{
+    return m_recordSubjectHasBeenSet;
 }
 

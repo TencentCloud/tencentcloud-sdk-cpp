@@ -24,7 +24,8 @@ ExtractionField::ExtractionField() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_choiceListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ CoreInternalOutcome ExtractionField::Deserialize(const rapidjson::Value &value)
         m_valuesHasBeenSet = true;
     }
 
+    if (value.HasMember("ChoiceList") && !value["ChoiceList"].IsNull())
+    {
+        if (!value["ChoiceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractionField.ChoiceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ChoiceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_choiceList.push_back((*itr).GetString());
+        }
+        m_choiceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +129,19 @@ void ExtractionField::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_choiceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChoiceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_choiceList.begin(); itr != m_choiceList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -185,5 +212,21 @@ void ExtractionField::SetValues(const vector<string>& _values)
 bool ExtractionField::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+vector<string> ExtractionField::GetChoiceList() const
+{
+    return m_choiceList;
+}
+
+void ExtractionField::SetChoiceList(const vector<string>& _choiceList)
+{
+    m_choiceList = _choiceList;
+    m_choiceListHasBeenSet = true;
+}
+
+bool ExtractionField::ChoiceListHasBeenSet() const
+{
+    return m_choiceListHasBeenSet;
 }
 

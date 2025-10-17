@@ -512,15 +512,15 @@ namespace TencentCloud
                     bool EngineTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
-                     * @return CloudNativeClusterStatus 集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * 获取云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @return CloudNativeClusterStatus 云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
                      * 
                      */
                     int64_t GetCloudNativeClusterStatus() const;
 
                     /**
-                     * 设置集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
-                     * @param _cloudNativeClusterStatus 集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * 设置云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @param _cloudNativeClusterStatus 云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
                      * 
                      */
                     void SetCloudNativeClusterStatus(const int64_t& _cloudNativeClusterStatus);
@@ -533,15 +533,15 @@ namespace TencentCloud
                     bool CloudNativeClusterStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群版或者单节点基础型支持的磁盘类型。
-                     * @return DiskTypeConf 集群版或者单节点基础型支持的磁盘类型。
+                     * 获取云盘版或者单节点基础型支持的磁盘类型。
+                     * @return DiskTypeConf 云盘版或者单节点基础型支持的磁盘类型。
                      * 
                      */
                     std::vector<DiskTypeConfigItem> GetDiskTypeConf() const;
 
                     /**
-                     * 设置集群版或者单节点基础型支持的磁盘类型。
-                     * @param _diskTypeConf 集群版或者单节点基础型支持的磁盘类型。
+                     * 设置云盘版或者单节点基础型支持的磁盘类型。
+                     * @param _diskTypeConf 云盘版或者单节点基础型支持的磁盘类型。
                      * 
                      */
                     void SetDiskTypeConf(const std::vector<DiskTypeConfigItem>& _diskTypeConf);
@@ -688,13 +688,13 @@ namespace TencentCloud
                     bool m_engineTypeHasBeenSet;
 
                     /**
-                     * 集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * 云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示
                      */
                     int64_t m_cloudNativeClusterStatus;
                     bool m_cloudNativeClusterStatusHasBeenSet;
 
                     /**
-                     * 集群版或者单节点基础型支持的磁盘类型。
+                     * 云盘版或者单节点基础型支持的磁盘类型。
                      */
                     std::vector<DiskTypeConfigItem> m_diskTypeConf;
                     bool m_diskTypeConfHasBeenSet;

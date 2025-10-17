@@ -30,7 +30,8 @@ CreateTaskVersionDsRequest::CreateTaskVersionDsRequest() :
     m_requestFromSourceHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
     m_alarmRecipientTypesHasBeenSet(false),
-    m_enableCheckTaskCycleLinkHasBeenSet(false)
+    m_enableCheckTaskCycleLinkHasBeenSet(false),
+    m_enableMakeUpHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateTaskVersionDsRequest::ToJsonString() const
         string key = "EnableCheckTaskCycleLink";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCheckTaskCycleLink, allocator);
+    }
+
+    if (m_enableMakeUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMakeUp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMakeUp, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void CreateTaskVersionDsRequest::SetEnableCheckTaskCycleLink(const bool& _enable
 bool CreateTaskVersionDsRequest::EnableCheckTaskCycleLinkHasBeenSet() const
 {
     return m_enableCheckTaskCycleLinkHasBeenSet;
+}
+
+bool CreateTaskVersionDsRequest::GetEnableMakeUp() const
+{
+    return m_enableMakeUp;
+}
+
+void CreateTaskVersionDsRequest::SetEnableMakeUp(const bool& _enableMakeUp)
+{
+    m_enableMakeUp = _enableMakeUp;
+    m_enableMakeUpHasBeenSet = true;
+}
+
+bool CreateTaskVersionDsRequest::EnableMakeUpHasBeenSet() const
+{
+    return m_enableMakeUpHasBeenSet;
 }
 
 

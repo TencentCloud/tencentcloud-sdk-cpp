@@ -422,6 +422,31 @@ namespace TencentCloud
                      */
                     bool BucketNameHasBeenSet() const;
 
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 设置错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errorMessage 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrorMessage(const std::string& _errorMessage);
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -528,6 +553,13 @@ namespace TencentCloud
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                 };
             }

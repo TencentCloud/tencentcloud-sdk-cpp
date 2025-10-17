@@ -23,7 +23,8 @@ using namespace std;
 FieldConfig::FieldConfig() :
     m_fieldKeyHasBeenSet(false),
     m_fieldValueHasBeenSet(false),
-    m_fieldDataTypeHasBeenSet(false)
+    m_fieldDataTypeHasBeenSet(false),
+    m_valueConfigHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,23 @@ CoreInternalOutcome FieldConfig::Deserialize(const rapidjson::Value &value)
         m_fieldDataTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueConfig") && !value["ValueConfig"].IsNull())
+    {
+        if (!value["ValueConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldConfig.ValueConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_valueConfig.Deserialize(value["ValueConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_valueConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +109,15 @@ void FieldConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FieldDataType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fieldDataType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_valueConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +169,21 @@ void FieldConfig::SetFieldDataType(const string& _fieldDataType)
 bool FieldConfig::FieldDataTypeHasBeenSet() const
 {
     return m_fieldDataTypeHasBeenSet;
+}
+
+ColumnValueConfig FieldConfig::GetValueConfig() const
+{
+    return m_valueConfig;
+}
+
+void FieldConfig::SetValueConfig(const ColumnValueConfig& _valueConfig)
+{
+    m_valueConfig = _valueConfig;
+    m_valueConfigHasBeenSet = true;
+}
+
+bool FieldConfig::ValueConfigHasBeenSet() const
+{
+    return m_valueConfigHasBeenSet;
 }
 

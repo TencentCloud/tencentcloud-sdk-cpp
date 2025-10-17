@@ -775,14 +775,18 @@ namespace TencentCloud
 
                     /**
                      * 获取监控创建人
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserName 监控创建人
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUserName() const;
 
                     /**
                      * 设置监控创建人
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUserName 监控创建人
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateUserName(const std::string& _createUserName);
@@ -1001,6 +1005,7 @@ namespace TencentCloud
 
                     /**
                      * 监控创建人
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUserName;
                     bool m_createUserNameHasBeenSet;

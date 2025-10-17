@@ -194,6 +194,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取认证主体
+                     * @return RecordSubject 认证主体
+                     * 
+                     */
+                    std::string GetRecordSubject() const;
+
+                    /**
+                     * 设置认证主体
+                     * @param _recordSubject 认证主体
+                     * 
+                     */
+                    void SetRecordSubject(const std::string& _recordSubject);
+
+                    /**
+                     * 判断参数 RecordSubject 是否已赋值
+                     * @return RecordSubject 是否已赋值
+                     * 
+                     */
+                    bool RecordSubjectHasBeenSet() const;
+
+                    /**
+                     * 获取账号Appid
+                     * @return AccountAppid 账号Appid
+                     * 
+                     */
+                    std::string GetAccountAppid() const;
+
+                    /**
+                     * 设置账号Appid
+                     * @param _accountAppid 账号Appid
+                     * 
+                     */
+                    void SetAccountAppid(const std::string& _accountAppid);
+
+                    /**
+                     * 判断参数 AccountAppid 是否已赋值
+                     * @return AccountAppid 是否已赋值
+                     * 
+                     */
+                    bool AccountAppidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +279,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 认证主体
+                     */
+                    std::string m_recordSubject;
+                    bool m_recordSubjectHasBeenSet;
+
+                    /**
+                     * 账号Appid
+                     */
+                    std::string m_accountAppid;
+                    bool m_accountAppidHasBeenSet;
 
                 };
             }

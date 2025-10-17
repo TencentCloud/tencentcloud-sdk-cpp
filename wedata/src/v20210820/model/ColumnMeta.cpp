@@ -33,7 +33,8 @@ ColumnMeta::ColumnMeta() :
     m_dictionaryNameHasBeenSet(false),
     m_levelNameHasBeenSet(false),
     m_levelRankHasBeenSet(false),
-    m_influxCategoryHasBeenSet(false)
+    m_influxCategoryHasBeenSet(false),
+    m_specificationHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome ColumnMeta::Deserialize(const rapidjson::Value &value)
         m_influxCategoryHasBeenSet = true;
     }
 
+    if (value.HasMember("Specification") && !value["Specification"].IsNull())
+    {
+        if (!value["Specification"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.Specification` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specification = string(value["Specification"].GetString());
+        m_specificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void ColumnMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InfluxCategory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_influxCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Specification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specification.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void ColumnMeta::SetInfluxCategory(const string& _influxCategory)
 bool ColumnMeta::InfluxCategoryHasBeenSet() const
 {
     return m_influxCategoryHasBeenSet;
+}
+
+string ColumnMeta::GetSpecification() const
+{
+    return m_specification;
+}
+
+void ColumnMeta::SetSpecification(const string& _specification)
+{
+    m_specification = _specification;
+    m_specificationHasBeenSet = true;
+}
+
+bool ColumnMeta::SpecificationHasBeenSet() const
+{
+    return m_specificationHasBeenSet;
 }
 

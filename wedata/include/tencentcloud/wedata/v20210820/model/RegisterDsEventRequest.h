@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool DimensionFormatHasBeenSet() const;
 
+                    /**
+                     * 获取事件消费有效次数
+                     * @return ValidConsumeCount 事件消费有效次数
+                     * 
+                     */
+                    int64_t GetValidConsumeCount() const;
+
+                    /**
+                     * 设置事件消费有效次数
+                     * @param _validConsumeCount 事件消费有效次数
+                     * 
+                     */
+                    void SetValidConsumeCount(const int64_t& _validConsumeCount);
+
+                    /**
+                     * 判断参数 ValidConsumeCount 是否已赋值
+                     * @return ValidConsumeCount 是否已赋值
+                     * 
+                     */
+                    bool ValidConsumeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_dimensionFormat;
                     bool m_dimensionFormatHasBeenSet;
+
+                    /**
+                     * 事件消费有效次数
+                     */
+                    int64_t m_validConsumeCount;
+                    bool m_validConsumeCountHasBeenSet;
 
                 };
             }

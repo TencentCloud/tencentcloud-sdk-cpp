@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取请求来源，WEB 前端；CLIENT 客户端
+                     * @return RequestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    std::string GetRequestFromSource() const;
+
+                    /**
+                     * 设置请求来源，WEB 前端；CLIENT 客户端
+                     * @param _requestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    void SetRequestFromSource(const std::string& _requestFromSource);
+
+                    /**
+                     * 判断参数 RequestFromSource 是否已赋值
+                     * @return RequestFromSource 是否已赋值
+                     * 
+                     */
+                    bool RequestFromSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 请求来源，WEB 前端；CLIENT 客户端
+                     */
+                    std::string m_requestFromSource;
+                    bool m_requestFromSourceHasBeenSet;
 
                 };
             }

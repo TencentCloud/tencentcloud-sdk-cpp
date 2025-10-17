@@ -40,6 +40,49 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::CreateDLPFileDetectTaskOutcome IoaClient::CreateDLPFileDetectTask(const CreateDLPFileDetectTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDLPFileDetectTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDLPFileDetectTaskResponse rsp = CreateDLPFileDetectTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDLPFileDetectTaskOutcome(rsp);
+        else
+            return CreateDLPFileDetectTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDLPFileDetectTaskOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateDLPFileDetectTaskAsync(const CreateDLPFileDetectTaskRequest& request, const CreateDLPFileDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDLPFileDetectTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::CreateDLPFileDetectTaskOutcomeCallable IoaClient::CreateDLPFileDetectTaskCallable(const CreateDLPFileDetectTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDLPFileDetectTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDLPFileDetectTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::CreateDLPFileDetectionTaskOutcome IoaClient::CreateDLPFileDetectionTask(const CreateDLPFileDetectionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDLPFileDetectionTask");
@@ -384,6 +427,92 @@ IoaClient::DescribeAggrSoftDeviceListOutcomeCallable IoaClient::DescribeAggrSoft
     return task->get_future();
 }
 
+IoaClient::DescribeDLPEdgeNodeGroupsOutcome IoaClient::DescribeDLPEdgeNodeGroups(const DescribeDLPEdgeNodeGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDLPEdgeNodeGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDLPEdgeNodeGroupsResponse rsp = DescribeDLPEdgeNodeGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDLPEdgeNodeGroupsOutcome(rsp);
+        else
+            return DescribeDLPEdgeNodeGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDLPEdgeNodeGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDLPEdgeNodeGroupsAsync(const DescribeDLPEdgeNodeGroupsRequest& request, const DescribeDLPEdgeNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDLPEdgeNodeGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDLPEdgeNodeGroupsOutcomeCallable IoaClient::DescribeDLPEdgeNodeGroupsCallable(const DescribeDLPEdgeNodeGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDLPEdgeNodeGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDLPEdgeNodeGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDLPEdgeNodesOutcome IoaClient::DescribeDLPEdgeNodes(const DescribeDLPEdgeNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDLPEdgeNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDLPEdgeNodesResponse rsp = DescribeDLPEdgeNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDLPEdgeNodesOutcome(rsp);
+        else
+            return DescribeDLPEdgeNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDLPEdgeNodesOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDLPEdgeNodesAsync(const DescribeDLPEdgeNodesRequest& request, const DescribeDLPEdgeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDLPEdgeNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDLPEdgeNodesOutcomeCallable IoaClient::DescribeDLPEdgeNodesCallable(const DescribeDLPEdgeNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDLPEdgeNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDLPEdgeNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectResult(const DescribeDLPFileDetectResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDLPFileDetectResult");
@@ -420,6 +549,49 @@ IoaClient::DescribeDLPFileDetectResultOutcomeCallable IoaClient::DescribeDLPFile
         [this, request]()
         {
             return this->DescribeDLPFileDetectResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeDLPFileDetectTaskResultOutcome IoaClient::DescribeDLPFileDetectTaskResult(const DescribeDLPFileDetectTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDLPFileDetectTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDLPFileDetectTaskResultResponse rsp = DescribeDLPFileDetectTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDLPFileDetectTaskResultOutcome(rsp);
+        else
+            return DescribeDLPFileDetectTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDLPFileDetectTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDLPFileDetectTaskResultAsync(const DescribeDLPFileDetectTaskResultRequest& request, const DescribeDLPFileDetectTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDLPFileDetectTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeDLPFileDetectTaskResultOutcomeCallable IoaClient::DescribeDLPFileDetectTaskResultCallable(const DescribeDLPFileDetectTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDLPFileDetectTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDLPFileDetectTaskResult(request);
         }
     );
 

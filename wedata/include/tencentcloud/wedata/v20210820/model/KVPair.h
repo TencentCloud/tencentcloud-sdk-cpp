@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool KHasBeenSet() const;
 
                     /**
-                     * 获取值
+                     * 获取值，请勿传SQL(请求会被视为攻击接口)，如果有需要，请将SQL进行Base64转码并解码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return V 值
+                     * @return V 值，请勿传SQL(请求会被视为攻击接口)，如果有需要，请将SQL进行Base64转码并解码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetV() const;
 
                     /**
-                     * 设置值
+                     * 设置值，请勿传SQL(请求会被视为攻击接口)，如果有需要，请将SQL进行Base64转码并解码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _v 值
+                     * @param _v 值，请勿传SQL(请求会被视为攻击接口)，如果有需要，请将SQL进行Base64转码并解码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_kHasBeenSet;
 
                     /**
-                     * 值
+                     * 值，请勿传SQL(请求会被视为攻击接口)，如果有需要，请将SQL进行Base64转码并解码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_v;

@@ -148,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取生产任务类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 生产任务类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置生产任务类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType 生产任务类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -166,6 +170,31 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTimeZone 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleTimeZone 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
 
                 private:
 
@@ -199,9 +228,17 @@ namespace TencentCloud
 
                     /**
                      * 生产任务类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

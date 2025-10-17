@@ -1670,6 +1670,48 @@ namespace TencentCloud
                      */
                     bool AllowRedoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例生命周期
+                     * @return InstanceCycleType 实例生命周期
+                     * 
+                     */
+                    std::string GetInstanceCycleType() const;
+
+                    /**
+                     * 设置实例生命周期
+                     * @param _instanceCycleType 实例生命周期
+                     * 
+                     */
+                    void SetInstanceCycleType(const std::string& _instanceCycleType);
+
+                    /**
+                     * 判断参数 InstanceCycleType 是否已赋值
+                     * @return InstanceCycleType 是否已赋值
+                     * 
+                     */
+                    bool InstanceCycleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例执行计划描述
+                     * @return InstanceSchedulerDesc 实例执行计划描述
+                     * 
+                     */
+                    std::string GetInstanceSchedulerDesc() const;
+
+                    /**
+                     * 设置实例执行计划描述
+                     * @param _instanceSchedulerDesc 实例执行计划描述
+                     * 
+                     */
+                    void SetInstanceSchedulerDesc(const std::string& _instanceSchedulerDesc);
+
+                    /**
+                     * 判断参数 InstanceSchedulerDesc 是否已赋值
+                     * @return InstanceSchedulerDesc 是否已赋值
+                     * 
+                     */
+                    bool InstanceSchedulerDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2125,6 +2167,18 @@ namespace TencentCloud
                      */
                     std::string m_allowRedoType;
                     bool m_allowRedoTypeHasBeenSet;
+
+                    /**
+                     * 实例生命周期
+                     */
+                    std::string m_instanceCycleType;
+                    bool m_instanceCycleTypeHasBeenSet;
+
+                    /**
+                     * 实例执行计划描述
+                     */
+                    std::string m_instanceSchedulerDesc;
+                    bool m_instanceSchedulerDescHasBeenSet;
 
                 };
             }

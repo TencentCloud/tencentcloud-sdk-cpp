@@ -111,7 +111,8 @@ TaskOpsDto::TaskOpsDto() :
     m_extResourceFlagHasBeenSet(false),
     m_newParentTaskInfosHasBeenSet(false),
     m_selfWorkFlowDependTypeHasBeenSet(false),
-    m_allowRedoTypeHasBeenSet(false)
+    m_allowRedoTypeHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
 }
 
@@ -1092,6 +1093,16 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_allowRedoTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerId") && !value["OwnerId"].IsNull())
+    {
+        if (!value["OwnerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.OwnerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerId = string(value["OwnerId"].GetString());
+        m_ownerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1845,6 +1856,14 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AllowRedoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_allowRedoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3304,5 +3323,21 @@ void TaskOpsDto::SetAllowRedoType(const string& _allowRedoType)
 bool TaskOpsDto::AllowRedoTypeHasBeenSet() const
 {
     return m_allowRedoTypeHasBeenSet;
+}
+
+string TaskOpsDto::GetOwnerId() const
+{
+    return m_ownerId;
+}
+
+void TaskOpsDto::SetOwnerId(const string& _ownerId)
+{
+    m_ownerId = _ownerId;
+    m_ownerIdHasBeenSet = true;
+}
+
+bool TaskOpsDto::OwnerIdHasBeenSet() const
+{
+    return m_ownerIdHasBeenSet;
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集群版实例节点信息
+                * 云盘版实例节点信息
                 */
                 class ClusterNodeInfo : public AbstractModel
                 {

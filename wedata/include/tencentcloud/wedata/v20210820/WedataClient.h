@@ -2822,7 +2822,7 @@ namespace TencentCloud
                 DescribeRelatedTasksByTaskIdOutcomeCallable DescribeRelatedTasksByTaskIdCallable(const Model::DescribeRelatedTasksByTaskIdRequest& request);
 
                 /**
-                 *查询上报任务详情
+                 *查询上报任务详情，注意：任务执行完后，任务详情上报存在10分钟的延迟，使用接口查询任务详情时需等待任务运行完10分钟后查询
                  * @param req DescribeReportTaskDetailRequest
                  * @return DescribeReportTaskDetailOutcome
                  */

@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool DlcGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineParam 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineParam() const;
+
+                    /**
+                     * 设置引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineParam 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineParam(const std::string& _engineParam);
+
+                    /**
+                     * 判断参数 EngineParam 是否已赋值
+                     * @return EngineParam 是否已赋值
+                     * 
+                     */
+                    bool EngineParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_dlcGroupName;
                     bool m_dlcGroupNameHasBeenSet;
+
+                    /**
+                     * 引擎参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineParam;
+                    bool m_engineParamHasBeenSet;
 
                 };
             }

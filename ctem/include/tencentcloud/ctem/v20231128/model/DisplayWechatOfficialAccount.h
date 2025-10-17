@@ -194,6 +194,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取认证主体
+                     * @return RecordSubject 认证主体
+                     * 
+                     */
+                    std::string GetRecordSubject() const;
+
+                    /**
+                     * 设置认证主体
+                     * @param _recordSubject 认证主体
+                     * 
+                     */
+                    void SetRecordSubject(const std::string& _recordSubject);
+
+                    /**
+                     * 判断参数 RecordSubject 是否已赋值
+                     * @return RecordSubject 是否已赋值
+                     * 
+                     */
+                    bool RecordSubjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 认证主体
+                     */
+                    std::string m_recordSubject;
+                    bool m_recordSubjectHasBeenSet;
 
                 };
             }

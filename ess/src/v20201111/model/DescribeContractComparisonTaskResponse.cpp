@@ -35,7 +35,8 @@ DescribeContractComparisonTaskResponse::DescribeContractComparisonTaskResponse()
     m_changeDiffCountHasBeenSet(false),
     m_deleteDiffCountHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_comparisonDetailHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,26 @@ CoreInternalOutcome DescribeContractComparisonTaskResponse::Deserialize(const st
         m_createTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ComparisonDetail") && !rsp["ComparisonDetail"].IsNull())
+    {
+        if (!rsp["ComparisonDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ComparisonDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ComparisonDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComparisonDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_comparisonDetail.push_back(item);
+        }
+        m_comparisonDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +318,21 @@ string DescribeContractComparisonTaskResponse::ToJsonString() const
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_comparisonDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComparisonDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_comparisonDetail.begin(); itr != m_comparisonDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +465,16 @@ int64_t DescribeContractComparisonTaskResponse::GetCreateTime() const
 bool DescribeContractComparisonTaskResponse::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<ComparisonDetail> DescribeContractComparisonTaskResponse::GetComparisonDetail() const
+{
+    return m_comparisonDetail;
+}
+
+bool DescribeContractComparisonTaskResponse::ComparisonDetailHasBeenSet() const
+{
+    return m_comparisonDetailHasBeenSet;
 }
 
 

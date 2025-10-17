@@ -25,7 +25,8 @@ ProdSchedulerTask::ProdSchedulerTask() :
     m_taskIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_cycleTypeHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ProdSchedulerTask::Deserialize(const rapidjson::Value &value
         m_taskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ProdSchedulerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ProdSchedulerTask::SetTaskType(const string& _taskType)
 bool ProdSchedulerTask::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+string ProdSchedulerTask::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void ProdSchedulerTask::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

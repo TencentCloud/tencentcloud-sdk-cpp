@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/ColumnValueConfig.h>
 
 
 namespace TencentCloud
@@ -121,6 +122,31 @@ namespace TencentCloud
                      */
                     bool FieldDataTypeHasBeenSet() const;
 
+                    /**
+                     * 获取字段值变量信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueConfig 字段值变量信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ColumnValueConfig GetValueConfig() const;
+
+                    /**
+                     * 设置字段值变量信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _valueConfig 字段值变量信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValueConfig(const ColumnValueConfig& _valueConfig);
+
+                    /**
+                     * 判断参数 ValueConfig 是否已赋值
+                     * @return ValueConfig 是否已赋值
+                     * 
+                     */
+                    bool ValueConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +169,13 @@ namespace TencentCloud
                      */
                     std::string m_fieldDataType;
                     bool m_fieldDataTypeHasBeenSet;
+
+                    /**
+                     * 字段值变量信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ColumnValueConfig m_valueConfig;
+                    bool m_valueConfigHasBeenSet;
 
                 };
             }

@@ -36,7 +36,9 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_paramsHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_updateUserHasBeenSet(false),
-    m_updateUserIdHasBeenSet(false)
+    m_updateUserIdHasBeenSet(false),
+    m_bundleIdHasBeenSet(false),
+    m_bundleInfoHasBeenSet(false)
 {
 }
 
@@ -235,6 +237,26 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_updateUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BundleId") && !value["BundleId"].IsNull())
+    {
+        if (!value["BundleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.BundleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleId = string(value["BundleId"].GetString());
+        m_bundleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleInfo") && !value["BundleInfo"].IsNull())
+    {
+        if (!value["BundleInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.BundleInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleInfo = string(value["BundleInfo"].GetString());
+        m_bundleInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -389,6 +411,22 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -648,5 +686,37 @@ void WorkflowDsDTO::SetUpdateUserId(const string& _updateUserId)
 bool WorkflowDsDTO::UpdateUserIdHasBeenSet() const
 {
     return m_updateUserIdHasBeenSet;
+}
+
+string WorkflowDsDTO::GetBundleId() const
+{
+    return m_bundleId;
+}
+
+void WorkflowDsDTO::SetBundleId(const string& _bundleId)
+{
+    m_bundleId = _bundleId;
+    m_bundleIdHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::BundleIdHasBeenSet() const
+{
+    return m_bundleIdHasBeenSet;
+}
+
+string WorkflowDsDTO::GetBundleInfo() const
+{
+    return m_bundleInfo;
+}
+
+void WorkflowDsDTO::SetBundleInfo(const string& _bundleInfo)
+{
+    m_bundleInfo = _bundleInfo;
+    m_bundleInfoHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::BundleInfoHasBeenSet() const
+{
+    return m_bundleInfoHasBeenSet;
 }
 

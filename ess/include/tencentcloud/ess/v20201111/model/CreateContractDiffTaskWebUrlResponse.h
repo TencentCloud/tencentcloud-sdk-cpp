@@ -75,6 +75,20 @@ namespace TencentCloud
                      */
                     bool WebUrlHasBeenSet() const;
 
+                    /**
+                     * 获取调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+                     * @return UserData 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +104,12 @@ namespace TencentCloud
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;
+
+                    /**
+                     * 调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

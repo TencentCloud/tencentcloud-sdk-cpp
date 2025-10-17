@@ -211,6 +211,27 @@ namespace TencentCloud
                      */
                     bool EnableCheckTaskCycleLinkHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要补录中间实例
+                     * @return EnableMakeUp 是否需要补录中间实例
+                     * 
+                     */
+                    bool GetEnableMakeUp() const;
+
+                    /**
+                     * 设置是否需要补录中间实例
+                     * @param _enableMakeUp 是否需要补录中间实例
+                     * 
+                     */
+                    void SetEnableMakeUp(const bool& _enableMakeUp);
+
+                    /**
+                     * 判断参数 EnableMakeUp 是否已赋值
+                     * @return EnableMakeUp 是否已赋值
+                     * 
+                     */
+                    bool EnableMakeUpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     bool m_enableCheckTaskCycleLink;
                     bool m_enableCheckTaskCycleLinkHasBeenSet;
+
+                    /**
+                     * 是否需要补录中间实例
+                     */
+                    bool m_enableMakeUp;
+                    bool m_enableMakeUpHasBeenSet;
 
                 };
             }
