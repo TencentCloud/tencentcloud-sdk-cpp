@@ -183,6 +183,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowGroupApprovers.h
   include/tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/Admin.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
@@ -204,6 +205,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFileCounterSignRequest.h
+  include/tencentcloud/ess/v20201111/model/WebUrlOption.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
@@ -305,6 +307,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowGroupUrlInfo.h
   include/tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupResponse.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
@@ -316,6 +319,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/SignComponentConfig.h
+  include/tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
@@ -381,6 +385,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowGroupApproverInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/ExportContractComparisonTaskRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlRequest.h
   include/tencentcloud/ess/v20201111/model/Permission.h
   include/tencentcloud/ess/v20201111/model/ReleasedApprover.h
   include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeRequest.h
@@ -555,6 +560,7 @@ set(ess_src
   src/v20201111/model/FlowGroupApprovers.cpp
   src/v20201111/model/DescribeContractComparisonTaskRequest.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
+  src/v20201111/model/CreateInformationExtractionWebUrlResponse.cpp
   src/v20201111/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20201111/model/Admin.cpp
   src/v20201111/model/OccupiedSeal.cpp
@@ -576,6 +582,7 @@ set(ess_src
   src/v20201111/model/CreateLegalSealQrCodeResponse.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsResponse.cpp
   src/v20201111/model/CreateFileCounterSignRequest.cpp
+  src/v20201111/model/WebUrlOption.cpp
   src/v20201111/model/DescribeOrganizationVerifyStatusResponse.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/AuthInfoDetail.cpp
@@ -677,6 +684,7 @@ set(ess_src
   src/v20201111/model/FlowGroupUrlInfo.cpp
   src/v20201111/model/UpdateIntegrationEmployeesResponse.cpp
   src/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.cpp
+  src/v20201111/model/DescribeInformationExtractionWebUrlResponse.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/CreatePrepareFlowGroupResponse.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
@@ -688,6 +696,7 @@ set(ess_src
   src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/DescribeContractReviewWebUrlResponse.cpp
   src/v20201111/model/SignComponentConfig.cpp
+  src/v20201111/model/DescribeInformationExtractionWebUrlRequest.cpp
   src/v20201111/model/DescribeFlowComponentsResponse.cpp
   src/v20201111/model/CancelFailureFlow.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
@@ -753,6 +762,7 @@ set(ess_src
   src/v20201111/model/FlowGroupApproverInfo.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationUrlsResponse.cpp
   src/v20201111/model/ExportContractComparisonTaskRequest.cpp
+  src/v20201111/model/CreateInformationExtractionWebUrlRequest.cpp
   src/v20201111/model/Permission.cpp
   src/v20201111/model/ReleasedApprover.cpp
   src/v20201111/model/DescribeUserFlowTypeRequest.cpp

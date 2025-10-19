@@ -23,6 +23,7 @@ using namespace std;
 SmartEraseTaskInput::SmartEraseTaskInput() :
     m_definitionHasBeenSet(false),
     m_rawParameterHasBeenSet(false),
+    m_overrideParameterHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false)
 {
@@ -58,6 +59,23 @@ CoreInternalOutcome SmartEraseTaskInput::Deserialize(const rapidjson::Value &val
         }
 
         m_rawParameterHasBeenSet = true;
+    }
+
+    if (value.HasMember("OverrideParameter") && !value["OverrideParameter"].IsNull())
+    {
+        if (!value["OverrideParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartEraseTaskInput.OverrideParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overrideParameter.Deserialize(value["OverrideParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overrideParameterHasBeenSet = true;
     }
 
     if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
@@ -111,6 +129,15 @@ void SmartEraseTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_overrideParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverrideParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overrideParameter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_outputStorageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -161,6 +188,22 @@ void SmartEraseTaskInput::SetRawParameter(const RawSmartEraseParameter& _rawPara
 bool SmartEraseTaskInput::RawParameterHasBeenSet() const
 {
     return m_rawParameterHasBeenSet;
+}
+
+OverrideEraseParameter SmartEraseTaskInput::GetOverrideParameter() const
+{
+    return m_overrideParameter;
+}
+
+void SmartEraseTaskInput::SetOverrideParameter(const OverrideEraseParameter& _overrideParameter)
+{
+    m_overrideParameter = _overrideParameter;
+    m_overrideParameterHasBeenSet = true;
+}
+
+bool SmartEraseTaskInput::OverrideParameterHasBeenSet() const
+{
+    return m_overrideParameterHasBeenSet;
 }
 
 TaskOutputStorage SmartEraseTaskInput::GetOutputStorage() const

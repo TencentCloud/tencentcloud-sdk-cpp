@@ -26,7 +26,10 @@ ModifyFunctionRuleRequest::ModifyFunctionRuleRequest() :
     m_zoneIdHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_functionRuleConditionsHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
     m_functionIdHasBeenSet(false),
+    m_regionMappingSelectionsHasBeenSet(false),
+    m_weightedSelectionsHasBeenSet(false),
     m_remarkHasBeenSet(false)
 {
 }
@@ -69,12 +72,50 @@ string ModifyFunctionRuleRequest::ToJsonString() const
         }
     }
 
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_functionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FunctionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_functionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionMappingSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionMappingSelections";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionMappingSelections.begin(); itr != m_regionMappingSelections.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightedSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeightedSelections";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_weightedSelections.begin(); itr != m_weightedSelections.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_remarkHasBeenSet)
@@ -141,6 +182,22 @@ bool ModifyFunctionRuleRequest::FunctionRuleConditionsHasBeenSet() const
     return m_functionRuleConditionsHasBeenSet;
 }
 
+string ModifyFunctionRuleRequest::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void ModifyFunctionRuleRequest::SetTriggerType(const string& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool ModifyFunctionRuleRequest::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
+}
+
 string ModifyFunctionRuleRequest::GetFunctionId() const
 {
     return m_functionId;
@@ -155,6 +212,38 @@ void ModifyFunctionRuleRequest::SetFunctionId(const string& _functionId)
 bool ModifyFunctionRuleRequest::FunctionIdHasBeenSet() const
 {
     return m_functionIdHasBeenSet;
+}
+
+vector<FunctionRegionSelection> ModifyFunctionRuleRequest::GetRegionMappingSelections() const
+{
+    return m_regionMappingSelections;
+}
+
+void ModifyFunctionRuleRequest::SetRegionMappingSelections(const vector<FunctionRegionSelection>& _regionMappingSelections)
+{
+    m_regionMappingSelections = _regionMappingSelections;
+    m_regionMappingSelectionsHasBeenSet = true;
+}
+
+bool ModifyFunctionRuleRequest::RegionMappingSelectionsHasBeenSet() const
+{
+    return m_regionMappingSelectionsHasBeenSet;
+}
+
+vector<FunctionWeightedSelection> ModifyFunctionRuleRequest::GetWeightedSelections() const
+{
+    return m_weightedSelections;
+}
+
+void ModifyFunctionRuleRequest::SetWeightedSelections(const vector<FunctionWeightedSelection>& _weightedSelections)
+{
+    m_weightedSelections = _weightedSelections;
+    m_weightedSelectionsHasBeenSet = true;
+}
+
+bool ModifyFunctionRuleRequest::WeightedSelectionsHasBeenSet() const
+{
+    return m_weightedSelectionsHasBeenSet;
 }
 
 string ModifyFunctionRuleRequest::GetRemark() const

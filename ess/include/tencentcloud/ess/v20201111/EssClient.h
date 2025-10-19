@@ -95,6 +95,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
@@ -207,6 +209,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
@@ -395,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowSignUrlResponse> CreateFlowSignUrlOutcome;
                 typedef std::future<CreateFlowSignUrlOutcome> CreateFlowSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignUrlRequest&, CreateFlowSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInformationExtractionWebUrlResponse> CreateInformationExtractionWebUrlOutcome;
+                typedef std::future<CreateInformationExtractionWebUrlOutcome> CreateInformationExtractionWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateInformationExtractionWebUrlRequest&, CreateInformationExtractionWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInformationExtractionWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationDepartmentResponse> CreateIntegrationDepartmentOutcome;
                 typedef std::future<CreateIntegrationDepartmentOutcome> CreateIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationDepartmentRequest&, CreateIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationDepartmentAsyncHandler;
@@ -563,6 +570,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInformationExtractionTaskResponse> DescribeInformationExtractionTaskOutcome;
                 typedef std::future<DescribeInformationExtractionTaskOutcome> DescribeInformationExtractionTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeInformationExtractionTaskRequest&, DescribeInformationExtractionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInformationExtractionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInformationExtractionWebUrlResponse> DescribeInformationExtractionWebUrlOutcome;
+                typedef std::future<DescribeInformationExtractionWebUrlOutcome> DescribeInformationExtractionWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeInformationExtractionWebUrlRequest&, DescribeInformationExtractionWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInformationExtractionWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationDepartmentsResponse> DescribeIntegrationDepartmentsOutcome;
                 typedef std::future<DescribeIntegrationDepartmentsOutcome> DescribeIntegrationDepartmentsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationDepartmentsRequest&, DescribeIntegrationDepartmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationDepartmentsAsyncHandler;
@@ -1458,6 +1468,19 @@ namespace TencentCloud
                 CreateFlowSignUrlOutcomeCallable CreateFlowSignUrlCallable(const Model::CreateFlowSignUrlRequest& request);
 
                 /**
+                 *此接口（CreateInformationExtractionWebUrl）用来创建合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+
+注: 
+1. pdf、word格式限制大小为10M以下
+2. pdg、jpeg、jpg格式限制大小为5M以下
+                 * @param req CreateInformationExtractionWebUrlRequest
+                 * @return CreateInformationExtractionWebUrlOutcome
+                 */
+                CreateInformationExtractionWebUrlOutcome CreateInformationExtractionWebUrl(const Model::CreateInformationExtractionWebUrlRequest &request);
+                void CreateInformationExtractionWebUrlAsync(const Model::CreateInformationExtractionWebUrlRequest& request, const CreateInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInformationExtractionWebUrlOutcomeCallable CreateInformationExtractionWebUrlCallable(const Model::CreateInformationExtractionWebUrlRequest& request);
+
+                /**
                  *此接口（CreateIntegrationDepartment）用于创建企业的部门信息，支持绑定客户系统部门ID。
                  * @param req CreateIntegrationDepartmentRequest
                  * @return CreateIntegrationDepartmentOutcome
@@ -2342,6 +2365,15 @@ namespace TencentCloud
                 DescribeInformationExtractionTaskOutcome DescribeInformationExtractionTask(const Model::DescribeInformationExtractionTaskRequest &request);
                 void DescribeInformationExtractionTaskAsync(const Model::DescribeInformationExtractionTaskRequest& request, const DescribeInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInformationExtractionTaskOutcomeCallable DescribeInformationExtractionTaskCallable(const Model::DescribeInformationExtractionTaskRequest& request);
+
+                /**
+                 *此接口（DescribeInformationExtractionWebUrl）用来获取合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+                 * @param req DescribeInformationExtractionWebUrlRequest
+                 * @return DescribeInformationExtractionWebUrlOutcome
+                 */
+                DescribeInformationExtractionWebUrlOutcome DescribeInformationExtractionWebUrl(const Model::DescribeInformationExtractionWebUrlRequest &request);
+                void DescribeInformationExtractionWebUrlAsync(const Model::DescribeInformationExtractionWebUrlRequest& request, const DescribeInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInformationExtractionWebUrlOutcomeCallable DescribeInformationExtractionWebUrlCallable(const Model::DescribeInformationExtractionWebUrlRequest& request);
 
                 /**
                  *此接口（DescribeIntegrationDepartments）用于查询企业的部门信息列表，支持查询单个部门节点或单个部门节点及一级子节点部门列表。

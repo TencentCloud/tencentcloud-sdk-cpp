@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/FunctionRuleCondition.h>
+#include <tencentcloud/teo/v20220901/model/FunctionRegionSelection.h>
+#include <tencentcloud/teo/v20220901/model/FunctionWeightedSelection.h>
 
 
 namespace TencentCloud
@@ -90,15 +92,52 @@ namespace TencentCloud
                     bool FunctionRuleConditionsHasBeenSet() const;
 
                     /**
-                     * 获取函数 ID，命中触发规则条件后执行的函数。
-                     * @return FunctionId 函数 ID，命中触发规则条件后执行的函数。
+                     * 获取函数选择配置类型：
+<li> direct：直接指定执行函数；</li>
+<li> weight：基于权重比选择函数；</li>
+<li> region：基于客户端 IP 的国家/地区选择函数。</li>
+
+                     * @return TriggerType 函数选择配置类型：
+<li> direct：直接指定执行函数；</li>
+<li> weight：基于权重比选择函数；</li>
+<li> region：基于客户端 IP 的国家/地区选择函数。</li>
+
+                     * 
+                     */
+                    std::string GetTriggerType() const;
+
+                    /**
+                     * 设置函数选择配置类型：
+<li> direct：直接指定执行函数；</li>
+<li> weight：基于权重比选择函数；</li>
+<li> region：基于客户端 IP 的国家/地区选择函数。</li>
+
+                     * @param _triggerType 函数选择配置类型：
+<li> direct：直接指定执行函数；</li>
+<li> weight：基于权重比选择函数；</li>
+<li> region：基于客户端 IP 的国家/地区选择函数。</li>
+
+                     * 
+                     */
+                    void SetTriggerType(const std::string& _triggerType);
+
+                    /**
+                     * 判断参数 TriggerType 是否已赋值
+                     * @return TriggerType 是否已赋值
+                     * 
+                     */
+                    bool TriggerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指定执行的函数 ID。当 TriggerType 为 direct 时有效。
+                     * @return FunctionId 指定执行的函数 ID。当 TriggerType 为 direct 时有效。
                      * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
-                     * 设置函数 ID，命中触发规则条件后执行的函数。
-                     * @param _functionId 函数 ID，命中触发规则条件后执行的函数。
+                     * 设置指定执行的函数 ID。当 TriggerType 为 direct 时有效。
+                     * @param _functionId 指定执行的函数 ID。当 TriggerType 为 direct 时有效。
                      * 
                      */
                     void SetFunctionId(const std::string& _functionId);
@@ -111,36 +150,15 @@ namespace TencentCloud
                     bool FunctionIdHasBeenSet() const;
 
                     /**
-                     * 获取规则描述。
-                     * @return Remark 规则描述。
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置规则描述。
-                     * @param _remark 规则描述。
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
-                    /**
-                     * 获取函数名称。
-                     * @return FunctionName 函数名称。
+                     * 获取指定执行的函数名称。
+                     * @return FunctionName 指定执行的函数名称。
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置函数名称。
-                     * @param _functionName 函数名称。
+                     * 设置指定执行的函数名称。
+                     * @param _functionName 指定执行的函数名称。
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -151,6 +169,48 @@ namespace TencentCloud
                      * 
                      */
                     bool FunctionNameHasBeenSet() const;
+
+                    /**
+                     * 获取基于客户端 IP 国家/地区的函数选择配置。
+                     * @return RegionMappingSelections 基于客户端 IP 国家/地区的函数选择配置。
+                     * 
+                     */
+                    std::vector<FunctionRegionSelection> GetRegionMappingSelections() const;
+
+                    /**
+                     * 设置基于客户端 IP 国家/地区的函数选择配置。
+                     * @param _regionMappingSelections 基于客户端 IP 国家/地区的函数选择配置。
+                     * 
+                     */
+                    void SetRegionMappingSelections(const std::vector<FunctionRegionSelection>& _regionMappingSelections);
+
+                    /**
+                     * 判断参数 RegionMappingSelections 是否已赋值
+                     * @return RegionMappingSelections 是否已赋值
+                     * 
+                     */
+                    bool RegionMappingSelectionsHasBeenSet() const;
+
+                    /**
+                     * 获取基于权重的函数选择配置。
+                     * @return WeightedSelections 基于权重的函数选择配置。
+                     * 
+                     */
+                    std::vector<FunctionWeightedSelection> GetWeightedSelections() const;
+
+                    /**
+                     * 设置基于权重的函数选择配置。
+                     * @param _weightedSelections 基于权重的函数选择配置。
+                     * 
+                     */
+                    void SetWeightedSelections(const std::vector<FunctionWeightedSelection>& _weightedSelections);
+
+                    /**
+                     * 判断参数 WeightedSelections 是否已赋值
+                     * @return WeightedSelections 是否已赋值
+                     * 
+                     */
+                    bool WeightedSelectionsHasBeenSet() const;
 
                     /**
                      * 获取函数触发规则优先级，数值越大，优先级越高。
@@ -172,6 +232,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PriorityHasBeenSet() const;
+
+                    /**
+                     * 获取规则描述。
+                     * @return Remark 规则描述。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置规则描述。
+                     * @param _remark 规则描述。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
@@ -230,28 +311,50 @@ namespace TencentCloud
                     bool m_functionRuleConditionsHasBeenSet;
 
                     /**
-                     * 函数 ID，命中触发规则条件后执行的函数。
+                     * 函数选择配置类型：
+<li> direct：直接指定执行函数；</li>
+<li> weight：基于权重比选择函数；</li>
+<li> region：基于客户端 IP 的国家/地区选择函数。</li>
+
+                     */
+                    std::string m_triggerType;
+                    bool m_triggerTypeHasBeenSet;
+
+                    /**
+                     * 指定执行的函数 ID。当 TriggerType 为 direct 时有效。
                      */
                     std::string m_functionId;
                     bool m_functionIdHasBeenSet;
 
                     /**
-                     * 规则描述。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
-                     * 函数名称。
+                     * 指定执行的函数名称。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
+
+                    /**
+                     * 基于客户端 IP 国家/地区的函数选择配置。
+                     */
+                    std::vector<FunctionRegionSelection> m_regionMappingSelections;
+                    bool m_regionMappingSelectionsHasBeenSet;
+
+                    /**
+                     * 基于权重的函数选择配置。
+                     */
+                    std::vector<FunctionWeightedSelection> m_weightedSelections;
+                    bool m_weightedSelectionsHasBeenSet;
 
                     /**
                      * 函数触发规则优先级，数值越大，优先级越高。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * 规则描述。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                     /**
                      * 创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。

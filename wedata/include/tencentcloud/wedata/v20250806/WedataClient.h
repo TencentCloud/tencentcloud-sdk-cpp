@@ -1104,7 +1104,7 @@ namespace TencentCloud
                 GetTableColumnsOutcomeCallable GetTableColumnsCallable(const Model::GetTableColumnsRequest& request);
 
                 /**
-                 *创建任务接口
+                 *获取任务详情接口
                  * @param req GetTaskRequest
                  * @return GetTaskOutcome
                  */
@@ -1680,7 +1680,7 @@ namespace TencentCloud
                 UpdateSQLScriptOutcomeCallable UpdateSQLScriptCallable(const Model::UpdateSQLScriptRequest& request);
 
                 /**
-                 *创建任务接口
+                 *更新任务接口
                  * @param req UpdateTaskRequest
                  * @return UpdateTaskOutcome
                  */
@@ -1698,7 +1698,7 @@ namespace TencentCloud
                 UpdateWorkflowOutcomeCallable UpdateWorkflowCallable(const Model::UpdateWorkflowRequest& request);
 
                 /**
-                 *创建文件夹
+                 *更新工作流文件夹
                  * @param req UpdateWorkflowFolderRequest
                  * @return UpdateWorkflowFolderOutcome
                  */

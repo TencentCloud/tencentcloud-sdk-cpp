@@ -1588,6 +1588,49 @@ EssClient::CreateFlowSignUrlOutcomeCallable EssClient::CreateFlowSignUrlCallable
     return task->get_future();
 }
 
+EssClient::CreateInformationExtractionWebUrlOutcome EssClient::CreateInformationExtractionWebUrl(const CreateInformationExtractionWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInformationExtractionWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInformationExtractionWebUrlResponse rsp = CreateInformationExtractionWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInformationExtractionWebUrlOutcome(rsp);
+        else
+            return CreateInformationExtractionWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInformationExtractionWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateInformationExtractionWebUrlAsync(const CreateInformationExtractionWebUrlRequest& request, const CreateInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInformationExtractionWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateInformationExtractionWebUrlOutcomeCallable EssClient::CreateInformationExtractionWebUrlCallable(const CreateInformationExtractionWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInformationExtractionWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInformationExtractionWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateIntegrationDepartmentOutcome EssClient::CreateIntegrationDepartment(const CreateIntegrationDepartmentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationDepartment");
@@ -3989,6 +4032,49 @@ EssClient::DescribeInformationExtractionTaskOutcomeCallable EssClient::DescribeI
         [this, request]()
         {
             return this->DescribeInformationExtractionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeInformationExtractionWebUrlOutcome EssClient::DescribeInformationExtractionWebUrl(const DescribeInformationExtractionWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInformationExtractionWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInformationExtractionWebUrlResponse rsp = DescribeInformationExtractionWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInformationExtractionWebUrlOutcome(rsp);
+        else
+            return DescribeInformationExtractionWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInformationExtractionWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeInformationExtractionWebUrlAsync(const DescribeInformationExtractionWebUrlRequest& request, const DescribeInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInformationExtractionWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeInformationExtractionWebUrlOutcomeCallable EssClient::DescribeInformationExtractionWebUrlCallable(const DescribeInformationExtractionWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInformationExtractionWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInformationExtractionWebUrl(request);
         }
     );
 

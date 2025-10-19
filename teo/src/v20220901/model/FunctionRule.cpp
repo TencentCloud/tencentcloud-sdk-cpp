@@ -23,10 +23,13 @@ using namespace std;
 FunctionRule::FunctionRule() :
     m_ruleIdHasBeenSet(false),
     m_functionRuleConditionsHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
     m_functionIdHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_functionNameHasBeenSet(false),
+    m_regionMappingSelectionsHasBeenSet(false),
+    m_weightedSelectionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
+    m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -67,6 +70,16 @@ CoreInternalOutcome FunctionRule::Deserialize(const rapidjson::Value &value)
         m_functionRuleConditionsHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerType") && !value["TriggerType"].IsNull())
+    {
+        if (!value["TriggerType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FunctionRule.TriggerType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerType = string(value["TriggerType"].GetString());
+        m_triggerTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("FunctionId") && !value["FunctionId"].IsNull())
     {
         if (!value["FunctionId"].IsString())
@@ -75,16 +88,6 @@ CoreInternalOutcome FunctionRule::Deserialize(const rapidjson::Value &value)
         }
         m_functionId = string(value["FunctionId"].GetString());
         m_functionIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Remark") && !value["Remark"].IsNull())
-    {
-        if (!value["Remark"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FunctionRule.Remark` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_remark = string(value["Remark"].GetString());
-        m_remarkHasBeenSet = true;
     }
 
     if (value.HasMember("FunctionName") && !value["FunctionName"].IsNull())
@@ -97,6 +100,46 @@ CoreInternalOutcome FunctionRule::Deserialize(const rapidjson::Value &value)
         m_functionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionMappingSelections") && !value["RegionMappingSelections"].IsNull())
+    {
+        if (!value["RegionMappingSelections"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FunctionRule.RegionMappingSelections` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RegionMappingSelections"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FunctionRegionSelection item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_regionMappingSelections.push_back(item);
+        }
+        m_regionMappingSelectionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeightedSelections") && !value["WeightedSelections"].IsNull())
+    {
+        if (!value["WeightedSelections"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FunctionRule.WeightedSelections` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WeightedSelections"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FunctionWeightedSelection item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_weightedSelections.push_back(item);
+        }
+        m_weightedSelectionsHasBeenSet = true;
+    }
+
     if (value.HasMember("Priority") && !value["Priority"].IsNull())
     {
         if (!value["Priority"].IsInt64())
@@ -105,6 +148,16 @@ CoreInternalOutcome FunctionRule::Deserialize(const rapidjson::Value &value)
         }
         m_priority = value["Priority"].GetInt64();
         m_priorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FunctionRule.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -157,20 +210,20 @@ void FunctionRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_functionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FunctionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_functionId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_functionNameHasBeenSet)
@@ -181,12 +234,50 @@ void FunctionRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_functionName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_regionMappingSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionMappingSelections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionMappingSelections.begin(); itr != m_regionMappingSelections.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightedSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeightedSelections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_weightedSelections.begin(); itr != m_weightedSelections.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_priorityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -240,6 +331,22 @@ bool FunctionRule::FunctionRuleConditionsHasBeenSet() const
     return m_functionRuleConditionsHasBeenSet;
 }
 
+string FunctionRule::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void FunctionRule::SetTriggerType(const string& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool FunctionRule::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
+}
+
 string FunctionRule::GetFunctionId() const
 {
     return m_functionId;
@@ -254,22 +361,6 @@ void FunctionRule::SetFunctionId(const string& _functionId)
 bool FunctionRule::FunctionIdHasBeenSet() const
 {
     return m_functionIdHasBeenSet;
-}
-
-string FunctionRule::GetRemark() const
-{
-    return m_remark;
-}
-
-void FunctionRule::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool FunctionRule::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
 }
 
 string FunctionRule::GetFunctionName() const
@@ -288,6 +379,38 @@ bool FunctionRule::FunctionNameHasBeenSet() const
     return m_functionNameHasBeenSet;
 }
 
+vector<FunctionRegionSelection> FunctionRule::GetRegionMappingSelections() const
+{
+    return m_regionMappingSelections;
+}
+
+void FunctionRule::SetRegionMappingSelections(const vector<FunctionRegionSelection>& _regionMappingSelections)
+{
+    m_regionMappingSelections = _regionMappingSelections;
+    m_regionMappingSelectionsHasBeenSet = true;
+}
+
+bool FunctionRule::RegionMappingSelectionsHasBeenSet() const
+{
+    return m_regionMappingSelectionsHasBeenSet;
+}
+
+vector<FunctionWeightedSelection> FunctionRule::GetWeightedSelections() const
+{
+    return m_weightedSelections;
+}
+
+void FunctionRule::SetWeightedSelections(const vector<FunctionWeightedSelection>& _weightedSelections)
+{
+    m_weightedSelections = _weightedSelections;
+    m_weightedSelectionsHasBeenSet = true;
+}
+
+bool FunctionRule::WeightedSelectionsHasBeenSet() const
+{
+    return m_weightedSelectionsHasBeenSet;
+}
+
 int64_t FunctionRule::GetPriority() const
 {
     return m_priority;
@@ -302,6 +425,22 @@ void FunctionRule::SetPriority(const int64_t& _priority)
 bool FunctionRule::PriorityHasBeenSet() const
 {
     return m_priorityHasBeenSet;
+}
+
+string FunctionRule::GetRemark() const
+{
+    return m_remark;
+}
+
+void FunctionRule::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool FunctionRule::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 string FunctionRule::GetCreateTime() const

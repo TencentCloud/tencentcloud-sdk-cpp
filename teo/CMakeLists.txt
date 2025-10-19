@@ -68,7 +68,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceRequest.h
-  include/tencentcloud/teo/v20220901/model/UpstreamHTTP2Parameters.h
+  include/tencentcloud/teo/v20220901/model/FunctionRegionSelection.h
   include/tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplateResponse.h
@@ -324,6 +324,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/SlowRateConfig.h
   include/tencentcloud/teo/v20220901/model/Cache.h
   include/tencentcloud/teo/v20220901/model/CustomTime.h
+  include/tencentcloud/teo/v20220901/model/FunctionWeightedSelection.h
   include/tencentcloud/teo/v20220901/model/DetailHost.h
   include/tencentcloud/teo/v20220901/model/DescribeRealtimeLogDeliveryTasksResponse.h
   include/tencentcloud/teo/v20220901/model/TopEntry.h
@@ -437,6 +438,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteWebSecurityTemplateRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeL7AccSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/UpstreamHTTP2Parameters.h
   include/tencentcloud/teo/v20220901/model/ModifyAliasDomainRequest.h
   include/tencentcloud/teo/v20220901/model/OriginInfo.h
   include/tencentcloud/teo/v20220901/model/CreateDnsRecordRequest.h
@@ -787,7 +789,7 @@ set(teo_src
   src/v20220901/model/ModifyFunctionRulePriorityRequest.cpp
   src/v20220901/model/ModifyAccelerationDomainResponse.cpp
   src/v20220901/model/DeleteSecurityAPIResourceRequest.cpp
-  src/v20220901/model/UpstreamHTTP2Parameters.cpp
+  src/v20220901/model/FunctionRegionSelection.cpp
   src/v20220901/model/ModifyMultiPathGatewayLineRequest.cpp
   src/v20220901/model/DescribeHostsSettingResponse.cpp
   src/v20220901/model/DescribeWebSecurityTemplateResponse.cpp
@@ -1043,6 +1045,7 @@ set(teo_src
   src/v20220901/model/SlowRateConfig.cpp
   src/v20220901/model/Cache.cpp
   src/v20220901/model/CustomTime.cpp
+  src/v20220901/model/FunctionWeightedSelection.cpp
   src/v20220901/model/DetailHost.cpp
   src/v20220901/model/DescribeRealtimeLogDeliveryTasksResponse.cpp
   src/v20220901/model/TopEntry.cpp
@@ -1156,6 +1159,7 @@ set(teo_src
   src/v20220901/model/BindZoneToPlanResponse.cpp
   src/v20220901/model/DeleteWebSecurityTemplateRequest.cpp
   src/v20220901/model/DescribeL7AccSettingResponse.cpp
+  src/v20220901/model/UpstreamHTTP2Parameters.cpp
   src/v20220901/model/ModifyAliasDomainRequest.cpp
   src/v20220901/model/OriginInfo.cpp
   src/v20220901/model/CreateDnsRecordRequest.cpp

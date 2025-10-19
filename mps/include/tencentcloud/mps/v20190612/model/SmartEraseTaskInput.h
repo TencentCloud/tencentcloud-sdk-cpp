@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/RawSmartEraseParameter.h>
+#include <tencentcloud/mps/v20190612/model/OverrideEraseParameter.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
@@ -93,6 +94,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RawParameterHasBeenSet() const;
+
+                    /**
+                     * 获取智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。
+                     * @return OverrideParameter 智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。
+                     * 
+                     */
+                    OverrideEraseParameter GetOverrideParameter() const;
+
+                    /**
+                     * 设置智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。
+                     * @param _overrideParameter 智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。
+                     * 
+                     */
+                    void SetOverrideParameter(const OverrideEraseParameter& _overrideParameter);
+
+                    /**
+                     * 判断参数 OverrideParameter 是否已赋值
+                     * @return OverrideParameter 是否已赋值
+                     * 
+                     */
+                    bool OverrideParameterHasBeenSet() const;
 
                     /**
                      * 获取文件的目标存储，不填则继承上层的 OutputStorage 值。
@@ -186,6 +208,12 @@ namespace TencentCloud
                      */
                     RawSmartEraseParameter m_rawParameter;
                     bool m_rawParameterHasBeenSet;
+
+                    /**
+                     * 智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。
+                     */
+                    OverrideEraseParameter m_overrideParameter;
+                    bool m_overrideParameterHasBeenSet;
 
                     /**
                      * 文件的目标存储，不填则继承上层的 OutputStorage 值。
