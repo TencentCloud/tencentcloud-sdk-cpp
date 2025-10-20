@@ -31,7 +31,6 @@ namespace TencentCloud
     {
     public:
         typedef Outcome<Core::Error, HttpResponse> HttpResponseOutcome;
-        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
 
         HttpClient();
         ~HttpClient();
@@ -39,6 +38,7 @@ namespace TencentCloud
         void SetReqTimeout(int64_t timeoutOfMs);
         void SetConnectTimeout(int64_t timeoutOfMs);
 
+        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
         void SendRequestAsync(HttpRequest request, CompletionHandler handler);
