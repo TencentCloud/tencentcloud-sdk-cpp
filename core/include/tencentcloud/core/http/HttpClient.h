@@ -18,6 +18,8 @@
 #define TENCENTCLOUD_CORE_HTTP_HTTPCLIENT_H_
 
 #include <curl/curl.h>
+#include <functional>
+#include <thread>
 #include <tencentcloud/core/Outcome.h>
 #include <tencentcloud/core/Error.h>
 #include <tencentcloud/core/NetworkProxy.h>
@@ -29,6 +31,7 @@ namespace TencentCloud
     {
     public:
         typedef Outcome<Core::Error, HttpResponse> HttpResponseOutcome;
+        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
 
         HttpClient();
         ~HttpClient();
@@ -37,6 +40,8 @@ namespace TencentCloud
         void SetConnectTimeout(int64_t timeoutOfMs);
 
         HttpResponseOutcome SendRequest(const HttpRequest &request);
+
+        void SendRequestAsync(HttpRequest request, CompletionHandler handler);
 
         void SetProxy(const NetworkProxy &proxy);
 
@@ -52,6 +57,29 @@ namespace TencentCloud
         int GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen);
         bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
 #endif // ENABLE_COMPRESS_MODULE
+
+        void AsyncReqSender();
+
+        static size_t CurlReadHeader(char* ptr, size_t size, size_t nmemb, void* userp);
+        static size_t CurlReadBody(char* ptr, size_t size, size_t nmemb, void* userp);
+
+        struct AsyncReqContext
+        {
+            HttpRequest request;
+            HttpResponse response;
+
+            CompletionHandler completion_handler;
+
+            CURL* curl_handle;
+            curl_slist* curl_header_buffer;
+            char curl_err_buffer[CURL_ERROR_SIZE];
+        };
+
+        bool m_asyncRunning;
+        std::vector<AsyncReqContext*> m_asyncReqs;
+        std::mutex m_asyncReqsMu;
+        std::thread m_asyncReqHandler;
+        CURLM* m_curlm;
     };
 }
 
