@@ -161,6 +161,12 @@
 #include <tencentcloud/vpc/v20170312/model/CreatePrivateNatGatewayTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRoutesRequest.h>
@@ -269,6 +275,12 @@
 #include <tencentcloud/vpc/v20170312/model/DeletePrivateNatGatewayTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRoutesRequest.h>
@@ -453,6 +465,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteListRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteListResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTableSelectionPoliciesRequest.h>
@@ -725,6 +739,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRoutePolicyAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRoutePolicyAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableSelectionPoliciesRequest.h>
@@ -799,6 +815,10 @@
 #include <tencentcloud/vpc/v20170312/model/ReplaceHighPriorityRouteTableAssociationResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceHighPriorityRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceHighPriorityRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRoutesRequest.h>
@@ -813,6 +833,10 @@
 #include <tencentcloud/vpc/v20170312/model/ResetHighPriorityRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyAssociationsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyAssociationsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorFilterRequest.h>
@@ -1078,6 +1102,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReserveIpAddressesResponse> CreateReserveIpAddressesOutcome;
                 typedef std::future<CreateReserveIpAddressesOutcome> CreateReserveIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateReserveIpAddressesRequest&, CreateReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReserveIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyResponse> CreateRoutePolicyOutcome;
+                typedef std::future<CreateRoutePolicyOutcome> CreateRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyRequest&, CreateRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyAssociationsResponse> CreateRoutePolicyAssociationsOutcome;
+                typedef std::future<CreateRoutePolicyAssociationsOutcome> CreateRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyAssociationsRequest&, CreateRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoutePolicyEntriesResponse> CreateRoutePolicyEntriesOutcome;
+                typedef std::future<CreateRoutePolicyEntriesOutcome> CreateRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateRoutePolicyEntriesRequest&, CreateRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRouteTableResponse> CreateRouteTableOutcome;
                 typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateRouteTableRequest&, CreateRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteTableAsyncHandler;
@@ -1240,6 +1273,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteReserveIpAddressesResponse> DeleteReserveIpAddressesOutcome;
                 typedef std::future<DeleteReserveIpAddressesOutcome> DeleteReserveIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteReserveIpAddressesRequest&, DeleteReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReserveIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyResponse> DeleteRoutePolicyOutcome;
+                typedef std::future<DeleteRoutePolicyOutcome> DeleteRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyRequest&, DeleteRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyAssociationsResponse> DeleteRoutePolicyAssociationsOutcome;
+                typedef std::future<DeleteRoutePolicyAssociationsOutcome> DeleteRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyAssociationsRequest&, DeleteRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoutePolicyEntriesResponse> DeleteRoutePolicyEntriesOutcome;
+                typedef std::future<DeleteRoutePolicyEntriesOutcome> DeleteRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteRoutePolicyEntriesRequest&, DeleteRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRouteTableResponse> DeleteRouteTableOutcome;
                 typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteRouteTableRequest&, DeleteRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTableAsyncHandler;
@@ -1516,6 +1558,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteListResponse> DescribeRouteListOutcome;
                 typedef std::future<DescribeRouteListOutcome> DescribeRouteListOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteListRequest&, DescribeRouteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoutePolicyEntriesResponse> DescribeRoutePolicyEntriesOutcome;
+                typedef std::future<DescribeRoutePolicyEntriesOutcome> DescribeRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeRoutePolicyEntriesRequest&, DescribeRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteTableAssociatedInstancesResponse> DescribeRouteTableAssociatedInstancesOutcome;
                 typedef std::future<DescribeRouteTableAssociatedInstancesOutcome> DescribeRouteTableAssociatedInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteTableAssociatedInstancesRequest&, DescribeRouteTableAssociatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableAssociatedInstancesAsyncHandler;
@@ -1924,6 +1969,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReserveIpAddressResponse> ModifyReserveIpAddressOutcome;
                 typedef std::future<ModifyReserveIpAddressOutcome> ModifyReserveIpAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyReserveIpAddressRequest&, ModifyReserveIpAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReserveIpAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoutePolicyAttributeResponse> ModifyRoutePolicyAttributeOutcome;
+                typedef std::future<ModifyRoutePolicyAttributeOutcome> ModifyRoutePolicyAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyRoutePolicyAttributeRequest&, ModifyRoutePolicyAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoutePolicyAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
                 typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
@@ -2035,6 +2083,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReplaceHighPriorityRoutesResponse> ReplaceHighPriorityRoutesOutcome;
                 typedef std::future<ReplaceHighPriorityRoutesOutcome> ReplaceHighPriorityRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceHighPriorityRoutesRequest&, ReplaceHighPriorityRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceHighPriorityRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutePolicyAssociationsResponse> ReplaceRoutePolicyAssociationsOutcome;
+                typedef std::future<ReplaceRoutePolicyAssociationsOutcome> ReplaceRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutePolicyAssociationsRequest&, ReplaceRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutePolicyEntriesResponse> ReplaceRoutePolicyEntriesOutcome;
+                typedef std::future<ReplaceRoutePolicyEntriesOutcome> ReplaceRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutePolicyEntriesRequest&, ReplaceRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationOutcome;
                 typedef std::future<ReplaceRouteTableAssociationOutcome> ReplaceRouteTableAssociationOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceRouteTableAssociationRequest&, ReplaceRouteTableAssociationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRouteTableAssociationAsyncHandler;
@@ -2056,6 +2110,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetNatGatewayConnectionResponse> ResetNatGatewayConnectionOutcome;
                 typedef std::future<ResetNatGatewayConnectionOutcome> ResetNatGatewayConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetNatGatewayConnectionRequest&, ResetNatGatewayConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetNatGatewayConnectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetRoutePolicyAssociationsResponse> ResetRoutePolicyAssociationsOutcome;
+                typedef std::future<ResetRoutePolicyAssociationsOutcome> ResetRoutePolicyAssociationsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetRoutePolicyAssociationsRequest&, ResetRoutePolicyAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutePolicyAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetRoutePolicyEntriesResponse> ResetRoutePolicyEntriesOutcome;
+                typedef std::future<ResetRoutePolicyEntriesOutcome> ResetRoutePolicyEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetRoutePolicyEntriesRequest&, ResetRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutePolicyEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetRoutesResponse> ResetRoutesOutcome;
                 typedef std::future<ResetRoutesOutcome> ResetRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetRoutesRequest&, ResetRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutesAsyncHandler;
@@ -2832,6 +2892,33 @@ namespace TencentCloud
                 CreateReserveIpAddressesOutcomeCallable CreateReserveIpAddressesCallable(const Model::CreateReserveIpAddressesRequest& request);
 
                 /**
+                 *创建VPC路由接收策略，包括名字，描述和策略条目。
+                 * @param req CreateRoutePolicyRequest
+                 * @return CreateRoutePolicyOutcome
+                 */
+                CreateRoutePolicyOutcome CreateRoutePolicy(const Model::CreateRoutePolicyRequest &request);
+                void CreateRoutePolicyAsync(const Model::CreateRoutePolicyRequest& request, const CreateRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyOutcomeCallable CreateRoutePolicyCallable(const Model::CreateRoutePolicyRequest& request);
+
+                /**
+                 *本接口（CreateRoutePolicyAssociations）用于创建路由接收策略绑定(路由策略实例和路由表实例的绑定关系以及绑定优先级)。
+                 * @param req CreateRoutePolicyAssociationsRequest
+                 * @return CreateRoutePolicyAssociationsOutcome
+                 */
+                CreateRoutePolicyAssociationsOutcome CreateRoutePolicyAssociations(const Model::CreateRoutePolicyAssociationsRequest &request);
+                void CreateRoutePolicyAssociationsAsync(const Model::CreateRoutePolicyAssociationsRequest& request, const CreateRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyAssociationsOutcomeCallable CreateRoutePolicyAssociationsCallable(const Model::CreateRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *本接口（CreateRoutePolicyEntries）用于创建路由接收策略条目。
+                 * @param req CreateRoutePolicyEntriesRequest
+                 * @return CreateRoutePolicyEntriesOutcome
+                 */
+                CreateRoutePolicyEntriesOutcome CreateRoutePolicyEntries(const Model::CreateRoutePolicyEntriesRequest &request);
+                void CreateRoutePolicyEntriesAsync(const Model::CreateRoutePolicyEntriesRequest& request, const CreateRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoutePolicyEntriesOutcomeCallable CreateRoutePolicyEntriesCallable(const Model::CreateRoutePolicyEntriesRequest& request);
+
+                /**
                  *本接口(CreateRouteTable)用于创建路由表。
 * 创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。
 * 创建路由表同时可以绑定标签, 应答里的标签列表代表添加成功的标签。
@@ -3388,6 +3475,33 @@ namespace TencentCloud
                 DeleteReserveIpAddressesOutcome DeleteReserveIpAddresses(const Model::DeleteReserveIpAddressesRequest &request);
                 void DeleteReserveIpAddressesAsync(const Model::DeleteReserveIpAddressesRequest& request, const DeleteReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteReserveIpAddressesOutcomeCallable DeleteReserveIpAddressesCallable(const Model::DeleteReserveIpAddressesRequest& request);
+
+                /**
+                 *本接口（DeleteRoutePolicy）用于删除路由接收策略和条目。
+                 * @param req DeleteRoutePolicyRequest
+                 * @return DeleteRoutePolicyOutcome
+                 */
+                DeleteRoutePolicyOutcome DeleteRoutePolicy(const Model::DeleteRoutePolicyRequest &request);
+                void DeleteRoutePolicyAsync(const Model::DeleteRoutePolicyRequest& request, const DeleteRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyOutcomeCallable DeleteRoutePolicyCallable(const Model::DeleteRoutePolicyRequest& request);
+
+                /**
+                 *本接口(DeleteRoutePolicyAssociations)用于删除路由接收策略绑定（路由接收策略对象和路由表的绑定关系）。
+                 * @param req DeleteRoutePolicyAssociationsRequest
+                 * @return DeleteRoutePolicyAssociationsOutcome
+                 */
+                DeleteRoutePolicyAssociationsOutcome DeleteRoutePolicyAssociations(const Model::DeleteRoutePolicyAssociationsRequest &request);
+                void DeleteRoutePolicyAssociationsAsync(const Model::DeleteRoutePolicyAssociationsRequest& request, const DeleteRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyAssociationsOutcomeCallable DeleteRoutePolicyAssociationsCallable(const Model::DeleteRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *本接口(DeleteRoutePolicyEntries)用于删除路由接收策略条目。
+                 * @param req DeleteRoutePolicyEntriesRequest
+                 * @return DeleteRoutePolicyEntriesOutcome
+                 */
+                DeleteRoutePolicyEntriesOutcome DeleteRoutePolicyEntries(const Model::DeleteRoutePolicyEntriesRequest &request);
+                void DeleteRoutePolicyEntriesAsync(const Model::DeleteRoutePolicyEntriesRequest& request, const DeleteRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoutePolicyEntriesOutcomeCallable DeleteRoutePolicyEntriesCallable(const Model::DeleteRoutePolicyEntriesRequest& request);
 
                 /**
                  *本接口（DeleteRouteTable）用于删除路由表。
@@ -4248,6 +4362,15 @@ namespace TencentCloud
                 DescribeRouteListOutcome DescribeRouteList(const Model::DescribeRouteListRequest &request);
                 void DescribeRouteListAsync(const Model::DescribeRouteListRequest& request, const DescribeRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteListOutcomeCallable DescribeRouteListCallable(const Model::DescribeRouteListRequest& request);
+
+                /**
+                 *本接口（DescribeRoutePolicyEntries）用于查询路由接收策略条目列表。
+                 * @param req DescribeRoutePolicyEntriesRequest
+                 * @return DescribeRoutePolicyEntriesOutcome
+                 */
+                DescribeRoutePolicyEntriesOutcome DescribeRoutePolicyEntries(const Model::DescribeRoutePolicyEntriesRequest &request);
+                void DescribeRoutePolicyEntriesAsync(const Model::DescribeRoutePolicyEntriesRequest& request, const DescribeRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoutePolicyEntriesOutcomeCallable DescribeRoutePolicyEntriesCallable(const Model::DescribeRoutePolicyEntriesRequest& request);
 
                 /**
                  *本接口（DescribeRouteTableAssociatedInstances）用于查询指定的云联网关联的实例所绑定的路由表信息。
@@ -5557,6 +5680,15 @@ LimitTypes取值范围：
                 ModifyReserveIpAddressOutcomeCallable ModifyReserveIpAddressCallable(const Model::ModifyReserveIpAddressRequest& request);
 
                 /**
+                 *本接口（ModifyRoutePolicyAttribute）用于修改路由接收策略属性属性。
+                 * @param req ModifyRoutePolicyAttributeRequest
+                 * @return ModifyRoutePolicyAttributeOutcome
+                 */
+                ModifyRoutePolicyAttributeOutcome ModifyRoutePolicyAttribute(const Model::ModifyRoutePolicyAttributeRequest &request);
+                void ModifyRoutePolicyAttributeAsync(const Model::ModifyRoutePolicyAttributeRequest& request, const ModifyRoutePolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoutePolicyAttributeOutcomeCallable ModifyRoutePolicyAttributeCallable(const Model::ModifyRoutePolicyAttributeRequest& request);
+
+                /**
                  *本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。
                  * @param req ModifyRouteTableAttributeRequest
                  * @return ModifyRouteTableAttributeOutcome
@@ -5955,6 +6087,24 @@ LimitTypes取值范围：
                 ReplaceHighPriorityRoutesOutcomeCallable ReplaceHighPriorityRoutesCallable(const Model::ReplaceHighPriorityRoutesRequest& request);
 
                 /**
+                 *本接口（ReplaceRoutePolicyAssociations）根据路由接收策略实例ID（RoutePolicyId）和路由表实例ID（RouteTableId）修改绑定优先级（Priority），支持批量修改。
+                 * @param req ReplaceRoutePolicyAssociationsRequest
+                 * @return ReplaceRoutePolicyAssociationsOutcome
+                 */
+                ReplaceRoutePolicyAssociationsOutcome ReplaceRoutePolicyAssociations(const Model::ReplaceRoutePolicyAssociationsRequest &request);
+                void ReplaceRoutePolicyAssociationsAsync(const Model::ReplaceRoutePolicyAssociationsRequest& request, const ReplaceRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutePolicyAssociationsOutcomeCallable ReplaceRoutePolicyAssociationsCallable(const Model::ReplaceRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *本接口（ReplaceRoutePolicyEntries）根据路由接收策略规则ID（RoutePolicyEntryId）修改指定的路由策略条目（RoutePolicyEntry），支持批量修改。
+                 * @param req ReplaceRoutePolicyEntriesRequest
+                 * @return ReplaceRoutePolicyEntriesOutcome
+                 */
+                ReplaceRoutePolicyEntriesOutcome ReplaceRoutePolicyEntries(const Model::ReplaceRoutePolicyEntriesRequest &request);
+                void ReplaceRoutePolicyEntriesAsync(const Model::ReplaceRoutePolicyEntriesRequest& request, const ReplaceRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutePolicyEntriesOutcomeCallable ReplaceRoutePolicyEntriesCallable(const Model::ReplaceRoutePolicyEntriesRequest& request);
+
+                /**
                  *本接口（ReplaceRouteTableAssociation）用于修改子网（Subnet）关联的路由表（RouteTable）。
 * 一个子网只能关联一个路由表。
                  * @param req ReplaceRouteTableAssociationRequest
@@ -6019,6 +6169,24 @@ LimitTypes取值范围：
                 ResetNatGatewayConnectionOutcome ResetNatGatewayConnection(const Model::ResetNatGatewayConnectionRequest &request);
                 void ResetNatGatewayConnectionAsync(const Model::ResetNatGatewayConnectionRequest& request, const ResetNatGatewayConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetNatGatewayConnectionOutcomeCallable ResetNatGatewayConnectionCallable(const Model::ResetNatGatewayConnectionRequest& request);
+
+                /**
+                 *本接口（ResetRoutePolicyAssociations）用于对某个路由表实例已经绑定的路由策略实例解除绑定关系，并重新设置新的绑定路由策略及优先级。<br />
+                 * @param req ResetRoutePolicyAssociationsRequest
+                 * @return ResetRoutePolicyAssociationsOutcome
+                 */
+                ResetRoutePolicyAssociationsOutcome ResetRoutePolicyAssociations(const Model::ResetRoutePolicyAssociationsRequest &request);
+                void ResetRoutePolicyAssociationsAsync(const Model::ResetRoutePolicyAssociationsRequest& request, const ResetRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRoutePolicyAssociationsOutcomeCallable ResetRoutePolicyAssociationsCallable(const Model::ResetRoutePolicyAssociationsRequest& request);
+
+                /**
+                 *本接口（ResetRoutePolicyEntries）根据路由接收策略规则ID（RoutePolicyId）重置指定的路由接收策略条目（RoutePolicyEntry），支持批量修改。
+                 * @param req ResetRoutePolicyEntriesRequest
+                 * @return ResetRoutePolicyEntriesOutcome
+                 */
+                ResetRoutePolicyEntriesOutcome ResetRoutePolicyEntries(const Model::ResetRoutePolicyEntriesRequest &request);
+                void ResetRoutePolicyEntriesAsync(const Model::ResetRoutePolicyEntriesRequest& request, const ResetRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetRoutePolicyEntriesOutcomeCallable ResetRoutePolicyEntriesCallable(const Model::ResetRoutePolicyEntriesRequest& request);
 
                 /**
                  *本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br /> 注意: 调用本接口时先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。

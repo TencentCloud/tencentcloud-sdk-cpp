@@ -71,6 +71,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ExportSoftwareInformationListRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ExportSoftwareInformationListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
@@ -161,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVirtualDevicesResponse> DescribeVirtualDevicesOutcome;
                 typedef std::future<DescribeVirtualDevicesOutcome> DescribeVirtualDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeVirtualDevicesRequest&, DescribeVirtualDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportDeviceDownloadTaskResponse> ExportDeviceDownloadTaskOutcome;
+                typedef std::future<ExportDeviceDownloadTaskOutcome> ExportDeviceDownloadTaskOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ExportDeviceDownloadTaskRequest&, ExportDeviceDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportDeviceDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportSoftwareInformationListResponse> ExportSoftwareInformationListOutcome;
                 typedef std::future<ExportSoftwareInformationListOutcome> ExportSoftwareInformationListOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ExportSoftwareInformationListRequest&, ExportSoftwareInformationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportSoftwareInformationListAsyncHandler;
@@ -385,6 +390,15 @@ namespace TencentCloud
                 DescribeVirtualDevicesOutcome DescribeVirtualDevices(const Model::DescribeVirtualDevicesRequest &request);
                 void DescribeVirtualDevicesAsync(const Model::DescribeVirtualDevicesRequest& request, const DescribeVirtualDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVirtualDevicesOutcomeCallable DescribeVirtualDevicesCallable(const Model::DescribeVirtualDevicesRequest& request);
+
+                /**
+                 *创建终端导出任务，私有化调用path为：capi/Assets/Device/ExportDeviceDownloadTask
+                 * @param req ExportDeviceDownloadTaskRequest
+                 * @return ExportDeviceDownloadTaskOutcome
+                 */
+                ExportDeviceDownloadTaskOutcome ExportDeviceDownloadTask(const Model::ExportDeviceDownloadTaskRequest &request);
+                void ExportDeviceDownloadTaskAsync(const Model::ExportDeviceDownloadTaskRequest& request, const ExportDeviceDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportDeviceDownloadTaskOutcomeCallable ExportDeviceDownloadTaskCallable(const Model::ExportDeviceDownloadTaskRequest& request);
 
                 /**
                  *导出基于指定终端查看软件信息详情列表查询,私有化调用path为：capi/Software/ExportSoftwareInformationList

@@ -26,7 +26,8 @@ TransDetail::TransDetail() :
     m_boundingBoxHasBeenSet(false),
     m_linesCountHasBeenSet(false),
     m_lineHeightHasBeenSet(false),
-    m_spamCodeHasBeenSet(false)
+    m_spamCodeHasBeenSet(false),
+    m_rotateParagraphRectHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,23 @@ CoreInternalOutcome TransDetail::Deserialize(const rapidjson::Value &value)
         m_spamCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("RotateParagraphRect") && !value["RotateParagraphRect"].IsNull())
+    {
+        if (!value["RotateParagraphRect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransDetail.RotateParagraphRect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rotateParagraphRect.Deserialize(value["RotateParagraphRect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rotateParagraphRectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +174,15 @@ void TransDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SpamCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_spamCode, allocator);
+    }
+
+    if (m_rotateParagraphRectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotateParagraphRect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rotateParagraphRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -255,5 +282,21 @@ void TransDetail::SetSpamCode(const int64_t& _spamCode)
 bool TransDetail::SpamCodeHasBeenSet() const
 {
     return m_spamCodeHasBeenSet;
+}
+
+RotateParagraphRect TransDetail::GetRotateParagraphRect() const
+{
+    return m_rotateParagraphRect;
+}
+
+void TransDetail::SetRotateParagraphRect(const RotateParagraphRect& _rotateParagraphRect)
+{
+    m_rotateParagraphRect = _rotateParagraphRect;
+    m_rotateParagraphRectHasBeenSet = true;
+}
+
+bool TransDetail::RotateParagraphRectHasBeenSet() const
+{
+    return m_rotateParagraphRectHasBeenSet;
 }
 

@@ -128,6 +128,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/ListResourceGroupsResponse.h
   include/tencentcloud/wedata/v20250806/model/UpdateResourceFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTaskInstanceExecutionsRequest.h
+  include/tencentcloud/wedata/v20250806/model/MonitorWhiteTask.h
   include/tencentcloud/wedata/v20250806/model/ProjectUsersBrief.h
   include/tencentcloud/wedata/v20250806/model/CodeStudioFolderResult.h
   include/tencentcloud/wedata/v20250806/model/ListOpsTasksPage.h
@@ -1472,6 +1473,7 @@ set(wedata_src
   src/v20250806/model/ListResourceGroupsResponse.cpp
   src/v20250806/model/UpdateResourceFolderRequest.cpp
   src/v20250806/model/ListTaskInstanceExecutionsRequest.cpp
+  src/v20250806/model/MonitorWhiteTask.cpp
   src/v20250806/model/ProjectUsersBrief.cpp
   src/v20250806/model/CodeStudioFolderResult.cpp
   src/v20250806/model/ListOpsTasksPage.cpp

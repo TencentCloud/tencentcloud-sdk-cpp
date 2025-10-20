@@ -260,10 +260,10 @@ namespace TencentCloud
 
                     /**
                      * 获取源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * @return BindStatus 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * 
                      */
@@ -271,10 +271,10 @@ namespace TencentCloud
 
                     /**
                      * 设置源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * @param _bindStatus 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      * 
                      */
@@ -383,6 +383,27 @@ namespace TencentCloud
                      */
                     bool ForcedRedirectHasBeenSet() const;
 
+                    /**
+                     * 获取七层转发规则的回源协议类型
+                     * @return ForwardProtocol 七层转发规则的回源协议类型
+                     * 
+                     */
+                    std::string GetForwardProtocol() const;
+
+                    /**
+                     * 设置七层转发规则的回源协议类型
+                     * @param _forwardProtocol 七层转发规则的回源协议类型
+                     * 
+                     */
+                    void SetForwardProtocol(const std::string& _forwardProtocol);
+
+                    /**
+                     * 判断参数 ForwardProtocol 是否已赋值
+                     * @return ForwardProtocol 是否已赋值
+                     * 
+                     */
+                    bool ForwardProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,7 +468,7 @@ namespace TencentCloud
 
                     /**
                      * 源站的服务状态，0表示异常，1表示正常。
-未开启健康检查时，该状态始终未正常。
+未开启健康检查时，该状态始终为正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      */
                     uint64_t m_bindStatus;
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_forcedRedirect;
                     bool m_forcedRedirectHasBeenSet;
+
+                    /**
+                     * 七层转发规则的回源协议类型
+                     */
+                    std::string m_forwardProtocol;
+                    bool m_forwardProtocolHasBeenSet;
 
                 };
             }

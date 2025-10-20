@@ -26,7 +26,8 @@ AlarmRuleDetail::AlarmRuleDetail() :
     m_timeOutExtInfoHasBeenSet(false),
     m_dataBackfillOrRerunTimeOutExtInfoHasBeenSet(false),
     m_projectInstanceStatisticsAlarmInfoListHasBeenSet(false),
-    m_reconciliationExtInfoHasBeenSet(false)
+    m_reconciliationExtInfoHasBeenSet(false),
+    m_monitorWhiteTasksHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,26 @@ CoreInternalOutcome AlarmRuleDetail::Deserialize(const rapidjson::Value &value)
         m_reconciliationExtInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorWhiteTasks") && !value["MonitorWhiteTasks"].IsNull())
+    {
+        if (!value["MonitorWhiteTasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmRuleDetail.MonitorWhiteTasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MonitorWhiteTasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MonitorWhiteTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_monitorWhiteTasks.push_back(item);
+        }
+        m_monitorWhiteTasksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -212,6 +233,21 @@ void AlarmRuleDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_reconciliationExtInfo.begin(); itr != m_reconciliationExtInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_monitorWhiteTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorWhiteTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_monitorWhiteTasks.begin(); itr != m_monitorWhiteTasks.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -315,5 +351,21 @@ void AlarmRuleDetail::SetReconciliationExtInfo(const vector<ReconciliationStrate
 bool AlarmRuleDetail::ReconciliationExtInfoHasBeenSet() const
 {
     return m_reconciliationExtInfoHasBeenSet;
+}
+
+vector<MonitorWhiteTask> AlarmRuleDetail::GetMonitorWhiteTasks() const
+{
+    return m_monitorWhiteTasks;
+}
+
+void AlarmRuleDetail::SetMonitorWhiteTasks(const vector<MonitorWhiteTask>& _monitorWhiteTasks)
+{
+    m_monitorWhiteTasks = _monitorWhiteTasks;
+    m_monitorWhiteTasksHasBeenSet = true;
+}
+
+bool AlarmRuleDetail::MonitorWhiteTasksHasBeenSet() const
+{
+    return m_monitorWhiteTasksHasBeenSet;
 }
 

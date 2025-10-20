@@ -97,7 +97,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/FirewallTemplateRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/Disk.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/ZoneInfo.h
+  include/tencentcloud/lighthouse/v20200324/model/DestinationRegionBlueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DetachDisksRequest.h
@@ -219,6 +219,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DockerActivity.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateApplyRecordsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
+  include/tencentcloud/lighthouse/v20200324/model/ZoneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Snapshot.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyFirewallTemplateRequest.h
@@ -408,7 +409,7 @@ set(lighthouse_src
   src/v20200324/model/FirewallTemplateRuleInfo.cpp
   src/v20200324/model/Disk.cpp
   src/v20200324/model/ModifyFirewallRulesResponse.cpp
-  src/v20200324/model/ZoneInfo.cpp
+  src/v20200324/model/DestinationRegionBlueprint.cpp
   src/v20200324/model/DescribeBlueprintInstancesRequest.cpp
   src/v20200324/model/ApplyInstanceSnapshotResponse.cpp
   src/v20200324/model/DetachDisksRequest.cpp
@@ -530,6 +531,7 @@ set(lighthouse_src
   src/v20200324/model/DockerActivity.cpp
   src/v20200324/model/DescribeFirewallTemplateApplyRecordsResponse.cpp
   src/v20200324/model/Filter.cpp
+  src/v20200324/model/ZoneInfo.cpp
   src/v20200324/model/DescribeSnapshotsResponse.cpp
   src/v20200324/model/Snapshot.cpp
   src/v20200324/model/ApplyFirewallTemplateRequest.cpp

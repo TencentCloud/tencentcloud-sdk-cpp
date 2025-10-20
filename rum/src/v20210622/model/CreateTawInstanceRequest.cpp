@@ -34,7 +34,9 @@ CreateTawInstanceRequest::CreateTawInstanceRequest() :
     m_buyingChannelHasBeenSet(false),
     m_resourcePackageTypeHasBeenSet(false),
     m_resourcePackageNumHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_autoRenewalTypeHasBeenSet(false),
+    m_autoRenewalThresholdHasBeenSet(false)
 {
 }
 
@@ -146,6 +148,22 @@ string CreateTawInstanceRequest::ToJsonString() const
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_autoRenewalTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewalType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewalType, allocator);
+    }
+
+    if (m_autoRenewalThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewalThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewalThreshold, allocator);
     }
 
 
@@ -346,6 +364,38 @@ void CreateTawInstanceRequest::SetInstanceType(const int64_t& _instanceType)
 bool CreateTawInstanceRequest::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+int64_t CreateTawInstanceRequest::GetAutoRenewalType() const
+{
+    return m_autoRenewalType;
+}
+
+void CreateTawInstanceRequest::SetAutoRenewalType(const int64_t& _autoRenewalType)
+{
+    m_autoRenewalType = _autoRenewalType;
+    m_autoRenewalTypeHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::AutoRenewalTypeHasBeenSet() const
+{
+    return m_autoRenewalTypeHasBeenSet;
+}
+
+int64_t CreateTawInstanceRequest::GetAutoRenewalThreshold() const
+{
+    return m_autoRenewalThreshold;
+}
+
+void CreateTawInstanceRequest::SetAutoRenewalThreshold(const int64_t& _autoRenewalThreshold)
+{
+    m_autoRenewalThreshold = _autoRenewalThreshold;
+    m_autoRenewalThresholdHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::AutoRenewalThresholdHasBeenSet() const
+{
+    return m_autoRenewalThresholdHasBeenSet;
 }
 
 

@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool CallInInterfaceHasBeenSet() const;
 
+                    /**
+                     * 获取绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * @return NumberType 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * 
+                     */
+                    std::string GetNumberType() const;
+
+                    /**
+                     * 设置绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * @param _numberType 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * 
+                     */
+                    void SetNumberType(const std::string& _numberType);
+
+                    /**
+                     * 判断参数 NumberType 是否已赋值
+                     * @return NumberType 是否已赋值
+                     * 
+                     */
+                    bool NumberTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     Interface m_callInInterface;
                     bool m_callInInterfaceHasBeenSet;
+
+                    /**
+                     * 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     */
+                    std::string m_numberType;
+                    bool m_numberTypeHasBeenSet;
 
                 };
             }

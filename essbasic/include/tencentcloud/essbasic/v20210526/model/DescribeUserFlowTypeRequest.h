@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>	
-                     * @return Filters 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>	
+                     * 获取搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>	
+                     * @return Filters 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>	
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>	
-                     * @param _filters 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>	
+                     * 设置搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>	
+                     * @param _filters 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>	
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -87,31 +87,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询绑定了模版的用户合同类型
-<ul>
-<li>false（默认值），查询用户合同类型</li>
-<li>true，查询绑定了模版的用户合同类型</li>
-</ul>
-                     * @return QueryBindTemplate 查询绑定了模版的用户合同类型
-<ul>
-<li>false（默认值），查询用户合同类型</li>
-<li>true，查询绑定了模版的用户合同类型</li>
-</ul>
+                     * 获取查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>
+                     * @return QueryBindTemplate 查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>
                      * 
                      */
                     bool GetQueryBindTemplate() const;
 
                     /**
-                     * 设置查询绑定了模版的用户合同类型
-<ul>
-<li>false（默认值），查询用户合同类型</li>
-<li>true，查询绑定了模版的用户合同类型</li>
-</ul>
-                     * @param _queryBindTemplate 查询绑定了模版的用户合同类型
-<ul>
-<li>false（默认值），查询用户合同类型</li>
-<li>true，查询绑定了模版的用户合同类型</li>
-</ul>
+                     * 设置查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>
+                     * @param _queryBindTemplate 查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>
                      * 
                      */
                     void SetQueryBindTemplate(const bool& _queryBindTemplate);
@@ -132,17 +116,13 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>	
+                     * 搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>	
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询绑定了模版的用户合同类型
-<ul>
-<li>false（默认值），查询用户合同类型</li>
-<li>true，查询绑定了模版的用户合同类型</li>
-</ul>
+                     * 查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>
                      */
                     bool m_queryBindTemplate;
                     bool m_queryBindTemplateHasBeenSet;

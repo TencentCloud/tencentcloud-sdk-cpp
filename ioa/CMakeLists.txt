@@ -45,6 +45,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsPage.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationPageData.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h
+  include/tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectTaskResult.h
@@ -80,6 +81,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.h
   include/tencentcloud/ioa/v20220601/model/AggrSoftDeviceRow.h
   include/tencentcloud/ioa/v20220601/model/SoftVersionAndNum.h
+  include/tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListPageData.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h
   include/tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsResponse.h
@@ -111,6 +113,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/RuleExpression.h
   include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsRspData.h
+  include/tencentcloud/ioa/v20220601/model/DeviceDownloadTask.h
   include/tencentcloud/ioa/v20220601/model/DeviceGroupDetail.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDevicePageData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h
@@ -153,6 +156,7 @@ set(ioa_src
   src/v20220601/model/DescribeLocalAccountsPage.cpp
   src/v20220601/model/DescribeSoftwareInformationPageData.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskRequest.cpp
+  src/v20220601/model/ExportDeviceDownloadTaskRequest.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceData.cpp
   src/v20220601/model/DescribeDeviceInfoRequest.cpp
   src/v20220601/model/DescribeDLPFileDetectTaskResult.cpp
@@ -188,6 +192,7 @@ set(ioa_src
   src/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.cpp
   src/v20220601/model/AggrSoftDeviceRow.cpp
   src/v20220601/model/SoftVersionAndNum.cpp
+  src/v20220601/model/ExportDeviceDownloadTaskResponse.cpp
   src/v20220601/model/DescribeDeviceDetailListPageData.cpp
   src/v20220601/model/DescribeSoftwareInformationResponse.cpp
   src/v20220601/model/ModifyVirtualDeviceGroupsResponse.cpp
@@ -219,6 +224,7 @@ set(ioa_src
   src/v20220601/model/RuleExpression.cpp
   src/v20220601/model/DescribeRootAccountGroupRequest.cpp
   src/v20220601/model/DescribeDeviceChildGroupsRspData.cpp
+  src/v20220601/model/DeviceDownloadTask.cpp
   src/v20220601/model/DeviceGroupDetail.cpp
   src/v20220601/model/DescribeSoftCensusListByDevicePageData.cpp
   src/v20220601/model/DescribeDevicesRequest.cpp

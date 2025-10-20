@@ -27,6 +27,7 @@
 #include <tencentcloud/wedata/v20250806/model/TimeOutStrategyInfo.h>
 #include <tencentcloud/wedata/v20250806/model/ProjectInstanceStatisticsAlarmInfo.h>
 #include <tencentcloud/wedata/v20250806/model/ReconciliationStrategyInfo.h>
+#include <tencentcloud/wedata/v20250806/model/MonitorWhiteTask.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,27 @@ namespace TencentCloud
                      */
                     bool ReconciliationExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取监控对象的白名单配置
+                     * @return MonitorWhiteTasks 监控对象的白名单配置
+                     * 
+                     */
+                    std::vector<MonitorWhiteTask> GetMonitorWhiteTasks() const;
+
+                    /**
+                     * 设置监控对象的白名单配置
+                     * @param _monitorWhiteTasks 监控对象的白名单配置
+                     * 
+                     */
+                    void SetMonitorWhiteTasks(const std::vector<MonitorWhiteTask>& _monitorWhiteTasks);
+
+                    /**
+                     * 判断参数 MonitorWhiteTasks 是否已赋值
+                     * @return MonitorWhiteTasks 是否已赋值
+                     * 
+                     */
+                    bool MonitorWhiteTasksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +294,12 @@ namespace TencentCloud
                      */
                     std::vector<ReconciliationStrategyInfo> m_reconciliationExtInfo;
                     bool m_reconciliationExtInfoHasBeenSet;
+
+                    /**
+                     * 监控对象的白名单配置
+                     */
+                    std::vector<MonitorWhiteTask> m_monitorWhiteTasks;
+                    bool m_monitorWhiteTasksHasBeenSet;
 
                 };
             }

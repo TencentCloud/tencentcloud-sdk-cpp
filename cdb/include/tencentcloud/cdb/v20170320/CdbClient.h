@@ -197,6 +197,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeRequest.h>
@@ -648,6 +650,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePasswordComplexityResponse> DescribeInstancePasswordComplexityOutcome;
+                typedef std::future<DescribeInstancePasswordComplexityOutcome> DescribeInstancePasswordComplexityOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeInstancePasswordComplexityRequest&, DescribeInstancePasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePasswordComplexityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceUpgradeCheckJobResponse> DescribeInstanceUpgradeCheckJobOutcome;
                 typedef std::future<DescribeInstanceUpgradeCheckJobOutcome> DescribeInstanceUpgradeCheckJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceUpgradeCheckJobRequest&, DescribeInstanceUpgradeCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUpgradeCheckJobAsyncHandler;
@@ -1724,6 +1729,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *该接口（DescribeInstancePasswordComplexity）用于查询实例的密码复杂度参数列表。
+                 * @param req DescribeInstancePasswordComplexityRequest
+                 * @return DescribeInstancePasswordComplexityOutcome
+                 */
+                DescribeInstancePasswordComplexityOutcome DescribeInstancePasswordComplexity(const Model::DescribeInstancePasswordComplexityRequest &request);
+                void DescribeInstancePasswordComplexityAsync(const Model::DescribeInstancePasswordComplexityRequest& request, const DescribeInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePasswordComplexityOutcomeCallable DescribeInstancePasswordComplexityCallable(const Model::DescribeInstancePasswordComplexityRequest& request);
 
                 /**
                  *该接口（DescribeInstanceUpgradeCheckJob）查询实例版本升级校验任务。

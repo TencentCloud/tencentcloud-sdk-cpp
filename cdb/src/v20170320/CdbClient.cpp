@@ -3781,6 +3781,49 @@ CdbClient::DescribeInstanceParamsOutcomeCallable CdbClient::DescribeInstancePara
     return task->get_future();
 }
 
+CdbClient::DescribeInstancePasswordComplexityOutcome CdbClient::DescribeInstancePasswordComplexity(const DescribeInstancePasswordComplexityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancePasswordComplexity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancePasswordComplexityResponse rsp = DescribeInstancePasswordComplexityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancePasswordComplexityOutcome(rsp);
+        else
+            return DescribeInstancePasswordComplexityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancePasswordComplexityOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeInstancePasswordComplexityAsync(const DescribeInstancePasswordComplexityRequest& request, const DescribeInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancePasswordComplexity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeInstancePasswordComplexityOutcomeCallable CdbClient::DescribeInstancePasswordComplexityCallable(const DescribeInstancePasswordComplexityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancePasswordComplexityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancePasswordComplexity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeInstanceUpgradeCheckJobOutcome CdbClient::DescribeInstanceUpgradeCheckJob(const DescribeInstanceUpgradeCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceUpgradeCheckJob");

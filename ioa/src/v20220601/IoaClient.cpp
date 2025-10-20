@@ -1072,6 +1072,49 @@ IoaClient::DescribeVirtualDevicesOutcomeCallable IoaClient::DescribeVirtualDevic
     return task->get_future();
 }
 
+IoaClient::ExportDeviceDownloadTaskOutcome IoaClient::ExportDeviceDownloadTask(const ExportDeviceDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportDeviceDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportDeviceDownloadTaskResponse rsp = ExportDeviceDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportDeviceDownloadTaskOutcome(rsp);
+        else
+            return ExportDeviceDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportDeviceDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ExportDeviceDownloadTaskAsync(const ExportDeviceDownloadTaskRequest& request, const ExportDeviceDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportDeviceDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::ExportDeviceDownloadTaskOutcomeCallable IoaClient::ExportDeviceDownloadTaskCallable(const ExportDeviceDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportDeviceDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportDeviceDownloadTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::ExportSoftwareInformationListOutcome IoaClient::ExportSoftwareInformationList(const ExportSoftwareInformationListRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportSoftwareInformationList");

@@ -3007,6 +3007,135 @@ VpcClient::CreateReserveIpAddressesOutcomeCallable VpcClient::CreateReserveIpAdd
     return task->get_future();
 }
 
+VpcClient::CreateRoutePolicyOutcome VpcClient::CreateRoutePolicy(const CreateRoutePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyResponse rsp = CreateRoutePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyOutcome(rsp);
+        else
+            return CreateRoutePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyAsync(const CreateRoutePolicyRequest& request, const CreateRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyOutcomeCallable VpcClient::CreateRoutePolicyCallable(const CreateRoutePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateRoutePolicyAssociationsOutcome VpcClient::CreateRoutePolicyAssociations(const CreateRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyAssociationsResponse rsp = CreateRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyAssociationsOutcome(rsp);
+        else
+            return CreateRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyAssociationsAsync(const CreateRoutePolicyAssociationsRequest& request, const CreateRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyAssociationsOutcomeCallable VpcClient::CreateRoutePolicyAssociationsCallable(const CreateRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateRoutePolicyEntriesOutcome VpcClient::CreateRoutePolicyEntries(const CreateRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoutePolicyEntriesResponse rsp = CreateRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoutePolicyEntriesOutcome(rsp);
+        else
+            return CreateRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateRoutePolicyEntriesAsync(const CreateRoutePolicyEntriesRequest& request, const CreateRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateRoutePolicyEntriesOutcomeCallable VpcClient::CreateRoutePolicyEntriesCallable(const CreateRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateRouteTableOutcome VpcClient::CreateRouteTable(const CreateRouteTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRouteTable");
@@ -5322,6 +5451,135 @@ VpcClient::DeleteReserveIpAddressesOutcomeCallable VpcClient::DeleteReserveIpAdd
         [this, request]()
         {
             return this->DeleteReserveIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyOutcome VpcClient::DeleteRoutePolicy(const DeleteRoutePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyResponse rsp = DeleteRoutePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyOutcome(rsp);
+        else
+            return DeleteRoutePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyAsync(const DeleteRoutePolicyRequest& request, const DeleteRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyOutcomeCallable VpcClient::DeleteRoutePolicyCallable(const DeleteRoutePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyAssociationsOutcome VpcClient::DeleteRoutePolicyAssociations(const DeleteRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyAssociationsResponse rsp = DeleteRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyAssociationsOutcome(rsp);
+        else
+            return DeleteRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyAssociationsAsync(const DeleteRoutePolicyAssociationsRequest& request, const DeleteRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyAssociationsOutcomeCallable VpcClient::DeleteRoutePolicyAssociationsCallable(const DeleteRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteRoutePolicyEntriesOutcome VpcClient::DeleteRoutePolicyEntries(const DeleteRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoutePolicyEntriesResponse rsp = DeleteRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoutePolicyEntriesOutcome(rsp);
+        else
+            return DeleteRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteRoutePolicyEntriesAsync(const DeleteRoutePolicyEntriesRequest& request, const DeleteRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteRoutePolicyEntriesOutcomeCallable VpcClient::DeleteRoutePolicyEntriesCallable(const DeleteRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoutePolicyEntries(request);
         }
     );
 
@@ -9278,6 +9536,49 @@ VpcClient::DescribeRouteListOutcomeCallable VpcClient::DescribeRouteListCallable
         [this, request]()
         {
             return this->DescribeRouteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRoutePolicyEntriesOutcome VpcClient::DescribeRoutePolicyEntries(const DescribeRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoutePolicyEntriesResponse rsp = DescribeRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoutePolicyEntriesOutcome(rsp);
+        else
+            return DescribeRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRoutePolicyEntriesAsync(const DescribeRoutePolicyEntriesRequest& request, const DescribeRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRoutePolicyEntriesOutcomeCallable VpcClient::DescribeRoutePolicyEntriesCallable(const DescribeRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoutePolicyEntries(request);
         }
     );
 
@@ -15133,6 +15434,49 @@ VpcClient::ModifyReserveIpAddressOutcomeCallable VpcClient::ModifyReserveIpAddre
     return task->get_future();
 }
 
+VpcClient::ModifyRoutePolicyAttributeOutcome VpcClient::ModifyRoutePolicyAttribute(const ModifyRoutePolicyAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoutePolicyAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoutePolicyAttributeResponse rsp = ModifyRoutePolicyAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoutePolicyAttributeOutcome(rsp);
+        else
+            return ModifyRoutePolicyAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoutePolicyAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyRoutePolicyAttributeAsync(const ModifyRoutePolicyAttributeRequest& request, const ModifyRoutePolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoutePolicyAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyRoutePolicyAttributeOutcomeCallable VpcClient::ModifyRoutePolicyAttributeCallable(const ModifyRoutePolicyAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoutePolicyAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoutePolicyAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyRouteTableAttributeOutcome VpcClient::ModifyRouteTableAttribute(const ModifyRouteTableAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRouteTableAttribute");
@@ -16724,6 +17068,92 @@ VpcClient::ReplaceHighPriorityRoutesOutcomeCallable VpcClient::ReplaceHighPriori
     return task->get_future();
 }
 
+VpcClient::ReplaceRoutePolicyAssociationsOutcome VpcClient::ReplaceRoutePolicyAssociations(const ReplaceRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutePolicyAssociationsResponse rsp = ReplaceRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutePolicyAssociationsOutcome(rsp);
+        else
+            return ReplaceRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceRoutePolicyAssociationsAsync(const ReplaceRoutePolicyAssociationsRequest& request, const ReplaceRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceRoutePolicyAssociationsOutcomeCallable VpcClient::ReplaceRoutePolicyAssociationsCallable(const ReplaceRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ReplaceRoutePolicyEntriesOutcome VpcClient::ReplaceRoutePolicyEntries(const ReplaceRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutePolicyEntriesResponse rsp = ReplaceRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutePolicyEntriesOutcome(rsp);
+        else
+            return ReplaceRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceRoutePolicyEntriesAsync(const ReplaceRoutePolicyEntriesRequest& request, const ReplaceRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceRoutePolicyEntriesOutcomeCallable VpcClient::ReplaceRoutePolicyEntriesCallable(const ReplaceRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceRoutePolicyEntries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ReplaceRouteTableAssociationOutcome VpcClient::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceRouteTableAssociation");
@@ -17018,6 +17448,92 @@ VpcClient::ResetNatGatewayConnectionOutcomeCallable VpcClient::ResetNatGatewayCo
         [this, request]()
         {
             return this->ResetNatGatewayConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetRoutePolicyAssociationsOutcome VpcClient::ResetRoutePolicyAssociations(const ResetRoutePolicyAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRoutePolicyAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRoutePolicyAssociationsResponse rsp = ResetRoutePolicyAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRoutePolicyAssociationsOutcome(rsp);
+        else
+            return ResetRoutePolicyAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRoutePolicyAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetRoutePolicyAssociationsAsync(const ResetRoutePolicyAssociationsRequest& request, const ResetRoutePolicyAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRoutePolicyAssociations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetRoutePolicyAssociationsOutcomeCallable VpcClient::ResetRoutePolicyAssociationsCallable(const ResetRoutePolicyAssociationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRoutePolicyAssociationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRoutePolicyAssociations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetRoutePolicyEntriesOutcome VpcClient::ResetRoutePolicyEntries(const ResetRoutePolicyEntriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetRoutePolicyEntries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetRoutePolicyEntriesResponse rsp = ResetRoutePolicyEntriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetRoutePolicyEntriesOutcome(rsp);
+        else
+            return ResetRoutePolicyEntriesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetRoutePolicyEntriesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetRoutePolicyEntriesAsync(const ResetRoutePolicyEntriesRequest& request, const ResetRoutePolicyEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetRoutePolicyEntries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetRoutePolicyEntriesOutcomeCallable VpcClient::ResetRoutePolicyEntriesCallable(const ResetRoutePolicyEntriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetRoutePolicyEntriesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetRoutePolicyEntries(request);
         }
     );
 

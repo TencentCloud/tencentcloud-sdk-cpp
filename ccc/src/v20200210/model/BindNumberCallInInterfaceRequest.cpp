@@ -25,7 +25,8 @@ using namespace std;
 BindNumberCallInInterfaceRequest::BindNumberCallInInterfaceRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_numberHasBeenSet(false),
-    m_callInInterfaceHasBeenSet(false)
+    m_callInInterfaceHasBeenSet(false),
+    m_numberTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string BindNumberCallInInterfaceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_callInInterface.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_numberTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumberType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_numberType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void BindNumberCallInInterfaceRequest::SetCallInInterface(const Interface& _call
 bool BindNumberCallInInterfaceRequest::CallInInterfaceHasBeenSet() const
 {
     return m_callInInterfaceHasBeenSet;
+}
+
+string BindNumberCallInInterfaceRequest::GetNumberType() const
+{
+    return m_numberType;
+}
+
+void BindNumberCallInInterfaceRequest::SetNumberType(const string& _numberType)
+{
+    m_numberType = _numberType;
+    m_numberTypeHasBeenSet = true;
+}
+
+bool BindNumberCallInInterfaceRequest::NumberTypeHasBeenSet() const
+{
+    return m_numberTypeHasBeenSet;
 }
 
 

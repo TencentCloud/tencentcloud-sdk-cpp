@@ -77,6 +77,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
   include/tencentcloud/cdb/v20170320/model/ProxyAllocation.h
   include/tencentcloud/cdb/v20170320/model/StopCpuExpandRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/cdb/v20170320/model/TagInfoUnit.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleResponse.h
@@ -328,6 +329,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateAuditRuleTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/DatabasePrivilege.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityResponse.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDatabasesResponse.h
   include/tencentcloud/cdb/v20170320/model/TaskAttachInfo.h
@@ -549,6 +551,7 @@ set(cdb_src
   src/v20170320/model/StopDBImportJobResponse.cpp
   src/v20170320/model/ProxyAllocation.cpp
   src/v20170320/model/StopCpuExpandRequest.cpp
+  src/v20170320/model/DescribeInstancePasswordComplexityRequest.cpp
   src/v20170320/model/ModifyDBInstanceNameRequest.cpp
   src/v20170320/model/TagInfoUnit.cpp
   src/v20170320/model/ModifyAuditRuleResponse.cpp
@@ -800,6 +803,7 @@ set(cdb_src
   src/v20170320/model/CreateAuditRuleTemplateRequest.cpp
   src/v20170320/model/DatabasePrivilege.cpp
   src/v20170320/model/DescribeAuditPoliciesRequest.cpp
+  src/v20170320/model/DescribeInstancePasswordComplexityResponse.cpp
   src/v20170320/model/AdjustCdbProxyAddressRequest.cpp
   src/v20170320/model/DescribeDatabasesResponse.cpp
   src/v20170320/model/TaskAttachInfo.cpp

@@ -23,7 +23,9 @@ using namespace std;
 BeautyEffectItemConfig::BeautyEffectItemConfig() :
     m_typeHasBeenSet(false),
     m_switchHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_resourcePathHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome BeautyEffectItemConfig::Deserialize(const rapidjson::Value &
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourcePath") && !value["ResourcePath"].IsNull())
+    {
+        if (!value["ResourcePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BeautyEffectItemConfig.ResourcePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourcePath = string(value["ResourcePath"].GetString());
+        m_resourcePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BeautyEffectItemConfig.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void BeautyEffectItemConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);
+    }
+
+    if (m_resourcePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourcePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void BeautyEffectItemConfig::SetValue(const int64_t& _value)
 bool BeautyEffectItemConfig::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string BeautyEffectItemConfig::GetResourcePath() const
+{
+    return m_resourcePath;
+}
+
+void BeautyEffectItemConfig::SetResourcePath(const string& _resourcePath)
+{
+    m_resourcePath = _resourcePath;
+    m_resourcePathHasBeenSet = true;
+}
+
+bool BeautyEffectItemConfig::ResourcePathHasBeenSet() const
+{
+    return m_resourcePathHasBeenSet;
+}
+
+string BeautyEffectItemConfig::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void BeautyEffectItemConfig::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool BeautyEffectItemConfig::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

@@ -48,8 +48,12 @@ namespace TencentCloud
 
                     /**
                      * 获取类型名称。取值如下：
-
 <li>Whiten：美白</li>
+<li>BlackAlpha1：美黑</li>
+<li>BlackAlpha2：较强美黑</li>
+<li>FoundationAlpha2：美白-粉白</li>
+<li>Clear：清晰度</li>
+<li>Sharpen：锐化</li>
 <li>Smooth：磨皮</li>
 <li>BeautyThinFace：瘦脸</li>
 <li>NatureFace：自然脸型</li>
@@ -59,12 +63,18 @@ namespace TencentCloud
 <li>RemoveEyeBags：祛眼袋</li>
 <li>ThinNose：瘦鼻</li>
 <li>RemoveLawLine：祛法令纹</li>
+<li>CheekboneThin：瘦颧骨</li>
+<li>FaceFeatureLipsLut：口红</li>
 <li>ToothWhiten：牙齿美白</li>
-
-
+<li>FaceFeatureSoftlight：柔光</li>
+<li>Makeup：美妆</li>
                      * @return Type 类型名称。取值如下：
-
 <li>Whiten：美白</li>
+<li>BlackAlpha1：美黑</li>
+<li>BlackAlpha2：较强美黑</li>
+<li>FoundationAlpha2：美白-粉白</li>
+<li>Clear：清晰度</li>
+<li>Sharpen：锐化</li>
 <li>Smooth：磨皮</li>
 <li>BeautyThinFace：瘦脸</li>
 <li>NatureFace：自然脸型</li>
@@ -74,17 +84,23 @@ namespace TencentCloud
 <li>RemoveEyeBags：祛眼袋</li>
 <li>ThinNose：瘦鼻</li>
 <li>RemoveLawLine：祛法令纹</li>
+<li>CheekboneThin：瘦颧骨</li>
+<li>FaceFeatureLipsLut：口红</li>
 <li>ToothWhiten：牙齿美白</li>
-
-
+<li>FaceFeatureSoftlight：柔光</li>
+<li>Makeup：美妆</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型名称。取值如下：
-
 <li>Whiten：美白</li>
+<li>BlackAlpha1：美黑</li>
+<li>BlackAlpha2：较强美黑</li>
+<li>FoundationAlpha2：美白-粉白</li>
+<li>Clear：清晰度</li>
+<li>Sharpen：锐化</li>
 <li>Smooth：磨皮</li>
 <li>BeautyThinFace：瘦脸</li>
 <li>NatureFace：自然脸型</li>
@@ -94,12 +110,18 @@ namespace TencentCloud
 <li>RemoveEyeBags：祛眼袋</li>
 <li>ThinNose：瘦鼻</li>
 <li>RemoveLawLine：祛法令纹</li>
+<li>CheekboneThin：瘦颧骨</li>
+<li>FaceFeatureLipsLut：口红</li>
 <li>ToothWhiten：牙齿美白</li>
-
-
+<li>FaceFeatureSoftlight：柔光</li>
+<li>Makeup：美妆</li>
                      * @param _type 类型名称。取值如下：
-
 <li>Whiten：美白</li>
+<li>BlackAlpha1：美黑</li>
+<li>BlackAlpha2：较强美黑</li>
+<li>FoundationAlpha2：美白-粉白</li>
+<li>Clear：清晰度</li>
+<li>Sharpen：锐化</li>
 <li>Smooth：磨皮</li>
 <li>BeautyThinFace：瘦脸</li>
 <li>NatureFace：自然脸型</li>
@@ -109,9 +131,11 @@ namespace TencentCloud
 <li>RemoveEyeBags：祛眼袋</li>
 <li>ThinNose：瘦鼻</li>
 <li>RemoveLawLine：祛法令纹</li>
+<li>CheekboneThin：瘦颧骨</li>
+<li>FaceFeatureLipsLut：口红</li>
 <li>ToothWhiten：牙齿美白</li>
-
-
+<li>FaceFeatureSoftlight：柔光</li>
+<li>Makeup：美妆</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -177,12 +201,58 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取附加资源路径。
+                     * @return ResourcePath 附加资源路径。
+                     * 
+                     */
+                    std::string GetResourcePath() const;
+
+                    /**
+                     * 设置附加资源路径。
+                     * @param _resourcePath 附加资源路径。
+                     * 
+                     */
+                    void SetResourcePath(const std::string& _resourcePath);
+
+                    /**
+                     * 判断参数 ResourcePath 是否已赋值
+                     * @return ResourcePath 是否已赋值
+                     * 
+                     */
+                    bool ResourcePathHasBeenSet() const;
+
+                    /**
+                     * 获取自定义参数。
+                     * @return ExtInfo 自定义参数。
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置自定义参数。
+                     * @param _extInfo 自定义参数。
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 类型名称。取值如下：
-
 <li>Whiten：美白</li>
+<li>BlackAlpha1：美黑</li>
+<li>BlackAlpha2：较强美黑</li>
+<li>FoundationAlpha2：美白-粉白</li>
+<li>Clear：清晰度</li>
+<li>Sharpen：锐化</li>
 <li>Smooth：磨皮</li>
 <li>BeautyThinFace：瘦脸</li>
 <li>NatureFace：自然脸型</li>
@@ -192,9 +262,11 @@ namespace TencentCloud
 <li>RemoveEyeBags：祛眼袋</li>
 <li>ThinNose：瘦鼻</li>
 <li>RemoveLawLine：祛法令纹</li>
+<li>CheekboneThin：瘦颧骨</li>
+<li>FaceFeatureLipsLut：口红</li>
 <li>ToothWhiten：牙齿美白</li>
-
-
+<li>FaceFeatureSoftlight：柔光</li>
+<li>Makeup：美妆</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -213,6 +285,18 @@ namespace TencentCloud
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 附加资源路径。
+                     */
+                    std::string m_resourcePath;
+                    bool m_resourcePathHasBeenSet;
+
+                    /**
+                     * 自定义参数。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

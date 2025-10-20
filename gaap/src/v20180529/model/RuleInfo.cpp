@@ -35,7 +35,8 @@ RuleInfo::RuleInfo() :
     m_forwardHostHasBeenSet(false),
     m_serverNameIndicationSwitchHasBeenSet(false),
     m_serverNameIndicationHasBeenSet(false),
-    m_forcedRedirectHasBeenSet(false)
+    m_forcedRedirectHasBeenSet(false),
+    m_forwardProtocolHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,16 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
         m_forcedRedirectHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardProtocol") && !value["ForwardProtocol"].IsNull())
+    {
+        if (!value["ForwardProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ForwardProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardProtocol = string(value["ForwardProtocol"].GetString());
+        m_forwardProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +355,14 @@ void RuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ForcedRedirect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_forcedRedirect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardProtocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -587,5 +606,21 @@ void RuleInfo::SetForcedRedirect(const string& _forcedRedirect)
 bool RuleInfo::ForcedRedirectHasBeenSet() const
 {
     return m_forcedRedirectHasBeenSet;
+}
+
+string RuleInfo::GetForwardProtocol() const
+{
+    return m_forwardProtocol;
+}
+
+void RuleInfo::SetForwardProtocol(const string& _forwardProtocol)
+{
+    m_forwardProtocol = _forwardProtocol;
+    m_forwardProtocolHasBeenSet = true;
+}
+
+bool RuleInfo::ForwardProtocolHasBeenSet() const
+{
+    return m_forwardProtocolHasBeenSet;
 }
 
