@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务id
-                     * @return JobId 迁移任务id
+                     * 获取迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @return JobId 迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务id
-                     * @param _jobId 迁移任务id
+                     * 设置迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
+                     * @param _jobId 迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -87,7 +91,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务id
+                     * 迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

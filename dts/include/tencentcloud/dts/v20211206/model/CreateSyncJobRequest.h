@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取同步任务规格，Standard:标准版
-                     * @return Specification 同步任务规格，Standard:标准版
+                     * 获取同步任务规格，Standard:标准版，目前仅支持Standard规格。
+                     * @return Specification 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置同步任务规格，Standard:标准版
-                     * @param _specification 同步任务规格，Standard:标准版
+                     * 设置同步任务规格，Standard:标准版，目前仅支持Standard规格。
+                     * @param _specification 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 同步任务规格，Standard:标准版
+                     * 同步任务规格，Standard:标准版，目前仅支持Standard规格。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;

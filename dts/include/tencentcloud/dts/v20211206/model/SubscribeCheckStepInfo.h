@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StepNoHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤状态，可能值为 notStarted,running,finished,failed
-                     * @return Status 当前步骤状态，可能值为 notStarted,running,finished,failed
+                     * 获取当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知
+                     * @return Status 当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置当前步骤状态，可能值为 notStarted,running,finished,failed
-                     * @param _status 当前步骤状态，可能值为 notStarted,running,finished,failed
+                     * 设置当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知
+                     * @param _status 当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -215,7 +215,7 @@ namespace TencentCloud
                     bool m_stepNoHasBeenSet;
 
                     /**
-                     * 当前步骤状态，可能值为 notStarted,running,finished,failed
+                     * 当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

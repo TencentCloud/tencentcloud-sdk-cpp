@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/AccessKeyAlarmInfo.h>
 #include <tencentcloud/csip/v20221121/model/AKInfo.h>
+#include <tencentcloud/csip/v20221121/model/SourceIPVpcInfo.h>
 
 
 namespace TencentCloud
@@ -155,9 +156,11 @@ namespace TencentCloud
 
                     /**
                      * 获取调用方式
+-1:未统计
 0:控制台调用
 1:API
                      * @return EventType 调用方式
+-1:未统计
 0:控制台调用
 1:API
                      * 
@@ -166,9 +169,11 @@ namespace TencentCloud
 
                     /**
                      * 设置调用方式
+-1:未统计
 0:控制台调用
 1:API
                      * @param _eventType 调用方式
+-1:未统计
 0:控制台调用
 1:API
                      * 
@@ -429,6 +434,52 @@ namespace TencentCloud
                      */
                     bool ISPHasBeenSet() const;
 
+                    /**
+                     * 获取账号外vpc信息
+                     * @return VpcInfo 账号外vpc信息
+                     * 
+                     */
+                    std::vector<SourceIPVpcInfo> GetVpcInfo() const;
+
+                    /**
+                     * 设置账号外vpc信息
+                     * @param _vpcInfo 账号外vpc信息
+                     * 
+                     */
+                    void SetVpcInfo(const std::vector<SourceIPVpcInfo>& _vpcInfo);
+
+                    /**
+                     * 判断参数 VpcInfo 是否已赋值
+                     * @return VpcInfo 是否已赋值
+                     * 
+                     */
+                    bool VpcInfoHasBeenSet() const;
+
+                    /**
+                     * 获取云类型
+0为腾讯云
+                     * @return CloudType 云类型
+0为腾讯云
+                     * 
+                     */
+                    int64_t GetCloudType() const;
+
+                    /**
+                     * 设置云类型
+0为腾讯云
+                     * @param _cloudType 云类型
+0为腾讯云
+                     * 
+                     */
+                    void SetCloudType(const int64_t& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +514,7 @@ namespace TencentCloud
 
                     /**
                      * 调用方式
+-1:未统计
 0:控制台调用
 1:API
                      */
@@ -538,6 +590,19 @@ namespace TencentCloud
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;
+
+                    /**
+                     * 账号外vpc信息
+                     */
+                    std::vector<SourceIPVpcInfo> m_vpcInfo;
+                    bool m_vpcInfoHasBeenSet;
+
+                    /**
+                     * 云类型
+0为腾讯云
+                     */
+                    int64_t m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

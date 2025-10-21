@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库类型，如mysql,redis等
-                     * @return DatabaseType 数据库类型，如mysql,redis等
+                     * 获取数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
+                     * @return DatabaseType 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
                      * 
                      */
                     std::string GetDatabaseType() const;
 
                     /**
-                     * 设置数据库类型，如mysql,redis等
-                     * @param _databaseType 数据库类型，如mysql,redis等
+                     * 设置数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
+                     * @param _databaseType 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
                      * 
                      */
                     void SetDatabaseType(const std::string& _databaseType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MigrateRoleHasBeenSet() const;
 
                     /**
-                     * 获取云数据库实例ID
-                     * @return InstanceId 云数据库实例ID
+                     * 获取云数据库实例ID，可通过对应业务实例列表获取实例信息。
+                     * @return InstanceId 云数据库实例ID，可通过对应业务实例列表获取实例信息。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置云数据库实例ID
-                     * @param _instanceId 云数据库实例ID
+                     * 设置云数据库实例ID，可通过对应业务实例列表获取实例信息。
+                     * @param _instanceId 云数据库实例ID，可通过对应业务实例列表获取实例信息。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云数据库名称
-                     * @return InstanceName 云数据库名称
+                     * 获取云数据库名称，可通过对应业务实例列表获取实例信息。
+                     * @return InstanceName 云数据库名称，可通过对应业务实例列表获取实例信息。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置云数据库名称
-                     * @param _instanceName 云数据库名称
+                     * 设置云数据库名称，可通过对应业务实例列表获取实例信息。
+                     * @param _instanceName 云数据库名称，可通过对应业务实例列表获取实例信息。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -255,7 +255,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库类型，如mysql,redis等
+                     * 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
                      */
                     std::string m_databaseType;
                     bool m_databaseTypeHasBeenSet;
@@ -267,13 +267,13 @@ namespace TencentCloud
                     bool m_migrateRoleHasBeenSet;
 
                     /**
-                     * 云数据库实例ID
+                     * 云数据库实例ID，可通过对应业务实例列表获取实例信息。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云数据库名称
+                     * 云数据库名称，可通过对应业务实例列表获取实例信息。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

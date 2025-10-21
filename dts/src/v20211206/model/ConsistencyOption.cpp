@@ -21,7 +21,10 @@ using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
 ConsistencyOption::ConsistencyOption() :
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_objectModeHasBeenSet(false),
+    m_objectsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -40,6 +43,50 @@ CoreInternalOutcome ConsistencyOption::Deserialize(const rapidjson::Value &value
         m_modeHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectMode") && !value["ObjectMode"].IsNull())
+    {
+        if (!value["ObjectMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsistencyOption.ObjectMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectMode = string(value["ObjectMode"].GetString());
+        m_objectModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Objects") && !value["Objects"].IsNull())
+    {
+        if (!value["Objects"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsistencyOption.Objects` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_objects.Deserialize(value["Objects"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_objectsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Options") && !value["Options"].IsNull())
+    {
+        if (!value["Options"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsistencyOption.Options` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_options.Deserialize(value["Options"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_optionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +100,32 @@ void ConsistencyOption::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Objects";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_objects.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_options.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -72,5 +145,53 @@ void ConsistencyOption::SetMode(const string& _mode)
 bool ConsistencyOption::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
+}
+
+string ConsistencyOption::GetObjectMode() const
+{
+    return m_objectMode;
+}
+
+void ConsistencyOption::SetObjectMode(const string& _objectMode)
+{
+    m_objectMode = _objectMode;
+    m_objectModeHasBeenSet = true;
+}
+
+bool ConsistencyOption::ObjectModeHasBeenSet() const
+{
+    return m_objectModeHasBeenSet;
+}
+
+DatabaseTableObject ConsistencyOption::GetObjects() const
+{
+    return m_objects;
+}
+
+void ConsistencyOption::SetObjects(const DatabaseTableObject& _objects)
+{
+    m_objects = _objects;
+    m_objectsHasBeenSet = true;
+}
+
+bool ConsistencyOption::ObjectsHasBeenSet() const
+{
+    return m_objectsHasBeenSet;
+}
+
+CompareOptions ConsistencyOption::GetOptions() const
+{
+    return m_options;
+}
+
+void ConsistencyOption::SetOptions(const CompareOptions& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool ConsistencyOption::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 

@@ -382,6 +382,27 @@ namespace TencentCloud
                      */
                     bool ArchNameHasBeenSet() const;
 
+                    /**
+                     * 获取来源
+                     * @return TaskSource 来源
+                     * 
+                     */
+                    int64_t GetTaskSource() const;
+
+                    /**
+                     * 设置来源
+                     * @param _taskSource 来源
+                     * 
+                     */
+                    void SetTaskSource(const int64_t& _taskSource);
+
+                    /**
+                     * 判断参数 TaskSource 是否已赋值
+                     * @return TaskSource 是否已赋值
+                     * 
+                     */
+                    bool TaskSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_archName;
                     bool m_archNameHasBeenSet;
+
+                    /**
+                     * 来源
+                     */
+                    int64_t m_taskSource;
+                    bool m_taskSourceHasBeenSet;
 
                 };
             }

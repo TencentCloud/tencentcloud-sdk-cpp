@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
-#define TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
+#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_WRITEDESTINATION_H_
+#define TENCENTCLOUD_MONITOR_V20180724_MODEL_WRITEDESTINATION_H_
 
 #include <string>
 #include <vector>
@@ -28,52 +28,52 @@
 
 namespace TencentCloud
 {
-    namespace Dts
+    namespace Monitor
     {
-        namespace V20211206
+        namespace V20180724
         {
             namespace Model
             {
                 /**
-                * OnlineDDL类型
+                * 数据写向目标
                 */
-                class OnlineDDL : public AbstractModel
+                class WriteDestination : public AbstractModel
                 {
                 public:
-                    OnlineDDL();
-                    ~OnlineDDL() = default;
+                    WriteDestination();
+                    ~WriteDestination() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取状态，ON-启用，OFF-不启用。
-                     * @return Status 状态，ON-启用，OFF-不启用。
+                     * 获取存储标识
+                     * @return Destination 存储标识
                      * 
                      */
-                    std::string GetStatus() const;
+                    std::string GetDestination() const;
 
                     /**
-                     * 设置状态，ON-启用，OFF-不启用。
-                     * @param _status 状态，ON-启用，OFF-不启用。
+                     * 设置存储标识
+                     * @param _destination 存储标识
                      * 
                      */
-                    void SetStatus(const std::string& _status);
+                    void SetDestination(const std::string& _destination);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 Destination 是否已赋值
+                     * @return Destination 是否已赋值
                      * 
                      */
-                    bool StatusHasBeenSet() const;
+                    bool DestinationHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 状态，ON-启用，OFF-不启用。
+                     * 存储标识
                      */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    std::string m_destination;
+                    bool m_destinationHasBeenSet;
 
                 };
             }
@@ -81,4 +81,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
+#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_WRITEDESTINATION_H_

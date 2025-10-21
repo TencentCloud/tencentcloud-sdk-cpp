@@ -36,7 +36,8 @@ TaskListItem::TaskListItem() :
     m_verifyIdHasBeenSet(false),
     m_taskStatusTypeHasBeenSet(false),
     m_archIdHasBeenSet(false),
-    m_archNameHasBeenSet(false)
+    m_archNameHasBeenSet(false),
+    m_taskSourceHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome TaskListItem::Deserialize(const rapidjson::Value &value)
         m_archNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskSource") && !value["TaskSource"].IsNull())
+    {
+        if (!value["TaskSource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.TaskSource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskSource = value["TaskSource"].GetInt64();
+        m_taskSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void TaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ArchName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_archName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskSource, allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void TaskListItem::SetArchName(const string& _archName)
 bool TaskListItem::ArchNameHasBeenSet() const
 {
     return m_archNameHasBeenSet;
+}
+
+int64_t TaskListItem::GetTaskSource() const
+{
+    return m_taskSource;
+}
+
+void TaskListItem::SetTaskSource(const int64_t& _taskSource)
+{
+    m_taskSource = _taskSource;
+    m_taskSourceHasBeenSet = true;
+}
+
+bool TaskListItem::TaskSourceHasBeenSet() const
+{
+    return m_taskSourceHasBeenSet;
 }
 

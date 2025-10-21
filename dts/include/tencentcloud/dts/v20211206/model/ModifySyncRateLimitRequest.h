@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务ID
-                     * @return JobId 迁移任务ID
+                     * 获取同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @return JobId 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务ID
-                     * @param _jobId 迁移任务ID
+                     * 设置同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * @param _jobId 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DumpThreadHasBeenSet() const;
 
                     /**
-                     * 获取同步任务全量导出的 Rps 限制、需要大于 0
-                     * @return DumpRps 同步任务全量导出的 Rps 限制、需要大于 0
+                     * 获取同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
+                     * @return DumpRps 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
                      * 
                      */
                     int64_t GetDumpRps() const;
 
                     /**
-                     * 设置同步任务全量导出的 Rps 限制、需要大于 0
-                     * @param _dumpRps 同步任务全量导出的 Rps 限制、需要大于 0
+                     * 设置同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
+                     * @param _dumpRps 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
                      * 
                      */
                     void SetDumpRps(const int64_t& _dumpRps);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务ID
+                     * 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_dumpThreadHasBeenSet;
 
                     /**
-                     * 同步任务全量导出的 Rps 限制、需要大于 0
+                     * 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
                      */
                     int64_t m_dumpRps;
                     bool m_dumpRpsHasBeenSet;

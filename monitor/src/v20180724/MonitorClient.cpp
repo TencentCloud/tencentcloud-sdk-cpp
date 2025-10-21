@@ -4813,6 +4813,49 @@ MonitorClient::DescribeRemoteURLsOutcomeCallable MonitorClient::DescribeRemoteUR
     return task->get_future();
 }
 
+MonitorClient::DescribeRemoteWritesOutcome MonitorClient::DescribeRemoteWrites(const DescribeRemoteWritesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteWrites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteWritesResponse rsp = DescribeRemoteWritesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteWritesOutcome(rsp);
+        else
+            return DescribeRemoteWritesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteWritesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeRemoteWritesAsync(const DescribeRemoteWritesRequest& request, const DescribeRemoteWritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRemoteWrites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeRemoteWritesOutcomeCallable MonitorClient::DescribeRemoteWritesCallable(const DescribeRemoteWritesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRemoteWritesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRemoteWrites(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeSSOAccountOutcome MonitorClient::DescribeSSOAccount(const DescribeSSOAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSSOAccount");

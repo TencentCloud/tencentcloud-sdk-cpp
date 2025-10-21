@@ -42,7 +42,8 @@ AccessKeyAlarm::AccessKeyAlarm() :
     m_leakEvidenceHasBeenSet(false),
     m_isSupportEditWhiteAccountHasBeenSet(false),
     m_evidenceHasBeenSet(false),
-    m_ruleKeyHasBeenSet(false)
+    m_ruleKeyHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome AccessKeyAlarm::Deserialize(const rapidjson::Value &value)
         m_ruleKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.CloudType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = value["CloudType"].GetInt64();
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ void AccessKeyAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RuleKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudType, allocator);
     }
 
 }
@@ -823,5 +842,21 @@ void AccessKeyAlarm::SetRuleKey(const string& _ruleKey)
 bool AccessKeyAlarm::RuleKeyHasBeenSet() const
 {
     return m_ruleKeyHasBeenSet;
+}
+
+int64_t AccessKeyAlarm::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void AccessKeyAlarm::SetCloudType(const int64_t& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

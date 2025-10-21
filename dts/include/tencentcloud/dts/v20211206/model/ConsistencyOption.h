@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dts/v20211206/model/DatabaseTableObject.h>
+#include <tencentcloud/dts/v20211206/model/CompareOptions.h>
 
 
 namespace TencentCloud
@@ -67,6 +69,73 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * @return ObjectMode 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * 
+                     */
+                    std::string GetObjectMode() const;
+
+                    /**
+                     * 设置校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * @param _objectMode 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     * 
+                     */
+                    void SetObjectMode(const std::string& _objectMode);
+
+                    /**
+                     * 判断参数 ObjectMode 是否已赋值
+                     * @return ObjectMode 是否已赋值
+                     * 
+                     */
+                    bool ObjectModeHasBeenSet() const;
+
+                    /**
+                     * 获取校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Objects 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DatabaseTableObject GetObjects() const;
+
+                    /**
+                     * 设置校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objects 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjects(const DatabaseTableObject& _objects);
+
+                    /**
+                     * 判断参数 Objects 是否已赋值
+                     * @return Objects 是否已赋值
+                     * 
+                     */
+                    bool ObjectsHasBeenSet() const;
+
+                    /**
+                     * 获取校验配置
+                     * @return Options 校验配置
+                     * 
+                     */
+                    CompareOptions GetOptions() const;
+
+                    /**
+                     * 设置校验配置
+                     * @param _options 校验配置
+                     * 
+                     */
+                    void SetOptions(const CompareOptions& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     * 
+                     */
+                    bool OptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +143,25 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * 校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作
+                     */
+                    std::string m_objectMode;
+                    bool m_objectModeHasBeenSet;
+
+                    /**
+                     * 校验对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DatabaseTableObject m_objects;
+                    bool m_objectsHasBeenSet;
+
+                    /**
+                     * 校验配置
+                     */
+                    CompareOptions m_options;
+                    bool m_optionsHasBeenSet;
 
                 };
             }

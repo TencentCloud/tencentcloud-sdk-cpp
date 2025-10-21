@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取任务运行状态，可能值为 running,failed,success
-                     * @return Status 任务运行状态，可能值为 running,failed,success
+                     * 获取任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
+                     * @return Status 任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
                      * 
                      */
                     std::string GetStatus() const;
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 任务运行状态，可能值为 running,failed,success
+                     * 任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

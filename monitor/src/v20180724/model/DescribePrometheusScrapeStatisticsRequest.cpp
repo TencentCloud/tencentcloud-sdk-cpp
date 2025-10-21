@@ -23,6 +23,7 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 DescribePrometheusScrapeStatisticsRequest::DescribePrometheusScrapeStatisticsRequest() :
+    m_instanceIdsHasBeenSet(false),
     m_jobTypeHasBeenSet(false)
 {
 }
@@ -33,6 +34,19 @@ string DescribePrometheusScrapeStatisticsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_jobTypeHasBeenSet)
     {
@@ -49,6 +63,22 @@ string DescribePrometheusScrapeStatisticsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribePrometheusScrapeStatisticsRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribePrometheusScrapeStatisticsRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribePrometheusScrapeStatisticsRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
 
 string DescribePrometheusScrapeStatisticsRequest::GetJobType() const
 {

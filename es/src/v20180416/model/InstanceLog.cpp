@@ -25,7 +25,10 @@ InstanceLog::InstanceLog() :
     m_levelHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_nodeIDHasBeenSet(false)
+    m_nodeIDHasBeenSet(false),
+    m_indexNameHasBeenSet(false),
+    m_shardHasBeenSet(false),
+    m_queryCostHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
         m_nodeIDHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexName") && !value["IndexName"].IsNull())
+    {
+        if (!value["IndexName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.IndexName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexName = string(value["IndexName"].GetString());
+        m_indexNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Shard") && !value["Shard"].IsNull())
+    {
+        if (!value["Shard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.Shard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shard = string(value["Shard"].GetString());
+        m_shardHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueryCost") && !value["QueryCost"].IsNull())
+    {
+        if (!value["QueryCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.QueryCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryCost = string(value["QueryCost"].GetString());
+        m_queryCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void InstanceLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "NodeID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Shard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void InstanceLog::SetNodeID(const string& _nodeID)
 bool InstanceLog::NodeIDHasBeenSet() const
 {
     return m_nodeIDHasBeenSet;
+}
+
+string InstanceLog::GetIndexName() const
+{
+    return m_indexName;
+}
+
+void InstanceLog::SetIndexName(const string& _indexName)
+{
+    m_indexName = _indexName;
+    m_indexNameHasBeenSet = true;
+}
+
+bool InstanceLog::IndexNameHasBeenSet() const
+{
+    return m_indexNameHasBeenSet;
+}
+
+string InstanceLog::GetShard() const
+{
+    return m_shard;
+}
+
+void InstanceLog::SetShard(const string& _shard)
+{
+    m_shard = _shard;
+    m_shardHasBeenSet = true;
+}
+
+bool InstanceLog::ShardHasBeenSet() const
+{
+    return m_shardHasBeenSet;
+}
+
+string InstanceLog::GetQueryCost() const
+{
+    return m_queryCost;
+}
+
+void InstanceLog::SetQueryCost(const string& _queryCost)
+{
+    m_queryCost = _queryCost;
+    m_queryCostHasBeenSet = true;
+}
+
+bool InstanceLog::QueryCostHasBeenSet() const
+{
+    return m_queryCostHasBeenSet;
 }
 

@@ -245,6 +245,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRemoteURLsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRemoteURLsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRemoteWritesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRemoteWritesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
@@ -706,6 +708,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRemoteURLsResponse> DescribeRemoteURLsOutcome;
                 typedef std::future<DescribeRemoteURLsOutcome> DescribeRemoteURLsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeRemoteURLsRequest&, DescribeRemoteURLsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteURLsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRemoteWritesResponse> DescribeRemoteWritesOutcome;
+                typedef std::future<DescribeRemoteWritesOutcome> DescribeRemoteWritesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeRemoteWritesRequest&, DescribeRemoteWritesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteWritesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSSOAccountResponse> DescribeSSOAccountOutcome;
                 typedef std::future<DescribeSSOAccountOutcome> DescribeSSOAccountOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeSSOAccountRequest&, DescribeSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSOAccountAsyncHandler;
@@ -1893,6 +1898,15 @@ namespace TencentCloud
                 DescribeRemoteURLsOutcome DescribeRemoteURLs(const Model::DescribeRemoteURLsRequest &request);
                 void DescribeRemoteURLsAsync(const Model::DescribeRemoteURLsRequest& request, const DescribeRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRemoteURLsOutcomeCallable DescribeRemoteURLsCallable(const Model::DescribeRemoteURLsRequest& request);
+
+                /**
+                 *查询安装的 Agent 列表
+                 * @param req DescribeRemoteWritesRequest
+                 * @return DescribeRemoteWritesOutcome
+                 */
+                DescribeRemoteWritesOutcome DescribeRemoteWrites(const Model::DescribeRemoteWritesRequest &request);
+                void DescribeRemoteWritesAsync(const Model::DescribeRemoteWritesRequest& request, const DescribeRemoteWritesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRemoteWritesOutcomeCallable DescribeRemoteWritesCallable(const Model::DescribeRemoteWritesRequest& request);
 
                 /**
                  *列出当前grafana实例的所有授权账号

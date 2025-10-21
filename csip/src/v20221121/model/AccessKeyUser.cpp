@@ -39,7 +39,8 @@ AccessKeyUser::AccessKeyUser() :
     m_iSPHasBeenSet(false),
     m_actionFlagHasBeenSet(false),
     m_loginFlagHasBeenSet(false),
-    m_checkStatusHasBeenSet(false)
+    m_checkStatusHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,16 @@ CoreInternalOutcome AccessKeyUser::Deserialize(const rapidjson::Value &value)
         m_checkStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyUser.CloudType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = value["CloudType"].GetInt64();
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +440,14 @@ void AccessKeyUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CheckStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkStatus, allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudType, allocator);
     }
 
 }
@@ -736,5 +755,21 @@ void AccessKeyUser::SetCheckStatus(const int64_t& _checkStatus)
 bool AccessKeyUser::CheckStatusHasBeenSet() const
 {
     return m_checkStatusHasBeenSet;
+}
+
+int64_t AccessKeyUser::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void AccessKeyUser::SetCloudType(const int64_t& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool AccessKeyUser::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

@@ -530,6 +530,48 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启mcp服务
+                     * @return EnableMcpAccess 是否开启mcp服务
+                     * 
+                     */
+                    int64_t GetEnableMcpAccess() const;
+
+                    /**
+                     * 设置是否开启mcp服务
+                     * @param _enableMcpAccess 是否开启mcp服务
+                     * 
+                     */
+                    void SetEnableMcpAccess(const int64_t& _enableMcpAccess);
+
+                    /**
+                     * 判断参数 EnableMcpAccess 是否已赋值
+                     * @return EnableMcpAccess 是否已赋值
+                     * 
+                     */
+                    bool EnableMcpAccessHasBeenSet() const;
+
+                    /**
+                     * 获取mcp的访问地址
+                     * @return McpAccess mcp的访问地址
+                     * 
+                     */
+                    std::string GetMcpAccess() const;
+
+                    /**
+                     * 设置mcp的访问地址
+                     * @param _mcpAccess mcp的访问地址
+                     * 
+                     */
+                    void SetMcpAccess(const std::string& _mcpAccess);
+
+                    /**
+                     * 判断参数 McpAccess 是否已赋值
+                     * @return McpAccess 是否已赋值
+                     * 
+                     */
+                    bool McpAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -666,6 +708,18 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 是否开启mcp服务
+                     */
+                    int64_t m_enableMcpAccess;
+                    bool m_enableMcpAccessHasBeenSet;
+
+                    /**
+                     * mcp的访问地址
+                     */
+                    std::string m_mcpAccess;
+                    bool m_mcpAccessHasBeenSet;
 
                 };
             }

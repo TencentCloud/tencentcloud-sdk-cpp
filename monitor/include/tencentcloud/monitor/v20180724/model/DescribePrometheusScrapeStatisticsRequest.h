@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取实例ID列表
+                     * @return InstanceIds 实例ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置实例ID列表
+                     * @param _instanceIds 实例ID列表
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
                      * 获取job 类型
                      * @return JobType job 类型
                      * 
@@ -64,6 +85,12 @@ namespace TencentCloud
                     bool JobTypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 实例ID列表
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                     /**
                      * job 类型

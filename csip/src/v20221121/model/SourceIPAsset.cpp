@@ -37,7 +37,9 @@ SourceIPAsset::SourceIPAsset() :
     m_uinHasBeenSet(false),
     m_nicknameHasBeenSet(false),
     m_showStatusHasBeenSet(false),
-    m_iSPHasBeenSet(false)
+    m_iSPHasBeenSet(false),
+    m_vpcInfoHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -236,6 +238,36 @@ CoreInternalOutcome SourceIPAsset::Deserialize(const rapidjson::Value &value)
         m_iSPHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcInfo") && !value["VpcInfo"].IsNull())
+    {
+        if (!value["VpcInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SourceIPAsset.VpcInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VpcInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SourceIPVpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcInfo.push_back(item);
+        }
+        m_vpcInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceIPAsset.CloudType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = value["CloudType"].GetInt64();
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +423,29 @@ void SourceIPAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ISP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iSP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcInfo.begin(); itr != m_vpcInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudType, allocator);
     }
 
 }
@@ -666,5 +721,37 @@ void SourceIPAsset::SetISP(const string& _iSP)
 bool SourceIPAsset::ISPHasBeenSet() const
 {
     return m_iSPHasBeenSet;
+}
+
+vector<SourceIPVpcInfo> SourceIPAsset::GetVpcInfo() const
+{
+    return m_vpcInfo;
+}
+
+void SourceIPAsset::SetVpcInfo(const vector<SourceIPVpcInfo>& _vpcInfo)
+{
+    m_vpcInfo = _vpcInfo;
+    m_vpcInfoHasBeenSet = true;
+}
+
+bool SourceIPAsset::VpcInfoHasBeenSet() const
+{
+    return m_vpcInfoHasBeenSet;
+}
+
+int64_t SourceIPAsset::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void SourceIPAsset::SetCloudType(const int64_t& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool SourceIPAsset::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

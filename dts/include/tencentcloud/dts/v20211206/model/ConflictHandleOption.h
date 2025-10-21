@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConditionColumnHasBeenSet() const;
 
                     /**
-                     * 获取条件覆盖操作
-                     * @return ConditionOperator 条件覆盖操作
+                     * 获取条件覆盖操作，目前仅支持>
+                     * @return ConditionOperator 条件覆盖操作，目前仅支持>
                      * 
                      */
                     std::string GetConditionOperator() const;
 
                     /**
-                     * 设置条件覆盖操作
-                     * @param _conditionOperator 条件覆盖操作
+                     * 设置条件覆盖操作，目前仅支持>
+                     * @param _conditionOperator 条件覆盖操作，目前仅支持>
                      * 
                      */
                     void SetConditionOperator(const std::string& _conditionOperator);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ConditionOperatorHasBeenSet() const;
 
                     /**
-                     * 获取条件覆盖优先级处理
-                     * @return ConditionOrderInSrcAndDst 条件覆盖优先级处理
+                     * 获取条件覆盖优先级处理，支持类型有>,<,=
+                     * @return ConditionOrderInSrcAndDst 条件覆盖优先级处理，支持类型有>,<,=
                      * 
                      */
                     std::string GetConditionOrderInSrcAndDst() const;
 
                     /**
-                     * 设置条件覆盖优先级处理
-                     * @param _conditionOrderInSrcAndDst 条件覆盖优先级处理
+                     * 设置条件覆盖优先级处理，支持类型有>,<,=
+                     * @param _conditionOrderInSrcAndDst 条件覆盖优先级处理，支持类型有>,<,=
                      * 
                      */
                     void SetConditionOrderInSrcAndDst(const std::string& _conditionOrderInSrcAndDst);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_conditionColumnHasBeenSet;
 
                     /**
-                     * 条件覆盖操作
+                     * 条件覆盖操作，目前仅支持>
                      */
                     std::string m_conditionOperator;
                     bool m_conditionOperatorHasBeenSet;
 
                     /**
-                     * 条件覆盖优先级处理
+                     * 条件覆盖优先级处理，支持类型有>,<,=
                      */
                     std::string m_conditionOrderInSrcAndDst;
                     bool m_conditionOrderInSrcAndDstHasBeenSet;

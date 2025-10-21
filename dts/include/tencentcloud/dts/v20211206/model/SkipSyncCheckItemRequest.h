@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id，如：sync-4ddgid2
-                     * @return JobId 任务id，如：sync-4ddgid2
+                     * 获取任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @return JobId 任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务id，如：sync-4ddgid2
-                     * @param _jobId 任务id，如：sync-4ddgid2
+                     * 设置任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
+                     * @param _jobId 任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -87,7 +91,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id，如：sync-4ddgid2
+                     * 任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

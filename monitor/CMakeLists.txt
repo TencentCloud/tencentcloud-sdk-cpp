@@ -100,6 +100,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UninstallGrafanaPluginsResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusTempRequest.h
   include/tencentcloud/monitor/v20180724/model/UpgradeGrafanaInstanceResponse.h
+  include/tencentcloud/monitor/v20180724/model/DescribeRemoteWritesResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h
   include/tencentcloud/monitor/v20180724/model/DeletePrometheusTempSyncResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeDNSConfigRequest.h
@@ -234,6 +235,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeGrafanaNotificationChannelsResponse.h
+  include/tencentcloud/monitor/v20180724/model/WriteDestination.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualCalcType.h
   include/tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h
@@ -253,6 +255,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/GrafanaAccountInfo.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusTargetsTMPRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.h
+  include/tencentcloud/monitor/v20180724/model/DescribeRemoteWritesRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksRequest.h
   include/tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListDimension.h
@@ -590,6 +593,7 @@ set(monitor_src
   src/v20180724/model/UninstallGrafanaPluginsResponse.cpp
   src/v20180724/model/ModifyPrometheusTempRequest.cpp
   src/v20180724/model/UpgradeGrafanaInstanceResponse.cpp
+  src/v20180724/model/DescribeRemoteWritesResponse.cpp
   src/v20180724/model/BindingPolicyTagRequest.cpp
   src/v20180724/model/DeletePrometheusTempSyncResponse.cpp
   src/v20180724/model/DescribeDNSConfigRequest.cpp
@@ -724,6 +728,7 @@ set(monitor_src
   src/v20180724/model/AlarmPolicyEventCondition.cpp
   src/v20180724/model/DeleteAlarmNoticesRequest.cpp
   src/v20180724/model/DescribeGrafanaNotificationChannelsResponse.cpp
+  src/v20180724/model/WriteDestination.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualCalcType.cpp
   src/v20180724/model/ResumeGrafanaInstanceResponse.cpp
   src/v20180724/model/DescribeAccidentEventListResponse.cpp
@@ -743,6 +748,7 @@ set(monitor_src
   src/v20180724/model/GrafanaAccountInfo.cpp
   src/v20180724/model/DescribePrometheusTargetsTMPRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.cpp
+  src/v20180724/model/DescribeRemoteWritesRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyTasksRequest.cpp
   src/v20180724/model/GetPrometheusAgentManagementCommandRequest.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListDimension.cpp

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CNAME 接入，使用 DNS 解析验证时所需的信息。
+                * 站点 CNAME 模式接入验证归属权或域名申请免费证书时，使用 DNS 解析验证时所需的信息。
                 */
                 class DnsVerification : public AbstractModel
                 {

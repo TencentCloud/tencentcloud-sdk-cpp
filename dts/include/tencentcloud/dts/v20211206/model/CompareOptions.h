@@ -109,6 +109,90 @@ namespace TencentCloud
                      */
                     bool ThreadCountHasBeenSet() const;
 
+                    /**
+                     * 获取对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。
+                     * @return Type 对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。
+                     * @param _type 对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+                     * @return CompareMode 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+                     * 
+                     */
+                    std::vector<std::string> GetCompareMode() const;
+
+                    /**
+                     * 设置校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+                     * @param _compareMode 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+                     * 
+                     */
+                    void SetCompareMode(const std::vector<std::string>& _compareMode);
+
+                    /**
+                     * 判断参数 CompareMode 是否已赋值
+                     * @return CompareMode 是否已赋值
+                     * 
+                     */
+                    bool CompareModeHasBeenSet() const;
+
+                    /**
+                     * 获取复检次数
+                     * @return ReCheckTime 复检次数
+                     * 
+                     */
+                    int64_t GetReCheckTime() const;
+
+                    /**
+                     * 设置复检次数
+                     * @param _reCheckTime 复检次数
+                     * 
+                     */
+                    void SetReCheckTime(const int64_t& _reCheckTime);
+
+                    /**
+                     * 判断参数 ReCheckTime 是否已赋值
+                     * @return ReCheckTime 是否已赋值
+                     * 
+                     */
+                    bool ReCheckTimeHasBeenSet() const;
+
+                    /**
+                     * 获取复检时间间隔，单位为分钟，取值 1-60
+                     * @return ReCheckInterval 复检时间间隔，单位为分钟，取值 1-60
+                     * 
+                     */
+                    int64_t GetReCheckInterval() const;
+
+                    /**
+                     * 设置复检时间间隔，单位为分钟，取值 1-60
+                     * @param _reCheckInterval 复检时间间隔，单位为分钟，取值 1-60
+                     * 
+                     */
+                    void SetReCheckInterval(const int64_t& _reCheckInterval);
+
+                    /**
+                     * 判断参数 ReCheckInterval 是否已赋值
+                     * @return ReCheckInterval 是否已赋值
+                     * 
+                     */
+                    bool ReCheckIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +212,30 @@ namespace TencentCloud
                      */
                     int64_t m_threadCount;
                     bool m_threadCountHasBeenSet;
+
+                    /**
+                     * 对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+                     */
+                    std::vector<std::string> m_compareMode;
+                    bool m_compareModeHasBeenSet;
+
+                    /**
+                     * 复检次数
+                     */
+                    int64_t m_reCheckTime;
+                    bool m_reCheckTimeHasBeenSet;
+
+                    /**
+                     * 复检时间间隔，单位为分钟，取值 1-60
+                     */
+                    int64_t m_reCheckInterval;
+                    bool m_reCheckIntervalHasBeenSet;
 
                 };
             }

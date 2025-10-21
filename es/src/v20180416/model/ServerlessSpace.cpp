@@ -40,7 +40,9 @@ ServerlessSpace::ServerlessSpace() :
     m_appIdHasBeenSet(false),
     m_kibanaLanguageHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_enableMcpAccessHasBeenSet(false),
+    m_mcpAccessHasBeenSet(false)
 {
 }
 
@@ -283,6 +285,26 @@ CoreInternalOutcome ServerlessSpace::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableMcpAccess") && !value["EnableMcpAccess"].IsNull())
+    {
+        if (!value["EnableMcpAccess"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessSpace.EnableMcpAccess` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMcpAccess = value["EnableMcpAccess"].GetInt64();
+        m_enableMcpAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("McpAccess") && !value["McpAccess"].IsNull())
+    {
+        if (!value["McpAccess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessSpace.McpAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mcpAccess = string(value["McpAccess"].GetString());
+        m_mcpAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -464,6 +486,22 @@ void ServerlessSpace::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableMcpAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMcpAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMcpAccess, allocator);
+    }
+
+    if (m_mcpAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "McpAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mcpAccess.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -787,5 +825,37 @@ void ServerlessSpace::SetTagList(const vector<TagInfo>& _tagList)
 bool ServerlessSpace::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+int64_t ServerlessSpace::GetEnableMcpAccess() const
+{
+    return m_enableMcpAccess;
+}
+
+void ServerlessSpace::SetEnableMcpAccess(const int64_t& _enableMcpAccess)
+{
+    m_enableMcpAccess = _enableMcpAccess;
+    m_enableMcpAccessHasBeenSet = true;
+}
+
+bool ServerlessSpace::EnableMcpAccessHasBeenSet() const
+{
+    return m_enableMcpAccessHasBeenSet;
+}
+
+string ServerlessSpace::GetMcpAccess() const
+{
+    return m_mcpAccess;
+}
+
+void ServerlessSpace::SetMcpAccess(const string& _mcpAccess)
+{
+    m_mcpAccess = _mcpAccess;
+    m_mcpAccessHasBeenSet = true;
+}
+
+bool ServerlessSpace::McpAccessHasBeenSet() const
+{
+    return m_mcpAccessHasBeenSet;
 }
 

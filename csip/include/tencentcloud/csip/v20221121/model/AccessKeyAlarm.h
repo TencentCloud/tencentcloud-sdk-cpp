@@ -528,6 +528,27 @@ namespace TencentCloud
                      */
                     bool RuleKeyHasBeenSet() const;
 
+                    /**
+                     * 获取云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * @return CloudType 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * 
+                     */
+                    int64_t GetCloudType() const;
+
+                    /**
+                     * 设置云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * @param _cloudType 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * 
+                     */
+                    void SetCloudType(const int64_t& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -666,6 +687,12 @@ namespace TencentCloud
                      */
                     std::string m_ruleKey;
                     bool m_ruleKeyHasBeenSet;
+
+                    /**
+                     * 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     */
+                    int64_t m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }
