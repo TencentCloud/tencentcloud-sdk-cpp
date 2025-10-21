@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -825,7 +825,7 @@ namespace TencentCloud
                 DescribeGlobalReplicationAreaOutcomeCallable DescribeGlobalReplicationAreaCallable(const Model::DescribeGlobalReplicationAreaRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceAccount）用于查看实例子账号信息。
+                 *本接口（DescribeInstanceAccount）用于查看实例账号信息。
                  * @param req DescribeInstanceAccountRequest
                  * @return DescribeInstanceAccountOutcome
                  */
@@ -1140,7 +1140,7 @@ namespace TencentCloud
                 DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
 
                 /**
-                 *查询实例秒级备份信息
+                 *本接口（DescribeSecondLevelBackupInfo）用于查询实例秒级备份信息。
                  * @param req DescribeSecondLevelBackupInfoRequest
                  * @return DescribeSecondLevelBackupInfoOutcome
                  */
@@ -1331,7 +1331,7 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *本接口（ModifyInstanceAccount）用于修改实例子账号。
+                 *本接口（ModifyInstanceAccount）用于修改实例账号。
                  * @param req ModifyInstanceAccountRequest
                  * @return ModifyInstanceAccountOutcome
                  */
@@ -1349,7 +1349,7 @@ namespace TencentCloud
                 ModifyInstanceAvailabilityZonesOutcomeCallable ModifyInstanceAvailabilityZonesCallable(const Model::ModifyInstanceAvailabilityZonesRequest& request);
 
                 /**
-                 *修改实例的备份模式
+                 *本接口（ModifyInstanceBackupMode）用于修改实例的备份模式。
                  * @param req ModifyInstanceBackupModeRequest
                  * @return ModifyInstanceBackupModeOutcome
                  */
@@ -1457,7 +1457,7 @@ namespace TencentCloud
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
-                 *删除复制组
+                 *本接口（RemoveReplicationGroup）用于删除复制组。
                  * @param req RemoveReplicationGroupRequest
                  * @return RemoveReplicationGroupOutcome
                  */

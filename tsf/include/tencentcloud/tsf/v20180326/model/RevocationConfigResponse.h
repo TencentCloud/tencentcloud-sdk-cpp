@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true：回滚成功；false：回滚失败
-                     * @return Result true：回滚成功；false：回滚失败
+                     * 获取撤回结果。
+- true：成功
+- false：失败
+                     * @return Result 撤回结果。
+- true：成功
+- false：失败
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +64,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * true：回滚成功；false：回滚失败
+                     * 撤回结果。
+- true：成功
+- false：失败
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

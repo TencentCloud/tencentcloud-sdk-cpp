@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ VatElectronicInfo::VatElectronicInfo() :
     m_totalMarkHasBeenSet(false),
     m_pretaxAmountMarkHasBeenSet(false),
     m_taxMarkHasBeenSet(false),
-    m_companySealMarkHasBeenSet(false)
+    m_companySealMarkHasBeenSet(false),
+    m_invoicePageIndexHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome VatElectronicInfo::Deserialize(const rapidjson::Value &value
         m_companySealMarkHasBeenSet = true;
     }
 
+    if (value.HasMember("InvoicePageIndex") && !value["InvoicePageIndex"].IsNull())
+    {
+        if (!value["InvoicePageIndex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.InvoicePageIndex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoicePageIndex = string(value["InvoicePageIndex"].GetString());
+        m_invoicePageIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void VatElectronicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CompanySealMark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_companySealMark, allocator);
+    }
+
+    if (m_invoicePageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoicePageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoicePageIndex.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void VatElectronicInfo::SetCompanySealMark(const int64_t& _companySealMark)
 bool VatElectronicInfo::CompanySealMarkHasBeenSet() const
 {
     return m_companySealMarkHasBeenSet;
+}
+
+string VatElectronicInfo::GetInvoicePageIndex() const
+{
+    return m_invoicePageIndex;
+}
+
+void VatElectronicInfo::SetInvoicePageIndex(const string& _invoicePageIndex)
+{
+    m_invoicePageIndex = _invoicePageIndex;
+    m_invoicePageIndexHasBeenSet = true;
+}
+
+bool VatElectronicInfo::InvoicePageIndexHasBeenSet() const
+{
+    return m_invoicePageIndexHasBeenSet;
 }
 

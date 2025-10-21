@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -393,15 +393,15 @@ namespace TencentCloud
                     bool SrcNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，多节点数据库使用
-                     * @return SrcInfos 源端信息，多节点数据库使用
+                     * 获取源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * @return SrcInfos 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      * 
                      */
                     SyncDBEndpointInfos GetSrcInfos() const;
 
                     /**
-                     * 设置源端信息，多节点数据库使用
-                     * @param _srcInfos 源端信息，多节点数据库使用
+                     * 设置源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * @param _srcInfos 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      * 
                      */
                     void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
@@ -519,15 +519,15 @@ namespace TencentCloud
                     bool DstNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，多节点数据库使用
-                     * @return DstInfos 目标端信息，多节点数据库使用
+                     * 获取目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * @return DstInfos 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      * 
                      */
                     SyncDBEndpointInfos GetDstInfos() const;
 
                     /**
-                     * 设置目标端信息，多节点数据库使用
-                     * @param _dstInfos 目标端信息，多节点数据库使用
+                     * 设置目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * @param _dstInfos 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      * 
                      */
                     void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
@@ -912,7 +912,7 @@ namespace TencentCloud
                     bool m_srcNodeTypeHasBeenSet;
 
                     /**
-                     * 源端信息，多节点数据库使用
+                     * 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      */
                     SyncDBEndpointInfos m_srcInfos;
                     bool m_srcInfosHasBeenSet;
@@ -948,7 +948,7 @@ namespace TencentCloud
                     bool m_dstNodeTypeHasBeenSet;
 
                     /**
-                     * 目标端信息，多节点数据库使用
+                     * 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
                      */
                     SyncDBEndpointInfos m_dstInfos;
                     bool m_dstInfosHasBeenSet;

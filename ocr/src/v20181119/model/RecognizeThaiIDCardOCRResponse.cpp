@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_laserIDHasBeenSet(false),
     m_portraitImageHasBeenSet(false),
     m_warnCardInfosHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_cardCountHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CardCount") && !rsp["CardCount"].IsNull())
+    {
+        if (!rsp["CardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cardCount = rsp["CardCount"].GetInt64();
+        m_cardCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -402,11 +413,19 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cardCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -582,6 +601,16 @@ string RecognizeThaiIDCardOCRResponse::GetAdvancedInfo() const
 bool RecognizeThaiIDCardOCRResponse::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+int64_t RecognizeThaiIDCardOCRResponse::GetCardCount() const
+{
+    return m_cardCount;
+}
+
+bool RecognizeThaiIDCardOCRResponse::CardCountHasBeenSet() const
+{
+    return m_cardCountHasBeenSet;
 }
 
 

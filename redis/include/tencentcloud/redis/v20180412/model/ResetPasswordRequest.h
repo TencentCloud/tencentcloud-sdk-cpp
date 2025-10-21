@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,27 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取重置的密码。若切换为免密实例时，可不配置该参数。其他情况必须配置。
-                     * @return Password 重置的密码。若切换为免密实例时，可不配置该参数。其他情况必须配置。
+                     * 获取重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @return Password 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置重置的密码。若切换为免密实例时，可不配置该参数。其他情况必须配置。
-                     * @param _password 重置的密码。若切换为免密实例时，可不配置该参数。其他情况必须配置。
+                     * 设置重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @param _password 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -86,22 +98,22 @@ namespace TencentCloud
 
                     /**
                      * 获取是否切换免密实例。
-- false：切换为非免密码实例。
-- true：切换为免密码实例。默认 false。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * @return NoAuth 是否切换免密实例。
-- false：切换为非免密码实例。
-- true：切换为免密码实例。默认 false。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
                      * 设置是否切换免密实例。
-- false：切换为非免密码实例。
-- true：切换为免密码实例。默认 false。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * @param _noAuth 是否切换免密实例。
-- false：切换为非免密码实例。
-- true：切换为免密码实例。默认 false。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -113,6 +125,35 @@ namespace TencentCloud
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * @return EncryptPassword 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * 
+                     */
+                    bool GetEncryptPassword() const;
+
+                    /**
+                     * 设置是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * @param _encryptPassword 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     * 
+                     */
+                    void SetEncryptPassword(const bool& _encryptPassword);
+
+                    /**
+                     * 判断参数 EncryptPassword 是否已赋值
+                     * @return EncryptPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,18 +163,29 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 重置的密码。若切换为免密实例时，可不配置该参数。其他情况必须配置。
+                     * 重置的密码。若切换为免密实例时，可不配置该参数。
+- 长度8-32位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a- z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 是否切换免密实例。
-- false：切换为非免密码实例。
-- true：切换为免密码实例。默认 false。
+- false：切换为非免密码实例。默认 false。
+- true：切换为免密码实例。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * 是否加密密码。
+- false：非加密密码。默认 false。
+- true：加密密码。
+                     */
+                    bool m_encryptPassword;
+                    bool m_encryptPasswordHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool IsAliasHasBeenSet() const;
 
                     /**
-                     * 获取1代表模版开启，0代表模版关闭
-                     * @return Status 1代表模版开启，0代表模版关闭
+                     * 获取1代表模板开启，0代表模板关闭
+                     * @return Status 1代表模板开启，0代表模板关闭
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置1代表模版开启，0代表模版关闭
-                     * @param _status 1代表模版开启，0代表模版关闭
+                     * 设置1代表模板开启，0代表模板关闭
+                     * @param _status 1代表模板开启，0代表模板关闭
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取模版最后修改时间
-                     * @return ModifyTime 模版最后修改时间
+                     * 获取模板最后修改时间
+                     * @return ModifyTime 模板最后修改时间
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置模版最后修改时间
-                     * @param _modifyTime 模版最后修改时间
+                     * 设置模板最后修改时间
+                     * @param _modifyTime 模板最后修改时间
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -308,13 +308,13 @@ namespace TencentCloud
                     bool m_isAliasHasBeenSet;
 
                     /**
-                     * 1代表模版开启，0代表模版关闭
+                     * 1代表模板开启，0代表模板关闭
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 模版最后修改时间
+                     * 模板最后修改时间
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

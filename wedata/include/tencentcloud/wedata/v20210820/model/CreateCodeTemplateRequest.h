@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool FolderIdHasBeenSet() const;
 
                     /**
-                     * 获取指定脚本内容
-                     * @return Content 指定脚本内容
+                     * 获取Base64转化的脚本内容
+                     * @return Content Base64转化的脚本内容
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置指定脚本内容
-                     * @param _content 指定脚本内容
+                     * 设置Base64转化的脚本内容
+                     * @param _content Base64转化的脚本内容
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -167,6 +167,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取代码模板类型
+                     * @return ProductName 代码模板类型
+                     * 
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置代码模板类型
+                     * @param _productName 代码模板类型
+                     * 
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     * 
+                     */
+                    bool ProductNameHasBeenSet() const;
 
                 private:
 
@@ -201,10 +222,16 @@ namespace TencentCloud
                     bool m_folderIdHasBeenSet;
 
                     /**
-                     * 指定脚本内容
+                     * Base64转化的脚本内容
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 代码模板类型
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
 
                 };
             }

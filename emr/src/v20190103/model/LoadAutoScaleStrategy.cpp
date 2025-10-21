@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ LoadAutoScaleStrategy::LoadAutoScaleStrategy() :
     m_periodValidHasBeenSet(false),
     m_graceDownFlagHasBeenSet(false),
     m_graceDownTimeHasBeenSet(false),
+    m_graceDownProtectFlagHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_configGroupAssignedHasBeenSet(false),
     m_measureMethodHasBeenSet(false),
@@ -169,6 +170,16 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         }
         m_graceDownTime = value["GraceDownTime"].GetInt64();
         m_graceDownTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GraceDownProtectFlag") && !value["GraceDownProtectFlag"].IsNull())
+    {
+        if (!value["GraceDownProtectFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.GraceDownProtectFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownProtectFlag = value["GraceDownProtectFlag"].GetBool();
+        m_graceDownProtectFlagHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -398,6 +409,14 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "GraceDownTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_graceDownTime, allocator);
+    }
+
+    if (m_graceDownProtectFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownProtectFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownProtectFlag, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -696,6 +715,22 @@ void LoadAutoScaleStrategy::SetGraceDownTime(const int64_t& _graceDownTime)
 bool LoadAutoScaleStrategy::GraceDownTimeHasBeenSet() const
 {
     return m_graceDownTimeHasBeenSet;
+}
+
+bool LoadAutoScaleStrategy::GetGraceDownProtectFlag() const
+{
+    return m_graceDownProtectFlag;
+}
+
+void LoadAutoScaleStrategy::SetGraceDownProtectFlag(const bool& _graceDownProtectFlag)
+{
+    m_graceDownProtectFlag = _graceDownProtectFlag;
+    m_graceDownProtectFlagHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::GraceDownProtectFlagHasBeenSet() const
+{
+    return m_graceDownProtectFlagHasBeenSet;
 }
 
 vector<Tag> LoadAutoScaleStrategy::GetTags() const

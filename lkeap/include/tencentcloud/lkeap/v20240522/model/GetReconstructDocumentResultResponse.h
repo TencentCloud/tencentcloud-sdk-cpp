@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h>
+#include <tencentcloud/lkeap/v20240522/model/DocumentUsage.h>
+#include <tencentcloud/lkeap/v20240522/model/ErrorInfo.h>
 
 
 namespace TencentCloud
@@ -96,6 +98,34 @@ namespace TencentCloud
                      */
                     bool FailedPagesHasBeenSet() const;
 
+                    /**
+                     * 获取文档拆分任务的用量	
+                     * @return Usage 文档拆分任务的用量	
+                     * 
+                     */
+                    DocumentUsage GetUsage() const;
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
+                    /**
+                     * 获取文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     * @return Error 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     * 
+                     */
+                    ErrorInfo GetError() const;
+
+                    /**
+                     * 判断参数 Error 是否已赋值
+                     * @return Error 是否已赋值
+                     * 
+                     */
+                    bool ErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +150,18 @@ namespace TencentCloud
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;
+
+                    /**
+                     * 文档拆分任务的用量	
+                     */
+                    DocumentUsage m_usage;
+                    bool m_usageHasBeenSet;
+
+                    /**
+                     * 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     */
+                    ErrorInfo m_error;
+                    bool m_errorHasBeenSet;
 
                 };
             }

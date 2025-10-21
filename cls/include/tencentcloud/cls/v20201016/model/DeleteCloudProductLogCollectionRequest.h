@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 获取云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT: gz
@@ -117,9 +117,9 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
-                     * @return CloudProductRegion 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * @return CloudProductRegion 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT: gz
@@ -130,14 +130,14 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      * 
                      */
                     std::string GetCloudProductRegion() const;
 
                     /**
-                     * 设置云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 设置云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT: gz
@@ -148,9 +148,9 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
-                     * @param _cloudProductRegion 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * @param _cloudProductRegion 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT: gz
@@ -161,7 +161,7 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      * 
                      */
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT: gz
@@ -206,7 +206,7 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      */
                     std::string m_cloudProductRegion;

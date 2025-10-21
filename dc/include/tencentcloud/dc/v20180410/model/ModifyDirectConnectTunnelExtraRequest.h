@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -445,6 +445,27 @@ namespace TencentCloud
                      */
                     bool CustomerIPv6AddressHasBeenSet() const;
 
+                    /**
+                     * 获取互联IP重分布状态
+                     * @return ImportDirectRoute 互联IP重分布状态
+                     * 
+                     */
+                    bool GetImportDirectRoute() const;
+
+                    /**
+                     * 设置互联IP重分布状态
+                     * @param _importDirectRoute 互联IP重分布状态
+                     * 
+                     */
+                    void SetImportDirectRoute(const bool& _importDirectRoute);
+
+                    /**
+                     * 判断参数 ImportDirectRoute 是否已赋值
+                     * @return ImportDirectRoute 是否已赋值
+                     * 
+                     */
+                    bool ImportDirectRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +581,12 @@ namespace TencentCloud
                      */
                     std::string m_customerIPv6Address;
                     bool m_customerIPv6AddressHasBeenSet;
+
+                    /**
+                     * 互联IP重分布状态
+                     */
+                    bool m_importDirectRoute;
+                    bool m_importDirectRouteHasBeenSet;
 
                 };
             }

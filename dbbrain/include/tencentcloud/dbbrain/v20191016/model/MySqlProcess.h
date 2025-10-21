@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,6 +214,31 @@ namespace TencentCloud
                      */
                     bool InfoHasBeenSet() const;
 
+                    /**
+                     * 获取sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SqlType sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSqlType() const;
+
+                    /**
+                     * 设置sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sqlType sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSqlType(const std::string& _sqlType);
+
+                    /**
+                     * 判断参数 SqlType 是否已赋值
+                     * @return SqlType 是否已赋值
+                     * 
+                     */
+                    bool SqlTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +288,13 @@ namespace TencentCloud
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
+
+                    /**
+                     * sql类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sqlType;
+                    bool m_sqlTypeHasBeenSet;
 
                 };
             }

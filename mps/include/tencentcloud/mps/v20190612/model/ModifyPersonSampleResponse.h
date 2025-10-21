@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处理失败的五官信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailFaceInfoSet 处理失败的五官信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AiSampleFailFaceInfo> GetFailFaceInfoSet() const;
@@ -85,7 +83,6 @@ namespace TencentCloud
 
                     /**
                      * 处理失败的五官信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiSampleFailFaceInfo> m_failFaceInfoSet;
                     bool m_failFaceInfoSetHasBeenSet;

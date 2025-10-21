@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
+                     * 获取获取日志状态失败时，返回错误信息
+                     * @return ErrorMsg 获取日志状态失败时，返回错误信息
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 设置获取日志状态失败时，返回错误信息
+                     * @param _errorMsg 获取日志状态失败时，返回错误信息
+                     * 
+                     */
+                    void SetErrorMsg(const std::string& _errorMsg);
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
+                    /**
                      * 获取CLS日志集ID
                      * @return LogsetId CLS日志集ID
                      * 
@@ -87,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中
+                     * @return Status 日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中
+                     * @param _status 日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取CLS日志主题ID
@@ -110,25 +152,25 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取当前log-agent版本
-                     * @return Version 当前log-agent版本
+                     * 获取CLS日志主题所属region
+                     * @return TopicRegion CLS日志主题所属region
                      * 
                      */
-                    std::string GetVersion() const;
+                    std::string GetTopicRegion() const;
 
                     /**
-                     * 设置当前log-agent版本
-                     * @param _version 当前log-agent版本
+                     * 设置CLS日志主题所属region
+                     * @param _topicRegion CLS日志主题所属region
                      * 
                      */
-                    void SetVersion(const std::string& _version);
+                    void SetTopicRegion(const std::string& _topicRegion);
 
                     /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
+                     * 判断参数 TopicRegion 是否已赋值
+                     * @return TopicRegion 是否已赋值
                      * 
                      */
-                    bool VersionHasBeenSet() const;
+                    bool TopicRegionHasBeenSet() const;
 
                     /**
                      * 获取是否可升级
@@ -152,25 +194,25 @@ namespace TencentCloud
                     bool UpgradeAbleHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题所属region
-                     * @return TopicRegion CLS日志主题所属region
+                     * 获取当前log-agent版本
+                     * @return Version 当前log-agent版本
                      * 
                      */
-                    std::string GetTopicRegion() const;
+                    std::string GetVersion() const;
 
                     /**
-                     * 设置CLS日志主题所属region
-                     * @param _topicRegion CLS日志主题所属region
+                     * 设置当前log-agent版本
+                     * @param _version 当前log-agent版本
                      * 
                      */
-                    void SetTopicRegion(const std::string& _topicRegion);
+                    void SetVersion(const std::string& _version);
 
                     /**
-                     * 判断参数 TopicRegion 是否已赋值
-                     * @return TopicRegion 是否已赋值
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
                      * 
                      */
-                    bool TopicRegionHasBeenSet() const;
+                    bool VersionHasBeenSet() const;
 
                 private:
 
@@ -181,10 +223,22 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
+                     * 获取日志状态失败时，返回错误信息
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
+
+                    /**
                      * CLS日志集ID
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
+
+                    /**
+                     * 日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * CLS日志主题ID
@@ -193,10 +247,10 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 当前log-agent版本
+                     * CLS日志主题所属region
                      */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
+                    std::string m_topicRegion;
+                    bool m_topicRegionHasBeenSet;
 
                     /**
                      * 是否可升级
@@ -205,10 +259,10 @@ namespace TencentCloud
                     bool m_upgradeAbleHasBeenSet;
 
                     /**
-                     * CLS日志主题所属region
+                     * 当前log-agent版本
                      */
-                    std::string m_topicRegion;
-                    bool m_topicRegionHasBeenSet;
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

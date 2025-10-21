@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool CasterNameHasBeenSet() const;
 
                     /**
-                     * 获取导播台的描述
-最大允许长度256
-                     * @return Description 导播台的描述
-最大允许长度256
+                     * 获取导播台的描述，最大允许长度256
+                     * @return Description 导播台的描述，最大允许长度256
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置导播台的描述
-最大允许长度256
-                     * @param _description 导播台的描述
-最大允许长度256
+                     * 设置导播台的描述，最大允许长度256
+                     * @param _description 导播台的描述，最大允许长度256
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -476,8 +472,7 @@ namespace TencentCloud
                     bool m_casterNameHasBeenSet;
 
                     /**
-                     * 导播台的描述
-最大允许长度256
+                     * 导播台的描述，最大允许长度256
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

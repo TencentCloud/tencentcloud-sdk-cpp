@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,11 @@ namespace TencentCloud
                     /**
                      * 获取录制间隔。
 单位秒，默认：1800。
-取值范围：30-7200。
+FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @return RecordInterval 录制间隔。
 单位秒，默认：1800。
-取值范围：30-7200。
+FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * 
                      */
@@ -62,11 +62,11 @@ namespace TencentCloud
                     /**
                      * 设置录制间隔。
 单位秒，默认：1800。
-取值范围：30-7200。
+FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @param _recordInterval 录制间隔。
 单位秒，默认：1800。
-取值范围：30-7200。
+FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * 
                      */
@@ -410,7 +410,7 @@ cold：低频存储。
                     /**
                      * 录制间隔。
 单位秒，默认：1800。
-取值范围：30-7200。
+FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     int64_t m_recordInterval;

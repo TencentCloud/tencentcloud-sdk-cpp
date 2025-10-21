@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取模糊匹配关键词
-                     * @return SearchWord 模糊匹配关键词
+                     * 获取模糊匹配关键词，可搜索配置项ID或配置项名称
+                     * @return SearchWord 模糊匹配关键词，可搜索配置项ID或配置项名称
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置模糊匹配关键词
-                     * @param _searchWord 模糊匹配关键词
+                     * 设置模糊匹配关键词，可搜索配置项ID或配置项名称
+                     * @param _searchWord 模糊匹配关键词，可搜索配置项ID或配置项名称
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DisableProgramAuthCheck 无
+                     * 获取是否禁用数据集鉴权
+                     * @return DisableProgramAuthCheck 是否禁用数据集鉴权
                      * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
-                     * 设置无
-                     * @param _disableProgramAuthCheck 无
+                     * 设置是否禁用数据集鉴权
+                     * @param _disableProgramAuthCheck 是否禁用数据集鉴权
                      * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
@@ -127,15 +127,19 @@ namespace TencentCloud
                     bool DisableProgramAuthCheckHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ConfigIdList 无
+                     * 获取日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @return ConfigIdList 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _configIdList 无
+                     * 设置日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
+                     * @param _configIdList 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
@@ -162,19 +166,20 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 模糊匹配关键词
+                     * 模糊匹配关键词，可搜索配置项ID或配置项名称
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 无
+                     * 是否禁用数据集鉴权
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;
 
                     /**
-                     * 无
+                     * 日志配置项ID
+可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看
                      */
                     std::vector<std::string> m_configIdList;
                     bool m_configIdListHasBeenSet;

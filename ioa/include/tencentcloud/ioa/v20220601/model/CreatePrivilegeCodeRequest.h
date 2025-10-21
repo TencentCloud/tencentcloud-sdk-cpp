@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取必填；设备唯一标识符;
+                     * @return Mid 必填；设备唯一标识符;
+                     * 
+                     */
+                    std::string GetMid() const;
+
+                    /**
+                     * 设置必填；设备唯一标识符;
+                     * @param _mid 必填；设备唯一标识符;
+                     * 
+                     */
+                    void SetMid(const std::string& _mid);
+
+                    /**
+                     * 判断参数 Mid 是否已赋值
+                     * @return Mid 是否已赋值
+                     * 
+                     */
+                    bool MidHasBeenSet() const;
+
+                    /**
                      * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
                      * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
                      * 
@@ -64,27 +85,33 @@ namespace TencentCloud
                     bool DomainInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取必填；设备唯一标识符;
-                     * @return Mid 必填；设备唯一标识符;
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0
                      * 
                      */
-                    std::string GetMid() const;
+                    int64_t GetOsType() const;
 
                     /**
-                     * 设置必填；设备唯一标识符;
-                     * @param _mid 必填；设备唯一标识符;
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0
                      * 
                      */
-                    void SetMid(const std::string& _mid);
+                    void SetOsType(const int64_t& _osType);
 
                     /**
-                     * 判断参数 Mid 是否已赋值
-                     * @return Mid 是否已赋值
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
                      * 
                      */
-                    bool MidHasBeenSet() const;
+                    bool OsTypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 必填；设备唯一标识符;
+                     */
+                    std::string m_mid;
+                    bool m_midHasBeenSet;
 
                     /**
                      * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
@@ -93,10 +120,10 @@ namespace TencentCloud
                     bool m_domainInstanceIdHasBeenSet;
 
                     /**
-                     * 必填；设备唯一标识符;
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0
                      */
-                    std::string m_mid;
-                    bool m_midHasBeenSet;
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

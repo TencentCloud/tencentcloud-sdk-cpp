@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -678,15 +678,15 @@ null：用户上传证书（没有套餐类型），
                     bool VerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书生效时间。
-                     * @return CertBeginTime 证书生效时间。
+                     * 获取证书生效时间。时区为GMT+8:00
+                     * @return CertBeginTime 证书生效时间。时区为GMT+8:00
                      * 
                      */
                     std::string GetCertBeginTime() const;
 
                     /**
-                     * 设置证书生效时间。
-                     * @param _certBeginTime 证书生效时间。
+                     * 设置证书生效时间。时区为GMT+8:00
+                     * @param _certBeginTime 证书生效时间。时区为GMT+8:00
                      * 
                      */
                     void SetCertBeginTime(const std::string& _certBeginTime);
@@ -699,15 +699,15 @@ null：用户上传证书（没有套餐类型），
                     bool CertBeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间。
-                     * @return CertEndTime 证书过期时间。
+                     * 获取证书过期时间。时区为GMT+8:00
+                     * @return CertEndTime 证书过期时间。时区为GMT+8:00
                      * 
                      */
                     std::string GetCertEndTime() const;
 
                     /**
-                     * 设置证书过期时间。
-                     * @param _certEndTime 证书过期时间。
+                     * 设置证书过期时间。时区为GMT+8:00
+                     * @param _certEndTime 证书过期时间。时区为GMT+8:00
                      * 
                      */
                     void SetCertEndTime(const std::string& _certEndTime);
@@ -741,15 +741,15 @@ null：用户上传证书（没有套餐类型），
                     bool ValidityPeriodHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return InsertTime 创建时间。
+                     * 获取创建时间。时区为GMT+8:00
+                     * @return InsertTime 创建时间。时区为GMT+8:00
                      * 
                      */
                     std::string GetInsertTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _insertTime 创建时间。
+                     * 设置创建时间。时区为GMT+8:00
+                     * @param _insertTime 创建时间。时区为GMT+8:00
                      * 
                      */
                     void SetInsertTime(const std::string& _insertTime);
@@ -1329,15 +1329,15 @@ null：用户上传证书（没有套餐类型），
                     bool IsExpiringHasBeenSet() const;
 
                     /**
-                     * 获取DV证书添加验证截止时间
-                     * @return DVAuthDeadline DV证书添加验证截止时间
+                     * 获取DV证书添加验证截止时间，时区为GMT+8:00
+                     * @return DVAuthDeadline DV证书添加验证截止时间，时区为GMT+8:00
                      * 
                      */
                     std::string GetDVAuthDeadline() const;
 
                     /**
-                     * 设置DV证书添加验证截止时间
-                     * @param _dVAuthDeadline DV证书添加验证截止时间
+                     * 设置DV证书添加验证截止时间，时区为GMT+8:00
+                     * @param _dVAuthDeadline DV证书添加验证截止时间，时区为GMT+8:00
                      * 
                      */
                     void SetDVAuthDeadline(const std::string& _dVAuthDeadline);
@@ -1350,15 +1350,15 @@ null：用户上传证书（没有套餐类型），
                     bool DVAuthDeadlineHasBeenSet() const;
 
                     /**
-                     * 获取域名验证通过时间
-                     * @return ValidationPassedTime 域名验证通过时间
+                     * 获取域名验证通过时间，时区为GMT+8:00
+                     * @return ValidationPassedTime 域名验证通过时间，时区为GMT+8:00
                      * 
                      */
                     std::string GetValidationPassedTime() const;
 
                     /**
-                     * 设置域名验证通过时间
-                     * @param _validationPassedTime 域名验证通过时间
+                     * 设置域名验证通过时间，时区为GMT+8:00
+                     * @param _validationPassedTime 域名验证通过时间，时区为GMT+8:00
                      * 
                      */
                     void SetValidationPassedTime(const std::string& _validationPassedTime);
@@ -1518,15 +1518,15 @@ null：用户上传证书（没有套餐类型），
                     bool SupportDownloadTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书吊销完成时间
-                     * @return CertRevokedTime 证书吊销完成时间
+                     * 获取证书吊销完成时间，时区为GMT+8:00
+                     * @return CertRevokedTime 证书吊销完成时间，时区为GMT+8:00
                      * 
                      */
                     std::string GetCertRevokedTime() const;
 
                     /**
-                     * 设置证书吊销完成时间
-                     * @param _certRevokedTime 证书吊销完成时间
+                     * 设置证书吊销完成时间，时区为GMT+8:00
+                     * @param _certRevokedTime 证书吊销完成时间，时区为GMT+8:00
                      * 
                      */
                     void SetCertRevokedTime(const std::string& _certRevokedTime);
@@ -1774,13 +1774,13 @@ null：用户上传证书（没有套餐类型），
                     bool m_verifyTypeHasBeenSet;
 
                     /**
-                     * 证书生效时间。
+                     * 证书生效时间。时区为GMT+8:00
                      */
                     std::string m_certBeginTime;
                     bool m_certBeginTimeHasBeenSet;
 
                     /**
-                     * 证书过期时间。
+                     * 证书过期时间。时区为GMT+8:00
                      */
                     std::string m_certEndTime;
                     bool m_certEndTimeHasBeenSet;
@@ -1792,7 +1792,7 @@ null：用户上传证书（没有套餐类型），
                     bool m_validityPeriodHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。时区为GMT+8:00
                      */
                     std::string m_insertTime;
                     bool m_insertTimeHasBeenSet;
@@ -1960,13 +1960,13 @@ null：用户上传证书（没有套餐类型），
                     bool m_isExpiringHasBeenSet;
 
                     /**
-                     * DV证书添加验证截止时间
+                     * DV证书添加验证截止时间，时区为GMT+8:00
                      */
                     std::string m_dVAuthDeadline;
                     bool m_dVAuthDeadlineHasBeenSet;
 
                     /**
-                     * 域名验证通过时间
+                     * 域名验证通过时间，时区为GMT+8:00
                      */
                     std::string m_validationPassedTime;
                     bool m_validationPassedTimeHasBeenSet;
@@ -2014,7 +2014,7 @@ null：用户上传证书（没有套餐类型），
                     bool m_supportDownloadTypeHasBeenSet;
 
                     /**
-                     * 证书吊销完成时间
+                     * 证书吊销完成时间，时区为GMT+8:00
                      */
                     std::string m_certRevokedTime;
                     bool m_certRevokedTimeHasBeenSet;

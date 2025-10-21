@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 Value::Value() :
     m_autoContentHasBeenSet(false),
-    m_coordHasBeenSet(false)
+    m_coordHasBeenSet(false),
+    m_pageIndexHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome Value::Deserialize(const rapidjson::Value &value)
         m_coordHasBeenSet = true;
     }
 
+    if (value.HasMember("PageIndex") && !value["PageIndex"].IsNull())
+    {
+        if (!value["PageIndex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Value.PageIndex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageIndex = string(value["PageIndex"].GetString());
+        m_pageIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void Value::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coord.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageIndex.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void Value::SetCoord(const Polygon& _coord)
 bool Value::CoordHasBeenSet() const
 {
     return m_coordHasBeenSet;
+}
+
+string Value::GetPageIndex() const
+{
+    return m_pageIndex;
+}
+
+void Value::SetPageIndex(const string& _pageIndex)
+{
+    m_pageIndex = _pageIndex;
+    m_pageIndexHasBeenSet = true;
+}
+
+bool Value::PageIndexHasBeenSet() const
+{
+    return m_pageIndexHasBeenSet;
 }
 

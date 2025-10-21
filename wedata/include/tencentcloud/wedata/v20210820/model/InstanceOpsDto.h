@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1649,6 +1649,69 @@ namespace TencentCloud
                      */
                     bool ScheduleRunTypeHasBeenSet() const;
 
+                    /**
+                     * 获取允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @return AllowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    std::string GetAllowRedoType() const;
+
+                    /**
+                     * 设置允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @param _allowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    void SetAllowRedoType(const std::string& _allowRedoType);
+
+                    /**
+                     * 判断参数 AllowRedoType 是否已赋值
+                     * @return AllowRedoType 是否已赋值
+                     * 
+                     */
+                    bool AllowRedoTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例生命周期
+                     * @return InstanceCycleType 实例生命周期
+                     * 
+                     */
+                    std::string GetInstanceCycleType() const;
+
+                    /**
+                     * 设置实例生命周期
+                     * @param _instanceCycleType 实例生命周期
+                     * 
+                     */
+                    void SetInstanceCycleType(const std::string& _instanceCycleType);
+
+                    /**
+                     * 判断参数 InstanceCycleType 是否已赋值
+                     * @return InstanceCycleType 是否已赋值
+                     * 
+                     */
+                    bool InstanceCycleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例执行计划描述
+                     * @return InstanceSchedulerDesc 实例执行计划描述
+                     * 
+                     */
+                    std::string GetInstanceSchedulerDesc() const;
+
+                    /**
+                     * 设置实例执行计划描述
+                     * @param _instanceSchedulerDesc 实例执行计划描述
+                     * 
+                     */
+                    void SetInstanceSchedulerDesc(const std::string& _instanceSchedulerDesc);
+
+                    /**
+                     * 判断参数 InstanceSchedulerDesc 是否已赋值
+                     * @return InstanceSchedulerDesc 是否已赋值
+                     * 
+                     */
+                    bool InstanceSchedulerDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2098,6 +2161,24 @@ namespace TencentCloud
                      */
                     uint64_t m_scheduleRunType;
                     bool m_scheduleRunTypeHasBeenSet;
+
+                    /**
+                     * 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     */
+                    std::string m_allowRedoType;
+                    bool m_allowRedoTypeHasBeenSet;
+
+                    /**
+                     * 实例生命周期
+                     */
+                    std::string m_instanceCycleType;
+                    bool m_instanceCycleTypeHasBeenSet;
+
+                    /**
+                     * 实例执行计划描述
+                     */
+                    std::string m_instanceSchedulerDesc;
+                    bool m_instanceSchedulerDescHasBeenSet;
 
                 };
             }

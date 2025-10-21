@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeAndroidInstanceLabelsResponse::DescribeAndroidInstanceLabelsResponse() :
     m_totalHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_androidInstanceLabelsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeAndroidInstanceLabelsResponse::Deserialize(const str
         m_labelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AndroidInstanceLabels") && !rsp["AndroidInstanceLabels"].IsNull())
+    {
+        if (!rsp["AndroidInstanceLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AndroidInstanceLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AndroidInstanceLabelDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_androidInstanceLabels.push_back(item);
+        }
+        m_androidInstanceLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,11 +147,26 @@ string DescribeAndroidInstanceLabelsResponse::ToJsonString() const
         }
     }
 
+    if (m_androidInstanceLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_androidInstanceLabels.begin(); itr != m_androidInstanceLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -156,6 +192,16 @@ vector<AndroidInstanceLabel> DescribeAndroidInstanceLabelsResponse::GetLabels() 
 bool DescribeAndroidInstanceLabelsResponse::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+vector<AndroidInstanceLabelDetail> DescribeAndroidInstanceLabelsResponse::GetAndroidInstanceLabels() const
+{
+    return m_androidInstanceLabels;
+}
+
+bool DescribeAndroidInstanceLabelsResponse::AndroidInstanceLabelsHasBeenSet() const
+{
+    return m_androidInstanceLabelsHasBeenSet;
 }
 
 

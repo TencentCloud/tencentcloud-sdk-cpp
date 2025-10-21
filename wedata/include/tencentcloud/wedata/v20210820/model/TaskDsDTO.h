@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -333,18 +333,50 @@ namespace TencentCloud
                     bool LastUpdateHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
+                     * 获取<p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 任务状态
+                     * @return Status <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
+                     * 设置<p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 任务状态
+                     * @param _status <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1595,18 +1627,50 @@ namespace TencentCloud
                     bool DependencyConfigListHasBeenSet() const;
 
                     /**
-                     * 获取虚拟任务状态
+                     * 获取<p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualTaskStatus 虚拟任务状态
+                     * @return VirtualTaskStatus <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualTaskStatus() const;
 
                     /**
-                     * 设置虚拟任务状态
+                     * 设置<p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _virtualTaskStatus 虚拟任务状态
+                     * @param _virtualTaskStatus <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2573,6 +2637,85 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowRedoType 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAllowRedoType() const;
+
+                    /**
+                     * 设置允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowRedoType 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowRedoType(const std::string& _allowRedoType);
+
+                    /**
+                     * 判断参数 AllowRedoType 是否已赋值
+                     * @return AllowRedoType 是否已赋值
+                     * 
+                     */
+                    bool AllowRedoTypeHasBeenSet() const;
+
+                    /**
+                     * 获取BundleId
+CI/CD工程生成的bundle唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleId BundleId
+CI/CD工程生成的bundle唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleId() const;
+
+                    /**
+                     * 设置BundleId
+CI/CD工程生成的bundle唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleId BundleId
+CI/CD工程生成的bundle唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleId(const std::string& _bundleId);
+
+                    /**
+                     * 判断参数 BundleId 是否已赋值
+                     * @return BundleId 是否已赋值
+                     * 
+                     */
+                    bool BundleIdHasBeenSet() const;
+
+                    /**
+                     * 获取bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleInfo bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleInfo() const;
+
+                    /**
+                     * 设置bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleInfo bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleInfo(const std::string& _bundleInfo);
+
+                    /**
+                     * 判断参数 BundleInfo 是否已赋值
+                     * @return BundleInfo 是否已赋值
+                     * 
+                     */
+                    bool BundleInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2653,7 +2796,15 @@ namespace TencentCloud
                     bool m_lastUpdateHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
@@ -3006,7 +3157,15 @@ namespace TencentCloud
                     bool m_dependencyConfigListHasBeenSet;
 
                     /**
-                     * 虚拟任务状态
+                     * <p>任务状态，取值范围：</p>
+<ul>
+<li>N 新建</li>
+<li>Y 运行</li>
+<li>F 停止</li>
+<li>O 冻结</li>
+<li>T 停止中</li>
+<li>INVALID 已失效</li>
+</ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualTaskStatus;
@@ -3278,6 +3437,28 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_allowRedoType;
+                    bool m_allowRedoTypeHasBeenSet;
+
+                    /**
+                     * BundleId
+CI/CD工程生成的bundle唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleId;
+                    bool m_bundleIdHasBeenSet;
+
+                    /**
+                     * bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleInfo;
+                    bool m_bundleInfoHasBeenSet;
 
                 };
             }

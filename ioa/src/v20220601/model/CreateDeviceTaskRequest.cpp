@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 CreateDeviceTaskRequest::CreateDeviceTaskRequest() :
+    m_domainInstanceIdHasBeenSet(false),
     m_midHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string CreateDeviceTaskRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_midHasBeenSet)
     {
@@ -49,6 +58,22 @@ string CreateDeviceTaskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateDeviceTaskRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void CreateDeviceTaskRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool CreateDeviceTaskRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
+}
 
 string CreateDeviceTaskRequest::GetMid() const
 {

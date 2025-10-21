@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool FreeNsHasBeenSet() const;
 
+                    /**
+                     * 获取用户是否允许任何人转移域名到本账号
+                     * @return AllowTransferIn 用户是否允许任何人转移域名到本账号
+                     * 
+                     */
+                    bool GetAllowTransferIn() const;
+
+                    /**
+                     * 设置用户是否允许任何人转移域名到本账号
+                     * @param _allowTransferIn 用户是否允许任何人转移域名到本账号
+                     * 
+                     */
+                    void SetAllowTransferIn(const bool& _allowTransferIn);
+
+                    /**
+                     * 判断参数 AllowTransferIn 是否已赋值
+                     * @return AllowTransferIn 是否已赋值
+                     * 
+                     */
+                    bool AllowTransferInHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_freeNs;
                     bool m_freeNsHasBeenSet;
+
+                    /**
+                     * 用户是否允许任何人转移域名到本账号
+                     */
+                    bool m_allowTransferIn;
+                    bool m_allowTransferInHasBeenSet;
 
                 };
             }

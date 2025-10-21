@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,27 @@ namespace TencentCloud
                      */
                     bool OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取输出文件的URL。
+                     * @return SignedUrl 输出文件的URL。
+                     * 
+                     */
+                    std::string GetSignedUrl() const;
+
+                    /**
+                     * 设置输出文件的URL。
+                     * @param _signedUrl 输出文件的URL。
+                     * 
+                     */
+                    void SetSignedUrl(const std::string& _signedUrl);
+
+                    /**
+                     * 判断参数 SignedUrl 是否已赋值
+                     * @return SignedUrl 是否已赋值
+                     * 
+                     */
+                    bool SignedUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +133,12 @@ namespace TencentCloud
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * 输出文件的URL。
+                     */
+                    std::string m_signedUrl;
+                    bool m_signedUrlHasBeenSet;
 
                 };
             }

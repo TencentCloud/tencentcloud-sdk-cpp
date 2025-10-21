@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ValidTypeHasBeenSet() const;
 
                     /**
-                     * 获取类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
-                     * @return CsrType 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * 获取类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。
+                     * @return CsrType 类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。
                      * 
                      */
                     std::string GetCsrType() const;
 
                     /**
-                     * 设置类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
-                     * @param _csrType 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * 设置类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。
+                     * @param _csrType 类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。
                      * 
                      */
                     void SetCsrType(const std::string& _csrType);
@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool CertCSRKeyParameterHasBeenSet() const;
 
+                    /**
+                     * 获取签名算法
+                     * @return SignAlgo 签名算法
+                     * 
+                     */
+                    std::string GetSignAlgo() const;
+
+                    /**
+                     * 设置签名算法
+                     * @param _signAlgo 签名算法
+                     * 
+                     */
+                    void SetSignAlgo(const std::string& _signAlgo);
+
+                    /**
+                     * 判断参数 SignAlgo 是否已赋值
+                     * @return SignAlgo 是否已赋值
+                     * 
+                     */
+                    bool SignAlgoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,7 +250,7 @@ namespace TencentCloud
                     bool m_validTypeHasBeenSet;
 
                     /**
-                     * 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * 类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。
                      */
                     std::string m_csrType;
                     bool m_csrTypeHasBeenSet;
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_certCSRKeyParameter;
                     bool m_certCSRKeyParameterHasBeenSet;
+
+                    /**
+                     * 签名算法
+                     */
+                    std::string m_signAlgo;
+                    bool m_signAlgoHasBeenSet;
 
                 };
             }

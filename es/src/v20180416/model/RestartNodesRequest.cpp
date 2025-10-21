@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ RestartNodesRequest::RestartNodesRequest() :
     m_shardAllocationConcurrentsHasBeenSet(false),
     m_shardAllocationBytesHasBeenSet(false),
     m_enableScheduleRecoverGroupHasBeenSet(false),
-    m_enableScheduleOperationDurationHasBeenSet(false)
+    m_enableScheduleOperationDurationHasBeenSet(false),
+    m_eventTypeIdsHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,19 @@ string RestartNodesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_eventTypeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventTypeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_eventTypeIds.begin(); itr != m_eventTypeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -295,6 +309,22 @@ void RestartNodesRequest::SetEnableScheduleOperationDuration(const EnableSchedul
 bool RestartNodesRequest::EnableScheduleOperationDurationHasBeenSet() const
 {
     return m_enableScheduleOperationDurationHasBeenSet;
+}
+
+vector<string> RestartNodesRequest::GetEventTypeIds() const
+{
+    return m_eventTypeIds;
+}
+
+void RestartNodesRequest::SetEventTypeIds(const vector<string>& _eventTypeIds)
+{
+    m_eventTypeIds = _eventTypeIds;
+    m_eventTypeIdsHasBeenSet = true;
+}
+
+bool RestartNodesRequest::EventTypeIdsHasBeenSet() const
+{
+    return m_eventTypeIdsHasBeenSet;
 }
 
 

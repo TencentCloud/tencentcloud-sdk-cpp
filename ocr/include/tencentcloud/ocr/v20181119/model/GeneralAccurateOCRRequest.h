@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IsWordsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
-                     * @return EnableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     * 获取是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关，注：仅ConfigID配置为OCR时支持。
+                     * @return EnableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关，注：仅ConfigID配置为OCR时支持。
                      * 
                      */
                     bool GetEnableDetectSplit() const;
 
                     /**
-                     * 设置是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
-                     * @param _enableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     * 设置是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关，注：仅ConfigID配置为OCR时支持。
+                     * @param _enableDetectSplit 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关，注：仅ConfigID配置为OCR时支持。
                      * 
                      */
                     void SetEnableDetectSplit(const bool& _enableDetectSplit);
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool EnableDetectTextHasBeenSet() const;
 
+                    /**
+                     * 获取配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * @return ConfigID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * 
+                     */
+                    std::string GetConfigID() const;
+
+                    /**
+                     * 设置配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * @param _configID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * 
+                     */
+                    void SetConfigID(const std::string& _configID);
+
+                    /**
+                     * 判断参数 ConfigID 是否已赋值
+                     * @return ConfigID 是否已赋值
+                     * 
+                     */
+                    bool ConfigIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,7 +231,7 @@ namespace TencentCloud
                     bool m_isWordsHasBeenSet;
 
                     /**
-                     * 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关
+                     * 是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关，注：仅ConfigID配置为OCR时支持。
                      */
                     bool m_enableDetectSplit;
                     bool m_enableDetectSplitHasBeenSet;
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_enableDetectText;
                     bool m_enableDetectTextHasBeenSet;
+
+                    /**
+                     * 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     */
+                    std::string m_configID;
+                    bool m_configIDHasBeenSet;
 
                 };
             }

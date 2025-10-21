@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点 ID
-                     * @return NodeId 节点 ID
+                     * 获取节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
+                     * @return NodeId 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置节点 ID
-                     * @param _nodeId 节点 ID
+                     * 设置节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
+                     * @param _nodeId 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取子节点 ID
-                     * @return ChildNodeId 子节点 ID
+                     * 获取子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
+                     * @return ChildNodeId 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      * 
                      */
                     std::string GetChildNodeId() const;
 
                     /**
-                     * 设置子节点 ID
-                     * @param _childNodeId 子节点 ID
+                     * 设置子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
+                     * @param _childNodeId 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      * 
                      */
                     void SetChildNodeId(const std::string& _childNodeId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CoreNodeHasBeenSet() const;
 
                     /**
-                     * 获取边类型
-                     * @return EdgeType 边类型
+                     * 获取边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
+                     * @return EdgeType 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      * 
                      */
                     std::string GetEdgeType() const;
 
                     /**
-                     * 设置边类型
-                     * @param _edgeType 边类型
+                     * 设置边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
+                     * @param _edgeType 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      * 
                      */
                     void SetEdgeType(const std::string& _edgeType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EdgeTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务节点类型
-                     * @return NodeType 任务节点类型
+                     * 获取任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
+                     * @return NodeType 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置任务节点类型
-                     * @param _nodeType 任务节点类型
+                     * 设置任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
+                     * @param _nodeType 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool PositionYHasBeenSet() const;
 
                     /**
-                     * 获取图 ID
-                     * @return GraphId 图 ID
+                     * 获取图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @return GraphId 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetGraphId() const;
 
                     /**
-                     * 设置图 ID
-                     * @param _graphId 图 ID
+                     * 设置图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @param _graphId 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetGraphId(const std::string& _graphId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool GraphIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流 ID
-                     * @return FlowId 工作流 ID
+                     * 获取工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @return FlowId 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置工作流 ID
-                     * @param _flowId 工作流 ID
+                     * 设置工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
+                     * @param _flowId 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @return TaskId 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置任务ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @param _taskId 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务历史ID
-                     * @return TaskLogId 任务历史ID
+                     * 获取任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @return TaskLogId 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     std::string GetTaskLogId() const;
 
                     /**
-                     * 设置任务历史ID
-                     * @param _taskLogId 任务历史ID
+                     * 设置任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
+                     * @param _taskLogId 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      * 
                      */
                     void SetTaskLogId(const std::string& _taskLogId);
@@ -301,13 +301,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点 ID
+                     * 节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR，节点类型为头节点时为字符串"head"
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 子节点 ID
+                     * 子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点"且"时为 AND，为逻辑节点"或"时为 OR
                      */
                     std::string m_childNodeId;
                     bool m_childNodeIdHasBeenSet;
@@ -319,13 +319,13 @@ namespace TencentCloud
                     bool m_coreNodeHasBeenSet;
 
                     /**
-                     * 边类型
+                     * 边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发
                      */
                     std::string m_edgeType;
                     bool m_edgeTypeHasBeenSet;
 
                     /**
-                     * 任务节点类型
+                     * 任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
@@ -343,13 +343,13 @@ namespace TencentCloud
                     bool m_positionYHasBeenSet;
 
                     /**
-                     * 图 ID
+                     * 图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      */
                     std::string m_graphId;
                     bool m_graphIdHasBeenSet;
 
                     /**
-                     * 工作流 ID
+                     * 工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -361,13 +361,13 @@ namespace TencentCloud
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 任务ID，新建工作流时不需要填写，查看工作流图时后端返回
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务历史ID
+                     * 任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回
                      */
                     std::string m_taskLogId;
                     bool m_taskLogIdHasBeenSet;

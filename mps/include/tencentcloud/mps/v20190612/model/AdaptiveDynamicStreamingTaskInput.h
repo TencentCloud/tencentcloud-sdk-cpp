@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/AddOnSubtitle.h>
 #include <tencentcloud/mps/v20190612/model/DrmInfo.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
 
 
 namespace TencentCloud
@@ -209,18 +210,18 @@ namespace TencentCloud
                     bool SegmentObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取要插入的字幕文件。
+                     * 获取外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AddOnSubtitles 要插入的字幕文件。
+                     * @return AddOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
 
                     /**
-                     * 设置要插入的字幕文件。
+                     * 设置外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _addOnSubtitles 要插入的字幕文件。
+                     * @param _addOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -262,11 +263,9 @@ namespace TencentCloud
                      * 获取自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefinitionType 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefinitionType() const;
@@ -275,11 +274,9 @@ PureAudio：纯音频类型
                      * 设置自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _definitionType 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefinitionType(const std::string& _definitionType);
@@ -290,6 +287,52 @@ PureAudio：纯音频类型
                      * 
                      */
                     bool DefinitionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubtitleTemplate GetSubtitleTemplate() const;
+
+                    /**
+                     * 设置硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
+
+                    /**
+                     * 判断参数 SubtitleTemplate 是否已赋值
+                     * @return SubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool SubtitleTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取转码参数扩展字段
+                     * @return StdExtInfo 转码参数扩展字段
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置转码参数扩展字段
+                     * @param _stdExtInfo 转码参数扩展字段
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
 
                 private:
 
@@ -338,7 +381,7 @@ PureAudio：纯音频类型
                     bool m_segmentObjectNameHasBeenSet;
 
                     /**
-                     * 要插入的字幕文件。
+                     * 外挂字幕功能，指定要插入的字幕文件。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
@@ -355,10 +398,22 @@ PureAudio：纯音频类型
                      * 自适应转码模板类型：
 Common：音视频类型
 PureAudio：纯音频类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_definitionType;
                     bool m_definitionTypeHasBeenSet;
+
+                    /**
+                     * 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubtitleTemplate m_subtitleTemplate;
+                    bool m_subtitleTemplateHasBeenSet;
+
+                    /**
+                     * 转码参数扩展字段
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始index
-                     * @return Offset 开始index
+                     * 获取开始index，取值范围大于等于0，默认值为0
+                     * @return Offset 开始index，取值范围大于等于0，默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置开始index
-                     * @param _offset 开始index
+                     * 设置开始index，取值范围大于等于0，默认值为0
+                     * @param _offset 开始index，取值范围大于等于0，默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @return Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @param _limit 单页请求配置数量，取值范围[1, 50]，默认值为10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度
-                     * @return DimensionName 聚合维度
+                     * 获取聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID
+                     * @return DimensionName 聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID
                      * 
                      */
                     std::string GetDimensionName() const;
 
                     /**
-                     * 设置聚合维度
-                     * @param _dimensionName 聚合维度
+                     * 设置聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID
+                     * @param _dimensionName 聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID
                      * 
                      */
                     void SetDimensionName(const std::string& _dimensionName);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取维度
-                     * @return MetricDimensionValues 维度
+                     * 获取构建维度
+                     * @return MetricDimensionValues 构建维度
                      * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
-                     * 设置维度
-                     * @param _metricDimensionValues 维度
+                     * 设置构建维度
+                     * @param _metricDimensionValues 构建维度
                      * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
@@ -193,31 +193,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 开始index
+                     * 开始index，取值范围大于等于0，默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 单页请求配置数量，取值范围[1, 50]，默认值为10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 聚合维度
+                     * 聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID
                      */
                     std::string m_dimensionName;
                     bool m_dimensionNameHasBeenSet;
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 维度
+                     * 构建维度
                      */
                     std::vector<MetricDimensionValue> m_metricDimensionValues;
                     bool m_metricDimensionValuesHasBeenSet;

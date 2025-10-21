@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool IsOnlyCurrentEditingVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅只返回生产使用版本
+                     * @return IsOnlyProductVersion 是否仅只返回生产使用版本
+                     * 
+                     */
+                    bool GetIsOnlyProductVersion() const;
+
+                    /**
+                     * 设置是否仅只返回生产使用版本
+                     * @param _isOnlyProductVersion 是否仅只返回生产使用版本
+                     * 
+                     */
+                    void SetIsOnlyProductVersion(const bool& _isOnlyProductVersion);
+
+                    /**
+                     * 判断参数 IsOnlyProductVersion 是否已赋值
+                     * @return IsOnlyProductVersion 是否已赋值
+                     * 
+                     */
+                    bool IsOnlyProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_isOnlyCurrentEditingVersion;
                     bool m_isOnlyCurrentEditingVersionHasBeenSet;
+
+                    /**
+                     * 是否仅只返回生产使用版本
+                     */
+                    bool m_isOnlyProductVersion;
+                    bool m_isOnlyProductVersionHasBeenSet;
 
                 };
             }

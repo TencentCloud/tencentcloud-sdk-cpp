@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -445,6 +445,90 @@ API：通过API手动注册
                      */
                     bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用默认的服务端证书
+                     * @return UseDefaultServerCert 是否使用默认的服务端证书
+                     * 
+                     */
+                    bool GetUseDefaultServerCert() const;
+
+                    /**
+                     * 判断参数 UseDefaultServerCert 是否已赋值
+                     * @return UseDefaultServerCert 是否已赋值
+                     * 
+                     */
+                    bool UseDefaultServerCertHasBeenSet() const;
+
+                    /**
+                     * 获取服务端CA最大数量
+                     * @return TrustedCaLimit 服务端CA最大数量
+                     * 
+                     */
+                    int64_t GetTrustedCaLimit() const;
+
+                    /**
+                     * 判断参数 TrustedCaLimit 是否已赋值
+                     * @return TrustedCaLimit 是否已赋值
+                     * 
+                     */
+                    bool TrustedCaLimitHasBeenSet() const;
+
+                    /**
+                     * 获取服务端证书最大数量
+                     * @return ServerCertLimit 服务端证书最大数量
+                     * 
+                     */
+                    int64_t GetServerCertLimit() const;
+
+                    /**
+                     * 判断参数 ServerCertLimit 是否已赋值
+                     * @return ServerCertLimit 是否已赋值
+                     * 
+                     */
+                    bool ServerCertLimitHasBeenSet() const;
+
+                    /**
+                     * 获取topic前缀最大层级
+                     * @return TopicPrefixSlashLimit topic前缀最大层级
+                     * 
+                     */
+                    int64_t GetTopicPrefixSlashLimit() const;
+
+                    /**
+                     * 判断参数 TopicPrefixSlashLimit 是否已赋值
+                     * @return TopicPrefixSlashLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicPrefixSlashLimitHasBeenSet() const;
+
+                    /**
+                     * 获取单客户端发送消息限速，单位 条/秒
+                     * @return MessageRate 单客户端发送消息限速，单位 条/秒
+                     * 
+                     */
+                    int64_t GetMessageRate() const;
+
+                    /**
+                     * 判断参数 MessageRate 是否已赋值
+                     * @return MessageRate 是否已赋值
+                     * 
+                     */
+                    bool MessageRateHasBeenSet() const;
+
+                    /**
+                     * 获取服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * @return TransportLayerSecurity 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     * 
+                     */
+                    std::string GetTransportLayerSecurity() const;
+
+                    /**
+                     * 判断参数 TransportLayerSecurity 是否已赋值
+                     * @return TransportLayerSecurity 是否已赋值
+                     * 
+                     */
+                    bool TransportLayerSecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +703,42 @@ API：通过API手动注册
                      */
                     int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
                     bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+
+                    /**
+                     * 是否使用默认的服务端证书
+                     */
+                    bool m_useDefaultServerCert;
+                    bool m_useDefaultServerCertHasBeenSet;
+
+                    /**
+                     * 服务端CA最大数量
+                     */
+                    int64_t m_trustedCaLimit;
+                    bool m_trustedCaLimitHasBeenSet;
+
+                    /**
+                     * 服务端证书最大数量
+                     */
+                    int64_t m_serverCertLimit;
+                    bool m_serverCertLimitHasBeenSet;
+
+                    /**
+                     * topic前缀最大层级
+                     */
+                    int64_t m_topicPrefixSlashLimit;
+                    bool m_topicPrefixSlashLimitHasBeenSet;
+
+                    /**
+                     * 单客户端发送消息限速，单位 条/秒
+                     */
+                    int64_t m_messageRate;
+                    bool m_messageRateHasBeenSet;
+
+                    /**
+                     * 服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1
+                     */
+                    std::string m_transportLayerSecurity;
+                    bool m_transportLayerSecurityHasBeenSet;
 
                 };
             }

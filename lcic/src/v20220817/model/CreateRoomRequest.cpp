@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ CreateRoomRequest::CreateRoomRequest() :
     m_videoOrientationHasBeenSet(false),
     m_isGradingRequiredPostClassHasBeenSet(false),
     m_roomTypeHasBeenSet(false),
+    m_guestsHasBeenSet(false),
     m_endDelayTimeHasBeenSet(false),
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
@@ -54,7 +55,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_recordLangHasBeenSet(false),
     m_recordStreamHasBeenSet(false),
     m_whiteBoardSnapshotModeHasBeenSet(false),
-    m_subtitlesTranscriptionHasBeenSet(false)
+    m_subtitlesTranscriptionHasBeenSet(false),
+    m_recordMergeHasBeenSet(false)
 {
 }
 
@@ -246,6 +248,19 @@ string CreateRoomRequest::ToJsonString() const
         d.AddMember(iKey, m_roomType, allocator);
     }
 
+    if (m_guestsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Guests";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_guests.begin(); itr != m_guests.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_endDelayTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -324,6 +339,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "SubtitlesTranscription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subtitlesTranscription, allocator);
+    }
+
+    if (m_recordMergeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordMerge";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordMerge, allocator);
     }
 
 
@@ -686,6 +709,22 @@ bool CreateRoomRequest::RoomTypeHasBeenSet() const
     return m_roomTypeHasBeenSet;
 }
 
+vector<string> CreateRoomRequest::GetGuests() const
+{
+    return m_guests;
+}
+
+void CreateRoomRequest::SetGuests(const vector<string>& _guests)
+{
+    m_guests = _guests;
+    m_guestsHasBeenSet = true;
+}
+
+bool CreateRoomRequest::GuestsHasBeenSet() const
+{
+    return m_guestsHasBeenSet;
+}
+
 int64_t CreateRoomRequest::GetEndDelayTime() const
 {
     return m_endDelayTime;
@@ -844,6 +883,22 @@ void CreateRoomRequest::SetSubtitlesTranscription(const uint64_t& _subtitlesTran
 bool CreateRoomRequest::SubtitlesTranscriptionHasBeenSet() const
 {
     return m_subtitlesTranscriptionHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetRecordMerge() const
+{
+    return m_recordMerge;
+}
+
+void CreateRoomRequest::SetRecordMerge(const uint64_t& _recordMerge)
+{
+    m_recordMerge = _recordMerge;
+    m_recordMergeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordMergeHasBeenSet() const
+{
+    return m_recordMergeHasBeenSet;
 }
 
 

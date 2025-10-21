@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页输出实例列表的大小，参数默认值20。
-                     * @return Limit 每页输出实例列表的大小，参数默认值20。
+                     * 获取每页输出实例列表的大小。取值为大于0 的正整数，默认为20。
+                     * @return Limit 每页输出实例列表的大小。取值为大于0 的正整数，默认为20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页输出实例列表的大小，参数默认值20。
-                     * @param _limit 每页输出实例列表的大小，参数默认值20。
+                     * 设置每页输出实例列表的大小。取值为大于0 的正整数，默认为20。
+                     * @param _limit 每页输出实例列表的大小。取值为大于0 的正整数，默认为20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页输出实例列表的大小，参数默认值20。
+                     * 每页输出实例列表的大小。取值为大于0 的正整数，默认为20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

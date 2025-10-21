@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeVideoBitRateRequest.h
   include/tencentcloud/iss/v20230517/model/DeleteAITaskRequest.h
   include/tencentcloud/iss/v20230517/model/ChefHatAIResultInfo.h
+  include/tencentcloud/iss/v20230517/model/DescribeUserDeviceListRequest.h
   include/tencentcloud/iss/v20230517/model/UpdateGatewayResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordRetrieveTaskRequest.h
   include/tencentcloud/iss/v20230517/model/ControlDeviceSnapshotResponse.h
@@ -114,7 +115,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeOrganizationData.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlResponse.h
   include/tencentcloud/iss/v20230517/model/RecordPlanOptData.h
-  include/tencentcloud/iss/v20230517/model/ListSubTasksData.h
+  include/tencentcloud/iss/v20230517/model/DescribeUserDeviceListResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/Timeline.h
   include/tencentcloud/iss/v20230517/model/ListGatewaysData.h
@@ -185,6 +186,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeGatewayProtocolResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeGBDeviceAddrRequest.h
   include/tencentcloud/iss/v20230517/model/ListAITaskData.h
+  include/tencentcloud/iss/v20230517/model/DescribeDeviceListData.h
   include/tencentcloud/iss/v20230517/model/ControlDeviceSnapshotRequest.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordTemplateData.h
   include/tencentcloud/iss/v20230517/model/DescribeDomainRegionRequest.h
@@ -278,6 +280,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ListOrganizationChannelsData.h
   include/tencentcloud/iss/v20230517/model/AddRecordBackupPlanRequest.h
   include/tencentcloud/iss/v20230517/model/ListTasksData.h
+  include/tencentcloud/iss/v20230517/model/ListSubTasksData.h
   include/tencentcloud/iss/v20230517/model/ControlDeviceStreamData.h
   include/tencentcloud/iss/v20230517/model/ListDeviceSnapshotsResponse.h
   include/tencentcloud/iss/v20230517/model/RecordTemplateInfo.h
@@ -350,6 +353,7 @@ set(iss_src
   src/v20230517/model/DescribeVideoBitRateRequest.cpp
   src/v20230517/model/DeleteAITaskRequest.cpp
   src/v20230517/model/ChefHatAIResultInfo.cpp
+  src/v20230517/model/DescribeUserDeviceListRequest.cpp
   src/v20230517/model/UpdateGatewayResponse.cpp
   src/v20230517/model/DescribeRecordRetrieveTaskRequest.cpp
   src/v20230517/model/ControlDeviceSnapshotResponse.cpp
@@ -398,7 +402,7 @@ set(iss_src
   src/v20230517/model/DescribeOrganizationData.cpp
   src/v20230517/model/DescribeVideoDownloadUrlResponse.cpp
   src/v20230517/model/RecordPlanOptData.cpp
-  src/v20230517/model/ListSubTasksData.cpp
+  src/v20230517/model/DescribeUserDeviceListResponse.cpp
   src/v20230517/model/DescribeRecordPlanResponse.cpp
   src/v20230517/model/Timeline.cpp
   src/v20230517/model/ListGatewaysData.cpp
@@ -469,6 +473,7 @@ set(iss_src
   src/v20230517/model/DescribeGatewayProtocolResponse.cpp
   src/v20230517/model/DescribeGBDeviceAddrRequest.cpp
   src/v20230517/model/ListAITaskData.cpp
+  src/v20230517/model/DescribeDeviceListData.cpp
   src/v20230517/model/ControlDeviceSnapshotRequest.cpp
   src/v20230517/model/UpdateRecordTemplateData.cpp
   src/v20230517/model/DescribeDomainRegionRequest.cpp
@@ -562,6 +567,7 @@ set(iss_src
   src/v20230517/model/ListOrganizationChannelsData.cpp
   src/v20230517/model/AddRecordBackupPlanRequest.cpp
   src/v20230517/model/ListTasksData.cpp
+  src/v20230517/model/ListSubTasksData.cpp
   src/v20230517/model/ControlDeviceStreamData.cpp
   src/v20230517/model/ListDeviceSnapshotsResponse.cpp
   src/v20230517/model/RecordTemplateInfo.cpp

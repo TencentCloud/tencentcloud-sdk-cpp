@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -499,15 +499,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取模版的用户合同类型
-                     * @return UserFlowType 模版的用户合同类型
+                     * 获取模板的用户合同类型
+                     * @return UserFlowType 模板的用户合同类型
                      * 
                      */
                     UserFlowType GetUserFlowType() const;
 
                     /**
-                     * 设置模版的用户合同类型
-                     * @param _userFlowType 模版的用户合同类型
+                     * 设置模板的用户合同类型
+                     * @param _userFlowType 模板的用户合同类型
                      * 
                      */
                     void SetUserFlowType(const UserFlowType& _userFlowType);
@@ -645,7 +645,7 @@ namespace TencentCloud
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 模版的用户合同类型
+                     * 模板的用户合同类型
                      */
                     UserFlowType m_userFlowType;
                     bool m_userFlowTypeHasBeenSet;

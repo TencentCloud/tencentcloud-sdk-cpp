@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 CreateContractDiffTaskWebUrlResponse::CreateContractDiffTaskWebUrlResponse() :
     m_taskIdHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+    m_webUrlHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CreateContractDiffTaskWebUrlResponse::Deserialize(const stri
         m_webUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserData") && !rsp["UserData"].IsNull())
+    {
+        if (!rsp["UserData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userData = string(rsp["UserData"].GetString());
+        m_userDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -109,11 +120,19 @@ string CreateContractDiffTaskWebUrlResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_webUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -139,6 +158,16 @@ string CreateContractDiffTaskWebUrlResponse::GetWebUrl() const
 bool CreateContractDiffTaskWebUrlResponse::WebUrlHasBeenSet() const
 {
     return m_webUrlHasBeenSet;
+}
+
+string CreateContractDiffTaskWebUrlResponse::GetUserData() const
+{
+    return m_userData;
+}
+
+bool CreateContractDiffTaskWebUrlResponse::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

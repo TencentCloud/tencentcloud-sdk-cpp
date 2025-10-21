@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道名称
-                     * @return LaneName 泳道名称
+                     * 获取泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
+                     * @return LaneName 泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      * 
                      */
                     std::string GetLaneName() const;
 
                     /**
-                     * 设置泳道名称
-                     * @param _laneName 泳道名称
+                     * 设置泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
+                     * @param _laneName 泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      * 
                      */
                     void SetLaneName(const std::string& _laneName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LaneNameHasBeenSet() const;
 
                     /**
-                     * 获取泳道备注
-                     * @return Remark 泳道备注
+                     * 获取泳道配置备注，最多支持200个字符。
+                     * @return Remark 泳道配置备注，最多支持200个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置泳道备注
-                     * @param _remark 泳道备注
+                     * 设置泳道配置备注，最多支持200个字符。
+                     * @param _remark 泳道配置备注，最多支持200个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取泳道部署组信息
-                     * @return LaneGroupList 泳道部署组信息
+                     * 获取泳道部署组信息。
+                     * @return LaneGroupList 泳道部署组信息。
                      * 
                      */
                     std::vector<LaneGroup> GetLaneGroupList() const;
 
                     /**
-                     * 设置泳道部署组信息
-                     * @param _laneGroupList 泳道部署组信息
+                     * 设置泳道部署组信息。
+                     * @param _laneGroupList 泳道部署组信息。
                      * 
                      */
                     void SetLaneGroupList(const std::vector<LaneGroup>& _laneGroupList);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LaneGroupListHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @return ProgramIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
+                     * @param _programIdList 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道名称
+                     * 泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。
                      */
                     std::string m_laneName;
                     bool m_laneNameHasBeenSet;
 
                     /**
-                     * 泳道备注
+                     * 泳道配置备注，最多支持200个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 泳道部署组信息
+                     * 泳道部署组信息。
                      */
                     std::vector<LaneGroup> m_laneGroupList;
                     bool m_laneGroupListHasBeenSet;
 
                     /**
-                     * 无
+                     * 需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,6 +139,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesLightRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesLightResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysRequest.h>
@@ -449,6 +451,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayServicesResponse> DescribeCloudNativeAPIGatewayServicesOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayServicesOutcome> DescribeCloudNativeAPIGatewayServicesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayServicesRequest&, DescribeCloudNativeAPIGatewayServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayServicesLightResponse> DescribeCloudNativeAPIGatewayServicesLightOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayServicesLightOutcome> DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayServicesLightRequest&, DescribeCloudNativeAPIGatewayServicesLightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayServicesLightAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayUpstreamResponse> DescribeCloudNativeAPIGatewayUpstreamOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayUpstreamOutcome> DescribeCloudNativeAPIGatewayUpstreamOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayUpstreamRequest&, DescribeCloudNativeAPIGatewayUpstreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayUpstreamAsyncHandler;
@@ -1158,6 +1163,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayServicesOutcomeCallable DescribeCloudNativeAPIGatewayServicesCallable(const Model::DescribeCloudNativeAPIGatewayServicesRequest& request);
 
                 /**
+                 *轻量查询云原生网关服务列表
+                 * @param req DescribeCloudNativeAPIGatewayServicesLightRequest
+                 * @return DescribeCloudNativeAPIGatewayServicesLightOutcome
+                 */
+                DescribeCloudNativeAPIGatewayServicesLightOutcome DescribeCloudNativeAPIGatewayServicesLight(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest &request);
+                void DescribeCloudNativeAPIGatewayServicesLightAsync(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest& request, const DescribeCloudNativeAPIGatewayServicesLightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable DescribeCloudNativeAPIGatewayServicesLightCallable(const Model::DescribeCloudNativeAPIGatewayServicesLightRequest& request);
+
+                /**
                  *获取云原生网关服务详情下的Upstream列表
                  * @param req DescribeCloudNativeAPIGatewayUpstreamRequest
                  * @return DescribeCloudNativeAPIGatewayUpstreamOutcome
@@ -1599,7 +1613,7 @@ namespace TencentCloud
                 ModifyNetworkAccessStrategyOutcomeCallable ModifyNetworkAccessStrategyCallable(const Model::ModifyNetworkAccessStrategyRequest& request);
 
                 /**
-                 *修改云原生API网关实例网络基本信息，例如带宽以及描述，只支持修改客户端公网/内网的信息。
+                 *修改云原生API网关实例网络基本信息，例如带宽以及描述、规格升级，只支持修改客户端公网/内网的信息。
                  * @param req ModifyNetworkBasicInfoRequest
                  * @return ModifyNetworkBasicInfoOutcome
                  */

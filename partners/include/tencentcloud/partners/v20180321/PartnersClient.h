@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -240,7 +240,8 @@ namespace TencentCloud
                 DescribeAgentClientsOutcomeCallable DescribeAgentClientsCallable(const Model::DescribeAgentClientsRequest& request);
 
                 /**
-                 *供代理商拉取缓存的全量预付费客户订单
+                 *供代理商拉取全量预付费普通客户订单
+（对应控制台：客户订单-预付费-普通订单）
                  * @param req DescribeAgentDealsByCacheRequest
                  * @return DescribeAgentDealsByCacheOutcome
                  */
@@ -258,7 +259,7 @@ namespace TencentCloud
                 DescribeAgentDealsPriceDetailByDealNameOutcomeCallable DescribeAgentDealsPriceDetailByDealNameCallable(const Model::DescribeAgentDealsPriceDetailByDealNameRequest& request);
 
                 /**
-                 *可以查询代理商代付的预付费订单
+                 *查询最近15天内的代理商代付订单
                  * @param req DescribeAgentPayDealsV2Request
                  * @return DescribeAgentPayDealsV2Outcome
                  */
@@ -276,7 +277,7 @@ namespace TencentCloud
                 DescribeAgentRelateBigDealIdsOutcomeCallable DescribeAgentRelateBigDealIdsCallable(const Model::DescribeAgentRelateBigDealIdsRequest& request);
 
                 /**
-                 *查询代理商名下指定代客的自付订单（预付费）
+                 *查询代理商名下指定代客最近15天内的自付订单（预付费）
                  * @param req DescribeAgentSelfPayDealsV2Request
                  * @return DescribeAgentSelfPayDealsV2Outcome
                  */

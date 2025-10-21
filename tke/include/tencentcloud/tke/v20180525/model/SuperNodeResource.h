@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点名称
-                     * @return NodeName 节点名称
+                     * 获取节点名称，此字段在出参中有效。
+                     * @return NodeName 节点名称，此字段在出参中有效。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeName 节点名称
+                     * 设置节点名称，此字段在出参中有效。
+                     * @param _nodeName 节点名称，此字段在出参中有效。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取节点上的资源总数
-                     * @return Num 节点上的资源总数
+                     * 获取节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
+                     * @return Num 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      * 
                      */
                     uint64_t GetNum() const;
 
                     /**
-                     * 设置节点上的资源总数
-                     * @param _num 节点上的资源总数
+                     * 设置节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
+                     * @param _num 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      * 
                      */
                     void SetNum(const uint64_t& _num);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NumHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总核数
-                     * @return Cpu 节点上的总核数
+                     * 获取节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
+                     * @return Cpu 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置节点上的总核数
-                     * @param _cpu 节点上的总核数
+                     * 设置节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
+                     * @param _cpu 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总内存数
-                     * @return Memory 节点上的总内存数
+                     * 获取节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
+                     * @return Memory 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置节点上的总内存数
-                     * @param _memory 节点上的总内存数
+                     * 设置节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
+                     * @param _memory 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取节点上的总 GPU 卡数
-                     * @return Gpu 节点上的总 GPU 卡数
+                     * 获取节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
+                     * @return Gpu 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      * 
                      */
                     double GetGpu() const;
 
                     /**
-                     * 设置节点上的总 GPU 卡数
-                     * @param _gpu 节点上的总 GPU 卡数
+                     * 设置节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
+                     * @param _gpu 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      * 
                      */
                     void SetGpu(const double& _gpu);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取置放群组 ID
-                     * @return DisasterRecoverGroupId 置放群组 ID
+                     * 获取置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * @return DisasterRecoverGroupId 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
                      * 
                      */
                     std::string GetDisasterRecoverGroupId() const;
 
                     /**
-                     * 设置置放群组 ID
-                     * @param _disasterRecoverGroupId 置放群组 ID
+                     * 设置置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
+                     * @param _disasterRecoverGroupId 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
                      * 
                      */
                     void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
@@ -238,31 +238,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点名称
+                     * 节点名称，此字段在出参中有效。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 节点上的资源总数
+                     * 节点上的资源总数，QuotaType为 exact 时，表示创建指定规格的精确配额数量。
                      */
                     uint64_t m_num;
                     bool m_numHasBeenSet;
 
                     /**
-                     * 节点上的总核数
+                     * 节点上的总核数，QuotaType为 exact 时表示指定规格的核数。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 节点上的总内存数
+                     * 节点上的总内存数，QuotaType为 exact 时表示指定规格的内存，单位：Gi
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 节点上的总 GPU 卡数
+                     * 节点上的总 GPU 卡数，QuotaType为 exact 时表示指定规格的GPU卡数。
                      */
                     double m_gpu;
                     bool m_gpuHasBeenSet;
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 置放群组 ID
+                     * 置放群组 ID，QuotaType为 exact 时有效，表示购买的精确配额需满足置放群组。可通过 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810) 接口返回值中的DisasterRecoverGroupId获取。
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;

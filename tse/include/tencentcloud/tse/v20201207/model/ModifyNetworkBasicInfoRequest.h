@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,6 +180,59 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡的规格类型，支持：
+- 不传为共享型。
+- clb.c2.medium：标准型规格
+- clb.c3.small：高阶型1规格
+- clb.c3.medium：高阶型2规格
+- clb.c4.small：超强型1规格
+- clb.c4.medium：超强型2规格
+- clb.c4.large：超强型3规格
+- clb.c4.xlarge：超强型4规格
+                     * @return SlaType 负载均衡的规格类型，支持：
+- 不传为共享型。
+- clb.c2.medium：标准型规格
+- clb.c3.small：高阶型1规格
+- clb.c3.medium：高阶型2规格
+- clb.c4.small：超强型1规格
+- clb.c4.medium：超强型2规格
+- clb.c4.large：超强型3规格
+- clb.c4.xlarge：超强型4规格
+                     * 
+                     */
+                    std::string GetSlaType() const;
+
+                    /**
+                     * 设置负载均衡的规格类型，支持：
+- 不传为共享型。
+- clb.c2.medium：标准型规格
+- clb.c3.small：高阶型1规格
+- clb.c3.medium：高阶型2规格
+- clb.c4.small：超强型1规格
+- clb.c4.medium：超强型2规格
+- clb.c4.large：超强型3规格
+- clb.c4.xlarge：超强型4规格
+                     * @param _slaType 负载均衡的规格类型，支持：
+- 不传为共享型。
+- clb.c2.medium：标准型规格
+- clb.c3.small：高阶型1规格
+- clb.c3.medium：高阶型2规格
+- clb.c4.small：超强型1规格
+- clb.c4.medium：超强型2规格
+- clb.c4.large：超强型3规格
+- clb.c4.xlarge：超强型4规格
+                     * 
+                     */
+                    void SetSlaType(const std::string& _slaType);
+
+                    /**
+                     * 判断参数 SlaType 是否已赋值
+                     * @return SlaType 是否已赋值
+                     * 
+                     */
+                    bool SlaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +273,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 负载均衡的规格类型，支持：
+- 不传为共享型。
+- clb.c2.medium：标准型规格
+- clb.c3.small：高阶型1规格
+- clb.c3.medium：高阶型2规格
+- clb.c4.small：超强型1规格
+- clb.c4.medium：超强型2规格
+- clb.c4.large：超强型3规格
+- clb.c4.xlarge：超强型4规格
+                     */
+                    std::string m_slaType;
+                    bool m_slaTypeHasBeenSet;
 
                 };
             }

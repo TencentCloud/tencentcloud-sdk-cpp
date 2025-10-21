@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_streamHasBeenSet(false),
     m_temperatureHasBeenSet(false),
     m_maxTokensHasBeenSet(false),
-    m_enableSearchHasBeenSet(false)
+    m_enableSearchHasBeenSet(false),
+    m_thinkingHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,15 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableSearch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableSearch, allocator);
+    }
+
+    if (m_thinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Thinking";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_thinking.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -196,6 +206,22 @@ void ChatCompletionsRequest::SetEnableSearch(const bool& _enableSearch)
 bool ChatCompletionsRequest::EnableSearchHasBeenSet() const
 {
     return m_enableSearchHasBeenSet;
+}
+
+Thinking ChatCompletionsRequest::GetThinking() const
+{
+    return m_thinking;
+}
+
+void ChatCompletionsRequest::SetThinking(const Thinking& _thinking)
+{
+    m_thinking = _thinking;
+    m_thinkingHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ThinkingHasBeenSet() const
+{
+    return m_thinkingHasBeenSet;
 }
 
 

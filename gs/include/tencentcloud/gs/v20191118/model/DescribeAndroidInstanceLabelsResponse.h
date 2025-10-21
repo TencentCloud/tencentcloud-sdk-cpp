@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gs/v20191118/model/AndroidInstanceLabel.h>
+#include <tencentcloud/gs/v20191118/model/AndroidInstanceLabelDetail.h>
 
 
 namespace TencentCloud
@@ -61,16 +62,30 @@ namespace TencentCloud
                     /**
                      * 获取安卓实例标签列表
                      * @return Labels 安卓实例标签列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<AndroidInstanceLabel> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LabelsHasBeenSet() const;
+
+                    /**
+                     * 获取安卓实例标签详情列表
+                     * @return AndroidInstanceLabels 安卓实例标签详情列表
+                     * 
+                     */
+                    std::vector<AndroidInstanceLabelDetail> GetAndroidInstanceLabels() const;
+
+                    /**
+                     * 判断参数 AndroidInstanceLabels 是否已赋值
+                     * @return AndroidInstanceLabels 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceLabelsHasBeenSet() const;
 
                 private:
 
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<AndroidInstanceLabel> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 安卓实例标签详情列表
+                     */
+                    std::vector<AndroidInstanceLabelDetail> m_androidInstanceLabels;
+                    bool m_androidInstanceLabelsHasBeenSet;
 
                 };
             }

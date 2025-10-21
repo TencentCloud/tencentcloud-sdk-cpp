@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,27 @@ namespace TencentCloud
                     bool ContainerRuntimeHasBeenSet() const;
 
                     /**
+                     * 获取是否启用 DataPlaneV2（cilium替代kube-proxy） 
+                     * @return DataPlaneV2 是否启用 DataPlaneV2（cilium替代kube-proxy） 
+                     * 
+                     */
+                    bool GetDataPlaneV2() const;
+
+                    /**
+                     * 设置是否启用 DataPlaneV2（cilium替代kube-proxy） 
+                     * @param _dataPlaneV2 是否启用 DataPlaneV2（cilium替代kube-proxy） 
+                     * 
+                     */
+                    void SetDataPlaneV2(const bool& _dataPlaneV2);
+
+                    /**
+                     * 判断参数 DataPlaneV2 是否已赋值
+                     * @return DataPlaneV2 是否已赋值
+                     * 
+                     */
+                    bool DataPlaneV2HasBeenSet() const;
+
+                    /**
                      * 获取是否启用集群删除保护
                      * @return DeletionProtection 是否启用集群删除保护
                      * 
@@ -388,15 +409,27 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool KubeProxyModeHasBeenSet() const;
 
                     /**
-                     * 获取集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
-                     * @return NetworkType 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     * 获取集群网络类型，默认为GR。
+- GR: 全局路由
+- VPC-CNI: VPC-CNI模式
+- CiliumOverlay: CiliumOverlay模式
+                     * @return NetworkType 集群网络类型，默认为GR。
+- GR: 全局路由
+- VPC-CNI: VPC-CNI模式
+- CiliumOverlay: CiliumOverlay模式
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
-                     * @param _networkType 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     * 设置集群网络类型，默认为GR。
+- GR: 全局路由
+- VPC-CNI: VPC-CNI模式
+- CiliumOverlay: CiliumOverlay模式
+                     * @param _networkType 集群网络类型，默认为GR。
+- GR: 全局路由
+- VPC-CNI: VPC-CNI模式
+- CiliumOverlay: CiliumOverlay模式
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -537,6 +570,12 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool m_containerRuntimeHasBeenSet;
 
                     /**
+                     * 是否启用 DataPlaneV2（cilium替代kube-proxy） 
+                     */
+                    bool m_dataPlaneV2;
+                    bool m_dataPlaneV2HasBeenSet;
+
+                    /**
                      * 是否启用集群删除保护
                      */
                     bool m_deletionProtection;
@@ -591,7 +630,10 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                     bool m_kubeProxyModeHasBeenSet;
 
                     /**
-                     * 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     * 集群网络类型，默认为GR。
+- GR: 全局路由
+- VPC-CNI: VPC-CNI模式
+- CiliumOverlay: CiliumOverlay模式
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;

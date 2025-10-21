@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,6 +157,10 @@
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupListRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupListResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
@@ -215,6 +219,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerGroupOffsetRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerGroupOffsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
@@ -466,6 +472,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKafkaConsumerResponse> DescribeKafkaConsumerOutcome;
                 typedef std::future<DescribeKafkaConsumerOutcome> DescribeKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerRequest&, DescribeKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaConsumerGroupDetailResponse> DescribeKafkaConsumerGroupDetailOutcome;
+                typedef std::future<DescribeKafkaConsumerGroupDetailOutcome> DescribeKafkaConsumerGroupDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerGroupDetailRequest&, DescribeKafkaConsumerGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerGroupDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaConsumerGroupListResponse> DescribeKafkaConsumerGroupListOutcome;
+                typedef std::future<DescribeKafkaConsumerGroupListOutcome> DescribeKafkaConsumerGroupListOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaConsumerGroupListRequest&, DescribeKafkaConsumerGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaConsumerGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKafkaRechargesResponse> DescribeKafkaRechargesOutcome;
                 typedef std::future<DescribeKafkaRechargesOutcome> DescribeKafkaRechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaRechargesRequest&, DescribeKafkaRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaRechargesAsyncHandler;
@@ -553,6 +565,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyKafkaConsumerResponse> ModifyKafkaConsumerOutcome;
                 typedef std::future<ModifyKafkaConsumerOutcome> ModifyKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaConsumerRequest&, ModifyKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKafkaConsumerGroupOffsetResponse> ModifyKafkaConsumerGroupOffsetOutcome;
+                typedef std::future<ModifyKafkaConsumerGroupOffsetOutcome> ModifyKafkaConsumerGroupOffsetOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyKafkaConsumerGroupOffsetRequest&, ModifyKafkaConsumerGroupOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaConsumerGroupOffsetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyKafkaRechargeResponse> ModifyKafkaRechargeOutcome;
                 typedef std::future<ModifyKafkaRechargeOutcome> ModifyKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaRechargeRequest&, ModifyKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaRechargeAsyncHandler;
@@ -771,7 +786,7 @@ namespace TencentCloud
                 CreateDeliverCloudFunctionOutcomeCallable CreateDeliverCloudFunctionCallable(const Model::CreateDeliverCloudFunctionRequest& request);
 
                 /**
-                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
+                 *本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */
@@ -843,7 +858,7 @@ namespace TencentCloud
                 CreateShipperOutcomeCallable CreateShipperCallable(const Model::CreateShipperRequest& request);
 
                 /**
-                 *本接口用于创建日志主题。
+                 *本接口用于创建日志或指标主题。
                  * @param req CreateTopicRequest
                  * @return CreateTopicOutcome
                  */
@@ -879,7 +894,7 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于删除告警屏蔽规则。
+                 *该接口用于删除告警屏蔽规则。当告警屏蔽规则在生效中或者是在失效中，无法被删除
                  * @param req DeleteAlarmShieldRequest
                  * @return DeleteAlarmShieldOutcome
                  */
@@ -933,7 +948,7 @@ namespace TencentCloud
                 DeleteConsoleSharingOutcomeCallable DeleteConsoleSharingCallable(const Model::DeleteConsoleSharingRequest& request);
 
                 /**
-                 *本接口用于删除投递配置
+                 *删除投递Ckafka任务
                  * @param req DeleteConsumerRequest
                  * @return DeleteConsumerOutcome
                  */
@@ -1050,7 +1065,7 @@ namespace TencentCloud
                 DeleteShipperOutcomeCallable DeleteShipperCallable(const Model::DeleteShipperRequest& request);
 
                 /**
-                 *本接口用于删除日志主题。
+                 *本接口用于删除日志或指标主题。
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
                  */
@@ -1221,6 +1236,24 @@ namespace TencentCloud
                 DescribeKafkaConsumerOutcomeCallable DescribeKafkaConsumerCallable(const Model::DescribeKafkaConsumerRequest& request);
 
                 /**
+                 *获取Kafka协议消费组详情
+                 * @param req DescribeKafkaConsumerGroupDetailRequest
+                 * @return DescribeKafkaConsumerGroupDetailOutcome
+                 */
+                DescribeKafkaConsumerGroupDetailOutcome DescribeKafkaConsumerGroupDetail(const Model::DescribeKafkaConsumerGroupDetailRequest &request);
+                void DescribeKafkaConsumerGroupDetailAsync(const Model::DescribeKafkaConsumerGroupDetailRequest& request, const DescribeKafkaConsumerGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaConsumerGroupDetailOutcomeCallable DescribeKafkaConsumerGroupDetailCallable(const Model::DescribeKafkaConsumerGroupDetailRequest& request);
+
+                /**
+                 *获取Kafka协议消费组信息列表
+                 * @param req DescribeKafkaConsumerGroupListRequest
+                 * @return DescribeKafkaConsumerGroupListOutcome
+                 */
+                DescribeKafkaConsumerGroupListOutcome DescribeKafkaConsumerGroupList(const Model::DescribeKafkaConsumerGroupListRequest &request);
+                void DescribeKafkaConsumerGroupListAsync(const Model::DescribeKafkaConsumerGroupListRequest& request, const DescribeKafkaConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaConsumerGroupListOutcomeCallable DescribeKafkaConsumerGroupListCallable(const Model::DescribeKafkaConsumerGroupListRequest& request);
+
+                /**
                  *本接口用于获取Kafka数据订阅任务
                  * @param req DescribeKafkaRechargesRequest
                  * @return DescribeKafkaRechargesOutcome
@@ -1330,7 +1363,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeShippersOutcomeCallable DescribeShippersCallable(const Model::DescribeShippersRequest& request);
 
                 /**
-                 *本接口用于获取日志主题列表，支持分页
+                 *本接口用于获取日志或指标主题列表，支持分页
                  * @param req DescribeTopicsRequest
                  * @return DescribeTopicsOutcome
                  */
@@ -1384,7 +1417,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
 
                 /**
-                 *该接口用于修改告警屏蔽规则。
+                 *该接口用于修改告警屏蔽规则。当告警屏蔽规则为失效中时，无法对其进行修改
                  * @param req ModifyAlarmShieldRequest
                  * @return ModifyAlarmShieldOutcome
                  */
@@ -1483,6 +1516,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyKafkaConsumerOutcomeCallable ModifyKafkaConsumerCallable(const Model::ModifyKafkaConsumerRequest& request);
 
                 /**
+                 *修改Kafka协议消费组点位
+                 * @param req ModifyKafkaConsumerGroupOffsetRequest
+                 * @return ModifyKafkaConsumerGroupOffsetOutcome
+                 */
+                ModifyKafkaConsumerGroupOffsetOutcome ModifyKafkaConsumerGroupOffset(const Model::ModifyKafkaConsumerGroupOffsetRequest &request);
+                void ModifyKafkaConsumerGroupOffsetAsync(const Model::ModifyKafkaConsumerGroupOffsetRequest& request, const ModifyKafkaConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKafkaConsumerGroupOffsetOutcomeCallable ModifyKafkaConsumerGroupOffsetCallable(const Model::ModifyKafkaConsumerGroupOffsetRequest& request);
+
+                /**
                  *本接口用于修改Kafka数据订阅任务
                  * @param req ModifyKafkaRechargeRequest
                  * @return ModifyKafkaRechargeOutcome
@@ -1538,7 +1580,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyShipperOutcomeCallable ModifyShipperCallable(const Model::ModifyShipperRequest& request);
 
                 /**
-                 *本接口用于修改日志主题。
+                 *本接口用于修改日志或指标主题。
                  * @param req ModifyTopicRequest
                  * @return ModifyTopicOutcome
                  */

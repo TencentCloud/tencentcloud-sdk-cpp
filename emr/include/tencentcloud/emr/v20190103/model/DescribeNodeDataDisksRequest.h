@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,6 +169,31 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * @return Scene 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * 
+                     */
+                    std::string GetScene() const;
+
+                    /**
+                     * 设置场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * @param _scene 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     * 
+                     */
+                    void SetScene(const std::string& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     * 
+                     */
+                    bool SceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +231,13 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 场景值：
+ModifyDiskExtraPerformance ：调整数据盘额外性能
+                     */
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

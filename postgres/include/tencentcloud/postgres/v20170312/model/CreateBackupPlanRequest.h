@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -169,15 +169,19 @@ namespace TencentCloud
                     bool MaxBackupStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据备份保留时长，week默认是7,month为30。
-                     * @return BaseBackupRetentionPeriod 数据备份保留时长，week默认是7,month为30。
+                     * 获取数据备份保留时长，单位：天。取值范围为：[0,30000)
+BackupPeriodType为week时默认是7,为month时默认为31。
+                     * @return BaseBackupRetentionPeriod 数据备份保留时长，单位：天。取值范围为：[0,30000)
+BackupPeriodType为week时默认是7,为month时默认为31。
                      * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
-                     * 设置数据备份保留时长，week默认是7,month为30。
-                     * @param _baseBackupRetentionPeriod 数据备份保留时长，week默认是7,month为30。
+                     * 设置数据备份保留时长，单位：天。取值范围为：[0,30000)
+BackupPeriodType为week时默认是7,为month时默认为31。
+                     * @param _baseBackupRetentionPeriod 数据备份保留时长，单位：天。取值范围为：[0,30000)
+BackupPeriodType为week时默认是7,为month时默认为31。
                      * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
@@ -192,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -228,7 +232,8 @@ namespace TencentCloud
                     bool m_maxBackupStartTimeHasBeenSet;
 
                     /**
-                     * 数据备份保留时长，week默认是7,month为30。
+                     * 数据备份保留时长，单位：天。取值范围为：[0,30000)
+BackupPeriodType为week时默认是7,为month时默认为31。
                      */
                     uint64_t m_baseBackupRetentionPeriod;
                     bool m_baseBackupRetentionPeriodHasBeenSet;

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -159,6 +159,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CheckStepInfo.h
   include/tencentcloud/dts/v20211206/model/ProcessStepTip.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskRequest.h
+  include/tencentcloud/dts/v20211206/model/StopMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/RecoverSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/Database.h
   include/tencentcloud/dts/v20211206/model/Column.h
@@ -185,6 +186,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/View.h
   include/tencentcloud/dts/v20211206/model/MonitorInfo.h
   include/tencentcloud/dts/v20211206/model/DescribeOffsetByTimeRequest.h
+  include/tencentcloud/dts/v20211206/model/ResetSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/StartCompareResponse.h
   include/tencentcloud/dts/v20211206/model/DynamicOptions.h
   include/tencentcloud/dts/v20211206/model/CreateCompareTaskResponse.h
@@ -212,7 +214,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/DBItem.h
   include/tencentcloud/dts/v20211206/model/DeleteCompareTaskRequest.h
   include/tencentcloud/dts/v20211206/model/MigrateDetailInfo.h
-  include/tencentcloud/dts/v20211206/model/StopMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ResetSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/Endpoint.h
   include/tencentcloud/dts/v20211206/model/ConfigureSubscribeJobRequest.h
   include/tencentcloud/dts/v20211206/model/SyncJobInfo.h
@@ -441,6 +443,7 @@ set(dts_src
   src/v20211206/model/CheckStepInfo.cpp
   src/v20211206/model/ProcessStepTip.cpp
   src/v20211206/model/ModifyCompareTaskRequest.cpp
+  src/v20211206/model/StopMigrateJobRequest.cpp
   src/v20211206/model/RecoverSyncJobRequest.cpp
   src/v20211206/model/Database.cpp
   src/v20211206/model/Column.cpp
@@ -467,6 +470,7 @@ set(dts_src
   src/v20211206/model/View.cpp
   src/v20211206/model/MonitorInfo.cpp
   src/v20211206/model/DescribeOffsetByTimeRequest.cpp
+  src/v20211206/model/ResetSyncJobRequest.cpp
   src/v20211206/model/StartCompareResponse.cpp
   src/v20211206/model/DynamicOptions.cpp
   src/v20211206/model/CreateCompareTaskResponse.cpp
@@ -494,7 +498,7 @@ set(dts_src
   src/v20211206/model/DBItem.cpp
   src/v20211206/model/DeleteCompareTaskRequest.cpp
   src/v20211206/model/MigrateDetailInfo.cpp
-  src/v20211206/model/StopMigrateJobRequest.cpp
+  src/v20211206/model/ResetSyncJobResponse.cpp
   src/v20211206/model/Endpoint.cpp
   src/v20211206/model/ConfigureSubscribeJobRequest.cpp
   src/v20211206/model/SyncJobInfo.cpp

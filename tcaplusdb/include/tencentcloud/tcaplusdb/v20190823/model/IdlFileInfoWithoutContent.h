@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名称，不包含扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 文件名称，不包含扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名称，不包含扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 文件名称，不包含扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据描述语言（IDL）类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileType 数据描述语言（IDL）类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置数据描述语言（IDL）类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileType 数据描述语言（IDL）类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileExtType 文件扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileExtType() const;
 
                     /**
                      * 设置文件扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileExtType 文件扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileExtType(const std::string& _fileExtType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小（Bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 文件大小（Bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小（Bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSize 文件大小（Bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileId() const;
 
                     /**
                      * 设置文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const int64_t& _fileId);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const ErrorInfo& _error);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 文件名称，不包含扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 数据描述语言（IDL）类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
                      * 文件扩展名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileExtType;
                     bool m_fileExtTypeHasBeenSet;
 
                     /**
                      * 文件大小（Bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
                      * 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorInfo m_error;
                     bool m_errorHasBeenSet;

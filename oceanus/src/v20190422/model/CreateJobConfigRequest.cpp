@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,11 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_jobManagerCpuHasBeenSet(false),
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
-    m_taskManagerMemHasBeenSet(false)
+    m_taskManagerMemHasBeenSet(false),
+    m_useOldSystemConnectorHasBeenSet(false),
+    m_programArgsAfterGzipHasBeenSet(false),
+    m_checkpointTimeoutSecondHasBeenSet(false),
+    m_checkpointIntervalSecondHasBeenSet(false)
 {
 }
 
@@ -352,6 +356,38 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "TaskManagerMem";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskManagerMem, allocator);
+    }
+
+    if (m_useOldSystemConnectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOldSystemConnector";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useOldSystemConnector, allocator);
+    }
+
+    if (m_programArgsAfterGzipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramArgsAfterGzip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_programArgsAfterGzip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkpointTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
+    }
+
+    if (m_checkpointIntervalSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointIntervalSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkpointIntervalSecond, allocator);
     }
 
 
@@ -888,6 +924,70 @@ void CreateJobConfigRequest::SetTaskManagerMem(const double& _taskManagerMem)
 bool CreateJobConfigRequest::TaskManagerMemHasBeenSet() const
 {
     return m_taskManagerMemHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetUseOldSystemConnector() const
+{
+    return m_useOldSystemConnector;
+}
+
+void CreateJobConfigRequest::SetUseOldSystemConnector(const int64_t& _useOldSystemConnector)
+{
+    m_useOldSystemConnector = _useOldSystemConnector;
+    m_useOldSystemConnectorHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::UseOldSystemConnectorHasBeenSet() const
+{
+    return m_useOldSystemConnectorHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetProgramArgsAfterGzip() const
+{
+    return m_programArgsAfterGzip;
+}
+
+void CreateJobConfigRequest::SetProgramArgsAfterGzip(const string& _programArgsAfterGzip)
+{
+    m_programArgsAfterGzip = _programArgsAfterGzip;
+    m_programArgsAfterGzipHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ProgramArgsAfterGzipHasBeenSet() const
+{
+    return m_programArgsAfterGzipHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetCheckpointTimeoutSecond() const
+{
+    return m_checkpointTimeoutSecond;
+}
+
+void CreateJobConfigRequest::SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond)
+{
+    m_checkpointTimeoutSecond = _checkpointTimeoutSecond;
+    m_checkpointTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::CheckpointTimeoutSecondHasBeenSet() const
+{
+    return m_checkpointTimeoutSecondHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetCheckpointIntervalSecond() const
+{
+    return m_checkpointIntervalSecond;
+}
+
+void CreateJobConfigRequest::SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond)
+{
+    m_checkpointIntervalSecond = _checkpointIntervalSecond;
+    m_checkpointIntervalSecondHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::CheckpointIntervalSecondHasBeenSet() const
+{
+    return m_checkpointIntervalSecondHasBeenSet;
 }
 
 

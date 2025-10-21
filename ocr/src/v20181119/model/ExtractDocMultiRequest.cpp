@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ ExtractDocMultiRequest::ExtractDocMultiRequest() :
     m_configIdHasBeenSet(false),
     m_enableCoordHasBeenSet(false),
     m_outputParentKeyHasBeenSet(false),
-    m_configAdvancedHasBeenSet(false)
+    m_configAdvancedHasBeenSet(false),
+    m_outputLanguageHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string ExtractDocMultiRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_configAdvanced.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_outputLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -295,6 +304,22 @@ void ExtractDocMultiRequest::SetConfigAdvanced(const ConfigAdvanced& _configAdva
 bool ExtractDocMultiRequest::ConfigAdvancedHasBeenSet() const
 {
     return m_configAdvancedHasBeenSet;
+}
+
+string ExtractDocMultiRequest::GetOutputLanguage() const
+{
+    return m_outputLanguage;
+}
+
+void ExtractDocMultiRequest::SetOutputLanguage(const string& _outputLanguage)
+{
+    m_outputLanguage = _outputLanguage;
+    m_outputLanguageHasBeenSet = true;
+}
+
+bool ExtractDocMultiRequest::OutputLanguageHasBeenSet() const
+{
+    return m_outputLanguageHasBeenSet;
 }
 
 

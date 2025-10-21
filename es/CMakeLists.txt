@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ set(es_public_header
 set(es_public_header_model
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/ServerlessSpaceUser.h
+  include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/LogstashInstanceInfo.h
@@ -52,13 +53,13 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h
   include/tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
-  include/tencentcloud/es/v20180416/model/LogstashPipeline.h
+  include/tencentcloud/es/v20180416/model/IndexOptionsField.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/JobParam.h
   include/tencentcloud/es/v20180416/model/Failures.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h
-  include/tencentcloud/es/v20180416/model/IndexOptionsField.h
+  include/tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h
   include/tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Response.h
   include/tencentcloud/es/v20180416/model/ServerlessSpace.h
   include/tencentcloud/es/v20180416/model/DeleteClusterSnapshotRequest.h
@@ -71,6 +72,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/Operation.h
   include/tencentcloud/es/v20180416/model/DiDataSourceCvm.h
   include/tencentcloud/es/v20180416/model/InstanceLog.h
+  include/tencentcloud/es/v20180416/model/LogstashPipeline.h
   include/tencentcloud/es/v20180416/model/CreateIndexResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h
   include/tencentcloud/es/v20180416/model/LogDetail.h
@@ -99,6 +101,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateIndexRequest.h
   include/tencentcloud/es/v20180416/model/LogstashPipelineInfo.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
+  include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/RestoreClusterSnapshotRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserRequest.h
   include/tencentcloud/es/v20180416/model/Dimension.h
@@ -180,6 +183,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
   include/tencentcloud/es/v20180416/model/BackingIndexMetaField.h
+  include/tencentcloud/es/v20180416/model/IpTimePair.h
   include/tencentcloud/es/v20180416/model/IndexSettingsField.h
   include/tencentcloud/es/v20180416/model/UpdateServerlessSpaceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescRequest.h
@@ -189,8 +193,9 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h
-  include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
+  include/tencentcloud/es/v20180416/model/ExportIpTraceLogResponse.h
   include/tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h
+  include/tencentcloud/es/v20180416/model/GpuInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginListResponse.h
   include/tencentcloud/es/v20180416/model/DiSourceCvm.h
   include/tencentcloud/es/v20180416/model/CosSnapShotInfo.h
@@ -199,7 +204,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
   include/tencentcloud/es/v20180416/model/ServerlessDi.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h
-  include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
+  include/tencentcloud/es/v20180416/model/ExportIpTraceLogRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h
   include/tencentcloud/es/v20180416/model/VpcInfo.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
@@ -224,6 +229,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/GetDocumentChunkResultRequest.h
   include/tencentcloud/es/v20250101/model/RerankResult.h
   include/tencentcloud/es/v20250101/model/GetDocumentParseResultRequest.h
+  include/tencentcloud/es/v20250101/model/PageUsage.h
   include/tencentcloud/es/v20250101/model/Usage.h
   include/tencentcloud/es/v20250101/model/DocumentParseConfig.h
   include/tencentcloud/es/v20250101/model/ParseDocumentResponse.h
@@ -231,16 +237,23 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h
   include/tencentcloud/es/v20250101/model/ParseDocumentAsyncResponse.h
   include/tencentcloud/es/v20250101/model/ChunkDocumentResponse.h
+  include/tencentcloud/es/v20250101/model/Tool.h
   include/tencentcloud/es/v20250101/model/GetDocumentParseResultResponse.h
   include/tencentcloud/es/v20250101/model/TokenUsage.h
   include/tencentcloud/es/v20250101/model/Choice.h
   include/tencentcloud/es/v20250101/model/RunRerankRequest.h
   include/tencentcloud/es/v20250101/model/EmbeddingData.h
   include/tencentcloud/es/v20250101/model/ChunkConfig.h
+  include/tencentcloud/es/v20250101/model/MultiModalEmbeddingData.h
+  include/tencentcloud/es/v20250101/model/ToolFunction.h
+  include/tencentcloud/es/v20250101/model/ToolCallFunction.h
   include/tencentcloud/es/v20250101/model/OutputMessage.h
+  include/tencentcloud/es/v20250101/model/ToolCall.h
   include/tencentcloud/es/v20250101/model/ParseDocument.h
   include/tencentcloud/es/v20250101/model/GetDocumentChunkResultResponse.h
   include/tencentcloud/es/v20250101/model/ChunkDocumentAsyncResponse.h
+  include/tencentcloud/es/v20250101/model/GetMultiModalEmbeddingResponse.h
+  include/tencentcloud/es/v20250101/model/GetMultiModalEmbeddingRequest.h
   include/tencentcloud/es/v20250101/model/OnlineSearchOptions.h
   include/tencentcloud/es/v20250101/model/ParseDocumentRequest.h
   include/tencentcloud/es/v20250101/model/Chunk.h
@@ -250,6 +263,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20250101/model/ParseDocumentAsyncRequest.h
   include/tencentcloud/es/v20250101/model/ChunkDocument.h
   include/tencentcloud/es/v20250101/model/Message.h
+  include/tencentcloud/es/v20250101/model/MultiModalUsage.h
   include/tencentcloud/es/v20250101/model/ChatCompletionsResponse.h
   )
 
@@ -258,6 +272,7 @@ set(es_src
   src/v20250101/EsClient.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/ServerlessSpaceUser.cpp
+  src/v20180416/model/ServerlessIndexSettingsField.cpp
   src/v20180416/model/RestartLogstashInstanceRequest.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/LogstashInstanceInfo.cpp
@@ -288,13 +303,13 @@ set(es_src
   src/v20180416/model/DeleteServerlessInstanceResponse.cpp
   src/v20180416/model/InstallInstanceModelResponse.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
-  src/v20180416/model/LogstashPipeline.cpp
+  src/v20180416/model/IndexOptionsField.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/JobParam.cpp
   src/v20180416/model/Failures.cpp
   src/v20180416/model/DeleteLogstashInstanceResponse.cpp
   src/v20180416/model/DescribeLogstashInstancesRequest.cpp
-  src/v20180416/model/IndexOptionsField.cpp
+  src/v20180416/model/AutoScaleDiskInfo.cpp
   src/v20180416/model/CreateServerlessSpaceV2Response.cpp
   src/v20180416/model/ServerlessSpace.cpp
   src/v20180416/model/DeleteClusterSnapshotRequest.cpp
@@ -307,6 +322,7 @@ set(es_src
   src/v20180416/model/Operation.cpp
   src/v20180416/model/DiDataSourceCvm.cpp
   src/v20180416/model/InstanceLog.cpp
+  src/v20180416/model/LogstashPipeline.cpp
   src/v20180416/model/CreateIndexResponse.cpp
   src/v20180416/model/DescribeServerlessSpaceUserResponse.cpp
   src/v20180416/model/LogDetail.cpp
@@ -335,6 +351,7 @@ set(es_src
   src/v20180416/model/CreateIndexRequest.cpp
   src/v20180416/model/LogstashPipelineInfo.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
+  src/v20180416/model/StopLogstashPipelinesResponse.cpp
   src/v20180416/model/RestoreClusterSnapshotRequest.cpp
   src/v20180416/model/DescribeServerlessSpaceUserRequest.cpp
   src/v20180416/model/Dimension.cpp
@@ -416,6 +433,7 @@ set(es_src
   src/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
   src/v20180416/model/BackingIndexMetaField.cpp
+  src/v20180416/model/IpTimePair.cpp
   src/v20180416/model/IndexSettingsField.cpp
   src/v20180416/model/UpdateServerlessSpaceResponse.cpp
   src/v20180416/model/UpdateLogstashPipelineDescRequest.cpp
@@ -425,8 +443,9 @@ set(es_src
   src/v20180416/model/ModifyEsVipSecurityGroupResponse.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/CreateServerlessInstanceResponse.cpp
-  src/v20180416/model/ServerlessIndexSettingsField.cpp
+  src/v20180416/model/ExportIpTraceLogResponse.cpp
   src/v20180416/model/DescribeDiagnoseRequest.cpp
+  src/v20180416/model/GpuInfo.cpp
   src/v20180416/model/DescribeInstancePluginListResponse.cpp
   src/v20180416/model/DiSourceCvm.cpp
   src/v20180416/model/CosSnapShotInfo.cpp
@@ -435,7 +454,7 @@ set(es_src
   src/v20180416/model/UpdateJdkRequest.cpp
   src/v20180416/model/ServerlessDi.cpp
   src/v20180416/model/DescribeServerlessMetricsResponse.cpp
-  src/v20180416/model/StopLogstashPipelinesResponse.cpp
+  src/v20180416/model/ExportIpTraceLogRequest.cpp
   src/v20180416/model/DescribeServerlessInstancesRequest.cpp
   src/v20180416/model/VpcInfo.cpp
   src/v20180416/model/KibanaNodeInfo.cpp
@@ -460,6 +479,7 @@ set(es_src
   src/v20250101/model/GetDocumentChunkResultRequest.cpp
   src/v20250101/model/RerankResult.cpp
   src/v20250101/model/GetDocumentParseResultRequest.cpp
+  src/v20250101/model/PageUsage.cpp
   src/v20250101/model/Usage.cpp
   src/v20250101/model/DocumentParseConfig.cpp
   src/v20250101/model/ParseDocumentResponse.cpp
@@ -467,16 +487,23 @@ set(es_src
   src/v20250101/model/GetTextEmbeddingRequest.cpp
   src/v20250101/model/ParseDocumentAsyncResponse.cpp
   src/v20250101/model/ChunkDocumentResponse.cpp
+  src/v20250101/model/Tool.cpp
   src/v20250101/model/GetDocumentParseResultResponse.cpp
   src/v20250101/model/TokenUsage.cpp
   src/v20250101/model/Choice.cpp
   src/v20250101/model/RunRerankRequest.cpp
   src/v20250101/model/EmbeddingData.cpp
   src/v20250101/model/ChunkConfig.cpp
+  src/v20250101/model/MultiModalEmbeddingData.cpp
+  src/v20250101/model/ToolFunction.cpp
+  src/v20250101/model/ToolCallFunction.cpp
   src/v20250101/model/OutputMessage.cpp
+  src/v20250101/model/ToolCall.cpp
   src/v20250101/model/ParseDocument.cpp
   src/v20250101/model/GetDocumentChunkResultResponse.cpp
   src/v20250101/model/ChunkDocumentAsyncResponse.cpp
+  src/v20250101/model/GetMultiModalEmbeddingResponse.cpp
+  src/v20250101/model/GetMultiModalEmbeddingRequest.cpp
   src/v20250101/model/OnlineSearchOptions.cpp
   src/v20250101/model/ParseDocumentRequest.cpp
   src/v20250101/model/Chunk.cpp
@@ -486,6 +513,7 @@ set(es_src
   src/v20250101/model/ParseDocumentAsyncRequest.cpp
   src/v20250101/model/ChunkDocument.cpp
   src/v20250101/model/Message.cpp
+  src/v20250101/model/MultiModalUsage.cpp
   src/v20250101/model/ChatCompletionsResponse.cpp
   )
 

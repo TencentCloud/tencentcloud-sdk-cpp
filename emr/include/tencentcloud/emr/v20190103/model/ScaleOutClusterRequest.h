@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -515,6 +515,27 @@ namespace TencentCloud
                      */
                     bool NodeMarksHasBeenSet() const;
 
+                    /**
+                     * 获取扩容指定计算组名称
+                     * @return WarehouseName 扩容指定计算组名称
+                     * 
+                     */
+                    std::string GetWarehouseName() const;
+
+                    /**
+                     * 设置扩容指定计算组名称
+                     * @param _warehouseName 扩容指定计算组名称
+                     * 
+                     */
+                    void SetWarehouseName(const std::string& _warehouseName);
+
+                    /**
+                     * 判断参数 WarehouseName 是否已赋值
+                     * @return WarehouseName 是否已赋值
+                     * 
+                     */
+                    bool WarehouseNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -648,6 +669,12 @@ namespace TencentCloud
                      */
                     NodeMark m_nodeMarks;
                     bool m_nodeMarksHasBeenSet;
+
+                    /**
+                     * 扩容指定计算组名称
+                     */
+                    std::string m_warehouseName;
+                    bool m_warehouseNameHasBeenSet;
 
                 };
             }

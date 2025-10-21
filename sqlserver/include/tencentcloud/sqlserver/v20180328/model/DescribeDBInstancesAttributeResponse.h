@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,6 +257,50 @@ namespace TencentCloud
                      */
                     bool IsDiskEncryptFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * @return IsSafetyLimited 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     * 
+                     */
+                    uint64_t GetIsSafetyLimited() const;
+
+                    /**
+                     * 判断参数 IsSafetyLimited 是否已赋值
+                     * @return IsSafetyLimited 是否已赋值
+                     * 
+                     */
+                    bool IsSafetyLimitedHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持创建SA权限账号，0-不支持，1-支持
+                     * @return IsSupportSA 是否支持创建SA权限账号，0-不支持，1-支持
+                     * 
+                     */
+                    uint64_t GetIsSupportSA() const;
+
+                    /**
+                     * 判断参数 IsSupportSA 是否已赋值
+                     * @return IsSupportSA 是否已赋值
+                     * 
+                     */
+                    bool IsSupportSAHasBeenSet() const;
+
+                    /**
+                     * 获取慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlowLogThreshold 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSlowLogThreshold() const;
+
+                    /**
+                     * 判断参数 SlowLogThreshold 是否已赋值
+                     * @return SlowLogThreshold 是否已赋值
+                     * 
+                     */
+                    bool SlowLogThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +392,25 @@ namespace TencentCloud
                      */
                     int64_t m_isDiskEncryptFlag;
                     bool m_isDiskEncryptFlagHasBeenSet;
+
+                    /**
+                     * 是否安全限制部分功能，0-没有限制，1-有限制。限制的功能有：修改可用区、迁移变配、DTS数据迁移等
+                     */
+                    uint64_t m_isSafetyLimited;
+                    bool m_isSafetyLimitedHasBeenSet;
+
+                    /**
+                     * 是否支持创建SA权限账号，0-不支持，1-支持
+                     */
+                    uint64_t m_isSupportSA;
+                    bool m_isSupportSAHasBeenSet;
+
+                    /**
+                     * 慢SQL阈值，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_slowLogThreshold;
+                    bool m_slowLogThresholdHasBeenSet;
 
                 };
             }

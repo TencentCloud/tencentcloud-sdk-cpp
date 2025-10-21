@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
+                     * 获取认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 
+                     * @return AuthorizationIds 认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 
+                     * 
+                     */
+                    std::vector<std::string> GetAuthorizationIds() const;
+
+                    /**
+                     * 设置认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 
+                     * @param _authorizationIds 认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 
+                     * 
+                     */
+                    void SetAuthorizationIds(const std::vector<std::string>& _authorizationIds);
+
+                    /**
+                     * 判断参数 AuthorizationIds 是否已赋值
+                     * @return AuthorizationIds 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationIdsHasBeenSet() const;
+
+                    /**
                      * 获取认证人姓名，组织机构超管姓名。 在注册流程中，必须是超管本人进行操作。 
                      * @return AdminName 认证人姓名，组织机构超管姓名。 在注册流程中，必须是超管本人进行操作。 
                      * 
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 
+                     */
+                    std::vector<std::string> m_authorizationIds;
+                    bool m_authorizationIdsHasBeenSet;
 
                     /**
                      * 认证人姓名，组织机构超管姓名。 在注册流程中，必须是超管本人进行操作。 

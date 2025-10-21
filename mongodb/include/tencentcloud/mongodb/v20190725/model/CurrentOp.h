@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,47 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-                     * @return Op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
+                     * 获取操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @return Op 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
-                     * 设置操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-                     * @param _op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
+                     * 设置操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
+                     * @param _op 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -194,15 +226,23 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，节点状态，可能的取值为：Primary、Secondary。
-                     * @return State 筛选条件，节点状态，可能的取值为：Primary、Secondary。
+                     * 获取节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @return State 节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置筛选条件，节点状态，可能的取值为：Primary、Secondary。
-                     * @param _state 筛选条件，节点状态，可能的取值为：Primary、Secondary。
+                     * 设置节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @param _state 节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -277,7 +317,15 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
+                     * 操作类型。
+- none：特殊状态，空闲连接或内部任务等。
+- update：更新数据。
+- insert：插入操作。
+- query：查询操作。
+- command：命令操作。
+- getmore：获取更多数据。
+- remove：删除操作。
+- killcursors：释放查询游标的操作。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
@@ -301,7 +349,9 @@ namespace TencentCloud
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 筛选条件，节点状态，可能的取值为：Primary、Secondary。
+                     * 节点角色。
+- primary：主节点。
+- secondary：从节点。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,48 @@ namespace TencentCloud
                      */
                     bool ExecuteTimeHasBeenSet() const;
 
+                    /**
+                     * 获取收客户端请求时长(ms)
+                     * @return RecvClientEnd 收客户端请求时长(ms)
+                     * 
+                     */
+                    int64_t GetRecvClientEnd() const;
+
+                    /**
+                     * 设置收客户端请求时长(ms)
+                     * @param _recvClientEnd 收客户端请求时长(ms)
+                     * 
+                     */
+                    void SetRecvClientEnd(const int64_t& _recvClientEnd);
+
+                    /**
+                     * 判断参数 RecvClientEnd 是否已赋值
+                     * @return RecvClientEnd 是否已赋值
+                     * 
+                     */
+                    bool RecvClientEndHasBeenSet() const;
+
+                    /**
+                     * 获取发送客户端请求时长(ms)
+                     * @return SendClientEnd 发送客户端请求时长(ms)
+                     * 
+                     */
+                    int64_t GetSendClientEnd() const;
+
+                    /**
+                     * 设置发送客户端请求时长(ms)
+                     * @param _sendClientEnd 发送客户端请求时长(ms)
+                     * 
+                     */
+                    void SetSendClientEnd(const int64_t& _sendClientEnd);
+
+                    /**
+                     * 判断参数 SendClientEnd 是否已赋值
+                     * @return SendClientEnd 是否已赋值
+                     * 
+                     */
+                    bool SendClientEndHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +224,18 @@ namespace TencentCloud
                      */
                     std::string m_executeTime;
                     bool m_executeTimeHasBeenSet;
+
+                    /**
+                     * 收客户端请求时长(ms)
+                     */
+                    int64_t m_recvClientEnd;
+                    bool m_recvClientEndHasBeenSet;
+
+                    /**
+                     * 发送客户端请求时长(ms)
+                     */
+                    int64_t m_sendClientEnd;
+                    bool m_sendClientEndHasBeenSet;
 
                 };
             }

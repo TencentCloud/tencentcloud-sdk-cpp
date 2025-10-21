@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,9 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_lengthHasBeenSet(false),
     m_limitMethodHasBeenSet(false),
     m_celRuleHasBeenSet(false),
-    m_logicalOpHasBeenSet(false)
+    m_logicalOpHasBeenSet(false),
+    m_pageIdHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -234,6 +236,22 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "LogicalOp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_actionRatio, allocator);
     }
 
 
@@ -594,6 +612,38 @@ void UpsertCCRuleRequest::SetLogicalOp(const string& _logicalOp)
 bool UpsertCCRuleRequest::LogicalOpHasBeenSet() const
 {
     return m_logicalOpHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetPageId() const
+{
+    return m_pageId;
+}
+
+void UpsertCCRuleRequest::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
+}
+
+uint64_t UpsertCCRuleRequest::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void UpsertCCRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 
 

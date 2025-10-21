@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -529,6 +529,27 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取恢复任务id
+                     * @return ID 恢复任务id
+                     * 
+                     */
+                    int64_t GetID() const;
+
+                    /**
+                     * 设置恢复任务id
+                     * @param _iD 恢复任务id
+                     * 
+                     */
+                    void SetID(const int64_t& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     * 
+                     */
+                    bool IDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -668,6 +689,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 恢复任务id
+                     */
+                    int64_t m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

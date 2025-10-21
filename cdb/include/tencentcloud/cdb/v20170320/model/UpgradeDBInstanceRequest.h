@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -417,15 +417,15 @@ namespace TencentCloud
                     bool RoTransTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群版节点拓扑配置。
-                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 获取云盘版节点拓扑配置。
+                     * @return ClusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版节点拓扑配置。
-                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 设置云盘版节点拓扑配置。
+                     * @param _clusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -612,7 +612,7 @@ namespace TencentCloud
                     bool m_roTransTypeHasBeenSet;
 
                     /**
-                     * 集群版节点拓扑配置。
+                     * 云盘版节点拓扑配置。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;

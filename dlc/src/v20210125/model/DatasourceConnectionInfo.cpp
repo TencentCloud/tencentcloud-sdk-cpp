@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,9 @@ DatasourceConnectionInfo::DatasourceConnectionInfo() :
     m_userAliasHasBeenSet(false),
     m_networkConnectionSetHasBeenSet(false),
     m_connectivityStateHasBeenSet(false),
-    m_connectivityTipsHasBeenSet(false)
+    m_connectivityTipsHasBeenSet(false),
+    m_customConfigHasBeenSet(false),
+    m_allowRollbackHasBeenSet(false)
 {
 }
 
@@ -243,6 +245,36 @@ CoreInternalOutcome DatasourceConnectionInfo::Deserialize(const rapidjson::Value
         m_connectivityTipsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomConfig") && !value["CustomConfig"].IsNull())
+    {
+        if (!value["CustomConfig"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DatasourceConnectionInfo.CustomConfig` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customConfig.push_back(item);
+        }
+        m_customConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowRollback") && !value["AllowRollback"].IsNull())
+    {
+        if (!value["AllowRollback"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceConnectionInfo.AllowRollback` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowRollback = value["AllowRollback"].GetBool();
+        m_allowRollbackHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +431,29 @@ void DatasourceConnectionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ConnectivityTips";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_connectivityTips.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customConfig.begin(); itr != m_customConfig.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_allowRollbackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowRollback";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowRollback, allocator);
     }
 
 }
@@ -674,5 +729,37 @@ void DatasourceConnectionInfo::SetConnectivityTips(const string& _connectivityTi
 bool DatasourceConnectionInfo::ConnectivityTipsHasBeenSet() const
 {
     return m_connectivityTipsHasBeenSet;
+}
+
+vector<CustomConfig> DatasourceConnectionInfo::GetCustomConfig() const
+{
+    return m_customConfig;
+}
+
+void DatasourceConnectionInfo::SetCustomConfig(const vector<CustomConfig>& _customConfig)
+{
+    m_customConfig = _customConfig;
+    m_customConfigHasBeenSet = true;
+}
+
+bool DatasourceConnectionInfo::CustomConfigHasBeenSet() const
+{
+    return m_customConfigHasBeenSet;
+}
+
+bool DatasourceConnectionInfo::GetAllowRollback() const
+{
+    return m_allowRollback;
+}
+
+void DatasourceConnectionInfo::SetAllowRollback(const bool& _allowRollback)
+{
+    m_allowRollback = _allowRollback;
+    m_allowRollbackHasBeenSet = true;
+}
+
+bool DatasourceConnectionInfo::AllowRollbackHasBeenSet() const
+{
+    return m_allowRollbackHasBeenSet;
 }
 

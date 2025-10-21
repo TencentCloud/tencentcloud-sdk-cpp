@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ ModifyTWeSeeConfigRequest::ModifyTWeSeeConfigRequest() :
     m_channelIdHasBeenSet(false),
     m_enableSummaryHasBeenSet(false),
     m_enableSearchHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_summaryConfigHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,15 @@ string ModifyTWeSeeConfigRequest::ToJsonString() const
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summaryConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -214,6 +224,22 @@ void ModifyTWeSeeConfigRequest::SetConfig(const string& _config)
 bool ModifyTWeSeeConfigRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+VisionSummaryConfig ModifyTWeSeeConfigRequest::GetSummaryConfig() const
+{
+    return m_summaryConfig;
+}
+
+void ModifyTWeSeeConfigRequest::SetSummaryConfig(const VisionSummaryConfig& _summaryConfig)
+{
+    m_summaryConfig = _summaryConfig;
+    m_summaryConfigHasBeenSet = true;
+}
+
+bool ModifyTWeSeeConfigRequest::SummaryConfigHasBeenSet() const
+{
+    return m_summaryConfigHasBeenSet;
 }
 
 

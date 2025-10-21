@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,135 @@ PrivatednsClient::AddSpecifyPrivateZoneVpcOutcomeCallable PrivatednsClient::AddS
         [this, request]()
         {
             return this->AddSpecifyPrivateZoneVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::CreateExtendEndpointOutcome PrivatednsClient::CreateExtendEndpoint(const CreateExtendEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExtendEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExtendEndpointResponse rsp = CreateExtendEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExtendEndpointOutcome(rsp);
+        else
+            return CreateExtendEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExtendEndpointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreateExtendEndpointAsync(const CreateExtendEndpointRequest& request, const CreateExtendEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExtendEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::CreateExtendEndpointOutcomeCallable PrivatednsClient::CreateExtendEndpointCallable(const CreateExtendEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExtendEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExtendEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::CreateForwardRuleOutcome PrivatednsClient::CreateForwardRule(const CreateForwardRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateForwardRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateForwardRuleResponse rsp = CreateForwardRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateForwardRuleOutcome(rsp);
+        else
+            return CreateForwardRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateForwardRuleOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreateForwardRuleAsync(const CreateForwardRuleRequest& request, const CreateForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateForwardRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::CreateForwardRuleOutcomeCallable PrivatednsClient::CreateForwardRuleCallable(const CreateForwardRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateForwardRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateForwardRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::CreateInboundEndpointOutcome PrivatednsClient::CreateInboundEndpoint(const CreateInboundEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInboundEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInboundEndpointResponse rsp = CreateInboundEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInboundEndpointOutcome(rsp);
+        else
+            return CreateInboundEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInboundEndpointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreateInboundEndpointAsync(const CreateInboundEndpointRequest& request, const CreateInboundEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInboundEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::CreateInboundEndpointOutcomeCallable PrivatednsClient::CreateInboundEndpointCallable(const CreateInboundEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInboundEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInboundEndpoint(request);
         }
     );
 
@@ -205,6 +334,135 @@ PrivatednsClient::CreatePrivateZoneRecordOutcomeCallable PrivatednsClient::Creat
         [this, request]()
         {
             return this->CreatePrivateZoneRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DeleteEndPointOutcome PrivatednsClient::DeleteEndPoint(const DeleteEndPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEndPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEndPointResponse rsp = DeleteEndPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEndPointOutcome(rsp);
+        else
+            return DeleteEndPointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEndPointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DeleteEndPointAsync(const DeleteEndPointRequest& request, const DeleteEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEndPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DeleteEndPointOutcomeCallable PrivatednsClient::DeleteEndPointCallable(const DeleteEndPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEndPointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEndPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DeleteForwardRuleOutcome PrivatednsClient::DeleteForwardRule(const DeleteForwardRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteForwardRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteForwardRuleResponse rsp = DeleteForwardRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteForwardRuleOutcome(rsp);
+        else
+            return DeleteForwardRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteForwardRuleOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DeleteForwardRuleAsync(const DeleteForwardRuleRequest& request, const DeleteForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteForwardRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DeleteForwardRuleOutcomeCallable PrivatednsClient::DeleteForwardRuleCallable(const DeleteForwardRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteForwardRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteForwardRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DeleteInboundEndpointOutcome PrivatednsClient::DeleteInboundEndpoint(const DeleteInboundEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInboundEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInboundEndpointResponse rsp = DeleteInboundEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInboundEndpointOutcome(rsp);
+        else
+            return DeleteInboundEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInboundEndpointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DeleteInboundEndpointAsync(const DeleteInboundEndpointRequest& request, const DeleteInboundEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInboundEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DeleteInboundEndpointOutcomeCallable PrivatednsClient::DeleteInboundEndpointCallable(const DeleteInboundEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInboundEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInboundEndpoint(request);
         }
     );
 
@@ -506,6 +764,135 @@ PrivatednsClient::DescribeDashboardOutcomeCallable PrivatednsClient::DescribeDas
         [this, request]()
         {
             return this->DescribeDashboard(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DescribeExtendEndpointListOutcome PrivatednsClient::DescribeExtendEndpointList(const DescribeExtendEndpointListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtendEndpointList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtendEndpointListResponse rsp = DescribeExtendEndpointListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtendEndpointListOutcome(rsp);
+        else
+            return DescribeExtendEndpointListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtendEndpointListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeExtendEndpointListAsync(const DescribeExtendEndpointListRequest& request, const DescribeExtendEndpointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtendEndpointList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribeExtendEndpointListOutcomeCallable PrivatednsClient::DescribeExtendEndpointListCallable(const DescribeExtendEndpointListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtendEndpointListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtendEndpointList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DescribeForwardRuleListOutcome PrivatednsClient::DescribeForwardRuleList(const DescribeForwardRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeForwardRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeForwardRuleListResponse rsp = DescribeForwardRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeForwardRuleListOutcome(rsp);
+        else
+            return DescribeForwardRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeForwardRuleListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeForwardRuleListAsync(const DescribeForwardRuleListRequest& request, const DescribeForwardRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeForwardRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribeForwardRuleListOutcomeCallable PrivatednsClient::DescribeForwardRuleListCallable(const DescribeForwardRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeForwardRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeForwardRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::DescribeInboundEndpointListOutcome PrivatednsClient::DescribeInboundEndpointList(const DescribeInboundEndpointListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInboundEndpointList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInboundEndpointListResponse rsp = DescribeInboundEndpointListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInboundEndpointListOutcome(rsp);
+        else
+            return DescribeInboundEndpointListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInboundEndpointListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeInboundEndpointListAsync(const DescribeInboundEndpointListRequest& request, const DescribeInboundEndpointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInboundEndpointList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribeInboundEndpointListOutcomeCallable PrivatednsClient::DescribeInboundEndpointListCallable(const DescribeInboundEndpointListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInboundEndpointListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInboundEndpointList(request);
         }
     );
 
@@ -850,6 +1237,92 @@ PrivatednsClient::DescribeRequestDataOutcomeCallable PrivatednsClient::DescribeR
         [this, request]()
         {
             return this->DescribeRequestData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::ModifyForwardRuleOutcome PrivatednsClient::ModifyForwardRule(const ModifyForwardRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyForwardRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyForwardRuleResponse rsp = ModifyForwardRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyForwardRuleOutcome(rsp);
+        else
+            return ModifyForwardRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyForwardRuleOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::ModifyForwardRuleAsync(const ModifyForwardRuleRequest& request, const ModifyForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyForwardRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::ModifyForwardRuleOutcomeCallable PrivatednsClient::ModifyForwardRuleCallable(const ModifyForwardRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyForwardRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyForwardRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PrivatednsClient::ModifyInboundEndpointOutcome PrivatednsClient::ModifyInboundEndpoint(const ModifyInboundEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInboundEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInboundEndpointResponse rsp = ModifyInboundEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInboundEndpointOutcome(rsp);
+        else
+            return ModifyInboundEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInboundEndpointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::ModifyInboundEndpointAsync(const ModifyInboundEndpointRequest& request, const ModifyInboundEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInboundEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::ModifyInboundEndpointOutcomeCallable PrivatednsClient::ModifyInboundEndpointCallable(const ModifyInboundEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInboundEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInboundEndpoint(request);
         }
     );
 

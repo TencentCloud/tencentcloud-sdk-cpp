@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID
-                     * @return RuleTemplateIds 模板ID
+                     * 获取审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。
+                     * @return RuleTemplateIds 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置模板ID
-                     * @param _ruleTemplateIds 模板ID
+                     * 设置审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。
+                     * @param _ruleTemplateIds 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取返回条数。
-                     * @return Limit 返回条数。
+                     * 获取返回条数,默认值-20，最大值-1000。
+                     * @return Limit 返回条数,默认值-20，最大值-1000。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回条数。
-                     * @param _limit 返回条数。
+                     * 设置返回条数,默认值-20，最大值-1000。
+                     * @param _limit 返回条数,默认值-20，最大值-1000。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。DESC-按修改时间倒排，ASC-正序。
-                     * @return Order 排序方式。DESC-按修改时间倒排，ASC-正序。
+                     * 获取排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。
+                     * @return Order 排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式。DESC-按修改时间倒排，ASC-正序。
-                     * @param _order 排序方式。DESC-按修改时间倒排，ASC-正序。
+                     * 设置排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。
+                     * @param _order 排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID
+                     * 审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 返回条数。
+                     * 返回条数,默认值-20，最大值-1000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序方式。DESC-按修改时间倒排，ASC-正序。
+                     * 排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-hez4fh0v
-                     * @return DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 获取实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。
+                     * @return DBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-hez4fh0v
-                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 设置实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。
+                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开通Ipv6外网，1：是，0：否
+默认值：0
                      * @return IsIpv6 是否开通Ipv6外网，1：是，0：否
+默认值：0
                      * 
                      */
                     int64_t GetIsIpv6() const;
 
                     /**
                      * 设置是否开通Ipv6外网，1：是，0：否
+默认值：0
                      * @param _isIpv6 是否开通Ipv6外网，1：是，0：否
+默认值：0
                      * 
                      */
                     void SetIsIpv6(const int64_t& _isIpv6);
@@ -87,13 +91,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-hez4fh0v
+                     * 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
                      * 是否开通Ipv6外网，1：是，0：否
+默认值：0
                      */
                     int64_t m_isIpv6;
                     bool m_isIpv6HasBeenSet;

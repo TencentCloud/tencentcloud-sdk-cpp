@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_basePodNumberHasBeenSet(false),
     m_ciliumModeHasBeenSet(false),
     m_containerRuntimeHasBeenSet(false),
+    m_dataPlaneV2HasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
     m_enableCustomizedPodCIDRHasBeenSet(false),
     m_etcdOverrideConfigsHasBeenSet(false),
@@ -117,6 +118,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
         }
         m_containerRuntime = string(value["ContainerRuntime"].GetString());
         m_containerRuntimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataPlaneV2") && !value["DataPlaneV2"].IsNull())
+    {
+        if (!value["DataPlaneV2"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.DataPlaneV2` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataPlaneV2 = value["DataPlaneV2"].GetBool();
+        m_dataPlaneV2HasBeenSet = true;
     }
 
     if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
@@ -327,6 +338,14 @@ void ClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ContainerRuntime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataPlaneV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataPlaneV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataPlaneV2, allocator);
     }
 
     if (m_deletionProtectionHasBeenSet)
@@ -554,6 +573,22 @@ void ClusterAdvancedSettings::SetContainerRuntime(const string& _containerRuntim
 bool ClusterAdvancedSettings::ContainerRuntimeHasBeenSet() const
 {
     return m_containerRuntimeHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetDataPlaneV2() const
+{
+    return m_dataPlaneV2;
+}
+
+void ClusterAdvancedSettings::SetDataPlaneV2(const bool& _dataPlaneV2)
+{
+    m_dataPlaneV2 = _dataPlaneV2;
+    m_dataPlaneV2HasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::DataPlaneV2HasBeenSet() const
+{
+    return m_dataPlaneV2HasBeenSet;
 }
 
 bool ClusterAdvancedSettings::GetDeletionProtection() const

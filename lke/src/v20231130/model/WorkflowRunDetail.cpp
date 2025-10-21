@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ WorkflowRunDetail::WorkflowRunDetail() :
     m_workflowRunIdHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_outputHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_failMessageHasBeenSet(false),
     m_totalTokensHasBeenSet(false),
@@ -92,6 +93,16 @@ CoreInternalOutcome WorkflowRunDetail::Deserialize(const rapidjson::Value &value
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Output") && !value["Output"].IsNull())
+    {
+        if (!value["Output"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowRunDetail.Output` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_output = string(value["Output"].GetString());
+        m_outputHasBeenSet = true;
     }
 
     if (value.HasMember("State") && !value["State"].IsNull())
@@ -249,6 +260,14 @@ void WorkflowRunDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Output";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_output.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
@@ -419,6 +438,22 @@ void WorkflowRunDetail::SetName(const string& _name)
 bool WorkflowRunDetail::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string WorkflowRunDetail::GetOutput() const
+{
+    return m_output;
+}
+
+void WorkflowRunDetail::SetOutput(const string& _output)
+{
+    m_output = _output;
+    m_outputHasBeenSet = true;
+}
+
+bool WorkflowRunDetail::OutputHasBeenSet() const
+{
+    return m_outputHasBeenSet;
 }
 
 uint64_t WorkflowRunDetail::GetState() const

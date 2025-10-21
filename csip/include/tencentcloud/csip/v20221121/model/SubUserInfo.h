@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ActionRiskCountHasBeenSet() const;
 
                     /**
-                     * 获取是否接入云审计日志
-                     * @return IsAccessCloudAudit 是否接入云审计日志
+                     * 获取是否接入操作审计日志
+                     * @return IsAccessCloudAudit 是否接入操作审计日志
                      * 
                      */
                     bool GetIsAccessCloudAudit() const;
 
                     /**
-                     * 设置是否接入云审计日志
-                     * @param _isAccessCloudAudit 是否接入云审计日志
+                     * 设置是否接入操作审计日志
+                     * @param _isAccessCloudAudit 是否接入操作审计日志
                      * 
                      */
                     void SetIsAccessCloudAudit(const bool& _isAccessCloudAudit);
@@ -517,7 +517,7 @@ namespace TencentCloud
                     bool m_actionRiskCountHasBeenSet;
 
                     /**
-                     * 是否接入云审计日志
+                     * 是否接入操作审计日志
                      */
                     bool m_isAccessCloudAudit;
                     bool m_isAccessCloudAuditHasBeenSet;

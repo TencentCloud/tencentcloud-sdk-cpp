@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -906,6 +906,27 @@ namespace TencentCloud
                      */
                     bool IsDisabledHasBeenSet() const;
 
+                    /**
+                     * 获取员工名称
+                     * @return StaffName 员工名称
+                     * 
+                     */
+                    std::string GetStaffName() const;
+
+                    /**
+                     * 设置员工名称
+                     * @param _staffName 员工名称
+                     * 
+                     */
+                    void SetStaffName(const std::string& _staffName);
+
+                    /**
+                     * 判断参数 StaffName 是否已赋值
+                     * @return StaffName 是否已赋值
+                     * 
+                     */
+                    bool StaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1148,6 +1169,12 @@ namespace TencentCloud
                      */
                     bool m_isDisabled;
                     bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 员工名称
+                     */
+                    std::string m_staffName;
+                    bool m_staffNameHasBeenSet;
 
                 };
             }

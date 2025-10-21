@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeUserDetailResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomRequest.h>
@@ -312,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
+                typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWhiteBoardSnapshotResponse> DescribeWhiteBoardSnapshotOutcome;
                 typedef std::future<DescribeWhiteBoardSnapshotOutcome> DescribeWhiteBoardSnapshotOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeWhiteBoardSnapshotRequest&, DescribeWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoardSnapshotAsyncHandler;
@@ -583,6 +588,7 @@ namespace TencentCloud
 
                 /**
                  *删除房间
+删除课堂前，请先删除该课堂下的各类资源（包括录制文件、板书等），并解绑相关课件。
                  * @param req DeleteRoomRequest
                  * @return DeleteRoomOutcome
                  */
@@ -818,7 +824,18 @@ namespace TencentCloud
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
 
                 /**
+                 *获取用户信息
+                 * @param req DescribeUserDetailRequest
+                 * @return DescribeUserDetailOutcome
+                 */
+                DescribeUserDetailOutcome DescribeUserDetail(const Model::DescribeUserDetailRequest &request);
+                void DescribeUserDetailAsync(const Model::DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDetailOutcomeCallable DescribeUserDetailCallable(const Model::DescribeUserDetailRequest& request);
+
+                /**
                  *查询白板板书截图
+课程结束后，可以查询和以图片的形式导出这些内容，方便后续查看、整理与分享。
+注意：不支持屏幕共享中的板书导出。
                  * @param req DescribeWhiteBoardSnapshotRequest
                  * @return DescribeWhiteBoardSnapshotOutcome
                  */

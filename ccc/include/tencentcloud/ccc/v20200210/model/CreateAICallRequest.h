@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/ccc/v20200210/model/AITransferItem.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/AICallExtractConfigElement.h>
+#include <tencentcloud/ccc/v20200210/model/ToneWordInfo.h>
 
 
 namespace TencentCloud
@@ -1338,6 +1339,102 @@ HoaiMy
                      */
                     bool VariablesHasBeenSet() const;
 
+                    /**
+                     * 获取模型topP
+                     * @return TopP 模型topP
+                     * 
+                     */
+                    double GetTopP() const;
+
+                    /**
+                     * 设置模型topP
+                     * @param _topP 模型topP
+                     * 
+                     */
+                    void SetTopP(const double& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
+                    /**
+                     * 获取vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @return VadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    uint64_t GetVadLevel() const;
+
+                    /**
+                     * 设置vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * @param _vadLevel vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     * 
+                     */
+                    void SetVadLevel(const uint64_t& _vadLevel);
+
+                    /**
+                     * 判断参数 VadLevel 是否已赋值
+                     * @return VadLevel 是否已赋值
+                     * 
+                     */
+                    bool VadLevelHasBeenSet() const;
+
+                    /**
+                     * 获取衔接语
+                     * @return ToneWord 衔接语
+                     * 
+                     */
+                    ToneWordInfo GetToneWord() const;
+
+                    /**
+                     * 设置衔接语
+                     * @param _toneWord 衔接语
+                     * 
+                     */
+                    void SetToneWord(const ToneWordInfo& _toneWord);
+
+                    /**
+                     * 判断参数 ToneWord 是否已赋值
+                     * @return ToneWord 是否已赋值
+                     * 
+                     */
+                    bool ToneWordHasBeenSet() const;
+
+                    /**
+                     * 获取合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * @return EnableComplianceAudio 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * 
+                     */
+                    bool GetEnableComplianceAudio() const;
+
+                    /**
+                     * 设置合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * @param _enableComplianceAudio 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     * 
+                     */
+                    void SetEnableComplianceAudio(const bool& _enableComplianceAudio);
+
+                    /**
+                     * 判断参数 EnableComplianceAudio 是否已赋值
+                     * @return EnableComplianceAudio 是否已赋值
+                     * 
+                     */
+                    bool EnableComplianceAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1684,6 +1781,33 @@ HoaiMy
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
+
+                    /**
+                     * 模型topP
+                     */
+                    double m_topP;
+                    bool m_topPHasBeenSet;
+
+                    /**
+                     * vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。
+                     */
+                    uint64_t m_vadLevel;
+                    bool m_vadLevelHasBeenSet;
+
+                    /**
+                     * 衔接语
+                     */
+                    ToneWordInfo m_toneWord;
+                    bool m_toneWordHasBeenSet;
+
+                    /**
+                     * 合规提示音， 
+该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。
+该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：
+我方充分知悉和理解，根据[《网络安全法》](https://www.gov.cn/xinwen/2016-11/07/content_5129723.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。
+                     */
+                    bool m_enableComplianceAudio;
+                    bool m_enableComplianceAudioHasBeenSet;
 
                 };
             }

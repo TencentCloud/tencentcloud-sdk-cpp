@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,8 @@
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
 #include <tencentcloud/mna/v20210119/model/OrderPerLicenseRequest.h>
 #include <tencentcloud/mna/v20210119/model/OrderPerLicenseResponse.h>
+#include <tencentcloud/mna/v20210119/model/ReportOrderRequest.h>
+#include <tencentcloud/mna/v20210119/model/ReportOrderResponse.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlRequest.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
@@ -216,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OrderPerLicenseResponse> OrderPerLicenseOutcome;
                 typedef std::future<OrderPerLicenseOutcome> OrderPerLicenseOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::OrderPerLicenseRequest&, OrderPerLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderPerLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportOrderResponse> ReportOrderOutcome;
+                typedef std::future<ReportOrderOutcome> ReportOrderOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::ReportOrderRequest&, ReportOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNotifyUrlResponse> SetNotifyUrlOutcome;
                 typedef std::future<SetNotifyUrlOutcome> SetNotifyUrlOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::SetNotifyUrlRequest&, SetNotifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNotifyUrlAsyncHandler;
@@ -536,6 +541,15 @@ namespace TencentCloud
                 OrderPerLicenseOutcome OrderPerLicense(const Model::OrderPerLicenseRequest &request);
                 void OrderPerLicenseAsync(const Model::OrderPerLicenseRequest& request, const OrderPerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OrderPerLicenseOutcomeCallable OrderPerLicenseCallable(const Model::OrderPerLicenseRequest& request);
+
+                /**
+                 *用户上报自定义的订单信息，多网聚合加速服务将相关信息进行保存
+                 * @param req ReportOrderRequest
+                 * @return ReportOrderOutcome
+                 */
+                ReportOrderOutcome ReportOrder(const Model::ReportOrderRequest &request);
+                void ReportOrderAsync(const Model::ReportOrderRequest& request, const ReportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportOrderOutcomeCallable ReportOrderCallable(const Model::ReportOrderRequest& request);
 
                 /**
                  *设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key

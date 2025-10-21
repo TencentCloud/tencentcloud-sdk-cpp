@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入类型， 5-API 访客
-                     * @return Type 接入类型， 5-API 访客
+                     * 获取接入类型， 5-API 访客，目前仅支持传5
+                     * @return Type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置接入类型， 5-API 访客
-                     * @param _type 接入类型， 5-API 访客
+                     * 设置接入类型， 5-API 访客，目前仅支持传5
+                     * @param _type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入类型， 5-API 访客
+                     * 接入类型， 5-API 访客，目前仅支持传5
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

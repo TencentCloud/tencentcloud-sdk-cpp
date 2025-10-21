@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using namespace std;
 
 CreateDeviceVirtualGroupRequest::CreateDeviceVirtualGroupRequest() :
     m_deviceVirtualGroupNameHasBeenSet(false),
+    m_domainInstanceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_osTypeHasBeenSet(false),
     m_timeTypeHasBeenSet(false),
@@ -45,6 +46,14 @@ string CreateDeviceVirtualGroupRequest::ToJsonString() const
         string key = "DeviceVirtualGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceVirtualGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -110,6 +119,22 @@ void CreateDeviceVirtualGroupRequest::SetDeviceVirtualGroupName(const string& _d
 bool CreateDeviceVirtualGroupRequest::DeviceVirtualGroupNameHasBeenSet() const
 {
     return m_deviceVirtualGroupNameHasBeenSet;
+}
+
+string CreateDeviceVirtualGroupRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void CreateDeviceVirtualGroupRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool CreateDeviceVirtualGroupRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
 }
 
 string CreateDeviceVirtualGroupRequest::GetDescription() const

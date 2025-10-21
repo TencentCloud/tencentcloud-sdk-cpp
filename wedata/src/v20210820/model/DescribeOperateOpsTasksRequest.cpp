@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,8 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_requestResourceTypesHasBeenSet(false),
     m_projectIdsHasBeenSet(false),
     m_blackTaskIdListHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_runPriorityListHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,19 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runPriorityListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriorityList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_runPriorityList.begin(); itr != m_runPriorityList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -761,6 +775,22 @@ void DescribeOperateOpsTasksRequest::SetScheduleTimeZone(const string& _schedule
 bool DescribeOperateOpsTasksRequest::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+vector<int64_t> DescribeOperateOpsTasksRequest::GetRunPriorityList() const
+{
+    return m_runPriorityList;
+}
+
+void DescribeOperateOpsTasksRequest::SetRunPriorityList(const vector<int64_t>& _runPriorityList)
+{
+    m_runPriorityList = _runPriorityList;
+    m_runPriorityListHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::RunPriorityListHasBeenSet() const
+{
+    return m_runPriorityListHasBeenSet;
 }
 
 

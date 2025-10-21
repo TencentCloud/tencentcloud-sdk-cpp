@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ ServerBaseInfo::ServerBaseInfo() :
     m_accessTypesHasBeenSet(false),
     m_customDomainNamesHasBeenSet(false),
     m_serverTypeHasBeenSet(false),
-    m_trafficTypeHasBeenSet(false)
+    m_trafficTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome ServerBaseInfo::Deserialize(const rapidjson::Value &value)
         m_trafficTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void ServerBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TrafficType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_trafficType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void ServerBaseInfo::SetTrafficType(const string& _trafficType)
 bool ServerBaseInfo::TrafficTypeHasBeenSet() const
 {
     return m_trafficTypeHasBeenSet;
+}
+
+string ServerBaseInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ServerBaseInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ServerBaseInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

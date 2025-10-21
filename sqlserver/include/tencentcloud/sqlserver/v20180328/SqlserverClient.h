@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1213,7 +1213,7 @@ namespace TencentCloud
                 DescribeDBInstanceInterOutcomeCallable DescribeDBInstanceInterCallable(const Model::DescribeDBInstanceInterRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstances)用于查询实例列表。
+                 *本接口（DescribeDBInstances）用于查询实例列表。
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
                  */
@@ -1429,7 +1429,7 @@ namespace TencentCloud
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
 
                 /**
-                 *本接口 (DescribeProductConfig) 用于查询售卖规格配置。
+                 *本接口（DescribeProductConfig）用于查询售卖规格配置。
                  * @param req DescribeProductConfigRequest
                  * @return DescribeProductConfigOutcome
                  */
@@ -1600,7 +1600,7 @@ namespace TencentCloud
                 DescribeXEventsOutcomeCallable DescribeXEventsCallable(const Model::DescribeXEventsRequest& request);
 
                 /**
-                 *本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。
+                 *本接口（DescribeZones）用于查询当前可售卖的可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
                  */
@@ -1843,7 +1843,7 @@ namespace TencentCloud
                 ModifyDatabasePrivilegeOutcomeCallable ModifyDatabasePrivilegeCallable(const Model::ModifyDatabasePrivilegeRequest& request);
 
                 /**
-                 *本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。
+                 *本接口（ModifyDatabaseShrinkMDF）用于收缩数据库 mdf（Shrink mdf）。
                  * @param req ModifyDatabaseShrinkMDFRequest
                  * @return ModifyDatabaseShrinkMDFOutcome
                  */

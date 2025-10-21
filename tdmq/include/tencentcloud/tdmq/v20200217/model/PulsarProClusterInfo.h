@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -373,6 +373,27 @@ true就是开启了，false是关闭
                      */
                     bool TenantHasBeenSet() const;
 
+                    /**
+                     * 获取删除保护开关标识
+                     * @return DeleteProtection 删除保护开关标识
+                     * 
+                     */
+                    int64_t GetDeleteProtection() const;
+
+                    /**
+                     * 设置删除保护开关标识
+                     * @param _deleteProtection 删除保护开关标识
+                     * 
+                     */
+                    void SetDeleteProtection(const int64_t& _deleteProtection);
+
+                    /**
+                     * 判断参数 DeleteProtection 是否已赋值
+                     * @return DeleteProtection 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +487,12 @@ true就是开启了，false是关闭
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
+
+                    /**
+                     * 删除保护开关标识
+                     */
+                    int64_t m_deleteProtection;
+                    bool m_deleteProtectionHasBeenSet;
 
                 };
             }

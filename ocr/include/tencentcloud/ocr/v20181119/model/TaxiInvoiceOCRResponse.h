@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发票代码
-                     * @return InvoiceNum 发票代码
+                     * 获取发票号码
+                     * @return InvoiceNum 发票号码
                      * 
                      */
                     std::string GetInvoiceNum() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InvoiceNumHasBeenSet() const;
 
                     /**
-                     * 获取发票号码
-                     * @return InvoiceCode 发票号码
+                     * 获取发票代码
+                     * @return InvoiceCode 发票代码
                      * 
                      */
                     std::string GetInvoiceCode() const;
@@ -218,13 +218,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发票代码
+                     * 发票号码
                      */
                     std::string m_invoiceNum;
                     bool m_invoiceNumHasBeenSet;
 
                     /**
-                     * 发票号码
+                     * 发票代码
                      */
                     std::string m_invoiceCode;
                     bool m_invoiceCodeHasBeenSet;

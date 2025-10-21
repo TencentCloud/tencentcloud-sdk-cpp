@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ DescribeAccountGroupsData::DescribeAccountGroupsData() :
     m_isLeafHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_latestSyncResultHasBeenSet(false),
-    m_latestSyncTimeHasBeenSet(false)
+    m_latestSyncTimeHasBeenSet(false),
+    m_namePathArrHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,19 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_latestSyncTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NamePathArr") && !value["NamePathArr"].IsNull())
+    {
+        if (!value["NamePathArr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.NamePathArr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NamePathArr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_namePathArr.push_back((*itr).GetString());
+        }
+        m_namePathArrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +436,19 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "LatestSyncTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestSyncTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namePathArrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamePathArr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_namePathArr.begin(); itr != m_namePathArr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -745,5 +772,21 @@ void DescribeAccountGroupsData::SetLatestSyncTime(const string& _latestSyncTime)
 bool DescribeAccountGroupsData::LatestSyncTimeHasBeenSet() const
 {
     return m_latestSyncTimeHasBeenSet;
+}
+
+vector<string> DescribeAccountGroupsData::GetNamePathArr() const
+{
+    return m_namePathArr;
+}
+
+void DescribeAccountGroupsData::SetNamePathArr(const vector<string>& _namePathArr)
+{
+    m_namePathArr = _namePathArr;
+    m_namePathArrHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::NamePathArrHasBeenSet() const
+{
+    return m_namePathArrHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ InvocationTask::InvocationTask() :
     m_updatedTimeHasBeenSet(false),
     m_commandDocumentHasBeenSet(false),
     m_errorInfoHasBeenSet(false),
-    m_invocationSourceHasBeenSet(false)
+    m_invocationSourceHasBeenSet(false),
+    m_commandNameHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome InvocationTask::Deserialize(const rapidjson::Value &value)
         m_invocationSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CommandName") && !value["CommandName"].IsNull())
+    {
+        if (!value["CommandName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvocationTask.CommandName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commandName = string(value["CommandName"].GetString());
+        m_commandNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ void InvocationTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InvocationSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_invocationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void InvocationTask::SetInvocationSource(const string& _invocationSource)
 bool InvocationTask::InvocationSourceHasBeenSet() const
 {
     return m_invocationSourceHasBeenSet;
+}
+
+string InvocationTask::GetCommandName() const
+{
+    return m_commandName;
+}
+
+void InvocationTask::SetCommandName(const string& _commandName)
+{
+    m_commandName = _commandName;
+    m_commandNameHasBeenSet = true;
+}
+
+bool InvocationTask::CommandNameHasBeenSet() const
+{
+    return m_commandNameHasBeenSet;
 }
 

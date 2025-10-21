@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,10 @@
 #include <tencentcloud/lke/v20231130/model/IntentAchievement.h>
 #include <tencentcloud/lke/v20231130/model/AICallConfig.h>
 #include <tencentcloud/lke/v20231130/model/ShareKnowledgeBase.h>
+#include <tencentcloud/lke/v20231130/model/BackgroundImageConfig.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeQaAgent.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeModelConfig.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeAdvancedConfig.h>
 
 
 namespace TencentCloud
@@ -482,14 +486,18 @@ namespace TencentCloud
 
                     /**
                      * 获取共享知识库关联配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareKnowledgeBases 共享知识库关联配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ShareKnowledgeBase> GetShareKnowledgeBases() const;
 
                     /**
                      * 设置共享知识库关联配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareKnowledgeBases 共享知识库关联配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareKnowledgeBases(const std::vector<ShareKnowledgeBase>& _shareKnowledgeBases);
@@ -500,6 +508,173 @@ namespace TencentCloud
                      * 
                      */
                     bool ShareKnowledgeBasesHasBeenSet() const;
+
+                    /**
+                     * 获取背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackgroundImage 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BackgroundImageConfig GetBackgroundImage() const;
+
+                    /**
+                     * 设置背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backgroundImage 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackgroundImage(const BackgroundImageConfig& _backgroundImage);
+
+                    /**
+                     * 判断参数 BackgroundImage 是否已赋值
+                     * @return BackgroundImage 是否已赋值
+                     * 
+                     */
+                    bool BackgroundImageHasBeenSet() const;
+
+                    /**
+                     * 获取开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpeningQuestions 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOpeningQuestions() const;
+
+                    /**
+                     * 设置开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _openingQuestions 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpeningQuestions(const std::vector<std::string>& _openingQuestions);
+
+                    /**
+                     * 判断参数 OpeningQuestions 是否已赋值
+                     * @return OpeningQuestions 是否已赋值
+                     * 
+                     */
+                    bool OpeningQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取长期记忆开关
+                     * @return LongMemoryOpen 长期记忆开关
+                     * 
+                     */
+                    bool GetLongMemoryOpen() const;
+
+                    /**
+                     * 设置长期记忆开关
+                     * @param _longMemoryOpen 长期记忆开关
+                     * 
+                     */
+                    void SetLongMemoryOpen(const bool& _longMemoryOpen);
+
+                    /**
+                     * 判断参数 LongMemoryOpen 是否已赋值
+                     * @return LongMemoryOpen 是否已赋值
+                     * 
+                     */
+                    bool LongMemoryOpenHasBeenSet() const;
+
+                    /**
+                     * 获取长期记忆时效
+                     * @return LongMemoryDay 长期记忆时效
+                     * 
+                     */
+                    uint64_t GetLongMemoryDay() const;
+
+                    /**
+                     * 设置长期记忆时效
+                     * @param _longMemoryDay 长期记忆时效
+                     * 
+                     */
+                    void SetLongMemoryDay(const uint64_t& _longMemoryDay);
+
+                    /**
+                     * 判断参数 LongMemoryDay 是否已赋值
+                     * @return LongMemoryDay 是否已赋值
+                     * 
+                     */
+                    bool LongMemoryDayHasBeenSet() const;
+
+                    /**
+                     * 获取agent配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Agent agent配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KnowledgeQaAgent GetAgent() const;
+
+                    /**
+                     * 设置agent配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agent agent配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgent(const KnowledgeQaAgent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取知识库模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KnowledgeModelConfig 知识库模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KnowledgeModelConfig GetKnowledgeModelConfig() const;
+
+                    /**
+                     * 设置知识库模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _knowledgeModelConfig 知识库模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKnowledgeModelConfig(const KnowledgeModelConfig& _knowledgeModelConfig);
+
+                    /**
+                     * 判断参数 KnowledgeModelConfig 是否已赋值
+                     * @return KnowledgeModelConfig 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeModelConfigHasBeenSet() const;
+
+                    /**
+                     * 获取知识库高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KnowledgeAdvancedConfig 知识库高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KnowledgeAdvancedConfig GetKnowledgeAdvancedConfig() const;
+
+                    /**
+                     * 设置知识库高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _knowledgeAdvancedConfig 知识库高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKnowledgeAdvancedConfig(const KnowledgeAdvancedConfig& _knowledgeAdvancedConfig);
+
+                    /**
+                     * 判断参数 KnowledgeAdvancedConfig 是否已赋值
+                     * @return KnowledgeAdvancedConfig 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeAdvancedConfigHasBeenSet() const;
 
                 private:
 
@@ -622,9 +797,57 @@ namespace TencentCloud
 
                     /**
                      * 共享知识库关联配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ShareKnowledgeBase> m_shareKnowledgeBases;
                     bool m_shareKnowledgeBasesHasBeenSet;
+
+                    /**
+                     * 背景图相关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BackgroundImageConfig m_backgroundImage;
+                    bool m_backgroundImageHasBeenSet;
+
+                    /**
+                     * 开场问题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_openingQuestions;
+                    bool m_openingQuestionsHasBeenSet;
+
+                    /**
+                     * 长期记忆开关
+                     */
+                    bool m_longMemoryOpen;
+                    bool m_longMemoryOpenHasBeenSet;
+
+                    /**
+                     * 长期记忆时效
+                     */
+                    uint64_t m_longMemoryDay;
+                    bool m_longMemoryDayHasBeenSet;
+
+                    /**
+                     * agent配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KnowledgeQaAgent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
+                     * 知识库模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KnowledgeModelConfig m_knowledgeModelConfig;
+                    bool m_knowledgeModelConfigHasBeenSet;
+
+                    /**
+                     * 知识库高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KnowledgeAdvancedConfig m_knowledgeAdvancedConfig;
+                    bool m_knowledgeAdvancedConfigHasBeenSet;
 
                 };
             }

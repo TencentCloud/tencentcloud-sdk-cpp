@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,27 +127,6 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取货币类型，默认为CNY
-                     * @return Currency 货币类型，默认为CNY
-                     * 
-                     */
-                    std::string GetCurrency() const;
-
-                    /**
-                     * 设置货币类型，默认为CNY
-                     * @param _currency 货币类型，默认为CNY
-                     * 
-                     */
-                    void SetCurrency(const std::string& _currency);
-
-                    /**
-                     * 判断参数 Currency 是否已赋值
-                     * @return Currency 是否已赋值
-                     * 
-                     */
-                    bool CurrencyHasBeenSet() const;
-
-                    /**
                      * 获取默认为CREATE，可选RENEW
                      * @return Type 默认为CREATE，可选RENEW
                      * 
@@ -189,6 +168,27 @@ namespace TencentCloud
                      */
                     bool HsmTypeHasBeenSet() const;
 
+                    /**
+                     * 获取货币类型，默认为CNY
+                     * @return Currency 货币类型，默认为CNY
+                     * 
+                     */
+                    std::string GetCurrency() const;
+
+                    /**
+                     * 设置货币类型，默认为CNY
+                     * @param _currency 货币类型，默认为CNY
+                     * 
+                     */
+                    void SetCurrency(const std::string& _currency);
+
+                    /**
+                     * 判断参数 Currency 是否已赋值
+                     * @return Currency 是否已赋值
+                     * 
+                     */
+                    bool CurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,12 +216,6 @@ namespace TencentCloud
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 货币类型，默认为CNY
-                     */
-                    std::string m_currency;
-                    bool m_currencyHasBeenSet;
-
-                    /**
                      * 默认为CREATE，可选RENEW
                      */
                     std::string m_type;
@@ -232,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_hsmType;
                     bool m_hsmTypeHasBeenSet;
+
+                    /**
+                     * 货币类型，默认为CNY
+                     */
+                    std::string m_currency;
+                    bool m_currencyHasBeenSet;
 
                 };
             }

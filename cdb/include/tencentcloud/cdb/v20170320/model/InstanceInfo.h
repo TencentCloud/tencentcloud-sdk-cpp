@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1000,15 +1000,31 @@ namespace TencentCloud
                     bool MaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
-                     * @return DiskType 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 获取实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
+                     * @return DiskType 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
-                     * @param _diskType 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 设置实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
+                     * @param _diskType 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -1042,15 +1058,15 @@ namespace TencentCloud
                     bool ExpandCpuHasBeenSet() const;
 
                     /**
-                     * 获取实例集群版节点信息
-                     * @return ClusterInfo 实例集群版节点信息
+                     * 获取云盘版实例节点信息
+                     * @return ClusterInfo 云盘版实例节点信息
                      * 
                      */
                     std::vector<ClusterInfo> GetClusterInfo() const;
 
                     /**
-                     * 设置实例集群版节点信息
-                     * @param _clusterInfo 实例集群版节点信息
+                     * 设置云盘版实例节点信息
+                     * @param _clusterInfo 云盘版实例节点信息
                      * 
                      */
                     void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
@@ -1103,6 +1119,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DeviceBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * @return DestroyProtect 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * 
+                     */
+                    std::string GetDestroyProtect() const;
+
+                    /**
+                     * 设置实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * @param _destroyProtect 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     * 
+                     */
+                    void SetDestroyProtect(const std::string& _destroyProtect);
+
+                    /**
+                     * 判断参数 DestroyProtect 是否已赋值
+                     * @return DestroyProtect 是否已赋值
+                     * 
+                     */
+                    bool DestroyProtectHasBeenSet() const;
 
                 private:
 
@@ -1377,7 +1414,11 @@ namespace TencentCloud
                     bool m_maxDelayTimeHasBeenSet;
 
                     /**
-                     * 实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘
+                     * 实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。
+说明：
+1. 若返回："DiskType": "CLOUD_HSSD"，则表示该实例磁盘类型为增强型 SSD 云硬盘。
+2. 若返回："DiskType": "CLOUD_SSD"，则表示该实例磁盘类型为 SSD 云硬盘。
+3. 若返回："DiskType": ""，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -1389,7 +1430,7 @@ namespace TencentCloud
                     bool m_expandCpuHasBeenSet;
 
                     /**
-                     * 实例集群版节点信息
+                     * 云盘版实例节点信息
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
@@ -1405,6 +1446,12 @@ namespace TencentCloud
                      */
                     uint64_t m_deviceBandwidth;
                     bool m_deviceBandwidthHasBeenSet;
+
+                    /**
+                     * 实例销毁保护状态，on表示开启保护，否则为关闭保护
+                     */
+                    std::string m_destroyProtect;
+                    bool m_destroyProtectHasBeenSet;
 
                 };
             }

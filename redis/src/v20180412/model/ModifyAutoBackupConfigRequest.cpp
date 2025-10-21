@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyAutoBackupConfigRequest::ModifyAutoBackupConfigRequest() :
     m_instanceIdHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
-    m_autoBackupTypeHasBeenSet(false)
+    m_autoBackupTypeHasBeenSet(false),
+    m_backupStorageDaysHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string ModifyAutoBackupConfigRequest::ToJsonString() const
         string key = "AutoBackupType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoBackupType, allocator);
+    }
+
+    if (m_backupStorageDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStorageDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupStorageDays, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void ModifyAutoBackupConfigRequest::SetAutoBackupType(const int64_t& _autoBackup
 bool ModifyAutoBackupConfigRequest::AutoBackupTypeHasBeenSet() const
 {
     return m_autoBackupTypeHasBeenSet;
+}
+
+int64_t ModifyAutoBackupConfigRequest::GetBackupStorageDays() const
+{
+    return m_backupStorageDays;
+}
+
+void ModifyAutoBackupConfigRequest::SetBackupStorageDays(const int64_t& _backupStorageDays)
+{
+    m_backupStorageDays = _backupStorageDays;
+    m_backupStorageDaysHasBeenSet = true;
+}
+
+bool ModifyAutoBackupConfigRequest::BackupStorageDaysHasBeenSet() const
+{
+    return m_backupStorageDaysHasBeenSet;
 }
 
 

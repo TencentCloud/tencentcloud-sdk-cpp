@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ RegisterInfo::RegisterInfo() :
     m_legalNameHasBeenSet(false),
     m_usccHasBeenSet(false),
     m_unifiedSocialCreditCodeHasBeenSet(false),
+    m_organizationAddressHasBeenSet(false),
     m_authorizationTypesHasBeenSet(false),
     m_authorizationTypeHasBeenSet(false)
 {
@@ -62,6 +63,16 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         }
         m_unifiedSocialCreditCode = string(value["UnifiedSocialCreditCode"].GetString());
         m_unifiedSocialCreditCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationAddress") && !value["OrganizationAddress"].IsNull())
+    {
+        if (!value["OrganizationAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationAddress = string(value["OrganizationAddress"].GetString());
+        m_organizationAddressHasBeenSet = true;
     }
 
     if (value.HasMember("AuthorizationTypes") && !value["AuthorizationTypes"].IsNull())
@@ -116,6 +127,14 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UnifiedSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unifiedSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizationTypesHasBeenSet)
@@ -188,6 +207,22 @@ void RegisterInfo::SetUnifiedSocialCreditCode(const string& _unifiedSocialCredit
 bool RegisterInfo::UnifiedSocialCreditCodeHasBeenSet() const
 {
     return m_unifiedSocialCreditCodeHasBeenSet;
+}
+
+string RegisterInfo::GetOrganizationAddress() const
+{
+    return m_organizationAddress;
+}
+
+void RegisterInfo::SetOrganizationAddress(const string& _organizationAddress)
+{
+    m_organizationAddress = _organizationAddress;
+    m_organizationAddressHasBeenSet = true;
+}
+
+bool RegisterInfo::OrganizationAddressHasBeenSet() const
+{
+    return m_organizationAddressHasBeenSet;
 }
 
 vector<uint64_t> RegisterInfo::GetAuthorizationTypes() const

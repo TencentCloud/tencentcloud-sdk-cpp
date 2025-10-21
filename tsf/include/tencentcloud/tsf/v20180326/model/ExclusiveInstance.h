@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置中心类型[Registration、Configuration]
-                     * @return CenterType 配置中心类型[Registration、Configuration]
+                     * 获取配置中心类型[注册中心Registration、配置中心Configuration]
+                     * @return CenterType 配置中心类型[注册中心Registration、配置中心Configuration]
                      * 
                      */
                     std::string GetCenterType() const;
 
                     /**
-                     * 设置配置中心类型[Registration、Configuration]
-                     * @param _centerType 配置中心类型[Registration、Configuration]
+                     * 设置配置中心类型[注册中心Registration、配置中心Configuration]
+                     * @param _centerType 配置中心类型[注册中心Registration、配置中心Configuration]
                      * 
                      */
                     void SetCenterType(const std::string& _centerType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CenterTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return InstanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _instanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型[Polaris]
-                     * @return InstanceType 实例类型[Polaris]
+                     * 获取实例类型，例如北极星Polaris
+                     * @return InstanceType 实例类型，例如北极星Polaris
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型[Polaris]
-                     * @param _instanceType 实例类型[Polaris]
+                     * 设置实例类型，例如北极星Polaris
+                     * @param _instanceType 实例类型，例如北极星Polaris
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例地域id
-                     * @return RegionId 实例地域id
+                     * 获取实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return RegionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置实例地域id
-                     * @param _regionId 实例地域id
+                     * 设置实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _regionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取实例命名空间ID
-                     * @return InstanceNamespaceId 实例命名空间ID
+                     * 获取实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @return InstanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     std::string GetInstanceNamespaceId() const;
 
                     /**
-                     * 设置实例命名空间ID
-                     * @param _instanceNamespaceId 实例命名空间ID
+                     * 设置实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * @param _instanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      * 
                      */
                     void SetInstanceNamespaceId(const std::string& _instanceNamespaceId);
@@ -175,19 +175,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置中心类型[Registration、Configuration]
+                     * 配置中心类型[注册中心Registration、配置中心Configuration]
                      */
                     std::string m_centerType;
                     bool m_centerTypeHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例类型[Polaris]
+                     * 实例类型，例如北极星Polaris
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例地域id
+                     * 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 实例命名空间ID
+                     * 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
                      */
                     std::string m_instanceNamespaceId;
                     bool m_instanceNamespaceIdHasBeenSet;

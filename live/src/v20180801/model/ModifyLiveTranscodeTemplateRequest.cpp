@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,9 @@ ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
     m_adaptBitratePercentHasBeenSet(false),
     m_shortEdgeAsHeightHasBeenSet(false),
     m_dRMTypeHasBeenSet(false),
-    m_dRMTracksHasBeenSet(false)
+    m_dRMTracksHasBeenSet(false),
+    m_isAdaptiveBitRateHasBeenSet(false),
+    m_adaptiveChildrenHasBeenSet(false)
 {
 }
 
@@ -220,6 +222,29 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "DRMTracks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dRMTracks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAdaptiveBitRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAdaptiveBitRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAdaptiveBitRate, allocator);
+    }
+
+    if (m_adaptiveChildrenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdaptiveChildren";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_adaptiveChildren.begin(); itr != m_adaptiveChildren.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -564,6 +589,38 @@ void ModifyLiveTranscodeTemplateRequest::SetDRMTracks(const string& _dRMTracks)
 bool ModifyLiveTranscodeTemplateRequest::DRMTracksHasBeenSet() const
 {
     return m_dRMTracksHasBeenSet;
+}
+
+int64_t ModifyLiveTranscodeTemplateRequest::GetIsAdaptiveBitRate() const
+{
+    return m_isAdaptiveBitRate;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetIsAdaptiveBitRate(const int64_t& _isAdaptiveBitRate)
+{
+    m_isAdaptiveBitRate = _isAdaptiveBitRate;
+    m_isAdaptiveBitRateHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::IsAdaptiveBitRateHasBeenSet() const
+{
+    return m_isAdaptiveBitRateHasBeenSet;
+}
+
+vector<ChildTemplateInfo> ModifyLiveTranscodeTemplateRequest::GetAdaptiveChildren() const
+{
+    return m_adaptiveChildren;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetAdaptiveChildren(const vector<ChildTemplateInfo>& _adaptiveChildren)
+{
+    m_adaptiveChildren = _adaptiveChildren;
+    m_adaptiveChildrenHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::AdaptiveChildrenHasBeenSet() const
+{
+    return m_adaptiveChildrenHasBeenSet;
 }
 
 

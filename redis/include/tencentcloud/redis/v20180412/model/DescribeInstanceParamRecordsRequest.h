@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取分页大小。默认为100，最大值为 200。
+                     * @return Limit 分页大小。默认为100，最大值为 200。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置分页大小。默认为100，最大值为 200。
+                     * @param _limit 分页大小。默认为100，最大值为 200。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
+                     * 获取偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param _offset 偏移量，取Limit整数倍
+                     * 设置偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 分页大小。默认为100，最大值为 200。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍
+                     * 偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

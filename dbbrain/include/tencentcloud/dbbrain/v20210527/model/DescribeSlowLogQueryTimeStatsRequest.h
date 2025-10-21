@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2019-09-10 12:13:14”。
-                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 获取开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
+                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2019-09-10 12:13:14”。
-                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 设置开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
+                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool InstanceProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取实列节点ID。
-                     * @return InstanceNodeId 实列节点ID。
+                     * 获取实例节点ID。
+                     * @return InstanceNodeId 实例节点ID。
                      * 
                      */
                     std::string GetInstanceNodeId() const;
 
                     /**
-                     * 设置实列节点ID。
-                     * @param _instanceNodeId 实列节点ID。
+                     * 设置实例节点ID。
+                     * @param _instanceNodeId 实例节点ID。
                      * 
                      */
                     void SetInstanceNodeId(const std::string& _instanceNodeId);
@@ -170,14 +170,26 @@ namespace TencentCloud
 
                     /**
                      * 获取查询类型，目前支持值：mongod，mongos。
+其中：
+mongod - MongoDB的数据存储节点
+mongos - MongoDB的路由节点
                      * @return Type 查询类型，目前支持值：mongod，mongos。
+其中：
+mongod - MongoDB的数据存储节点
+mongos - MongoDB的路由节点
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置查询类型，目前支持值：mongod，mongos。
+其中：
+mongod - MongoDB的数据存储节点
+mongos - MongoDB的路由节点
                      * @param _type 查询类型，目前支持值：mongod，mongos。
+其中：
+mongod - MongoDB的数据存储节点
+mongos - MongoDB的路由节点
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -192,13 +204,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2019-09-10 12:13:14”。
+                     * 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -222,13 +234,16 @@ namespace TencentCloud
                     bool m_instanceProxyIdHasBeenSet;
 
                     /**
-                     * 实列节点ID。
+                     * 实例节点ID。
                      */
                     std::string m_instanceNodeId;
                     bool m_instanceNodeIdHasBeenSet;
 
                     /**
                      * 查询类型，目前支持值：mongod，mongos。
+其中：
+mongod - MongoDB的数据存储节点
+mongos - MongoDB的路由节点
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

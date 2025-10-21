@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,12 +101,16 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreTimeSeriesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h>
@@ -129,6 +133,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisSlowLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopCostCommandsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopCostCommandsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h>
@@ -314,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHealthScoreResponse> DescribeHealthScoreOutcome;
                 typedef std::future<DescribeHealthScoreOutcome> DescribeHealthScoreOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeHealthScoreRequest&, DescribeHealthScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthScoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHealthScoreTimeSeriesResponse> DescribeHealthScoreTimeSeriesOutcome;
+                typedef std::future<DescribeHealthScoreTimeSeriesOutcome> DescribeHealthScoreTimeSeriesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeHealthScoreTimeSeriesRequest&, DescribeHealthScoreTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthScoreTimeSeriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIndexRecommendAggregationSlowLogsResponse> DescribeIndexRecommendAggregationSlowLogsOutcome;
                 typedef std::future<DescribeIndexRecommendAggregationSlowLogsOutcome> DescribeIndexRecommendAggregationSlowLogsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeIndexRecommendAggregationSlowLogsRequest&, DescribeIndexRecommendAggregationSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexRecommendAggregationSlowLogsAsyncHandler;
@@ -323,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
                 typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMetricTopProxiesResponse> DescribeMetricTopProxiesOutcome;
+                typedef std::future<DescribeMetricTopProxiesOutcome> DescribeMetricTopProxiesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeMetricTopProxiesRequest&, DescribeMetricTopProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricTopProxiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMySqlProcessListResponse> DescribeMySqlProcessListOutcome;
                 typedef std::future<DescribeMySqlProcessListOutcome> DescribeMySqlProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMySqlProcessListRequest&, DescribeMySqlProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySqlProcessListAsyncHandler;
@@ -356,6 +368,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRedisTopBigKeysResponse> DescribeRedisTopBigKeysOutcome;
                 typedef std::future<DescribeRedisTopBigKeysOutcome> DescribeRedisTopBigKeysOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopBigKeysRequest&, DescribeRedisTopBigKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopBigKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisTopCostCommandsResponse> DescribeRedisTopCostCommandsOutcome;
+                typedef std::future<DescribeRedisTopCostCommandsOutcome> DescribeRedisTopCostCommandsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopCostCommandsRequest&, DescribeRedisTopCostCommandsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopCostCommandsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisTopHotKeysResponse> DescribeRedisTopHotKeysOutcome;
                 typedef std::future<DescribeRedisTopHotKeysOutcome> DescribeRedisTopHotKeysOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopHotKeysRequest&, DescribeRedisTopHotKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopHotKeysAsyncHandler;
@@ -792,6 +807,15 @@ namespace TencentCloud
                 DescribeHealthScoreOutcomeCallable DescribeHealthScoreCallable(const Model::DescribeHealthScoreRequest& request);
 
                 /**
+                 *获取指定时间段内的健康得分趋势
+                 * @param req DescribeHealthScoreTimeSeriesRequest
+                 * @return DescribeHealthScoreTimeSeriesOutcome
+                 */
+                DescribeHealthScoreTimeSeriesOutcome DescribeHealthScoreTimeSeries(const Model::DescribeHealthScoreTimeSeriesRequest &request);
+                void DescribeHealthScoreTimeSeriesAsync(const Model::DescribeHealthScoreTimeSeriesRequest& request, const DescribeHealthScoreTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHealthScoreTimeSeriesOutcomeCallable DescribeHealthScoreTimeSeriesCallable(const Model::DescribeHealthScoreTimeSeriesRequest& request);
+
+                /**
                  *查询某张表的慢查模板概览，这个接口是对用户点击对应的推荐索引后，展示慢日志用的
                  * @param req DescribeIndexRecommendAggregationSlowLogsRequest
                  * @return DescribeIndexRecommendAggregationSlowLogsOutcome
@@ -817,6 +841,15 @@ namespace TencentCloud
                 DescribeMailProfileOutcome DescribeMailProfile(const Model::DescribeMailProfileRequest &request);
                 void DescribeMailProfileAsync(const Model::DescribeMailProfileRequest& request, const DescribeMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMailProfileOutcomeCallable DescribeMailProfileCallable(const Model::DescribeMailProfileRequest& request);
+
+                /**
+                 *获取指定时间段内Redis Proxy 指标
+                 * @param req DescribeMetricTopProxiesRequest
+                 * @return DescribeMetricTopProxiesOutcome
+                 */
+                DescribeMetricTopProxiesOutcome DescribeMetricTopProxies(const Model::DescribeMetricTopProxiesRequest &request);
+                void DescribeMetricTopProxiesAsync(const Model::DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMetricTopProxiesOutcomeCallable DescribeMetricTopProxiesCallable(const Model::DescribeMetricTopProxiesRequest& request);
 
                 /**
                  *查询关系型数据库的实时线程列表。
@@ -916,6 +949,15 @@ namespace TencentCloud
                 DescribeRedisTopBigKeysOutcome DescribeRedisTopBigKeys(const Model::DescribeRedisTopBigKeysRequest &request);
                 void DescribeRedisTopBigKeysAsync(const Model::DescribeRedisTopBigKeysRequest& request, const DescribeRedisTopBigKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRedisTopBigKeysOutcomeCallable DescribeRedisTopBigKeysCallable(const Model::DescribeRedisTopBigKeysRequest& request);
+
+                /**
+                 *获取指定时间段内Redis 访问命令 cost top N
+                 * @param req DescribeRedisTopCostCommandsRequest
+                 * @return DescribeRedisTopCostCommandsOutcome
+                 */
+                DescribeRedisTopCostCommandsOutcome DescribeRedisTopCostCommands(const Model::DescribeRedisTopCostCommandsRequest &request);
+                void DescribeRedisTopCostCommandsAsync(const Model::DescribeRedisTopCostCommandsRequest& request, const DescribeRedisTopCostCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisTopCostCommandsOutcomeCallable DescribeRedisTopCostCommandsCallable(const Model::DescribeRedisTopCostCommandsRequest& request);
 
                 /**
                  *热Key分析

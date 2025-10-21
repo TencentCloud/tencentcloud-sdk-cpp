@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h
   include/tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeProducerListRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigratingTopicListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceCertBindingResponse.h
@@ -154,6 +155,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceCertRequest.h
   include/tencentcloud/trocket/v20230308/model/MessageTrackItem.h
+  include/tencentcloud/trocket/v20230308/model/DescribeProducerListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointResponse.h
   include/tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTUserRequest.h
@@ -186,6 +188,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTUserRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInsPublicEndpointRequest.h
+  include/tencentcloud/trocket/v20230308/model/ProducerInfo.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceCertResponse.h
@@ -285,6 +288,7 @@ set(trocket_src
   src/v20230308/model/DescribeTopicListByGroupResponse.cpp
   src/v20230308/model/DescribeMessageTraceResponse.cpp
   src/v20230308/model/DoHealthCheckOnMigratingTopicRequest.cpp
+  src/v20230308/model/DescribeProducerListRequest.cpp
   src/v20230308/model/DescribeMigratingTopicListResponse.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceCertBindingResponse.cpp
@@ -335,6 +339,7 @@ set(trocket_src
   src/v20230308/model/DescribeConsumerClientResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceCertRequest.cpp
   src/v20230308/model/MessageTrackItem.cpp
+  src/v20230308/model/DescribeProducerListResponse.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointResponse.cpp
   src/v20230308/model/ResendDeadLetterMessageRequest.cpp
   src/v20230308/model/CreateMQTTUserRequest.cpp
@@ -367,6 +372,7 @@ set(trocket_src
   src/v20230308/model/DescribeConsumerGroupListResponse.cpp
   src/v20230308/model/ModifyMQTTUserRequest.cpp
   src/v20230308/model/CreateMQTTInsPublicEndpointRequest.cpp
+  src/v20230308/model/ProducerInfo.cpp
   src/v20230308/model/CreateMQTTTopicRequest.cpp
   src/v20230308/model/DeleteTopicResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceCertResponse.cpp

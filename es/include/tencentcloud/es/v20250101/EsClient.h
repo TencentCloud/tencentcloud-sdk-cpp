@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@
 #include <tencentcloud/es/v20250101/model/GetDocumentChunkResultResponse.h>
 #include <tencentcloud/es/v20250101/model/GetDocumentParseResultRequest.h>
 #include <tencentcloud/es/v20250101/model/GetDocumentParseResultResponse.h>
+#include <tencentcloud/es/v20250101/model/GetMultiModalEmbeddingRequest.h>
+#include <tencentcloud/es/v20250101/model/GetMultiModalEmbeddingResponse.h>
 #include <tencentcloud/es/v20250101/model/GetTextEmbeddingRequest.h>
 #include <tencentcloud/es/v20250101/model/GetTextEmbeddingResponse.h>
 #include <tencentcloud/es/v20250101/model/ParseDocumentRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDocumentParseResultResponse> GetDocumentParseResultOutcome;
                 typedef std::future<GetDocumentParseResultOutcome> GetDocumentParseResultOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetDocumentParseResultRequest&, GetDocumentParseResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDocumentParseResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetMultiModalEmbeddingResponse> GetMultiModalEmbeddingOutcome;
+                typedef std::future<GetMultiModalEmbeddingOutcome> GetMultiModalEmbeddingOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::GetMultiModalEmbeddingRequest&, GetMultiModalEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiModalEmbeddingAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTextEmbeddingResponse> GetTextEmbeddingOutcome;
                 typedef std::future<GetTextEmbeddingOutcome> GetTextEmbeddingOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetTextEmbeddingRequest&, GetTextEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTextEmbeddingAsyncHandler;
@@ -134,8 +139,17 @@ namespace TencentCloud
                 GetDocumentParseResultOutcomeCallable GetDocumentParseResultCallable(const Model::GetDocumentParseResultRequest& request);
 
                 /**
+                 *Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。 本接口有模型维度调用上限控制，单个模型qps限制10，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。
+                 * @param req GetMultiModalEmbeddingRequest
+                 * @return GetMultiModalEmbeddingOutcome
+                 */
+                GetMultiModalEmbeddingOutcome GetMultiModalEmbedding(const Model::GetMultiModalEmbeddingRequest &request);
+                void GetMultiModalEmbeddingAsync(const Model::GetMultiModalEmbeddingRequest& request, const GetMultiModalEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetMultiModalEmbeddingOutcomeCallable GetMultiModalEmbeddingCallable(const Model::GetMultiModalEmbeddingRequest& request);
+
+                /**
                  *Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。
-本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。
+本接口有模型维度调用上限控制，单个模型qps限制20，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。
                  * @param req GetTextEmbeddingRequest
                  * @return GetTextEmbeddingOutcome
                  */

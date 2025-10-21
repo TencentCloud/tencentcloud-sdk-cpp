@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,15 +302,15 @@ selfbuilt-db 表示自建数据库
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取合规组ID列表，最多支持添加5个
-                     * @return ComplianceGroupIds 合规组ID列表，最多支持添加5个
+                     * 获取此参数必选。合规组ID列表，最多支持添加5个
+                     * @return ComplianceGroupIds 此参数必选。合规组ID列表，最多支持添加5个
                      * 
                      */
                     std::vector<int64_t> GetComplianceGroupIds() const;
 
                     /**
-                     * 设置合规组ID列表，最多支持添加5个
-                     * @param _complianceGroupIds 合规组ID列表，最多支持添加5个
+                     * 设置此参数必选。合规组ID列表，最多支持添加5个
+                     * @param _complianceGroupIds 此参数必选。合规组ID列表，最多支持添加5个
                      * 
                      */
                     void SetComplianceGroupIds(const std::vector<int64_t>& _complianceGroupIds);
@@ -507,7 +507,7 @@ selfbuilt-db 表示自建数据库
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 合规组ID列表，最多支持添加5个
+                     * 此参数必选。合规组ID列表，最多支持添加5个
                      */
                     std::vector<int64_t> m_complianceGroupIds;
                     bool m_complianceGroupIdsHasBeenSet;

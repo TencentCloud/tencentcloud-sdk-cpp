@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,48 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，�
                      */
                     bool ExtraAttrHasBeenSet() const;
 
+                    /**
+                     * 获取vpc id
+                     * @return ConsumerVpcId vpc id
+                     * 
+                     */
+                    std::string GetConsumerVpcId() const;
+
+                    /**
+                     * 设置vpc id
+                     * @param _consumerVpcId vpc id
+                     * 
+                     */
+                    void SetConsumerVpcId(const std::string& _consumerVpcId);
+
+                    /**
+                     * 判断参数 ConsumerVpcId 是否已赋值
+                     * @return ConsumerVpcId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取subnet id
+                     * @return ConsumerSubnetId subnet id
+                     * 
+                     */
+                    std::string GetConsumerSubnetId() const;
+
+                    /**
+                     * 设置subnet id
+                     * @param _consumerSubnetId subnet id
+                     * 
+                     */
+                    void SetConsumerSubnetId(const std::string& _consumerSubnetId);
+
+                    /**
+                     * 判断参数 ConsumerSubnetId 是否已赋值
+                     * @return ConsumerSubnetId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerSubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,6 +348,18 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，�
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
+
+                    /**
+                     * vpc id
+                     */
+                    std::string m_consumerVpcId;
+                    bool m_consumerVpcIdHasBeenSet;
+
+                    /**
+                     * subnet id
+                     */
+                    std::string m_consumerSubnetId;
+                    bool m_consumerSubnetIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取该字段用于返回检测结果所对应的恶意标签。
 返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 该字段用于返回检测结果所对应的恶意标签。
 返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置该字段用于返回检测结果所对应的恶意标签。
 返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 该字段用于返回检测结果所对应的恶意标签。
 返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -80,12 +76,10 @@ namespace TencentCloud
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 审核建议，可选值：
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestion() const;
@@ -95,12 +89,10 @@ Block 确认违规
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestion 审核建议，可选值：
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -114,18 +106,14 @@ Block 确认违规
 
                     /**
                      * 获取得分，分数是 0 ～ 100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分，分数是 0 ～ 100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分，分数是 0 ～ 100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score 得分，分数是 0 ～ 100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -139,18 +127,14 @@ Block 确认违规
 
                     /**
                      * 获取命中的二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 命中的二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置命中的二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subLabel 命中的二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -167,7 +151,6 @@ Block 确认违规
                     /**
                      * 该字段用于返回检测结果所对应的恶意标签。
 返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -177,21 +160,18 @@ Block 确认违规
 Pass 通过，
 Review 建议人审，
 Block 确认违规
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 得分，分数是 0 ～ 100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 命中的二级标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;

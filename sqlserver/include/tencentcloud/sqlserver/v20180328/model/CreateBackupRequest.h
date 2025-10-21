@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DBNamesHasBeenSet() const;
 
                     /**
-                     * 获取实例ID（必填），形如mssql-i1z41iwd
-                     * @return InstanceId 实例ID（必填），形如mssql-i1z41iwd
+                     * 获取实例ID，形如mssql-i1z41iwd
+                     * @return InstanceId 实例ID，形如mssql-i1z41iwd
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID（必填），形如mssql-i1z41iwd
-                     * @param _instanceId 实例ID（必填），形如mssql-i1z41iwd
+                     * 设置实例ID，形如mssql-i1z41iwd
+                     * @param _instanceId 实例ID，形如mssql-i1z41iwd
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_dBNamesHasBeenSet;
 
                     /**
-                     * 实例ID（必填），形如mssql-i1z41iwd
+                     * 实例ID，形如mssql-i1z41iwd
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ TranscriptionParams::TranscriptionParams() :
     m_maxIdleTimeHasBeenSet(false),
     m_transcriptionModeHasBeenSet(false),
     m_targetUserIdHasBeenSet(false),
-    m_targetUserIdListHasBeenSet(false)
+    m_targetUserIdListHasBeenSet(false),
+    m_voicePrintHasBeenSet(false),
+    m_turnDetectionHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,40 @@ CoreInternalOutcome TranscriptionParams::Deserialize(const rapidjson::Value &val
         m_targetUserIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("VoicePrint") && !value["VoicePrint"].IsNull())
+    {
+        if (!value["VoicePrint"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscriptionParams.VoicePrint` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_voicePrint.Deserialize(value["VoicePrint"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_voicePrintHasBeenSet = true;
+    }
+
+    if (value.HasMember("TurnDetection") && !value["TurnDetection"].IsNull())
+    {
+        if (!value["TurnDetection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscriptionParams.TurnDetection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_turnDetection.Deserialize(value["TurnDetection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_turnDetectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +230,24 @@ void TranscriptionParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_voicePrintHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voicePrint.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_turnDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_turnDetection.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -325,5 +379,37 @@ void TranscriptionParams::SetTargetUserIdList(const vector<string>& _targetUserI
 bool TranscriptionParams::TargetUserIdListHasBeenSet() const
 {
     return m_targetUserIdListHasBeenSet;
+}
+
+VoicePrint TranscriptionParams::GetVoicePrint() const
+{
+    return m_voicePrint;
+}
+
+void TranscriptionParams::SetVoicePrint(const VoicePrint& _voicePrint)
+{
+    m_voicePrint = _voicePrint;
+    m_voicePrintHasBeenSet = true;
+}
+
+bool TranscriptionParams::VoicePrintHasBeenSet() const
+{
+    return m_voicePrintHasBeenSet;
+}
+
+TurnDetection TranscriptionParams::GetTurnDetection() const
+{
+    return m_turnDetection;
+}
+
+void TranscriptionParams::SetTurnDetection(const TurnDetection& _turnDetection)
+{
+    m_turnDetection = _turnDetection;
+    m_turnDetectionHasBeenSet = true;
+}
+
+bool TranscriptionParams::TurnDetectionHasBeenSet() const
+{
+    return m_turnDetectionHasBeenSet;
 }
 

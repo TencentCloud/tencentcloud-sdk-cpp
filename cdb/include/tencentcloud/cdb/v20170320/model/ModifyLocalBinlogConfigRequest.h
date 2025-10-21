@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,31 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
-                     * @return SaveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * 获取本地 binlog 保留时长。不同实例的可取值如下：
+1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。
+2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。
+3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。
+4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。
+                     * @return SaveHours 本地 binlog 保留时长。不同实例的可取值如下：
+1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。
+2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。
+3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。
+4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。
                      * 
                      */
                     int64_t GetSaveHours() const;
 
                     /**
-                     * 设置本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
-                     * @param _saveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * 设置本地 binlog 保留时长。不同实例的可取值如下：
+1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。
+2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。
+3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。
+4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。
+                     * @param _saveHours 本地 binlog 保留时长。不同实例的可取值如下：
+1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。
+2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。
+3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。
+4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。
                      * 
                      */
                     void SetSaveHours(const int64_t& _saveHours);
@@ -85,15 +101,15 @@ namespace TencentCloud
                     bool SaveHoursHasBeenSet() const;
 
                     /**
-                     * 获取本地binlog空间使用率，可取值范围：[30,50]。
-                     * @return MaxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 获取本地 binlog 空间使用率，可取值范围：[30,50]。
+                     * @return MaxUsage 本地 binlog 空间使用率，可取值范围：[30,50]。
                      * 
                      */
                     int64_t GetMaxUsage() const;
 
                     /**
-                     * 设置本地binlog空间使用率，可取值范围：[30,50]。
-                     * @param _maxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 设置本地 binlog 空间使用率，可取值范围：[30,50]。
+                     * @param _maxUsage 本地 binlog 空间使用率，可取值范围：[30,50]。
                      * 
                      */
                     void SetMaxUsage(const int64_t& _maxUsage);
@@ -108,19 +124,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * 本地 binlog 保留时长。不同实例的可取值如下：
+1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。
+2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。
+3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。
+4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。
                      */
                     int64_t m_saveHours;
                     bool m_saveHoursHasBeenSet;
 
                     /**
-                     * 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 本地 binlog 空间使用率，可取值范围：[30,50]。
                      */
                     int64_t m_maxUsage;
                     bool m_maxUsageHasBeenSet;

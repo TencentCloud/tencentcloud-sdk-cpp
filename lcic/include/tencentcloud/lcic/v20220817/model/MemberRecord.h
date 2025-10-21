@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -454,15 +454,15 @@ namespace TencentCloud
                     bool SubGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的上台状态
-                     * @return Stage 用户的上台状态
+                     * 获取本堂课用户是否上过台。0 否；1 是
+                     * @return Stage 本堂课用户是否上过台。0 否；1 是
                      * 
                      */
                     int64_t GetStage() const;
 
                     /**
-                     * 设置用户的上台状态
-                     * @param _stage 用户的上台状态
+                     * 设置本堂课用户是否上过台。0 否；1 是
+                     * @param _stage 本堂课用户是否上过台。0 否；1 是
                      * 
                      */
                     void SetStage(const int64_t& _stage);
@@ -614,7 +614,7 @@ namespace TencentCloud
                     bool m_subGroupIdHasBeenSet;
 
                     /**
-                     * 用户的上台状态
+                     * 本堂课用户是否上过台。0 否；1 是
                      */
                     int64_t m_stage;
                     bool m_stageHasBeenSet;

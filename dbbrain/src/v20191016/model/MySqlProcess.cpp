@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ MySqlProcess::MySqlProcess() :
     m_stateHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_timeHasBeenSet(false),
-    m_infoHasBeenSet(false)
+    m_infoHasBeenSet(false),
+    m_sqlTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome MySqlProcess::Deserialize(const rapidjson::Value &value)
         m_infoHasBeenSet = true;
     }
 
+    if (value.HasMember("SqlType") && !value["SqlType"].IsNull())
+    {
+        if (!value["SqlType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySqlProcess.SqlType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sqlType = string(value["SqlType"].GetString());
+        m_sqlTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void MySqlProcess::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Info";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_info.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sqlTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void MySqlProcess::SetInfo(const string& _info)
 bool MySqlProcess::InfoHasBeenSet() const
 {
     return m_infoHasBeenSet;
+}
+
+string MySqlProcess::GetSqlType() const
+{
+    return m_sqlType;
+}
+
+void MySqlProcess::SetSqlType(const string& _sqlType)
+{
+    m_sqlType = _sqlType;
+    m_sqlTypeHasBeenSet = true;
+}
+
+bool MySqlProcess::SqlTypeHasBeenSet() const
+{
+    return m_sqlTypeHasBeenSet;
 }
 

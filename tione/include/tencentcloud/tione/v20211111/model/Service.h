@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
+#include <tencentcloud/tione/v20211111/model/SchedulingPolicy.h>
+#include <tencentcloud/tione/v20211111/model/ResourceGroupInfo.h>
 
 
 namespace TencentCloud
@@ -928,6 +930,69 @@ DEFAULT: 其他来源
                      */
                     bool MonitorSourceHasBeenSet() const;
 
+                    /**
+                     * 获取服务创建者的子账号名称
+                     * @return SubUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置服务创建者的子账号名称
+                     * @param _subUinName 服务创建者的子账号名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务的调度策略
+                     * @return SchedulingPolicy 服务的调度策略
+                     * 
+                     */
+                    SchedulingPolicy GetSchedulingPolicy() const;
+
+                    /**
+                     * 设置服务的调度策略
+                     * @param _schedulingPolicy 服务的调度策略
+                     * 
+                     */
+                    void SetSchedulingPolicy(const SchedulingPolicy& _schedulingPolicy);
+
+                    /**
+                     * 判断参数 SchedulingPolicy 是否已赋值
+                     * @return SchedulingPolicy 是否已赋值
+                     * 
+                     */
+                    bool SchedulingPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取外部的资源组信息，表示借调了哪些资源组的资源
+                     * @return ExternalResourceGroups 外部的资源组信息，表示借调了哪些资源组的资源
+                     * 
+                     */
+                    std::vector<ResourceGroupInfo> GetExternalResourceGroups() const;
+
+                    /**
+                     * 设置外部的资源组信息，表示借调了哪些资源组的资源
+                     * @param _externalResourceGroups 外部的资源组信息，表示借调了哪些资源组的资源
+                     * 
+                     */
+                    void SetExternalResourceGroups(const std::vector<ResourceGroupInfo>& _externalResourceGroups);
+
+                    /**
+                     * 判断参数 ExternalResourceGroups 是否已赋值
+                     * @return ExternalResourceGroups 是否已赋值
+                     * 
+                     */
+                    bool ExternalResourceGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1174,6 +1239,24 @@ DEFAULT: 其他来源
                      */
                     std::string m_monitorSource;
                     bool m_monitorSourceHasBeenSet;
+
+                    /**
+                     * 服务创建者的子账号名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 服务的调度策略
+                     */
+                    SchedulingPolicy m_schedulingPolicy;
+                    bool m_schedulingPolicyHasBeenSet;
+
+                    /**
+                     * 外部的资源组信息，表示借调了哪些资源组的资源
+                     */
+                    std::vector<ResourceGroupInfo> m_externalResourceGroups;
+                    bool m_externalResourceGroupsHasBeenSet;
 
                 };
             }

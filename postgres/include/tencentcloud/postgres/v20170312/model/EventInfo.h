@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EffectiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改状态
-                     * @return State 修改状态
+                     * 获取修改状态。枚举值：in progress、success、paused
+                     * @return State 修改状态。枚举值：in progress、success、paused
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置修改状态
-                     * @param _state 修改状态
+                     * 设置修改状态。枚举值：in progress、success、paused
+                     * @param _state 修改状态。枚举值：in progress、success、paused
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -247,7 +247,7 @@ namespace TencentCloud
                     bool m_effectiveTimeHasBeenSet;
 
                     /**
-                     * 修改状态
+                     * 修改状态。枚举值：in progress、success、paused
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

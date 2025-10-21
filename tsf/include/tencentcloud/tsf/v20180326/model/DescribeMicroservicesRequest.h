@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
+                     * @return NamespaceId 命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
+                     * @param _namespaceId 命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取搜索字段
-                     * @return SearchWord 搜索字段
+                     * 获取搜索字段。
+                     * @return SearchWord 搜索字段。
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索字段
-                     * @param _searchWord 搜索字段
+                     * 设置搜索字段。
+                     * @param _searchWord 搜索字段。
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return OrderBy 排序字段
+                     * 获取排序字段。
+- create_time：创建时间
+默认为创建时间，暂不支持其他值。
+                     * @return OrderBy 排序字段。
+- create_time：创建时间
+默认为创建时间，暂不支持其他值。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _orderBy 排序字段
+                     * 设置排序字段。
+- create_time：创建时间
+默认为创建时间，暂不支持其他值。
+                     * @param _orderBy 排序字段。
+- create_time：创建时间
+默认为创建时间，暂不支持其他值。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -106,15 +114,23 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序类型
-                     * @return OrderType 排序类型
+                     * 获取排序类型。
+- 1：倒序
+默认为倒序，暂不支持其他值。
+                     * @return OrderType 排序类型。
+- 1：倒序
+默认为倒序，暂不支持其他值。
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置排序类型
-                     * @param _orderType 排序类型
+                     * 设置排序类型。
+- 1：倒序
+默认为倒序，暂不支持其他值。
+                     * @param _orderType 排序类型。
+- 1：倒序
+默认为倒序，暂不支持其他值。
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -127,15 +143,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +164,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页个数
-                     * @return Limit 分页个数
+                     * 获取返回数量，默认为20，最大值为50。
+                     * @return Limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页个数
-                     * @param _limit 分页个数
+                     * 设置返回数量，默认为20，最大值为50。
+                     * @param _limit 返回数量，默认为20，最大值为50。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -169,15 +185,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取状态过滤，online、offline、single_online
-                     * @return Status 状态过滤，online、offline、single_online
+                     * 获取状态。
+- online：在线
+- offline：离线
+- single_online：单点在线
+                     * @return Status 状态。
+- online：在线
+- offline：离线
+- single_online：单点在线
                      * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
-                     * 设置状态过滤，online、offline、single_online
-                     * @param _status 状态过滤，online、offline、single_online
+                     * 设置状态。
+- online：在线
+- offline：离线
+- single_online：单点在线
+                     * @param _status 状态。
+- online：在线
+- offline：离线
+- single_online：单点在线
                      * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
@@ -190,15 +218,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取IdList
-                     * @return MicroserviceIdList IdList
+                     * 获取微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @return MicroserviceIdList 微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     std::vector<std::string> GetMicroserviceIdList() const;
 
                     /**
-                     * 设置IdList
-                     * @param _microserviceIdList IdList
+                     * 设置微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @param _microserviceIdList 微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     void SetMicroserviceIdList(const std::vector<std::string>& _microserviceIdList);
@@ -211,15 +239,15 @@ namespace TencentCloud
                     bool MicroserviceIdListHasBeenSet() const;
 
                     /**
-                     * 获取搜索的服务名列表
-                     * @return MicroserviceNameList 搜索的服务名列表
+                     * 获取微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @return MicroserviceNameList 微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     std::vector<std::string> GetMicroserviceNameList() const;
 
                     /**
-                     * 设置搜索的服务名列表
-                     * @param _microserviceNameList 搜索的服务名列表
+                     * 设置微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
+                     * @param _microserviceNameList 微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      * 
                      */
                     void SetMicroserviceNameList(const std::vector<std::string>& _microserviceNameList);
@@ -232,15 +260,15 @@ namespace TencentCloud
                     bool MicroserviceNameListHasBeenSet() const;
 
                     /**
-                     * 获取注册中心实例id
-                     * @return ConfigCenterInstanceId 注册中心实例id
+                     * 获取注册中心实例ID。业务预留参数，忽略传参。
+                     * @return ConfigCenterInstanceId 注册中心实例ID。业务预留参数，忽略传参。
                      * 
                      */
                     std::string GetConfigCenterInstanceId() const;
 
                     /**
-                     * 设置注册中心实例id
-                     * @param _configCenterInstanceId 注册中心实例id
+                     * 设置注册中心实例ID。业务预留参数，忽略传参。
+                     * @param _configCenterInstanceId 注册中心实例ID。业务预留参数，忽略传参。
                      * 
                      */
                     void SetConfigCenterInstanceId(const std::string& _configCenterInstanceId);
@@ -255,61 +283,68 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间ID
+                     * 命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 搜索字段
+                     * 搜索字段。
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段。
+- create_time：创建时间
+默认为创建时间，暂不支持其他值。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序类型
+                     * 排序类型。
+- 1：倒序
+默认为倒序，暂不支持其他值。
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页个数
+                     * 返回数量，默认为20，最大值为50。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 状态过滤，online、offline、single_online
+                     * 状态。
+- online：在线
+- offline：离线
+- single_online：单点在线
                      */
                     std::vector<std::string> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * IdList
+                     * 微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      */
                     std::vector<std::string> m_microserviceIdList;
                     bool m_microserviceIdListHasBeenSet;
 
                     /**
-                     * 搜索的服务名列表
+                     * 微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。
                      */
                     std::vector<std::string> m_microserviceNameList;
                     bool m_microserviceNameListHasBeenSet;
 
                     /**
-                     * 注册中心实例id
+                     * 注册中心实例ID。业务预留参数，忽略传参。
                      */
                     std::string m_configCenterInstanceId;
                     bool m_configCenterInstanceIdHasBeenSet;

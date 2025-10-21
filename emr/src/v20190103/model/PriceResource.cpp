@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ PriceResource::PriceResource() :
     m_instanceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_diskNumHasBeenSet(false),
-    m_localDiskNumHasBeenSet(false)
+    m_localDiskNumHasBeenSet(false),
+    m_gpuDescHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,16 @@ CoreInternalOutcome PriceResource::Deserialize(const rapidjson::Value &value)
         m_localDiskNumHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuDesc") && !value["GpuDesc"].IsNull())
+    {
+        if (!value["GpuDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PriceResource.GpuDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuDesc = string(value["GpuDesc"].GetString());
+        m_gpuDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -315,6 +326,14 @@ void PriceResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "LocalDiskNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_localDiskNum, allocator);
+    }
+
+    if (m_gpuDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -526,5 +545,21 @@ void PriceResource::SetLocalDiskNum(const int64_t& _localDiskNum)
 bool PriceResource::LocalDiskNumHasBeenSet() const
 {
     return m_localDiskNumHasBeenSet;
+}
+
+string PriceResource::GetGpuDesc() const
+{
+    return m_gpuDesc;
+}
+
+void PriceResource::SetGpuDesc(const string& _gpuDesc)
+{
+    m_gpuDesc = _gpuDesc;
+    m_gpuDescHasBeenSet = true;
+}
+
+bool PriceResource::GpuDescHasBeenSet() const
+{
+    return m_gpuDescHasBeenSet;
 }
 

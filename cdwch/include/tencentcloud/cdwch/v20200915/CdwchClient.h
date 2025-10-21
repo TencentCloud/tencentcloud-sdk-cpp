@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeCNInstancesRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeCNInstancesResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h>
@@ -117,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackUpTablesResponse> DescribeBackUpTablesOutcome;
                 typedef std::future<DescribeBackUpTablesOutcome> DescribeBackUpTablesOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpTablesRequest&, DescribeBackUpTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCNInstancesResponse> DescribeCNInstancesOutcome;
+                typedef std::future<DescribeCNInstancesOutcome> DescribeCNInstancesOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeCNInstancesRequest&, DescribeCNInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkSqlApisResponse> DescribeCkSqlApisOutcome;
                 typedef std::future<DescribeCkSqlApisOutcome> DescribeCkSqlApisOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeCkSqlApisRequest&, DescribeCkSqlApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkSqlApisAsyncHandler;
@@ -251,6 +256,15 @@ namespace TencentCloud
                 DescribeBackUpTablesOutcome DescribeBackUpTables(const Model::DescribeBackUpTablesRequest &request);
                 void DescribeBackUpTablesAsync(const Model::DescribeBackUpTablesRequest& request, const DescribeBackUpTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackUpTablesOutcomeCallable DescribeBackUpTablesCallable(const Model::DescribeBackUpTablesRequest& request);
+
+                /**
+                 *获取云原生实例列表
+                 * @param req DescribeCNInstancesRequest
+                 * @return DescribeCNInstancesOutcome
+                 */
+                DescribeCNInstancesOutcome DescribeCNInstances(const Model::DescribeCNInstancesRequest &request);
+                void DescribeCNInstancesAsync(const Model::DescribeCNInstancesRequest& request, const DescribeCNInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCNInstancesOutcomeCallable DescribeCNInstancesCallable(const Model::DescribeCNInstancesRequest& request);
 
                 /**
                  *查询集群用户、集群表，数据库等相关信息

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/omics/v20221128/model/VolumeAutoScaleUpRule.h>
 
 
 namespace TencentCloud
@@ -322,6 +323,69 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取turbo自动扩容策略
+                     * @return AutoScaleUpRule turbo自动扩容策略
+                     * 
+                     */
+                    VolumeAutoScaleUpRule GetAutoScaleUpRule() const;
+
+                    /**
+                     * 设置turbo自动扩容策略
+                     * @param _autoScaleUpRule turbo自动扩容策略
+                     * 
+                     */
+                    void SetAutoScaleUpRule(const VolumeAutoScaleUpRule& _autoScaleUpRule);
+
+                    /**
+                     * 判断参数 AutoScaleUpRule 是否已赋值
+                     * @return AutoScaleUpRule 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleUpRuleHasBeenSet() const;
+
+                    /**
+                     * 获取turbo元数据属性
+                     * @return MetaType turbo元数据属性
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置turbo元数据属性
+                     * @param _metaType turbo元数据属性
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区
+                     * @return Zone 可用区
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区
+                     * @param _zone 可用区
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +465,24 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * turbo自动扩容策略
+                     */
+                    VolumeAutoScaleUpRule m_autoScaleUpRule;
+                    bool m_autoScaleUpRuleHasBeenSet;
+
+                    /**
+                     * turbo元数据属性
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
+
+                    /**
+                     * 可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

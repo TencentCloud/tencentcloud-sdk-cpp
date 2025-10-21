@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @return ImageUrl 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 获取图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * @return ImageUrl 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param _imageUrl 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 设置图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * @param _imageUrl 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @return ImageBase64 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 获取图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * @return ImageBase64 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param _imageBase64 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 设置图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * @param _imageBase64 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -129,10 +129,10 @@ namespace TencentCloud
 
                     /**
                      * 获取true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * @return ItemNamesShowMode true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * 
                      */
@@ -140,10 +140,10 @@ flase：输出默认字段+自定义字段
 
                     /**
                      * 设置true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * @param _itemNamesShowMode true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      * 
                      */
@@ -180,7 +180,7 @@ flase：输出默认字段+自定义字段
                     /**
                      * 获取配置id支持：
 General -- 通用场景 
-InvoiceEng -- 国际invoice模版 
+InvoiceEng -- 国际invoice模板 
 WayBillEng --海运订单模板
 CustomsDeclaration -- 进出口报关单
 WeightNote -- 磅单
@@ -190,12 +190,21 @@ EntrustmentBook -- 海运托书
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
-Table -- 表格模版
+Table -- 表格模板
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
-InvoiceEng -- 国际invoice模版 
+InvoiceEng -- 国际invoice模板 
 WayBillEng --海运订单模板
 CustomsDeclaration -- 进出口报关单
 WeightNote -- 磅单
@@ -205,9 +214,18 @@ EntrustmentBook -- 海运托书
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
-Table -- 表格模版
+Table -- 表格模板
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * 
                      */
                     std::string GetConfigId() const;
@@ -215,7 +233,7 @@ CarInsurance -- 车辆保险单识别模板
                     /**
                      * 设置配置id支持：
 General -- 通用场景 
-InvoiceEng -- 国际invoice模版 
+InvoiceEng -- 国际invoice模板 
 WayBillEng --海运订单模板
 CustomsDeclaration -- 进出口报关单
 WeightNote -- 磅单
@@ -225,12 +243,21 @@ EntrustmentBook -- 海运托书
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
-Table -- 表格模版
+Table -- 表格模板
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * @param _configId 配置id支持：
 General -- 通用场景 
-InvoiceEng -- 国际invoice模版 
+InvoiceEng -- 国际invoice模板 
 WayBillEng --海运订单模板
 CustomsDeclaration -- 进出口报关单
 WeightNote -- 磅单
@@ -240,9 +267,18 @@ EntrustmentBook -- 海运托书
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
-Table -- 表格模版
+Table -- 表格模板
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -297,15 +333,15 @@ CarInsurance -- 车辆保险单识别模板
                     bool OutputParentKeyHasBeenSet() const;
 
                     /**
-                     * 获取模版的单个属性配置
-                     * @return ConfigAdvanced 模版的单个属性配置
+                     * 获取模板的单个属性配置
+                     * @return ConfigAdvanced 模板的单个属性配置
                      * 
                      */
                     ConfigAdvanced GetConfigAdvanced() const;
 
                     /**
-                     * 设置模版的单个属性配置
-                     * @param _configAdvanced 模版的单个属性配置
+                     * 设置模板的单个属性配置
+                     * @param _configAdvanced 模板的单个属性配置
                      * 
                      */
                     void SetConfigAdvanced(const ConfigAdvanced& _configAdvanced);
@@ -317,16 +353,41 @@ CarInsurance -- 车辆保险单识别模板
                      */
                     bool ConfigAdvancedHasBeenSet() const;
 
+                    /**
+                     * 获取cn时，添加的key为中文  
+en时，添加的key为英语
+                     * @return OutputLanguage cn时，添加的key为中文  
+en时，添加的key为英语
+                     * 
+                     */
+                    std::string GetOutputLanguage() const;
+
+                    /**
+                     * 设置cn时，添加的key为中文  
+en时，添加的key为英语
+                     * @param _outputLanguage cn时，添加的key为中文  
+en时，添加的key为英语
+                     * 
+                     */
+                    void SetOutputLanguage(const std::string& _outputLanguage);
+
+                    /**
+                     * 判断参数 OutputLanguage 是否已赋值
+                     * @return OutputLanguage 是否已赋值
+                     * 
+                     */
+                    bool OutputLanguageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
@@ -345,7 +406,7 @@ CarInsurance -- 车辆保险单识别模板
 
                     /**
                      * true：仅输出自定义字段
-flase：输出默认字段+自定义字段
+false：输出默认字段+自定义字段
 默认true
                      */
                     bool m_itemNamesShowMode;
@@ -360,7 +421,7 @@ flase：输出默认字段+自定义字段
                     /**
                      * 配置id支持：
 General -- 通用场景 
-InvoiceEng -- 国际invoice模版 
+InvoiceEng -- 国际invoice模板 
 WayBillEng --海运订单模板
 CustomsDeclaration -- 进出口报关单
 WeightNote -- 磅单
@@ -370,9 +431,18 @@ EntrustmentBook -- 海运托书
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
-Table -- 表格模版
+Table -- 表格模板
 SteelLabel -- 实物标签识别模板
 CarInsurance -- 车辆保险单识别模板
+MultiRealEstateCertificate -- 房产材料识别模板
+MultiRealEstateMaterial -- 房产证明识别模板
+HongKongUtilityBill -- 中国香港水电煤单识别模板
+OverseasCheques -- 海外支票
+RegistrationCertificate -- 备案证
+​GridPhoto -- 电网系统照片
+​SignaturePage -- 签署页
+
+
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
@@ -390,10 +460,17 @@ CarInsurance -- 车辆保险单识别模板
                     bool m_outputParentKeyHasBeenSet;
 
                     /**
-                     * 模版的单个属性配置
+                     * 模板的单个属性配置
                      */
                     ConfigAdvanced m_configAdvanced;
                     bool m_configAdvancedHasBeenSet;
+
+                    /**
+                     * cn时，添加的key为中文  
+en时，添加的key为英语
+                     */
+                    std::string m_outputLanguage;
+                    bool m_outputLanguageHasBeenSet;
 
                 };
             }

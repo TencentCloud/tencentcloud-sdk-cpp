@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1048,6 +1048,52 @@ namespace TencentCloud
                      */
                     bool DataSourceEnvInfosHasBeenSet() const;
 
+                    /**
+                     * 获取禁止数据探查
+                     * @return ForbidProbe 禁止数据探查
+                     * 
+                     */
+                    bool GetForbidProbe() const;
+
+                    /**
+                     * 设置禁止数据探查
+                     * @param _forbidProbe 禁止数据探查
+                     * 
+                     */
+                    void SetForbidProbe(const bool& _forbidProbe);
+
+                    /**
+                     * 判断参数 ForbidProbe 是否已赋值
+                     * @return ForbidProbe 是否已赋值
+                     * 
+                     */
+                    bool ForbidProbeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const std::string& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1329,6 +1375,19 @@ namespace TencentCloud
                      */
                     std::vector<DataSourceEnvInfo> m_dataSourceEnvInfos;
                     bool m_dataSourceEnvInfosHasBeenSet;
+
+                    /**
+                     * 禁止数据探查
+                     */
+                    bool m_forbidProbe;
+                    bool m_forbidProbeHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
 
                 };
             }

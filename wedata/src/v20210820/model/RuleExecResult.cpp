@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,18 @@ RuleExecResult::RuleExecResult() :
     m_relConditionExprHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
-    m_triggerConditionHasBeenSet(false)
+    m_triggerConditionHasBeenSet(false),
+    m_ruleGroupNameHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_ruleGroupExistHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false),
+    m_ruleGroupTableIdHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -285,6 +296,116 @@ CoreInternalOutcome RuleExecResult::Deserialize(const rapidjson::Value &value)
         m_triggerConditionHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleGroupName") && !value["RuleGroupName"].IsNull())
+    {
+        if (!value["RuleGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.RuleGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupName = string(value["RuleGroupName"].GetString());
+        m_ruleGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.DatasourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = string(value["DatasourceId"].GetString());
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupExist") && !value["RuleGroupExist"].IsNull())
+    {
+        if (!value["RuleGroupExist"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.RuleGroupExist` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupExist = value["RuleGroupExist"].GetInt64();
+        m_ruleGroupExistHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.DatasourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = value["DatasourceType"].GetInt64();
+        m_datasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupTableId") && !value["RuleGroupTableId"].IsNull())
+    {
+        if (!value["RuleGroupTableId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.RuleGroupTableId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupTableId = value["RuleGroupTableId"].GetUint64();
+        m_ruleGroupTableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorType") && !value["MonitorType"].IsNull())
+    {
+        if (!value["MonitorType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.MonitorType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorType = value["MonitorType"].GetInt64();
+        m_monitorTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +589,94 @@ void RuleExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TriggerCondition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleGroupExist, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_ruleGroupTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleGroupTableId, allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorType, allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -823,5 +1032,181 @@ void RuleExecResult::SetTriggerCondition(const string& _triggerCondition)
 bool RuleExecResult::TriggerConditionHasBeenSet() const
 {
     return m_triggerConditionHasBeenSet;
+}
+
+string RuleExecResult::GetRuleGroupName() const
+{
+    return m_ruleGroupName;
+}
+
+void RuleExecResult::SetRuleGroupName(const string& _ruleGroupName)
+{
+    m_ruleGroupName = _ruleGroupName;
+    m_ruleGroupNameHasBeenSet = true;
+}
+
+bool RuleExecResult::RuleGroupNameHasBeenSet() const
+{
+    return m_ruleGroupNameHasBeenSet;
+}
+
+string RuleExecResult::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void RuleExecResult::SetDatasourceId(const string& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool RuleExecResult::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string RuleExecResult::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void RuleExecResult::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool RuleExecResult::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string RuleExecResult::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void RuleExecResult::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool RuleExecResult::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string RuleExecResult::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void RuleExecResult::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool RuleExecResult::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string RuleExecResult::GetTableName() const
+{
+    return m_tableName;
+}
+
+void RuleExecResult::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool RuleExecResult::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+int64_t RuleExecResult::GetRuleGroupExist() const
+{
+    return m_ruleGroupExist;
+}
+
+void RuleExecResult::SetRuleGroupExist(const int64_t& _ruleGroupExist)
+{
+    m_ruleGroupExist = _ruleGroupExist;
+    m_ruleGroupExistHasBeenSet = true;
+}
+
+bool RuleExecResult::RuleGroupExistHasBeenSet() const
+{
+    return m_ruleGroupExistHasBeenSet;
+}
+
+int64_t RuleExecResult::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void RuleExecResult::SetDatasourceType(const int64_t& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool RuleExecResult::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
+}
+
+uint64_t RuleExecResult::GetRuleGroupTableId() const
+{
+    return m_ruleGroupTableId;
+}
+
+void RuleExecResult::SetRuleGroupTableId(const uint64_t& _ruleGroupTableId)
+{
+    m_ruleGroupTableId = _ruleGroupTableId;
+    m_ruleGroupTableIdHasBeenSet = true;
+}
+
+bool RuleExecResult::RuleGroupTableIdHasBeenSet() const
+{
+    return m_ruleGroupTableIdHasBeenSet;
+}
+
+int64_t RuleExecResult::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void RuleExecResult::SetMonitorType(const int64_t& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool RuleExecResult::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
+}
+
+string RuleExecResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void RuleExecResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool RuleExecResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

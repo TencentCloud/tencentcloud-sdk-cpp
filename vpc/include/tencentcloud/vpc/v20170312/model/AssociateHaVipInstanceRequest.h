@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/HaVipAssociation.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取HaVip绑定的子机或网卡。最多支持10个实例。
+                     * @return HaVipAssociationSet HaVip绑定的子机或网卡。最多支持10个实例。
+                     * 
+                     */
+                    std::vector<HaVipAssociation> GetHaVipAssociationSet() const;
+
+                    /**
+                     * 设置HaVip绑定的子机或网卡。最多支持10个实例。
+                     * @param _haVipAssociationSet HaVip绑定的子机或网卡。最多支持10个实例。
+                     * 
+                     */
+                    void SetHaVipAssociationSet(const std::vector<HaVipAssociation>& _haVipAssociationSet);
+
+                    /**
+                     * 判断参数 HaVipAssociationSet 是否已赋值
+                     * @return HaVipAssociationSet 是否已赋值
+                     * 
+                     */
+                    bool HaVipAssociationSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * HaVip绑定的子机或网卡。最多支持10个实例。
+                     */
+                    std::vector<HaVipAssociation> m_haVipAssociationSet;
+                    bool m_haVipAssociationSetHasBeenSet;
 
                 };
             }

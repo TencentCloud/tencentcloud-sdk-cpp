@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/cfs/v20190719/model/TagInfo.h>
 #include <tencentcloud/cfs/v20190719/model/TieringDetailInfo.h>
 #include <tencentcloud/cfs/v20190719/model/AutoScaleUpRule.h>
+#include <tencentcloud/cfs/v20190719/model/ExstraPerformanceInfo.h>
 
 
 namespace TencentCloud
@@ -632,6 +633,56 @@ Available:可用
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExstraPerformanceInfo 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ExstraPerformanceInfo> GetExstraPerformanceInfo() const;
+
+                    /**
+                     * 设置额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _exstraPerformanceInfo 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExstraPerformanceInfo(const std::vector<ExstraPerformanceInfo>& _exstraPerformanceInfo);
+
+                    /**
+                     * 判断参数 ExstraPerformanceInfo 是否已赋值
+                     * @return ExstraPerformanceInfo 是否已赋值
+                     * 
+                     */
+                    bool ExstraPerformanceInfoHasBeenSet() const;
+
+                    /**
+                     * 获取basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * @return MetaType basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * 
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * @param _metaType basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     * 
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     * 
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -798,6 +849,20 @@ Available:可用
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 额外性能信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ExstraPerformanceInfo> m_exstraPerformanceInfo;
+                    bool m_exstraPerformanceInfoHasBeenSet;
+
+                    /**
+                     * basic：标准版元数据类型
+enhanced：增项版元数据类型
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
 
                 };
             }

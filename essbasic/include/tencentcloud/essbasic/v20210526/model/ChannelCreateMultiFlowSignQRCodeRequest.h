@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,21 +186,21 @@ namespace TencentCloud
                     /**
                      * 获取二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
                      * @return QrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
-                     * 
+                     * @deprecated
                      */
                     int64_t GetQrEffectiveDay() const;
 
                     /**
                      * 设置二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
                      * @param _qrEffectiveDay 二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。	
-                     * 
+                     * @deprecated
                      */
                     void SetQrEffectiveDay(const int64_t& _qrEffectiveDay);
 
                     /**
                      * 判断参数 QrEffectiveDay 是否已赋值
                      * @return QrEffectiveDay 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QrEffectiveDayHasBeenSet() const;
 
@@ -359,6 +359,48 @@ namespace TencentCloud
                      */
                     bool FlowNameAppendScannerInfoHasBeenSet() const;
 
+                    /**
+                     * 获取签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName	
+                     * @return QrCodeName 签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName	
+                     * 
+                     */
+                    std::string GetQrCodeName() const;
+
+                    /**
+                     * 设置签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName	
+                     * @param _qrCodeName 签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName	
+                     * 
+                     */
+                    void SetQrCodeName(const std::string& _qrCodeName);
+
+                    /**
+                     * 判断参数 QrCodeName 是否已赋值
+                     * @return QrCodeName 是否已赋值
+                     * 
+                     */
+                    bool QrCodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。	
+                     * @return QrCodeExpiredOn 签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。	
+                     * 
+                     */
+                    int64_t GetQrCodeExpiredOn() const;
+
+                    /**
+                     * 设置签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。	
+                     * @param _qrCodeExpiredOn 签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。	
+                     * 
+                     */
+                    void SetQrCodeExpiredOn(const int64_t& _qrCodeExpiredOn);
+
+                    /**
+                     * 判断参数 QrCodeExpiredOn 是否已赋值
+                     * @return QrCodeExpiredOn 是否已赋值
+                     * 
+                     */
+                    bool QrCodeExpiredOnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +490,18 @@ namespace TencentCloud
                      */
                     bool m_flowNameAppendScannerInfo;
                     bool m_flowNameAppendScannerInfoHasBeenSet;
+
+                    /**
+                     * 签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName	
+                     */
+                    std::string m_qrCodeName;
+                    bool m_qrCodeNameHasBeenSet;
+
+                    /**
+                     * 签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。	
+                     */
+                    int64_t m_qrCodeExpiredOn;
+                    bool m_qrCodeExpiredOnHasBeenSet;
 
                 };
             }

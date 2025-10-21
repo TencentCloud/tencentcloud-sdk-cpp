@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -471,6 +471,27 @@ namespace TencentCloud
                      */
                     bool QueryResultTimeHasBeenSet() const;
 
+                    /**
+                     * 获取base64 编码结果集
+                     * @return ResultSetEncode base64 编码结果集
+                     * 
+                     */
+                    std::string GetResultSetEncode() const;
+
+                    /**
+                     * 设置base64 编码结果集
+                     * @param _resultSetEncode base64 编码结果集
+                     * 
+                     */
+                    void SetResultSetEncode(const std::string& _resultSetEncode);
+
+                    /**
+                     * 判断参数 ResultSetEncode 是否已赋值
+                     * @return ResultSetEncode 是否已赋值
+                     * 
+                     */
+                    bool ResultSetEncodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +614,12 @@ namespace TencentCloud
                      */
                     double m_queryResultTime;
                     bool m_queryResultTimeHasBeenSet;
+
+                    /**
+                     * base64 编码结果集
+                     */
+                    std::string m_resultSetEncode;
+                    bool m_resultSetEncodeHasBeenSet;
 
                 };
             }

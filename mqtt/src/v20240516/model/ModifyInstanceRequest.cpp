@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_skuCodeHasBeenSet(false),
     m_deviceCertificateProvisionTypeHasBeenSet(false),
     m_automaticActivationHasBeenSet(false),
-    m_authorizationPolicyHasBeenSet(false)
+    m_authorizationPolicyHasBeenSet(false),
+    m_useDefaultServerCertHasBeenSet(false),
+    m_x509ModeHasBeenSet(false),
+    m_messageRateHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,30 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "AuthorizationPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authorizationPolicy, allocator);
+    }
+
+    if (m_useDefaultServerCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultServerCert";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useDefaultServerCert, allocator);
+    }
+
+    if (m_x509ModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "X509Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_x509Mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_messageRate, allocator);
     }
 
 
@@ -214,6 +241,54 @@ void ModifyInstanceRequest::SetAuthorizationPolicy(const bool& _authorizationPol
 bool ModifyInstanceRequest::AuthorizationPolicyHasBeenSet() const
 {
     return m_authorizationPolicyHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetUseDefaultServerCert() const
+{
+    return m_useDefaultServerCert;
+}
+
+void ModifyInstanceRequest::SetUseDefaultServerCert(const bool& _useDefaultServerCert)
+{
+    m_useDefaultServerCert = _useDefaultServerCert;
+    m_useDefaultServerCertHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::UseDefaultServerCertHasBeenSet() const
+{
+    return m_useDefaultServerCertHasBeenSet;
+}
+
+string ModifyInstanceRequest::GetX509Mode() const
+{
+    return m_x509Mode;
+}
+
+void ModifyInstanceRequest::SetX509Mode(const string& _x509Mode)
+{
+    m_x509Mode = _x509Mode;
+    m_x509ModeHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::X509ModeHasBeenSet() const
+{
+    return m_x509ModeHasBeenSet;
+}
+
+int64_t ModifyInstanceRequest::GetMessageRate() const
+{
+    return m_messageRate;
+}
+
+void ModifyInstanceRequest::SetMessageRate(const int64_t& _messageRate)
+{
+    m_messageRate = _messageRate;
+    m_messageRateHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::MessageRateHasBeenSet() const
+{
+    return m_messageRateHasBeenSet;
 }
 
 

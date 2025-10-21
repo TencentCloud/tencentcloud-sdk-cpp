@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
+- 通过各个接入云产品官方文档获取
                      * @return InstanceId 实例ID
+- 通过各个接入云产品官方文档获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
+- 通过各个接入云产品官方文档获取
                      * @param _instanceId 实例ID
+- 通过各个接入云产品官方文档获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,7 +110,7 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 获取云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT:  gz
@@ -117,9 +121,9 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
-                     * @return CloudProductRegion 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * @return CloudProductRegion 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT:  gz
@@ -130,14 +134,14 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      * 
                      */
                     std::string GetCloudProductRegion() const;
 
                     /**
-                     * 设置云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 设置云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT:  gz
@@ -148,9 +152,9 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
-                     * @param _cloudProductRegion 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * @param _cloudProductRegion 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT:  gz
@@ -161,7 +165,7 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      * 
                      */
@@ -176,14 +180,18 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS目标地域
+- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   
                      * @return ClsRegion CLS目标地域
+- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   
                      * 
                      */
                     std::string GetClsRegion() const;
 
                     /**
                      * 设置CLS目标地域
+- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   
                      * @param _clsRegion CLS目标地域
+- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   
                      * 
                      */
                     void SetClsRegion(const std::string& _clsRegion);
@@ -238,15 +246,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取日志配置拓展信息， 一般用于存储额外的日志投递配置
-                     * @return Extend 日志配置拓展信息， 一般用于存储额外的日志投递配置
+                     * 获取日志配置扩展信息， 一般用于存储额外的日志投递配置
+                     * @return Extend 日志配置扩展信息， 一般用于存储额外的日志投递配置
                      * 
                      */
                     std::string GetExtend() const;
 
                     /**
-                     * 设置日志配置拓展信息， 一般用于存储额外的日志投递配置
-                     * @param _extend 日志配置拓展信息， 一般用于存储额外的日志投递配置
+                     * 设置日志配置扩展信息， 一般用于存储额外的日志投递配置
+                     * @param _extend 日志配置扩展信息， 一般用于存储额外的日志投递配置
                      * 
                      */
                     void SetExtend(const std::string& _extend);
@@ -260,14 +268,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @return LogsetId 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @param _logsetId 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -281,14 +293,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @return TopicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * @param _topicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -304,6 +320,7 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
+- 通过各个接入云产品官方文档获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -321,7 +338,7 @@ namespace TencentCloud
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：
+                     * 云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：
 - CDS所有日志类型：ap-guangzhou
 - CDB-AUDIT: gz
 - TDSQL-C-AUDIT:  gz
@@ -332,7 +349,7 @@ namespace TencentCloud
 - DCDB所有日志类型：gz
 - MariaDB所有日志类型：gz
 - PostgreSQL所有日志类型：gz
-- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)
+- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)
 - APIS所有日志类型：gz
                      */
                     std::string m_cloudProductRegion;
@@ -340,6 +357,7 @@ namespace TencentCloud
 
                     /**
                      * CLS目标地域
+- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   
                      */
                     std::string m_clsRegion;
                     bool m_clsRegionHasBeenSet;
@@ -357,19 +375,21 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 日志配置拓展信息， 一般用于存储额外的日志投递配置
+                     * 日志配置扩展信息， 一般用于存储额外的日志投递配置
                      */
                     std::string m_extend;
                     bool m_extendHasBeenSet;
 
                     /**
                      * 日志集id
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

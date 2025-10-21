@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/cls/v20201016/model/Tag.h>
 #include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
+#include <tencentcloud/cls/v20201016/model/MonitorNotice.h>
 
 
 namespace TencentCloud
@@ -117,15 +118,15 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取单触发条件。与MultiConditions参数互斥。
-                     * @return Condition 单触发条件。与MultiConditions参数互斥。
+                     * 获取是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * @return Condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置单触发条件。与MultiConditions参数互斥。
-                     * @param _condition 单触发条件。与MultiConditions参数互斥。
+                     * 设置是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * @param _condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -180,15 +181,15 @@ namespace TencentCloud
                     bool AlarmPeriodHasBeenSet() const;
 
                     /**
-                     * 获取关联的告警通知模板列表。
-                     * @return AlarmNoticeIds 关联的告警通知模板列表。
+                     * 获取关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @return AlarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     std::vector<std::string> GetAlarmNoticeIds() const;
 
                     /**
-                     * 设置关联的告警通知模板列表。
-                     * @param _alarmNoticeIds 关联的告警通知模板列表。
+                     * 设置关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * @param _alarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      * 
                      */
                     void SetAlarmNoticeIds(const std::vector<std::string>& _alarmNoticeIds);
@@ -243,15 +244,15 @@ namespace TencentCloud
                     bool AlarmIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return CreateTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _createTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -264,15 +265,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近更新时间。
-                     * @return UpdateTime 最近更新时间。
+                     * 获取最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return UpdateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近更新时间。
-                     * @param _updateTime 最近更新时间。
+                     * 设置最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _updateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -502,6 +503,27 @@ Condition互斥。
                      */
                     bool MultiConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @return MonitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 
+                     */
+                    MonitorNotice GetMonitorNotice() const;
+
+                    /**
+                     * 设置云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @param _monitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 
+                     */
+                    void SetMonitorNotice(const MonitorNotice& _monitorNotice);
+
+                    /**
+                     * 判断参数 MonitorNotice 是否已赋值
+                     * @return MonitorNotice 是否已赋值
+                     * 
+                     */
+                    bool MonitorNoticeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,7 +545,7 @@ Condition互斥。
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 单触发条件。与MultiConditions参数互斥。
+                     * 是否触发告警的单触发条件。与MultiConditions参数互斥。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
@@ -541,7 +563,7 @@ Condition互斥。
                     bool m_alarmPeriodHasBeenSet;
 
                     /**
-                     * 关联的告警通知模板列表。
+                     * 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;
@@ -559,13 +581,13 @@ Condition互斥。
                     bool m_alarmIdHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近更新时间。
+                     * 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -631,6 +653,12 @@ Condition互斥。
                      */
                     std::vector<MultiCondition> m_multiConditions;
                     bool m_multiConditionsHasBeenSet;
+
+                    /**
+                     * 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     */
+                    MonitorNotice m_monitorNotice;
+                    bool m_monitorNoticeHasBeenSet;
 
                 };
             }

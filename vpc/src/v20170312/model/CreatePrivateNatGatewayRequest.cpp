@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CreatePrivateNatGatewayRequest::CreatePrivateNatGatewayRequest() :
     m_crossDomainHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcTypeHasBeenSet(false),
-    m_ccnIdHasBeenSet(false)
+    m_ccnIdHasBeenSet(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreatePrivateNatGatewayRequest::ToJsonString() const
         string key = "CcnId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtectionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtectionEnabled, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreatePrivateNatGatewayRequest::SetCcnId(const string& _ccnId)
 bool CreatePrivateNatGatewayRequest::CcnIdHasBeenSet() const
 {
     return m_ccnIdHasBeenSet;
+}
+
+bool CreatePrivateNatGatewayRequest::GetDeletionProtectionEnabled() const
+{
+    return m_deletionProtectionEnabled;
+}
+
+void CreatePrivateNatGatewayRequest::SetDeletionProtectionEnabled(const bool& _deletionProtectionEnabled)
+{
+    m_deletionProtectionEnabled = _deletionProtectionEnabled;
+    m_deletionProtectionEnabledHasBeenSet = true;
+}
+
+bool CreatePrivateNatGatewayRequest::DeletionProtectionEnabledHasBeenSet() const
+{
+    return m_deletionProtectionEnabledHasBeenSet;
 }
 
 

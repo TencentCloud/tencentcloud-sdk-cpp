@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool DisplayContentHasBeenSet() const;
 
                     /**
-                     * 获取展示类型
+                     * 获取1：搜索引擎参考来源；2：知识库参考来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayType 展示类型
+                     * @return DisplayType 1：搜索引擎参考来源；2：知识库参考来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDisplayType() const;
 
                     /**
-                     * 设置展示类型
+                     * 设置1：搜索引擎参考来源；2：知识库参考来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _displayType 展示类型
+                     * @param _displayType 1：搜索引擎参考来源；2：知识库参考来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_displayContentHasBeenSet;
 
                     /**
-                     * 展示类型
+                     * 1：搜索引擎参考来源；2：知识库参考来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_displayType;

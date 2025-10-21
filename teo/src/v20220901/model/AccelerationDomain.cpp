@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +24,17 @@ AccelerationDomain::AccelerationDomain() :
     m_zoneIdHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
+    m_cnameHasBeenSet(false),
+    m_iPv6StatusHasBeenSet(false),
+    m_identificationStatusHasBeenSet(false),
+    m_ownershipVerificationHasBeenSet(false),
     m_originDetailHasBeenSet(false),
     m_originProtocolHasBeenSet(false),
-    m_certificateHasBeenSet(false),
     m_httpOriginPortHasBeenSet(false),
     m_httpsOriginPortHasBeenSet(false),
-    m_iPv6StatusHasBeenSet(false),
-    m_cnameHasBeenSet(false),
-    m_identificationStatusHasBeenSet(false),
+    m_certificateHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false),
-    m_ownershipVerificationHasBeenSet(false)
+    m_modifiedOnHasBeenSet(false)
 {
 }
 
@@ -73,6 +73,53 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_domainStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Cname") && !value["Cname"].IsNull())
+    {
+        if (!value["Cname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Cname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cname = string(value["Cname"].GetString());
+        m_cnameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6Status") && !value["IPv6Status"].IsNull())
+    {
+        if (!value["IPv6Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IPv6Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6Status = string(value["IPv6Status"].GetString());
+        m_iPv6StatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdentificationStatus") && !value["IdentificationStatus"].IsNull())
+    {
+        if (!value["IdentificationStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IdentificationStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_identificationStatus = string(value["IdentificationStatus"].GetString());
+        m_identificationStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
+    {
+        if (!value["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
     if (value.HasMember("OriginDetail") && !value["OriginDetail"].IsNull())
     {
         if (!value["OriginDetail"].IsObject())
@@ -100,23 +147,6 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_originProtocolHasBeenSet = true;
     }
 
-    if (value.HasMember("Certificate") && !value["Certificate"].IsNull())
-    {
-        if (!value["Certificate"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Certificate` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_certificateHasBeenSet = true;
-    }
-
     if (value.HasMember("HttpOriginPort") && !value["HttpOriginPort"].IsNull())
     {
         if (!value["HttpOriginPort"].IsUint64())
@@ -137,34 +167,21 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_httpsOriginPortHasBeenSet = true;
     }
 
-    if (value.HasMember("IPv6Status") && !value["IPv6Status"].IsNull())
+    if (value.HasMember("Certificate") && !value["Certificate"].IsNull())
     {
-        if (!value["IPv6Status"].IsString())
+        if (!value["Certificate"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IPv6Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Certificate` is not object type").SetRequestId(requestId));
         }
-        m_iPv6Status = string(value["IPv6Status"].GetString());
-        m_iPv6StatusHasBeenSet = true;
-    }
 
-    if (value.HasMember("Cname") && !value["Cname"].IsNull())
-    {
-        if (!value["Cname"].IsString())
+        CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Cname` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_cname = string(value["Cname"].GetString());
-        m_cnameHasBeenSet = true;
-    }
 
-    if (value.HasMember("IdentificationStatus") && !value["IdentificationStatus"].IsNull())
-    {
-        if (!value["IdentificationStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IdentificationStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_identificationStatus = string(value["IdentificationStatus"].GetString());
-        m_identificationStatusHasBeenSet = true;
+        m_certificateHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
@@ -185,23 +202,6 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         }
         m_modifiedOn = string(value["ModifiedOn"].GetString());
         m_modifiedOnHasBeenSet = true;
-    }
-
-    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
-    {
-        if (!value["OwnershipVerification"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.OwnershipVerification` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_ownershipVerificationHasBeenSet = true;
     }
 
 
@@ -235,6 +235,39 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_domainStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6StatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPv6Status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identificationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentificationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identificationStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_originDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -250,15 +283,6 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OriginProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originProtocol.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_certificateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Certificate";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_certificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_httpOriginPortHasBeenSet)
@@ -277,28 +301,13 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_httpsOriginPort, allocator);
     }
 
-    if (m_iPv6StatusHasBeenSet)
+    if (m_certificateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IPv6Status";
+        string key = "Certificate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_iPv6Status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cnameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cname";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_identificationStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IdentificationStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_identificationStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_certificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createdOnHasBeenSet)
@@ -315,15 +324,6 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ModifiedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ownershipVerificationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OwnershipVerification";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -377,6 +377,70 @@ bool AccelerationDomain::DomainStatusHasBeenSet() const
     return m_domainStatusHasBeenSet;
 }
 
+string AccelerationDomain::GetCname() const
+{
+    return m_cname;
+}
+
+void AccelerationDomain::SetCname(const string& _cname)
+{
+    m_cname = _cname;
+    m_cnameHasBeenSet = true;
+}
+
+bool AccelerationDomain::CnameHasBeenSet() const
+{
+    return m_cnameHasBeenSet;
+}
+
+string AccelerationDomain::GetIPv6Status() const
+{
+    return m_iPv6Status;
+}
+
+void AccelerationDomain::SetIPv6Status(const string& _iPv6Status)
+{
+    m_iPv6Status = _iPv6Status;
+    m_iPv6StatusHasBeenSet = true;
+}
+
+bool AccelerationDomain::IPv6StatusHasBeenSet() const
+{
+    return m_iPv6StatusHasBeenSet;
+}
+
+string AccelerationDomain::GetIdentificationStatus() const
+{
+    return m_identificationStatus;
+}
+
+void AccelerationDomain::SetIdentificationStatus(const string& _identificationStatus)
+{
+    m_identificationStatus = _identificationStatus;
+    m_identificationStatusHasBeenSet = true;
+}
+
+bool AccelerationDomain::IdentificationStatusHasBeenSet() const
+{
+    return m_identificationStatusHasBeenSet;
+}
+
+OwnershipVerification AccelerationDomain::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+void AccelerationDomain::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
+{
+    m_ownershipVerification = _ownershipVerification;
+    m_ownershipVerificationHasBeenSet = true;
+}
+
+bool AccelerationDomain::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
+}
+
 OriginDetail AccelerationDomain::GetOriginDetail() const
 {
     return m_originDetail;
@@ -407,22 +471,6 @@ void AccelerationDomain::SetOriginProtocol(const string& _originProtocol)
 bool AccelerationDomain::OriginProtocolHasBeenSet() const
 {
     return m_originProtocolHasBeenSet;
-}
-
-AccelerationDomainCertificate AccelerationDomain::GetCertificate() const
-{
-    return m_certificate;
-}
-
-void AccelerationDomain::SetCertificate(const AccelerationDomainCertificate& _certificate)
-{
-    m_certificate = _certificate;
-    m_certificateHasBeenSet = true;
-}
-
-bool AccelerationDomain::CertificateHasBeenSet() const
-{
-    return m_certificateHasBeenSet;
 }
 
 uint64_t AccelerationDomain::GetHttpOriginPort() const
@@ -457,52 +505,20 @@ bool AccelerationDomain::HttpsOriginPortHasBeenSet() const
     return m_httpsOriginPortHasBeenSet;
 }
 
-string AccelerationDomain::GetIPv6Status() const
+AccelerationDomainCertificate AccelerationDomain::GetCertificate() const
 {
-    return m_iPv6Status;
+    return m_certificate;
 }
 
-void AccelerationDomain::SetIPv6Status(const string& _iPv6Status)
+void AccelerationDomain::SetCertificate(const AccelerationDomainCertificate& _certificate)
 {
-    m_iPv6Status = _iPv6Status;
-    m_iPv6StatusHasBeenSet = true;
+    m_certificate = _certificate;
+    m_certificateHasBeenSet = true;
 }
 
-bool AccelerationDomain::IPv6StatusHasBeenSet() const
+bool AccelerationDomain::CertificateHasBeenSet() const
 {
-    return m_iPv6StatusHasBeenSet;
-}
-
-string AccelerationDomain::GetCname() const
-{
-    return m_cname;
-}
-
-void AccelerationDomain::SetCname(const string& _cname)
-{
-    m_cname = _cname;
-    m_cnameHasBeenSet = true;
-}
-
-bool AccelerationDomain::CnameHasBeenSet() const
-{
-    return m_cnameHasBeenSet;
-}
-
-string AccelerationDomain::GetIdentificationStatus() const
-{
-    return m_identificationStatus;
-}
-
-void AccelerationDomain::SetIdentificationStatus(const string& _identificationStatus)
-{
-    m_identificationStatus = _identificationStatus;
-    m_identificationStatusHasBeenSet = true;
-}
-
-bool AccelerationDomain::IdentificationStatusHasBeenSet() const
-{
-    return m_identificationStatusHasBeenSet;
+    return m_certificateHasBeenSet;
 }
 
 string AccelerationDomain::GetCreatedOn() const
@@ -535,21 +551,5 @@ void AccelerationDomain::SetModifiedOn(const string& _modifiedOn)
 bool AccelerationDomain::ModifiedOnHasBeenSet() const
 {
     return m_modifiedOnHasBeenSet;
-}
-
-OwnershipVerification AccelerationDomain::GetOwnershipVerification() const
-{
-    return m_ownershipVerification;
-}
-
-void AccelerationDomain::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
-{
-    m_ownershipVerification = _ownershipVerification;
-    m_ownershipVerificationHasBeenSet = true;
-}
-
-bool AccelerationDomain::OwnershipVerificationHasBeenSet() const
-{
-    return m_ownershipVerificationHasBeenSet;
 }
 

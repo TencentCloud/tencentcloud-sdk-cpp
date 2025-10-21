@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeStatisticsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeStatisticsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusTargetsTMPRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusTargetsTMPResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusTempRequest.h>
@@ -683,6 +685,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusScrapeJobsResponse> DescribePrometheusScrapeJobsOutcome;
                 typedef std::future<DescribePrometheusScrapeJobsOutcome> DescribePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusScrapeJobsRequest&, DescribePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusScrapeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusScrapeStatisticsResponse> DescribePrometheusScrapeStatisticsOutcome;
+                typedef std::future<DescribePrometheusScrapeStatisticsOutcome> DescribePrometheusScrapeStatisticsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusScrapeStatisticsRequest&, DescribePrometheusScrapeStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusScrapeStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusTargetsTMPResponse> DescribePrometheusTargetsTMPOutcome;
                 typedef std::future<DescribePrometheusTargetsTMPOutcome> DescribePrometheusTargetsTMPOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusTargetsTMPRequest&, DescribePrometheusTargetsTMPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTargetsTMPAsyncHandler;
@@ -1825,6 +1830,15 @@ namespace TencentCloud
                 DescribePrometheusScrapeJobsOutcome DescribePrometheusScrapeJobs(const Model::DescribePrometheusScrapeJobsRequest &request);
                 void DescribePrometheusScrapeJobsAsync(const Model::DescribePrometheusScrapeJobsRequest& request, const DescribePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusScrapeJobsOutcomeCallable DescribePrometheusScrapeJobsCallable(const Model::DescribePrometheusScrapeJobsRequest& request);
+
+                /**
+                 *获取实例采集速率信息
+                 * @param req DescribePrometheusScrapeStatisticsRequest
+                 * @return DescribePrometheusScrapeStatisticsOutcome
+                 */
+                DescribePrometheusScrapeStatisticsOutcome DescribePrometheusScrapeStatistics(const Model::DescribePrometheusScrapeStatisticsRequest &request);
+                void DescribePrometheusScrapeStatisticsAsync(const Model::DescribePrometheusScrapeStatisticsRequest& request, const DescribePrometheusScrapeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusScrapeStatisticsOutcomeCallable DescribePrometheusScrapeStatisticsCallable(const Model::DescribePrometheusScrapeStatisticsRequest& request);
 
                 /**
                  *获取targets信息，在过滤条件中指定job名称时返回targets详情，否则仅返回数量

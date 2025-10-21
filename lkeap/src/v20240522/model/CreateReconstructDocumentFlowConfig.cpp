@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 CreateReconstructDocumentFlowConfig::CreateReconstructDocumentFlowConfig() :
     m_tableResultTypeHasBeenSet(false),
-    m_resultTypeHasBeenSet(false)
+    m_resultTypeHasBeenSet(false),
+    m_ignoreFailedPageHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CreateReconstructDocumentFlowConfig::Deserialize(const rapid
         m_resultTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreFailedPage") && !value["IgnoreFailedPage"].IsNull())
+    {
+        if (!value["IgnoreFailedPage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateReconstructDocumentFlowConfig.IgnoreFailedPage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreFailedPage = value["IgnoreFailedPage"].GetBool();
+        m_ignoreFailedPageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CreateReconstructDocumentFlowConfig::ToJsonObject(rapidjson::Value &value, 
         string key = "ResultType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreFailedPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreFailedPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreFailedPage, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CreateReconstructDocumentFlowConfig::SetResultType(const string& _resultTyp
 bool CreateReconstructDocumentFlowConfig::ResultTypeHasBeenSet() const
 {
     return m_resultTypeHasBeenSet;
+}
+
+bool CreateReconstructDocumentFlowConfig::GetIgnoreFailedPage() const
+{
+    return m_ignoreFailedPage;
+}
+
+void CreateReconstructDocumentFlowConfig::SetIgnoreFailedPage(const bool& _ignoreFailedPage)
+{
+    m_ignoreFailedPage = _ignoreFailedPage;
+    m_ignoreFailedPageHasBeenSet = true;
+}
+
+bool CreateReconstructDocumentFlowConfig::IgnoreFailedPageHasBeenSet() const
+{
+    return m_ignoreFailedPageHasBeenSet;
 }
 

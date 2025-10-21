@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
 
 
 namespace TencentCloud
@@ -189,6 +190,27 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取视频摘要配置参数，不传则不修改
+                     * @return SummaryConfig 视频摘要配置参数，不传则不修改
+                     * 
+                     */
+                    VisionSummaryConfig GetSummaryConfig() const;
+
+                    /**
+                     * 设置视频摘要配置参数，不传则不修改
+                     * @param _summaryConfig 视频摘要配置参数，不传则不修改
+                     * 
+                     */
+                    void SetSummaryConfig(const VisionSummaryConfig& _summaryConfig);
+
+                    /**
+                     * 判断参数 SummaryConfig 是否已赋值
+                     * @return SummaryConfig 是否已赋值
+                     * 
+                     */
+                    bool SummaryConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 视频摘要配置参数，不传则不修改
+                     */
+                    VisionSummaryConfig m_summaryConfig;
+                    bool m_summaryConfigHasBeenSet;
 
                 };
             }

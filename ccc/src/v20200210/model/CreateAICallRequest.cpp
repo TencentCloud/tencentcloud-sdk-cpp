@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,11 @@ CreateAICallRequest::CreateAICallRequest() :
     m_vadSilenceTimeHasBeenSet(false),
     m_extractConfigHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_topPHasBeenSet(false),
+    m_vadLevelHasBeenSet(false),
+    m_toneWordHasBeenSet(false),
+    m_enableComplianceAudioHasBeenSet(false)
 {
 }
 
@@ -330,6 +334,39 @@ string CreateAICallRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_topP, allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vadLevel, allocator);
+    }
+
+    if (m_toneWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToneWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_toneWord.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableComplianceAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableComplianceAudio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableComplianceAudio, allocator);
     }
 
 
@@ -802,6 +839,70 @@ void CreateAICallRequest::SetVariables(const vector<Variable>& _variables)
 bool CreateAICallRequest::VariablesHasBeenSet() const
 {
     return m_variablesHasBeenSet;
+}
+
+double CreateAICallRequest::GetTopP() const
+{
+    return m_topP;
+}
+
+void CreateAICallRequest::SetTopP(const double& _topP)
+{
+    m_topP = _topP;
+    m_topPHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TopPHasBeenSet() const
+{
+    return m_topPHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void CreateAICallRequest::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
+}
+
+ToneWordInfo CreateAICallRequest::GetToneWord() const
+{
+    return m_toneWord;
+}
+
+void CreateAICallRequest::SetToneWord(const ToneWordInfo& _toneWord)
+{
+    m_toneWord = _toneWord;
+    m_toneWordHasBeenSet = true;
+}
+
+bool CreateAICallRequest::ToneWordHasBeenSet() const
+{
+    return m_toneWordHasBeenSet;
+}
+
+bool CreateAICallRequest::GetEnableComplianceAudio() const
+{
+    return m_enableComplianceAudio;
+}
+
+void CreateAICallRequest::SetEnableComplianceAudio(const bool& _enableComplianceAudio)
+{
+    m_enableComplianceAudio = _enableComplianceAudio;
+    m_enableComplianceAudioHasBeenSet = true;
+}
+
+bool CreateAICallRequest::EnableComplianceAudioHasBeenSet() const
+{
+    return m_enableComplianceAudioHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流批次ID
-                     * @return Result 工作流批次ID
+                     * 获取操作成功返回工作流批次ID，操作失败返回空字符串。
+                     * @return Result 操作成功返回工作流批次ID，操作失败返回空字符串。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流批次ID
+                     * 操作成功返回工作流批次ID，操作失败返回空字符串。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

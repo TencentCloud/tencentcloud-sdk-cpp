@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,10 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_groupConfigHasBeenSet(false),
+    m_engineParamHasBeenSet(false)
 {
 }
 
@@ -306,6 +309,43 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupConfig") && !value["GroupConfig"].IsNull())
+    {
+        if (!value["GroupConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.GroupConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_groupConfig.Deserialize(value["GroupConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_groupConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineParam") && !value["EngineParam"].IsNull())
+    {
+        if (!value["EngineParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.EngineParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineParam = string(value["EngineParam"].GetString());
+        m_engineParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +555,31 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_groupConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_engineParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -902,5 +967,53 @@ void RuleGroupExecStrategy::SetDescription(const string& _description)
 bool RuleGroupExecStrategy::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void RuleGroupExecStrategy::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+RuleGroupConfig RuleGroupExecStrategy::GetGroupConfig() const
+{
+    return m_groupConfig;
+}
+
+void RuleGroupExecStrategy::SetGroupConfig(const RuleGroupConfig& _groupConfig)
+{
+    m_groupConfig = _groupConfig;
+    m_groupConfigHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::GroupConfigHasBeenSet() const
+{
+    return m_groupConfigHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetEngineParam() const
+{
+    return m_engineParam;
+}
+
+void RuleGroupExecStrategy::SetEngineParam(const string& _engineParam)
+{
+    m_engineParam = _engineParam;
+    m_engineParamHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::EngineParamHasBeenSet() const
+{
+    return m_engineParamHasBeenSet;
 }
 

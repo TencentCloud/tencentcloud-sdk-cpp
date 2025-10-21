@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/WorkflowRunNodeInfo.h>
+#include <tencentcloud/lke/v20231130/model/OptionCardIndex.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,48 @@ namespace TencentCloud
                      */
                     bool WorkflowReleaseTimeHasBeenSet() const;
 
+                    /**
+                     * 获取中间消息
+                     * @return PendingMessages 中间消息
+                     * 
+                     */
+                    std::vector<std::string> GetPendingMessages() const;
+
+                    /**
+                     * 设置中间消息
+                     * @param _pendingMessages 中间消息
+                     * 
+                     */
+                    void SetPendingMessages(const std::vector<std::string>& _pendingMessages);
+
+                    /**
+                     * 判断参数 PendingMessages 是否已赋值
+                     * @return PendingMessages 是否已赋值
+                     * 
+                     */
+                    bool PendingMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取选项卡索引
+                     * @return OptionCardIndex 选项卡索引
+                     * 
+                     */
+                    OptionCardIndex GetOptionCardIndex() const;
+
+                    /**
+                     * 设置选项卡索引
+                     * @param _optionCardIndex 选项卡索引
+                     * 
+                     */
+                    void SetOptionCardIndex(const OptionCardIndex& _optionCardIndex);
+
+                    /**
+                     * 判断参数 OptionCardIndex 是否已赋值
+                     * @return OptionCardIndex 是否已赋值
+                     * 
+                     */
+                    bool OptionCardIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +315,18 @@ namespace TencentCloud
                      */
                     std::string m_workflowReleaseTime;
                     bool m_workflowReleaseTimeHasBeenSet;
+
+                    /**
+                     * 中间消息
+                     */
+                    std::vector<std::string> m_pendingMessages;
+                    bool m_pendingMessagesHasBeenSet;
+
+                    /**
+                     * 选项卡索引
+                     */
+                    OptionCardIndex m_optionCardIndex;
+                    bool m_optionCardIndexHasBeenSet;
 
                 };
             }

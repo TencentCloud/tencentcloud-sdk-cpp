@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeRabbitMQVipInstanceResponse::DescribeRabbitMQVipInstanceResponse() :
     m_clusterWhiteListInfoHasBeenSet(false),
     m_virtualHostQuotaHasBeenSet(false),
     m_exchangeQuotaHasBeenSet(false),
-    m_queueQuotaHasBeenSet(false)
+    m_queueQuotaHasBeenSet(false),
+    m_userQuotaHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,23 @@ CoreInternalOutcome DescribeRabbitMQVipInstanceResponse::Deserialize(const strin
         m_queueQuotaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserQuota") && !rsp["UserQuota"].IsNull())
+    {
+        if (!rsp["UserQuota"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserQuota` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_userQuota.Deserialize(rsp["UserQuota"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_userQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,11 +278,20 @@ string DescribeRabbitMQVipInstanceResponse::ToJsonString() const
         m_queueQuota.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_userQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userQuota.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -340,6 +367,16 @@ QueueQuota DescribeRabbitMQVipInstanceResponse::GetQueueQuota() const
 bool DescribeRabbitMQVipInstanceResponse::QueueQuotaHasBeenSet() const
 {
     return m_queueQuotaHasBeenSet;
+}
+
+RabbitMQUserQuota DescribeRabbitMQVipInstanceResponse::GetUserQuota() const
+{
+    return m_userQuota;
+}
+
+bool DescribeRabbitMQVipInstanceResponse::UserQuotaHasBeenSet() const
+{
+    return m_userQuotaHasBeenSet;
 }
 
 

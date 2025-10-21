@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,15 +148,39 @@ namespace TencentCloud
                     bool CommandListHasBeenSet() const;
 
                     /**
-                     * 获取监控指标，以逗号分隔
-                     * @return Metric 监控指标，以逗号分隔
+                     * 获取监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔
+其中：
+qps          - 每秒查询率  
+latency_p99  - 99分位延迟  
+latency_avg  - 平均延迟  
+latency_max  - 最大延迟  
+
+                     * @return Metric 监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔
+其中：
+qps          - 每秒查询率  
+latency_p99  - 99分位延迟  
+latency_avg  - 平均延迟  
+latency_max  - 最大延迟  
+
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置监控指标，以逗号分隔
-                     * @param _metric 监控指标，以逗号分隔
+                     * 设置监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔
+其中：
+qps          - 每秒查询率  
+latency_p99  - 99分位延迟  
+latency_avg  - 平均延迟  
+latency_max  - 最大延迟  
+
+                     * @param _metric 监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔
+其中：
+qps          - 每秒查询率  
+latency_p99  - 99分位延迟  
+latency_avg  - 平均延迟  
+latency_max  - 最大延迟  
+
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -169,15 +193,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
-                     * @return Period 监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
+                     * 获取Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
+                     * @return Period Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
-                     * @param _period 监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
+                     * 设置Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
+                     * @param _period Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -192,7 +216,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -222,13 +246,19 @@ namespace TencentCloud
                     bool m_commandListHasBeenSet;
 
                     /**
-                     * 监控指标，以逗号分隔
+                     * 监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔
+其中：
+qps          - 每秒查询率  
+latency_p99  - 99分位延迟  
+latency_avg  - 平均延迟  
+latency_max  - 最大延迟  
+
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
+                     * Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2183,6 +2183,49 @@ MongodbClient::SetBackupRulesOutcomeCallable MongodbClient::SetBackupRulesCallab
         [this, request]()
         {
             return this->SetBackupRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::SetDBInstanceDeletionProtectionOutcome MongodbClient::SetDBInstanceDeletionProtection(const SetDBInstanceDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDBInstanceDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDBInstanceDeletionProtectionResponse rsp = SetDBInstanceDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDBInstanceDeletionProtectionOutcome(rsp);
+        else
+            return SetDBInstanceDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDBInstanceDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetDBInstanceDeletionProtectionAsync(const SetDBInstanceDeletionProtectionRequest& request, const SetDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetDBInstanceDeletionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::SetDBInstanceDeletionProtectionOutcomeCallable MongodbClient::SetDBInstanceDeletionProtectionCallable(const SetDBInstanceDeletionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetDBInstanceDeletionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->SetDBInstanceDeletionProtection(request);
         }
     );
 

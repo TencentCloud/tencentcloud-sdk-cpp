@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳, 单位为秒
-                     * @return StartTime 开始时间戳, 单位为秒
+                     * 获取开始时间戳, 单位为秒(废弃)
+                     * @return StartTime 开始时间戳, 单位为秒(废弃)
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间戳, 单位为秒
-                     * @param _startTime 开始时间戳, 单位为秒
+                     * 设置开始时间戳, 单位为秒(废弃)
+                     * @param _startTime 开始时间戳, 单位为秒(废弃)
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳, 单位为秒
-                     * @return EndTime 结束时间戳, 单位为秒
+                     * 获取结束时间戳, 单位为秒(废弃)
+                     * @return EndTime 结束时间戳, 单位为秒(废弃)
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间戳, 单位为秒
-                     * @param _endTime 结束时间戳, 单位为秒
+                     * 设置结束时间戳, 单位为秒(废弃)
+                     * @param _endTime 结束时间戳, 单位为秒(废弃)
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -189,6 +189,69 @@ namespace TencentCloud
                      */
                     bool AppTypeHasBeenSet() const;
 
+                    /**
+                     * 获取筛选子场景
+                     * @return SubScenes 筛选子场景
+                     * 
+                     */
+                    std::vector<std::string> GetSubScenes() const;
+
+                    /**
+                     * 设置筛选子场景
+                     * @param _subScenes 筛选子场景
+                     * 
+                     */
+                    void SetSubScenes(const std::vector<std::string>& _subScenes);
+
+                    /**
+                     * 判断参数 SubScenes 是否已赋值
+                     * @return SubScenes 是否已赋值
+                     * 
+                     */
+                    bool SubScenesHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间戳, 单位为秒
+                     * @return StatStartTime 开始时间戳, 单位为秒
+                     * 
+                     */
+                    int64_t GetStatStartTime() const;
+
+                    /**
+                     * 设置开始时间戳, 单位为秒
+                     * @param _statStartTime 开始时间戳, 单位为秒
+                     * 
+                     */
+                    void SetStatStartTime(const int64_t& _statStartTime);
+
+                    /**
+                     * 判断参数 StatStartTime 是否已赋值
+                     * @return StatStartTime 是否已赋值
+                     * 
+                     */
+                    bool StatStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间戳, 单位为秒
+                     * @return StatEndTime 结束时间戳, 单位为秒
+                     * 
+                     */
+                    int64_t GetStatEndTime() const;
+
+                    /**
+                     * 设置结束时间戳, 单位为秒
+                     * @param _statEndTime 结束时间戳, 单位为秒
+                     * 
+                     */
+                    void SetStatEndTime(const int64_t& _statEndTime);
+
+                    /**
+                     * 判断参数 StatEndTime 是否已赋值
+                     * @return StatEndTime 是否已赋值
+                     * 
+                     */
+                    bool StatEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,13 +273,13 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 开始时间戳, 单位为秒
+                     * 开始时间戳, 单位为秒(废弃)
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳, 单位为秒
+                     * 结束时间戳, 单位为秒(废弃)
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -232,6 +295,24 @@ namespace TencentCloud
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
+
+                    /**
+                     * 筛选子场景
+                     */
+                    std::vector<std::string> m_subScenes;
+                    bool m_subScenesHasBeenSet;
+
+                    /**
+                     * 开始时间戳, 单位为秒
+                     */
+                    int64_t m_statStartTime;
+                    bool m_statStartTimeHasBeenSet;
+
+                    /**
+                     * 结束时间戳, 单位为秒
+                     */
+                    int64_t m_statEndTime;
+                    bool m_statEndTimeHasBeenSet;
 
                 };
             }

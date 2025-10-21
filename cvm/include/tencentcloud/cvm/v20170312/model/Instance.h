@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@
 #include <tencentcloud/cvm/v20170312/model/LoginSettings.h>
 #include <tencentcloud/cvm/v20170312/model/Tag.h>
 #include <tencentcloud/cvm/v20170312/model/GPUInfo.h>
+#include <tencentcloud/cvm/v20170312/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -955,6 +956,48 @@ namespace TencentCloud
                      */
                     bool LatestOperationErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * @return Metadata 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * @param _metadata 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
+                    /**
+                     * 获取实例绑定的公网IPv6地址。
+                     * @return PublicIPv6Addresses 实例绑定的公网IPv6地址。
+                     * 
+                     */
+                    std::vector<std::string> GetPublicIPv6Addresses() const;
+
+                    /**
+                     * 设置实例绑定的公网IPv6地址。
+                     * @param _publicIPv6Addresses 实例绑定的公网IPv6地址。
+                     * 
+                     */
+                    void SetPublicIPv6Addresses(const std::vector<std::string>& _publicIPv6Addresses);
+
+                    /**
+                     * 判断参数 PublicIPv6Addresses 是否已赋值
+                     * @return PublicIPv6Addresses 是否已赋值
+                     * 
+                     */
+                    bool PublicIPv6AddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1212,6 +1255,18 @@ namespace TencentCloud
                      */
                     std::string m_latestOperationErrorMsg;
                     bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * 自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
+
+                    /**
+                     * 实例绑定的公网IPv6地址。
+                     */
+                    std::vector<std::string> m_publicIPv6Addresses;
+                    bool m_publicIPv6AddressesHasBeenSet;
 
                 };
             }

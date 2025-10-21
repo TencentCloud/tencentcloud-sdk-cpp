@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集名字，不能重名
-                     * @return LogsetName 日志集名字，不能重名
+                     * 获取日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
+                     * @return LogsetName 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置日志集名字，不能重名
-                     * @param _logsetName 日志集名字，不能重名
+                     * 设置日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
+                     * @param _logsetName 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -86,15 +94,31 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid
-                     * @return LogsetId 日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid
+                     * 获取日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。
+
+- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。
+- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。
+- 如果指定该字段，需保证全地域唯一
+                     * @return LogsetId 日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。
+
+- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。
+- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。
+- 如果指定该字段，需保证全地域唯一
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid
-                     * @param _logsetId 日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid
+                     * 设置日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。
+
+- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。
+- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。
+- 如果指定该字段，需保证全地域唯一
+                     * @param _logsetId 日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。
+
+- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。
+- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。
+- 如果指定该字段，需保证全地域唯一
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -109,7 +133,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集名字，不能重名
+                     * 日志集名字。
+
+- 最大支持255个字符。不支持`|`字符。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
@@ -121,7 +147,11 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid
+                     * 日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。
+
+- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。
+- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。
+- 如果指定该字段，需保证全地域唯一
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;

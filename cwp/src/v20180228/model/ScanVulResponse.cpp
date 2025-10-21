@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ScanVulResponse::ScanVulResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_basicVersionCountHasBeenSet(false),
+    m_successCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome ScanVulResponse::Deserialize(const string &payload)
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BasicVersionCount") && !rsp["BasicVersionCount"].IsNull())
+    {
+        if (!rsp["BasicVersionCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BasicVersionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicVersionCount = rsp["BasicVersionCount"].GetUint64();
+        m_basicVersionCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetUint64();
+        m_successCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -90,11 +112,27 @@ string ScanVulResponse::ToJsonString() const
         value.AddMember(iKey, m_taskId, allocator);
     }
 
+    if (m_basicVersionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicVersionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicVersionCount, allocator);
+    }
+
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -110,6 +148,26 @@ uint64_t ScanVulResponse::GetTaskId() const
 bool ScanVulResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+uint64_t ScanVulResponse::GetBasicVersionCount() const
+{
+    return m_basicVersionCount;
+}
+
+bool ScanVulResponse::BasicVersionCountHasBeenSet() const
+{
+    return m_basicVersionCountHasBeenSet;
+}
+
+uint64_t ScanVulResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool ScanVulResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
 }
 
 

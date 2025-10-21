@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -206,15 +206,15 @@ namespace TencentCloud
                     bool ErrMsgHasBeenSet() const;
 
                     /**
-                     * 获取文件生成进度。
-                     * @return Progress 文件生成进度。
+                     * 获取文件生成进度。（单位：%）
+                     * @return Progress 文件生成进度。（单位：%）
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置文件生成进度。
-                     * @param _progress 文件生成进度。
+                     * 设置文件生成进度。（单位：%）
+                     * @param _progress 文件生成进度。（单位：%）
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -227,15 +227,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取文件生成成功时间。
-                     * @return FinishTime 文件生成成功时间。
+                     * 获取文件生成成功时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return FinishTime 文件生成成功时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置文件生成成功时间。
-                     * @param _finishTime 文件生成成功时间。
+                     * 设置文件生成成功时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _finishTime 文件生成成功时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -295,13 +295,13 @@ namespace TencentCloud
                     bool m_errMsgHasBeenSet;
 
                     /**
-                     * 文件生成进度。
+                     * 文件生成进度。（单位：%）
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 文件生成成功时间。
+                     * 文件生成成功时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -454,6 +454,27 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
+                     * 获取qgpu开关
+                     * @return QGPUEnable qgpu开关
+                     * 
+                     */
+                    bool GetQGPUEnable() const;
+
+                    /**
+                     * 设置qgpu开关
+                     * @param _qGPUEnable qgpu开关
+                     * 
+                     */
+                    void SetQGPUEnable(const bool& _qGPUEnable);
+
+                    /**
+                     * 判断参数 QGPUEnable 是否已赋值
+                     * @return QGPUEnable 是否已赋值
+                     * 
+                     */
+                    bool QGPUEnableHasBeenSet() const;
+
+                    /**
                      * 获取节点池ssh公钥id数组
                      * @return KeyIds 节点池ssh公钥id数组
                      * 
@@ -494,6 +515,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取原生节点池安装节点自动化助手开关
+                     * @return AutomationService 原生节点池安装节点自动化助手开关
+                     * 
+                     */
+                    bool GetAutomationService() const;
+
+                    /**
+                     * 设置原生节点池安装节点自动化助手开关
+                     * @param _automationService 原生节点池安装节点自动化助手开关
+                     * 
+                     */
+                    void SetAutomationService(const bool& _automationService);
+
+                    /**
+                     * 判断参数 AutomationService 是否已赋值
+                     * @return AutomationService 是否已赋值
+                     * 
+                     */
+                    bool AutomationServiceHasBeenSet() const;
 
                 private:
 
@@ -612,6 +654,12 @@ namespace TencentCloud
                     bool m_dataDisksHasBeenSet;
 
                     /**
+                     * qgpu开关
+                     */
+                    bool m_qGPUEnable;
+                    bool m_qGPUEnableHasBeenSet;
+
+                    /**
                      * 节点池ssh公钥id数组
                      */
                     std::vector<std::string> m_keyIds;
@@ -622,6 +670,12 @@ namespace TencentCloud
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 原生节点池安装节点自动化助手开关
+                     */
+                    bool m_automationService;
+                    bool m_automationServiceHasBeenSet;
 
                 };
             }

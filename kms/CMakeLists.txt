@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxServiceStatusResponse.h
-  include/tencentcloud/kms/v20190118/model/Key.h
+  include/tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h
   include/tencentcloud/kms/v20190118/model/ScheduleDataKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h
@@ -129,7 +129,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignRequest.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptRequest.h
-  include/tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h
+  include/tencentcloud/kms/v20190118/model/DestinationSyncConfig.h
   include/tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeysRequest.h
   include/tencentcloud/kms/v20190118/model/DisableWhiteBoxKeyRequest.h
@@ -144,6 +144,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoEncryptResponse.h
   include/tencentcloud/kms/v20190118/model/EncryptByWhiteBoxRequest.h
   include/tencentcloud/kms/v20190118/model/GenerateRandomRequest.h
+  include/tencentcloud/kms/v20190118/model/Key.h
   include/tencentcloud/kms/v20190118/model/DisableDataKeysResponse.h
   include/tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h
   include/tencentcloud/kms/v20190118/model/CancelDataKeyDeletionRequest.h
@@ -190,7 +191,7 @@ set(kms_src
   src/v20190118/model/DescribeWhiteBoxKeyResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionResponse.cpp
   src/v20190118/model/DescribeWhiteBoxServiceStatusResponse.cpp
-  src/v20190118/model/Key.cpp
+  src/v20190118/model/AsymmetricRsaDecryptResponse.cpp
   src/v20190118/model/ScheduleDataKeyDeletionResponse.cpp
   src/v20190118/model/EnableKeyRequest.cpp
   src/v20190118/model/GetKeyRotationStatusRequest.cpp
@@ -279,7 +280,7 @@ set(kms_src
   src/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.cpp
   src/v20190118/model/PostQuantumCryptoSignRequest.cpp
   src/v20190118/model/PostQuantumCryptoDecryptRequest.cpp
-  src/v20190118/model/AsymmetricRsaDecryptResponse.cpp
+  src/v20190118/model/DestinationSyncConfig.cpp
   src/v20190118/model/CancelKeyDeletionResponse.cpp
   src/v20190118/model/DisableKeysRequest.cpp
   src/v20190118/model/DisableWhiteBoxKeyRequest.cpp
@@ -294,6 +295,7 @@ set(kms_src
   src/v20190118/model/PostQuantumCryptoEncryptResponse.cpp
   src/v20190118/model/EncryptByWhiteBoxRequest.cpp
   src/v20190118/model/GenerateRandomRequest.cpp
+  src/v20190118/model/Key.cpp
   src/v20190118/model/DisableDataKeysResponse.cpp
   src/v20190118/model/ScheduleKeyDeletionRequest.cpp
   src/v20190118/model/CancelDataKeyDeletionRequest.cpp

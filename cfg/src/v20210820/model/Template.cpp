@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ Template::Template() :
     m_templateSourceHasBeenSet(false),
     m_apmServiceListHasBeenSet(false),
     m_alarmPolicyHasBeenSet(false),
-    m_policyDealTypeHasBeenSet(false)
+    m_policyDealTypeHasBeenSet(false),
+    m_templateScenarioHasBeenSet(false),
+    m_templatePurposeHasBeenSet(false)
 {
 }
 
@@ -288,6 +290,46 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_policyDealTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateScenario") && !value["TemplateScenario"].IsNull())
+    {
+        if (!value["TemplateScenario"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Template.TemplateScenario` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TemplateScenario"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_templateScenario.push_back(item);
+        }
+        m_templateScenarioHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplatePurpose") && !value["TemplatePurpose"].IsNull())
+    {
+        if (!value["TemplatePurpose"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Template.TemplatePurpose` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TemplatePurpose"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_templatePurpose.push_back(item);
+        }
+        m_templatePurposeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +521,36 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PolicyDealType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyDealType, allocator);
+    }
+
+    if (m_templateScenarioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateScenario";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_templateScenario.begin(); itr != m_templateScenario.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_templatePurposeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplatePurpose";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_templatePurpose.begin(); itr != m_templatePurpose.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -786,5 +858,37 @@ void Template::SetPolicyDealType(const int64_t& _policyDealType)
 bool Template::PolicyDealTypeHasBeenSet() const
 {
     return m_policyDealTypeHasBeenSet;
+}
+
+vector<TaskTarget> Template::GetTemplateScenario() const
+{
+    return m_templateScenario;
+}
+
+void Template::SetTemplateScenario(const vector<TaskTarget>& _templateScenario)
+{
+    m_templateScenario = _templateScenario;
+    m_templateScenarioHasBeenSet = true;
+}
+
+bool Template::TemplateScenarioHasBeenSet() const
+{
+    return m_templateScenarioHasBeenSet;
+}
+
+vector<TaskTarget> Template::GetTemplatePurpose() const
+{
+    return m_templatePurpose;
+}
+
+void Template::SetTemplatePurpose(const vector<TaskTarget>& _templatePurpose)
+{
+    m_templatePurpose = _templatePurpose;
+    m_templatePurposeHasBeenSet = true;
+}
+
+bool Template::TemplatePurposeHasBeenSet() const
+{
+    return m_templatePurposeHasBeenSet;
 }
 

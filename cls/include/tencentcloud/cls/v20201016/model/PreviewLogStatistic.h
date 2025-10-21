@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,19 @@ namespace TencentCloud
                     bool LineNumHasBeenSet() const;
 
                     /**
-                     * 获取目标日志主题
-                     * @return DstTopicId 目标日志主题
+                     * 获取目标日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return DstTopicId 目标日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetDstTopicId() const;
 
                     /**
-                     * 设置目标日志主题
-                     * @param _dstTopicId 目标日志主题
+                     * 设置目标日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _dstTopicId 目标日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetDstTopicId(const std::string& _dstTopicId);
@@ -203,7 +207,8 @@ namespace TencentCloud
                     bool m_lineNumHasBeenSet;
 
                     /**
-                     * 目标日志主题
+                     * 目标日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_dstTopicId;
                     bool m_dstTopicIdHasBeenSet;

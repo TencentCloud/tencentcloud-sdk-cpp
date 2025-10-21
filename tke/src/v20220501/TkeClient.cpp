@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -592,6 +592,49 @@ TkeClient::RebootMachinesOutcomeCallable TkeClient::RebootMachinesCallable(const
         [this, request]()
         {
             return this->RebootMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::SetMachineLoginOutcome TkeClient::SetMachineLogin(const SetMachineLoginRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetMachineLogin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetMachineLoginResponse rsp = SetMachineLoginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetMachineLoginOutcome(rsp);
+        else
+            return SetMachineLoginOutcome(o.GetError());
+    }
+    else
+    {
+        return SetMachineLoginOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::SetMachineLoginAsync(const SetMachineLoginRequest& request, const SetMachineLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetMachineLogin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::SetMachineLoginOutcomeCallable TkeClient::SetMachineLoginCallable(const SetMachineLoginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetMachineLoginOutcome()>>(
+        [this, request]()
+        {
+            return this->SetMachineLogin(request);
         }
     );
 

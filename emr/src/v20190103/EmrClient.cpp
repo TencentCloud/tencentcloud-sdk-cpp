@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,6 +205,49 @@ EmrClient::AttachDisksOutcomeCallable EmrClient::AttachDisksCallable(const Attac
         [this, request]()
         {
             return this->AttachDisks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ConvertPreToPostClusterOutcome EmrClient::ConvertPreToPostCluster(const ConvertPreToPostClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConvertPreToPostCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConvertPreToPostClusterResponse rsp = ConvertPreToPostClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConvertPreToPostClusterOutcome(rsp);
+        else
+            return ConvertPreToPostClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ConvertPreToPostClusterOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ConvertPreToPostClusterAsync(const ConvertPreToPostClusterRequest& request, const ConvertPreToPostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConvertPreToPostCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ConvertPreToPostClusterOutcomeCallable EmrClient::ConvertPreToPostClusterCallable(const ConvertPreToPostClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConvertPreToPostClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->ConvertPreToPostCluster(request);
         }
     );
 
@@ -1674,6 +1717,49 @@ EmrClient::DescribeNodeResourceConfigFastOutcomeCallable EmrClient::DescribeNode
     return task->get_future();
 }
 
+EmrClient::DescribeNodeSpecOutcome EmrClient::DescribeNodeSpec(const DescribeNodeSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeSpecResponse rsp = DescribeNodeSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeSpecOutcome(rsp);
+        else
+            return DescribeNodeSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeSpecOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeNodeSpecAsync(const DescribeNodeSpecRequest& request, const DescribeNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodeSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeNodeSpecOutcomeCallable EmrClient::DescribeNodeSpecCallable(const DescribeNodeSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodeSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodeSpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeResourceScheduleOutcome EmrClient::DescribeResourceSchedule(const DescribeResourceScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceSchedule");
@@ -1839,6 +1925,49 @@ EmrClient::DescribeSLInstanceListOutcomeCallable EmrClient::DescribeSLInstanceLi
         [this, request]()
         {
             return this->DescribeSLInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeServiceConfGroupInfosOutcome EmrClient::DescribeServiceConfGroupInfos(const DescribeServiceConfGroupInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceConfGroupInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceConfGroupInfosResponse rsp = DescribeServiceConfGroupInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceConfGroupInfosOutcome(rsp);
+        else
+            return DescribeServiceConfGroupInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceConfGroupInfosOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeServiceConfGroupInfosAsync(const DescribeServiceConfGroupInfosRequest& request, const DescribeServiceConfGroupInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceConfGroupInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeServiceConfGroupInfosOutcomeCallable EmrClient::DescribeServiceConfGroupInfosCallable(const DescribeServiceConfGroupInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceConfGroupInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceConfGroupInfos(request);
         }
     );
 

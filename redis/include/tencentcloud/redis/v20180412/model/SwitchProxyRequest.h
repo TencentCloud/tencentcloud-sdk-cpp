@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProxyIDHasBeenSet() const;
 
+                    /**
+                     * 获取实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。
+                     * @return ProxyIDList 实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。
+                     * 
+                     */
+                    std::vector<std::string> GetProxyIDList() const;
+
+                    /**
+                     * 设置实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。
+                     * @param _proxyIDList 实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。
+                     * 
+                     */
+                    void SetProxyIDList(const std::vector<std::string>& _proxyIDList);
+
+                    /**
+                     * 判断参数 ProxyIDList 是否已赋值
+                     * @return ProxyIDList 是否已赋值
+                     * 
+                     */
+                    bool ProxyIDListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_proxyID;
                     bool m_proxyIDHasBeenSet;
+
+                    /**
+                     * 实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。
+                     */
+                    std::vector<std::string> m_proxyIDList;
+                    bool m_proxyIDListHasBeenSet;
 
                 };
             }

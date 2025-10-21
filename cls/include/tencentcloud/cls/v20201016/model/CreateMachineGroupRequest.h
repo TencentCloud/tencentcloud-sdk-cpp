@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器组名字，不能重复
-                     * @return GroupName 机器组名字，不能重复
+                     * 获取机器组名字。
+输入限制：
+- 最大支持255个字符，不能为空字符串
+- 不能包含字符'|'
+                     * @return GroupName 机器组名字。
+输入限制：
+- 最大支持255个字符，不能为空字符串
+- 不能包含字符'|'
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置机器组名字，不能重复
-                     * @param _groupName 机器组名字，不能重复
+                     * 设置机器组名字。
+输入限制：
+- 最大支持255个字符，不能为空字符串
+- 不能包含字符'|'
+                     * @param _groupName 机器组名字。
+输入限制：
+- 最大支持255个字符，不能为空字符串
+- 不能包含字符'|'
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -139,14 +151,18 @@ namespace TencentCloud
 
                     /**
                      * 获取升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateStartTime() const;
 
                     /**
                      * 设置升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateStartTime(const std::string& _updateStartTime);
@@ -160,14 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 获取升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateEndTime() const;
 
                     /**
                      * 设置升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateEndTime(const std::string& _updateEndTime);
@@ -202,14 +222,22 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组中机器离线清理时间。单位：天
+
+- 大于0时生效。
                      * @return DelayCleanupTime 机器组中机器离线清理时间。单位：天
+
+- 大于0时生效。
                      * 
                      */
                     int64_t GetDelayCleanupTime() const;
 
                     /**
                      * 设置机器组中机器离线清理时间。单位：天
+
+- 大于0时生效。
                      * @param _delayCleanupTime 机器组中机器离线清理时间。单位：天
+
+- 大于0时生效。
                      * 
                      */
                     void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
@@ -274,7 +302,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器组名字，不能重复
+                     * 机器组名字。
+输入限制：
+- 最大支持255个字符，不能为空字符串
+- 不能包含字符'|'
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
@@ -301,12 +332,14 @@ namespace TencentCloud
 
                     /**
                      * 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateStartTime;
                     bool m_updateStartTimeHasBeenSet;
 
                     /**
                      * 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateEndTime;
                     bool m_updateEndTimeHasBeenSet;
@@ -319,6 +352,8 @@ namespace TencentCloud
 
                     /**
                      * 机器组中机器离线清理时间。单位：天
+
+- 大于0时生效。
                      */
                     int64_t m_delayCleanupTime;
                     bool m_delayCleanupTimeHasBeenSet;

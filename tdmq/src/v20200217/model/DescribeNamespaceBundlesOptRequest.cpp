@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ DescribeNamespaceBundlesOptRequest::DescribeNamespaceBundlesOptRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_bundleHasBeenSet(false),
-    m_ownerBrokerHasBeenSet(false)
+    m_ownerBrokerHasBeenSet(false),
+    m_tenantHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeNamespaceBundlesOptRequest::ToJsonString() const
         string key = "OwnerBroker";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ownerBroker.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tenant";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeNamespaceBundlesOptRequest::SetOwnerBroker(const string& _ownerBrok
 bool DescribeNamespaceBundlesOptRequest::OwnerBrokerHasBeenSet() const
 {
     return m_ownerBrokerHasBeenSet;
+}
+
+string DescribeNamespaceBundlesOptRequest::GetTenant() const
+{
+    return m_tenant;
+}
+
+void DescribeNamespaceBundlesOptRequest::SetTenant(const string& _tenant)
+{
+    m_tenant = _tenant;
+    m_tenantHasBeenSet = true;
+}
+
+bool DescribeNamespaceBundlesOptRequest::TenantHasBeenSet() const
+{
+    return m_tenantHasBeenSet;
 }
 
 

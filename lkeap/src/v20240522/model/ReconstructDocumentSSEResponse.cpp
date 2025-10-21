@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ ReconstructDocumentSSEResponse::ReconstructDocumentSSEResponse() :
     m_progressHasBeenSet(false),
     m_progressMessageHasBeenSet(false),
     m_documentRecognizeResultUrlHasBeenSet(false),
-    m_failedPagesHasBeenSet(false)
+    m_failedPagesHasBeenSet(false),
+    m_failPageNumHasBeenSet(false),
+    m_successPageNumHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,26 @@ CoreInternalOutcome ReconstructDocumentSSEResponse::Deserialize(const string &pa
         m_failedPagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FailPageNum") && !rsp["FailPageNum"].IsNull())
+    {
+        if (!rsp["FailPageNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailPageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failPageNum = rsp["FailPageNum"].GetInt64();
+        m_failPageNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessPageNum") && !rsp["SuccessPageNum"].IsNull())
+    {
+        if (!rsp["SuccessPageNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessPageNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successPageNum = rsp["SuccessPageNum"].GetInt64();
+        m_successPageNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,11 +224,27 @@ string ReconstructDocumentSSEResponse::ToJsonString() const
         }
     }
 
+    if (m_failPageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailPageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failPageNum, allocator);
+    }
+
+    if (m_successPageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessPageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successPageNum, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -272,6 +310,26 @@ vector<ReconstructDocumentFailedPage> ReconstructDocumentSSEResponse::GetFailedP
 bool ReconstructDocumentSSEResponse::FailedPagesHasBeenSet() const
 {
     return m_failedPagesHasBeenSet;
+}
+
+int64_t ReconstructDocumentSSEResponse::GetFailPageNum() const
+{
+    return m_failPageNum;
+}
+
+bool ReconstructDocumentSSEResponse::FailPageNumHasBeenSet() const
+{
+    return m_failPageNumHasBeenSet;
+}
+
+int64_t ReconstructDocumentSSEResponse::GetSuccessPageNum() const
+{
+    return m_successPageNum;
+}
+
+bool ReconstructDocumentSSEResponse::SuccessPageNumHasBeenSet() const
+{
+    return m_successPageNumHasBeenSet;
 }
 
 

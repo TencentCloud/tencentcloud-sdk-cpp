@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ DescribeNativeGatewayServiceSourcesRequest::DescribeNativeGatewayServiceSourcesR
     m_gatewayIDHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_sourceIDHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_sourceTypesHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
@@ -62,6 +63,14 @@ string DescribeNativeGatewayServiceSourcesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_sourceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceNameHasBeenSet)
@@ -155,6 +164,22 @@ void DescribeNativeGatewayServiceSourcesRequest::SetOffset(const uint64_t& _offs
 bool DescribeNativeGatewayServiceSourcesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeNativeGatewayServiceSourcesRequest::GetSourceID() const
+{
+    return m_sourceID;
+}
+
+void DescribeNativeGatewayServiceSourcesRequest::SetSourceID(const string& _sourceID)
+{
+    m_sourceID = _sourceID;
+    m_sourceIDHasBeenSet = true;
+}
+
+bool DescribeNativeGatewayServiceSourcesRequest::SourceIDHasBeenSet() const
+{
+    return m_sourceIDHasBeenSet;
 }
 
 string DescribeNativeGatewayServiceSourcesRequest::GetSourceName() const

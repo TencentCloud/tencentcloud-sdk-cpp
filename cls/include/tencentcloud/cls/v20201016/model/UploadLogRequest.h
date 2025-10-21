@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题id
-                     * @return TopicId 主题id
+                     * 获取日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return TopicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置主题id
-                     * @param _topicId 主题id
+                     * 设置日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _topicId 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -85,15 +89,23 @@ namespace TencentCloud
                     bool HashKeyHasBeenSet() const;
 
                     /**
-                     * 获取压缩方法
-                     * @return CompressType 压缩方法
+                     * 获取压缩方法，目前支持
+- lz4
+- zstd
+                     * @return CompressType 压缩方法，目前支持
+- lz4
+- zstd
                      * 
                      */
                     std::string GetCompressType() const;
 
                     /**
-                     * 设置压缩方法
-                     * @param _compressType 压缩方法
+                     * 设置压缩方法，目前支持
+- lz4
+- zstd
+                     * @param _compressType 压缩方法，目前支持
+- lz4
+- zstd
                      * 
                      */
                     void SetCompressType(const std::string& _compressType);
@@ -108,7 +120,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题id
+                     * 日志主题id
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -120,7 +133,9 @@ namespace TencentCloud
                     bool m_hashKeyHasBeenSet;
 
                     /**
-                     * 压缩方法
+                     * 压缩方法，目前支持
+- lz4
+- zstd
                      */
                     std::string m_compressType;
                     bool m_compressTypeHasBeenSet;

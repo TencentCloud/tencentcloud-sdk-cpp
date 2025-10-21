@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ AddCLSTopicDomainsRequest::AddCLSTopicDomainsRequest() :
     m_logsetIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_domainAreaConfigsHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_inheritDomainTagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string AddCLSTopicDomainsRequest::ToJsonString() const
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inheritDomainTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InheritDomainTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_inheritDomainTags, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void AddCLSTopicDomainsRequest::SetChannel(const string& _channel)
 bool AddCLSTopicDomainsRequest::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+bool AddCLSTopicDomainsRequest::GetInheritDomainTags() const
+{
+    return m_inheritDomainTags;
+}
+
+void AddCLSTopicDomainsRequest::SetInheritDomainTags(const bool& _inheritDomainTags)
+{
+    m_inheritDomainTags = _inheritDomainTags;
+    m_inheritDomainTagsHasBeenSet = true;
+}
+
+bool AddCLSTopicDomainsRequest::InheritDomainTagsHasBeenSet() const
+{
+    return m_inheritDomainTagsHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ DescribeConcurrencyUsageRequest::DescribeConcurrencyUsageRequest() :
     m_modelNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_spaceIdHasBeenSet(false),
+    m_statStartTimeHasBeenSet(false),
+    m_statEndTimeHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,30 @@ string DescribeConcurrencyUsageRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statStartTime, allocator);
+    }
+
+    if (m_statEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statEndTime, allocator);
     }
 
 
@@ -144,6 +171,54 @@ void DescribeConcurrencyUsageRequest::SetAppBizIds(const vector<string>& _appBiz
 bool DescribeConcurrencyUsageRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+string DescribeConcurrencyUsageRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeConcurrencyUsageRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeConcurrencyUsageRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
+}
+
+int64_t DescribeConcurrencyUsageRequest::GetStatStartTime() const
+{
+    return m_statStartTime;
+}
+
+void DescribeConcurrencyUsageRequest::SetStatStartTime(const int64_t& _statStartTime)
+{
+    m_statStartTime = _statStartTime;
+    m_statStartTimeHasBeenSet = true;
+}
+
+bool DescribeConcurrencyUsageRequest::StatStartTimeHasBeenSet() const
+{
+    return m_statStartTimeHasBeenSet;
+}
+
+int64_t DescribeConcurrencyUsageRequest::GetStatEndTime() const
+{
+    return m_statEndTime;
+}
+
+void DescribeConcurrencyUsageRequest::SetStatEndTime(const int64_t& _statEndTime)
+{
+    m_statEndTime = _statEndTime;
+    m_statEndTimeHasBeenSet = true;
+}
+
+bool DescribeConcurrencyUsageRequest::StatEndTimeHasBeenSet() const
+{
+    return m_statEndTimeHasBeenSet;
 }
 
 

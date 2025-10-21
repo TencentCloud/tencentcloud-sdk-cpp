@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -592,49 +592,6 @@ CkafkaClient::CreateDatahubTopicOutcomeCallable CkafkaClient::CreateDatahubTopic
         [this, request]()
         {
             return this->CreateDatahubTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CkafkaClient::CreateInstancePostOutcome CkafkaClient::CreateInstancePost(const CreateInstancePostRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateInstancePost");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateInstancePostResponse rsp = CreateInstancePostResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateInstancePostOutcome(rsp);
-        else
-            return CreateInstancePostOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateInstancePostOutcome(outcome.GetError());
-    }
-}
-
-void CkafkaClient::CreateInstancePostAsync(const CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstancePost(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CkafkaClient::CreateInstancePostOutcomeCallable CkafkaClient::CreateInstancePostCallable(const CreateInstancePostRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateInstancePostOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstancePost(request);
         }
     );
 

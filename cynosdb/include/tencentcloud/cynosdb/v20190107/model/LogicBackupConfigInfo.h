@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,14 +111,18 @@ namespace TencentCloud
 
                     /**
                      * 获取自动逻辑备份保留时间
+单位：秒
                      * @return LogicReserveDuration 自动逻辑备份保留时间
+单位：秒
                      * 
                      */
                     uint64_t GetLogicReserveDuration() const;
 
                     /**
                      * 设置自动逻辑备份保留时间
+单位：秒
                      * @param _logicReserveDuration 自动逻辑备份保留时间
+单位：秒
                      * 
                      */
                     void SetLogicReserveDuration(const uint64_t& _logicReserveDuration);
@@ -132,14 +136,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启跨地域逻辑备份
+可选值：ON/OFF
                      * @return LogicCrossRegionsEnable 是否开启跨地域逻辑备份
+可选值：ON/OFF
                      * 
                      */
                     std::string GetLogicCrossRegionsEnable() const;
 
                     /**
                      * 设置是否开启跨地域逻辑备份
+可选值：ON/OFF
                      * @param _logicCrossRegionsEnable 是否开启跨地域逻辑备份
+可选值：ON/OFF
                      * 
                      */
                     void SetLogicCrossRegionsEnable(const std::string& _logicCrossRegionsEnable);
@@ -198,12 +206,14 @@ namespace TencentCloud
 
                     /**
                      * 自动逻辑备份保留时间
+单位：秒
                      */
                     uint64_t m_logicReserveDuration;
                     bool m_logicReserveDurationHasBeenSet;
 
                     /**
                      * 是否开启跨地域逻辑备份
+可选值：ON/OFF
                      */
                     std::string m_logicCrossRegionsEnable;
                     bool m_logicCrossRegionsEnableHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool PhysicalHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
+                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      * 
                      */
                     std::string GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
+                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      * 
                      */
                     void SetPublicNetwork(const std::string& _publicNetwork);
@@ -321,27 +321,6 @@ namespace TencentCloud
                      * 
                      */
                     bool RequestIdHasBeenSet() const;
-
-                    /**
-                     * 获取版本
-                     * @return Version 版本
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置版本
-                     * @param _version 版本
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
 
                     /**
                      * 获取分页offset
@@ -469,7 +448,7 @@ namespace TencentCloud
                     bool m_physicalHasBeenSet;
 
                     /**
-                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
+                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
                      */
                     std::string m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
@@ -485,12 +464,6 @@ namespace TencentCloud
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
-
-                    /**
-                     * 版本
-                     */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
 
                     /**
                      * 分页offset

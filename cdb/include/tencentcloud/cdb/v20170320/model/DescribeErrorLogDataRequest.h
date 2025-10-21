@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳。例如 1585142640 。
-                     * @return StartTime 开始时间戳。例如 1585142640 。
+                     * 获取开始时间戳。例如1585142640，秒级。
+                     * @return StartTime 开始时间戳。例如1585142640，秒级。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间戳。例如 1585142640 。
-                     * @param _startTime 开始时间戳。例如 1585142640 。
+                     * 设置开始时间戳。例如1585142640，秒级。
+                     * @param _startTime 开始时间戳。例如1585142640，秒级。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳。例如 1585142640 。
-                     * @return EndTime 结束时间戳。例如 1585142640 。
+                     * 获取结束时间戳。例如1585142640，秒级。
+                     * @return EndTime 结束时间戳。例如1585142640，秒级。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间戳。例如 1585142640 。
-                     * @param _endTime 结束时间戳。例如 1585142640 。
+                     * 设置结束时间戳。例如1585142640，秒级。
+                     * @param _endTime 结束时间戳。例如1585142640，秒级。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取要匹配的关键字列表，最多支持15个关键字。
-                     * @return KeyWords 要匹配的关键字列表，最多支持15个关键字。
+                     * 获取要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。
+                     * @return KeyWords 要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。
                      * 
                      */
                     std::vector<std::string> GetKeyWords() const;
 
                     /**
-                     * 设置要匹配的关键字列表，最多支持15个关键字。
-                     * @param _keyWords 要匹配的关键字列表，最多支持15个关键字。
+                     * 设置要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。
+                     * @param _keyWords 要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。
                      * 
                      */
                     void SetKeyWords(const std::vector<std::string>& _keyWords);
@@ -192,25 +192,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间戳。例如 1585142640 。
+                     * 开始时间戳。例如1585142640，秒级。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳。例如 1585142640 。
+                     * 结束时间戳。例如1585142640，秒级。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 要匹配的关键字列表，最多支持15个关键字。
+                     * 要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。
                      */
                     std::vector<std::string> m_keyWords;
                     bool m_keyWordsHasBeenSet;

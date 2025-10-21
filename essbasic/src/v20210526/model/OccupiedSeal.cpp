@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,10 @@ OccupiedSeal::OccupiedSeal() :
     m_urlHasBeenSet(false),
     m_sealTypeHasBeenSet(false),
     m_isAllTimeHasBeenSet(false),
-    m_authorizedUsersHasBeenSet(false)
+    m_authorizedUsersHasBeenSet(false),
+    m_realWidthHasBeenSet(false),
+    m_realHeightHasBeenSet(false),
+    m_sealDescriptionHasBeenSet(false)
 {
 }
 
@@ -160,6 +163,36 @@ CoreInternalOutcome OccupiedSeal::Deserialize(const rapidjson::Value &value)
         m_authorizedUsersHasBeenSet = true;
     }
 
+    if (value.HasMember("RealWidth") && !value["RealWidth"].IsNull())
+    {
+        if (!value["RealWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OccupiedSeal.RealWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realWidth = value["RealWidth"].GetInt64();
+        m_realWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealHeight") && !value["RealHeight"].IsNull())
+    {
+        if (!value["RealHeight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OccupiedSeal.RealHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realHeight = value["RealHeight"].GetInt64();
+        m_realHeightHasBeenSet = true;
+    }
+
+    if (value.HasMember("SealDescription") && !value["SealDescription"].IsNull())
+    {
+        if (!value["SealDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OccupiedSeal.SealDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealDescription = string(value["SealDescription"].GetString());
+        m_sealDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +293,30 @@ void OccupiedSeal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_realWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realWidth, allocator);
+    }
+
+    if (m_realHeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealHeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realHeight, allocator);
+    }
+
+    if (m_sealDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +496,53 @@ void OccupiedSeal::SetAuthorizedUsers(const vector<AuthorizedUser>& _authorizedU
 bool OccupiedSeal::AuthorizedUsersHasBeenSet() const
 {
     return m_authorizedUsersHasBeenSet;
+}
+
+int64_t OccupiedSeal::GetRealWidth() const
+{
+    return m_realWidth;
+}
+
+void OccupiedSeal::SetRealWidth(const int64_t& _realWidth)
+{
+    m_realWidth = _realWidth;
+    m_realWidthHasBeenSet = true;
+}
+
+bool OccupiedSeal::RealWidthHasBeenSet() const
+{
+    return m_realWidthHasBeenSet;
+}
+
+int64_t OccupiedSeal::GetRealHeight() const
+{
+    return m_realHeight;
+}
+
+void OccupiedSeal::SetRealHeight(const int64_t& _realHeight)
+{
+    m_realHeight = _realHeight;
+    m_realHeightHasBeenSet = true;
+}
+
+bool OccupiedSeal::RealHeightHasBeenSet() const
+{
+    return m_realHeightHasBeenSet;
+}
+
+string OccupiedSeal::GetSealDescription() const
+{
+    return m_sealDescription;
+}
+
+void OccupiedSeal::SetSealDescription(const string& _sealDescription)
+{
+    m_sealDescription = _sealDescription;
+    m_sealDescriptionHasBeenSet = true;
+}
+
+bool OccupiedSeal::SealDescriptionHasBeenSet() const
+{
+    return m_sealDescriptionHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,92 +291,6 @@ EcdnClient::DescribeIpStatusOutcomeCallable EcdnClient::DescribeIpStatusCallable
         [this, request]()
         {
             return this->DescribeIpStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-EcdnClient::DescribePurgeTasksOutcome EcdnClient::DescribePurgeTasks(const DescribePurgeTasksRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribePurgeTasks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribePurgeTasksResponse rsp = DescribePurgeTasksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribePurgeTasksOutcome(rsp);
-        else
-            return DescribePurgeTasksOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribePurgeTasksOutcome(outcome.GetError());
-    }
-}
-
-void EcdnClient::DescribePurgeTasksAsync(const DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePurgeTasks(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-EcdnClient::DescribePurgeTasksOutcomeCallable EcdnClient::DescribePurgeTasksCallable(const DescribePurgeTasksRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribePurgeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePurgeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-EcdnClient::PurgeUrlsCacheOutcome EcdnClient::PurgeUrlsCache(const PurgeUrlsCacheRequest &request)
-{
-    auto outcome = MakeRequest(request, "PurgeUrlsCache");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PurgeUrlsCacheResponse rsp = PurgeUrlsCacheResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PurgeUrlsCacheOutcome(rsp);
-        else
-            return PurgeUrlsCacheOutcome(o.GetError());
-    }
-    else
-    {
-        return PurgeUrlsCacheOutcome(outcome.GetError());
-    }
-}
-
-void EcdnClient::PurgeUrlsCacheAsync(const PurgeUrlsCacheRequest& request, const PurgeUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PurgeUrlsCache(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-EcdnClient::PurgeUrlsCacheOutcomeCallable EcdnClient::PurgeUrlsCacheCallable(const PurgeUrlsCacheRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PurgeUrlsCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->PurgeUrlsCache(request);
         }
     );
 

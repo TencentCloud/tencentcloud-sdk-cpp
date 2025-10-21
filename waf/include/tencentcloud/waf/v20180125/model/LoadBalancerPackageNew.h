@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,7 +153,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地区
-"多伦多": "ca",
+    "多伦多": "ca",
     "广州": "gz",
     "成都": "cd",
     "福州": "fzec",
@@ -180,9 +180,10 @@ namespace TencentCloud
     "首尔": "kr",
     "上海": "sh",
     "新加坡": "sg",
-    "清远": "qy"
+    "清远": "qy",
+    "雅加达": "jkt"
                      * @return Region 地区
-"多伦多": "ca",
+    "多伦多": "ca",
     "广州": "gz",
     "成都": "cd",
     "福州": "fzec",
@@ -209,14 +210,15 @@ namespace TencentCloud
     "首尔": "kr",
     "上海": "sh",
     "新加坡": "sg",
-    "清远": "qy"
+    "清远": "qy",
+    "雅加达": "jkt"
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地区
-"多伦多": "ca",
+    "多伦多": "ca",
     "广州": "gz",
     "成都": "cd",
     "福州": "fzec",
@@ -243,9 +245,10 @@ namespace TencentCloud
     "首尔": "kr",
     "上海": "sh",
     "新加坡": "sg",
-    "清远": "qy"
+    "清远": "qy",
+    "雅加达": "jkt"
                      * @param _region 地区
-"多伦多": "ca",
+    "多伦多": "ca",
     "广州": "gz",
     "成都": "cd",
     "福州": "fzec",
@@ -272,7 +275,8 @@ namespace TencentCloud
     "首尔": "kr",
     "上海": "sh",
     "新加坡": "sg",
-    "清远": "qy"
+    "清远": "qy",
+    "雅加达": "jkt"
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -444,7 +448,7 @@ namespace TencentCloud
 
                     /**
                      * 地区
-"多伦多": "ca",
+    "多伦多": "ca",
     "广州": "gz",
     "成都": "cd",
     "福州": "fzec",
@@ -471,7 +475,8 @@ namespace TencentCloud
     "首尔": "kr",
     "上海": "sh",
     "新加坡": "sg",
-    "清远": "qy"
+    "清远": "qy",
+    "雅加达": "jkt"
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

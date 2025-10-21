@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,9 @@ ServerBaseConfig::ServerBaseConfig() :
     m_timerScaleHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_cmdHasBeenSet(false),
-    m_sessionAffinityHasBeenSet(false)
+    m_sessionAffinityHasBeenSet(false),
+    m_vpcConfHasBeenSet(false),
+    m_volumesConfHasBeenSet(false)
 {
 }
 
@@ -366,6 +368,43 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_sessionAffinityHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcConf") && !value["VpcConf"].IsNull())
+    {
+        if (!value["VpcConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.VpcConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vpcConf.Deserialize(value["VpcConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vpcConfHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumesConf") && !value["VolumesConf"].IsNull())
+    {
+        if (!value["VolumesConf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.VolumesConf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VolumesConf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeConf item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumesConf.push_back(item);
+        }
+        m_volumesConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -624,6 +663,30 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SessionAffinity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionAffinity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumesConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumesConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumesConf.begin(); itr != m_volumesConf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1075,5 +1138,37 @@ void ServerBaseConfig::SetSessionAffinity(const string& _sessionAffinity)
 bool ServerBaseConfig::SessionAffinityHasBeenSet() const
 {
     return m_sessionAffinityHasBeenSet;
+}
+
+VpcConf ServerBaseConfig::GetVpcConf() const
+{
+    return m_vpcConf;
+}
+
+void ServerBaseConfig::SetVpcConf(const VpcConf& _vpcConf)
+{
+    m_vpcConf = _vpcConf;
+    m_vpcConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::VpcConfHasBeenSet() const
+{
+    return m_vpcConfHasBeenSet;
+}
+
+vector<VolumeConf> ServerBaseConfig::GetVolumesConf() const
+{
+    return m_volumesConf;
+}
+
+void ServerBaseConfig::SetVolumesConf(const vector<VolumeConf>& _volumesConf)
+{
+    m_volumesConf = _volumesConf;
+    m_volumesConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::VolumesConfHasBeenSet() const
+{
+    return m_volumesConfHasBeenSet;
 }
 

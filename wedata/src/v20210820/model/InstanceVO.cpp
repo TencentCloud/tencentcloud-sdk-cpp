@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,10 @@ InstanceVO::InstanceVO() :
     m_endTimeHasBeenSet(false),
     m_costTimeHasBeenSet(false),
     m_schedulerTimeHasBeenSet(false),
+    m_lastUpdateTimeHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
-    m_executorGroupNameHasBeenSet(false)
+    m_executorGroupNameHasBeenSet(false),
+    m_jobErrorMsgHasBeenSet(false)
 {
 }
 
@@ -272,6 +274,16 @@ CoreInternalOutcome InstanceVO::Deserialize(const rapidjson::Value &value)
         m_schedulerTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
+    {
+        if (!value["LastUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceVO.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUpdateTime = string(value["LastUpdateTime"].GetString());
+        m_lastUpdateTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("ExecutorGroupId") && !value["ExecutorGroupId"].IsNull())
     {
         if (!value["ExecutorGroupId"].IsString())
@@ -290,6 +302,16 @@ CoreInternalOutcome InstanceVO::Deserialize(const rapidjson::Value &value)
         }
         m_executorGroupName = string(value["ExecutorGroupName"].GetString());
         m_executorGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobErrorMsg") && !value["JobErrorMsg"].IsNull())
+    {
+        if (!value["JobErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceVO.JobErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobErrorMsg = string(value["JobErrorMsg"].GetString());
+        m_jobErrorMsgHasBeenSet = true;
     }
 
 
@@ -473,6 +495,14 @@ void InstanceVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_schedulerTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_lastUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_executorGroupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +517,14 @@ void InstanceVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExecutorGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobErrorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobErrorMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -828,6 +866,22 @@ bool InstanceVO::SchedulerTimeHasBeenSet() const
     return m_schedulerTimeHasBeenSet;
 }
 
+string InstanceVO::GetLastUpdateTime() const
+{
+    return m_lastUpdateTime;
+}
+
+void InstanceVO::SetLastUpdateTime(const string& _lastUpdateTime)
+{
+    m_lastUpdateTime = _lastUpdateTime;
+    m_lastUpdateTimeHasBeenSet = true;
+}
+
+bool InstanceVO::LastUpdateTimeHasBeenSet() const
+{
+    return m_lastUpdateTimeHasBeenSet;
+}
+
 string InstanceVO::GetExecutorGroupId() const
 {
     return m_executorGroupId;
@@ -858,5 +912,21 @@ void InstanceVO::SetExecutorGroupName(const string& _executorGroupName)
 bool InstanceVO::ExecutorGroupNameHasBeenSet() const
 {
     return m_executorGroupNameHasBeenSet;
+}
+
+string InstanceVO::GetJobErrorMsg() const
+{
+    return m_jobErrorMsg;
+}
+
+void InstanceVO::SetJobErrorMsg(const string& _jobErrorMsg)
+{
+    m_jobErrorMsg = _jobErrorMsg;
+    m_jobErrorMsgHasBeenSet = true;
+}
+
+bool InstanceVO::JobErrorMsgHasBeenSet() const
+{
+    return m_jobErrorMsgHasBeenSet;
 }
 

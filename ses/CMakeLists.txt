@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -108,6 +108,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/CycleEmailParam.h
   include/tencentcloud/ses/v20201002/model/CreateAddressUnsubscribeConfigResponse.h
   include/tencentcloud/ses/v20201002/model/ListReceiversResponse.h
+  include/tencentcloud/ses/v20201002/model/TagList.h
   )
 
 set(ses_src
@@ -201,6 +202,7 @@ set(ses_src
   src/v20201002/model/CycleEmailParam.cpp
   src/v20201002/model/CreateAddressUnsubscribeConfigResponse.cpp
   src/v20201002/model/ListReceiversResponse.cpp
+  src/v20201002/model/TagList.cpp
   )
 
 set(ses_include

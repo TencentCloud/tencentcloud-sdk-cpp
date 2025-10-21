@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,34 +50,90 @@ namespace TencentCloud
 
                     /**
                      * 获取加密类型：
-<li> simpleaes: aes-128 加密</li>
-<li> widevine</li>
-<li> fairplay：Dash不支持fairplay加密</li>  
-<li> playready</li>
-注意：此字段可能返回 null，表示取不到有效值。
+
+- simpleaes
+只能用于HLS，切片格式支持ts和mp4
+只能使用切片模式，不能使用singlefile模式
+
+- fairplay：
+只能用于HLS，切片格式只能是mp4
+可以使用切片模式或singlefile模式
+
+- widevine：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
+- playready：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
                      * @return Type 加密类型：
-<li> simpleaes: aes-128 加密</li>
-<li> widevine</li>
-<li> fairplay：Dash不支持fairplay加密</li>  
-<li> playready</li>
-注意：此字段可能返回 null，表示取不到有效值。
+
+- simpleaes
+只能用于HLS，切片格式支持ts和mp4
+只能使用切片模式，不能使用singlefile模式
+
+- fairplay：
+只能用于HLS，切片格式只能是mp4
+可以使用切片模式或singlefile模式
+
+- widevine：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
+- playready：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置加密类型：
-<li> simpleaes: aes-128 加密</li>
-<li> widevine</li>
-<li> fairplay：Dash不支持fairplay加密</li>  
-<li> playready</li>
-注意：此字段可能返回 null，表示取不到有效值。
+
+- simpleaes
+只能用于HLS，切片格式支持ts和mp4
+只能使用切片模式，不能使用singlefile模式
+
+- fairplay：
+只能用于HLS，切片格式只能是mp4
+可以使用切片模式或singlefile模式
+
+- widevine：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
+- playready：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
                      * @param _type 加密类型：
-<li> simpleaes: aes-128 加密</li>
-<li> widevine</li>
-<li> fairplay：Dash不支持fairplay加密</li>  
-<li> playready</li>
-注意：此字段可能返回 null，表示取不到有效值。
+
+- simpleaes
+只能用于HLS，切片格式支持ts和mp4
+只能使用切片模式，不能使用singlefile模式
+
+- fairplay：
+只能用于HLS，切片格式只能是mp4
+可以使用切片模式或singlefile模式
+
+- widevine：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
+- playready：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,15 +171,15 @@ namespace TencentCloud
                     bool SimpleAesDrmHasBeenSet() const;
 
                     /**
-                     * 获取FairPlay, WideVine， PlayReady 加密信息。
-                     * @return SpekeDrm FairPlay, WideVine， PlayReady 加密信息。
+                     * 获取FairPlay，WideVine，PlayReady 加密信息。
+                     * @return SpekeDrm FairPlay，WideVine，PlayReady 加密信息。
                      * 
                      */
                     SpekeDrm GetSpekeDrm() const;
 
                     /**
-                     * 设置FairPlay, WideVine， PlayReady 加密信息。
-                     * @param _spekeDrm FairPlay, WideVine， PlayReady 加密信息。
+                     * 设置FairPlay，WideVine，PlayReady 加密信息。
+                     * @param _spekeDrm FairPlay，WideVine，PlayReady 加密信息。
                      * 
                      */
                     void SetSpekeDrm(const SpekeDrm& _spekeDrm);
@@ -139,11 +195,25 @@ namespace TencentCloud
 
                     /**
                      * 加密类型：
-<li> simpleaes: aes-128 加密</li>
-<li> widevine</li>
-<li> fairplay：Dash不支持fairplay加密</li>  
-<li> playready</li>
-注意：此字段可能返回 null，表示取不到有效值。
+
+- simpleaes
+只能用于HLS，切片格式支持ts和mp4
+只能使用切片模式，不能使用singlefile模式
+
+- fairplay：
+只能用于HLS，切片格式只能是mp4
+可以使用切片模式或singlefile模式
+
+- widevine：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
+- playready：
+可以用于HLS和DASH，切片格式只能是mp4
+输出HLS：可以使用切片模式或singlefile模式
+输出DASH：只能singlefile模式
+
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -156,7 +226,7 @@ namespace TencentCloud
                     bool m_simpleAesDrmHasBeenSet;
 
                     /**
-                     * FairPlay, WideVine， PlayReady 加密信息。
+                     * FairPlay，WideVine，PlayReady 加密信息。
                      */
                     SpekeDrm m_spekeDrm;
                     bool m_spekeDrmHasBeenSet;

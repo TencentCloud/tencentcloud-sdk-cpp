@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,6 +183,118 @@ namespace TencentCloud
                      */
                     bool CreatorNickNameHasBeenSet() const;
 
+                    /**
+                     * 获取延迟时间
+                     * @return DelayTime 延迟时间
+                     * 
+                     */
+                    uint64_t GetDelayTime() const;
+
+                    /**
+                     * 判断参数 DelayTime 是否已赋值
+                     * @return DelayTime 是否已赋值
+                     * 
+                     */
+                    bool DelayTimeHasBeenSet() const;
+
+                    /**
+                     * 获取超时时间
+                     * @return TimeoutInterval 超时时间
+                     * 
+                     */
+                    uint64_t GetTimeoutInterval() const;
+
+                    /**
+                     * 判断参数 TimeoutInterval 是否已赋值
+                     * @return TimeoutInterval 是否已赋值
+                     * 
+                     */
+                    bool TimeoutIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取静默升级or用户确认升级
+                     * @return UpgradeMethod 静默升级or用户确认升级
+                     * 
+                     */
+                    uint64_t GetUpgradeMethod() const;
+
+                    /**
+                     * 判断参数 UpgradeMethod 是否已赋值
+                     * @return UpgradeMethod 是否已赋值
+                     * 
+                     */
+                    bool UpgradeMethodHasBeenSet() const;
+
+                    /**
+                     * 获取最大重试次数
+                     * @return MaxRetryNum 最大重试次数
+                     * 
+                     */
+                    uint64_t GetMaxRetryNum() const;
+
+                    /**
+                     * 判断参数 MaxRetryNum 是否已赋值
+                     * @return MaxRetryNum 是否已赋值
+                     * 
+                     */
+                    bool MaxRetryNumHasBeenSet() const;
+
+                    /**
+                     * 获取固件类型
+                     * @return FwType 固件类型
+                     * 
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     * 
+                     */
+                    bool FwTypeHasBeenSet() const;
+
+                    /**
+                     * 获取重试间隔时间单位min
+                     * @return RetryInterval 重试间隔时间单位min
+                     * 
+                     */
+                    uint64_t GetRetryInterval() const;
+
+                    /**
+                     * 判断参数 RetryInterval 是否已赋值
+                     * @return RetryInterval 是否已赋值
+                     * 
+                     */
+                    bool RetryIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取是否覆盖任务
+                     * @return OverrideMode 是否覆盖任务
+                     * 
+                     */
+                    uint64_t GetOverrideMode() const;
+
+                    /**
+                     * 判断参数 OverrideMode 是否已赋值
+                     * @return OverrideMode 是否已赋值
+                     * 
+                     */
+                    bool OverrideModeHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义消息
+                     * @return TaskUserDefine 用户自定义消息
+                     * 
+                     */
+                    std::string GetTaskUserDefine() const;
+
+                    /**
+                     * 判断参数 TaskUserDefine 是否已赋值
+                     * @return TaskUserDefine 是否已赋值
+                     * 
+                     */
+                    bool TaskUserDefineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +356,54 @@ namespace TencentCloud
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
+
+                    /**
+                     * 延迟时间
+                     */
+                    uint64_t m_delayTime;
+                    bool m_delayTimeHasBeenSet;
+
+                    /**
+                     * 超时时间
+                     */
+                    uint64_t m_timeoutInterval;
+                    bool m_timeoutIntervalHasBeenSet;
+
+                    /**
+                     * 静默升级or用户确认升级
+                     */
+                    uint64_t m_upgradeMethod;
+                    bool m_upgradeMethodHasBeenSet;
+
+                    /**
+                     * 最大重试次数
+                     */
+                    uint64_t m_maxRetryNum;
+                    bool m_maxRetryNumHasBeenSet;
+
+                    /**
+                     * 固件类型
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
+
+                    /**
+                     * 重试间隔时间单位min
+                     */
+                    uint64_t m_retryInterval;
+                    bool m_retryIntervalHasBeenSet;
+
+                    /**
+                     * 是否覆盖任务
+                     */
+                    uint64_t m_overrideMode;
+                    bool m_overrideModeHasBeenSet;
+
+                    /**
+                     * 用户自定义消息
+                     */
+                    std::string m_taskUserDefine;
+                    bool m_taskUserDefineHasBeenSet;
 
                 };
             }

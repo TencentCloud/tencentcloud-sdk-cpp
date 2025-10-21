@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ KnowledgeQaOutput::KnowledgeQaOutput() :
     m_showQuestionClarifyHasBeenSet(false),
     m_useQuestionClarifyHasBeenSet(false),
     m_questionClarifyKeywordsHasBeenSet(false),
-    m_useRecommendedHasBeenSet(false)
+    m_useRecommendedHasBeenSet(false),
+    m_recommendedPromptModeHasBeenSet(false),
+    m_inputBoxConfigHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,33 @@ CoreInternalOutcome KnowledgeQaOutput::Deserialize(const rapidjson::Value &value
         m_useRecommendedHasBeenSet = true;
     }
 
+    if (value.HasMember("RecommendedPromptMode") && !value["RecommendedPromptMode"].IsNull())
+    {
+        if (!value["RecommendedPromptMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.RecommendedPromptMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recommendedPromptMode = value["RecommendedPromptMode"].GetUint64();
+        m_recommendedPromptModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputBoxConfig") && !value["InputBoxConfig"].IsNull())
+    {
+        if (!value["InputBoxConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.InputBoxConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputBoxConfig.Deserialize(value["InputBoxConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputBoxConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +204,23 @@ void KnowledgeQaOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UseRecommended";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useRecommended, allocator);
+    }
+
+    if (m_recommendedPromptModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendedPromptMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recommendedPromptMode, allocator);
+    }
+
+    if (m_inputBoxConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputBoxConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputBoxConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -290,5 +336,37 @@ void KnowledgeQaOutput::SetUseRecommended(const bool& _useRecommended)
 bool KnowledgeQaOutput::UseRecommendedHasBeenSet() const
 {
     return m_useRecommendedHasBeenSet;
+}
+
+uint64_t KnowledgeQaOutput::GetRecommendedPromptMode() const
+{
+    return m_recommendedPromptMode;
+}
+
+void KnowledgeQaOutput::SetRecommendedPromptMode(const uint64_t& _recommendedPromptMode)
+{
+    m_recommendedPromptMode = _recommendedPromptMode;
+    m_recommendedPromptModeHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::RecommendedPromptModeHasBeenSet() const
+{
+    return m_recommendedPromptModeHasBeenSet;
+}
+
+InputBoxConfig KnowledgeQaOutput::GetInputBoxConfig() const
+{
+    return m_inputBoxConfig;
+}
+
+void KnowledgeQaOutput::SetInputBoxConfig(const InputBoxConfig& _inputBoxConfig)
+{
+    m_inputBoxConfig = _inputBoxConfig;
+    m_inputBoxConfigHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::InputBoxConfigHasBeenSet() const
+{
+    return m_inputBoxConfigHasBeenSet;
 }
 

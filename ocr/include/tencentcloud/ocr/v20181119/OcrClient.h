@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
@@ -171,6 +175,8 @@
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h>
@@ -241,6 +247,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyStoreNameResponse> ClassifyStoreNameOutcome;
                 typedef std::future<ClassifyStoreNameOutcome> ClassifyStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyStoreNameRequest&, ClassifyStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyStoreNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtractDocAgentJobResponse> DescribeExtractDocAgentJobOutcome;
+                typedef std::future<DescribeExtractDocAgentJobOutcome> DescribeExtractDocAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::DescribeExtractDocAgentJobRequest&, DescribeExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtractDocAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -403,6 +412,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeTableAccurateOCRResponse> RecognizeTableAccurateOCROutcome;
                 typedef std::future<RecognizeTableAccurateOCROutcome> RecognizeTableAccurateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableAccurateOCRRequest&, RecognizeTableAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableAccurateOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeTableMultiOCRResponse> RecognizeTableMultiOCROutcome;
+                typedef std::future<RecognizeTableMultiOCROutcome> RecognizeTableMultiOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTableMultiOCRRequest&, RecognizeTableMultiOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableMultiOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
                 typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
@@ -433,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SmartStructuralOCRResponse> SmartStructuralOCROutcome;
                 typedef std::future<SmartStructuralOCROutcome> SmartStructuralOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SmartStructuralOCRRequest&, SmartStructuralOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmartStructuralOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitExtractDocAgentJobResponse> SubmitExtractDocAgentJobOutcome;
+                typedef std::future<SubmitExtractDocAgentJobOutcome> SubmitExtractDocAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SubmitExtractDocAgentJobRequest&, SubmitExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitExtractDocAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
@@ -533,7 +548,8 @@ namespace TencentCloud
                 BizLicenseOCROutcomeCallable BizLicenseOCRCallable(const Model::BizLicenseOCRRequest& request);
 
                 /**
-                 *本接口支持识别公路汽车客票关键字段的识别，包括发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次等。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持识别公路汽车客票关键字段的识别，包括发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次等。
 
 默认接口请求频率限制：5次/秒。
                  * @param req BusInvoiceOCRRequest
@@ -587,6 +603,15 @@ namespace TencentCloud
                 ClassifyStoreNameOutcomeCallable ClassifyStoreNameCallable(const Model::ClassifyStoreNameRequest& request);
 
                 /**
+                 *用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。
+                 * @param req DescribeExtractDocAgentJobRequest
+                 * @return DescribeExtractDocAgentJobOutcome
+                 */
+                DescribeExtractDocAgentJobOutcome DescribeExtractDocAgentJob(const Model::DescribeExtractDocAgentJobRequest &request);
+                void DescribeExtractDocAgentJobAsync(const Model::DescribeExtractDocAgentJobRequest& request, const DescribeExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtractDocAgentJobOutcomeCallable DescribeExtractDocAgentJobCallable(const Model::DescribeExtractDocAgentJobRequest& request);
+
+                /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
 
 驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位
@@ -606,7 +631,8 @@ namespace TencentCloud
                 DriverLicenseOCROutcomeCallable DriverLicenseOCRCallable(const Model::DriverLicenseOCRRequest& request);
 
                 /**
-                 *本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。
 
 默认接口请求频率限制：5次/秒。
                  * @param req DutyPaidProofOCRRequest
@@ -661,7 +687,7 @@ namespace TencentCloud
                 EstateCertOCROutcomeCallable EstateCertOCRCallable(const Model::EstateCertOCRRequest& request);
 
                 /**
-                 *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+                 *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/?action=ExtractDocBasic)。
 
 接口别名：SmartStructuralOCRV2
 
@@ -674,7 +700,7 @@ namespace TencentCloud
                 ExtractDocBasicOutcomeCallable ExtractDocBasicCallable(const Model::ExtractDocBasicRequest& request);
 
                 /**
-                 *本接口支持识别并提取场景复杂、版式多等结构化场景的字段信息。重点场景包括：金融、医疗、交通、出行、保险。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+                 *本接口支持识别并提取场景复杂、版式多等结构化场景的字段信息。重点场景包括：金融、医疗、交通、出行、保险。点击[立即体验](https://ocrdemo.cloud.tencent.com/?action=ExtractDocMulti)。
 
 接口别名：SmartStructuralPro
 
@@ -687,7 +713,7 @@ namespace TencentCloud
                 ExtractDocMultiOutcomeCallable ExtractDocMultiCallable(const Model::ExtractDocMultiRequest& request);
 
                 /**
-                 *本接口当前仅支持复杂磅单收发货单抽取，更多强推理场景支持定制咨询。点击[立即体验](https://ocrdemo.cloud.tencent.com/)。
+                 *本接口当前仅支持复杂磅单收发货单抽取，更多强推理场景支持定制咨询。点击[立即体验](https://ocrdemo.cloud.tencent.com/?action=ExtractDocMultiPro)。
 
 默认接口请求频率限制：5次/秒。
                  * @param req ExtractDocMultiProRequest
@@ -698,7 +724,8 @@ namespace TencentCloud
                 ExtractDocMultiProOutcomeCallable ExtractDocMultiProCallable(const Model::ExtractDocMultiProRequest& request);
 
                 /**
-                 *本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。
 
 默认接口请求频率限制：5次/秒。
                  * @param req FinanBillOCRRequest
@@ -709,7 +736,8 @@ namespace TencentCloud
                 FinanBillOCROutcomeCallable FinanBillOCRCallable(const Model::FinanBillOCRRequest& request);
 
                 /**
-                 *本接口支持常见银行票据的自动分类和识别。切片识别包括金融行业常见票据的重要切片字段识别，包括金额、账号、日期、凭证号码等。（金融票据切片：金融票据中待识别字段及其周围局部区域的裁剪图像。）
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持常见银行票据的自动分类和识别。切片识别包括金融行业常见票据的重要切片字段识别，包括金额、账号、日期、凭证号码等。（金融票据切片：金融票据中待识别字段及其周围局部区域的裁剪图像。）
 
 默认接口请求频率限制：5次/秒。
                  * @param req FinanBillSliceOCRRequest
@@ -720,7 +748,8 @@ namespace TencentCloud
                 FinanBillSliceOCROutcomeCallable FinanBillSliceOCRCallable(const Model::FinanBillSliceOCRRequest& request);
 
                 /**
-                 *本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。
 
 默认接口请求频率限制：5次/秒。
                  * @param req FlightInvoiceOCRRequest
@@ -753,9 +782,8 @@ namespace TencentCloud
       <thead>
         <tr>
           <th style="width:150px"></th>
-          <th >【荐】通用印刷体识别（高精度版）</th>
-          <th style="width:200px"><a href="https://cloud.tencent.com/document/product/866/33526">【荐】通用印刷体识别</a></th>
-          <th><a href="https://cloud.tencent.com/document/product/866/37831">通用印刷体识别（精简版）</a></th>
+          <th >【荐】通用文字识别（高精度版）</th>
+          <th style="width:300px"><a href="https://cloud.tencent.com/document/product/866/33526">【荐】通用印刷体识别</a></th>
         </tr>
       </thead>
       <tbody>
@@ -763,41 +791,34 @@ namespace TencentCloud
           <td> 适用场景</td>
           <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>
           <td>适用于所有通用场景的印刷体识别</td>
-          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>
         </tr>
         <tr>
           <td>识别准确率</td>
           <td>99%</td>
           <td>96%</td>
-          <td>91%</td>
         </tr>
         <tr>
           <td>价格</td>
-          <td>高</td>
           <td>中</td>
           <td>低</td>
         </tr>
         <tr>
           <td>支持的语言</td>
-          <td>中文、英文、中英文</td>
+          <td>中文、英文、中英文、泰语、印尼语、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、哈萨克语</td>
           <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  
-          <td>中文、英文、中英文</td>
         </tr>
         <tr>
           <td>自动语言检测</td>
-          <td>支持</td>
-          <td>支持</td>  
+          <td>中英文支持;其他语言需要调整输入参数</td>
           <td>支持</td>
         </tr>
         <tr>
           <td>返回文本行坐标</td>
           <td>支持</td>
           <td>支持</td>
-          <td>支持</td>
         </tr>
         <tr>
           <td>自动旋转纠正</td>
-          <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
         </tr>
@@ -824,9 +845,8 @@ namespace TencentCloud
       <thead>
         <tr>
           <th style="width:150px"></th>
-          <th style="width:200px">【荐】通用印刷体识别</th>
+          <th style="width:250px">【荐】通用印刷体识别</th>
           <th ><a href="https://cloud.tencent.com/document/product/866/34937">【荐】通用印刷体识别（高精度版）</a></th>
-          <th><a href="https://cloud.tencent.com/document/product/866/37831">通用印刷体识别（精简版）</a></th>
         </tr>
       </thead>
       <tbody>
@@ -834,41 +854,34 @@ namespace TencentCloud
           <td> 适用场景</td>
           <td>适用于所有通用场景的印刷体识别</td>
           <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>
-          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>
         </tr>
         <tr>
           <td>识别准确率</td>
           <td>96%</td>
           <td>99%</td>
-          <td>91%</td>
         </tr>
         <tr>
           <td>价格</td>
-          <td>中</td>
-          <td>高</td>
           <td>低</td>
+          <td>中</td>
         </tr>
         <tr>
           <td>支持的语言</td>
           <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>
-          <td>中文、英文、中英文</td>
-          <td>中文、英文、中英文</td>
+          <td>中文、英文、中英文、泰语、印尼语、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、哈萨克语</td>
         </tr>
         <tr>
           <td>自动语言检测</td>
           <td>支持</td>
-          <td>支持</td>
-          <td>支持</td>
+          <td>中英文支持；其他语种需要调整输入参数</td>
         </tr>
         <tr>
           <td>返回文本行坐标</td>
           <td>支持</td>
           <td>支持</td>
-          <td>支持</td>
         </tr>
         <tr>
           <td>自动旋转纠正</td>
-          <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
         </tr>
@@ -966,7 +979,9 @@ namespace TencentCloud
                 GeneralFastOCROutcomeCallable GeneralFastOCRCallable(const Model::GeneralFastOCRRequest& request);
 
                 /**
-                 *本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。
+                 *<b>此接口为通用手写体识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/34937">通用印刷体识别(高精度)识别服务</a>。</b>
+
+本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。
 
 默认接口请求频率限制：10次/秒。
                  * @param req GeneralHandwritingOCRRequest
@@ -1094,7 +1109,8 @@ namespace TencentCloud
                 ImageEnhancementOutcomeCallable ImageEnhancementCallable(const Model::ImageEnhancementRequest& request);
 
                 /**
-                 *本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。
+                 *<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
+本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。
 
 默认接口请求频率限制：5次/秒。
                  * @param req InstitutionOCRRequest
@@ -1116,7 +1132,8 @@ namespace TencentCloud
                 InsuranceBillOCROutcomeCallable InsuranceBillOCRCallable(const Model::InsuranceBillOCRRequest& request);
 
                 /**
-                 *本接口支持对通用机打发票的发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、购买方地址、电话、销售方地址、电话、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、货物或应税劳务、服务名称、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类等字段的识别。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持对通用机打发票的发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、购买方地址、电话、销售方地址、电话、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、货物或应税劳务、服务名称、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类等字段的识别。
 
 默认接口请求频率限制：5次/秒。
                  * @param req InvoiceGeneralOCRRequest
@@ -1148,8 +1165,8 @@ namespace TencentCloud
                 MLIDCardOCROutcomeCallable MLIDCardOCRCallable(const Model::MLIDCardOCRRequest& request);
 
                 /**
-                 *本接口支持以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
-本接口支持地区范围：可机读护照国家。包括中国港澳台地区、新加坡、马来西亚、泰国、美国、韩国、越南、澳大利亚、缅甸、印度尼西亚、日本、加拿大、老挝、巴基斯坦、哈萨克斯坦、法国、英国、德国、菲律宾、新西兰、印度、意大利、蒙古、孟加拉国、尼日利亚、柬埔寨、西班牙、摩洛哥、吉尔吉斯斯坦、埃及、荷兰、塔吉克斯坦、巴西、乌兹别克斯坦、伊拉克、阿尔及利亚、土耳其、南非、墨西哥、尼泊尔、白俄罗斯、叶门、阿富汗、沙特、肯尼亚、波兰、比利时、瑞典、奥地利、坦桑尼亚、委内瑞拉、阿根廷、喀麦隆、斯里兰卡、衣索比亚、约旦、瑞士、加纳、爱尔兰、哥伦比亚、苏丹、匈牙利、罗马尼亚、阿联酋、文莱、希腊、以色列、巴拿马、丹麦、伊朗、乌干达、挪威、秘鲁、葡萄牙、智利、塞尔维亚、芬兰、尚比亚、亚美尼亚、叙利亚、黎巴嫩、斯洛伐克、卡塔尔、古巴、朝鲜。
+                 *本接口支持中国大陆地区及中国港澳台地区、其他国家以及地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
+本接口支持地区范围：可机读护照国家。包括中国大陆地区、中国港澳台地区、新加坡、马来西亚、泰国、美国、韩国、越南、澳大利亚、缅甸、印度尼西亚、日本、加拿大、老挝、巴基斯坦、哈萨克斯坦、法国、英国、德国、菲律宾、新西兰、印度、意大利、蒙古、孟加拉国、尼日利亚、柬埔寨、西班牙、摩洛哥、吉尔吉斯斯坦、埃及、荷兰、塔吉克斯坦、巴西、乌兹别克斯坦、伊拉克、阿尔及利亚、土耳其、南非、墨西哥、尼泊尔、白俄罗斯、叶门、阿富汗、沙特、肯尼亚、波兰、比利时、瑞典、奥地利、坦桑尼亚、委内瑞拉、阿根廷、喀麦隆、斯里兰卡、衣索比亚、约旦、瑞士、加纳、爱尔兰、哥伦比亚、苏丹、匈牙利、罗马尼亚、阿联酋、文莱、希腊、以色列、巴拿马、丹麦、伊朗、乌干达、挪威、秘鲁、葡萄牙、智利、塞尔维亚、芬兰、尚比亚、亚美尼亚、叙利亚、黎巴嫩、斯洛伐克、卡塔尔、古巴、朝鲜。
 
 默认接口请求频率限制：5次/秒。
                  * @param req MLIDPassportOCRRequest
@@ -1192,7 +1209,8 @@ namespace TencentCloud
                 MixedInvoiceOCROutcomeCallable MixedInvoiceOCRCallable(const Model::MixedInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持组织机构代码证关键字段的识别，包括代码、有效期、地址、机构名称等。
+                 *<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
+本接口支持组织机构代码证关键字段的识别，包括代码、有效期、地址、机构名称等。
 
 默认接口请求频率限制：5次/秒。
                  * @param req OrgCodeCertOCRRequest
@@ -1203,7 +1221,9 @@ namespace TencentCloud
                 OrgCodeCertOCROutcomeCallable OrgCodeCertOCRCallable(const Model::OrgCodeCertOCRRequest& request);
 
                 /**
-                 *本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。
+                 *<b>此接口为护照识别（中国大陆地区护照）的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/37657">护照识别（多国多地区护照）</a>。</b>
+
+本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。
 
 默认接口请求频率限制：10次/秒。
                  * @param req PassportOCRRequest
@@ -1225,7 +1245,8 @@ namespace TencentCloud
                 PermitOCROutcomeCallable PermitOCRCallable(const Model::PermitOCRRequest& request);
 
                 /**
-                 *本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。
+                 *<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
+本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。
 目前接口对合肥、成都、佛山三个城市的房产证版式识别较好。
 
 默认接口请求频率限制：5次/秒。
@@ -1270,7 +1291,8 @@ namespace TencentCloud
                 QuestionSplitOCROutcomeCallable QuestionSplitOCRCallable(const Model::QuestionSplitOCRRequest& request);
 
                 /**
-                 *本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。
 
 默认接口请求频率限制：5次/秒。
                  * @param req QuotaInvoiceOCRRequest
@@ -1351,7 +1373,8 @@ namespace TencentCloud
                 RecognizeEncryptedIDCardOCROutcomeCallable RecognizeEncryptedIDCardOCRCallable(const Model::RecognizeEncryptedIDCardOCRRequest& request);
 
                 /**
-                 *外国人永久居留身份证识别
+                 *<b>因技术原因，本接口将不再迭代升级。有效身份证件识别（鉴伪版）可支持此类证件的识别，并包含质量和PS告警，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/112345">有效身份证件识别（鉴伪版）</a>。</b>
+外国人永久居留身份证识别
                  * @param req RecognizeForeignPermanentResidentIdCardRequest
                  * @return RecognizeForeignPermanentResidentIdCardOutcome
                  */
@@ -1592,7 +1615,8 @@ namespace TencentCloud
                 RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
 
                 /**
-                 *本接口支持多种类型证件有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能。可以应用于各种证件信息有效性校验场景，例如银行开户、用户注册等场景。
+                 *<b>因技术原因，本接口将不再迭代升级。通用卡证鉴伪可支持更多告警类型，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/115916">通用卡证鉴伪</a>。</b>
+本接口支持多种类型证件有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能。可以应用于各种证件信息有效性校验场景，例如银行开户、用户注册等场景。
                  * @param req RecognizeGeneralTextImageWarnRequest
                  * @return RecognizeGeneralTextImageWarnOutcome
                  */
@@ -1653,6 +1677,17 @@ namespace TencentCloud
                 RecognizeTableAccurateOCROutcome RecognizeTableAccurateOCR(const Model::RecognizeTableAccurateOCRRequest &request);
                 void RecognizeTableAccurateOCRAsync(const Model::RecognizeTableAccurateOCRRequest& request, const RecognizeTableAccurateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeTableAccurateOCROutcomeCallable RecognizeTableAccurateOCRCallable(const Model::RecognizeTableAccurateOCRRequest& request);
+
+                /**
+                 *基于MLLM(多模态大语言模型)的表格识别能力，针对复杂表格的算法识别效果更佳，适配财务报表识别场景，并可输出直接对接业务系统的Excel数据。
+
+默认接口请求频率限制：1次/秒。
+                 * @param req RecognizeTableMultiOCRRequest
+                 * @return RecognizeTableMultiOCROutcome
+                 */
+                RecognizeTableMultiOCROutcome RecognizeTableMultiOCR(const Model::RecognizeTableMultiOCRRequest &request);
+                void RecognizeTableMultiOCRAsync(const Model::RecognizeTableMultiOCRRequest& request, const RecognizeTableMultiOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTableMultiOCROutcomeCallable RecognizeTableMultiOCRCallable(const Model::RecognizeTableMultiOCRRequest& request);
 
                 /**
                  *本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。
@@ -1744,7 +1779,8 @@ namespace TencentCloud
                 SealOCROutcomeCallable SealOCRCallable(const Model::SealOCRRequest& request);
 
                 /**
-                 *本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种字段。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种字段。
 
 默认接口请求频率限制：5次/秒。
                  * @param req ShipInvoiceOCRRequest
@@ -1764,6 +1800,15 @@ namespace TencentCloud
                 SmartStructuralOCROutcome SmartStructuralOCR(const Model::SmartStructuralOCRRequest &request);
                 void SmartStructuralOCRAsync(const Model::SmartStructuralOCRRequest& request, const SmartStructuralOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SmartStructuralOCROutcomeCallable SmartStructuralOCRCallable(const Model::SmartStructuralOCRRequest& request);
+
+                /**
+                 *文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。
+                 * @param req SubmitExtractDocAgentJobRequest
+                 * @return SubmitExtractDocAgentJobOutcome
+                 */
+                SubmitExtractDocAgentJobOutcome SubmitExtractDocAgentJob(const Model::SubmitExtractDocAgentJobRequest &request);
+                void SubmitExtractDocAgentJobAsync(const Model::SubmitExtractDocAgentJobRequest& request, const SubmitExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitExtractDocAgentJobOutcomeCallable SubmitExtractDocAgentJobCallable(const Model::SubmitExtractDocAgentJobRequest& request);
 
                 /**
                  *<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/49525">新版表格识别</a>。</b>
@@ -1801,7 +1846,8 @@ namespace TencentCloud
                 TextDetectOutcomeCallable TextDetectCallable(const Model::TextDetectRequest& request);
 
                 /**
-                 *本接口支持过路过桥费发票关键字段的识别，包括发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志等。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持过路过桥费发票关键字段的识别，包括发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志等。
 
 默认接口请求频率限制：5次/秒。
                  * @param req TollInvoiceOCRRequest
@@ -1845,7 +1891,8 @@ namespace TencentCloud
                 VatInvoiceVerifyNewOutcomeCallable VatInvoiceVerifyNewCallable(const Model::VatInvoiceVerifyNewRequest& request);
 
                 /**
-                 *本接口支持对增值税发票（卷票）关键字段的识别，包括的发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类等。
+                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
+本接口支持对增值税发票（卷票）关键字段的识别，包括的发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类等。
 
 默认接口请求频率限制：5次/秒。
                  * @param req VatRollInvoiceOCRRequest

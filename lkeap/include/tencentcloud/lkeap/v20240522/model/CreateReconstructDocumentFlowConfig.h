@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,19 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * @return ResultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * 
                      */
                     std::string GetResultType() const;
@@ -104,15 +108,19 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * @param _resultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      * 
                      */
                     void SetResultType(const std::string& _resultType);
@@ -123,6 +131,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResultTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否忽略失败页，返回已成功的页数据。默认为true。
+                     * @return IgnoreFailedPage 是否忽略失败页，返回已成功的页数据。默认为true。
+                     * 
+                     */
+                    bool GetIgnoreFailedPage() const;
+
+                    /**
+                     * 设置是否忽略失败页，返回已成功的页数据。默认为true。
+                     * @param _ignoreFailedPage 是否忽略失败页，返回已成功的页数据。默认为true。
+                     * 
+                     */
+                    void SetIgnoreFailedPage(const bool& _ignoreFailedPage);
+
+                    /**
+                     * 判断参数 IgnoreFailedPage 是否已赋值
+                     * @return IgnoreFailedPage 是否已赋值
+                     * 
+                     */
+                    bool IgnoreFailedPageHasBeenSet() const;
 
                 private:
 
@@ -141,11 +170,19 @@ namespace TencentCloud
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
+4：返回全文MD + 每一页的MD
+5: 返回全文md，每一页ocr原始json，每一页md
 默认值为0
+
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;
+
+                    /**
+                     * 是否忽略失败页，返回已成功的页数据。默认为true。
+                     */
+                    bool m_ignoreFailedPage;
+                    bool m_ignoreFailedPageHasBeenSet;
 
                 };
             }

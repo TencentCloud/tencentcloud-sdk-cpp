@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,92 +126,6 @@ LkeClient::CheckAttributeLabelReferOutcomeCallable LkeClient::CheckAttributeLabe
     return task->get_future();
 }
 
-LkeClient::ConvertDocumentOutcome LkeClient::ConvertDocument(const ConvertDocumentRequest &request)
-{
-    auto outcome = MakeRequest(request, "ConvertDocument");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ConvertDocumentResponse rsp = ConvertDocumentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ConvertDocumentOutcome(rsp);
-        else
-            return ConvertDocumentOutcome(o.GetError());
-    }
-    else
-    {
-        return ConvertDocumentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ConvertDocumentAsync(const ConvertDocumentRequest& request, const ConvertDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConvertDocument(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ConvertDocumentOutcomeCallable LkeClient::ConvertDocumentCallable(const ConvertDocumentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ConvertDocumentOutcome()>>(
-        [this, request]()
-        {
-            return this->ConvertDocument(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::CreateAgentOutcome LkeClient::CreateAgent(const CreateAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateAgentResponse rsp = CreateAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateAgentOutcome(rsp);
-        else
-            return CreateAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateAgentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::CreateAgentAsync(const CreateAgentRequest& request, const CreateAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::CreateAgentOutcomeCallable LkeClient::CreateAgentCallable(const CreateAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::CreateAppOutcome LkeClient::CreateApp(const CreateAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApp");
@@ -291,49 +205,6 @@ LkeClient::CreateAttributeLabelOutcomeCallable LkeClient::CreateAttributeLabelCa
         [this, request]()
         {
             return this->CreateAttributeLabel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::CreateCorpOutcome LkeClient::CreateCorp(const CreateCorpRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCorp");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCorpResponse rsp = CreateCorpResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCorpOutcome(rsp);
-        else
-            return CreateCorpOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCorpOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::CreateCorpAsync(const CreateCorpRequest& request, const CreateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCorp(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::CreateCorpOutcomeCallable LkeClient::CreateCorpCallable(const CreateCorpRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCorpOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCorp(request);
         }
     );
 
@@ -1366,49 +1237,6 @@ LkeClient::DescribeConcurrencyUsageGraphOutcomeCallable LkeClient::DescribeConcu
         [this, request]()
         {
             return this->DescribeConcurrencyUsageGraph(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::DescribeCorpOutcome LkeClient::DescribeCorp(const DescribeCorpRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCorp");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCorpResponse rsp = DescribeCorpResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCorpOutcome(rsp);
-        else
-            return DescribeCorpOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCorpOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::DescribeCorpAsync(const DescribeCorpRequest& request, const DescribeCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCorp(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::DescribeCorpOutcomeCallable LkeClient::DescribeCorpCallable(const DescribeCorpRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCorpOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCorp(request);
         }
     );
 
@@ -2491,49 +2319,6 @@ LkeClient::GetDocPreviewOutcomeCallable LkeClient::GetDocPreviewCallable(const G
     return task->get_future();
 }
 
-LkeClient::GetEmbeddingOutcome LkeClient::GetEmbedding(const GetEmbeddingRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetEmbedding");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetEmbeddingResponse rsp = GetEmbeddingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetEmbeddingOutcome(rsp);
-        else
-            return GetEmbeddingOutcome(o.GetError());
-    }
-    else
-    {
-        return GetEmbeddingOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::GetEmbeddingAsync(const GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetEmbedding(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::GetEmbeddingOutcomeCallable LkeClient::GetEmbeddingCallable(const GetEmbeddingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetEmbeddingOutcome()>>(
-        [this, request]()
-        {
-            return this->GetEmbedding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::GetLikeDataCountOutcome LkeClient::GetLikeDataCount(const GetLikeDataCountRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLikeDataCount");
@@ -2613,49 +2398,6 @@ LkeClient::GetMsgRecordOutcomeCallable LkeClient::GetMsgRecordCallable(const Get
         [this, request]()
         {
             return this->GetMsgRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::GetReconstructDocumentResultOutcome LkeClient::GetReconstructDocumentResult(const GetReconstructDocumentResultRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetReconstructDocumentResult");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetReconstructDocumentResultResponse rsp = GetReconstructDocumentResultResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetReconstructDocumentResultOutcome(rsp);
-        else
-            return GetReconstructDocumentResultOutcome(o.GetError());
-    }
-    else
-    {
-        return GetReconstructDocumentResultOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::GetReconstructDocumentResultAsync(const GetReconstructDocumentResultRequest& request, const GetReconstructDocumentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetReconstructDocumentResult(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::GetReconstructDocumentResultOutcomeCallable LkeClient::GetReconstructDocumentResultCallable(const GetReconstructDocumentResultRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetReconstructDocumentResultOutcome()>>(
-        [this, request]()
-        {
-            return this->GetReconstructDocumentResult(request);
         }
     );
 
@@ -3007,49 +2749,6 @@ LkeClient::ListAppOutcomeCallable LkeClient::ListAppCallable(const ListAppReques
     return task->get_future();
 }
 
-LkeClient::ListAppCategoryOutcome LkeClient::ListAppCategory(const ListAppCategoryRequest &request)
-{
-    auto outcome = MakeRequest(request, "ListAppCategory");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ListAppCategoryResponse rsp = ListAppCategoryResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ListAppCategoryOutcome(rsp);
-        else
-            return ListAppCategoryOutcome(o.GetError());
-    }
-    else
-    {
-        return ListAppCategoryOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ListAppCategoryAsync(const ListAppCategoryRequest& request, const ListAppCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAppCategory(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ListAppCategoryOutcomeCallable LkeClient::ListAppCategoryCallable(const ListAppCategoryRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ListAppCategoryOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAppCategory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::ListAppKnowledgeDetailOutcome LkeClient::ListAppKnowledgeDetail(const ListAppKnowledgeDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAppKnowledgeDetail");
@@ -3129,6 +2828,49 @@ LkeClient::ListAttributeLabelOutcomeCallable LkeClient::ListAttributeLabelCallab
         [this, request]()
         {
             return this->ListAttributeLabel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListChannelOutcome LkeClient::ListChannel(const ListChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListChannelResponse rsp = ListChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListChannelOutcome(rsp);
+        else
+            return ListChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return ListChannelOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListChannelAsync(const ListChannelRequest& request, const ListChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListChannelOutcomeCallable LkeClient::ListChannelCallable(const ListChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->ListChannel(request);
         }
     );
 
@@ -3867,49 +3609,6 @@ LkeClient::ListWorkflowRunsOutcomeCallable LkeClient::ListWorkflowRunsCallable(c
     return task->get_future();
 }
 
-LkeClient::ModifyAgentOutcome LkeClient::ModifyAgent(const ModifyAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAgentResponse rsp = ModifyAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAgentOutcome(rsp);
-        else
-            return ModifyAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAgentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ModifyAgentAsync(const ModifyAgentRequest& request, const ModifyAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ModifyAgentOutcomeCallable LkeClient::ModifyAgentCallable(const ModifyAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::ModifyAppOutcome LkeClient::ModifyApp(const ModifyAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApp");
@@ -4297,49 +3996,6 @@ LkeClient::ModifyRejectedQuestionOutcomeCallable LkeClient::ModifyRejectedQuesti
     return task->get_future();
 }
 
-LkeClient::QueryRewriteOutcome LkeClient::QueryRewrite(const QueryRewriteRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryRewrite");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryRewriteResponse rsp = QueryRewriteResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryRewriteOutcome(rsp);
-        else
-            return QueryRewriteOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryRewriteOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::QueryRewriteAsync(const QueryRewriteRequest& request, const QueryRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryRewrite(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::QueryRewriteOutcomeCallable LkeClient::QueryRewriteCallable(const QueryRewriteRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<QueryRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::RateMsgRecordOutcome LkeClient::RateMsgRecord(const RateMsgRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "RateMsgRecord");
@@ -4376,49 +4032,6 @@ LkeClient::RateMsgRecordOutcomeCallable LkeClient::RateMsgRecordCallable(const R
         [this, request]()
         {
             return this->RateMsgRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::ReconstructDocumentOutcome LkeClient::ReconstructDocument(const ReconstructDocumentRequest &request)
-{
-    auto outcome = MakeRequest(request, "ReconstructDocument");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ReconstructDocumentResponse rsp = ReconstructDocumentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ReconstructDocumentOutcome(rsp);
-        else
-            return ReconstructDocumentOutcome(o.GetError());
-    }
-    else
-    {
-        return ReconstructDocumentOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ReconstructDocumentAsync(const ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReconstructDocument(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ReconstructDocumentOutcomeCallable LkeClient::ReconstructDocumentCallable(const ReconstructDocumentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ReconstructDocumentOutcome()>>(
-        [this, request]()
-        {
-            return this->ReconstructDocument(request);
         }
     );
 
@@ -4634,49 +4247,6 @@ LkeClient::RetryReleaseOutcomeCallable LkeClient::RetryReleaseCallable(const Ret
         [this, request]()
         {
             return this->RetryRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LkeClient::RunReRankOutcome LkeClient::RunReRank(const RunReRankRequest &request)
-{
-    auto outcome = MakeRequest(request, "RunReRank");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RunReRankResponse rsp = RunReRankResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RunReRankOutcome(rsp);
-        else
-            return RunReRankOutcome(o.GetError());
-    }
-    else
-    {
-        return RunReRankOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::RunReRankAsync(const RunReRankRequest& request, const RunReRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunReRank(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::RunReRankOutcomeCallable LkeClient::RunReRankCallable(const RunReRankRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RunReRankOutcome()>>(
-        [this, request]()
-        {
-            return this->RunReRank(request);
         }
     );
 

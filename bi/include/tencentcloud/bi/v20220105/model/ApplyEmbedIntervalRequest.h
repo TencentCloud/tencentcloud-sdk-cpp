@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分享项目id，必选
-                     * @return ProjectId 分享项目id，必选
+                     * 获取分享项目id
+                     * @return ProjectId 分享项目id
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置分享项目id，必选
-                     * @param _projectId 分享项目id，必选
+                     * 设置分享项目id
+                     * @param _projectId 分享项目id
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -183,7 +183,7 @@ project，ChatBI嵌出时
                 private:
 
                     /**
-                     * 分享项目id，必选
+                     * 分享项目id
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

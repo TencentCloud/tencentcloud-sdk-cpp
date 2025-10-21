@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取待部署总数
+                     * @return PendingTotalCount 待部署总数
+                     * 
+                     */
+                    int64_t GetPendingTotalCount() const;
+
+                    /**
+                     * 设置待部署总数
+                     * @param _pendingTotalCount 待部署总数
+                     * 
+                     */
+                    void SetPendingTotalCount(const int64_t& _pendingTotalCount);
+
+                    /**
+                     * 判断参数 PendingTotalCount 是否已赋值
+                     * @return PendingTotalCount 是否已赋值
+                     * 
+                     */
+                    bool PendingTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 待部署总数
+                     */
+                    int64_t m_pendingTotalCount;
+                    bool m_pendingTotalCountHasBeenSet;
 
                 };
             }

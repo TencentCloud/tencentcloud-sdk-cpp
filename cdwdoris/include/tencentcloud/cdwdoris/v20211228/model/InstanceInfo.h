@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例ID, "cdw-xxxx" 字符串类型
-                     * @return InstanceId 集群实例ID, "cdw-xxxx" 字符串类型
+                     * 获取集群实例ID, "cdwdoris-xxxx" 字符串类型
+                     * @return InstanceId 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例ID, "cdw-xxxx" 字符串类型
-                     * @param _instanceId 集群实例ID, "cdw-xxxx" 字符串类型
+                     * 设置集群实例ID, "cdwdoris-xxxx" 字符串类型
+                     * @param _instanceId 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -93,26 +93,30 @@ namespace TencentCloud
 
                     /**
                      * 获取状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * @return Status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * @param _status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -335,15 +339,15 @@ Modify 集群变更中；
                     bool CoreSummaryHasBeenSet() const;
 
                     /**
-                     * 获取高可用，“true" "false"
-                     * @return HA 高可用，“true" "false"
+                     * 获取高可用，"true" "false"
+                     * @return HA 高可用，"true" "false"
                      * 
                      */
                     std::string GetHA() const;
 
                     /**
-                     * 设置高可用，“true" "false"
-                     * @param _hA 高可用，“true" "false"
+                     * 设置高可用，"true" "false"
+                     * @param _hA 高可用，"true" "false"
                      * 
                      */
                     void SetHA(const std::string& _hA);
@@ -452,15 +456,15 @@ Modify 集群变更中；
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区说明，例如 "广州二区"
-                     * @return ZoneDesc 可用区说明，例如 "广州二区"
+                     * 获取可用区说明，例如 "广州三区"
+                     * @return ZoneDesc 可用区说明，例如 "广州三区"
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
-                     * 设置可用区说明，例如 "广州二区"
-                     * @param _zoneDesc 可用区说明，例如 "广州二区"
+                     * 设置可用区说明，例如 "广州三区"
+                     * @param _zoneDesc 可用区说明，例如 "广州三区"
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -1194,10 +1198,94 @@ Modify 集群变更中；
                      */
                     bool ComputeGroupCountHasBeenSet() const;
 
+                    /**
+                     * 获取存算分离cos存储数据
+                     * @return CosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    double GetCosStorageSize() const;
+
+                    /**
+                     * 设置存算分离cos存储数据
+                     * @param _cosStorageSize 存算分离cos存储数据
+                     * 
+                     */
+                    void SetCosStorageSize(const double& _cosStorageSize);
+
+                    /**
+                     * 判断参数 CosStorageSize 是否已赋值
+                     * @return CosStorageSize 是否已赋值
+                     * 
+                     */
+                    bool CosStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取存算分离的指标 当是true 不支持新建计算组
+                     * @return IsMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    bool GetIsMasterNonVM() const;
+
+                    /**
+                     * 设置存算分离的指标 当是true 不支持新建计算组
+                     * @param _isMasterNonVM 存算分离的指标 当是true 不支持新建计算组
+                     * 
+                     */
+                    void SetIsMasterNonVM(const bool& _isMasterNonVM);
+
+                    /**
+                     * 判断参数 IsMasterNonVM 是否已赋值
+                     * @return IsMasterNonVM 是否已赋值
+                     * 
+                     */
+                    bool IsMasterNonVMHasBeenSet() const;
+
+                    /**
+                     * 获取Cos容量包大小
+                     * @return CosPkgCapacity Cos容量包大小
+                     * 
+                     */
+                    int64_t GetCosPkgCapacity() const;
+
+                    /**
+                     * 设置Cos容量包大小
+                     * @param _cosPkgCapacity Cos容量包大小
+                     * 
+                     */
+                    void SetCosPkgCapacity(const int64_t& _cosPkgCapacity);
+
+                    /**
+                     * 判断参数 CosPkgCapacity 是否已赋值
+                     * @return CosPkgCapacity 是否已赋值
+                     * 
+                     */
+                    bool CosPkgCapacityHasBeenSet() const;
+
+                    /**
+                     * 获取集群是否使用托管桶
+                     * @return UseManagedBucket 集群是否使用托管桶
+                     * 
+                     */
+                    bool GetUseManagedBucket() const;
+
+                    /**
+                     * 设置集群是否使用托管桶
+                     * @param _useManagedBucket 集群是否使用托管桶
+                     * 
+                     */
+                    void SetUseManagedBucket(const bool& _useManagedBucket);
+
+                    /**
+                     * 判断参数 UseManagedBucket 是否已赋值
+                     * @return UseManagedBucket 是否已赋值
+                     * 
+                     */
+                    bool UseManagedBucketHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例ID, "cdw-xxxx" 字符串类型
+                     * 集群实例ID, "cdwdoris-xxxx" 字符串类型
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -1210,9 +1298,10 @@ Modify 集群变更中；
 
                     /**
                      * 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+Init  创建中
+Serving   运行中
+Isolated   已隔离
+Changing  变更中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -1278,7 +1367,7 @@ Modify 集群变更中；
                     bool m_coreSummaryHasBeenSet;
 
                     /**
-                     * 高可用，“true" "false"
+                     * 高可用，"true" "false"
                      */
                     std::string m_hA;
                     bool m_hAHasBeenSet;
@@ -1311,7 +1400,7 @@ Modify 集群变更中；
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 可用区说明，例如 "广州二区"
+                     * 可用区说明，例如 "广州三区"
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;
@@ -1521,6 +1610,30 @@ Modify 集群变更中；
                      */
                     int64_t m_computeGroupCount;
                     bool m_computeGroupCountHasBeenSet;
+
+                    /**
+                     * 存算分离cos存储数据
+                     */
+                    double m_cosStorageSize;
+                    bool m_cosStorageSizeHasBeenSet;
+
+                    /**
+                     * 存算分离的指标 当是true 不支持新建计算组
+                     */
+                    bool m_isMasterNonVM;
+                    bool m_isMasterNonVMHasBeenSet;
+
+                    /**
+                     * Cos容量包大小
+                     */
+                    int64_t m_cosPkgCapacity;
+                    bool m_cosPkgCapacityHasBeenSet;
+
+                    /**
+                     * 集群是否使用托管桶
+                     */
+                    bool m_useManagedBucket;
+                    bool m_useManagedBucketHasBeenSet;
 
                 };
             }

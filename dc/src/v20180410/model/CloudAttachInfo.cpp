@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,10 @@ CloudAttachInfo::CloudAttachInfo() :
     m_directConnectIdHasBeenSet(false),
     m_cloudAttachServiceGatewaysSupportHasBeenSet(false),
     m_bUpdateBandwidthHasBeenSet(false),
-    m_arRegionHasBeenSet(false)
+    m_arRegionHasBeenSet(false),
+    m_iapCodeHasBeenSet(false),
+    m_idcPointTypeHasBeenSet(false),
+    m_bIapLinkProtectedHasBeenSet(false)
 {
 }
 
@@ -249,6 +252,36 @@ CoreInternalOutcome CloudAttachInfo::Deserialize(const rapidjson::Value &value)
         m_arRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("IapCode") && !value["IapCode"].IsNull())
+    {
+        if (!value["IapCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.IapCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iapCode = string(value["IapCode"].GetString());
+        m_iapCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdcPointType") && !value["IdcPointType"].IsNull())
+    {
+        if (!value["IdcPointType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.IdcPointType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idcPointType = string(value["IdcPointType"].GetString());
+        m_idcPointTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BIapLinkProtected") && !value["BIapLinkProtected"].IsNull())
+    {
+        if (!value["BIapLinkProtected"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.BIapLinkProtected` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bIapLinkProtected = value["BIapLinkProtected"].GetBool();
+        m_bIapLinkProtectedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +447,30 @@ void CloudAttachInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ArRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_arRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iapCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IapCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iapCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idcPointTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdcPointType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idcPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bIapLinkProtectedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BIapLinkProtected";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bIapLinkProtected, allocator);
     }
 
 }
@@ -737,5 +794,53 @@ void CloudAttachInfo::SetArRegion(const string& _arRegion)
 bool CloudAttachInfo::ArRegionHasBeenSet() const
 {
     return m_arRegionHasBeenSet;
+}
+
+string CloudAttachInfo::GetIapCode() const
+{
+    return m_iapCode;
+}
+
+void CloudAttachInfo::SetIapCode(const string& _iapCode)
+{
+    m_iapCode = _iapCode;
+    m_iapCodeHasBeenSet = true;
+}
+
+bool CloudAttachInfo::IapCodeHasBeenSet() const
+{
+    return m_iapCodeHasBeenSet;
+}
+
+string CloudAttachInfo::GetIdcPointType() const
+{
+    return m_idcPointType;
+}
+
+void CloudAttachInfo::SetIdcPointType(const string& _idcPointType)
+{
+    m_idcPointType = _idcPointType;
+    m_idcPointTypeHasBeenSet = true;
+}
+
+bool CloudAttachInfo::IdcPointTypeHasBeenSet() const
+{
+    return m_idcPointTypeHasBeenSet;
+}
+
+bool CloudAttachInfo::GetBIapLinkProtected() const
+{
+    return m_bIapLinkProtected;
+}
+
+void CloudAttachInfo::SetBIapLinkProtected(const bool& _bIapLinkProtected)
+{
+    m_bIapLinkProtected = _bIapLinkProtected;
+    m_bIapLinkProtectedHasBeenSet = true;
+}
+
+bool CloudAttachInfo::BIapLinkProtectedHasBeenSet() const
+{
+    return m_bIapLinkProtectedHasBeenSet;
 }
 

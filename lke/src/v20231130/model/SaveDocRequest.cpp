@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,10 @@ SaveDocRequest::SaveDocRequest() :
     m_isReferHasBeenSet(false),
     m_optHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
-    m_isDownloadHasBeenSet(false)
+    m_isDownloadHasBeenSet(false),
+    m_duplicateFileHandlesHasBeenSet(false),
+    m_splitRuleHasBeenSet(false),
+    m_updatePeriodInfoHasBeenSet(false)
 {
 }
 
@@ -200,6 +203,38 @@ string SaveDocRequest::ToJsonString() const
         string key = "IsDownload";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDownload, allocator);
+    }
+
+    if (m_duplicateFileHandlesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DuplicateFileHandles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_duplicateFileHandles.begin(); itr != m_duplicateFileHandles.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_splitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatePeriodInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatePeriodInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updatePeriodInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -496,6 +531,54 @@ void SaveDocRequest::SetIsDownload(const bool& _isDownload)
 bool SaveDocRequest::IsDownloadHasBeenSet() const
 {
     return m_isDownloadHasBeenSet;
+}
+
+vector<DuplicateFileHandle> SaveDocRequest::GetDuplicateFileHandles() const
+{
+    return m_duplicateFileHandles;
+}
+
+void SaveDocRequest::SetDuplicateFileHandles(const vector<DuplicateFileHandle>& _duplicateFileHandles)
+{
+    m_duplicateFileHandles = _duplicateFileHandles;
+    m_duplicateFileHandlesHasBeenSet = true;
+}
+
+bool SaveDocRequest::DuplicateFileHandlesHasBeenSet() const
+{
+    return m_duplicateFileHandlesHasBeenSet;
+}
+
+string SaveDocRequest::GetSplitRule() const
+{
+    return m_splitRule;
+}
+
+void SaveDocRequest::SetSplitRule(const string& _splitRule)
+{
+    m_splitRule = _splitRule;
+    m_splitRuleHasBeenSet = true;
+}
+
+bool SaveDocRequest::SplitRuleHasBeenSet() const
+{
+    return m_splitRuleHasBeenSet;
+}
+
+UpdatePeriodInfo SaveDocRequest::GetUpdatePeriodInfo() const
+{
+    return m_updatePeriodInfo;
+}
+
+void SaveDocRequest::SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo)
+{
+    m_updatePeriodInfo = _updatePeriodInfo;
+    m_updatePeriodInfoHasBeenSet = true;
+}
+
+bool SaveDocRequest::UpdatePeriodInfoHasBeenSet() const
+{
+    return m_updatePeriodInfoHasBeenSet;
 }
 
 

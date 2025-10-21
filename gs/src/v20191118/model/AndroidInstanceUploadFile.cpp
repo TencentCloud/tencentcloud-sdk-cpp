@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 AndroidInstanceUploadFile::AndroidInstanceUploadFile() :
     m_androidInstanceIdHasBeenSet(false),
     m_fileURLHasBeenSet(false),
-    m_destinationDirectoryHasBeenSet(false)
+    m_destinationDirectoryHasBeenSet(false),
+    m_destinationFileNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AndroidInstanceUploadFile::Deserialize(const rapidjson::Valu
         m_destinationDirectoryHasBeenSet = true;
     }
 
+    if (value.HasMember("DestinationFileName") && !value["DestinationFileName"].IsNull())
+    {
+        if (!value["DestinationFileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceUploadFile.DestinationFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationFileName = string(value["DestinationFileName"].GetString());
+        m_destinationFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AndroidInstanceUploadFile::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "DestinationDirectory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destinationDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AndroidInstanceUploadFile::SetDestinationDirectory(const string& _destinati
 bool AndroidInstanceUploadFile::DestinationDirectoryHasBeenSet() const
 {
     return m_destinationDirectoryHasBeenSet;
+}
+
+string AndroidInstanceUploadFile::GetDestinationFileName() const
+{
+    return m_destinationFileName;
+}
+
+void AndroidInstanceUploadFile::SetDestinationFileName(const string& _destinationFileName)
+{
+    m_destinationFileName = _destinationFileName;
+    m_destinationFileNameHasBeenSet = true;
+}
+
+bool AndroidInstanceUploadFile::DestinationFileNameHasBeenSet() const
+{
+    return m_destinationFileNameHasBeenSet;
 }
 

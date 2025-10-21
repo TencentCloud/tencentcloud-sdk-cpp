@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
-                     * @return TimeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * 获取资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * @return TimeSpan 资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
-                     * @param _timeSpan 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * 设置资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * @param _timeSpan 资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取资源使用时长的单位，后付费：s，预付费：m。默认为s
-                     * @return TimeUnit 资源使用时长的单位，后付费：s，预付费：m。默认为s
+                     * 获取资源使用时长的单位，后付费：h，预付费：m。默认为h
+                     * @return TimeUnit 资源使用时长的单位，后付费：h，预付费：m。默认为h
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置资源使用时长的单位，后付费：s，预付费：m。默认为s
-                     * @param _timeUnit 资源使用时长的单位，后付费：s，预付费：m。默认为s
+                     * 设置资源使用时长的单位，后付费：h，预付费：m。默认为h
+                     * @param _timeUnit 资源使用时长的单位，后付费：h，预付费：m。默认为h
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool CrontabResumeSuspendStrategyHasBeenSet() const;
 
                     /**
-                     * 获取引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
-                     * @return EngineExecType 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
+                     * 获取引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH
+                     * @return EngineExecType 引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH
                      * 
                      */
                     std::string GetEngineExecType() const;
 
                     /**
-                     * 设置引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
-                     * @param _engineExecType 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
+                     * 设置引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH
+                     * @param _engineExecType 引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH
                      * 
                      */
                     void SetEngineExecType(const std::string& _engineExecType);
@@ -814,13 +814,13 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
+                     * 资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 资源使用时长的单位，后付费：s，预付费：m。默认为s
+                     * 资源使用时长的单位，后付费：h，预付费：m。默认为h
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
@@ -856,7 +856,7 @@ namespace TencentCloud
                     bool m_crontabResumeSuspendStrategyHasBeenSet;
 
                     /**
-                     * 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
+                     * 引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH
                      */
                     std::string m_engineExecType;
                     bool m_engineExecTypeHasBeenSet;

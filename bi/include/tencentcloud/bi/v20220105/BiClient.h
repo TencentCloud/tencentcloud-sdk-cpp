@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/bi/v20220105/model/ApplyEmbedIntervalRequest.h>
 #include <tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h>
+#include <tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h>
+#include <tencentcloud/bi/v20220105/model/ClearEmbedTokenResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h>
+#include <tencentcloud/bi/v20220105/model/CreatePermissionRanksRequest.h>
+#include <tencentcloud/bi/v20220105/model/CreatePermissionRanksResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateProjectResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateUserRoleRequest.h>
@@ -49,6 +53,12 @@
 #include <tencentcloud/bi/v20220105/model/DescribeDatasourceListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribePageWidgetListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribePageWidgetListResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionRanksInfoRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionRanksInfoResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionRoleInfoRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionRoleInfoResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectListRequest.h>
@@ -88,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyEmbedIntervalResponse> ApplyEmbedIntervalOutcome;
                 typedef std::future<ApplyEmbedIntervalOutcome> ApplyEmbedIntervalOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ApplyEmbedIntervalRequest&, ApplyEmbedIntervalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyEmbedIntervalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClearEmbedTokenResponse> ClearEmbedTokenOutcome;
+                typedef std::future<ClearEmbedTokenOutcome> ClearEmbedTokenOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ClearEmbedTokenRequest&, ClearEmbedTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearEmbedTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatasourceResponse> CreateDatasourceOutcome;
                 typedef std::future<CreateDatasourceOutcome> CreateDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateDatasourceRequest&, CreateDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceAsyncHandler;
@@ -97,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmbedTokenResponse> CreateEmbedTokenOutcome;
                 typedef std::future<CreateEmbedTokenOutcome> CreateEmbedTokenOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateEmbedTokenRequest&, CreateEmbedTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePermissionRanksResponse> CreatePermissionRanksOutcome;
+                typedef std::future<CreatePermissionRanksOutcome> CreatePermissionRanksOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::CreatePermissionRanksRequest&, CreatePermissionRanksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePermissionRanksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -124,6 +140,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePageWidgetListResponse> DescribePageWidgetListOutcome;
                 typedef std::future<DescribePageWidgetListOutcome> DescribePageWidgetListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribePageWidgetListRequest&, DescribePageWidgetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePageWidgetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePermissionRanksInfoResponse> DescribePermissionRanksInfoOutcome;
+                typedef std::future<DescribePermissionRanksInfoOutcome> DescribePermissionRanksInfoOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribePermissionRanksInfoRequest&, DescribePermissionRanksInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePermissionRanksInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePermissionRoleInfoResponse> DescribePermissionRoleInfoOutcome;
+                typedef std::future<DescribePermissionRoleInfoOutcome> DescribePermissionRoleInfoOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribePermissionRoleInfoRequest&, DescribePermissionRoleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePermissionRoleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePermissionStatusInfoResponse> DescribePermissionStatusInfoOutcome;
+                typedef std::future<DescribePermissionStatusInfoOutcome> DescribePermissionStatusInfoOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribePermissionStatusInfoRequest&, DescribePermissionStatusInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePermissionStatusInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectInfoResponse> DescribeProjectInfoOutcome;
                 typedef std::future<DescribeProjectInfoOutcome> DescribeProjectInfoOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeProjectInfoRequest&, DescribeProjectInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectInfoAsyncHandler;
@@ -170,6 +195,15 @@ namespace TencentCloud
                 ApplyEmbedIntervalOutcomeCallable ApplyEmbedIntervalCallable(const Model::ApplyEmbedIntervalRequest& request);
 
                 /**
+                 *强鉴权token 清理，只有企业管理员才能调用该接口
+                 * @param req ClearEmbedTokenRequest
+                 * @return ClearEmbedTokenOutcome
+                 */
+                ClearEmbedTokenOutcome ClearEmbedToken(const Model::ClearEmbedTokenRequest &request);
+                void ClearEmbedTokenAsync(const Model::ClearEmbedTokenRequest& request, const ClearEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearEmbedTokenOutcomeCallable ClearEmbedTokenCallable(const Model::ClearEmbedTokenRequest& request);
+
+                /**
                  *创建数据源
                  * @param req CreateDatasourceRequest
                  * @return CreateDatasourceOutcome
@@ -195,6 +229,15 @@ namespace TencentCloud
                 CreateEmbedTokenOutcome CreateEmbedToken(const Model::CreateEmbedTokenRequest &request);
                 void CreateEmbedTokenAsync(const Model::CreateEmbedTokenRequest& request, const CreateEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEmbedTokenOutcomeCallable CreateEmbedTokenCallable(const Model::CreateEmbedTokenRequest& request);
+
+                /**
+                 *创建行列权限
+                 * @param req CreatePermissionRanksRequest
+                 * @return CreatePermissionRanksOutcome
+                 */
+                CreatePermissionRanksOutcome CreatePermissionRanks(const Model::CreatePermissionRanksRequest &request);
+                void CreatePermissionRanksAsync(const Model::CreatePermissionRanksRequest& request, const CreatePermissionRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePermissionRanksOutcomeCallable CreatePermissionRanksCallable(const Model::CreatePermissionRanksRequest& request);
 
                 /**
                  *创建项目
@@ -276,6 +319,33 @@ namespace TencentCloud
                 DescribePageWidgetListOutcome DescribePageWidgetList(const Model::DescribePageWidgetListRequest &request);
                 void DescribePageWidgetListAsync(const Model::DescribePageWidgetListRequest& request, const DescribePageWidgetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePageWidgetListOutcomeCallable DescribePageWidgetListCallable(const Model::DescribePageWidgetListRequest& request);
+
+                /**
+                 *根据角色或标签查询行列权限配置
+                 * @param req DescribePermissionRanksInfoRequest
+                 * @return DescribePermissionRanksInfoOutcome
+                 */
+                DescribePermissionRanksInfoOutcome DescribePermissionRanksInfo(const Model::DescribePermissionRanksInfoRequest &request);
+                void DescribePermissionRanksInfoAsync(const Model::DescribePermissionRanksInfoRequest& request, const DescribePermissionRanksInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePermissionRanksInfoOutcomeCallable DescribePermissionRanksInfoCallable(const Model::DescribePermissionRanksInfoRequest& request);
+
+                /**
+                 *行列权限项目内角色列表接口1
+                 * @param req DescribePermissionRoleInfoRequest
+                 * @return DescribePermissionRoleInfoOutcome
+                 */
+                DescribePermissionRoleInfoOutcome DescribePermissionRoleInfo(const Model::DescribePermissionRoleInfoRequest &request);
+                void DescribePermissionRoleInfoAsync(const Model::DescribePermissionRoleInfoRequest& request, const DescribePermissionRoleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePermissionRoleInfoOutcomeCallable DescribePermissionRoleInfoCallable(const Model::DescribePermissionRoleInfoRequest& request);
+
+                /**
+                 *查询行列权限初始状态1
+                 * @param req DescribePermissionStatusInfoRequest
+                 * @return DescribePermissionStatusInfoOutcome
+                 */
+                DescribePermissionStatusInfoOutcome DescribePermissionStatusInfo(const Model::DescribePermissionStatusInfoRequest &request);
+                void DescribePermissionStatusInfoAsync(const Model::DescribePermissionStatusInfoRequest& request, const DescribePermissionStatusInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePermissionStatusInfoOutcomeCallable DescribePermissionStatusInfoCallable(const Model::DescribePermissionStatusInfoRequest& request);
 
                 /**
                  *项目详情接口

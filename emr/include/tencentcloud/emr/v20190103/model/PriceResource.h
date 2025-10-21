@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -329,6 +329,27 @@ namespace TencentCloud
                      */
                     bool LocalDiskNumHasBeenSet() const;
 
+                    /**
+                     * 获取GPU信息
+                     * @return GpuDesc GPU信息
+                     * 
+                     */
+                    std::string GetGpuDesc() const;
+
+                    /**
+                     * 设置GPU信息
+                     * @param _gpuDesc GPU信息
+                     * 
+                     */
+                    void SetGpuDesc(const std::string& _gpuDesc);
+
+                    /**
+                     * 判断参数 GpuDesc 是否已赋值
+                     * @return GpuDesc 是否已赋值
+                     * 
+                     */
+                    bool GpuDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +431,12 @@ namespace TencentCloud
                      */
                     int64_t m_localDiskNum;
                     bool m_localDiskNumHasBeenSet;
+
+                    /**
+                     * GPU信息
+                     */
+                    std::string m_gpuDesc;
+                    bool m_gpuDescHasBeenSet;
 
                 };
             }

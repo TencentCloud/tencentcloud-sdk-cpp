@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/LogoParam.h
   include/tencentcloud/aiart/v20221229/model/ImageToImageRequest.h
   include/tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h
-  include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h
+  include/tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h
+  include/tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h
   include/tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesRequest.h
   include/tencentcloud/aiart/v20221229/model/ResultConfig.h
   include/tencentcloud/aiart/v20221229/model/QueryMemeJobRequest.h
@@ -39,14 +40,15 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h
   include/tencentcloud/aiart/v20221229/model/SketchToImageRequest.h
-  include/tencentcloud/aiart/v20221229/model/TextToImageRequest.h
   include/tencentcloud/aiart/v20221229/model/Rect.h
   include/tencentcloud/aiart/v20221229/model/FaceInfo.h
   include/tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitGlamPicJobRequest.h
-  include/tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h
+  include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h
   include/tencentcloud/aiart/v20221229/model/LogoRect.h
+  include/tencentcloud/aiart/v20221229/model/TextToImageLiteRequest.h
   include/tencentcloud/aiart/v20221229/model/Filter.h
+  include/tencentcloud/aiart/v20221229/model/TextToImageRapidResponse.h
   include/tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h
@@ -54,16 +56,17 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ImageToImageResponse.h
-  include/tencentcloud/aiart/v20221229/model/SketchToImageResponse.h
+  include/tencentcloud/aiart/v20221229/model/TextToImageRapidRequest.h
+  include/tencentcloud/aiart/v20221229/model/Image.h
   include/tencentcloud/aiart/v20221229/model/QueryGlamPicJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalRequest.h
   include/tencentcloud/aiart/v20221229/model/ChangeClothesRequest.h
   include/tencentcloud/aiart/v20221229/model/ImageOutpaintingResponse.h
-  include/tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h
+  include/tencentcloud/aiart/v20221229/model/TextToImageLiteResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h
   include/tencentcloud/aiart/v20221229/model/RefineImageResponse.h
-  include/tencentcloud/aiart/v20221229/model/TextToImageResponse.h
+  include/tencentcloud/aiart/v20221229/model/SketchToImageResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h
   )
 
@@ -74,7 +77,8 @@ set(aiart_src
   src/v20221229/model/LogoParam.cpp
   src/v20221229/model/ImageToImageRequest.cpp
   src/v20221229/model/QueryTrainPortraitModelJobRequest.cpp
-  src/v20221229/model/QueryTextToImageProJobResponse.cpp
+  src/v20221229/model/GenerateAvatarRequest.cpp
+  src/v20221229/model/UploadTrainPortraitImagesResponse.cpp
   src/v20221229/model/UploadTrainPortraitImagesRequest.cpp
   src/v20221229/model/ResultConfig.cpp
   src/v20221229/model/QueryMemeJobRequest.cpp
@@ -89,14 +93,15 @@ set(aiart_src
   src/v20221229/model/SubmitMemeJobResponse.cpp
   src/v20221229/model/SubmitTrainPortraitModelJobRequest.cpp
   src/v20221229/model/SketchToImageRequest.cpp
-  src/v20221229/model/TextToImageRequest.cpp
   src/v20221229/model/Rect.cpp
   src/v20221229/model/FaceInfo.cpp
   src/v20221229/model/SubmitTextToImageProJobResponse.cpp
   src/v20221229/model/SubmitGlamPicJobRequest.cpp
-  src/v20221229/model/GenerateAvatarRequest.cpp
+  src/v20221229/model/QueryTextToImageProJobResponse.cpp
   src/v20221229/model/LogoRect.cpp
+  src/v20221229/model/TextToImageLiteRequest.cpp
   src/v20221229/model/Filter.cpp
+  src/v20221229/model/TextToImageRapidResponse.cpp
   src/v20221229/model/ImageInpaintingRemovalResponse.cpp
   src/v20221229/model/SubmitMemeJobRequest.cpp
   src/v20221229/model/ReplaceBackgroundRequest.cpp
@@ -104,16 +109,17 @@ set(aiart_src
   src/v20221229/model/SubmitTrainPortraitModelJobResponse.cpp
   src/v20221229/model/QueryDrawPortraitJobRequest.cpp
   src/v20221229/model/ImageToImageResponse.cpp
-  src/v20221229/model/SketchToImageResponse.cpp
+  src/v20221229/model/TextToImageRapidRequest.cpp
+  src/v20221229/model/Image.cpp
   src/v20221229/model/QueryGlamPicJobRequest.cpp
   src/v20221229/model/ImageInpaintingRemovalRequest.cpp
   src/v20221229/model/ChangeClothesRequest.cpp
   src/v20221229/model/ImageOutpaintingResponse.cpp
-  src/v20221229/model/UploadTrainPortraitImagesResponse.cpp
+  src/v20221229/model/TextToImageLiteResponse.cpp
   src/v20221229/model/QueryTextToImageProJobRequest.cpp
   src/v20221229/model/GenerateAvatarResponse.cpp
   src/v20221229/model/RefineImageResponse.cpp
-  src/v20221229/model/TextToImageResponse.cpp
+  src/v20221229/model/SketchToImageResponse.cpp
   src/v20221229/model/SubmitDrawPortraitJobRequest.cpp
   )
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -508,6 +508,69 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取当前部署证书加密算法
+                     * @return Algorithm 当前部署证书加密算法
+                     * 
+                     */
+                    std::string GetAlgorithm() const;
+
+                    /**
+                     * 设置当前部署证书加密算法
+                     * @param _algorithm 当前部署证书加密算法
+                     * 
+                     */
+                    void SetAlgorithm(const std::string& _algorithm);
+
+                    /**
+                     * 判断参数 Algorithm 是否已赋值
+                     * @return Algorithm 是否已赋值
+                     * 
+                     */
+                    bool AlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取原证书加密算法
+                     * @return OldAlgorithm 原证书加密算法
+                     * 
+                     */
+                    std::string GetOldAlgorithm() const;
+
+                    /**
+                     * 设置原证书加密算法
+                     * @param _oldAlgorithm 原证书加密算法
+                     * 
+                     */
+                    void SetOldAlgorithm(const std::string& _oldAlgorithm);
+
+                    /**
+                     * 判断参数 OldAlgorithm 是否已赋值
+                     * @return OldAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool OldAlgorithmHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态，不同云产品状态不一样
+                     * @return InstanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态，不同云产品状态不一样
+                     * @param _instanceStatus 实例状态，不同云产品状态不一样
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +704,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 当前部署证书加密算法
+                     */
+                    std::string m_algorithm;
+                    bool m_algorithmHasBeenSet;
+
+                    /**
+                     * 原证书加密算法
+                     */
+                    std::string m_oldAlgorithm;
+                    bool m_oldAlgorithmHasBeenSet;
+
+                    /**
+                     * 实例状态，不同云产品状态不一样
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
 
                 };
             }

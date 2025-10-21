@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool OffInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组状态
-                     * @return GroupStatus 部署组状态
+                     * 获取部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @return GroupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     std::string GetGroupStatus() const;
 
                     /**
-                     * 设置部署组状态
-                     * @param _groupStatus 部署组状态
+                     * 设置部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
+                     * @param _groupStatus 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      * 
                      */
                     void SetGroupStatus(const std::string& _groupStatus);
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_offInstanceCountHasBeenSet;
 
                     /**
-                     * 部署组状态
+                     * 部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知
                      */
                     std::string m_groupStatus;
                     bool m_groupStatusHasBeenSet;

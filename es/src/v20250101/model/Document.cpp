@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ Document::Document() :
     m_fileTypeHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_fileContentHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
+    m_fileNameHasBeenSet(false),
+    m_fileStartPageNumberHasBeenSet(false),
+    m_fileEndPageNumberHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome Document::Deserialize(const rapidjson::Value &value)
         m_fileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FileStartPageNumber") && !value["FileStartPageNumber"].IsNull())
+    {
+        if (!value["FileStartPageNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Document.FileStartPageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileStartPageNumber = value["FileStartPageNumber"].GetInt64();
+        m_fileStartPageNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileEndPageNumber") && !value["FileEndPageNumber"].IsNull())
+    {
+        if (!value["FileEndPageNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Document.FileEndPageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileEndPageNumber = value["FileEndPageNumber"].GetInt64();
+        m_fileEndPageNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void Document::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileStartPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileStartPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileStartPageNumber, allocator);
+    }
+
+    if (m_fileEndPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileEndPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileEndPageNumber, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void Document::SetFileName(const string& _fileName)
 bool Document::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+int64_t Document::GetFileStartPageNumber() const
+{
+    return m_fileStartPageNumber;
+}
+
+void Document::SetFileStartPageNumber(const int64_t& _fileStartPageNumber)
+{
+    m_fileStartPageNumber = _fileStartPageNumber;
+    m_fileStartPageNumberHasBeenSet = true;
+}
+
+bool Document::FileStartPageNumberHasBeenSet() const
+{
+    return m_fileStartPageNumberHasBeenSet;
+}
+
+int64_t Document::GetFileEndPageNumber() const
+{
+    return m_fileEndPageNumber;
+}
+
+void Document::SetFileEndPageNumber(const int64_t& _fileEndPageNumber)
+{
+    m_fileEndPageNumber = _fileEndPageNumber;
+    m_fileEndPageNumberHasBeenSet = true;
+}
+
+bool Document::FileEndPageNumberHasBeenSet() const
+{
+    return m_fileEndPageNumberHasBeenSet;
 }
 

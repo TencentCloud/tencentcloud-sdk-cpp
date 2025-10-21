@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool SnapShotPathHasBeenSet() const;
 
+                    /**
+                     * 获取cos桶所在地域
+                     * @return Region cos桶所在地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置cos桶所在地域
+                     * @param _region cos桶所在地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_snapShotPath;
                     bool m_snapShotPathHasBeenSet;
+
+                    /**
+                     * cos桶所在地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

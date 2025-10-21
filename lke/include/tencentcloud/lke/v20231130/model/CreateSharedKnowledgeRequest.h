@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,23 +87,44 @@ namespace TencentCloud
                     /**
                      * 获取Embedding模型，字符数量上限128
                      * @return EmbeddingModel Embedding模型，字符数量上限128
-                     * 
+                     * @deprecated
                      */
                     std::string GetEmbeddingModel() const;
 
                     /**
                      * 设置Embedding模型，字符数量上限128
                      * @param _embeddingModel Embedding模型，字符数量上限128
-                     * 
+                     * @deprecated
                      */
                     void SetEmbeddingModel(const std::string& _embeddingModel);
 
                     /**
                      * 判断参数 EmbeddingModel 是否已赋值
                      * @return EmbeddingModel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EmbeddingModelHasBeenSet() const;
+
+                    /**
+                     * 获取共享知识库类型，0普通，1公众号
+                     * @return KnowledgeType 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    int64_t GetKnowledgeType() const;
+
+                    /**
+                     * 设置共享知识库类型，0普通，1公众号
+                     * @param _knowledgeType 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    void SetKnowledgeType(const int64_t& _knowledgeType);
+
+                    /**
+                     * 判断参数 KnowledgeType 是否已赋值
+                     * @return KnowledgeType 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeTypeHasBeenSet() const;
 
                 private:
 
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_embeddingModel;
                     bool m_embeddingModelHasBeenSet;
+
+                    /**
+                     * 共享知识库类型，0普通，1公众号
+                     */
+                    int64_t m_knowledgeType;
+                    bool m_knowledgeTypeHasBeenSet;
 
                 };
             }

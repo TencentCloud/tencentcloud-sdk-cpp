@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,9 +212,9 @@ namespace TencentCloud
                     bool FakeDetectResultHasBeenSet() const;
 
                     /**
-                     * 获取人像照片Base64后的结果
+                     * 获取Base64编码的证件左侧人像大图
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeadImage 人像照片Base64后的结果
+                     * @return HeadImage Base64编码的证件左侧人像大图
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,12 +228,26 @@ namespace TencentCloud
                     bool HeadImageHasBeenSet() const;
 
                     /**
-                     * 获取多重告警码，当身份证是翻拍、复印件时返回对应告警码。
--9102：证照复印件告警
--9103：证照翻拍告警
-                     * @return WarningCode 多重告警码，当身份证是翻拍、复印件时返回对应告警码。
--9102：证照复印件告警
--9103：证照翻拍告警
+                     * 获取Base64编码的证件右侧人像小图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmallHeadImage Base64编码的证件右侧人像小图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSmallHeadImage() const;
+
+                    /**
+                     * 判断参数 SmallHeadImage 是否已赋值
+                     * @return SmallHeadImage 是否已赋值
+                     * 
+                     */
+                    bool SmallHeadImageHasBeenSet() const;
+
+                    /**
+                     * 获取该字段已废弃， 将固定返回空数组，不建议使用。
+
+                     * @return WarningCode 该字段已废弃， 将固定返回空数组，不建议使用。
+
                      * @deprecated
                      */
                     std::vector<int64_t> GetWarningCode() const;
@@ -272,6 +286,20 @@ namespace TencentCloud
                      * 
                      */
                     bool WarnCardInfosHasBeenSet() const;
+
+                    /**
+                     * 获取证件透明视窗内的文本信息
+                     * @return WindowEmbeddedText 证件透明视窗内的文本信息
+                     * 
+                     */
+                    std::string GetWindowEmbeddedText() const;
+
+                    /**
+                     * 判断参数 WindowEmbeddedText 是否已赋值
+                     * @return WindowEmbeddedText 是否已赋值
+                     * 
+                     */
+                    bool WindowEmbeddedTextHasBeenSet() const;
 
                 private:
 
@@ -349,16 +377,22 @@ namespace TencentCloud
                     bool m_fakeDetectResultHasBeenSet;
 
                     /**
-                     * 人像照片Base64后的结果
+                     * Base64编码的证件左侧人像大图
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headImage;
                     bool m_headImageHasBeenSet;
 
                     /**
-                     * 多重告警码，当身份证是翻拍、复印件时返回对应告警码。
--9102：证照复印件告警
--9103：证照翻拍告警
+                     * Base64编码的证件右侧人像小图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_smallHeadImage;
+                    bool m_smallHeadImageHasBeenSet;
+
+                    /**
+                     * 该字段已废弃， 将固定返回空数组，不建议使用。
+
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;
@@ -375,6 +409,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * 证件透明视窗内的文本信息
+                     */
+                    std::string m_windowEmbeddedText;
+                    bool m_windowEmbeddedTextHasBeenSet;
 
                 };
             }

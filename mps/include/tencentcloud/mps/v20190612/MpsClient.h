@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateScheduleResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateSmartEraseTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateSmartEraseTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSmartSubtitleTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSmartSubtitleTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
@@ -105,6 +109,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteScheduleResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSmartSubtitleTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSmartSubtitleTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateRequest.h>
@@ -159,6 +165,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSchedulesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSchedulesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSmartEraseTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSmartEraseTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSmartSubtitleTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSmartSubtitleTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h>
@@ -245,6 +253,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyScheduleResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifySmartEraseTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifySmartEraseTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySmartSubtitleTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySmartSubtitleTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateRequest.h>
@@ -335,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveRecordTemplateResponse> CreateLiveRecordTemplateOutcome;
                 typedef std::future<CreateLiveRecordTemplateOutcome> CreateLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateLiveRecordTemplateRequest&, CreateLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMediaEvaluationResponse> CreateMediaEvaluationOutcome;
+                typedef std::future<CreateMediaEvaluationOutcome> CreateMediaEvaluationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateMediaEvaluationRequest&, CreateMediaEvaluationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaEvaluationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -347,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateScheduleResponse> CreateScheduleOutcome;
                 typedef std::future<CreateScheduleOutcome> CreateScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateScheduleRequest&, CreateScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSmartEraseTemplateResponse> CreateSmartEraseTemplateOutcome;
+                typedef std::future<CreateSmartEraseTemplateOutcome> CreateSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateSmartEraseTemplateRequest&, CreateSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSmartSubtitleTemplateResponse> CreateSmartSubtitleTemplateOutcome;
                 typedef std::future<CreateSmartSubtitleTemplateOutcome> CreateSmartSubtitleTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSmartSubtitleTemplateRequest&, CreateSmartSubtitleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSmartSubtitleTemplateAsyncHandler;
@@ -422,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteScheduleResponse> DeleteScheduleOutcome;
                 typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteScheduleRequest&, DeleteScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSmartEraseTemplateResponse> DeleteSmartEraseTemplateOutcome;
+                typedef std::future<DeleteSmartEraseTemplateOutcome> DeleteSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteSmartEraseTemplateRequest&, DeleteSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSmartSubtitleTemplateResponse> DeleteSmartSubtitleTemplateOutcome;
                 typedef std::future<DeleteSmartSubtitleTemplateOutcome> DeleteSmartSubtitleTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSmartSubtitleTemplateRequest&, DeleteSmartSubtitleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmartSubtitleTemplateAsyncHandler;
@@ -503,6 +522,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSchedulesResponse> DescribeSchedulesOutcome;
                 typedef std::future<DescribeSchedulesOutcome> DescribeSchedulesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSchedulesRequest&, DescribeSchedulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchedulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSmartEraseTemplatesResponse> DescribeSmartEraseTemplatesOutcome;
+                typedef std::future<DescribeSmartEraseTemplatesOutcome> DescribeSmartEraseTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeSmartEraseTemplatesRequest&, DescribeSmartEraseTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmartEraseTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmartSubtitleTemplatesResponse> DescribeSmartSubtitleTemplatesOutcome;
                 typedef std::future<DescribeSmartSubtitleTemplatesOutcome> DescribeSmartSubtitleTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSmartSubtitleTemplatesRequest&, DescribeSmartSubtitleTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmartSubtitleTemplatesAsyncHandler;
@@ -632,6 +654,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyScheduleResponse> ModifyScheduleOutcome;
                 typedef std::future<ModifyScheduleOutcome> ModifyScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyScheduleRequest&, ModifyScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySmartEraseTemplateResponse> ModifySmartEraseTemplateOutcome;
+                typedef std::future<ModifySmartEraseTemplateOutcome> ModifySmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifySmartEraseTemplateRequest&, ModifySmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySmartSubtitleTemplateResponse> ModifySmartSubtitleTemplateOutcome;
                 typedef std::future<ModifySmartSubtitleTemplateOutcome> ModifySmartSubtitleTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySmartSubtitleTemplateRequest&, ModifySmartSubtitleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySmartSubtitleTemplateAsyncHandler;
@@ -805,6 +830,18 @@ namespace TencentCloud
                 CreateLiveRecordTemplateOutcomeCallable CreateLiveRecordTemplateCallable(const Model::CreateLiveRecordTemplateRequest& request);
 
                 /**
+                 *发起视频评测任务，功能包括：
+
+1. 对一个原视频和多个转码后的视频进行评分。
+2. 计算不同转码方式的 BD-Rate。
+                 * @param req CreateMediaEvaluationRequest
+                 * @return CreateMediaEvaluationOutcome
+                 */
+                CreateMediaEvaluationOutcome CreateMediaEvaluation(const Model::CreateMediaEvaluationRequest &request);
+                void CreateMediaEvaluationAsync(const Model::CreateMediaEvaluationRequest& request, const CreateMediaEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMediaEvaluationOutcomeCallable CreateMediaEvaluationCallable(const Model::CreateMediaEvaluationRequest& request);
+
+                /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。
                  * @param req CreatePersonSampleRequest
                  * @return CreatePersonSampleOutcome
@@ -842,6 +879,9 @@ namespace TencentCloud
 7. 智能内容审核（鉴黄、敏感信息检测）；
 8. 智能内容分析（标签、分类、封面、按帧标签）；
 9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
+10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）
+11. 智能字幕（语音全文、语音热词、语音翻译）
+12. 智能擦除（去水印、去字幕、隐私保护）；
 
 注意：创建编排成功后是禁用状态，需要手动启用。
                  * @param req CreateScheduleRequest
@@ -850,6 +890,15 @@ namespace TencentCloud
                 CreateScheduleOutcome CreateSchedule(const Model::CreateScheduleRequest &request);
                 void CreateScheduleAsync(const Model::CreateScheduleRequest& request, const CreateScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScheduleOutcomeCallable CreateScheduleCallable(const Model::CreateScheduleRequest& request);
+
+                /**
+                 *创建自定义智能擦除模板
+                 * @param req CreateSmartEraseTemplateRequest
+                 * @return CreateSmartEraseTemplateOutcome
+                 */
+                CreateSmartEraseTemplateOutcome CreateSmartEraseTemplate(const Model::CreateSmartEraseTemplateRequest &request);
+                void CreateSmartEraseTemplateAsync(const Model::CreateSmartEraseTemplateRequest& request, const CreateSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSmartEraseTemplateOutcomeCallable CreateSmartEraseTemplateCallable(const Model::CreateSmartEraseTemplateRequest& request);
 
                 /**
                  *创建自定义智能字幕模板
@@ -1089,6 +1138,15 @@ namespace TencentCloud
                 DeleteScheduleOutcome DeleteSchedule(const Model::DeleteScheduleRequest &request);
                 void DeleteScheduleAsync(const Model::DeleteScheduleRequest& request, const DeleteScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteScheduleOutcomeCallable DeleteScheduleCallable(const Model::DeleteScheduleRequest& request);
+
+                /**
+                 *删除用户自定义智能擦除模板。
+                 * @param req DeleteSmartEraseTemplateRequest
+                 * @return DeleteSmartEraseTemplateOutcome
+                 */
+                DeleteSmartEraseTemplateOutcome DeleteSmartEraseTemplate(const Model::DeleteSmartEraseTemplateRequest &request);
+                void DeleteSmartEraseTemplateAsync(const Model::DeleteSmartEraseTemplateRequest& request, const DeleteSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSmartEraseTemplateOutcomeCallable DeleteSmartEraseTemplateCallable(const Model::DeleteSmartEraseTemplateRequest& request);
 
                 /**
                  *删除用户自定义智能字幕模板。
@@ -1332,6 +1390,15 @@ namespace TencentCloud
                 DescribeSchedulesOutcome DescribeSchedules(const Model::DescribeSchedulesRequest &request);
                 void DescribeSchedulesAsync(const Model::DescribeSchedulesRequest& request, const DescribeSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSchedulesOutcomeCallable DescribeSchedulesCallable(const Model::DescribeSchedulesRequest& request);
+
+                /**
+                 *根据智能擦除模板唯一标识，获取智能擦除模板详情列表。返回结果包含符合条件的所有用户自定义智能擦除模板及系统预置智能擦除模板
+                 * @param req DescribeSmartEraseTemplatesRequest
+                 * @return DescribeSmartEraseTemplatesOutcome
+                 */
+                DescribeSmartEraseTemplatesOutcome DescribeSmartEraseTemplates(const Model::DescribeSmartEraseTemplatesRequest &request);
+                void DescribeSmartEraseTemplatesAsync(const Model::DescribeSmartEraseTemplatesRequest& request, const DescribeSmartEraseTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSmartEraseTemplatesOutcomeCallable DescribeSmartEraseTemplatesCallable(const Model::DescribeSmartEraseTemplatesRequest& request);
 
                 /**
                  *根据智能字幕 模板唯一标识，获取智能字幕模板详情列表。返回结果包含符合条件的所有用户自定义智能字幕模板及系统预置智能字幕模板
@@ -1737,6 +1804,15 @@ namespace TencentCloud
                 ModifyScheduleOutcomeCallable ModifyScheduleCallable(const Model::ModifyScheduleRequest& request);
 
                 /**
+                 *修改用户自定义智能擦除模板。
+                 * @param req ModifySmartEraseTemplateRequest
+                 * @return ModifySmartEraseTemplateOutcome
+                 */
+                ModifySmartEraseTemplateOutcome ModifySmartEraseTemplate(const Model::ModifySmartEraseTemplateRequest &request);
+                void ModifySmartEraseTemplateAsync(const Model::ModifySmartEraseTemplateRequest& request, const ModifySmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySmartEraseTemplateOutcomeCallable ModifySmartEraseTemplateCallable(const Model::ModifySmartEraseTemplateRequest& request);
+
+                /**
                  *修改用户自定义智能字幕模板。
                  * @param req ModifySmartSubtitleTemplateRequest
                  * @return ModifySmartSubtitleTemplateOutcome
@@ -1883,11 +1959,12 @@ namespace TencentCloud
 4. 对视频采样截图；
 5. 对视频截图雪碧图；
 6. 对视频转自适应码流；
-7. 智能内容审核（鉴黄、敏感信息检测）；
-8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；
-9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。
-10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）
-11. 智能字幕（语音全文、语音热词、语音翻译）
+7. 智能内容审核（例如鉴黄、敏感信息检测）；
+8. 智能内容分析（例如标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；
+9. 智能内容识别（例如人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）；
+10. 媒体质检（例如媒体格式诊断、音画内容检测、无参考打分，其中音画内容检测主要针对抖动、模糊、低光照、过曝光、花屏、噪点、马赛克、二维码等问题）;
+11. 智能字幕（例如语音全文、语音热词、语音翻译）；
+12.  智能擦除（去水印、去字幕、隐私保护）；
                  * @param req ProcessMediaRequest
                  * @return ProcessMediaOutcome
                  */

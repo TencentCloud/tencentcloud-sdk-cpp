@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,6 +133,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeUserDeviceListRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeUserDeviceListResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h>
@@ -384,6 +386,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserDeviceResponse> DescribeUserDeviceOutcome;
                 typedef std::future<DescribeUserDeviceOutcome> DescribeUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeUserDeviceRequest&, DescribeUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDeviceListResponse> DescribeUserDeviceListOutcome;
+                typedef std::future<DescribeUserDeviceListOutcome> DescribeUserDeviceListOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeUserDeviceListRequest&, DescribeUserDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDeviceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoBitRateResponse> DescribeVideoBitRateOutcome;
                 typedef std::future<DescribeVideoBitRateOutcome> DescribeVideoBitRateOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeVideoBitRateRequest&, DescribeVideoBitRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoBitRateAsyncHandler;
@@ -993,6 +998,15 @@ namespace TencentCloud
                 DescribeUserDeviceOutcome DescribeUserDevice(const Model::DescribeUserDeviceRequest &request);
                 void DescribeUserDeviceAsync(const Model::DescribeUserDeviceRequest& request, const DescribeUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserDeviceOutcomeCallable DescribeUserDeviceCallable(const Model::DescribeUserDeviceRequest& request);
+
+                /**
+                 *用于批量查询设备详细信息。
+                 * @param req DescribeUserDeviceListRequest
+                 * @return DescribeUserDeviceListOutcome
+                 */
+                DescribeUserDeviceListOutcome DescribeUserDeviceList(const Model::DescribeUserDeviceListRequest &request);
+                void DescribeUserDeviceListAsync(const Model::DescribeUserDeviceListRequest& request, const DescribeUserDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDeviceListOutcomeCallable DescribeUserDeviceListCallable(const Model::DescribeUserDeviceListRequest& request);
 
                 /**
                  *用于获取视频通道的码率信息

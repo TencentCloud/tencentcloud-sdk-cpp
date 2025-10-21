@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -228,19 +228,19 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280
-示例值：a9a90aa6----fae36063280
-                     * @return ClientToken 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280
-示例值：a9a90aa6----fae36063280
+                     * 获取客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280
+示例值：a9a90aa6fae36063280
+                     * @return ClientToken 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280
+示例值：a9a90aa6fae36063280
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280
-示例值：a9a90aa6----fae36063280
-                     * @param _clientToken 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280
-示例值：a9a90aa6----fae36063280
+                     * 设置客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280
+示例值：a9a90aa6fae36063280
+                     * @param _clientToken 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280
+示例值：a9a90aa6fae36063280
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -370,15 +370,15 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取登陆密码，LoginSettings中的Password字段
-                     * @return LoginSettings 登陆密码，LoginSettings中的Password字段
+                     * 获取登录密码，LoginSettings中的Password字段
+                     * @return LoginSettings 登录密码，LoginSettings中的Password字段
                      * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
-                     * 设置登陆密码，LoginSettings中的Password字段
-                     * @param _loginSettings 登陆密码，LoginSettings中的Password字段
+                     * 设置登录密码，LoginSettings中的Password字段
+                     * @param _loginSettings 登录密码，LoginSettings中的Password字段
                      * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
@@ -431,6 +431,48 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                      * 
                      */
                     bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库版本
+                     * @return DefaultMetaVersion 数据库版本
+                     * 
+                     */
+                    std::string GetDefaultMetaVersion() const;
+
+                    /**
+                     * 设置数据库版本
+                     * @param _defaultMetaVersion 数据库版本
+                     * 
+                     */
+                    void SetDefaultMetaVersion(const std::string& _defaultMetaVersion);
+
+                    /**
+                     * 判断参数 DefaultMetaVersion 是否已赋值
+                     * @return DefaultMetaVersion 是否已赋值
+                     * 
+                     */
+                    bool DefaultMetaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通审计
+                     * @return NeedCdbAudit 是否开通审计
+                     * 
+                     */
+                    int64_t GetNeedCdbAudit() const;
+
+                    /**
+                     * 设置是否开通审计
+                     * @param _needCdbAudit 是否开通审计
+                     * 
+                     */
+                    void SetNeedCdbAudit(const int64_t& _needCdbAudit);
+
+                    /**
+                     * 判断参数 NeedCdbAudit 是否已赋值
+                     * @return NeedCdbAudit 是否已赋值
+                     * 
+                     */
+                    bool NeedCdbAuditHasBeenSet() const;
 
                 private:
 
@@ -485,8 +527,8 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280
-示例值：a9a90aa6----fae36063280
+                     * 客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280
+示例值：a9a90aa6fae36063280
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
@@ -525,7 +567,7 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 登陆密码，LoginSettings中的Password字段
+                     * 登录密码，LoginSettings中的Password字段
                      */
                     LoginSettings m_loginSettings;
                     bool m_loginSettingsHasBeenSet;
@@ -541,6 +583,18 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 数据库版本
+                     */
+                    std::string m_defaultMetaVersion;
+                    bool m_defaultMetaVersionHasBeenSet;
+
+                    /**
+                     * 是否开通审计
+                     */
+                    int64_t m_needCdbAudit;
+                    bool m_needCdbAuditHasBeenSet;
 
                 };
             }

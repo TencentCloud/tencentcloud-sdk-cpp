@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,6 +152,27 @@ namespace TencentCloud
                      */
                     bool DisplayToolCommonHasBeenSet() const;
 
+                    /**
+                     * 获取状态：unrepaired:未修复，repaired:已修复，ignore:已忽略
+                     * @return Status 状态：unrepaired:未修复，repaired:已修复，ignore:已忽略
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置状态：unrepaired:未修复，repaired:已修复，ignore:已忽略
+                     * @param _status 状态：unrepaired:未修复，repaired:已修复，ignore:已忽略
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +204,12 @@ namespace TencentCloud
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
+
+                    /**
+                     * 状态：unrepaired:未修复，repaired:已修复，ignore:已忽略
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

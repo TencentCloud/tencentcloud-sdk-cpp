@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成功时此字段返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 成功时此字段返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置成功时此字段返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 成功时此字段返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const ErrorInfo& _error);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取申请单Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 申请单Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置申请单Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 申请单Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -148,14 +136,12 @@ namespace TencentCloud
 
                     /**
                      * 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 成功时此字段返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorInfo m_error;
                     bool m_errorHasBeenSet;
@@ -168,7 +154,6 @@ namespace TencentCloud
 
                     /**
                      * 申请单Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;

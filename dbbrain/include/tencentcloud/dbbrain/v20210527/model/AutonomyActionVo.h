@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取自治任务触发时间。
-                     * @return TriggerTime 自治任务触发时间。
+                     * 获取自治任务触发时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return TriggerTime 自治任务触发时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetTriggerTime() const;
 
                     /**
-                     * 设置自治任务触发时间。
-                     * @param _triggerTime 自治任务触发时间。
+                     * 设置自治任务触发时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _triggerTime 自治任务触发时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetTriggerTime(const std::string& _triggerTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TriggerTimeHasBeenSet() const;
 
                     /**
-                     * 获取自治任务创建时间。
-                     * @return CreateTime 自治任务创建时间。
+                     * 获取自治任务创建时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return CreateTime 自治任务创建时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置自治任务创建时间。
-                     * @param _createTime 自治任务创建时间。
+                     * 设置自治任务创建时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _createTime 自治任务创建时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取自治任务更新时间
-                     * @return UpdateTime 自治任务更新时间
+                     * 获取自治任务更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return UpdateTime 自治任务更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置自治任务更新时间
-                     * @param _updateTime 自治任务更新时间
+                     * 设置自治任务更新时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _updateTime 自治任务更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取自治任务完成时间。
-                     * @return FinishTime 自治任务完成时间。
+                     * 获取自治任务完成时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return FinishTime 自治任务完成时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置自治任务完成时间。
-                     * @param _finishTime 自治任务完成时间。
+                     * 设置自治任务完成时间。格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _finishTime 自治任务完成时间。格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -236,15 +236,39 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED
-                     * @return Status 自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED
+                     * 获取自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED
+其中：
+RUNNING    - 运行中  
+FINISHED   - 已完成  
+TERMINATED - 已终止  
+CANCELLED  - 已取消  
+
+                     * @return Status 自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED
+其中：
+RUNNING    - 运行中  
+FINISHED   - 已完成  
+TERMINATED - 已终止  
+CANCELLED  - 已取消  
+
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED
-                     * @param _status 自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED
+                     * 设置自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED
+其中：
+RUNNING    - 运行中  
+FINISHED   - 已完成  
+TERMINATED - 已终止  
+CANCELLED  - 已取消  
+
+                     * @param _status 自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED
+其中：
+RUNNING    - 运行中  
+FINISHED   - 已完成  
+TERMINATED - 已终止  
+CANCELLED  - 已取消  
+
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -277,25 +301,25 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 自治任务触发时间。
+                     * 自治任务触发时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_triggerTime;
                     bool m_triggerTimeHasBeenSet;
 
                     /**
-                     * 自治任务创建时间。
+                     * 自治任务创建时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 自治任务更新时间
+                     * 自治任务更新时间，格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 自治任务完成时间。
+                     * 自治任务完成时间。格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
@@ -313,7 +337,13 @@ namespace TencentCloud
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED
+                     * 自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED
+其中：
+RUNNING    - 运行中  
+FINISHED   - 已完成  
+TERMINATED - 已终止  
+CANCELLED  - 已取消  
+
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

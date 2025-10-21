@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID。
-                     * @return TopicId 日志主题ID。
+                     * 获取日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @return TopicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID。
-                     * @param _topicId 日志主题ID。
+                     * 设置日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
+                     * @param _topicId 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID。
-                     * @return LogsetId 日志集ID。
+                     * 获取日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID
+                     * @return LogsetId 日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集ID。
-                     * @param _logsetId 日志集ID。
+                     * 设置日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID
+                     * @param _logsetId 日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -204,7 +204,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID。
+                     * 日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -234,7 +234,7 @@ namespace TencentCloud
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 日志集ID。
+                     * 日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;

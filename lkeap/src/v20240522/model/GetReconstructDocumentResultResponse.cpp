@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ using namespace std;
 GetReconstructDocumentResultResponse::GetReconstructDocumentResultResponse() :
     m_statusHasBeenSet(false),
     m_documentRecognizeResultUrlHasBeenSet(false),
-    m_failedPagesHasBeenSet(false)
+    m_failedPagesHasBeenSet(false),
+    m_usageHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,40 @@ CoreInternalOutcome GetReconstructDocumentResultResponse::Deserialize(const stri
         m_failedPagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Error") && !rsp["Error"].IsNull())
+    {
+        if (!rsp["Error"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Error` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_error.Deserialize(rsp["Error"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,11 +181,29 @@ string GetReconstructDocumentResultResponse::ToJsonString() const
         }
     }
 
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_error.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -185,6 +239,26 @@ vector<ReconstructDocumentFailedPage> GetReconstructDocumentResultResponse::GetF
 bool GetReconstructDocumentResultResponse::FailedPagesHasBeenSet() const
 {
     return m_failedPagesHasBeenSet;
+}
+
+DocumentUsage GetReconstructDocumentResultResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool GetReconstructDocumentResultResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
+}
+
+ErrorInfo GetReconstructDocumentResultResponse::GetError() const
+{
+    return m_error;
+}
+
+bool GetReconstructDocumentResultResponse::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ DisplayWeakPassword::DisplayWeakPassword() :
     m_accountHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_isHoneypotHasBeenSet(false),
-    m_screenshotUrlHasBeenSet(false)
+    m_screenshotUrlHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_lastCheckTimeHasBeenSet(false)
 {
 }
 
@@ -146,6 +148,26 @@ CoreInternalOutcome DisplayWeakPassword::Deserialize(const rapidjson::Value &val
         m_screenshotUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWeakPassword.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastCheckTime") && !value["LastCheckTime"].IsNull())
+    {
+        if (!value["LastCheckTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWeakPassword.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastCheckTime = string(value["LastCheckTime"].GetString());
+        m_lastCheckTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +254,22 @@ void DisplayWeakPassword::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ScreenshotUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_screenshotUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastCheckTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastCheckTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +433,37 @@ void DisplayWeakPassword::SetScreenshotUrl(const string& _screenshotUrl)
 bool DisplayWeakPassword::ScreenshotUrlHasBeenSet() const
 {
     return m_screenshotUrlHasBeenSet;
+}
+
+string DisplayWeakPassword::GetStatus() const
+{
+    return m_status;
+}
+
+void DisplayWeakPassword::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DisplayWeakPassword::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DisplayWeakPassword::GetLastCheckTime() const
+{
+    return m_lastCheckTime;
+}
+
+void DisplayWeakPassword::SetLastCheckTime(const string& _lastCheckTime)
+{
+    m_lastCheckTime = _lastCheckTime;
+    m_lastCheckTimeHasBeenSet = true;
+}
+
+bool DisplayWeakPassword::LastCheckTimeHasBeenSet() const
+{
+    return m_lastCheckTimeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,15 +152,51 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
-                     * @return InstanceStatus 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 获取机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
+                     * @return InstanceStatus 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
-                     * @param _instanceStatus 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 设置机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
+                     * @param _instanceStatus 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -236,15 +272,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取应用类型
-                     * @return ApplicationType 应用类型
+                     * 获取应用类型，C表示容器应用，V表示虚拟机应用
+                     * @return ApplicationType 应用类型，C表示容器应用，V表示虚拟机应用
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型
-                     * @param _applicationType 应用类型
+                     * 设置应用类型，C表示容器应用，V表示虚拟机应用
+                     * @param _applicationType 应用类型，C表示容器应用，V表示虚拟机应用
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -299,15 +335,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型，C表示容器集群，V表示虚拟机集群
+                     * @return ClusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型，C表示容器集群，V表示虚拟机集群
+                     * @param _clusterType 集群类型，C表示容器集群，V表示虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -436,7 +472,16 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown
+                     * 机器运行状态，枚举值为：
+- `Pending`: 准备中
+-  `Running`: 运行中
+-  `Stopped`: 已停止
+-  `Rebooting`: 重启中
+-  `Starting`: 启动中
+-  `Stopping`: 停止中
+-  `Abnormal`: 异常
+-  `Unknown`: 未知
+-  `Offline`: 离线 
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -460,7 +505,7 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * 应用类型
+                     * 应用类型，C表示容器应用，V表示虚拟机应用
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
@@ -478,7 +523,7 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，C表示容器集群，V表示虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

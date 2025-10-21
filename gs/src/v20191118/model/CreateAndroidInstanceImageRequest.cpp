@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAndroidInstanceImageRequest::CreateAndroidInstanceImageRequest() :
     m_androidInstanceImageNameHasBeenSet(false),
-    m_androidInstanceIdHasBeenSet(false)
+    m_androidInstanceIdHasBeenSet(false),
+    m_androidInstanceImageDescriptionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAndroidInstanceImageRequest::ToJsonString() const
         string key = "AndroidInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_androidInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_androidInstanceImageDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceImageDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_androidInstanceImageDescription.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAndroidInstanceImageRequest::SetAndroidInstanceId(const string& _andr
 bool CreateAndroidInstanceImageRequest::AndroidInstanceIdHasBeenSet() const
 {
     return m_androidInstanceIdHasBeenSet;
+}
+
+string CreateAndroidInstanceImageRequest::GetAndroidInstanceImageDescription() const
+{
+    return m_androidInstanceImageDescription;
+}
+
+void CreateAndroidInstanceImageRequest::SetAndroidInstanceImageDescription(const string& _androidInstanceImageDescription)
+{
+    m_androidInstanceImageDescription = _androidInstanceImageDescription;
+    m_androidInstanceImageDescriptionHasBeenSet = true;
+}
+
+bool CreateAndroidInstanceImageRequest::AndroidInstanceImageDescriptionHasBeenSet() const
+{
+    return m_androidInstanceImageDescriptionHasBeenSet;
 }
 
 

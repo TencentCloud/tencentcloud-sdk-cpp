@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ DescribeAuditConfigResponse::DescribeAuditConfigResponse() :
     m_logExpireDayHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_isClosingHasBeenSet(false),
+    m_isOpeningHasBeenSet(false),
     m_createTimeHasBeenSet(false)
 {
 }
@@ -95,6 +96,16 @@ CoreInternalOutcome DescribeAuditConfigResponse::Deserialize(const string &paylo
         m_isClosingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsOpening") && !rsp["IsOpening"].IsNull())
+    {
+        if (!rsp["IsOpening"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOpening` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpening = string(rsp["IsOpening"].GetString());
+        m_isOpeningHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
     {
         if (!rsp["CreateTime"].IsString())
@@ -139,6 +150,14 @@ string DescribeAuditConfigResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_isClosing.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isOpeningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpening";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isOpening.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -151,7 +170,7 @@ string DescribeAuditConfigResponse::ToJsonString() const
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -187,6 +206,16 @@ string DescribeAuditConfigResponse::GetIsClosing() const
 bool DescribeAuditConfigResponse::IsClosingHasBeenSet() const
 {
     return m_isClosingHasBeenSet;
+}
+
+string DescribeAuditConfigResponse::GetIsOpening() const
+{
+    return m_isOpening;
+}
+
+bool DescribeAuditConfigResponse::IsOpeningHasBeenSet() const
+{
+    return m_isOpeningHasBeenSet;
 }
 
 string DescribeAuditConfigResponse::GetCreateTime() const

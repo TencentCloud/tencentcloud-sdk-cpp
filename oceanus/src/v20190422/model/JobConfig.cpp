@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,9 @@ JobConfig::JobConfig() :
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
     m_taskManagerMemHasBeenSet(false),
-    m_jobConfigItemHasBeenSet(false)
+    m_jobConfigItemHasBeenSet(false),
+    m_checkpointTimeoutSecondHasBeenSet(false),
+    m_checkpointIntervalSecondHasBeenSet(false)
 {
 }
 
@@ -505,6 +507,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_jobConfigItemHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckpointTimeoutSecond") && !value["CheckpointTimeoutSecond"].IsNull())
+    {
+        if (!value["CheckpointTimeoutSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointTimeoutSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointTimeoutSecond = value["CheckpointTimeoutSecond"].GetInt64();
+        m_checkpointTimeoutSecondHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckpointIntervalSecond") && !value["CheckpointIntervalSecond"].IsNull())
+    {
+        if (!value["CheckpointIntervalSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.CheckpointIntervalSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointIntervalSecond = value["CheckpointIntervalSecond"].GetInt64();
+        m_checkpointIntervalSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -839,6 +861,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jobConfigItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_checkpointTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointTimeoutSecond, allocator);
+    }
+
+    if (m_checkpointIntervalSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointIntervalSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointIntervalSecond, allocator);
     }
 
 }
@@ -1450,5 +1488,37 @@ void JobConfig::SetJobConfigItem(const JobConfig& _jobConfigItem)
 bool JobConfig::JobConfigItemHasBeenSet() const
 {
     return m_jobConfigItemHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointTimeoutSecond() const
+{
+    return m_checkpointTimeoutSecond;
+}
+
+void JobConfig::SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond)
+{
+    m_checkpointTimeoutSecond = _checkpointTimeoutSecond;
+    m_checkpointTimeoutSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointTimeoutSecondHasBeenSet() const
+{
+    return m_checkpointTimeoutSecondHasBeenSet;
+}
+
+int64_t JobConfig::GetCheckpointIntervalSecond() const
+{
+    return m_checkpointIntervalSecond;
+}
+
+void JobConfig::SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond)
+{
+    m_checkpointIntervalSecond = _checkpointIntervalSecond;
+    m_checkpointIntervalSecondHasBeenSet = true;
+}
+
+bool JobConfig::CheckpointIntervalSecondHasBeenSet() const
+{
+    return m_checkpointIntervalSecondHasBeenSet;
 }
 

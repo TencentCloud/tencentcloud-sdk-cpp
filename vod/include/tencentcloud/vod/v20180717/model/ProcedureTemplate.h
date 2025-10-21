@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,26 +204,47 @@ namespace TencentCloud
 
                     /**
                      * 获取AI 内容识别类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiRecognitionTask AI 内容识别类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiRecognitionTaskSet AI 内容识别类型任务参数。
                      * 
+                     */
+                    std::vector<AiRecognitionTaskInput> GetAiRecognitionTaskSet() const;
+
+                    /**
+                     * 设置AI 内容识别类型任务参数。
+                     * @param _aiRecognitionTaskSet AI 内容识别类型任务参数。
+                     * 
+                     */
+                    void SetAiRecognitionTaskSet(const std::vector<AiRecognitionTaskInput>& _aiRecognitionTaskSet);
+
+                    /**
+                     * 判断参数 AiRecognitionTaskSet 是否已赋值
+                     * @return AiRecognitionTaskSet 是否已赋值
+                     * 
+                     */
+                    bool AiRecognitionTaskSetHasBeenSet() const;
+
+                    /**
+                     * 获取该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiRecognitionTask 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置AI 内容识别类型任务参数。
+                     * 设置该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiRecognitionTask AI 内容识别类型任务参数。
+                     * @param _aiRecognitionTask 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
                      * 判断参数 AiRecognitionTask 是否已赋值
                      * @return AiRecognitionTask 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
@@ -365,6 +386,12 @@ namespace TencentCloud
 
                     /**
                      * AI 内容识别类型任务参数。
+                     */
+                    std::vector<AiRecognitionTaskInput> m_aiRecognitionTaskSet;
+                    bool m_aiRecognitionTaskSetHasBeenSet;
+
+                    /**
+                     * 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;

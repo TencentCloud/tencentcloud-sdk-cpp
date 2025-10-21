@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ CFSOption::CFSOption() :
     m_remotePathHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_mountOptionHasBeenSet(false)
+    m_mountOptionHasBeenSet(false),
+    m_fileSystemIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CFSOption::Deserialize(const rapidjson::Value &value)
         m_mountOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSystemId") && !value["FileSystemId"].IsNull())
+    {
+        if (!value["FileSystemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSOption.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSystemId = string(value["FileSystemId"].GetString());
+        m_fileSystemIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CFSOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MountOption";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mountOption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CFSOption::SetMountOption(const string& _mountOption)
 bool CFSOption::MountOptionHasBeenSet() const
 {
     return m_mountOptionHasBeenSet;
+}
+
+string CFSOption::GetFileSystemId() const
+{
+    return m_fileSystemId;
+}
+
+void CFSOption::SetFileSystemId(const string& _fileSystemId)
+{
+    m_fileSystemId = _fileSystemId;
+    m_fileSystemIdHasBeenSet = true;
+}
+
+bool CFSOption::FileSystemIdHasBeenSet() const
+{
+    return m_fileSystemIdHasBeenSet;
 }
 

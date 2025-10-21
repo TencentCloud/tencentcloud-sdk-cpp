@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ComplexAdaptiveDynamicStreamingTaskAudioInput::ComplexAdaptiveDynamicStreamingTa
     m_fileIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_languageHasBeenSet(false),
-    m_defaultHasBeenSet(false)
+    m_defaultHasBeenSet(false),
+    m_audioTrackIdxHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ComplexAdaptiveDynamicStreamingTaskAudioInput::Deserialize(c
         m_defaultHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioTrackIdx") && !value["AudioTrackIdx"].IsNull())
+    {
+        if (!value["AudioTrackIdx"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplexAdaptiveDynamicStreamingTaskAudioInput.AudioTrackIdx` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioTrackIdx = value["AudioTrackIdx"].GetUint64();
+        m_audioTrackIdxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ComplexAdaptiveDynamicStreamingTaskAudioInput::ToJsonObject(rapidjson::Valu
         string key = "Default";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_default.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioTrackIdxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioTrackIdx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioTrackIdx, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ComplexAdaptiveDynamicStreamingTaskAudioInput::SetDefault(const string& _de
 bool ComplexAdaptiveDynamicStreamingTaskAudioInput::DefaultHasBeenSet() const
 {
     return m_defaultHasBeenSet;
+}
+
+uint64_t ComplexAdaptiveDynamicStreamingTaskAudioInput::GetAudioTrackIdx() const
+{
+    return m_audioTrackIdx;
+}
+
+void ComplexAdaptiveDynamicStreamingTaskAudioInput::SetAudioTrackIdx(const uint64_t& _audioTrackIdx)
+{
+    m_audioTrackIdx = _audioTrackIdx;
+    m_audioTrackIdxHasBeenSet = true;
+}
+
+bool ComplexAdaptiveDynamicStreamingTaskAudioInput::AudioTrackIdxHasBeenSet() const
+{
+    return m_audioTrackIdxHasBeenSet;
 }
 

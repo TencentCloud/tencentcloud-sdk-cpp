@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ UpdateVarRequest::UpdateVarRequest() :
     m_varDescHasBeenSet(false),
     m_varTypeHasBeenSet(false),
     m_varDefaultValueHasBeenSet(false),
-    m_varDefaultFileNameHasBeenSet(false)
+    m_varDefaultFileNameHasBeenSet(false),
+    m_varModuleTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string UpdateVarRequest::ToJsonString() const
         string key = "VarDefaultFileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_varDefaultFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varModuleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarModuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_varModuleType, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void UpdateVarRequest::SetVarDefaultFileName(const string& _varDefaultFileName)
 bool UpdateVarRequest::VarDefaultFileNameHasBeenSet() const
 {
     return m_varDefaultFileNameHasBeenSet;
+}
+
+uint64_t UpdateVarRequest::GetVarModuleType() const
+{
+    return m_varModuleType;
+}
+
+void UpdateVarRequest::SetVarModuleType(const uint64_t& _varModuleType)
+{
+    m_varModuleType = _varModuleType;
+    m_varModuleTypeHasBeenSet = true;
+}
+
+bool UpdateVarRequest::VarModuleTypeHasBeenSet() const
+{
+    return m_varModuleTypeHasBeenSet;
 }
 
 

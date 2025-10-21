@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -482,15 +482,15 @@ GooseFSx：GooseFSx存储
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取数据配置，只支持WEDATA_HDFS存储类型
-                     * @return DataConfigs 数据配置，只支持WEDATA_HDFS存储类型
+                     * 获取数据存储挂载配置
+                     * @return DataConfigs 数据存储挂载配置
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置，只支持WEDATA_HDFS存储类型
-                     * @param _dataConfigs 数据配置，只支持WEDATA_HDFS存储类型
+                     * 设置数据存储挂载配置
+                     * @param _dataConfigs 数据存储挂载配置
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -711,7 +711,7 @@ GooseFSx：GooseFSx存储
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 数据配置，只支持WEDATA_HDFS存储类型
+                     * 数据存储挂载配置
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;

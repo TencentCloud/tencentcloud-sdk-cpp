@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ HighlightSegmentItem::HighlightSegmentItem() :
     m_endTimeOffsetHasBeenSet(false),
     m_segmentTagsHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_summaryHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,26 @@ CoreInternalOutcome HighlightSegmentItem::Deserialize(const rapidjson::Value &va
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Summary") && !value["Summary"].IsNull())
+    {
+        if (!value["Summary"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.Summary` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_summary = string(value["Summary"].GetString());
+        m_summaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void HighlightSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void HighlightSegmentItem::SetEndTime(const string& _endTime)
 bool HighlightSegmentItem::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string HighlightSegmentItem::GetTitle() const
+{
+    return m_title;
+}
+
+void HighlightSegmentItem::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool HighlightSegmentItem::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+string HighlightSegmentItem::GetSummary() const
+{
+    return m_summary;
+}
+
+void HighlightSegmentItem::SetSummary(const string& _summary)
+{
+    m_summary = _summary;
+    m_summaryHasBeenSet = true;
+}
+
+bool HighlightSegmentItem::SummaryHasBeenSet() const
+{
+    return m_summaryHasBeenSet;
 }
 

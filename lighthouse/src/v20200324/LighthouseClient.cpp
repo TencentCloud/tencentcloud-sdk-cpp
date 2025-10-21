@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -721,6 +721,49 @@ LighthouseClient::CreateKeyPairOutcomeCallable LighthouseClient::CreateKeyPairCa
         [this, request]()
         {
             return this->CreateKeyPair(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::CreateMcpServerOutcome LighthouseClient::CreateMcpServer(const CreateMcpServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMcpServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMcpServerResponse rsp = CreateMcpServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMcpServerOutcome(rsp);
+        else
+            return CreateMcpServerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMcpServerOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateMcpServerAsync(const CreateMcpServerRequest& request, const CreateMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMcpServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateMcpServerOutcomeCallable LighthouseClient::CreateMcpServerCallable(const CreateMcpServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMcpServerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMcpServer(request);
         }
     );
 
@@ -2104,6 +2147,49 @@ LighthouseClient::DescribeGeneralResourceQuotasOutcomeCallable LighthouseClient:
     return task->get_future();
 }
 
+LighthouseClient::DescribeImagesToShareOutcome LighthouseClient::DescribeImagesToShare(const DescribeImagesToShareRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImagesToShare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImagesToShareResponse rsp = DescribeImagesToShareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImagesToShareOutcome(rsp);
+        else
+            return DescribeImagesToShareOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImagesToShareOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeImagesToShareAsync(const DescribeImagesToShareRequest& request, const DescribeImagesToShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImagesToShare(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeImagesToShareOutcomeCallable LighthouseClient::DescribeImagesToShareCallable(const DescribeImagesToShareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImagesToShareOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImagesToShare(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeInstanceVncUrlOutcome LighthouseClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceVncUrl");
@@ -2398,6 +2484,92 @@ LighthouseClient::DescribeKeyPairsOutcomeCallable LighthouseClient::DescribeKeyP
         [this, request]()
         {
             return this->DescribeKeyPairs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeMcpServerTemplatesOutcome LighthouseClient::DescribeMcpServerTemplates(const DescribeMcpServerTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMcpServerTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMcpServerTemplatesResponse rsp = DescribeMcpServerTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMcpServerTemplatesOutcome(rsp);
+        else
+            return DescribeMcpServerTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMcpServerTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeMcpServerTemplatesAsync(const DescribeMcpServerTemplatesRequest& request, const DescribeMcpServerTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMcpServerTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeMcpServerTemplatesOutcomeCallable LighthouseClient::DescribeMcpServerTemplatesCallable(const DescribeMcpServerTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMcpServerTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMcpServerTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeMcpServersOutcome LighthouseClient::DescribeMcpServers(const DescribeMcpServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMcpServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMcpServersResponse rsp = DescribeMcpServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMcpServersOutcome(rsp);
+        else
+            return DescribeMcpServersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMcpServersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeMcpServersAsync(const DescribeMcpServersRequest& request, const DescribeMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMcpServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeMcpServersOutcomeCallable LighthouseClient::DescribeMcpServersCallable(const DescribeMcpServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMcpServersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMcpServers(request);
         }
     );
 
@@ -3566,6 +3738,49 @@ LighthouseClient::ModifyFirewallTemplateOutcomeCallable LighthouseClient::Modify
     return task->get_future();
 }
 
+LighthouseClient::ModifyImageSharePermissionOutcome LighthouseClient::ModifyImageSharePermission(const ModifyImageSharePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageSharePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageSharePermissionResponse rsp = ModifyImageSharePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageSharePermissionOutcome(rsp);
+        else
+            return ModifyImageSharePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageSharePermissionOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyImageSharePermissionAsync(const ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyImageSharePermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyImageSharePermissionOutcomeCallable LighthouseClient::ModifyImageSharePermissionCallable(const ModifyImageSharePermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyImageSharePermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyImageSharePermission(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyInstancesAttributeOutcome LighthouseClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstancesAttribute");
@@ -3695,6 +3910,49 @@ LighthouseClient::ModifyInstancesRenewFlagOutcomeCallable LighthouseClient::Modi
     return task->get_future();
 }
 
+LighthouseClient::ModifyMcpServerOutcome LighthouseClient::ModifyMcpServer(const ModifyMcpServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMcpServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMcpServerResponse rsp = ModifyMcpServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMcpServerOutcome(rsp);
+        else
+            return ModifyMcpServerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMcpServerOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyMcpServerAsync(const ModifyMcpServerRequest& request, const ModifyMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMcpServer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyMcpServerOutcomeCallable LighthouseClient::ModifyMcpServerCallable(const ModifyMcpServerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMcpServerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMcpServer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifySnapshotAttributeOutcome LighthouseClient::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySnapshotAttribute");
@@ -3817,6 +4075,49 @@ LighthouseClient::RemoveDockerContainersOutcomeCallable LighthouseClient::Remove
         [this, request]()
         {
             return this->RemoveDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::RemoveMcpServersOutcome LighthouseClient::RemoveMcpServers(const RemoveMcpServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveMcpServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveMcpServersResponse rsp = RemoveMcpServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveMcpServersOutcome(rsp);
+        else
+            return RemoveMcpServersOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveMcpServersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RemoveMcpServersAsync(const RemoveMcpServersRequest& request, const RemoveMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveMcpServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RemoveMcpServersOutcomeCallable LighthouseClient::RemoveMcpServersCallable(const RemoveMcpServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveMcpServersOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveMcpServers(request);
         }
     );
 
@@ -4297,6 +4598,49 @@ LighthouseClient::RestartDockerContainersOutcomeCallable LighthouseClient::Resta
     return task->get_future();
 }
 
+LighthouseClient::RestartMcpServersOutcome LighthouseClient::RestartMcpServers(const RestartMcpServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartMcpServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartMcpServersResponse rsp = RestartMcpServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartMcpServersOutcome(rsp);
+        else
+            return RestartMcpServersOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartMcpServersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RestartMcpServersAsync(const RestartMcpServersRequest& request, const RestartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartMcpServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RestartMcpServersOutcomeCallable LighthouseClient::RestartMcpServersCallable(const RestartMcpServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartMcpServersOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartMcpServers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::RunDockerContainersOutcome LighthouseClient::RunDockerContainers(const RunDockerContainersRequest &request)
 {
     auto outcome = MakeRequest(request, "RunDockerContainers");
@@ -4469,6 +4813,49 @@ LighthouseClient::StartInstancesOutcomeCallable LighthouseClient::StartInstances
     return task->get_future();
 }
 
+LighthouseClient::StartMcpServersOutcome LighthouseClient::StartMcpServers(const StartMcpServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMcpServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMcpServersResponse rsp = StartMcpServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMcpServersOutcome(rsp);
+        else
+            return StartMcpServersOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMcpServersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::StartMcpServersAsync(const StartMcpServersRequest& request, const StartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMcpServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::StartMcpServersOutcomeCallable LighthouseClient::StartMcpServersCallable(const StartMcpServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMcpServersOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMcpServers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::StopDockerContainersOutcome LighthouseClient::StopDockerContainers(const StopDockerContainersRequest &request)
 {
     auto outcome = MakeRequest(request, "StopDockerContainers");
@@ -4548,6 +4935,49 @@ LighthouseClient::StopInstancesOutcomeCallable LighthouseClient::StopInstancesCa
         [this, request]()
         {
             return this->StopInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::StopMcpServersOutcome LighthouseClient::StopMcpServers(const StopMcpServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMcpServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMcpServersResponse rsp = StopMcpServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMcpServersOutcome(rsp);
+        else
+            return StopMcpServersOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMcpServersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::StopMcpServersAsync(const StopMcpServersRequest& request, const StopMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMcpServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::StopMcpServersOutcomeCallable LighthouseClient::StopMcpServersCallable(const StopMcpServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMcpServersOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMcpServers(request);
         }
     );
 

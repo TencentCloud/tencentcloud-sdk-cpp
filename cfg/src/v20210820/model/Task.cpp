@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,9 @@ Task::Task() :
     m_taskOrgHasBeenSet(false),
     m_taskIssueHasBeenSet(false),
     m_taskRegionNameHasBeenSet(false),
-    m_taskArchIdHasBeenSet(false)
+    m_taskArchIdHasBeenSet(false),
+    m_taskScenarioHasBeenSet(false),
+    m_taskPurposeHasBeenSet(false)
 {
 }
 
@@ -474,6 +476,46 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_taskArchIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskScenario") && !value["TaskScenario"].IsNull())
+    {
+        if (!value["TaskScenario"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Task.TaskScenario` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskScenario"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskScenario.push_back(item);
+        }
+        m_taskScenarioHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskPurpose") && !value["TaskPurpose"].IsNull())
+    {
+        if (!value["TaskPurpose"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Task.TaskPurpose` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskPurpose"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskPurpose.push_back(item);
+        }
+        m_taskPurposeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -800,6 +842,36 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TaskArchId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskArchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskScenarioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskScenario";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskScenario.begin(); itr != m_taskScenario.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskPurposeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPurpose";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskPurpose.begin(); itr != m_taskPurpose.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1363,5 +1435,37 @@ void Task::SetTaskArchId(const string& _taskArchId)
 bool Task::TaskArchIdHasBeenSet() const
 {
     return m_taskArchIdHasBeenSet;
+}
+
+vector<TaskTarget> Task::GetTaskScenario() const
+{
+    return m_taskScenario;
+}
+
+void Task::SetTaskScenario(const vector<TaskTarget>& _taskScenario)
+{
+    m_taskScenario = _taskScenario;
+    m_taskScenarioHasBeenSet = true;
+}
+
+bool Task::TaskScenarioHasBeenSet() const
+{
+    return m_taskScenarioHasBeenSet;
+}
+
+vector<TaskTarget> Task::GetTaskPurpose() const
+{
+    return m_taskPurpose;
+}
+
+void Task::SetTaskPurpose(const vector<TaskTarget>& _taskPurpose)
+{
+    m_taskPurpose = _taskPurpose;
+    m_taskPurposeHasBeenSet = true;
+}
+
+bool Task::TaskPurposeHasBeenSet() const
+{
+    return m_taskPurposeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ BatchCreateTaskVersionAsyncRequest::BatchCreateTaskVersionAsyncRequest() :
     m_autoRunHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
     m_alarmRecipientTypesHasBeenSet(false),
-    m_needCheckParentSubmittedHasBeenSet(false)
+    m_needCheckParentSubmittedHasBeenSet(false),
+    m_enableMakeUpHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string BatchCreateTaskVersionAsyncRequest::ToJsonString() const
         string key = "NeedCheckParentSubmitted";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needCheckParentSubmitted, allocator);
+    }
+
+    if (m_enableMakeUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMakeUp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMakeUp, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void BatchCreateTaskVersionAsyncRequest::SetNeedCheckParentSubmitted(const bool&
 bool BatchCreateTaskVersionAsyncRequest::NeedCheckParentSubmittedHasBeenSet() const
 {
     return m_needCheckParentSubmittedHasBeenSet;
+}
+
+bool BatchCreateTaskVersionAsyncRequest::GetEnableMakeUp() const
+{
+    return m_enableMakeUp;
+}
+
+void BatchCreateTaskVersionAsyncRequest::SetEnableMakeUp(const bool& _enableMakeUp)
+{
+    m_enableMakeUp = _enableMakeUp;
+    m_enableMakeUpHasBeenSet = true;
+}
+
+bool BatchCreateTaskVersionAsyncRequest::EnableMakeUpHasBeenSet() const
+{
+    return m_enableMakeUpHasBeenSet;
 }
 
 

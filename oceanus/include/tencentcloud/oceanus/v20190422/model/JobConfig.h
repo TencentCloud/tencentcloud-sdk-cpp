@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -991,6 +991,48 @@ namespace TencentCloud
                      */
                     bool JobConfigItemHasBeenSet() const;
 
+                    /**
+                     * 获取checkpoint 超时时间
+                     * @return CheckpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    int64_t GetCheckpointTimeoutSecond() const;
+
+                    /**
+                     * 设置checkpoint 超时时间
+                     * @param _checkpointTimeoutSecond checkpoint 超时时间
+                     * 
+                     */
+                    void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
+
+                    /**
+                     * 判断参数 CheckpointTimeoutSecond 是否已赋值
+                     * @return CheckpointTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointTimeoutSecondHasBeenSet() const;
+
+                    /**
+                     * 获取checkpoint 间隔时间
+                     * @return CheckpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    int64_t GetCheckpointIntervalSecond() const;
+
+                    /**
+                     * 设置checkpoint 间隔时间
+                     * @param _checkpointIntervalSecond checkpoint 间隔时间
+                     * 
+                     */
+                    void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
+
+                    /**
+                     * 判断参数 CheckpointIntervalSecond 是否已赋值
+                     * @return CheckpointIntervalSecond 是否已赋值
+                     * 
+                     */
+                    bool CheckpointIntervalSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1255,6 +1297,18 @@ namespace TencentCloud
                      */
                     JobConfig m_jobConfigItem;
                     bool m_jobConfigItemHasBeenSet;
+
+                    /**
+                     * checkpoint 超时时间
+                     */
+                    int64_t m_checkpointTimeoutSecond;
+                    bool m_checkpointTimeoutSecondHasBeenSet;
+
+                    /**
+                     * checkpoint 间隔时间
+                     */
+                    int64_t m_checkpointIntervalSecond;
+                    bool m_checkpointIntervalSecondHasBeenSet;
 
                 };
             }

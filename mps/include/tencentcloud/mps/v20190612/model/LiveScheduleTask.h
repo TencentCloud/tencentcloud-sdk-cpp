@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播编排任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 直播编排任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置直播编排任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 直播编排任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -76,11 +72,9 @@ namespace TencentCloud
                      * 获取任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -89,11 +83,9 @@ namespace TencentCloud
                      * 设置任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -107,18 +99,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -132,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -157,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播流 URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 直播流 URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置直播流 URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 直播流 URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -209,7 +189,6 @@ namespace TencentCloud
 
                     /**
                      * 直播编排任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -218,28 +197,24 @@ namespace TencentCloud
                      * 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 直播流 URL。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

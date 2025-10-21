@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,9 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_clusterVersionHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_messageRetainTimeHasBeenSet(false)
+    m_messageRetainTimeHasBeenSet(false),
+    m_sendReceiveRatioHasBeenSet(false),
+    m_traceTimeHasBeenSet(false)
 {
 }
 
@@ -317,6 +319,26 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_messageRetainTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SendReceiveRatio") && !value["SendReceiveRatio"].IsNull())
+    {
+        if (!value["SendReceiveRatio"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.SendReceiveRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendReceiveRatio = value["SendReceiveRatio"].GetDouble();
+        m_sendReceiveRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceTime") && !value["TraceTime"].IsNull())
+    {
+        if (!value["TraceTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.TraceTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceTime = value["TraceTime"].GetUint64();
+        m_traceTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -534,6 +556,22 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MessageRetainTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageRetainTime, allocator);
+    }
+
+    if (m_sendReceiveRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendReceiveRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendReceiveRatio, allocator);
+    }
+
+    if (m_traceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceTime, allocator);
     }
 
 }
@@ -937,5 +975,37 @@ void RabbitMQClusterInfo::SetMessageRetainTime(const uint64_t& _messageRetainTim
 bool RabbitMQClusterInfo::MessageRetainTimeHasBeenSet() const
 {
     return m_messageRetainTimeHasBeenSet;
+}
+
+double RabbitMQClusterInfo::GetSendReceiveRatio() const
+{
+    return m_sendReceiveRatio;
+}
+
+void RabbitMQClusterInfo::SetSendReceiveRatio(const double& _sendReceiveRatio)
+{
+    m_sendReceiveRatio = _sendReceiveRatio;
+    m_sendReceiveRatioHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::SendReceiveRatioHasBeenSet() const
+{
+    return m_sendReceiveRatioHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetTraceTime() const
+{
+    return m_traceTime;
+}
+
+void RabbitMQClusterInfo::SetTraceTime(const uint64_t& _traceTime)
+{
+    m_traceTime = _traceTime;
+    m_traceTimeHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::TraceTimeHasBeenSet() const
+{
+    return m_traceTimeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
-                     * @return Status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
+                     * 获取任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）
+                     * @return Status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
-                     * @param _status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
+                     * 设置任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）
+                     * @param _status 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -78,7 +78,6 @@ namespace TencentCloud
 - `smoke`：烟雾
 - `package`：快递包裹
 - `license_plate`：车牌
-
                      * @return DetectedClassifications 识别到的目标类型。可能取值：
 
 - `person`：人
@@ -89,7 +88,6 @@ namespace TencentCloud
 - `smoke`：烟雾
 - `package`：快递包裹
 - `license_plate`：车牌
-
                      * 
                      */
                     std::vector<std::string> GetDetectedClassifications() const;
@@ -105,7 +103,6 @@ namespace TencentCloud
 - `smoke`：烟雾
 - `package`：快递包裹
 - `license_plate`：车牌
-
                      * @param _detectedClassifications 识别到的目标类型。可能取值：
 
 - `person`：人
@@ -116,7 +113,6 @@ namespace TencentCloud
 - `smoke`：烟雾
 - `package`：快递包裹
 - `license_plate`：车牌
-
                      * 
                      */
                     void SetDetectedClassifications(const std::vector<std::string>& _detectedClassifications);
@@ -170,10 +166,43 @@ namespace TencentCloud
                      */
                     bool AlternativeSummaryHasBeenSet() const;
 
+                    /**
+                     * 获取错误码，可能取值：
+
+- `DownloadFailed`：下载视频/图片文件失败
+- `ReadFailed`：读取视频/图片文件失败
+                     * @return ErrorCode 错误码，可能取值：
+
+- `DownloadFailed`：下载视频/图片文件失败
+- `ReadFailed`：读取视频/图片文件失败
+                     * 
+                     */
+                    std::string GetErrorCode() const;
+
+                    /**
+                     * 设置错误码，可能取值：
+
+- `DownloadFailed`：下载视频/图片文件失败
+- `ReadFailed`：读取视频/图片文件失败
+                     * @param _errorCode 错误码，可能取值：
+
+- `DownloadFailed`：下载视频/图片文件失败
+- `ReadFailed`：读取视频/图片文件失败
+                     * 
+                     */
+                    void SetErrorCode(const std::string& _errorCode);
+
+                    /**
+                     * 判断参数 ErrorCode 是否已赋值
+                     * @return ErrorCode 是否已赋值
+                     * 
+                     */
+                    bool ErrorCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）
+                     * 任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -189,7 +218,6 @@ namespace TencentCloud
 - `smoke`：烟雾
 - `package`：快递包裹
 - `license_plate`：车牌
-
                      */
                     std::vector<std::string> m_detectedClassifications;
                     bool m_detectedClassificationsHasBeenSet;
@@ -205,6 +233,15 @@ namespace TencentCloud
                      */
                     std::string m_alternativeSummary;
                     bool m_alternativeSummaryHasBeenSet;
+
+                    /**
+                     * 错误码，可能取值：
+
+- `DownloadFailed`：下载视频/图片文件失败
+- `ReadFailed`：读取视频/图片文件失败
+                     */
+                    std::string m_errorCode;
+                    bool m_errorCodeHasBeenSet;
 
                 };
             }

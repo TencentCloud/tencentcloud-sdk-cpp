@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取容器延时启动健康检查的时间。
+                     * 获取容器延时启动健康检查的时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InitialDelaySeconds 容器延时启动健康检查的时间。
+                     * @return InitialDelaySeconds 容器延时启动健康检查的时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInitialDelaySeconds() const;
 
                     /**
-                     * 设置容器延时启动健康检查的时间。
+                     * 设置容器延时启动健康检查的时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _initialDelaySeconds 容器延时启动健康检查的时间。
+                     * @param _initialDelaySeconds 容器延时启动健康检查的时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool InitialDelaySecondsHasBeenSet() const;
 
                     /**
-                     * 获取每次健康检查响应的最大超时时间。
+                     * 获取每次健康检查响应的最大超时时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeoutSeconds 每次健康检查响应的最大超时时间。
+                     * @return TimeoutSeconds 每次健康检查响应的最大超时时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimeoutSeconds() const;
 
                     /**
-                     * 设置每次健康检查响应的最大超时时间。
+                     * 设置每次健康检查响应的最大超时时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeoutSeconds 每次健康检查响应的最大超时时间。
+                     * @param _timeoutSeconds 每次健康检查响应的最大超时时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TimeoutSecondsHasBeenSet() const;
 
                     /**
-                     * 获取进行健康检查的时间间隔。
+                     * 获取进行健康检查的时间间隔，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeriodSeconds 进行健康检查的时间间隔。
+                     * @return PeriodSeconds 进行健康检查的时间间隔，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPeriodSeconds() const;
 
                     /**
-                     * 设置进行健康检查的时间间隔。
+                     * 设置进行健康检查的时间间隔，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _periodSeconds 进行健康检查的时间间隔。
+                     * @param _periodSeconds 进行健康检查的时间间隔，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -331,21 +331,21 @@ namespace TencentCloud
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 容器延时启动健康检查的时间。
+                     * 容器延时启动健康检查的时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_initialDelaySeconds;
                     bool m_initialDelaySecondsHasBeenSet;
 
                     /**
-                     * 每次健康检查响应的最大超时时间。
+                     * 每次健康检查响应的最大超时时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timeoutSeconds;
                     bool m_timeoutSecondsHasBeenSet;
 
                     /**
-                     * 进行健康检查的时间间隔。
+                     * 进行健康检查的时间间隔，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_periodSeconds;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性topic名称
-                     * @return Name 弹性topic名称
+                     * 获取弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取
+                     * @return Name 弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置弹性topic名称
-                     * @param _name 弹性topic名称
+                     * 设置弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取
+                     * @param _name 弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取位点信息，必填
-                     * @return Offset 位点信息，必填
+                     * 获取位点信息
+                     * @return Offset 位点信息
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置位点信息，必填
-                     * @param _offset 位点信息，必填
+                     * 设置位点信息
+                     * @param _offset 位点信息
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性topic名称
+                     * 弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 位点信息，必填
+                     * 位点信息
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

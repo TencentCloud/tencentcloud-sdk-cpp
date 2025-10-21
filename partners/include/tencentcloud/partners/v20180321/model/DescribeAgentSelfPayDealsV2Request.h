@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
-                     * @return CreatTimeRangeStart 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * 获取下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)
+                     * @return CreatTimeRangeStart 下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)
                      * 
                      */
                     std::string GetCreatTimeRangeStart() const;
 
                     /**
-                     * 设置下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
-                     * @param _creatTimeRangeStart 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * 设置下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)
+                     * @param _creatTimeRangeStart 下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)
                      * 
                      */
                     void SetCreatTimeRangeStart(const std::string& _creatTimeRangeStart);
@@ -252,7 +252,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * 下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)
                      */
                     std::string m_creatTimeRangeStart;
                     bool m_creatTimeRangeStartHasBeenSet;

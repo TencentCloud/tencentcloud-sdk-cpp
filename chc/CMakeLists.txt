@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/DescribeCommonServiceWorkOrderDetailResponse.h
   include/tencentcloud/chc/v20230418/model/ModifyWorkOrderTypeCollectFlagRequest.h
   include/tencentcloud/chc/v20230418/model/CreateNetDeviceModelResponse.h
+  include/tencentcloud/chc/v20230418/model/PersonnelVisitCar.h
   include/tencentcloud/chc/v20230418/model/DescribeCommonServiceWorkOrderDetailRequest.h
   include/tencentcloud/chc/v20230418/model/ServerReceivingInfo.h
   include/tencentcloud/chc/v20230418/model/CustomerInfo.h
@@ -227,6 +228,7 @@ set(chc_src
   src/v20230418/model/DescribeCommonServiceWorkOrderDetailResponse.cpp
   src/v20230418/model/ModifyWorkOrderTypeCollectFlagRequest.cpp
   src/v20230418/model/CreateNetDeviceModelResponse.cpp
+  src/v20230418/model/PersonnelVisitCar.cpp
   src/v20230418/model/DescribeCommonServiceWorkOrderDetailRequest.cpp
   src/v20230418/model/ServerReceivingInfo.cpp
   src/v20230418/model/CustomerInfo.cpp

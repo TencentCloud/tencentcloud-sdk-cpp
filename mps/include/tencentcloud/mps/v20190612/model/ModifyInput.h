@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
 #include <tencentcloud/mps/v20190612/model/CreateInputRISTSettings.h>
+#include <tencentcloud/mps/v20190612/model/FailOverOption.h>
 
 
 namespace TencentCloud
@@ -389,6 +390,27 @@ namespace TencentCloud
                      */
                     bool InputRegionHasBeenSet() const;
 
+                    /**
+                     * 获取冷热备相关
+                     * @return FailOverOption 冷热备相关
+                     * 
+                     */
+                    FailOverOption GetFailOverOption() const;
+
+                    /**
+                     * 设置冷热备相关
+                     * @param _failOverOption 冷热备相关
+                     * 
+                     */
+                    void SetFailOverOption(const FailOverOption& _failOverOption);
+
+                    /**
+                     * 判断参数 FailOverOption 是否已赋值
+                     * @return FailOverOption 是否已赋值
+                     * 
+                     */
+                    bool FailOverOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +508,12 @@ namespace TencentCloud
                      */
                     std::string m_inputRegion;
                     bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * 冷热备相关
+                     */
+                    FailOverOption m_failOverOption;
+                    bool m_failOverOptionHasBeenSet;
 
                 };
             }

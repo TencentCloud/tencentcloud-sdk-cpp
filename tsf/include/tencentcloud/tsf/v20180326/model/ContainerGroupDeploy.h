@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -825,18 +825,18 @@ namespace TencentCloud
                     bool TcrRepoInfoHasBeenSet() const;
 
                     /**
-                     * 获取数据卷信息，list
+                     * 获取数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeInfos 数据卷信息，list
+                     * @return VolumeInfos 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VolumeInfo> GetVolumeInfos() const;
 
                     /**
-                     * 设置数据卷信息，list
+                     * 设置数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeInfos 数据卷信息，list
+                     * @param _volumeInfos 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1269,7 +1269,7 @@ namespace TencentCloud
                     bool m_tcrRepoInfoHasBeenSet;
 
                     /**
-                     * 数据卷信息，list
+                     * 数据卷信息，数组结构
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeInfo> m_volumeInfos;

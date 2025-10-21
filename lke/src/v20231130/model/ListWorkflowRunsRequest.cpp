@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 ListWorkflowRunsRequest::ListWorkflowRunsRequest() :
-    m_runEnvHasBeenSet(false),
     m_appBizIdHasBeenSet(false),
-    m_pageHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
+    m_runEnvHasBeenSet(false),
+    m_pageHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false)
 {
@@ -39,14 +39,6 @@ string ListWorkflowRunsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_runEnvHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RunEnv";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_runEnv, allocator);
-    }
-
     if (m_appBizIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -55,20 +47,28 @@ string ListWorkflowRunsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Page";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_page, allocator);
-    }
-
     if (m_pageSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_runEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runEnv, allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_page, allocator);
     }
 
     if (m_loginUinHasBeenSet)
@@ -95,22 +95,6 @@ string ListWorkflowRunsRequest::ToJsonString() const
 }
 
 
-uint64_t ListWorkflowRunsRequest::GetRunEnv() const
-{
-    return m_runEnv;
-}
-
-void ListWorkflowRunsRequest::SetRunEnv(const uint64_t& _runEnv)
-{
-    m_runEnv = _runEnv;
-    m_runEnvHasBeenSet = true;
-}
-
-bool ListWorkflowRunsRequest::RunEnvHasBeenSet() const
-{
-    return m_runEnvHasBeenSet;
-}
-
 string ListWorkflowRunsRequest::GetAppBizId() const
 {
     return m_appBizId;
@@ -127,22 +111,6 @@ bool ListWorkflowRunsRequest::AppBizIdHasBeenSet() const
     return m_appBizIdHasBeenSet;
 }
 
-uint64_t ListWorkflowRunsRequest::GetPage() const
-{
-    return m_page;
-}
-
-void ListWorkflowRunsRequest::SetPage(const uint64_t& _page)
-{
-    m_page = _page;
-    m_pageHasBeenSet = true;
-}
-
-bool ListWorkflowRunsRequest::PageHasBeenSet() const
-{
-    return m_pageHasBeenSet;
-}
-
 uint64_t ListWorkflowRunsRequest::GetPageSize() const
 {
     return m_pageSize;
@@ -157,6 +125,38 @@ void ListWorkflowRunsRequest::SetPageSize(const uint64_t& _pageSize)
 bool ListWorkflowRunsRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+uint64_t ListWorkflowRunsRequest::GetRunEnv() const
+{
+    return m_runEnv;
+}
+
+void ListWorkflowRunsRequest::SetRunEnv(const uint64_t& _runEnv)
+{
+    m_runEnv = _runEnv;
+    m_runEnvHasBeenSet = true;
+}
+
+bool ListWorkflowRunsRequest::RunEnvHasBeenSet() const
+{
+    return m_runEnvHasBeenSet;
+}
+
+uint64_t ListWorkflowRunsRequest::GetPage() const
+{
+    return m_page;
+}
+
+void ListWorkflowRunsRequest::SetPage(const uint64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool ListWorkflowRunsRequest::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 
 string ListWorkflowRunsRequest::GetLoginUin() const

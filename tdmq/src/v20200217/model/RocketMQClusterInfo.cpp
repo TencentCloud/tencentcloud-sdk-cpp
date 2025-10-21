@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,12 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_instanceStatusHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_isFrozenHasBeenSet(false)
+    m_isFrozenHasBeenSet(false),
+    m_autoCreateTopicEnabledHasBeenSet(false),
+    m_adminFeatureEnabledHasBeenSet(false),
+    m_adminAccessKeyHasBeenSet(false),
+    m_adminSecretKeyHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -328,6 +333,56 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_isFrozenHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCreateTopicEnabled") && !value["AutoCreateTopicEnabled"].IsNull())
+    {
+        if (!value["AutoCreateTopicEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AutoCreateTopicEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoCreateTopicEnabled = value["AutoCreateTopicEnabled"].GetBool();
+        m_autoCreateTopicEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminFeatureEnabled") && !value["AdminFeatureEnabled"].IsNull())
+    {
+        if (!value["AdminFeatureEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AdminFeatureEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminFeatureEnabled = value["AdminFeatureEnabled"].GetBool();
+        m_adminFeatureEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminAccessKey") && !value["AdminAccessKey"].IsNull())
+    {
+        if (!value["AdminAccessKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AdminAccessKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminAccessKey = string(value["AdminAccessKey"].GetString());
+        m_adminAccessKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminSecretKey") && !value["AdminSecretKey"].IsNull())
+    {
+        if (!value["AdminSecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AdminSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminSecretKey = string(value["AdminSecretKey"].GetString());
+        m_adminSecretKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDeletionProtection") && !value["EnableDeletionProtection"].IsNull())
+    {
+        if (!value["EnableDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.EnableDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeletionProtection = value["EnableDeletionProtection"].GetBool();
+        m_enableDeletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +608,46 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IsFrozen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFrozen, allocator);
+    }
+
+    if (m_autoCreateTopicEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCreateTopicEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoCreateTopicEnabled, allocator);
+    }
+
+    if (m_adminFeatureEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminFeatureEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adminFeatureEnabled, allocator);
+    }
+
+    if (m_adminAccessKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminAccessKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminAccessKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adminSecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminSecretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 }
@@ -972,5 +1067,85 @@ void RocketMQClusterInfo::SetIsFrozen(const bool& _isFrozen)
 bool RocketMQClusterInfo::IsFrozenHasBeenSet() const
 {
     return m_isFrozenHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetAutoCreateTopicEnabled() const
+{
+    return m_autoCreateTopicEnabled;
+}
+
+void RocketMQClusterInfo::SetAutoCreateTopicEnabled(const bool& _autoCreateTopicEnabled)
+{
+    m_autoCreateTopicEnabled = _autoCreateTopicEnabled;
+    m_autoCreateTopicEnabledHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AutoCreateTopicEnabledHasBeenSet() const
+{
+    return m_autoCreateTopicEnabledHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetAdminFeatureEnabled() const
+{
+    return m_adminFeatureEnabled;
+}
+
+void RocketMQClusterInfo::SetAdminFeatureEnabled(const bool& _adminFeatureEnabled)
+{
+    m_adminFeatureEnabled = _adminFeatureEnabled;
+    m_adminFeatureEnabledHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AdminFeatureEnabledHasBeenSet() const
+{
+    return m_adminFeatureEnabledHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetAdminAccessKey() const
+{
+    return m_adminAccessKey;
+}
+
+void RocketMQClusterInfo::SetAdminAccessKey(const string& _adminAccessKey)
+{
+    m_adminAccessKey = _adminAccessKey;
+    m_adminAccessKeyHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AdminAccessKeyHasBeenSet() const
+{
+    return m_adminAccessKeyHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetAdminSecretKey() const
+{
+    return m_adminSecretKey;
+}
+
+void RocketMQClusterInfo::SetAdminSecretKey(const string& _adminSecretKey)
+{
+    m_adminSecretKey = _adminSecretKey;
+    m_adminSecretKeyHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AdminSecretKeyHasBeenSet() const
+{
+    return m_adminSecretKeyHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void RocketMQClusterInfo::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -372,6 +372,31 @@ namespace TencentCloud
                      */
                     bool InfluxCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取字段使用说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Specification 字段使用说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpecification() const;
+
+                    /**
+                     * 设置字段使用说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specification 字段使用说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecification(const std::string& _specification);
+
+                    /**
+                     * 判断参数 Specification 是否已赋值
+                     * @return Specification 是否已赋值
+                     * 
+                     */
+                    bool SpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +489,13 @@ namespace TencentCloud
                      */
                     std::string m_influxCategory;
                     bool m_influxCategoryHasBeenSet;
+
+                    /**
+                     * 字段使用说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_specification;
+                    bool m_specificationHasBeenSet;
 
                 };
             }

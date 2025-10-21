@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -223,6 +223,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h
   include/tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsRequest.h
+  include/tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteTargetGroupsResponse.h
@@ -484,6 +485,7 @@ set(clb_src
   src/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.cpp
   src/v20180317/model/InquiryPriceCreateLoadBalancerResponse.cpp
   src/v20180317/model/CreateLoadBalancerSnatIpsRequest.cpp
+  src/v20180317/model/TargetGroupHealthCheck.cpp
   src/v20180317/model/DescribeTargetGroupInstancesResponse.cpp
   src/v20180317/model/DescribeQuotaResponse.cpp
   src/v20180317/model/DeleteTargetGroupsResponse.cpp

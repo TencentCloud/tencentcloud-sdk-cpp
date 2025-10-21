@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@ AppInfo::AppInfo() :
     m_modelNameHasBeenSet(false),
     m_modelAliasNameHasBeenSet(false),
     m_patternHasBeenSet(false),
-    m_thoughtModelAliasNameHasBeenSet(false)
+    m_thoughtModelAliasNameHasBeenSet(false),
+    m_permissionIdsHasBeenSet(false),
+    m_creatorHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,29 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
         m_thoughtModelAliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionIds") && !value["PermissionIds"].IsNull())
+    {
+        if (!value["PermissionIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AppInfo.PermissionIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PermissionIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_permissionIds.push_back((*itr).GetString());
+        }
+        m_permissionIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +325,27 @@ void AppInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ThoughtModelAliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_thoughtModelAliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permissionIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_permissionIds.begin(); itr != m_permissionIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +573,37 @@ void AppInfo::SetThoughtModelAliasName(const string& _thoughtModelAliasName)
 bool AppInfo::ThoughtModelAliasNameHasBeenSet() const
 {
     return m_thoughtModelAliasNameHasBeenSet;
+}
+
+vector<string> AppInfo::GetPermissionIds() const
+{
+    return m_permissionIds;
+}
+
+void AppInfo::SetPermissionIds(const vector<string>& _permissionIds)
+{
+    m_permissionIds = _permissionIds;
+    m_permissionIdsHasBeenSet = true;
+}
+
+bool AppInfo::PermissionIdsHasBeenSet() const
+{
+    return m_permissionIdsHasBeenSet;
+}
+
+string AppInfo::GetCreator() const
+{
+    return m_creator;
+}
+
+void AppInfo::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool AppInfo::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace TencentCloud::Ctem::V20231128::Model;
 using namespace std;
 
 DescribeConfigsRequest::DescribeConfigsRequest() :
+    m_customerIdListHasBeenSet(false),
     m_isAggregationHasBeenSet(false),
     m_isNewHasBeenSet(false),
     m_customerIdHasBeenSet(false),
@@ -35,7 +36,8 @@ DescribeConfigsRequest::DescribeConfigsRequest() :
     m_updateAtStartHasBeenSet(false),
     m_updateAtEndHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_ignoredHasBeenSet(false)
+    m_ignoredHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,19 @@ string DescribeConfigsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_customerIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customerIdList.begin(); itr != m_customerIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
 
     if (m_isAggregationHasBeenSet)
     {
@@ -162,6 +177,14 @@ string DescribeConfigsRequest::ToJsonString() const
         d.AddMember(iKey, m_ignored, allocator);
     }
 
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -169,6 +192,22 @@ string DescribeConfigsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<int64_t> DescribeConfigsRequest::GetCustomerIdList() const
+{
+    return m_customerIdList;
+}
+
+void DescribeConfigsRequest::SetCustomerIdList(const vector<int64_t>& _customerIdList)
+{
+    m_customerIdList = _customerIdList;
+    m_customerIdListHasBeenSet = true;
+}
+
+bool DescribeConfigsRequest::CustomerIdListHasBeenSet() const
+{
+    return m_customerIdListHasBeenSet;
+}
 
 bool DescribeConfigsRequest::GetIsAggregation() const
 {
@@ -376,6 +415,22 @@ void DescribeConfigsRequest::SetIgnored(const bool& _ignored)
 bool DescribeConfigsRequest::IgnoredHasBeenSet() const
 {
     return m_ignoredHasBeenSet;
+}
+
+string DescribeConfigsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeConfigsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeConfigsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

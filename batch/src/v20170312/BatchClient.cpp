@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -678,6 +678,49 @@ BatchClient::DescribeJobOutcomeCallable BatchClient::DescribeJobCallable(const D
         [this, request]()
         {
             return this->DescribeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BatchClient::DescribeJobMonitorDataOutcome BatchClient::DescribeJobMonitorData(const DescribeJobMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobMonitorDataResponse rsp = DescribeJobMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobMonitorDataOutcome(rsp);
+        else
+            return DescribeJobMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void BatchClient::DescribeJobMonitorDataAsync(const DescribeJobMonitorDataRequest& request, const DescribeJobMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobMonitorData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BatchClient::DescribeJobMonitorDataOutcomeCallable BatchClient::DescribeJobMonitorDataCallable(const DescribeJobMonitorDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobMonitorDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobMonitorData(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ses/v20201002/model/TagList.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool DKIMOptionHasBeenSet() const;
 
+                    /**
+                     * 获取tag 标签
+                     * @return TagList tag 标签
+                     * 
+                     */
+                    std::vector<TagList> GetTagList() const;
+
+                    /**
+                     * 设置tag 标签
+                     * @param _tagList tag 标签
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagList>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dKIMOption;
                     bool m_dKIMOptionHasBeenSet;
+
+                    /**
+                     * tag 标签
+                     */
+                    std::vector<TagList> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

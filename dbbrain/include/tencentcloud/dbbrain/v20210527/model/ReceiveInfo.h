@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ReceiveGroupHasBeenSet() const;
 
                     /**
-                     * 获取最后接收时间
-                     * @return EndReceiveTime 最后接收时间
+                     * 获取最后接收时间，格式: "HH:mm:ss"
+                     * @return EndReceiveTime 最后接收时间，格式: "HH:mm:ss"
                      * 
                      */
                     std::string GetEndReceiveTime() const;
 
                     /**
-                     * 设置最后接收时间
-                     * @param _endReceiveTime 最后接收时间
+                     * 设置最后接收时间，格式: "HH:mm:ss"
+                     * @param _endReceiveTime 最后接收时间，格式: "HH:mm:ss"
                      * 
                      */
                     void SetEndReceiveTime(const std::string& _endReceiveTime);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SendChannelHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartReceiveTime 开始时间
+                     * 获取开始时间，格式: "HH:mm:ss"
+                     * @return StartReceiveTime 开始时间，格式: "HH:mm:ss"
                      * 
                      */
                     std::string GetStartReceiveTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startReceiveTime 开始时间
+                     * 设置开始时间，格式: "HH:mm:ss"
+                     * @param _startReceiveTime 开始时间，格式: "HH:mm:ss"
                      * 
                      */
                     void SetStartReceiveTime(const std::string& _startReceiveTime);
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_receiveGroupHasBeenSet;
 
                     /**
-                     * 最后接收时间
+                     * 最后接收时间，格式: "HH:mm:ss"
                      */
                     std::string m_endReceiveTime;
                     bool m_endReceiveTimeHasBeenSet;
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_sendChannelHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间，格式: "HH:mm:ss"
                      */
                     std::string m_startReceiveTime;
                     bool m_startReceiveTimeHasBeenSet;

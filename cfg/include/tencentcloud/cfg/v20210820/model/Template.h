@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@
 #include <tencentcloud/cfg/v20210820/model/TemplatePolicy.h>
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
 #include <tencentcloud/cfg/v20210820/model/ApmServiceInfo.h>
+#include <tencentcloud/cfg/v20210820/model/TaskTarget.h>
 
 
 namespace TencentCloud
@@ -454,6 +455,48 @@ namespace TencentCloud
                      */
                     bool PolicyDealTypeHasBeenSet() const;
 
+                    /**
+                     * 获取演练场景
+                     * @return TemplateScenario 演练场景
+                     * 
+                     */
+                    std::vector<TaskTarget> GetTemplateScenario() const;
+
+                    /**
+                     * 设置演练场景
+                     * @param _templateScenario 演练场景
+                     * 
+                     */
+                    void SetTemplateScenario(const std::vector<TaskTarget>& _templateScenario);
+
+                    /**
+                     * 判断参数 TemplateScenario 是否已赋值
+                     * @return TemplateScenario 是否已赋值
+                     * 
+                     */
+                    bool TemplateScenarioHasBeenSet() const;
+
+                    /**
+                     * 获取演练目的
+                     * @return TemplatePurpose 演练目的
+                     * 
+                     */
+                    std::vector<TaskTarget> GetTemplatePurpose() const;
+
+                    /**
+                     * 设置演练目的
+                     * @param _templatePurpose 演练目的
+                     * 
+                     */
+                    void SetTemplatePurpose(const std::vector<TaskTarget>& _templatePurpose);
+
+                    /**
+                     * 判断参数 TemplatePurpose 是否已赋值
+                     * @return TemplatePurpose 是否已赋值
+                     * 
+                     */
+                    bool TemplatePurposeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +613,18 @@ namespace TencentCloud
                      */
                     int64_t m_policyDealType;
                     bool m_policyDealTypeHasBeenSet;
+
+                    /**
+                     * 演练场景
+                     */
+                    std::vector<TaskTarget> m_templateScenario;
+                    bool m_templateScenarioHasBeenSet;
+
+                    /**
+                     * 演练目的
+                     */
+                    std::vector<TaskTarget> m_templatePurpose;
+                    bool m_templatePurposeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
+                     * 获取实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 无
+                     * @return Name 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置无
+                     * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 无
+                     * @param _name 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取实例ID内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Values 无
+                     * @return Values 实例ID内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置无
+                     * 设置实例ID内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _values 无
+                     * @param _values 实例ID内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,14 +124,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 无
+                     * 实例ID内容
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;

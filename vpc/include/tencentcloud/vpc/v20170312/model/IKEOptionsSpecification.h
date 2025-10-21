@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      * 
                      */
                     std::string GetPropoEncryAlgorithm() const;
 
                     /**
-                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
-                     * @param _propoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @param _propoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      * 
                      */
                     void SetPropoEncryAlgorithm(const std::string& _propoEncryAlgorithm);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PropoEncryAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
+                     * 获取认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
+                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      * 
                      */
                     std::string GetPropoAuthenAlgorithm() const;
 
                     /**
-                     * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
-                     * @param _propoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
+                     * 设置认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
+                     * @param _propoAuthenAlgorithm 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      * 
                      */
                     void SetPropoAuthenAlgorithm(const std::string& _propoAuthenAlgorithm);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PropoAuthenAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-                     * @return ExchangeMode 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
+                     * 获取协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
+                     * @return ExchangeMode 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      * 
                      */
                     std::string GetExchangeMode() const;
 
                     /**
-                     * 设置协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
-                     * @param _exchangeMode 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
+                     * 设置协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
+                     * @param _exchangeMode 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      * 
                      */
                     void SetExchangeMode(const std::string& _exchangeMode);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RemoteFqdnNameHasBeenSet() const;
 
                     /**
-                     * 获取DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-                     * @return DhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
+                     * 获取DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
+                     * @return DhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      * 
                      */
                     std::string GetDhGroupName() const;
 
                     /**
-                     * 设置DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
-                     * @param _dhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
+                     * 设置DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
+                     * @param _dhGroupName DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      * 
                      */
                     void SetDhGroupName(const std::string& _dhGroupName);
@@ -301,19 +301,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      */
                     std::string m_propoEncryAlgorithm;
                     bool m_propoEncryAlgorithmHasBeenSet;
 
                     /**
-                     * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
+                     * 认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。
                      */
                     std::string m_propoAuthenAlgorithm;
                     bool m_propoAuthenAlgorithmHasBeenSet;
 
                     /**
-                     * 协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN
+                     * 协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。
                      */
                     std::string m_exchangeMode;
                     bool m_exchangeModeHasBeenSet;
@@ -355,7 +355,7 @@ namespace TencentCloud
                     bool m_remoteFqdnNameHasBeenSet;
 
                     /**
-                     * DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，
+                     * DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。
                      */
                     std::string m_dhGroupName;
                     bool m_dhGroupNameHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅版本, 当前只支持 kafka 版本。
-                     * @return SubscribeVersion 数据订阅版本, 当前只支持 kafka 版本。
+                     * 获取数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @return SubscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      * 
                      */
                     std::string GetSubscribeVersion() const;
 
                     /**
-                     * 设置数据订阅版本, 当前只支持 kafka 版本。
-                     * @param _subscribeVersion 数据订阅版本, 当前只支持 kafka 版本。
+                     * 设置数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * @param _subscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      * 
                      */
                     void SetSubscribeVersion(const std::string& _subscribeVersion);
@@ -497,6 +497,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ErrorsHasBeenSet() const;
+
+                    /**
+                     * 获取订阅实例规格
+                     * @return InstanceClass 订阅实例规格
+                     * 
+                     */
+                    std::string GetInstanceClass() const;
+
+                    /**
+                     * 设置订阅实例规格
+                     * @param _instanceClass 订阅实例规格
+                     * 
+                     */
+                    void SetInstanceClass(const std::string& _instanceClass);
+
+                    /**
+                     * 判断参数 InstanceClass 是否已赋值
+                     * @return InstanceClass 是否已赋值
+                     * 
+                     */
+                    bool InstanceClassHasBeenSet() const;
 
                 private:
 
@@ -609,7 +630,7 @@ namespace TencentCloud
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * 数据订阅版本, 当前只支持 kafka 版本。
+                     * 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
                      */
                     std::string m_subscribeVersion;
                     bool m_subscribeVersionHasBeenSet;
@@ -627,6 +648,12 @@ namespace TencentCloud
                      */
                     std::vector<SubsErr> m_errors;
                     bool m_errorsHasBeenSet;
+
+                    /**
+                     * 订阅实例规格
+                     */
+                    std::string m_instanceClass;
+                    bool m_instanceClassHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如：postgres-6bwgamo3。
-                     * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 获取实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如：postgres-6bwgamo3。
-                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 设置实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例磁盘大小，单位GiB。
-                     * @return Storage 修改后的实例磁盘大小，单位GiB。
+                     * 获取修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
+                     * @return Storage 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置修改后的实例磁盘大小，单位GiB。
-                     * @param _storage 修改后的实例磁盘大小，单位GiB。
+                     * 设置修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
+                     * @param _storage 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool SwitchEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例CPU大小，单位Core。
-                     * @return Cpu 修改后的实例CPU大小，单位Core。
+                     * 获取修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * @return Cpu 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置修改后的实例CPU大小，单位Core。
-                     * @param _cpu 修改后的实例CPU大小，单位Core。
+                     * 设置修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * @param _cpu 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -283,7 +283,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如：postgres-6bwgamo3。
+                     * 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 修改后的实例磁盘大小，单位GiB。
+                     * 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -344,7 +344,7 @@ namespace TencentCloud
                     bool m_switchEndTimeHasBeenSet;
 
                     /**
-                     * 修改后的实例CPU大小，单位Core。
+                     * 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;

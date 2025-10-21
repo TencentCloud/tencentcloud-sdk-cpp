@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -576,15 +576,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool EipAddressIdHasBeenSet() const;
 
                     /**
-                     * 获取Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
-                     * @return LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * 获取Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。IPv6 CLB安全组默认放通，不需要传此参数。
+                     * @return LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。IPv6 CLB安全组默认放通，不需要传此参数。
                      * 
                      */
                     bool GetLoadBalancerPassToTarget() const;
 
                     /**
-                     * 设置Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
-                     * @param _loadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * 设置Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。IPv6 CLB安全组默认放通，不需要传此参数。
+                     * @param _loadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。IPv6 CLB安全组默认放通，不需要传此参数。
                      * 
                      */
                     void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
@@ -700,6 +700,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * 
                      */
                     bool AccessLogTopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启七层高级路由
+                     * @return AdvancedRoute 是否开启七层高级路由
+                     * 
+                     */
+                    bool GetAdvancedRoute() const;
+
+                    /**
+                     * 设置是否开启七层高级路由
+                     * @param _advancedRoute 是否开启七层高级路由
+                     * 
+                     */
+                    void SetAdvancedRoute(const bool& _advancedRoute);
+
+                    /**
+                     * 判断参数 AdvancedRoute 是否已赋值
+                     * @return AdvancedRoute 是否已赋值
+                     * 
+                     */
+                    bool AdvancedRouteHasBeenSet() const;
 
                 private:
 
@@ -854,7 +875,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_eipAddressIdHasBeenSet;
 
                     /**
-                     * Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。IPv6 CLB安全组默认放通，不需要传此参数。
                      */
                     bool m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
@@ -888,6 +909,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_accessLogTopicId;
                     bool m_accessLogTopicIdHasBeenSet;
+
+                    /**
+                     * 是否开启七层高级路由
+                     */
+                    bool m_advancedRoute;
+                    bool m_advancedRouteHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,11 @@ Cluster::Cluster() :
     m_totalMemHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
     m_runningMemHasBeenSet(false),
-    m_setatsHasBeenSet(false)
+    m_setatsHasBeenSet(false),
+    m_yarnsHasBeenSet(false),
+    m_deploymentModeHasBeenSet(false),
+    m_slaveZonesHasBeenSet(false),
+    m_logCOSBucketHasBeenSet(false)
 {
 }
 
@@ -693,6 +697,66 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_setatsHasBeenSet = true;
     }
 
+    if (value.HasMember("Yarns") && !value["Yarns"].IsNull())
+    {
+        if (!value["Yarns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.Yarns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Yarns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HadoopYarnItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_yarns.push_back(item);
+        }
+        m_yarnsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeploymentMode") && !value["DeploymentMode"].IsNull())
+    {
+        if (!value["DeploymentMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.DeploymentMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentMode = value["DeploymentMode"].GetInt64();
+        m_deploymentModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
+    {
+        if (!value["SlaveZones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.SlaveZones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZone item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_slaveZones.push_back(item);
+        }
+        m_slaveZonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogCOSBucket") && !value["LogCOSBucket"].IsNull())
+    {
+        if (!value["LogCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.LogCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logCOSBucket = string(value["LogCOSBucket"].GetString());
+        m_logCOSBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1167,6 +1231,52 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setats.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_yarnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Yarns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_yarns.begin(); itr != m_yarns.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deploymentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deploymentMode, allocator);
+    }
+
+    if (m_slaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_logCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logCOSBucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2018,5 +2128,69 @@ void Cluster::SetSetats(const Setats& _setats)
 bool Cluster::SetatsHasBeenSet() const
 {
     return m_setatsHasBeenSet;
+}
+
+vector<HadoopYarnItem> Cluster::GetYarns() const
+{
+    return m_yarns;
+}
+
+void Cluster::SetYarns(const vector<HadoopYarnItem>& _yarns)
+{
+    m_yarns = _yarns;
+    m_yarnsHasBeenSet = true;
+}
+
+bool Cluster::YarnsHasBeenSet() const
+{
+    return m_yarnsHasBeenSet;
+}
+
+int64_t Cluster::GetDeploymentMode() const
+{
+    return m_deploymentMode;
+}
+
+void Cluster::SetDeploymentMode(const int64_t& _deploymentMode)
+{
+    m_deploymentMode = _deploymentMode;
+    m_deploymentModeHasBeenSet = true;
+}
+
+bool Cluster::DeploymentModeHasBeenSet() const
+{
+    return m_deploymentModeHasBeenSet;
+}
+
+vector<SlaveZone> Cluster::GetSlaveZones() const
+{
+    return m_slaveZones;
+}
+
+void Cluster::SetSlaveZones(const vector<SlaveZone>& _slaveZones)
+{
+    m_slaveZones = _slaveZones;
+    m_slaveZonesHasBeenSet = true;
+}
+
+bool Cluster::SlaveZonesHasBeenSet() const
+{
+    return m_slaveZonesHasBeenSet;
+}
+
+string Cluster::GetLogCOSBucket() const
+{
+    return m_logCOSBucket;
+}
+
+void Cluster::SetLogCOSBucket(const string& _logCOSBucket)
+{
+    m_logCOSBucket = _logCOSBucket;
+    m_logCOSBucketHasBeenSet = true;
+}
+
+bool Cluster::LogCOSBucketHasBeenSet() const
+{
+    return m_logCOSBucketHasBeenSet;
 }
 

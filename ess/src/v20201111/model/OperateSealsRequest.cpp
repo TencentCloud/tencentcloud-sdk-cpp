@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ OperateSealsRequest::OperateSealsRequest() :
     m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_actHasBeenSet(false),
-    m_sealIdsHasBeenSet(false)
+    m_sealIdsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,21 @@ string OperateSealsRequest::ToJsonString() const
         for (auto itr = m_sealIds.begin(); itr != m_sealIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -146,6 +162,22 @@ void OperateSealsRequest::SetSealIds(const vector<string>& _sealIds)
 bool OperateSealsRequest::SealIdsHasBeenSet() const
 {
     return m_sealIdsHasBeenSet;
+}
+
+vector<Option> OperateSealsRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void OperateSealsRequest::SetOptions(const vector<Option>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool OperateSealsRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

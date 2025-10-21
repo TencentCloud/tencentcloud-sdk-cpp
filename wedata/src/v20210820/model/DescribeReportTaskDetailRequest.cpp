@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeReportTaskDetailRequest::DescribeReportTaskDetailRequest() :
-    m_tenantIdHasBeenSet(false),
     m_engineTaskIdHasBeenSet(false)
 {
 }
@@ -34,14 +33,6 @@ string DescribeReportTaskDetailRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_tenantIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TenantId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tenantId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_engineTaskIdHasBeenSet)
     {
@@ -58,22 +49,6 @@ string DescribeReportTaskDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeReportTaskDetailRequest::GetTenantId() const
-{
-    return m_tenantId;
-}
-
-void DescribeReportTaskDetailRequest::SetTenantId(const string& _tenantId)
-{
-    m_tenantId = _tenantId;
-    m_tenantIdHasBeenSet = true;
-}
-
-bool DescribeReportTaskDetailRequest::TenantIdHasBeenSet() const
-{
-    return m_tenantIdHasBeenSet;
-}
 
 string DescribeReportTaskDetailRequest::GetEngineTaskId() const
 {

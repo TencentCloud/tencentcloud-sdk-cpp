@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kafka导入配置ID
-                     * @return Id Kafka导入配置ID
+                     * 获取导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
+                     * @return Id 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Kafka导入配置ID
-                     * @param _id Kafka导入配置ID
+                     * 设置导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
+                     * @param _id 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -66,15 +74,23 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取导入CLS目标topic ID
-                     * @return TopicId 导入CLS目标topic ID
+                     * 获取导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。
+                     * @return TopicId 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置导入CLS目标topic ID
-                     * @param _topicId 导入CLS目标topic ID
+                     * 设置导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。
+                     * @param _topicId 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -130,14 +146,18 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
                      * 设置腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -213,15 +233,23 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-                     * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+
+- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。
+                     * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+
+- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。
                      * 
                      */
                     std::string GetUserKafkaTopics() const;
 
                     /**
-                     * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-                     * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+
+- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。
+                     * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+
+- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。
                      * 
                      */
                     void SetUserKafkaTopics(const std::string& _userKafkaTopics);
@@ -276,15 +304,15 @@ namespace TencentCloud
                     bool LogRechargeRuleHasBeenSet() const;
 
                     /**
-                     * 获取导入控制，1：暂停；2：继续。
-                     * @return StatusControl 导入控制，1：暂停；2：继续。
+                     * 获取导入控制，1：暂停；2：启动。
+                     * @return StatusControl 导入控制，1：暂停；2：启动。
                      * 
                      */
                     uint64_t GetStatusControl() const;
 
                     /**
-                     * 设置导入控制，1：暂停；2：继续。
-                     * @param _statusControl 导入控制，1：暂停；2：继续。
+                     * 设置导入控制，1：暂停；2：启动。
+                     * @param _statusControl 导入控制，1：暂停；2：启动。
                      * 
                      */
                     void SetStatusControl(const uint64_t& _statusControl);
@@ -299,13 +327,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Kafka导入配置ID
+                     * 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 导入CLS目标topic ID
+                     * 导入CLS目标TopicId。
+- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -324,6 +356,7 @@ namespace TencentCloud
 
                     /**
                      * 腾讯云CKafka实例ID，KafkaType为0时必填。
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
@@ -347,7 +380,9 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+
+- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。
                      */
                     std::string m_userKafkaTopics;
                     bool m_userKafkaTopicsHasBeenSet;
@@ -365,7 +400,7 @@ namespace TencentCloud
                     bool m_logRechargeRuleHasBeenSet;
 
                     /**
-                     * 导入控制，1：暂停；2：继续。
+                     * 导入控制，1：暂停；2：启动。
                      */
                     uint64_t m_statusControl;
                     bool m_statusControlHasBeenSet;

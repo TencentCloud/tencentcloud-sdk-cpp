@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,9 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_grpcEnableHasBeenSet(false),
     m_healthProbeHasBeenSet(false),
     m_rollingUpdateHasBeenSet(false),
-    m_sidecarHasBeenSet(false)
+    m_sidecarHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false)
 {
 }
 
@@ -350,6 +352,29 @@ string ModifyModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sidecar.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumeMounts.begin(); itr != m_volumeMounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -870,6 +895,38 @@ void ModifyModelServiceRequest::SetSidecar(const SidecarSpec& _sidecar)
 bool ModifyModelServiceRequest::SidecarHasBeenSet() const
 {
     return m_sidecarHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void ModifyModelServiceRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+vector<VolumeMount> ModifyModelServiceRequest::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void ModifyModelServiceRequest::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
 }
 
 

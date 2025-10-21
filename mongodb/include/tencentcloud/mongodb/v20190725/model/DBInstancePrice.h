@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单价
-                     * @return UnitPrice 单价
+                     * 获取实例单价。单位：元。
+                     * @return UnitPrice 实例单价。单位：元。
                      * 
                      */
                     double GetUnitPrice() const;
 
                     /**
-                     * 设置单价
-                     * @param _unitPrice 单价
+                     * 设置实例单价。单位：元。
+                     * @param _unitPrice 实例单价。单位：元。
                      * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取原价
-                     * @return OriginalPrice 原价
+                     * 获取实例原价。单位：元。
+                     * @return OriginalPrice 实例原价。单位：元。
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置原价
-                     * @param _originalPrice 原价
+                     * 设置实例原价。单位：元。
+                     * @param _originalPrice 实例原价。单位：元。
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣价
-                     * @return DiscountPrice 折扣价
+                     * 获取实例折扣价。单位：元。
+                     * @return DiscountPrice 实例折扣价。单位：元。
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折扣价
-                     * @param _discountPrice 折扣价
+                     * 设置实例折扣价。单位：元。
+                     * @param _discountPrice 实例折扣价。单位：元。
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单价
+                     * 实例单价。单位：元。
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
-                     * 原价
+                     * 实例原价。单位：元。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣价
+                     * 实例折扣价。单位：元。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

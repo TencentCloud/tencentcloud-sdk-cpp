@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ PulsarProInstance::PulsarProInstance() :
     m_tagsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_billingLabelVersionHasBeenSet(false),
-    m_tenantHasBeenSet(false)
+    m_tenantHasBeenSet(false),
+    m_certificateListHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,26 @@ CoreInternalOutcome PulsarProInstance::Deserialize(const rapidjson::Value &value
         m_tenantHasBeenSet = true;
     }
 
+    if (value.HasMember("CertificateList") && !value["CertificateList"].IsNull())
+    {
+        if (!value["CertificateList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PulsarProInstance.CertificateList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CertificateList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CertificateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_certificateList.push_back(item);
+        }
+        m_certificateListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +452,21 @@ void PulsarProInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Tenant";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_certificateList.begin(); itr != m_certificateList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -754,5 +790,21 @@ void PulsarProInstance::SetTenant(const string& _tenant)
 bool PulsarProInstance::TenantHasBeenSet() const
 {
     return m_tenantHasBeenSet;
+}
+
+vector<CertificateInfo> PulsarProInstance::GetCertificateList() const
+{
+    return m_certificateList;
+}
+
+void PulsarProInstance::SetCertificateList(const vector<CertificateInfo>& _certificateList)
+{
+    m_certificateList = _certificateList;
+    m_certificateListHasBeenSet = true;
+}
+
+bool PulsarProInstance::CertificateListHasBeenSet() const
+{
+    return m_certificateListHasBeenSet;
 }
 

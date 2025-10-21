@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -427,6 +427,178 @@ CtemClient::DescribeEnterprisesOutcomeCallable CtemClient::DescribeEnterprisesCa
     return task->get_future();
 }
 
+CtemClient::DescribeFakeAppsOutcome CtemClient::DescribeFakeApps(const DescribeFakeAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFakeApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFakeAppsResponse rsp = DescribeFakeAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFakeAppsOutcome(rsp);
+        else
+            return DescribeFakeAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFakeAppsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeFakeAppsAsync(const DescribeFakeAppsRequest& request, const DescribeFakeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFakeApps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeFakeAppsOutcomeCallable CtemClient::DescribeFakeAppsCallable(const DescribeFakeAppsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFakeAppsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFakeApps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeFakeMiniProgramsOutcome CtemClient::DescribeFakeMiniPrograms(const DescribeFakeMiniProgramsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFakeMiniPrograms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFakeMiniProgramsResponse rsp = DescribeFakeMiniProgramsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFakeMiniProgramsOutcome(rsp);
+        else
+            return DescribeFakeMiniProgramsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFakeMiniProgramsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeFakeMiniProgramsAsync(const DescribeFakeMiniProgramsRequest& request, const DescribeFakeMiniProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFakeMiniPrograms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeFakeMiniProgramsOutcomeCallable CtemClient::DescribeFakeMiniProgramsCallable(const DescribeFakeMiniProgramsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFakeMiniProgramsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFakeMiniPrograms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeFakeWebsitesOutcome CtemClient::DescribeFakeWebsites(const DescribeFakeWebsitesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFakeWebsites");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFakeWebsitesResponse rsp = DescribeFakeWebsitesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFakeWebsitesOutcome(rsp);
+        else
+            return DescribeFakeWebsitesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFakeWebsitesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeFakeWebsitesAsync(const DescribeFakeWebsitesRequest& request, const DescribeFakeWebsitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFakeWebsites(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeFakeWebsitesOutcomeCallable CtemClient::DescribeFakeWebsitesCallable(const DescribeFakeWebsitesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFakeWebsitesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFakeWebsites(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeFakeWechatOfficialsOutcome CtemClient::DescribeFakeWechatOfficials(const DescribeFakeWechatOfficialsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFakeWechatOfficials");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFakeWechatOfficialsResponse rsp = DescribeFakeWechatOfficialsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFakeWechatOfficialsOutcome(rsp);
+        else
+            return DescribeFakeWechatOfficialsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFakeWechatOfficialsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeFakeWechatOfficialsAsync(const DescribeFakeWechatOfficialsRequest& request, const DescribeFakeWechatOfficialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFakeWechatOfficials(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeFakeWechatOfficialsOutcomeCallable CtemClient::DescribeFakeWechatOfficialsCallable(const DescribeFakeWechatOfficialsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFakeWechatOfficialsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFakeWechatOfficials(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CtemClient::DescribeGithubsOutcome CtemClient::DescribeGithubs(const DescribeGithubsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGithubs");
@@ -592,6 +764,135 @@ CtemClient::DescribeJobRecordsOutcomeCallable CtemClient::DescribeJobRecordsCall
         [this, request]()
         {
             return this->DescribeJobRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeLeakageCodesOutcome CtemClient::DescribeLeakageCodes(const DescribeLeakageCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageCodesResponse rsp = DescribeLeakageCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageCodesOutcome(rsp);
+        else
+            return DescribeLeakageCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageCodesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageCodesAsync(const DescribeLeakageCodesRequest& request, const DescribeLeakageCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageCodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageCodesOutcomeCallable CtemClient::DescribeLeakageCodesCallable(const DescribeLeakageCodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageCodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeLeakageDatasOutcome CtemClient::DescribeLeakageDatas(const DescribeLeakageDatasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageDatas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageDatasResponse rsp = DescribeLeakageDatasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageDatasOutcome(rsp);
+        else
+            return DescribeLeakageDatasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageDatasOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageDatasAsync(const DescribeLeakageDatasRequest& request, const DescribeLeakageDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageDatas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageDatasOutcomeCallable CtemClient::DescribeLeakageDatasCallable(const DescribeLeakageDatasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageDatasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageDatas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::DescribeLeakageEmailsOutcome CtemClient::DescribeLeakageEmails(const DescribeLeakageEmailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLeakageEmails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLeakageEmailsResponse rsp = DescribeLeakageEmailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLeakageEmailsOutcome(rsp);
+        else
+            return DescribeLeakageEmailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLeakageEmailsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeLeakageEmailsAsync(const DescribeLeakageEmailsRequest& request, const DescribeLeakageEmailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLeakageEmails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::DescribeLeakageEmailsOutcomeCallable CtemClient::DescribeLeakageEmailsCallable(const DescribeLeakageEmailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLeakageEmailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLeakageEmails(request);
         }
     );
 
@@ -1065,6 +1366,49 @@ CtemClient::ModifyCustomerOutcomeCallable CtemClient::ModifyCustomerCallable(con
         [this, request]()
         {
             return this->ModifyCustomer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CtemClient::ModifyLabelOutcome CtemClient::ModifyLabel(const ModifyLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLabelResponse rsp = ModifyLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLabelOutcome(rsp);
+        else
+            return ModifyLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLabelOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::ModifyLabelAsync(const ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLabel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CtemClient::ModifyLabelOutcomeCallable CtemClient::ModifyLabelCallable(const ModifyLabelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLabelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLabel(request);
         }
     );
 

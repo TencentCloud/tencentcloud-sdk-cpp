@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,6 +283,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GraceDownTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启任务保护
+                     * @return GraceDownProtectFlag 是否开启任务保护
+                     * 
+                     */
+                    bool GetGraceDownProtectFlag() const;
+
+                    /**
+                     * 设置是否开启任务保护
+                     * @param _graceDownProtectFlag 是否开启任务保护
+                     * 
+                     */
+                    void SetGraceDownProtectFlag(const bool& _graceDownProtectFlag);
+
+                    /**
+                     * 判断参数 GraceDownProtectFlag 是否已赋值
+                     * @return GraceDownProtectFlag 是否已赋值
+                     * 
+                     */
+                    bool GraceDownProtectFlagHasBeenSet() const;
 
                     /**
                      * 获取绑定标签列表
@@ -590,6 +611,12 @@ namespace TencentCloud
                      */
                     int64_t m_graceDownTime;
                     bool m_graceDownTimeHasBeenSet;
+
+                    /**
+                     * 是否开启任务保护
+                     */
+                    bool m_graceDownProtectFlag;
+                    bool m_graceDownProtectFlagHasBeenSet;
 
                     /**
                      * 绑定标签列表

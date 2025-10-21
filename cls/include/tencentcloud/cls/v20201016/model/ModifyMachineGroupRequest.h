@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器组ID
-                     * @return GroupId 机器组ID
+                     * 获取机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
+                     * @return GroupId 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置机器组ID
-                     * @param _groupId 机器组ID
+                     * 设置机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
+                     * @param _groupId 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -68,14 +72,26 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
                      * @return GroupName 机器组名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置机器组名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
                      * @param _groupName 机器组名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -160,14 +176,18 @@ Type：label，Values中为标签字符串列表机器组。
 
                     /**
                      * 获取升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateStartTime() const;
 
                     /**
                      * 设置升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateStartTime 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateStartTime(const std::string& _updateStartTime);
@@ -181,14 +201,18 @@ Type：label，Values中为标签字符串列表机器组。
 
                     /**
                      * 获取升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @return UpdateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     std::string GetUpdateEndTime() const;
 
                     /**
                      * 设置升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * @param _updateEndTime 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      * 
                      */
                     void SetUpdateEndTime(const std::string& _updateEndTime);
@@ -266,13 +290,17 @@ Type：label，Values中为标签字符串列表机器组。
                 private:
 
                     /**
-                     * 机器组ID
+                     * 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 机器组名称
+输入限制：
+- 不能为空字符串
+- 不能包含字符'|'
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
@@ -299,12 +327,14 @@ Type：label，Values中为标签字符串列表机器组。
 
                     /**
                      * 升级开始时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateStartTime;
                     bool m_updateStartTimeHasBeenSet;
 
                     /**
                      * 升级结束时间，建议业务低峰期升级LogListener
+时间格式：HH:mm:ss
                      */
                     std::string m_updateEndTime;
                     bool m_updateEndTimeHasBeenSet;

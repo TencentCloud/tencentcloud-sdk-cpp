@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using namespace TencentCloud::Dc::V20180410::Model;
 using namespace std;
 
 BFDInfo::BFDInfo() :
+    m_enableBfdMultiHopHasBeenSet(false),
     m_probeFailedTimesHasBeenSet(false),
     m_intervalHasBeenSet(false)
 {
@@ -30,6 +31,16 @@ CoreInternalOutcome BFDInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("EnableBfdMultiHop") && !value["EnableBfdMultiHop"].IsNull())
+    {
+        if (!value["EnableBfdMultiHop"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BFDInfo.EnableBfdMultiHop` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBfdMultiHop = value["EnableBfdMultiHop"].GetInt64();
+        m_enableBfdMultiHopHasBeenSet = true;
+    }
 
     if (value.HasMember("ProbeFailedTimes") && !value["ProbeFailedTimes"].IsNull())
     {
@@ -58,6 +69,14 @@ CoreInternalOutcome BFDInfo::Deserialize(const rapidjson::Value &value)
 void BFDInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_enableBfdMultiHopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBfdMultiHop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableBfdMultiHop, allocator);
+    }
+
     if (m_probeFailedTimesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +95,22 @@ void BFDInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 
 }
 
+
+int64_t BFDInfo::GetEnableBfdMultiHop() const
+{
+    return m_enableBfdMultiHop;
+}
+
+void BFDInfo::SetEnableBfdMultiHop(const int64_t& _enableBfdMultiHop)
+{
+    m_enableBfdMultiHop = _enableBfdMultiHop;
+    m_enableBfdMultiHopHasBeenSet = true;
+}
+
+bool BFDInfo::EnableBfdMultiHopHasBeenSet() const
+{
+    return m_enableBfdMultiHopHasBeenSet;
+}
 
 int64_t BFDInfo::GetProbeFailedTimes() const
 {

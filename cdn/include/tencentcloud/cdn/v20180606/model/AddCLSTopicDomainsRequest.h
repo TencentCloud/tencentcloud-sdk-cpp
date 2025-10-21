@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取是否继承域名标签, 默认保留上一次更改的值
+                     * @return InheritDomainTags 是否继承域名标签, 默认保留上一次更改的值
+                     * 
+                     */
+                    bool GetInheritDomainTags() const;
+
+                    /**
+                     * 设置是否继承域名标签, 默认保留上一次更改的值
+                     * @param _inheritDomainTags 是否继承域名标签, 默认保留上一次更改的值
+                     * 
+                     */
+                    void SetInheritDomainTags(const bool& _inheritDomainTags);
+
+                    /**
+                     * 判断参数 InheritDomainTags 是否已赋值
+                     * @return InheritDomainTags 是否已赋值
+                     * 
+                     */
+                    bool InheritDomainTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 是否继承域名标签, 默认保留上一次更改的值
+                     */
+                    bool m_inheritDomainTags;
+                    bool m_inheritDomainTagsHasBeenSet;
 
                 };
             }

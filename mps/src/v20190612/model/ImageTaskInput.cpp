@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ ImageTaskInput::ImageTaskInput() :
     m_encodeConfigHasBeenSet(false),
     m_enhanceConfigHasBeenSet(false),
     m_eraseConfigHasBeenSet(false),
-    m_blindWatermarkConfigHasBeenSet(false)
+    m_blindWatermarkConfigHasBeenSet(false),
+    m_beautyConfigHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_blindWatermarkConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("BeautyConfig") && !value["BeautyConfig"].IsNull())
+    {
+        if (!value["BeautyConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.BeautyConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_beautyConfig.Deserialize(value["BeautyConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_beautyConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -142,6 +160,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_blindWatermarkConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_beautyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeautyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_beautyConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -209,5 +236,21 @@ void ImageTaskInput::SetBlindWatermarkConfig(const BlindWatermarkConfig& _blindW
 bool ImageTaskInput::BlindWatermarkConfigHasBeenSet() const
 {
     return m_blindWatermarkConfigHasBeenSet;
+}
+
+BeautyConfig ImageTaskInput::GetBeautyConfig() const
+{
+    return m_beautyConfig;
+}
+
+void ImageTaskInput::SetBeautyConfig(const BeautyConfig& _beautyConfig)
+{
+    m_beautyConfig = _beautyConfig;
+    m_beautyConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::BeautyConfigHasBeenSet() const
+{
+    return m_beautyConfigHasBeenSet;
 }
 

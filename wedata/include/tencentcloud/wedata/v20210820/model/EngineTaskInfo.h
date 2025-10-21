@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,27 +99,27 @@ namespace TencentCloud
                     /**
                      * 获取引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeTimes 引擎执行总时间
+                     * @return EngineExeTimeCost 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetEngineExeTimes() const;
+                    double GetEngineExeTimeCost() const;
 
                     /**
                      * 设置引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeTimes 引擎执行总时间
+                     * @param _engineExeTimeCost 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetEngineExeTimes(const uint64_t& _engineExeTimes);
+                    void SetEngineExeTimeCost(const double& _engineExeTimeCost);
 
                     /**
-                     * 判断参数 EngineExeTimes 是否已赋值
-                     * @return EngineExeTimes 是否已赋值
+                     * 判断参数 EngineExeTimeCost 是否已赋值
+                     * @return EngineExeTimeCost 是否已赋值
                      * 
                      */
-                    bool EngineExeTimesHasBeenSet() const;
+                    bool EngineExeTimeCostHasBeenSet() const;
 
                     /**
                      * 获取cu消耗
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CuConsumeHasBeenSet() const;
 
                     /**
-                     * 获取资源消耗
+                     * 获取该值表示任务预设资源，sql任务不需要预设资源，该值为-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceUsage 资源消耗
+                     * @return ResourceUsage 该值表示任务预设资源，sql任务不需要预设资源，该值为-1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceUsage() const;
 
                     /**
-                     * 设置资源消耗
+                     * 设置该值表示任务预设资源，sql任务不需要预设资源，该值为-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceUsage 资源消耗
+                     * @param _resourceUsage 该值表示任务预设资源，sql任务不需要预设资源，该值为-1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,22 @@ namespace TencentCloud
                     bool ResourceUsageHasBeenSet() const;
 
                     /**
-                     * 获取引擎名
+                     * 获取引擎名。在wedata侧若获取不到引擎名，则是wedata侧生成dlc标识，与dlc侧的引擎名存在不一致的情况
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineName 引擎名
+                     * @return EngineName 引擎名。在wedata侧若获取不到引擎名，则是wedata侧生成dlc标识，与dlc侧的引擎名存在不一致的情况
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置引擎名
+                     * 设置引擎名。在wedata侧若获取不到引擎名，则是wedata侧生成dlc标识，与dlc侧的引擎名存在不一致的情况
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineName 引擎名
+                     * @param _engineName 引擎名。在wedata侧若获取不到引擎名，则是wedata侧生成dlc标识，与dlc侧的引擎名存在不一致的情况
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -566,6 +570,131 @@ namespace TencentCloud
                      */
                     bool CmdArgsHasBeenSet() const;
 
+                    /**
+                     * 获取使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VCoreSeconds 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVCoreSeconds() const;
+
+                    /**
+                     * 设置使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vCoreSeconds 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVCoreSeconds(const uint64_t& _vCoreSeconds);
+
+                    /**
+                     * 判断参数 VCoreSeconds 是否已赋值
+                     * @return VCoreSeconds 是否已赋值
+                     * 
+                     */
+                    bool VCoreSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemorySeconds 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMemorySeconds() const;
+
+                    /**
+                     * 设置使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memorySeconds 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemorySeconds(const uint64_t& _memorySeconds);
+
+                    /**
+                     * 判断参数 MemorySeconds 是否已赋值
+                     * @return MemorySeconds 是否已赋值
+                     * 
+                     */
+                    bool MemorySecondsHasBeenSet() const;
+
+                    /**
+                     * 获取EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmrUserName EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEmrUserName() const;
+
+                    /**
+                     * 设置EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emrUserName EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmrUserName(const std::string& _emrUserName);
+
+                    /**
+                     * 判断参数 EmrUserName 是否已赋值
+                     * @return EmrUserName 是否已赋值
+                     * 
+                     */
+                    bool EmrUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueryId 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQueryId() const;
+
+                    /**
+                     * 设置任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _queryId 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQueryId(const std::string& _queryId);
+
+                    /**
+                     * 判断参数 QueryId 是否已赋值
+                     * @return QueryId 是否已赋值
+                     * 
+                     */
+                    bool QueryIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationId 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -586,8 +715,8 @@ namespace TencentCloud
                      * 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_engineExeTimes;
-                    bool m_engineExeTimesHasBeenSet;
+                    double m_engineExeTimeCost;
+                    bool m_engineExeTimeCostHasBeenSet;
 
                     /**
                      * cu消耗
@@ -597,14 +726,15 @@ namespace TencentCloud
                     bool m_cuConsumeHasBeenSet;
 
                     /**
-                     * 资源消耗
+                     * 该值表示任务预设资源，sql任务不需要预设资源，该值为-1
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceUsage;
                     bool m_resourceUsageHasBeenSet;
 
                     /**
-                     * 引擎名
+                     * 引擎名。在wedata侧若获取不到引擎名，则是wedata侧生成dlc标识，与dlc侧的引擎名存在不一致的情况
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineName;
@@ -712,6 +842,41 @@ namespace TencentCloud
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
+
+                    /**
+                     * 使用虚拟核心秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vCoreSeconds;
+                    bool m_vCoreSecondsHasBeenSet;
+
+                    /**
+                     * 使用的内存秒数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_memorySeconds;
+                    bool m_memorySecondsHasBeenSet;
+
+                    /**
+                     * EMR用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_emrUserName;
+                    bool m_emrUserNameHasBeenSet;
+
+                    /**
+                     * 任务的查询ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_queryId;
+                    bool m_queryIdHasBeenSet;
+
+                    /**
+                     * 应用程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

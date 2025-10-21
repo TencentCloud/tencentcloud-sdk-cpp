@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ KillSessionRequest::KillSessionRequest() :
     m_instanceIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_shardIdHasBeenSet(false),
-    m_shardSerialIdHasBeenSet(false)
+    m_shardSerialIdHasBeenSet(false),
+    m_nodeIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string KillSessionRequest::ToJsonString() const
         string key = "ShardSerialId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_shardSerialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void KillSessionRequest::SetShardSerialId(const string& _shardSerialId)
 bool KillSessionRequest::ShardSerialIdHasBeenSet() const
 {
     return m_shardSerialIdHasBeenSet;
+}
+
+string KillSessionRequest::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void KillSessionRequest::SetNodeId(const string& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool KillSessionRequest::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
 }
 
 

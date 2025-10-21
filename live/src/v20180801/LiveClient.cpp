@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -506,6 +506,49 @@ LiveClient::CopyCasterOutcomeCallable LiveClient::CopyCasterCallable(const CopyC
         [this, request]()
         {
             return this->CopyCaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateAuditKeywordsOutcome LiveClient::CreateAuditKeywords(const CreateAuditKeywordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditKeywords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditKeywordsResponse rsp = CreateAuditKeywordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditKeywordsOutcome(rsp);
+        else
+            return CreateAuditKeywordsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditKeywordsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAuditKeywordsAsync(const CreateAuditKeywordsRequest& request, const CreateAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAuditKeywords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateAuditKeywordsOutcomeCallable LiveClient::CreateAuditKeywordsCallable(const CreateAuditKeywordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAuditKeywordsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAuditKeywords(request);
         }
     );
 
@@ -1581,6 +1624,49 @@ LiveClient::CreateScreenshotTaskOutcomeCallable LiveClient::CreateScreenshotTask
         [this, request]()
         {
             return this->CreateScreenshotTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteAuditKeywordsOutcome LiveClient::DeleteAuditKeywords(const DeleteAuditKeywordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditKeywords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditKeywordsResponse rsp = DeleteAuditKeywordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditKeywordsOutcome(rsp);
+        else
+            return DeleteAuditKeywordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditKeywordsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteAuditKeywordsAsync(const DeleteAuditKeywordsRequest& request, const DeleteAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAuditKeywords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteAuditKeywordsOutcomeCallable LiveClient::DeleteAuditKeywordsCallable(const DeleteAuditKeywordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAuditKeywordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAuditKeywords(request);
         }
     );
 
@@ -2828,6 +2914,49 @@ LiveClient::DescribeAreaBillBandwidthAndFluxListOutcomeCallable LiveClient::Desc
         [this, request]()
         {
             return this->DescribeAreaBillBandwidthAndFluxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeAuditKeywordsOutcome LiveClient::DescribeAuditKeywords(const DescribeAuditKeywordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditKeywords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditKeywordsResponse rsp = DescribeAuditKeywordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditKeywordsOutcome(rsp);
+        else
+            return DescribeAuditKeywordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditKeywordsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditKeywordsAsync(const DescribeAuditKeywordsRequest& request, const DescribeAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditKeywords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeAuditKeywordsOutcomeCallable LiveClient::DescribeAuditKeywordsCallable(const DescribeAuditKeywordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditKeywordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditKeywords(request);
         }
     );
 

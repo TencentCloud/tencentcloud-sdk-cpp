@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名
-                     * @return Topic 主题名
+                     * 获取主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
+                     * @return Topic 主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名
-                     * @param _topic 主题名
+                     * 设置主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
+                     * @param _topic 主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取位点信息，必填
-                     * @return Offset 位点信息，必填
+                     * 获取位点信息
+                     * @return Offset 位点信息
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置位点信息，必填
-                     * @param _offset 位点信息，必填
+                     * 设置位点信息
+                     * @param _offset 位点信息
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名
+                     * 主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 位点信息，必填
+                     * 位点信息
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

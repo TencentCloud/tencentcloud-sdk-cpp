@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ CreateTopicRequest::CreateTopicRequest() :
     m_periodHasBeenSet(false),
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
+    m_bizTypeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_extendsHasBeenSet(false)
@@ -131,6 +132,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "HotPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hotPeriod, allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bizType, allocator);
     }
 
     if (m_topicIdHasBeenSet)
@@ -324,6 +333,22 @@ void CreateTopicRequest::SetHotPeriod(const uint64_t& _hotPeriod)
 bool CreateTopicRequest::HotPeriodHasBeenSet() const
 {
     return m_hotPeriodHasBeenSet;
+}
+
+uint64_t CreateTopicRequest::GetBizType() const
+{
+    return m_bizType;
+}
+
+void CreateTopicRequest::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
 }
 
 string CreateTopicRequest::GetTopicId() const

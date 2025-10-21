@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/ExportIpTraceLogRequest.h>
+#include <tencentcloud/es/v20180416/model/ExportIpTraceLogResponse.h>
 #include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsRequest.h>
 #include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
@@ -264,6 +266,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DiagnoseInstanceResponse> DiagnoseInstanceOutcome;
                 typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DiagnoseInstanceRequest&, DiagnoseInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportIpTraceLogResponse> ExportIpTraceLogOutcome;
+                typedef std::future<ExportIpTraceLogOutcome> ExportIpTraceLogOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::ExportIpTraceLogRequest&, ExportIpTraceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportIpTraceLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDiagnoseSettingsResponse> GetDiagnoseSettingsOutcome;
                 typedef std::future<GetDiagnoseSettingsOutcome> GetDiagnoseSettingsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetDiagnoseSettingsRequest&, GetDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDiagnoseSettingsAsyncHandler;
@@ -660,6 +665,15 @@ namespace TencentCloud
                 DiagnoseInstanceOutcome DiagnoseInstance(const Model::DiagnoseInstanceRequest &request);
                 void DiagnoseInstanceAsync(const Model::DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DiagnoseInstanceOutcomeCallable DiagnoseInstanceCallable(const Model::DiagnoseInstanceRequest& request);
+
+                /**
+                 *查询IP溯源日志原始数据
+                 * @param req ExportIpTraceLogRequest
+                 * @return ExportIpTraceLogOutcome
+                 */
+                ExportIpTraceLogOutcome ExportIpTraceLog(const Model::ExportIpTraceLogRequest &request);
+                void ExportIpTraceLogAsync(const Model::ExportIpTraceLogRequest& request, const ExportIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportIpTraceLogOutcomeCallable ExportIpTraceLogCallable(const Model::ExportIpTraceLogRequest& request);
 
                 /**
                  *查看智能运维配置

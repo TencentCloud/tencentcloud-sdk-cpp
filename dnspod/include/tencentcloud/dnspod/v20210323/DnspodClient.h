@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,6 +135,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordSnapshotRollbackResultResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeResolveCountRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeResolveCountResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotListRequest.h>
@@ -385,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordTypeResponse> DescribeRecordTypeOutcome;
                 typedef std::future<DescribeRecordTypeOutcome> DescribeRecordTypeOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordTypeRequest&, DescribeRecordTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResolveCountResponse> DescribeResolveCountOutcome;
+                typedef std::future<DescribeResolveCountOutcome> DescribeResolveCountOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeResolveCountRequest&, DescribeResolveCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResolveCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotConfigResponse> DescribeSnapshotConfigOutcome;
                 typedef std::future<DescribeSnapshotConfigOutcome> DescribeSnapshotConfigOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotConfigRequest&, DescribeSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotConfigAsyncHandler;
@@ -1005,6 +1010,15 @@ namespace TencentCloud
                 DescribeRecordTypeOutcome DescribeRecordType(const Model::DescribeRecordTypeRequest &request);
                 void DescribeRecordTypeAsync(const Model::DescribeRecordTypeRequest& request, const DescribeRecordTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordTypeOutcomeCallable DescribeRecordTypeCallable(const Model::DescribeRecordTypeRequest& request);
+
+                /**
+                 *查看域名的解析量
+                 * @param req DescribeResolveCountRequest
+                 * @return DescribeResolveCountOutcome
+                 */
+                DescribeResolveCountOutcome DescribeResolveCount(const Model::DescribeResolveCountRequest &request);
+                void DescribeResolveCountAsync(const Model::DescribeResolveCountRequest& request, const DescribeResolveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResolveCountOutcomeCallable DescribeResolveCountCallable(const Model::DescribeResolveCountRequest& request);
 
                 /**
                  *查询解析快照配置

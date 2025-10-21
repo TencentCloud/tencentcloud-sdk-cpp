@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ DirectConnect::DirectConnect() :
     m_chargeTypeHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
     m_faultReportContactNumberHasBeenSet(false),
+    m_faultReportContactEmailHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_accessPointTypeHasBeenSet(false),
     m_idcCityHasBeenSet(false),
@@ -284,6 +285,16 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         }
         m_faultReportContactNumber = string(value["FaultReportContactNumber"].GetString());
         m_faultReportContactNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("FaultReportContactEmail") && !value["FaultReportContactEmail"].IsNull())
+    {
+        if (!value["FaultReportContactEmail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.FaultReportContactEmail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faultReportContactEmail = string(value["FaultReportContactEmail"].GetString());
+        m_faultReportContactEmailHasBeenSet = true;
     }
 
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
@@ -627,6 +638,14 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FaultReportContactNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faultReportContactEmailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaultReportContactEmail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_faultReportContactEmail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSetHasBeenSet)
@@ -1109,6 +1128,22 @@ void DirectConnect::SetFaultReportContactNumber(const string& _faultReportContac
 bool DirectConnect::FaultReportContactNumberHasBeenSet() const
 {
     return m_faultReportContactNumberHasBeenSet;
+}
+
+string DirectConnect::GetFaultReportContactEmail() const
+{
+    return m_faultReportContactEmail;
+}
+
+void DirectConnect::SetFaultReportContactEmail(const string& _faultReportContactEmail)
+{
+    m_faultReportContactEmail = _faultReportContactEmail;
+    m_faultReportContactEmailHasBeenSet = true;
+}
+
+bool DirectConnect::FaultReportContactEmailHasBeenSet() const
+{
+    return m_faultReportContactEmailHasBeenSet;
 }
 
 vector<Tag> DirectConnect::GetTagSet() const

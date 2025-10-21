@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取登陆地
-                     * @return Locations 登陆地
+                     * 获取登录地
+                     * @return Locations 登录地
                      * 
                      */
                     std::string GetLocations() const;
 
                     /**
-                     * 设置登陆地
-                     * @param _locations 登陆地
+                     * 设置登录地
+                     * @param _locations 登录地
                      * 
                      */
                     void SetLocations(const std::string& _locations);
@@ -449,7 +449,7 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 登陆地
+                     * 登录地
                      */
                     std::string m_locations;
                     bool m_locationsHasBeenSet;

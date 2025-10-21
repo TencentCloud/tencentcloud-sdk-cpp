@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 CreateAppRequest::CreateAppRequest() :
     m_appTypeHasBeenSet(false),
     m_baseConfigHasBeenSet(false),
-    m_patternHasBeenSet(false)
+    m_patternHasBeenSet(false),
+    m_agentTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateAppRequest::ToJsonString() const
         string key = "Pattern";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateAppRequest::SetPattern(const string& _pattern)
 bool CreateAppRequest::PatternHasBeenSet() const
 {
     return m_patternHasBeenSet;
+}
+
+string CreateAppRequest::GetAgentType() const
+{
+    return m_agentType;
+}
+
+void CreateAppRequest::SetAgentType(const string& _agentType)
+{
+    m_agentType = _agentType;
+    m_agentTypeHasBeenSet = true;
+}
+
+bool CreateAppRequest::AgentTypeHasBeenSet() const
+{
+    return m_agentTypeHasBeenSet;
 }
 
 

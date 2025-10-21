@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,18 +92,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 获取用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
-                     * @return Appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @return Appid 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      * 
                      */
                     int64_t GetAppid() const;
 
                     /**
-                     * 设置用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 设置用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
-                     * @param _appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @param _appid 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      * 
                      */
@@ -361,6 +361,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @return Type 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -374,6 +375,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     int64_t GetType() const;
@@ -392,6 +394,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * @param _type 实例类型。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -405,6 +408,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -783,14 +787,22 @@ namespace TencentCloud
 
                     /**
                      * 获取从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * @return SlaveReadWeight 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * 
                      */
                     int64_t GetSlaveReadWeight() const;
 
                     /**
                      * 设置从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * @param _slaveReadWeight 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      * 
                      */
                     void SetSlaveReadWeight(const int64_t& _slaveReadWeight);
@@ -1119,14 +1131,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的节点详细信息。
+只有多可用区实例会返回。
                      * @return NodeSet 实例的节点详细信息。
+只有多可用区实例会返回。
                      * 
                      */
                     std::vector<RedisNodeInfo> GetNodeSet() const;
 
                     /**
                      * 设置实例的节点详细信息。
+只有多可用区实例会返回。
                      * @param _nodeSet 实例的节点详细信息。
+只有多可用区实例会返回。
                      * 
                      */
                     void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
@@ -1369,6 +1385,27 @@ namespace TencentCloud
                      */
                     bool BackupModeHasBeenSet() const;
 
+                    /**
+                     * 获取删除保护开关，0关闭，1开启
+                     * @return DeleteProtectionSwitch 删除保护开关，0关闭，1开启
+                     * 
+                     */
+                    int64_t GetDeleteProtectionSwitch() const;
+
+                    /**
+                     * 设置删除保护开关，0关闭，1开启
+                     * @param _deleteProtectionSwitch 删除保护开关，0关闭，1开启
+                     * 
+                     */
+                    void SetDeleteProtectionSwitch(const int64_t& _deleteProtectionSwitch);
+
+                    /**
+                     * 判断参数 DeleteProtectionSwitch 是否已赋值
+                     * @return DeleteProtectionSwitch 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectionSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1384,7 +1421,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * 用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。
 
                      */
                     int64_t m_appid;
@@ -1470,6 +1507,7 @@ namespace TencentCloud
 - 16：Redis 6.2 内存版（集群架构）。
 - 17：Redis 7.0 内存版（标准架构）。
 - 18：Redis 7.0 内存版（集群架构）。
+- 200:Memcached 1.6 内存版（集群架构）。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -1580,6 +1618,8 @@ namespace TencentCloud
 
                     /**
                      * 从节点读取权重。
+- 0：表示关闭副本只读。
+- 100：表示开启副本只读。
                      */
                     int64_t m_slaveReadWeight;
                     bool m_slaveReadWeightHasBeenSet;
@@ -1676,6 +1716,7 @@ namespace TencentCloud
 
                     /**
                      * 实例的节点详细信息。
+只有多可用区实例会返回。
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
@@ -1745,6 +1786,12 @@ namespace TencentCloud
                      */
                     std::string m_backupMode;
                     bool m_backupModeHasBeenSet;
+
+                    /**
+                     * 删除保护开关，0关闭，1开启
+                     */
+                    int64_t m_deleteProtectionSwitch;
+                    bool m_deleteProtectionSwitchHasBeenSet;
 
                 };
             }

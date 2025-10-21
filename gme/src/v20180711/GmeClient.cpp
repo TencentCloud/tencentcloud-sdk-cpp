@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,49 @@ GmeClient::GmeClient(const Credential &credential, const string &region, const C
 {
 }
 
+
+GmeClient::ControlAIConversationOutcome GmeClient::ControlAIConversation(const ControlAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlAIConversationResponse rsp = ControlAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlAIConversationOutcome(rsp);
+        else
+            return ControlAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ControlAIConversationAsync(const ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ControlAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ControlAIConversationOutcomeCallable GmeClient::ControlAIConversationCallable(const ControlAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ControlAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->ControlAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
 
 GmeClient::CreateAgeDetectTaskOutcome GmeClient::CreateAgeDetectTask(const CreateAgeDetectTaskRequest &request)
 {
@@ -334,6 +377,92 @@ GmeClient::DeleteScanUserOutcomeCallable GmeClient::DeleteScanUserCallable(const
         [this, request]()
         {
             return this->DeleteScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DeleteVoicePrintOutcome GmeClient::DeleteVoicePrint(const DeleteVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoicePrintResponse rsp = DeleteVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoicePrintOutcome(rsp);
+        else
+            return DeleteVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DeleteVoicePrintAsync(const DeleteVoicePrintRequest& request, const DeleteVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DeleteVoicePrintOutcomeCallable GmeClient::DeleteVoicePrintCallable(const DeleteVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DescribeAIConversationOutcome GmeClient::DescribeAIConversation(const DescribeAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIConversationResponse rsp = DescribeAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIConversationOutcome(rsp);
+        else
+            return DescribeAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeAIConversationAsync(const DescribeAIConversationRequest& request, const DescribeAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeAIConversationOutcomeCallable GmeClient::DescribeAIConversationCallable(const DescribeAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIConversation(request);
         }
     );
 
@@ -771,6 +900,49 @@ GmeClient::DescribeUserInAndOutTimeOutcomeCallable GmeClient::DescribeUserInAndO
     return task->get_future();
 }
 
+GmeClient::DescribeVoicePrintOutcome GmeClient::DescribeVoicePrint(const DescribeVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoicePrintResponse rsp = DescribeVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoicePrintOutcome(rsp);
+        else
+            return DescribeVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeVoicePrintAsync(const DescribeVoicePrintRequest& request, const DescribeVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeVoicePrintOutcomeCallable GmeClient::DescribeVoicePrintCallable(const DescribeVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::GetCustomizationListOutcome GmeClient::GetCustomizationList(const GetCustomizationListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetCustomizationList");
@@ -1029,6 +1201,49 @@ GmeClient::ModifyUserMicStatusOutcomeCallable GmeClient::ModifyUserMicStatusCall
     return task->get_future();
 }
 
+GmeClient::RegisterVoicePrintOutcome GmeClient::RegisterVoicePrint(const RegisterVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterVoicePrintResponse rsp = RegisterVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterVoicePrintOutcome(rsp);
+        else
+            return RegisterVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::RegisterVoicePrintAsync(const RegisterVoicePrintRequest& request, const RegisterVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::RegisterVoicePrintOutcomeCallable GmeClient::RegisterVoicePrintCallable(const RegisterVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterVoicePrint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ScanVoiceOutcome GmeClient::ScanVoice(const ScanVoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ScanVoice");
@@ -1065,6 +1280,49 @@ GmeClient::ScanVoiceOutcomeCallable GmeClient::ScanVoiceCallable(const ScanVoice
         [this, request]()
         {
             return this->ScanVoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::StartAIConversationOutcome GmeClient::StartAIConversation(const StartAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAIConversationResponse rsp = StartAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAIConversationOutcome(rsp);
+        else
+            return StartAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::StartAIConversationAsync(const StartAIConversationRequest& request, const StartAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::StartAIConversationOutcomeCallable GmeClient::StartAIConversationCallable(const StartAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->StartAIConversation(request);
         }
     );
 
@@ -1115,6 +1373,49 @@ GmeClient::StartRecordOutcomeCallable GmeClient::StartRecordCallable(const Start
     return task->get_future();
 }
 
+GmeClient::StopAIConversationOutcome GmeClient::StopAIConversation(const StopAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAIConversationResponse rsp = StopAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAIConversationOutcome(rsp);
+        else
+            return StopAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::StopAIConversationAsync(const StopAIConversationRequest& request, const StopAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::StopAIConversationOutcomeCallable GmeClient::StopAIConversationCallable(const StopAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->StopAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::StopRecordOutcome GmeClient::StopRecord(const StopRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "StopRecord");
@@ -1151,6 +1452,49 @@ GmeClient::StopRecordOutcomeCallable GmeClient::StopRecordCallable(const StopRec
         [this, request]()
         {
             return this->StopRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::UpdateAIConversationOutcome GmeClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAIConversationResponse rsp = UpdateAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAIConversationOutcome(rsp);
+        else
+            return UpdateAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::UpdateAIConversationAsync(const UpdateAIConversationRequest& request, const UpdateAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::UpdateAIConversationOutcomeCallable GmeClient::UpdateAIConversationCallable(const UpdateAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAIConversation(request);
         }
     );
 
@@ -1237,6 +1581,49 @@ GmeClient::UpdateScanUsersOutcomeCallable GmeClient::UpdateScanUsersCallable(con
         [this, request]()
         {
             return this->UpdateScanUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::UpdateVoicePrintOutcome GmeClient::UpdateVoicePrint(const UpdateVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVoicePrintResponse rsp = UpdateVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVoicePrintOutcome(rsp);
+        else
+            return UpdateVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::UpdateVoicePrintAsync(const UpdateVoicePrintRequest& request, const UpdateVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateVoicePrint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::UpdateVoicePrintOutcomeCallable GmeClient::UpdateVoicePrintCallable(const UpdateVoicePrintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateVoicePrintOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateVoicePrint(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ CreateSplitDocumentFlowConfig::CreateSplitDocumentFlowConfig() :
     m_tableResultTypeHasBeenSet(false),
     m_resultTypeHasBeenSet(false),
     m_enableMllmHasBeenSet(false),
-    m_maxChunkSizeHasBeenSet(false)
+    m_maxChunkSizeHasBeenSet(false),
+    m_ignoreFailedPageHasBeenSet(false),
+    m_splitResultTypeHasBeenSet(false),
+    m_splitTableResultTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome CreateSplitDocumentFlowConfig::Deserialize(const rapidjson::
         m_maxChunkSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreFailedPage") && !value["IgnoreFailedPage"].IsNull())
+    {
+        if (!value["IgnoreFailedPage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateSplitDocumentFlowConfig.IgnoreFailedPage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreFailedPage = value["IgnoreFailedPage"].GetBool();
+        m_ignoreFailedPageHasBeenSet = true;
+    }
+
+    if (value.HasMember("SplitResultType") && !value["SplitResultType"].IsNull())
+    {
+        if (!value["SplitResultType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateSplitDocumentFlowConfig.SplitResultType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitResultType = string(value["SplitResultType"].GetString());
+        m_splitResultTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SplitTableResultType") && !value["SplitTableResultType"].IsNull())
+    {
+        if (!value["SplitTableResultType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateSplitDocumentFlowConfig.SplitTableResultType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitTableResultType = string(value["SplitTableResultType"].GetString());
+        m_splitTableResultTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void CreateSplitDocumentFlowConfig::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "MaxChunkSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxChunkSize, allocator);
+    }
+
+    if (m_ignoreFailedPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreFailedPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreFailedPage, allocator);
+    }
+
+    if (m_splitResultTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitResultType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_splitResultType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_splitTableResultTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitTableResultType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_splitTableResultType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void CreateSplitDocumentFlowConfig::SetMaxChunkSize(const int64_t& _maxChunkSize
 bool CreateSplitDocumentFlowConfig::MaxChunkSizeHasBeenSet() const
 {
     return m_maxChunkSizeHasBeenSet;
+}
+
+bool CreateSplitDocumentFlowConfig::GetIgnoreFailedPage() const
+{
+    return m_ignoreFailedPage;
+}
+
+void CreateSplitDocumentFlowConfig::SetIgnoreFailedPage(const bool& _ignoreFailedPage)
+{
+    m_ignoreFailedPage = _ignoreFailedPage;
+    m_ignoreFailedPageHasBeenSet = true;
+}
+
+bool CreateSplitDocumentFlowConfig::IgnoreFailedPageHasBeenSet() const
+{
+    return m_ignoreFailedPageHasBeenSet;
+}
+
+string CreateSplitDocumentFlowConfig::GetSplitResultType() const
+{
+    return m_splitResultType;
+}
+
+void CreateSplitDocumentFlowConfig::SetSplitResultType(const string& _splitResultType)
+{
+    m_splitResultType = _splitResultType;
+    m_splitResultTypeHasBeenSet = true;
+}
+
+bool CreateSplitDocumentFlowConfig::SplitResultTypeHasBeenSet() const
+{
+    return m_splitResultTypeHasBeenSet;
+}
+
+string CreateSplitDocumentFlowConfig::GetSplitTableResultType() const
+{
+    return m_splitTableResultType;
+}
+
+void CreateSplitDocumentFlowConfig::SetSplitTableResultType(const string& _splitTableResultType)
+{
+    m_splitTableResultType = _splitTableResultType;
+    m_splitTableResultTypeHasBeenSet = true;
+}
+
+bool CreateSplitDocumentFlowConfig::SplitTableResultTypeHasBeenSet() const
+{
+    return m_splitTableResultTypeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool EngineTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎名称
+                     * 获取引擎名称。在wedata侧若获取不到引擎名，则是wedata侧自动生成的标识，与集群侧的引擎名有可能不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineName 引擎名称
+                     * @return EngineName 引擎名称。在wedata侧若获取不到引擎名，则是wedata侧自动生成的标识，与集群侧的引擎名有可能不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置引擎名称
+                     * 设置引擎名称。在wedata侧若获取不到引擎名，则是wedata侧自动生成的标识，与集群侧的引擎名有可能不一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineName 引擎名称
+                     * @param _engineName 引擎名称。在wedata侧若获取不到引擎名，则是wedata侧自动生成的标识，与集群侧的引擎名有可能不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,22 @@ namespace TencentCloud
                     bool EngineSubTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎taskId
+                     * 获取引擎taskId，集成任务部分会使用资源组的资源运行任务，没有提交到引擎侧，所以没有引擎侧id
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineTaskId 引擎taskId
+                     * @return EngineTaskId 引擎taskId，集成任务部分会使用资源组的资源运行任务，没有提交到引擎侧，所以没有引擎侧id
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineTaskId() const;
 
                     /**
-                     * 设置引擎taskId
+                     * 设置引擎taskId，集成任务部分会使用资源组的资源运行任务，没有提交到引擎侧，所以没有引擎侧id
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineTaskId 引擎taskId
+                     * @param _engineTaskId 引擎taskId，集成任务部分会使用资源组的资源运行任务，没有提交到引擎侧，所以没有引擎侧id
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,6 +500,31 @@ namespace TencentCloud
                      */
                     bool ProductSourceHasBeenSet() const;
 
+                    /**
+                     * 获取集成任务的任务类型，表明是读端还是写端，可选择READ、WRITE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntegrationType 集成任务的任务类型，表明是读端还是写端，可选择READ、WRITE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIntegrationType() const;
+
+                    /**
+                     * 设置集成任务的任务类型，表明是读端还是写端，可选择READ、WRITE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _integrationType 集成任务的任务类型，表明是读端还是写端，可选择READ、WRITE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIntegrationType(const std::string& _integrationType);
+
+                    /**
+                     * 判断参数 IntegrationType 是否已赋值
+                     * @return IntegrationType 是否已赋值
+                     * 
+                     */
+                    bool IntegrationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,7 +598,7 @@ namespace TencentCloud
                     bool m_engineTypeHasBeenSet;
 
                     /**
-                     * 引擎名称
+                     * 引擎名称。在wedata侧若获取不到引擎名，则是wedata侧自动生成的标识，与集群侧的引擎名有可能不一致
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineName;
@@ -583,7 +612,8 @@ namespace TencentCloud
                     bool m_engineSubTypeHasBeenSet;
 
                     /**
-                     * 引擎taskId
+                     * 引擎taskId，集成任务部分会使用资源组的资源运行任务，没有提交到引擎侧，所以没有引擎侧id
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineTaskId;
@@ -623,6 +653,13 @@ namespace TencentCloud
                      */
                     std::string m_productSource;
                     bool m_productSourceHasBeenSet;
+
+                    /**
+                     * 集成任务的任务类型，表明是读端还是写端，可选择READ、WRITE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_integrationType;
+                    bool m_integrationTypeHasBeenSet;
 
                 };
             }

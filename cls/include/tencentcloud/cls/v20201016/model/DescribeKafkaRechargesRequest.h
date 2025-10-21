@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题 ID
-                     * @return TopicId 日志主题 ID
+                     * 获取日志主题Id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return TopicId 日志主题Id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题 ID
-                     * @param _topicId 日志主题 ID
+                     * 设置日志主题Id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _topicId 日志主题Id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -64,15 +68,23 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取导入配置ID
-                     * @return Id 导入配置ID
+                     * 获取导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
+                     * @return Id 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置导入配置ID
-                     * @param _id 导入配置ID
+                     * 设置导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
+                     * @param _id 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -85,15 +97,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取状态   status 1: 运行中, 2: 暂停...
-                     * @return Status 状态   status 1: 运行中, 2: 暂停...
+                     * 获取状态。1: 运行中，2: 暂停，3：错误
+                     * @return Status 状态。1: 运行中，2: 暂停，3：错误
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态   status 1: 运行中, 2: 暂停...
-                     * @param _status 状态   status 1: 运行中, 2: 暂停...
+                     * 设置状态。1: 运行中，2: 暂停，3：错误
+                     * @param _status 状态。1: 运行中，2: 暂停，3：错误
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -108,19 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题 ID
+                     * 日志主题Id。
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 导入配置ID
+                     * 导入配置Id。
+- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。
+- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 状态   status 1: 运行中, 2: 暂停...
+                     * 状态。1: 运行中，2: 暂停，3：错误
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

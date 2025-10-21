@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 RabbitMQServerlessAccessInfo::RabbitMQServerlessAccessInfo() :
     m_publicAccessEndpointHasBeenSet(false),
-    m_publicDataStreamStatusHasBeenSet(false)
+    m_publicDataStreamStatusHasBeenSet(false),
+    m_publicClbIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RabbitMQServerlessAccessInfo::Deserialize(const rapidjson::V
         m_publicDataStreamStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicClbId") && !value["PublicClbId"].IsNull())
+    {
+        if (!value["PublicClbId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQServerlessAccessInfo.PublicClbId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicClbId = string(value["PublicClbId"].GetString());
+        m_publicClbIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RabbitMQServerlessAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "PublicDataStreamStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicDataStreamStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicClbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicClbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicClbId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RabbitMQServerlessAccessInfo::SetPublicDataStreamStatus(const string& _publ
 bool RabbitMQServerlessAccessInfo::PublicDataStreamStatusHasBeenSet() const
 {
     return m_publicDataStreamStatusHasBeenSet;
+}
+
+string RabbitMQServerlessAccessInfo::GetPublicClbId() const
+{
+    return m_publicClbId;
+}
+
+void RabbitMQServerlessAccessInfo::SetPublicClbId(const string& _publicClbId)
+{
+    m_publicClbId = _publicClbId;
+    m_publicClbIdHasBeenSet = true;
+}
+
+bool RabbitMQServerlessAccessInfo::PublicClbIdHasBeenSet() const
+{
+    return m_publicClbIdHasBeenSet;
 }
 

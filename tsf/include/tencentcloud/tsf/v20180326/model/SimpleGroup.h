@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool AppMicroServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取k8s 命名空间名称
+                     * @return K8sNamespaceName k8s 命名空间名称
+                     * 
+                     */
+                    std::string GetK8sNamespaceName() const;
+
+                    /**
+                     * 设置k8s 命名空间名称
+                     * @param _k8sNamespaceName k8s 命名空间名称
+                     * 
+                     */
+                    void SetK8sNamespaceName(const std::string& _k8sNamespaceName);
+
+                    /**
+                     * 判断参数 K8sNamespaceName 是否已赋值
+                     * @return K8sNamespaceName 是否已赋值
+                     * 
+                     */
+                    bool K8sNamespaceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_appMicroServiceType;
                     bool m_appMicroServiceTypeHasBeenSet;
+
+                    /**
+                     * k8s 命名空间名称
+                     */
+                    std::string m_k8sNamespaceName;
+                    bool m_k8sNamespaceNameHasBeenSet;
 
                 };
             }

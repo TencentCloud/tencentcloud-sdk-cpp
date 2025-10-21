@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -463,6 +463,49 @@ OcrClient::ClassifyStoreNameOutcomeCallable OcrClient::ClassifyStoreNameCallable
         [this, request]()
         {
             return this->ClassifyStoreName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::DescribeExtractDocAgentJobOutcome OcrClient::DescribeExtractDocAgentJob(const DescribeExtractDocAgentJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtractDocAgentJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtractDocAgentJobResponse rsp = DescribeExtractDocAgentJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtractDocAgentJobOutcome(rsp);
+        else
+            return DescribeExtractDocAgentJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtractDocAgentJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::DescribeExtractDocAgentJobAsync(const DescribeExtractDocAgentJobRequest& request, const DescribeExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtractDocAgentJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::DescribeExtractDocAgentJobOutcomeCallable OcrClient::DescribeExtractDocAgentJobCallable(const DescribeExtractDocAgentJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtractDocAgentJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtractDocAgentJob(request);
         }
     );
 
@@ -2792,6 +2835,49 @@ OcrClient::RecognizeTableAccurateOCROutcomeCallable OcrClient::RecognizeTableAcc
     return task->get_future();
 }
 
+OcrClient::RecognizeTableMultiOCROutcome OcrClient::RecognizeTableMultiOCR(const RecognizeTableMultiOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeTableMultiOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeTableMultiOCRResponse rsp = RecognizeTableMultiOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeTableMultiOCROutcome(rsp);
+        else
+            return RecognizeTableMultiOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeTableMultiOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeTableMultiOCRAsync(const RecognizeTableMultiOCRRequest& request, const RecognizeTableMultiOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeTableMultiOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeTableMultiOCROutcomeCallable OcrClient::RecognizeTableMultiOCRCallable(const RecognizeTableMultiOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeTableMultiOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeTableMultiOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeTableOCROutcome OcrClient::RecognizeTableOCR(const RecognizeTableOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeTableOCR");
@@ -3215,6 +3301,49 @@ OcrClient::SmartStructuralOCROutcomeCallable OcrClient::SmartStructuralOCRCallab
         [this, request]()
         {
             return this->SmartStructuralOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::SubmitExtractDocAgentJobOutcome OcrClient::SubmitExtractDocAgentJob(const SubmitExtractDocAgentJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitExtractDocAgentJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitExtractDocAgentJobResponse rsp = SubmitExtractDocAgentJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitExtractDocAgentJobOutcome(rsp);
+        else
+            return SubmitExtractDocAgentJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitExtractDocAgentJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SubmitExtractDocAgentJobAsync(const SubmitExtractDocAgentJobRequest& request, const SubmitExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitExtractDocAgentJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::SubmitExtractDocAgentJobOutcomeCallable OcrClient::SubmitExtractDocAgentJobCallable(const SubmitExtractDocAgentJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitExtractDocAgentJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitExtractDocAgentJob(request);
         }
     );
 

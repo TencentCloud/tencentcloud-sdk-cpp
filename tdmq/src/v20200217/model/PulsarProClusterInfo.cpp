@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_expireTimeHasBeenSet(false),
     m_autoCreateTopicStatusHasBeenSet(false),
     m_defaultPartitionNumberHasBeenSet(false),
-    m_tenantHasBeenSet(false)
+    m_tenantHasBeenSet(false),
+    m_deleteProtectionHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_tenantHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteProtection") && !value["DeleteProtection"].IsNull())
+    {
+        if (!value["DeleteProtection"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.DeleteProtection` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtection = value["DeleteProtection"].GetInt64();
+        m_deleteProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Tenant";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtection, allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void PulsarProClusterInfo::SetTenant(const string& _tenant)
 bool PulsarProClusterInfo::TenantHasBeenSet() const
 {
     return m_tenantHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetDeleteProtection() const
+{
+    return m_deleteProtection;
+}
+
+void PulsarProClusterInfo::SetDeleteProtection(const int64_t& _deleteProtection)
+{
+    m_deleteProtection = _deleteProtection;
+    m_deleteProtectionHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::DeleteProtectionHasBeenSet() const
+{
+    return m_deleteProtectionHasBeenSet;
 }
 

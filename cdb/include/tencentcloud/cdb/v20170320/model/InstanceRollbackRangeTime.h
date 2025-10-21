@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询数据库错误码
-                     * @return Code 查询数据库错误码
+                     * 获取查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。
+                     * @return Code 查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置查询数据库错误码
-                     * @param _code 查询数据库错误码
+                     * 设置查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。
+                     * @param _code 查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询数据库错误码
+                     * 查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ namespace TencentCloud
                     /**
                      * 获取实例退还失败错误码。取值:
 0: 可以退还
-1: 资源已退货。如为退货后续费资源，请于购买6小时后操作
+1: 资源已退货。
 2: 资源已到期
 3: 资源购买超过5天不支持退款
 4: 非预付费资源不支持退款
@@ -102,7 +102,7 @@ namespace TencentCloud
 12: 根据业务侧产品规定，该资源不允许退款
                      * @return ReturnFailCode 实例退还失败错误码。取值:
 0: 可以退还
-1: 资源已退货。如为退货后续费资源，请于购买6小时后操作
+1: 资源已退货。
 2: 资源已到期
 3: 资源购买超过5天不支持退款
 4: 非预付费资源不支持退款
@@ -118,7 +118,7 @@ namespace TencentCloud
                     /**
                      * 设置实例退还失败错误码。取值:
 0: 可以退还
-1: 资源已退货。如为退货后续费资源，请于购买6小时后操作
+1: 资源已退货。
 2: 资源已到期
 3: 资源购买超过5天不支持退款
 4: 非预付费资源不支持退款
@@ -129,7 +129,7 @@ namespace TencentCloud
 12: 根据业务侧产品规定，该资源不允许退款
                      * @param _returnFailCode 实例退还失败错误码。取值:
 0: 可以退还
-1: 资源已退货。如为退货后续费资源，请于购买6小时后操作
+1: 资源已退货。
 2: 资源已到期
 3: 资源购买超过5天不支持退款
 4: 非预付费资源不支持退款
@@ -187,7 +187,7 @@ namespace TencentCloud
                     /**
                      * 实例退还失败错误码。取值:
 0: 可以退还
-1: 资源已退货。如为退货后续费资源，请于购买6小时后操作
+1: 资源已退货。
 2: 资源已到期
 3: 资源购买超过5天不支持退款
 4: 非预付费资源不支持退款

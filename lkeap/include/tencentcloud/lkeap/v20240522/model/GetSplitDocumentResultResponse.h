@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h>
 #include <tencentcloud/lkeap/v20240522/model/DocumentUsage.h>
+#include <tencentcloud/lkeap/v20240522/model/ErrorInfo.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,20 @@ namespace TencentCloud
                      */
                     bool UsageHasBeenSet() const;
 
+                    /**
+                     * 获取文档拆分失败的错误信息，当拆分任务失败时返回该错误信息
+                     * @return Error 文档拆分失败的错误信息，当拆分任务失败时返回该错误信息
+                     * 
+                     */
+                    ErrorInfo GetError() const;
+
+                    /**
+                     * 判断参数 Error 是否已赋值
+                     * @return Error 是否已赋值
+                     * 
+                     */
+                    bool ErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -174,6 +189,12 @@ namespace TencentCloud
                      */
                     DocumentUsage m_usage;
                     bool m_usageHasBeenSet;
+
+                    /**
+                     * 文档拆分失败的错误信息，当拆分任务失败时返回该错误信息
+                     */
+                    ErrorInfo m_error;
+                    bool m_errorHasBeenSet;
 
                 };
             }

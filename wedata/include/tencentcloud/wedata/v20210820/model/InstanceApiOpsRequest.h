@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -783,6 +783,48 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeToHasBeenSet() const;
 
+                    /**
+                     * 获取任务优先级过滤实例列表
+                     * @return RunPriorityList 任务优先级过滤实例列表
+                     * 
+                     */
+                    std::vector<int64_t> GetRunPriorityList() const;
+
+                    /**
+                     * 设置任务优先级过滤实例列表
+                     * @param _runPriorityList 任务优先级过滤实例列表
+                     * 
+                     */
+                    void SetRunPriorityList(const std::vector<int64_t>& _runPriorityList);
+
+                    /**
+                     * 判断参数 RunPriorityList 是否已赋值
+                     * @return RunPriorityList 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityListHasBeenSet() const;
+
+                    /**
+                     * 获取实例调度周期筛选
+                     * @return InstanceCycleType 实例调度周期筛选
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceCycleType() const;
+
+                    /**
+                     * 设置实例调度周期筛选
+                     * @param _instanceCycleType 实例调度周期筛选
+                     * 
+                     */
+                    void SetInstanceCycleType(const std::vector<std::string>& _instanceCycleType);
+
+                    /**
+                     * 判断参数 InstanceCycleType 是否已赋值
+                     * @return InstanceCycleType 是否已赋值
+                     * 
+                     */
+                    bool InstanceCycleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -994,6 +1036,18 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeTo;
                     bool m_scheduleTimeToHasBeenSet;
+
+                    /**
+                     * 任务优先级过滤实例列表
+                     */
+                    std::vector<int64_t> m_runPriorityList;
+                    bool m_runPriorityListHasBeenSet;
+
+                    /**
+                     * 实例调度周期筛选
+                     */
+                    std::vector<std::string> m_instanceCycleType;
+                    bool m_instanceCycleTypeHasBeenSet;
 
                 };
             }

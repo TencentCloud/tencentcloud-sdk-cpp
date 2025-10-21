@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool MinDelayEliminateReserveHasBeenSet() const;
 
                     /**
-                     * 获取延迟空间大小阈值
-                     * @return MaxReplayLatency 延迟空间大小阈值
+                     * 获取延迟空间大小阈值。单位MB。
+                     * @return MaxReplayLatency 延迟空间大小阈值。单位MB。
                      * 
                      */
                     int64_t GetMaxReplayLatency() const;
 
                     /**
-                     * 设置延迟空间大小阈值
-                     * @param _maxReplayLatency 延迟空间大小阈值
+                     * 设置延迟空间大小阈值。单位MB。
+                     * @param _maxReplayLatency 延迟空间大小阈值。单位MB。
                      * 
                      */
                     void SetMaxReplayLatency(const int64_t& _maxReplayLatency);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool MaxReplayLatencyHasBeenSet() const;
 
                     /**
-                     * 获取延迟大小开关
-                     * @return ReplayLatencyEliminate 延迟大小开关
+                     * 获取延迟大小开关。0 - 关闭； 1 - 开启。
+                     * @return ReplayLatencyEliminate 延迟大小开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     int64_t GetReplayLatencyEliminate() const;
 
                     /**
-                     * 设置延迟大小开关
-                     * @param _replayLatencyEliminate 延迟大小开关
+                     * 设置延迟大小开关。0 - 关闭； 1 - 开启。
+                     * @param _replayLatencyEliminate 延迟大小开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     void SetReplayLatencyEliminate(const int64_t& _replayLatencyEliminate);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool ReplayLatencyEliminateHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间大小阈值
-                     * @return MaxReplayLag 延迟时间大小阈值
+                     * 获取延迟时间大小阈值，单位：秒。
+                     * @return MaxReplayLag 延迟时间大小阈值，单位：秒。
                      * 
                      */
                     double GetMaxReplayLag() const;
 
                     /**
-                     * 设置延迟时间大小阈值
-                     * @param _maxReplayLag 延迟时间大小阈值
+                     * 设置延迟时间大小阈值，单位：秒。
+                     * @param _maxReplayLag 延迟时间大小阈值，单位：秒。
                      * 
                      */
                     void SetMaxReplayLag(const double& _maxReplayLag);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool MaxReplayLagHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间开关
-                     * @return ReplayLagEliminate 延迟时间开关
+                     * 获取延迟时间开关。0 - 关闭； 1 - 开启。
+                     * @return ReplayLagEliminate 延迟时间开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     int64_t GetReplayLagEliminate() const;
 
                     /**
-                     * 设置延迟时间开关
-                     * @param _replayLagEliminate 延迟时间开关
+                     * 设置延迟时间开关。0 - 关闭； 1 - 开启。
+                     * @param _replayLagEliminate 延迟时间开关。0 - 关闭； 1 - 开启。
                      * 
                      */
                     void SetReplayLagEliminate(const int64_t& _replayLagEliminate);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态。枚举值：creating、ok、modifying、deleting、deleted
+                     * @return Status 状态。枚举值：creating、ok、modifying、deleting、deleted
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置状态。枚举值：creating、ok、modifying、deleting、deleted
+                     * @param _status 状态。枚举值：creating、ok、modifying、deleting、deleted
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -464,25 +464,25 @@ namespace TencentCloud
                     bool m_minDelayEliminateReserveHasBeenSet;
 
                     /**
-                     * 延迟空间大小阈值
+                     * 延迟空间大小阈值。单位MB。
                      */
                     int64_t m_maxReplayLatency;
                     bool m_maxReplayLatencyHasBeenSet;
 
                     /**
-                     * 延迟大小开关
+                     * 延迟大小开关。0 - 关闭； 1 - 开启。
                      */
                     int64_t m_replayLatencyEliminate;
                     bool m_replayLatencyEliminateHasBeenSet;
 
                     /**
-                     * 延迟时间大小阈值
+                     * 延迟时间大小阈值，单位：秒。
                      */
                     double m_maxReplayLag;
                     bool m_maxReplayLagHasBeenSet;
 
                     /**
-                     * 延迟时间开关
+                     * 延迟时间开关。0 - 关闭； 1 - 开启。
                      */
                     int64_t m_replayLagEliminate;
                     bool m_replayLagEliminateHasBeenSet;
@@ -512,7 +512,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态。枚举值：creating、ok、modifying、deleting、deleted
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

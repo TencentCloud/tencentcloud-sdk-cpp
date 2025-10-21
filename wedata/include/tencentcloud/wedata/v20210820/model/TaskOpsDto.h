@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2311,6 +2311,52 @@ no：任务无需满足自依赖
                      */
                     bool SelfWorkFlowDependTypeHasBeenSet() const;
 
+                    /**
+                     * 获取允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @return AllowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    std::string GetAllowRedoType() const;
+
+                    /**
+                     * 设置允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * @param _allowRedoType 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     * 
+                     */
+                    void SetAllowRedoType(const std::string& _allowRedoType);
+
+                    /**
+                     * 判断参数 AllowRedoType 是否已赋值
+                     * @return AllowRedoType 是否已赋值
+                     * 
+                     */
+                    bool AllowRedoTypeHasBeenSet() const;
+
+                    /**
+                     * 获取负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerId 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerId() const;
+
+                    /**
+                     * 设置负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerId 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerId(const std::string& _ownerId);
+
+                    /**
+                     * 判断参数 OwnerId 是否已赋值
+                     * @return OwnerId 是否已赋值
+                     * 
+                     */
+                    bool OwnerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2944,6 +2990,19 @@ no：任务无需满足自依赖
                      */
                     std::string m_selfWorkFlowDependType;
                     bool m_selfWorkFlowDependTypeHasBeenSet;
+
+                    /**
+                     * 允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑
+                     */
+                    std::string m_allowRedoType;
+                    bool m_allowRedoTypeHasBeenSet;
+
+                    /**
+                     * 负责人Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerId;
+                    bool m_ownerIdHasBeenSet;
 
                 };
             }

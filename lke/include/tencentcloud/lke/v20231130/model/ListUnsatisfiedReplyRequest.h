@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool ReasonsHasBeenSet() const;
 
+                    /**
+                     * 获取操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】
+                     * @return Status 操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】
+                     * @param _status 操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;
+
+                    /**
+                     * 操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

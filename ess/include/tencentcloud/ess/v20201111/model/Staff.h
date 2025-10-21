@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-                     * @return Mobile 用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 获取用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
+                     * @return Mobile 用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
-                     * @param _mobile 用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 设置用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
+                     * @param _mobile 用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -402,7 +402,7 @@ namespace TencentCloud
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

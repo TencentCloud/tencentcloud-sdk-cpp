@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 AgentDebugInfo::AgentDebugInfo() :
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AgentDebugInfo::Deserialize(const rapidjson::Value &value)
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
+    {
+        if (!value["ModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentDebugInfo.ModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelName = string(value["ModelName"].GetString());
+        m_modelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AgentDebugInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Output";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_output.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AgentDebugInfo::SetOutput(const string& _output)
 bool AgentDebugInfo::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+string AgentDebugInfo::GetModelName() const
+{
+    return m_modelName;
+}
+
+void AgentDebugInfo::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool AgentDebugInfo::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 

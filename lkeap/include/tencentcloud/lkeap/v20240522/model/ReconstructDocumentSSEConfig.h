@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,6 +154,27 @@ namespace TencentCloud
                      */
                     bool PageFormatHasBeenSet() const;
 
+                    /**
+                     * 获取是否忽略失败页，返回已成功的页数据
+                     * @return IgnoreFailedPage 是否忽略失败页，返回已成功的页数据
+                     * 
+                     */
+                    bool GetIgnoreFailedPage() const;
+
+                    /**
+                     * 设置是否忽略失败页，返回已成功的页数据
+                     * @param _ignoreFailedPage 是否忽略失败页，返回已成功的页数据
+                     * 
+                     */
+                    void SetIgnoreFailedPage(const bool& _ignoreFailedPage);
+
+                    /**
+                     * 判断参数 IgnoreFailedPage 是否已赋值
+                     * @return IgnoreFailedPage 是否已赋值
+                     * 
+                     */
+                    bool IgnoreFailedPageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_pageFormat;
                     bool m_pageFormatHasBeenSet;
+
+                    /**
+                     * 是否忽略失败页，返回已成功的页数据
+                     */
+                    bool m_ignoreFailedPage;
+                    bool m_ignoreFailedPageHasBeenSet;
 
                 };
             }

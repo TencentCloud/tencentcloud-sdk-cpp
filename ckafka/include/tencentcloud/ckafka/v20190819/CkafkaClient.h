@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,6 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicResponse.h>
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostRequest.h>
-#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
@@ -252,9 +250,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatahubTopicResponse> CreateDatahubTopicOutcome;
                 typedef std::future<CreateDatahubTopicOutcome> CreateDatahubTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTopicRequest&, CreateDatahubTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTopicAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateInstancePostResponse> CreateInstancePostOutcome;
-                typedef std::future<CreateInstancePostOutcome> CreateInstancePostOutcomeCallable;
-                typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePostRequest&, CreateInstancePostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
@@ -598,15 +593,6 @@ namespace TencentCloud
                 CreateDatahubTopicOutcomeCallable CreateDatahubTopicCallable(const Model::CreateDatahubTopicRequest& request);
 
                 /**
-                 *由于出参需要更新，建议用户迁移使用 CreatePostPaidInstance 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。
-                 * @param req CreateInstancePostRequest
-                 * @return CreateInstancePostOutcome
-                 */
-                CreateInstancePostOutcome CreateInstancePost(const Model::CreateInstancePostRequest &request);
-                void CreateInstancePostAsync(const Model::CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateInstancePostOutcomeCallable CreateInstancePostCallable(const Model::CreateInstancePostRequest& request);
-
-                /**
                  *创建实例(预付费包年包月),  仅支持创建专业版实例
                  * @param req CreateInstancePreRequest
                  * @return CreateInstancePreOutcome
@@ -634,7 +620,7 @@ namespace TencentCloud
                 CreatePostPaidInstanceOutcomeCallable CreatePostPaidInstanceCallable(const Model::CreatePostPaidInstanceRequest& request);
 
                 /**
-                 *添加普罗米修斯监控1
+                 *添加普罗米修斯监控
                  * @param req CreatePrometheusRequest
                  * @return CreatePrometheusOutcome
                  */
@@ -742,7 +728,7 @@ namespace TencentCloud
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
-                 *删除后付费实例
+                 *删除后付费实例，通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。
                  * @param req DeleteInstancePostRequest
                  * @return DeleteInstancePostOutcome
                  */
@@ -751,7 +737,7 @@ namespace TencentCloud
                 DeleteInstancePostOutcomeCallable DeleteInstancePostCallable(const Model::DeleteInstancePostRequest& request);
 
                 /**
-                 *删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁
+                 *删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁。通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。
                  * @param req DeleteInstancePreRequest
                  * @return DeleteInstancePreOutcome
                  */
@@ -958,7 +944,7 @@ namespace TencentCloud
                 DescribeInstanceAttributesOutcomeCallable DescribeInstanceAttributesCallable(const Model::DescribeInstanceAttributesRequest& request);
 
                 /**
-                 *本接口（DescribeInstance）用于在用户账户下获取消息队列 CKafka 实例列表
+                 *本接口（DescribeInstances）用于在用户账户下获取消息队列 CKafka 实例列表
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */
@@ -1220,7 +1206,7 @@ namespace TencentCloud
                 ModifyInstanceAttributesOutcomeCallable ModifyInstanceAttributesCallable(const Model::ModifyInstanceAttributesRequest& request);
 
                 /**
-                 *预付费实例变配接口，调整磁盘，带宽
+                 *预付费实例变配接口，调整磁盘，带宽,  分区
                  * @param req ModifyInstancePreRequest
                  * @return ModifyInstancePreOutcome
                  */

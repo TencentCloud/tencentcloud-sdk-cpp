@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ CreateGroupRequest::CreateGroupRequest() :
     m_groupDescHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
     m_aliasHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_k8sNamespaceNameHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string CreateGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_k8sNamespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sNamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_k8sNamespaceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void CreateGroupRequest::SetTags(const vector<Tag>& _tags)
 bool CreateGroupRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateGroupRequest::GetK8sNamespaceName() const
+{
+    return m_k8sNamespaceName;
+}
+
+void CreateGroupRequest::SetK8sNamespaceName(const string& _k8sNamespaceName)
+{
+    m_k8sNamespaceName = _k8sNamespaceName;
+    m_k8sNamespaceNameHasBeenSet = true;
+}
+
+bool CreateGroupRequest::K8sNamespaceNameHasBeenSet() const
+{
+    return m_k8sNamespaceNameHasBeenSet;
 }
 
 

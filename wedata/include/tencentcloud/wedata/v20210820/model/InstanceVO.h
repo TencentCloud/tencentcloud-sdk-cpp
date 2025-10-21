@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -665,6 +665,31 @@ namespace TencentCloud
                     bool SchedulerTimeHasBeenSet() const;
 
                     /**
+                     * 获取实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastUpdateTime 实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastUpdateTime() const;
+
+                    /**
+                     * 设置实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastUpdateTime 实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastUpdateTime(const std::string& _lastUpdateTime);
+
+                    /**
+                     * 判断参数 LastUpdateTime 是否已赋值
+                     * @return LastUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取执行资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorGroupId 执行资源组ID
@@ -713,6 +738,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ExecutorGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取简要的任务失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobErrorMsg 简要的任务失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJobErrorMsg() const;
+
+                    /**
+                     * 设置简要的任务失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobErrorMsg 简要的任务失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobErrorMsg(const std::string& _jobErrorMsg);
+
+                    /**
+                     * 判断参数 JobErrorMsg 是否已赋值
+                     * @return JobErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool JobErrorMsgHasBeenSet() const;
 
                 private:
 
@@ -887,6 +937,13 @@ namespace TencentCloud
                     bool m_schedulerTimeHasBeenSet;
 
                     /**
+                     * 实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastUpdateTime;
+                    bool m_lastUpdateTimeHasBeenSet;
+
+                    /**
                      * 执行资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -899,6 +956,13 @@ namespace TencentCloud
                      */
                     std::string m_executorGroupName;
                     bool m_executorGroupNameHasBeenSet;
+
+                    /**
+                     * 简要的任务失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobErrorMsg;
+                    bool m_jobErrorMsgHasBeenSet;
 
                 };
             }

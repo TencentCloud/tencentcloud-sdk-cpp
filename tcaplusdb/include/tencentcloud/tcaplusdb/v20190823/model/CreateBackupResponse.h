@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建的备份任务ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskIds 创建的备份任务ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建的备份申请ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationIds 创建的备份申请ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetApplicationIds() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 创建的备份任务ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;
 
                     /**
                      * 创建的备份申请ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_applicationIds;
                     bool m_applicationIdsHasBeenSet;

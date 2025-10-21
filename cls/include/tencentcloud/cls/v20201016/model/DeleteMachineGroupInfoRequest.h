@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器组ID
-                     * @return GroupId 机器组ID
+                     * 获取机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
+                     * @return GroupId 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置机器组ID
-                     * @param _groupId 机器组ID
+                     * 设置机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
+                     * @param _groupId 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -92,7 +96,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器组ID
+                     * 机器组Id
+- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

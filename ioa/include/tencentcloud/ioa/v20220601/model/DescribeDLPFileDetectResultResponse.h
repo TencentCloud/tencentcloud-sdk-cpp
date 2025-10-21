@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询任务结果
-                     * @return Data 查询任务结果
+                     * 获取文件鉴定任务结果数据。详情查看具体数据结构
+                     * @return Data 文件鉴定任务结果数据。详情查看具体数据结构
                      * 
                      */
                     DescribeDLPFileDetectResultData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询任务结果
+                     * 文件鉴定任务结果数据。详情查看具体数据结构
                      */
                     DescribeDLPFileDetectResultData m_data;
                     bool m_dataHasBeenSet;

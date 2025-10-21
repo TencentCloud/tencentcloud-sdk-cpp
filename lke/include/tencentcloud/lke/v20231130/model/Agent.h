@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/lke/v20231130/model/AgentModelInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentToolInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginInfo.h>
+#include <tencentcloud/lke/v20231130/model/AgentAdvancedConfig.h>
 
 
 namespace TencentCloud
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取插件图标url
-                     * @return IconUrl 插件图标url
+                     * 获取Agent图标url
+                     * @return IconUrl Agent图标url
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置插件图标url
-                     * @param _iconUrl 插件图标url
+                     * 设置Agent图标url
+                     * @param _iconUrl Agent图标url
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -301,6 +302,48 @@ namespace TencentCloud
                      */
                     bool AgentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取0 自由转交，1 计划与执行
+                     * @return AgentMode 0 自由转交，1 计划与执行
+                     * 
+                     */
+                    int64_t GetAgentMode() const;
+
+                    /**
+                     * 设置0 自由转交，1 计划与执行
+                     * @param _agentMode 0 自由转交，1 计划与执行
+                     * 
+                     */
+                    void SetAgentMode(const int64_t& _agentMode);
+
+                    /**
+                     * 判断参数 AgentMode 是否已赋值
+                     * @return AgentMode 是否已赋值
+                     * 
+                     */
+                    bool AgentModeHasBeenSet() const;
+
+                    /**
+                     * 获取高级设置
+                     * @return AdvancedConfig 高级设置
+                     * 
+                     */
+                    AgentAdvancedConfig GetAdvancedConfig() const;
+
+                    /**
+                     * 设置高级设置
+                     * @param _advancedConfig 高级设置
+                     * 
+                     */
+                    void SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig);
+
+                    /**
+                     * 判断参数 AdvancedConfig 是否已赋值
+                     * @return AdvancedConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,7 +365,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 插件图标url
+                     * Agent图标url
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
@@ -374,6 +417,18 @@ namespace TencentCloud
                      */
                     uint64_t m_agentType;
                     bool m_agentTypeHasBeenSet;
+
+                    /**
+                     * 0 自由转交，1 计划与执行
+                     */
+                    int64_t m_agentMode;
+                    bool m_agentModeHasBeenSet;
+
+                    /**
+                     * 高级设置
+                     */
+                    AgentAdvancedConfig m_advancedConfig;
+                    bool m_advancedConfigHasBeenSet;
 
                 };
             }

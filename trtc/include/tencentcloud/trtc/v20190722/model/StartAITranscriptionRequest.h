@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/TranscriptionParams.h>
 #include <tencentcloud/trtc/v20190722/model/RecognizeConfig.h>
+#include <tencentcloud/trtc/v20190722/model/TranslationConfig.h>
 
 
 namespace TencentCloud
@@ -178,6 +179,27 @@ TranscriptionMode为0时，需要保证一个房间内只发起一个任务，�
                      */
                     bool RecognizeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取翻译相关配置
+                     * @return TranslationConfig 翻译相关配置
+                     * 
+                     */
+                    TranslationConfig GetTranslationConfig() const;
+
+                    /**
+                     * 设置翻译相关配置
+                     * @param _translationConfig 翻译相关配置
+                     * 
+                     */
+                    void SetTranslationConfig(const TranslationConfig& _translationConfig);
+
+                    /**
+                     * 判断参数 TranslationConfig 是否已赋值
+                     * @return TranslationConfig 是否已赋值
+                     * 
+                     */
+                    bool TranslationConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +239,12 @@ TranscriptionMode为0时，需要保证一个房间内只发起一个任务，�
                      */
                     RecognizeConfig m_recognizeConfig;
                     bool m_recognizeConfigHasBeenSet;
+
+                    /**
+                     * 翻译相关配置
+                     */
+                    TranslationConfig m_translationConfig;
+                    bool m_translationConfigHasBeenSet;
 
                 };
             }

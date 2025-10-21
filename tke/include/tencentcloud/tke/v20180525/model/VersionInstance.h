@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取Remark
-                     * @return Remark Remark
+                     * 获取备注
+                     * @return Remark 备注
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置Remark
-                     * @param _remark Remark
+                     * 设置备注
+                     * @param _remark 备注
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_versionHasBeenSet;
 
                     /**
-                     * Remark
+                     * 备注
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 OrganizationAuthorizationOptions::OrganizationAuthorizationOptions() :
     m_uniformSocialCreditCodeSameHasBeenSet(false),
     m_organizationNameSameHasBeenSet(false),
-    m_legalNameSameHasBeenSet(false)
+    m_legalNameSameHasBeenSet(false),
+    m_bankAccountNumberSameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome OrganizationAuthorizationOptions::Deserialize(const rapidjso
         m_legalNameSameHasBeenSet = true;
     }
 
+    if (value.HasMember("BankAccountNumberSame") && !value["BankAccountNumberSame"].IsNull())
+    {
+        if (!value["BankAccountNumberSame"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationAuthorizationOptions.BankAccountNumberSame` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bankAccountNumberSame = value["BankAccountNumberSame"].GetBool();
+        m_bankAccountNumberSameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void OrganizationAuthorizationOptions::ToJsonObject(rapidjson::Value &value, rap
         string key = "LegalNameSame";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_legalNameSame, allocator);
+    }
+
+    if (m_bankAccountNumberSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankAccountNumberSame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bankAccountNumberSame, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void OrganizationAuthorizationOptions::SetLegalNameSame(const bool& _legalNameSa
 bool OrganizationAuthorizationOptions::LegalNameSameHasBeenSet() const
 {
     return m_legalNameSameHasBeenSet;
+}
+
+bool OrganizationAuthorizationOptions::GetBankAccountNumberSame() const
+{
+    return m_bankAccountNumberSame;
+}
+
+void OrganizationAuthorizationOptions::SetBankAccountNumberSame(const bool& _bankAccountNumberSame)
+{
+    m_bankAccountNumberSame = _bankAccountNumberSame;
+    m_bankAccountNumberSameHasBeenSet = true;
+}
+
+bool OrganizationAuthorizationOptions::BankAccountNumberSameHasBeenSet() const
+{
+    return m_bankAccountNumberSameHasBeenSet;
 }
 

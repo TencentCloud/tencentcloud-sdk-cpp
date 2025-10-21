@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
     m_launchTemplateTagSpecificationHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_templateDataModifyActionHasBeenSet(false)
@@ -310,6 +311,14 @@ string CreateLaunchTemplateRequest::ToJsonString() const
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
     if (m_launchTemplateTagSpecificationHasBeenSet)
@@ -782,6 +791,22 @@ void CreateLaunchTemplateRequest::SetDisableApiTermination(const bool& _disableA
 bool CreateLaunchTemplateRequest::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+bool CreateLaunchTemplateRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void CreateLaunchTemplateRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 vector<TagSpecification> CreateLaunchTemplateRequest::GetLaunchTemplateTagSpecification() const

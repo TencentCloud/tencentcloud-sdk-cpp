@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,27 @@ namespace TencentCloud
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取是否将文本加入到llm历史上下文中
+                     * @return AddHistory 是否将文本加入到llm历史上下文中
+                     * 
+                     */
+                    bool GetAddHistory() const;
+
+                    /**
+                     * 设置是否将文本加入到llm历史上下文中
+                     * @param _addHistory 是否将文本加入到llm历史上下文中
+                     * 
+                     */
+                    void SetAddHistory(const bool& _addHistory);
+
+                    /**
+                     * 判断参数 AddHistory 是否已赋值
+                     * @return AddHistory 是否已赋值
+                     * 
+                     */
+                    bool AddHistoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * 是否将文本加入到llm历史上下文中
+                     */
+                    bool m_addHistory;
+                    bool m_addHistoryHasBeenSet;
 
                 };
             }

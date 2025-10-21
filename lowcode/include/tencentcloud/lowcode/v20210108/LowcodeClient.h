@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lowcode/v20210108/model/CheckDeployAppRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/CheckDeployAppResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/CreateKnowledgeSetRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/CreateKnowledgeSetResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DeleteAppBindWxAppRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DeleteAppBindWxAppResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DeleteKnowledgeDocumentSetRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DeleteKnowledgeDocumentSetResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DeleteKnowledgeSetResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DeployAppRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DeployAppResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeAppsRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeAppsResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeDataSourceListRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeDataSourceListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetDetailRequest.h>
@@ -37,6 +45,12 @@
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeDocumentSetListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeSetListRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/DescribeKnowledgeSetListResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeRelatedUsersRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeRelatedUsersResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeResourceRoleListRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/DescribeResourceRoleListResponse.h>
+#include <tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppRequest.h>
+#include <tencentcloud/lowcode/v20210108/model/PutWxAppIdToWeAppResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/SearchDocListRequest.h>
 #include <tencentcloud/lowcode/v20210108/model/SearchDocListResponse.h>
 #include <tencentcloud/lowcode/v20210108/model/UpdateKnowledgeSetRequest.h>
@@ -57,15 +71,27 @@ namespace TencentCloud
                 LowcodeClient(const Credential &credential, const std::string &region);
                 LowcodeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckDeployAppResponse> CheckDeployAppOutcome;
+                typedef std::future<CheckDeployAppOutcome> CheckDeployAppOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::CheckDeployAppRequest&, CheckDeployAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDeployAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateKnowledgeSetResponse> CreateKnowledgeSetOutcome;
                 typedef std::future<CreateKnowledgeSetOutcome> CreateKnowledgeSetOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::CreateKnowledgeSetRequest&, CreateKnowledgeSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKnowledgeSetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAppBindWxAppResponse> DeleteAppBindWxAppOutcome;
+                typedef std::future<DeleteAppBindWxAppOutcome> DeleteAppBindWxAppOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DeleteAppBindWxAppRequest&, DeleteAppBindWxAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppBindWxAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKnowledgeDocumentSetResponse> DeleteKnowledgeDocumentSetOutcome;
                 typedef std::future<DeleteKnowledgeDocumentSetOutcome> DeleteKnowledgeDocumentSetOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DeleteKnowledgeDocumentSetRequest&, DeleteKnowledgeDocumentSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKnowledgeDocumentSetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKnowledgeSetResponse> DeleteKnowledgeSetOutcome;
                 typedef std::future<DeleteKnowledgeSetOutcome> DeleteKnowledgeSetOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DeleteKnowledgeSetRequest&, DeleteKnowledgeSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKnowledgeSetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployAppResponse> DeployAppOutcome;
+                typedef std::future<DeployAppOutcome> DeployAppOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DeployAppRequest&, DeployAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppsResponse> DescribeAppsOutcome;
+                typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeAppsRequest&, DescribeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataSourceListResponse> DescribeDataSourceListOutcome;
                 typedef std::future<DescribeDataSourceListOutcome> DescribeDataSourceListOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DescribeDataSourceListRequest&, DescribeDataSourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceListAsyncHandler;
@@ -78,6 +104,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKnowledgeSetListResponse> DescribeKnowledgeSetListOutcome;
                 typedef std::future<DescribeKnowledgeSetListOutcome> DescribeKnowledgeSetListOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::DescribeKnowledgeSetListRequest&, DescribeKnowledgeSetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeSetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRelatedUsersResponse> DescribeRelatedUsersOutcome;
+                typedef std::future<DescribeRelatedUsersOutcome> DescribeRelatedUsersOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeRelatedUsersRequest&, DescribeRelatedUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceRoleListResponse> DescribeResourceRoleListOutcome;
+                typedef std::future<DescribeResourceRoleListOutcome> DescribeResourceRoleListOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::DescribeResourceRoleListRequest&, DescribeResourceRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceRoleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutWxAppIdToWeAppResponse> PutWxAppIdToWeAppOutcome;
+                typedef std::future<PutWxAppIdToWeAppOutcome> PutWxAppIdToWeAppOutcomeCallable;
+                typedef std::function<void(const LowcodeClient*, const Model::PutWxAppIdToWeAppRequest&, PutWxAppIdToWeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutWxAppIdToWeAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchDocListResponse> SearchDocListOutcome;
                 typedef std::future<SearchDocListOutcome> SearchDocListOutcomeCallable;
                 typedef std::function<void(const LowcodeClient*, const Model::SearchDocListRequest&, SearchDocListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchDocListAsyncHandler;
@@ -91,6 +126,15 @@ namespace TencentCloud
 
 
                 /**
+                 *检查应用发布状态
+                 * @param req CheckDeployAppRequest
+                 * @return CheckDeployAppOutcome
+                 */
+                CheckDeployAppOutcome CheckDeployApp(const Model::CheckDeployAppRequest &request);
+                void CheckDeployAppAsync(const Model::CheckDeployAppRequest& request, const CheckDeployAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckDeployAppOutcomeCallable CheckDeployAppCallable(const Model::CheckDeployAppRequest& request);
+
+                /**
                  *创建知识库
                  * @param req CreateKnowledgeSetRequest
                  * @return CreateKnowledgeSetOutcome
@@ -98,6 +142,15 @@ namespace TencentCloud
                 CreateKnowledgeSetOutcome CreateKnowledgeSet(const Model::CreateKnowledgeSetRequest &request);
                 void CreateKnowledgeSetAsync(const Model::CreateKnowledgeSetRequest& request, const CreateKnowledgeSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateKnowledgeSetOutcomeCallable CreateKnowledgeSetCallable(const Model::CreateKnowledgeSetRequest& request);
+
+                /**
+                 *删除应用绑定小程序
+                 * @param req DeleteAppBindWxAppRequest
+                 * @return DeleteAppBindWxAppOutcome
+                 */
+                DeleteAppBindWxAppOutcome DeleteAppBindWxApp(const Model::DeleteAppBindWxAppRequest &request);
+                void DeleteAppBindWxAppAsync(const Model::DeleteAppBindWxAppRequest& request, const DeleteAppBindWxAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAppBindWxAppOutcomeCallable DeleteAppBindWxAppCallable(const Model::DeleteAppBindWxAppRequest& request);
 
                 /**
                  *删除知识库下文档
@@ -116,6 +169,24 @@ namespace TencentCloud
                 DeleteKnowledgeSetOutcome DeleteKnowledgeSet(const Model::DeleteKnowledgeSetRequest &request);
                 void DeleteKnowledgeSetAsync(const Model::DeleteKnowledgeSetRequest& request, const DeleteKnowledgeSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteKnowledgeSetOutcomeCallable DeleteKnowledgeSetCallable(const Model::DeleteKnowledgeSetRequest& request);
+
+                /**
+                 *发布应用
+                 * @param req DeployAppRequest
+                 * @return DeployAppOutcome
+                 */
+                DeployAppOutcome DeployApp(const Model::DeployAppRequest &request);
+                void DeployAppAsync(const Model::DeployAppRequest& request, const DeployAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployAppOutcomeCallable DeployAppCallable(const Model::DeployAppRequest& request);
+
+                /**
+                 *分页获取当前用户的应用列表
+                 * @param req DescribeAppsRequest
+                 * @return DescribeAppsOutcome
+                 */
+                DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest &request);
+                void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request);
 
                 /**
                  *获取数据源详情列表
@@ -152,6 +223,33 @@ namespace TencentCloud
                 DescribeKnowledgeSetListOutcome DescribeKnowledgeSetList(const Model::DescribeKnowledgeSetListRequest &request);
                 void DescribeKnowledgeSetListAsync(const Model::DescribeKnowledgeSetListRequest& request, const DescribeKnowledgeSetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKnowledgeSetListOutcomeCallable DescribeKnowledgeSetListCallable(const Model::DescribeKnowledgeSetListRequest& request);
+
+                /**
+                 *获取角色关联的用户列表
+                 * @param req DescribeRelatedUsersRequest
+                 * @return DescribeRelatedUsersOutcome
+                 */
+                DescribeRelatedUsersOutcome DescribeRelatedUsers(const Model::DescribeRelatedUsersRequest &request);
+                void DescribeRelatedUsersAsync(const Model::DescribeRelatedUsersRequest& request, const DescribeRelatedUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedUsersOutcomeCallable DescribeRelatedUsersCallable(const Model::DescribeRelatedUsersRequest& request);
+
+                /**
+                 *查询资源关联的角色列表
+                 * @param req DescribeResourceRoleListRequest
+                 * @return DescribeResourceRoleListOutcome
+                 */
+                DescribeResourceRoleListOutcome DescribeResourceRoleList(const Model::DescribeResourceRoleListRequest &request);
+                void DescribeResourceRoleListAsync(const Model::DescribeResourceRoleListRequest& request, const DescribeResourceRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceRoleListOutcomeCallable DescribeResourceRoleListCallable(const Model::DescribeResourceRoleListRequest& request);
+
+                /**
+                 *接口提供应用绑定微信ID功能。
+                 * @param req PutWxAppIdToWeAppRequest
+                 * @return PutWxAppIdToWeAppOutcome
+                 */
+                PutWxAppIdToWeAppOutcome PutWxAppIdToWeApp(const Model::PutWxAppIdToWeAppRequest &request);
+                void PutWxAppIdToWeAppAsync(const Model::PutWxAppIdToWeAppRequest& request, const PutWxAppIdToWeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutWxAppIdToWeAppOutcomeCallable PutWxAppIdToWeAppCallable(const Model::PutWxAppIdToWeAppRequest& request);
 
                 /**
                  *知识库文档搜索接口

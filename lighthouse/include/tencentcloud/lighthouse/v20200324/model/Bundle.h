@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -422,6 +422,27 @@ namespace TencentCloud
                      */
                     bool BundleDisplayLabelHasBeenSet() const;
 
+                    /**
+                     * 获取流量是否无上限。
+                     * @return TrafficUnlimited 流量是否无上限。
+                     * 
+                     */
+                    bool GetTrafficUnlimited() const;
+
+                    /**
+                     * 设置流量是否无上限。
+                     * @param _trafficUnlimited 流量是否无上限。
+                     * 
+                     */
+                    void SetTrafficUnlimited(const bool& _trafficUnlimited);
+
+                    /**
+                     * 判断参数 TrafficUnlimited 是否已赋值
+                     * @return TrafficUnlimited 是否已赋值
+                     * 
+                     */
+                    bool TrafficUnlimitedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -528,6 +549,12 @@ namespace TencentCloud
                      */
                     std::string m_bundleDisplayLabel;
                     bool m_bundleDisplayLabelHasBeenSet;
+
+                    /**
+                     * 流量是否无上限。
+                     */
+                    bool m_trafficUnlimited;
+                    bool m_trafficUnlimitedHasBeenSet;
 
                 };
             }

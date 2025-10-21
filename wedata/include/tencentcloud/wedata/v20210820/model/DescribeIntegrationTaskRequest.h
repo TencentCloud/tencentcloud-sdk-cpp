@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/RecordField.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool InstanceVersionHasBeenSet() const;
 
+                    /**
+                     * 获取额外参数
+                     * @return ExtConfig 额外参数
+                     * 
+                     */
+                    std::vector<RecordField> GetExtConfig() const;
+
+                    /**
+                     * 设置额外参数
+                     * @param _extConfig 额外参数
+                     * 
+                     */
+                    void SetExtConfig(const std::vector<RecordField>& _extConfig);
+
+                    /**
+                     * 判断参数 ExtConfig 是否已赋值
+                     * @return ExtConfig 是否已赋值
+                     * 
+                     */
+                    bool ExtConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
+
+                    /**
+                     * 额外参数
+                     */
+                    std::vector<RecordField> m_extConfig;
+                    bool m_extConfigHasBeenSet;
 
                 };
             }

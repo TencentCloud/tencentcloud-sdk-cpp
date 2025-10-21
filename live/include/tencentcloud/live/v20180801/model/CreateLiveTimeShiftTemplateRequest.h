@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,19 +72,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取时移时长。
-单位：s。
-                     * @return Duration 时移时长。
-单位：s。
+                     * 获取时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
+                     * @return Duration 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
-                     * 设置时移时长。
-单位：s。
-                     * @param _duration 时移时长。
-单位：s。
+                     * 设置时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
+                     * @param _duration 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -252,8 +248,7 @@ Overseas：海外及港澳台地区。
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 时移时长。
-单位：s。
+                     * 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;

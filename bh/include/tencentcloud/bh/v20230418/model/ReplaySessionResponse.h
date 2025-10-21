@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/ReplayInformation.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取回放所需信息
+                     * @return ReplayInfo 回放所需信息
+                     * 
+                     */
+                    ReplayInformation GetReplayInfo() const;
+
+                    /**
+                     * 判断参数 ReplayInfo 是否已赋值
+                     * @return ReplayInfo 是否已赋值
+                     * 
+                     */
+                    bool ReplayInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 回放所需信息
+                     */
+                    ReplayInformation m_replayInfo;
+                    bool m_replayInfoHasBeenSet;
 
                 };
             }

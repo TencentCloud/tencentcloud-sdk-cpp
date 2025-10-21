@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 ParseDocumentResponse::ParseDocumentResponse() :
     m_progressHasBeenSet(false),
     m_documentParseResultUrlHasBeenSet(false),
-    m_failedPagesHasBeenSet(false)
+    m_failedPagesHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,23 @@ CoreInternalOutcome ParseDocumentResponse::Deserialize(const string &payload)
         m_failedPagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -136,11 +154,20 @@ string ParseDocumentResponse::ToJsonString() const
         }
     }
 
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -176,6 +203,16 @@ vector<int64_t> ParseDocumentResponse::GetFailedPages() const
 bool ParseDocumentResponse::FailedPagesHasBeenSet() const
 {
     return m_failedPagesHasBeenSet;
+}
+
+PageUsage ParseDocumentResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool ParseDocumentResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 
 

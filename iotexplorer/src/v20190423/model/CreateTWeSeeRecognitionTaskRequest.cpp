@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,10 @@ CreateTWeSeeRecognitionTaskRequest::CreateTWeSeeRecognitionTaskRequest() :
     m_configHasBeenSet(false),
     m_isCustomDeviceHasBeenSet(false),
     m_inputTypeHasBeenSet(false),
-    m_summaryQOSHasBeenSet(false)
+    m_summaryQOSHasBeenSet(false),
+    m_summaryConfigHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
+    m_objectDetectConfigHasBeenSet(false)
 {
 }
 
@@ -130,6 +133,32 @@ string CreateTWeSeeRecognitionTaskRequest::ToJsonString() const
         string key = "SummaryQOS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_summaryQOS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summaryConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectDetectConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectDetectConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_objectDetectConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -314,6 +343,54 @@ void CreateTWeSeeRecognitionTaskRequest::SetSummaryQOS(const string& _summaryQOS
 bool CreateTWeSeeRecognitionTaskRequest::SummaryQOSHasBeenSet() const
 {
     return m_summaryQOSHasBeenSet;
+}
+
+VisionSummaryConfig CreateTWeSeeRecognitionTaskRequest::GetSummaryConfig() const
+{
+    return m_summaryConfig;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetSummaryConfig(const VisionSummaryConfig& _summaryConfig)
+{
+    m_summaryConfig = _summaryConfig;
+    m_summaryConfigHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::SummaryConfigHasBeenSet() const
+{
+    return m_summaryConfigHasBeenSet;
+}
+
+string CreateTWeSeeRecognitionTaskRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
+VisionObjectDetectConfig CreateTWeSeeRecognitionTaskRequest::GetObjectDetectConfig() const
+{
+    return m_objectDetectConfig;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetObjectDetectConfig(const VisionObjectDetectConfig& _objectDetectConfig)
+{
+    m_objectDetectConfig = _objectDetectConfig;
+    m_objectDetectConfigHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::ObjectDetectConfigHasBeenSet() const
+{
+    return m_objectDetectConfigHasBeenSet;
 }
 
 

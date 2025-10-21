@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool VersionSetHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区，格式如：ap-guangzhou-2
-                     * @return Zone 实例可用区，格式如：ap-guangzhou-2
+                     * 获取实例可用区
+                     * @return Zone 实例可用区
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例可用区，格式如：ap-guangzhou-2
-                     * @param _zone 实例可用区，格式如：ap-guangzhou-2
+                     * 设置实例可用区
+                     * @param _zone 实例可用区
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -528,7 +528,7 @@ namespace TencentCloud
                     bool m_versionSetHasBeenSet;
 
                     /**
-                     * 实例可用区，格式如：ap-guangzhou-2
+                     * 实例可用区
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

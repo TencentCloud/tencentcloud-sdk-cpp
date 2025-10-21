@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,67 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取特效模板名称。
-枚举值：
-hug ：拥抱
-kiss ：亲吻
-heart ： 比心
-fuzzy ： 毛茸茸
-befigure：变手办风
-longhair：金色长发
-morphlab：膨胀
-bloom：万物生花
-pinch：捏捏
-balloonfly：飞走了
-dragme：被拽走了
-
-                     * @return Template 特效模板名称。
-枚举值：
-hug ：拥抱
-kiss ：亲吻
-heart ： 比心
-fuzzy ： 毛茸茸
-befigure：变手办风
-longhair：金色长发
-morphlab：膨胀
-bloom：万物生花
-pinch：捏捏
-balloonfly：飞走了
-dragme：被拽走了
-
+                     * 获取特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。
+                     * @return Template 特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。
                      * 
                      */
                     std::string GetTemplate() const;
 
                     /**
-                     * 设置特效模板名称。
-枚举值：
-hug ：拥抱
-kiss ：亲吻
-heart ： 比心
-fuzzy ： 毛茸茸
-befigure：变手办风
-longhair：金色长发
-morphlab：膨胀
-bloom：万物生花
-pinch：捏捏
-balloonfly：飞走了
-dragme：被拽走了
-
-                     * @param _template 特效模板名称。
-枚举值：
-hug ：拥抱
-kiss ：亲吻
-heart ： 比心
-fuzzy ： 毛茸茸
-befigure：变手办风
-longhair：金色长发
-morphlab：膨胀
-bloom：万物生花
-pinch：捏捏
-balloonfly：飞走了
-dragme：被拽走了
-
+                     * 设置特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。
+                     * @param _template 特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。
                      * 
                      */
                     void SetTemplate(const std::string& _template);
@@ -216,23 +164,52 @@ dragme：被拽走了
                      */
                     bool LogoParamHasBeenSet() const;
 
+                    /**
+                     * 获取视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * @return Resolution 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * 
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * @param _resolution 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     * 
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     * 
+                     */
+                    bool ResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * @return BGM 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * 
+                     */
+                    bool GetBGM() const;
+
+                    /**
+                     * 设置是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * @param _bGM 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     * 
+                     */
+                    void SetBGM(const bool& _bGM);
+
+                    /**
+                     * 判断参数 BGM 是否已赋值
+                     * @return BGM 是否已赋值
+                     * 
+                     */
+                    bool BGMHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 特效模板名称。
-枚举值：
-hug ：拥抱
-kiss ：亲吻
-heart ： 比心
-fuzzy ： 毛茸茸
-befigure：变手办风
-longhair：金色长发
-morphlab：膨胀
-bloom：万物生花
-pinch：捏捏
-balloonfly：飞走了
-dragme：被拽走了
-
+                     * 特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。
                      */
                     std::string m_template;
                     bool m_templateHasBeenSet;
@@ -263,6 +240,18 @@ dragme：被拽走了
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
+
+                    /**
+                     * 视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。
+                     */
+                    bool m_bGM;
+                    bool m_bGMHasBeenSet;
 
                 };
             }

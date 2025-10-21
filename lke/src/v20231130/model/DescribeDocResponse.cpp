@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,9 @@ DescribeDocResponse::DescribeDocResponse() :
     m_attrLabelsHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
-    m_isDownloadHasBeenSet(false)
+    m_isDownloadHasBeenSet(false),
+    m_splitRuleHasBeenSet(false),
+    m_updatePeriodInfoHasBeenSet(false)
 {
 }
 
@@ -357,6 +359,33 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_isDownloadHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SplitRule") && !rsp["SplitRule"].IsNull())
+    {
+        if (!rsp["SplitRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitRule = string(rsp["SplitRule"].GetString());
+        m_splitRuleHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UpdatePeriodInfo") && !rsp["UpdatePeriodInfo"].IsNull())
+    {
+        if (!rsp["UpdatePeriodInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdatePeriodInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_updatePeriodInfo.Deserialize(rsp["UpdatePeriodInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_updatePeriodInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,11 +611,28 @@ string DescribeDocResponse::ToJsonString() const
         value.AddMember(iKey, m_isDownload, allocator);
     }
 
+    if (m_splitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatePeriodInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatePeriodInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updatePeriodInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -852,6 +898,26 @@ bool DescribeDocResponse::GetIsDownload() const
 bool DescribeDocResponse::IsDownloadHasBeenSet() const
 {
     return m_isDownloadHasBeenSet;
+}
+
+string DescribeDocResponse::GetSplitRule() const
+{
+    return m_splitRule;
+}
+
+bool DescribeDocResponse::SplitRuleHasBeenSet() const
+{
+    return m_splitRuleHasBeenSet;
+}
+
+UpdatePeriodInfo DescribeDocResponse::GetUpdatePeriodInfo() const
+{
+    return m_updatePeriodInfo;
+}
+
+bool DescribeDocResponse::UpdatePeriodInfoHasBeenSet() const
+{
+    return m_updatePeriodInfoHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,8 @@
 #include <tencentcloud/tcss/v20201101/model/CreateAssetImageVirusExportJobResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateCheckComponentRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateCheckComponentResponse.h>
+#include <tencentcloud/tcss/v20201101/model/CreateClusterAccessRequest.h>
+#include <tencentcloud/tcss/v20201101/model/CreateClusterAccessResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateComplianceTaskRequest.h>
@@ -611,6 +613,8 @@
 #include <tencentcloud/tcss/v20201101/model/ModifyCompliancePeriodTaskResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyContainerNetStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyContainerNetStatusResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyDefendStatusRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyDefendStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyEscapeEventStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyEscapeEventStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyEscapeRuleRequest.h>
@@ -794,6 +798,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCheckComponentResponse> CreateCheckComponentOutcome;
                 typedef std::future<CreateCheckComponentOutcome> CreateCheckComponentOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateCheckComponentRequest&, CreateCheckComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCheckComponentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateClusterAccessResponse> CreateClusterAccessOutcome;
+                typedef std::future<CreateClusterAccessOutcome> CreateClusterAccessOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::CreateClusterAccessRequest&, CreateClusterAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterCheckTaskResponse> CreateClusterCheckTaskOutcome;
                 typedef std::future<CreateClusterCheckTaskOutcome> CreateClusterCheckTaskOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateClusterCheckTaskRequest&, CreateClusterCheckTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterCheckTaskAsyncHandler;
@@ -1595,6 +1602,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyContainerNetStatusResponse> ModifyContainerNetStatusOutcome;
                 typedef std::future<ModifyContainerNetStatusOutcome> ModifyContainerNetStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyContainerNetStatusRequest&, ModifyContainerNetStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContainerNetStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDefendStatusResponse> ModifyDefendStatusOutcome;
+                typedef std::future<ModifyDefendStatusOutcome> ModifyDefendStatusOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyDefendStatusRequest&, ModifyDefendStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefendStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEscapeEventStatusResponse> ModifyEscapeEventStatusOutcome;
                 typedef std::future<ModifyEscapeEventStatusOutcome> ModifyEscapeEventStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyEscapeEventStatusRequest&, ModifyEscapeEventStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEscapeEventStatusAsyncHandler;
@@ -1974,6 +1984,15 @@ namespace TencentCloud
                 CreateCheckComponentOutcome CreateCheckComponent(const Model::CreateCheckComponentRequest &request);
                 void CreateCheckComponentAsync(const Model::CreateCheckComponentRequest& request, const CreateCheckComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCheckComponentOutcomeCallable CreateCheckComponentCallable(const Model::CreateCheckComponentRequest& request);
+
+                /**
+                 *创建集群接入
+                 * @param req CreateClusterAccessRequest
+                 * @return CreateClusterAccessOutcome
+                 */
+                CreateClusterAccessOutcome CreateClusterAccess(const Model::CreateClusterAccessRequest &request);
+                void CreateClusterAccessAsync(const Model::CreateClusterAccessRequest& request, const CreateClusterAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterAccessOutcomeCallable CreateClusterAccessCallable(const Model::CreateClusterAccessRequest& request);
 
                 /**
                  *创建集群检查任务，用户检查用户的集群相关风险项
@@ -4380,6 +4399,15 @@ namespace TencentCloud
                 ModifyContainerNetStatusOutcome ModifyContainerNetStatus(const Model::ModifyContainerNetStatusRequest &request);
                 void ModifyContainerNetStatusAsync(const Model::ModifyContainerNetStatusRequest& request, const ModifyContainerNetStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyContainerNetStatusOutcomeCallable ModifyContainerNetStatusCallable(const Model::ModifyContainerNetStatusRequest& request);
+
+                /**
+                 *修改防护状态
+                 * @param req ModifyDefendStatusRequest
+                 * @return ModifyDefendStatusOutcome
+                 */
+                ModifyDefendStatusOutcome ModifyDefendStatus(const Model::ModifyDefendStatusRequest &request);
+                void ModifyDefendStatusAsync(const Model::ModifyDefendStatusRequest& request, const ModifyDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDefendStatusOutcomeCallable ModifyDefendStatusCallable(const Model::ModifyDefendStatusRequest& request);
 
                 /**
                  *ModifyEscapeEventStatus  修改容器逃逸扫描事件状态

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2286,6 +2286,48 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool EnableDestroyProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取kibana内网访问地址
+                     * @return ShowKibanaIpPort kibana内网访问地址
+                     * 
+                     */
+                    std::string GetShowKibanaIpPort() const;
+
+                    /**
+                     * 设置kibana内网访问地址
+                     * @param _showKibanaIpPort kibana内网访问地址
+                     * 
+                     */
+                    void SetShowKibanaIpPort(const std::string& _showKibanaIpPort);
+
+                    /**
+                     * 判断参数 ShowKibanaIpPort 是否已赋值
+                     * @return ShowKibanaIpPort 是否已赋值
+                     * 
+                     */
+                    bool ShowKibanaIpPortHasBeenSet() const;
+
+                    /**
+                     * 获取是否为CDZLite可用区
+                     * @return IsCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    bool GetIsCdzLite() const;
+
+                    /**
+                     * 设置是否为CDZLite可用区
+                     * @param _isCdzLite 是否为CDZLite可用区
+                     * 
+                     */
+                    void SetIsCdzLite(const bool& _isCdzLite);
+
+                    /**
+                     * 判断参数 IsCdzLite 是否已赋值
+                     * @return IsCdzLite 是否已赋值
+                     * 
+                     */
+                    bool IsCdzLiteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2914,6 +2956,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_enableDestroyProtection;
                     bool m_enableDestroyProtectionHasBeenSet;
+
+                    /**
+                     * kibana内网访问地址
+                     */
+                    std::string m_showKibanaIpPort;
+                    bool m_showKibanaIpPortHasBeenSet;
+
+                    /**
+                     * 是否为CDZLite可用区
+                     */
+                    bool m_isCdzLite;
+                    bool m_isCdzLiteHasBeenSet;
 
                 };
             }

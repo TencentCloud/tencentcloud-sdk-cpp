@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -567,7 +567,7 @@ namespace TencentCloud
                 DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request);
 
                 /**
-                 *本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。
+                 *本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。当前仅保存近两年的伸缩活动。
                  * @param req DescribeAutoScalingActivitiesRequest
                  * @return DescribeAutoScalingActivitiesOutcome
                  */

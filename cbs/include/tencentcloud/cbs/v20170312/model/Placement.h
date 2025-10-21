@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool CageIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
-                     * @return ProjectId 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
+                     * 获取实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
+                     * @return ProjectId 实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
-                     * @param _projectId 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
+                     * 设置实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
+                     * @param _projectId 实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_cageIdHasBeenSet;
 
                     /**
-                     * 实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。
+                     * 实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

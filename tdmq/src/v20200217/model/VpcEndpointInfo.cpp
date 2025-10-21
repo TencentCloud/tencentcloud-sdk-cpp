@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ VpcEndpointInfo::VpcEndpointInfo() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_vpcEndpointHasBeenSet(false),
-    m_vpcDataStreamEndpointStatusHasBeenSet(false)
+    m_vpcDataStreamEndpointStatusHasBeenSet(false),
+    m_vpcTlsEndpointHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome VpcEndpointInfo::Deserialize(const rapidjson::Value &value)
         m_vpcDataStreamEndpointStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcTlsEndpoint") && !value["VpcTlsEndpoint"].IsNull())
+    {
+        if (!value["VpcTlsEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcEndpointInfo.VpcTlsEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcTlsEndpoint = string(value["VpcTlsEndpoint"].GetString());
+        m_vpcTlsEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void VpcEndpointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VpcDataStreamEndpointStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcDataStreamEndpointStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcTlsEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcTlsEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcTlsEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void VpcEndpointInfo::SetVpcDataStreamEndpointStatus(const string& _vpcDataStrea
 bool VpcEndpointInfo::VpcDataStreamEndpointStatusHasBeenSet() const
 {
     return m_vpcDataStreamEndpointStatusHasBeenSet;
+}
+
+string VpcEndpointInfo::GetVpcTlsEndpoint() const
+{
+    return m_vpcTlsEndpoint;
+}
+
+void VpcEndpointInfo::SetVpcTlsEndpoint(const string& _vpcTlsEndpoint)
+{
+    m_vpcTlsEndpoint = _vpcTlsEndpoint;
+    m_vpcTlsEndpointHasBeenSet = true;
+}
+
+bool VpcEndpointInfo::VpcTlsEndpointHasBeenSet() const
+{
+    return m_vpcTlsEndpointHasBeenSet;
 }
 

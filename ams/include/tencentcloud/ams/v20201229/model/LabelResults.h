@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取建议
-                     * @return Suggestion 建议
+                     * 获取建议值
+                     * @return Suggestion 建议值
                      * 
                      */
                     int64_t GetSuggestion() const;
 
                     /**
-                     * 设置建议
-                     * @param _suggestion 建议
+                     * 设置建议值
+                     * @param _suggestion 建议值
                      * 
                      */
                     void SetSuggestion(const int64_t& _suggestion);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 建议
+                     * 建议值
                      */
                     int64_t m_suggestion;
                     bool m_suggestionHasBeenSet;

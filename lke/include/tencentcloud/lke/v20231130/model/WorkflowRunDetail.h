@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,27 @@ namespace TencentCloud
                      * 
                      */
                     bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取工作流输出
+                     * @return Output 工作流输出
+                     * 
+                     */
+                    std::string GetOutput() const;
+
+                    /**
+                     * 设置工作流输出
+                     * @param _output 工作流输出
+                     * 
+                     */
+                    void SetOutput(const std::string& _output);
+
+                    /**
+                     * 判断参数 Output 是否已赋值
+                     * @return Output 是否已赋值
+                     * 
+                     */
+                    bool OutputHasBeenSet() const;
 
                     /**
                      * 获取运行状态。0: 排队中；1: 运行中；2: 运行成功；3: 运行失败； 4: 已取消
@@ -393,6 +414,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 工作流输出
+                     */
+                    std::string m_output;
+                    bool m_outputHasBeenSet;
 
                     /**
                      * 运行状态。0: 排队中；1: 运行中；2: 运行成功；3: 运行失败； 4: 已取消

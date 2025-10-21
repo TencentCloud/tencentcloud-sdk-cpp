@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,12 @@ KnowledgeBaseInfo::KnowledgeBaseInfo() :
     m_knowledgeDescriptionHasBeenSet(false),
     m_embeddingModelHasBeenSet(false),
     m_qaExtractModelHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_knowledgeTypeHasBeenSet(false),
+    m_ownerStaffIdHasBeenSet(false),
+    m_docTotalHasBeenSet(false),
+    m_processingFlagsHasBeenSet(false),
+    m_ownerStaffNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +100,59 @@ CoreInternalOutcome KnowledgeBaseInfo::Deserialize(const rapidjson::Value &value
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeType") && !value["KnowledgeType"].IsNull())
+    {
+        if (!value["KnowledgeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.KnowledgeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeType = value["KnowledgeType"].GetInt64();
+        m_knowledgeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerStaffId") && !value["OwnerStaffId"].IsNull())
+    {
+        if (!value["OwnerStaffId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.OwnerStaffId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerStaffId = string(value["OwnerStaffId"].GetString());
+        m_ownerStaffIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocTotal") && !value["DocTotal"].IsNull())
+    {
+        if (!value["DocTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.DocTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_docTotal = value["DocTotal"].GetInt64();
+        m_docTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcessingFlags") && !value["ProcessingFlags"].IsNull())
+    {
+        if (!value["ProcessingFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.ProcessingFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ProcessingFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_processingFlags.push_back((*itr).GetInt64());
+        }
+        m_processingFlagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerStaffName") && !value["OwnerStaffName"].IsNull())
+    {
+        if (!value["OwnerStaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.OwnerStaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerStaffName = string(value["OwnerStaffName"].GetString());
+        m_ownerStaffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +206,51 @@ void KnowledgeBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_knowledgeType, allocator);
+    }
+
+    if (m_ownerStaffIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerStaffId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerStaffId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_docTotal, allocator);
+    }
+
+    if (m_processingFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessingFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_processingFlags.begin(); itr != m_processingFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_ownerStaffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerStaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerStaffName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +350,85 @@ void KnowledgeBaseInfo::SetUpdateTime(const string& _updateTime)
 bool KnowledgeBaseInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+int64_t KnowledgeBaseInfo::GetKnowledgeType() const
+{
+    return m_knowledgeType;
+}
+
+void KnowledgeBaseInfo::SetKnowledgeType(const int64_t& _knowledgeType)
+{
+    m_knowledgeType = _knowledgeType;
+    m_knowledgeTypeHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::KnowledgeTypeHasBeenSet() const
+{
+    return m_knowledgeTypeHasBeenSet;
+}
+
+string KnowledgeBaseInfo::GetOwnerStaffId() const
+{
+    return m_ownerStaffId;
+}
+
+void KnowledgeBaseInfo::SetOwnerStaffId(const string& _ownerStaffId)
+{
+    m_ownerStaffId = _ownerStaffId;
+    m_ownerStaffIdHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::OwnerStaffIdHasBeenSet() const
+{
+    return m_ownerStaffIdHasBeenSet;
+}
+
+int64_t KnowledgeBaseInfo::GetDocTotal() const
+{
+    return m_docTotal;
+}
+
+void KnowledgeBaseInfo::SetDocTotal(const int64_t& _docTotal)
+{
+    m_docTotal = _docTotal;
+    m_docTotalHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::DocTotalHasBeenSet() const
+{
+    return m_docTotalHasBeenSet;
+}
+
+vector<int64_t> KnowledgeBaseInfo::GetProcessingFlags() const
+{
+    return m_processingFlags;
+}
+
+void KnowledgeBaseInfo::SetProcessingFlags(const vector<int64_t>& _processingFlags)
+{
+    m_processingFlags = _processingFlags;
+    m_processingFlagsHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::ProcessingFlagsHasBeenSet() const
+{
+    return m_processingFlagsHasBeenSet;
+}
+
+string KnowledgeBaseInfo::GetOwnerStaffName() const
+{
+    return m_ownerStaffName;
+}
+
+void KnowledgeBaseInfo::SetOwnerStaffName(const string& _ownerStaffName)
+{
+    m_ownerStaffName = _ownerStaffName;
+    m_ownerStaffNameHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::OwnerStaffNameHasBeenSet() const
+{
+    return m_ownerStaffNameHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ DescribeTokenUsageGraphRequest::DescribeTokenUsageGraphRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_appBizIdsHasBeenSet(false),
-    m_appTypeHasBeenSet(false)
+    m_appTypeHasBeenSet(false),
+    m_subScenesHasBeenSet(false),
+    m_statStartTimeHasBeenSet(false),
+    m_statEndTimeHasBeenSet(false)
 {
 }
 
@@ -104,6 +107,35 @@ string DescribeTokenUsageGraphRequest::ToJsonString() const
         string key = "AppType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subScenesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubScenes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subScenes.begin(); itr != m_subScenes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_statStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statStartTime, allocator);
+    }
+
+    if (m_statEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_statEndTime, allocator);
     }
 
 
@@ -224,6 +256,54 @@ void DescribeTokenUsageGraphRequest::SetAppType(const string& _appType)
 bool DescribeTokenUsageGraphRequest::AppTypeHasBeenSet() const
 {
     return m_appTypeHasBeenSet;
+}
+
+vector<string> DescribeTokenUsageGraphRequest::GetSubScenes() const
+{
+    return m_subScenes;
+}
+
+void DescribeTokenUsageGraphRequest::SetSubScenes(const vector<string>& _subScenes)
+{
+    m_subScenes = _subScenes;
+    m_subScenesHasBeenSet = true;
+}
+
+bool DescribeTokenUsageGraphRequest::SubScenesHasBeenSet() const
+{
+    return m_subScenesHasBeenSet;
+}
+
+int64_t DescribeTokenUsageGraphRequest::GetStatStartTime() const
+{
+    return m_statStartTime;
+}
+
+void DescribeTokenUsageGraphRequest::SetStatStartTime(const int64_t& _statStartTime)
+{
+    m_statStartTime = _statStartTime;
+    m_statStartTimeHasBeenSet = true;
+}
+
+bool DescribeTokenUsageGraphRequest::StatStartTimeHasBeenSet() const
+{
+    return m_statStartTimeHasBeenSet;
+}
+
+int64_t DescribeTokenUsageGraphRequest::GetStatEndTime() const
+{
+    return m_statEndTime;
+}
+
+void DescribeTokenUsageGraphRequest::SetStatEndTime(const int64_t& _statEndTime)
+{
+    m_statEndTime = _statEndTime;
+    m_statEndTimeHasBeenSet = true;
+}
+
+bool DescribeTokenUsageGraphRequest::StatEndTimeHasBeenSet() const
+{
+    return m_statEndTimeHasBeenSet;
 }
 
 

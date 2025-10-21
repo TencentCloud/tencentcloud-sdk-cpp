@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取内存，单位：GiB
+                     * @return Memory 内存，单位：GiB
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _memory 内存
+                     * 设置内存，单位：GiB
+                     * @param _memory 内存，单位：GiB
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取卡数，有0.25、0.5、1、2、4等
-                     * @return GpuNum 卡数，有0.25、0.5、1、2、4等
+                     * 获取卡数，有0.25、0.5、1、2、4和8
+                     * @return GpuNum 卡数，有0.25、0.5、1、2、4和8
                      * 
                      */
                     std::string GetGpuNum() const;
 
                     /**
-                     * 设置卡数，有0.25、0.5、1、2、4等
-                     * @param _gpuNum 卡数，有0.25、0.5、1、2、4等
+                     * 设置卡数，有0.25、0.5、1、2、4和8
+                     * @param _gpuNum 卡数，有0.25、0.5、1、2、4和8
                      * 
                      */
                     void SetGpuNum(const std::string& _gpuNum);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-                     * @return NodeName 节点名称
+                     * 获取节点 ID
+                     * @return NodeName 节点 ID
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeName 节点名称
+                     * 设置节点 ID
+                     * @param _nodeName 节点 ID
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -285,13 +285,13 @@ pod-not-deduct
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位：GiB
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 卡数，有0.25、0.5、1、2、4等
+                     * 卡数，有0.25、0.5、1、2、4和8
                      */
                     std::string m_gpuNum;
                     bool m_gpuNumHasBeenSet;
@@ -309,7 +309,7 @@ pod-not-deduct
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点名称
+                     * 节点 ID
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

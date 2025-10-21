@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +110,48 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
+                     * 获取如果Url为图片地址，标识图片宽度。
+                     * @return Width 如果Url为图片地址，标识图片宽度。
+                     * 
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置如果Url为图片地址，标识图片宽度。
+                     * @param _width 如果Url为图片地址，标识图片宽度。
+                     * 
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     * 
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取如果Url为图片地址，标识图片高度。
+                     * @return Height 如果Url为图片地址，标识图片高度。
+                     * 
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 设置如果Url为图片地址，标识图片高度。
+                     * @param _height 如果Url为图片地址，标识图片高度。
+                     * 
+                     */
+                    void SetHeight(const int64_t& _height);
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     * 
+                     */
+                    bool HeightHasBeenSet() const;
+
+                    /**
                      * 获取多媒体详情地址。
 说明：
 1. 仅 type 为 image 时，该字段有值。
@@ -141,6 +183,69 @@ namespace TencentCloud
                      * 
                      */
                     bool JumpUrlHasBeenSet() const;
+
+                    /**
+                     * 获取缩略图地址。
+                     * @return ThumbURL 缩略图地址。
+                     * 
+                     */
+                    std::string GetThumbURL() const;
+
+                    /**
+                     * 设置缩略图地址。
+                     * @param _thumbURL 缩略图地址。
+                     * 
+                     */
+                    void SetThumbURL(const std::string& _thumbURL);
+
+                    /**
+                     * 判断参数 ThumbURL 是否已赋值
+                     * @return ThumbURL 是否已赋值
+                     * 
+                     */
+                    bool ThumbURLHasBeenSet() const;
+
+                    /**
+                     * 获取缩略图宽度
+                     * @return ThumbWidth 缩略图宽度
+                     * 
+                     */
+                    int64_t GetThumbWidth() const;
+
+                    /**
+                     * 设置缩略图宽度
+                     * @param _thumbWidth 缩略图宽度
+                     * 
+                     */
+                    void SetThumbWidth(const int64_t& _thumbWidth);
+
+                    /**
+                     * 判断参数 ThumbWidth 是否已赋值
+                     * @return ThumbWidth 是否已赋值
+                     * 
+                     */
+                    bool ThumbWidthHasBeenSet() const;
+
+                    /**
+                     * 获取缩略图高度
+                     * @return ThumbHeight 缩略图高度
+                     * 
+                     */
+                    int64_t GetThumbHeight() const;
+
+                    /**
+                     * 设置缩略图高度
+                     * @param _thumbHeight 缩略图高度
+                     * 
+                     */
+                    void SetThumbHeight(const int64_t& _thumbHeight);
+
+                    /**
+                     * 判断参数 ThumbHeight 是否已赋值
+                     * @return ThumbHeight 是否已赋值
+                     * 
+                     */
+                    bool ThumbHeightHasBeenSet() const;
 
                     /**
                      * 获取名称。
@@ -266,6 +371,69 @@ namespace TencentCloud
                      */
                     bool ExtHasBeenSet() const;
 
+                    /**
+                     * 获取发布时间。
+                     * @return PublishTime 发布时间。
+                     * 
+                     */
+                    std::string GetPublishTime() const;
+
+                    /**
+                     * 设置发布时间。
+                     * @param _publishTime 发布时间。
+                     * 
+                     */
+                    void SetPublishTime(const std::string& _publishTime);
+
+                    /**
+                     * 判断参数 PublishTime 是否已赋值
+                     * @return PublishTime 是否已赋值
+                     * 
+                     */
+                    bool PublishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取站点名称
+                     * @return SiteName 站点名称
+                     * 
+                     */
+                    std::string GetSiteName() const;
+
+                    /**
+                     * 设置站点名称
+                     * @param _siteName 站点名称
+                     * 
+                     */
+                    void SetSiteName(const std::string& _siteName);
+
+                    /**
+                     * 判断参数 SiteName 是否已赋值
+                     * @return SiteName 是否已赋值
+                     * 
+                     */
+                    bool SiteNameHasBeenSet() const;
+
+                    /**
+                     * 获取站点图标
+                     * @return SiteIcon 站点图标
+                     * 
+                     */
+                    std::string GetSiteIcon() const;
+
+                    /**
+                     * 设置站点图标
+                     * @param _siteIcon 站点图标
+                     * 
+                     */
+                    void SetSiteIcon(const std::string& _siteIcon);
+
+                    /**
+                     * 判断参数 SiteIcon 是否已赋值
+                     * @return SiteIcon 是否已赋值
+                     * 
+                     */
+                    bool SiteIconHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +454,18 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
+                     * 如果Url为图片地址，标识图片宽度。
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 如果Url为图片地址，标识图片高度。
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
+
+                    /**
                      * 多媒体详情地址。
 说明：
 1. 仅 type 为 image 时，该字段有值。
@@ -293,6 +473,24 @@ namespace TencentCloud
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
+
+                    /**
+                     * 缩略图地址。
+                     */
+                    std::string m_thumbURL;
+                    bool m_thumbURLHasBeenSet;
+
+                    /**
+                     * 缩略图宽度
+                     */
+                    int64_t m_thumbWidth;
+                    bool m_thumbWidthHasBeenSet;
+
+                    /**
+                     * 缩略图高度
+                     */
+                    int64_t m_thumbHeight;
+                    bool m_thumbHeightHasBeenSet;
 
                     /**
                      * 名称。
@@ -327,6 +525,24 @@ namespace TencentCloud
                      */
                     SongExt m_ext;
                     bool m_extHasBeenSet;
+
+                    /**
+                     * 发布时间。
+                     */
+                    std::string m_publishTime;
+                    bool m_publishTimeHasBeenSet;
+
+                    /**
+                     * 站点名称
+                     */
+                    std::string m_siteName;
+                    bool m_siteNameHasBeenSet;
+
+                    /**
+                     * 站点图标
+                     */
+                    std::string m_siteIcon;
+                    bool m_siteIconHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取应用回复
+                     * 获取问题回复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Answer 应用回复
+                     * @return Answer 问题回复
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnswer() const;
 
                     /**
-                     * 设置应用回复
+                     * 设置问题回复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _answer 应用回复
+                     * @param _answer 问题回复
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,6 +171,94 @@ namespace TencentCloud
                      */
                     bool ReasonsHasBeenSet() const;
 
+                    /**
+                     * 获取处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间，秒级时间戳
+                     * @return CreateTime 创建时间，秒级时间戳
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间，秒级时间戳
+                     * @param _createTime 创建时间，秒级时间戳
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间,秒级时间戳
+                     * @return UpdateTime 更新时间,秒级时间戳
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间,秒级时间戳
+                     * @param _updateTime 更新时间,秒级时间戳
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取操作人
+                     * @return Operator 操作人
+                     * 
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作人
+                     * @param _operator 操作人
+                     * 
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * 
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,7 +283,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 应用回复
+                     * 问题回复
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_answer;
@@ -207,6 +295,31 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;
+
+                    /**
+                     * 处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 创建时间，秒级时间戳
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 更新时间,秒级时间戳
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 操作人
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

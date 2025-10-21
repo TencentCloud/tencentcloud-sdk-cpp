@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetailPrice.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 关于Lighthouse Instance实例的价格信息
+                * 关于Lighthouse Instance实例的价格信息。
                 */
                 class InstancePrice : public AbstractModel
                 {
@@ -151,6 +152,27 @@ namespace TencentCloud
                      */
                     bool CurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取计费项目明细。
+                     * @return DetailPrices 计费项目明细。
+                     * 
+                     */
+                    std::vector<DetailPrice> GetDetailPrices() const;
+
+                    /**
+                     * 设置计费项目明细。
+                     * @param _detailPrices 计费项目明细。
+                     * 
+                     */
+                    void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
+
+                    /**
+                     * 判断参数 DetailPrices 是否已赋值
+                     * @return DetailPrices 是否已赋值
+                     * 
+                     */
+                    bool DetailPricesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +204,12 @@ namespace TencentCloud
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 计费项目明细。
+                     */
+                    std::vector<DetailPrice> m_detailPrices;
+                    bool m_detailPricesHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tmt/v20180321/model/BoundingBox.h>
+#include <tencentcloud/tmt/v20180321/model/RotateParagraphRect.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,27 @@ namespace TencentCloud
                      */
                     bool SpamCodeHasBeenSet() const;
 
+                    /**
+                     * 获取段落文本旋转信息，只在valid为true时表示坐标有效
+                     * @return RotateParagraphRect 段落文本旋转信息，只在valid为true时表示坐标有效
+                     * 
+                     */
+                    RotateParagraphRect GetRotateParagraphRect() const;
+
+                    /**
+                     * 设置段落文本旋转信息，只在valid为true时表示坐标有效
+                     * @param _rotateParagraphRect 段落文本旋转信息，只在valid为true时表示坐标有效
+                     * 
+                     */
+                    void SetRotateParagraphRect(const RotateParagraphRect& _rotateParagraphRect);
+
+                    /**
+                     * 判断参数 RotateParagraphRect 是否已赋值
+                     * @return RotateParagraphRect 是否已赋值
+                     * 
+                     */
+                    bool RotateParagraphRectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +232,12 @@ namespace TencentCloud
                      */
                     int64_t m_spamCode;
                     bool m_spamCodeHasBeenSet;
+
+                    /**
+                     * 段落文本旋转信息，只在valid为true时表示坐标有效
+                     */
+                    RotateParagraphRect m_rotateParagraphRect;
+                    bool m_rotateParagraphRectHasBeenSet;
 
                 };
             }

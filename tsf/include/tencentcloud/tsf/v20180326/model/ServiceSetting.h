@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool LoadBalancerProvisionerHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡类型
-                     * @return LoadBalancingType 负载均衡类型
+                     * 获取负载均衡类型，Intranet表示内网，Internet表示外网
+                     * @return LoadBalancingType 负载均衡类型，Intranet表示内网，Internet表示外网
                      * 
                      */
                     std::string GetLoadBalancingType() const;
 
                     /**
-                     * 设置负载均衡类型
-                     * @param _loadBalancingType 负载均衡类型
+                     * 设置负载均衡类型，Intranet表示内网，Internet表示外网
+                     * @param _loadBalancingType 负载均衡类型，Intranet表示内网，Internet表示外网
                      * 
                      */
                     void SetLoadBalancingType(const std::string& _loadBalancingType);
@@ -584,7 +584,7 @@ namespace TencentCloud
                     bool m_loadBalancerProvisionerHasBeenSet;
 
                     /**
-                     * 负载均衡类型
+                     * 负载均衡类型，Intranet表示内网，Internet表示外网
                      */
                     std::string m_loadBalancingType;
                     bool m_loadBalancingTypeHasBeenSet;

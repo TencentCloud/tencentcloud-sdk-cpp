@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ChannelCreateOrganizationBatchSignUrlRequest::ChannelCreateOrganizationBatchSign
     m_openIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_flowGroupIdHasBeenSet(false)
+    m_flowGroupIdHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string ChannelCreateOrganizationBatchSignUrlRequest::ToJsonString() const
         string key = "FlowGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
     }
 
 
@@ -195,6 +204,22 @@ void ChannelCreateOrganizationBatchSignUrlRequest::SetFlowGroupId(const string& 
 bool ChannelCreateOrganizationBatchSignUrlRequest::FlowGroupIdHasBeenSet() const
 {
     return m_flowGroupIdHasBeenSet;
+}
+
+bool ChannelCreateOrganizationBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void ChannelCreateOrganizationBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool ChannelCreateOrganizationBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
 }
 
 

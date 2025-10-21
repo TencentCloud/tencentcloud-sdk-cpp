@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeBotSceneOverviewResponse::DescribeBotSceneOverviewResponse() :
     m_sceneCountHasBeenSet(false),
     m_validSceneCountHasBeenSet(false),
     m_currentGlobalSceneHasBeenSet(false),
-    m_customRuleNumsHasBeenSet(false)
+    m_customRuleNumsHasBeenSet(false),
+    m_tldStatusHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome DescribeBotSceneOverviewResponse::Deserialize(const string &
         m_customRuleNumsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TldStatus") && !rsp["TldStatus"].IsNull())
+    {
+        if (!rsp["TldStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TldStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_tldStatus = rsp["TldStatus"].GetBool();
+        m_tldStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -174,11 +185,19 @@ string DescribeBotSceneOverviewResponse::ToJsonString() const
         value.AddMember(iKey, m_customRuleNums, allocator);
     }
 
+    if (m_tldStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TldStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tldStatus, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -234,6 +253,16 @@ int64_t DescribeBotSceneOverviewResponse::GetCustomRuleNums() const
 bool DescribeBotSceneOverviewResponse::CustomRuleNumsHasBeenSet() const
 {
     return m_customRuleNumsHasBeenSet;
+}
+
+bool DescribeBotSceneOverviewResponse::GetTldStatus() const
+{
+    return m_tldStatus;
+}
+
+bool DescribeBotSceneOverviewResponse::TldStatusHasBeenSet() const
+{
+    return m_tldStatusHasBeenSet;
 }
 
 

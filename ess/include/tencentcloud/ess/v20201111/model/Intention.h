@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/IntentionQuestion.h>
 #include <tencentcloud/ess/v20201111/model/IntentionAction.h>
+#include <tencentcloud/ess/v20201111/model/RuleIdConfig.h>
 
 
 namespace TencentCloud
@@ -145,6 +146,27 @@ namespace TencentCloud
                      */
                     bool IntentionActionsHasBeenSet() const;
 
+                    /**
+                     * 获取视频核身相关配置
+                     * @return RuleIdConfig 视频核身相关配置
+                     * 
+                     */
+                    RuleIdConfig GetRuleIdConfig() const;
+
+                    /**
+                     * 设置视频核身相关配置
+                     * @param _ruleIdConfig 视频核身相关配置
+                     * 
+                     */
+                    void SetRuleIdConfig(const RuleIdConfig& _ruleIdConfig);
+
+                    /**
+                     * 判断参数 RuleIdConfig 是否已赋值
+                     * @return RuleIdConfig 是否已赋值
+                     * 
+                     */
+                    bool RuleIdConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +194,12 @@ namespace TencentCloud
                      */
                     std::vector<IntentionAction> m_intentionActions;
                     bool m_intentionActionsHasBeenSet;
+
+                    /**
+                     * 视频核身相关配置
+                     */
+                    RuleIdConfig m_ruleIdConfig;
+                    bool m_ruleIdConfigHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ NodeInfos::NodeInfos() :
     m_zoneHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_computeGroupIdHasBeenSet(false),
-    m_rIpHasBeenSet(false)
+    m_rIpHasBeenSet(false),
+    m_virtualZoneHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome NodeInfos::Deserialize(const rapidjson::Value &value)
         m_rIpHasBeenSet = true;
     }
 
+    if (value.HasMember("VirtualZone") && !value["VirtualZone"].IsNull())
+    {
+        if (!value["VirtualZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfos.VirtualZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualZone = string(value["VirtualZone"].GetString());
+        m_virtualZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void NodeInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virtualZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirtualZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virtualZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void NodeInfos::SetRIp(const string& _rIp)
 bool NodeInfos::RIpHasBeenSet() const
 {
     return m_rIpHasBeenSet;
+}
+
+string NodeInfos::GetVirtualZone() const
+{
+    return m_virtualZone;
+}
+
+void NodeInfos::SetVirtualZone(const string& _virtualZone)
+{
+    m_virtualZone = _virtualZone;
+    m_virtualZoneHasBeenSet = true;
+}
+
+bool NodeInfos::VirtualZoneHasBeenSet() const
+{
+    return m_virtualZoneHasBeenSet;
 }
 

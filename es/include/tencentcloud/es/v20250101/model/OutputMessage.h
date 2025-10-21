@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20250101/model/ToolCall.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,27 @@ namespace TencentCloud
                      */
                     bool ReasoningContentHasBeenSet() const;
 
+                    /**
+                     * 获取模型生成的工具调用
+                     * @return ToolCalls 模型生成的工具调用
+                     * 
+                     */
+                    std::vector<ToolCall> GetToolCalls() const;
+
+                    /**
+                     * 设置模型生成的工具调用
+                     * @param _toolCalls 模型生成的工具调用
+                     * 
+                     */
+                    void SetToolCalls(const std::vector<ToolCall>& _toolCalls);
+
+                    /**
+                     * 判断参数 ToolCalls 是否已赋值
+                     * @return ToolCalls 是否已赋值
+                     * 
+                     */
+                    bool ToolCallsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +150,12 @@ namespace TencentCloud
                      */
                     std::string m_reasoningContent;
                     bool m_reasoningContentHasBeenSet;
+
+                    /**
+                     * 模型生成的工具调用
+                     */
+                    std::vector<ToolCall> m_toolCalls;
+                    bool m_toolCallsHasBeenSet;
 
                 };
             }

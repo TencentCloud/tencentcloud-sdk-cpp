@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfo.h>
 #include <tencentcloud/mps/v20190612/model/TEHDConfig.h>
 #include <tencentcloud/mps/v20190612/model/EnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
 
 
 namespace TencentCloud
@@ -202,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdExtInfo 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdExtInfo() const;
 
                     /**
                      * 设置扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdExtInfo 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdExtInfo(const std::string& _stdExtInfo);
@@ -249,6 +246,31 @@ namespace TencentCloud
                      * 
                      */
                     bool EnhanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleTemplate 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubtitleTemplate GetSubtitleTemplate() const;
+
+                    /**
+                     * 设置字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleTemplate 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
+
+                    /**
+                     * 判断参数 SubtitleTemplate 是否已赋值
+                     * @return SubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool SubtitleTemplateHasBeenSet() const;
 
                 private:
 
@@ -296,7 +318,6 @@ namespace TencentCloud
 
                     /**
                      * 扩展参数，序列化的 json 字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;
@@ -307,6 +328,13 @@ namespace TencentCloud
                      */
                     EnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * 字幕参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubtitleTemplate m_subtitleTemplate;
+                    bool m_subtitleTemplateHasBeenSet;
 
                 };
             }

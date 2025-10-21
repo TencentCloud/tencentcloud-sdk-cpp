@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -377,6 +377,27 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * @return DataPlaneV2 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * 
+                     */
+                    bool GetDataPlaneV2() const;
+
+                    /**
+                     * 设置是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * @param _dataPlaneV2 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     * 
+                     */
+                    void SetDataPlaneV2(const bool& _dataPlaneV2);
+
+                    /**
+                     * 判断参数 DataPlaneV2 是否已赋值
+                     * @return DataPlaneV2 是否已赋值
+                     * 
+                     */
+                    bool DataPlaneV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -472,6 +493,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 是否启用了 DataPlaneV2（cilium替代kube-proxy）
+                     */
+                    bool m_dataPlaneV2;
+                    bool m_dataPlaneV2HasBeenSet;
 
                 };
             }

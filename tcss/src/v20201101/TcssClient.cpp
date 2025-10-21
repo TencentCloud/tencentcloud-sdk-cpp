@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1194,6 +1194,49 @@ TcssClient::CreateCheckComponentOutcomeCallable TcssClient::CreateCheckComponent
         [this, request]()
         {
             return this->CreateCheckComponent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateClusterAccessOutcome TcssClient::CreateClusterAccess(const CreateClusterAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterAccessResponse rsp = CreateClusterAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterAccessOutcome(rsp);
+        else
+            return CreateClusterAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterAccessOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateClusterAccessAsync(const CreateClusterAccessRequest& request, const CreateClusterAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateClusterAccessOutcomeCallable TcssClient::CreateClusterAccessCallable(const CreateClusterAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterAccess(request);
         }
     );
 
@@ -12675,6 +12718,49 @@ TcssClient::ModifyContainerNetStatusOutcomeCallable TcssClient::ModifyContainerN
         [this, request]()
         {
             return this->ModifyContainerNetStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyDefendStatusOutcome TcssClient::ModifyDefendStatus(const ModifyDefendStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDefendStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDefendStatusResponse rsp = ModifyDefendStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDefendStatusOutcome(rsp);
+        else
+            return ModifyDefendStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDefendStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyDefendStatusAsync(const ModifyDefendStatusRequest& request, const ModifyDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDefendStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyDefendStatusOutcomeCallable TcssClient::ModifyDefendStatusCallable(const ModifyDefendStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDefendStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDefendStatus(request);
         }
     );
 

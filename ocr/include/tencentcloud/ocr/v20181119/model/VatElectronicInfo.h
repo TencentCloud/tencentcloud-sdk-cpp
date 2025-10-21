@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -509,6 +509,27 @@ namespace TencentCloud
                      */
                     bool CompanySealMarkHasBeenSet() const;
 
+                    /**
+                     * 获取全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。
+                     * @return InvoicePageIndex 全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。
+                     * 
+                     */
+                    std::string GetInvoicePageIndex() const;
+
+                    /**
+                     * 设置全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。
+                     * @param _invoicePageIndex 全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。
+                     * 
+                     */
+                    void SetInvoicePageIndex(const std::string& _invoicePageIndex);
+
+                    /**
+                     * 判断参数 InvoicePageIndex 是否已赋值
+                     * @return InvoicePageIndex 是否已赋值
+                     * 
+                     */
+                    bool InvoicePageIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -642,6 +663,12 @@ namespace TencentCloud
                      */
                     int64_t m_companySealMark;
                     bool m_companySealMarkHasBeenSet;
+
+                    /**
+                     * 全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。
+                     */
+                    std::string m_invoicePageIndex;
+                    bool m_invoicePageIndexHasBeenSet;
 
                 };
             }

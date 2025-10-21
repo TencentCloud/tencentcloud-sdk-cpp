@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取APP ID
+                     * @return TargetAppId APP ID
+                     * 
+                     */
+                    std::string GetTargetAppId() const;
+
+                    /**
+                     * 设置APP ID
+                     * @param _targetAppId APP ID
+                     * 
+                     */
+                    void SetTargetAppId(const std::string& _targetAppId);
+
+                    /**
+                     * 判断参数 TargetAppId 是否已赋值
+                     * @return TargetAppId 是否已赋值
+                     * 
+                     */
+                    bool TargetAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * APP ID
+                     */
+                    std::string m_targetAppId;
+                    bool m_targetAppIdHasBeenSet;
 
                 };
             }

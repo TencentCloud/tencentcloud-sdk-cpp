@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -177,15 +177,35 @@ namespace TencentCloud
                     bool DataBasesHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。
-                     * @return SortBy 排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。
+                     * 获取排序字段，当前支持字段及含义如下，默认值为 Timestamp。
+1. Timestamp：SQL 的执行时间
+2. QueryTime：SQL 的执行时长（秒）
+3. LockTime：锁时长（秒）
+4. RowsExamined：扫描行数
+5. RowsSent：结果集行数
+                     * @return SortBy 排序字段，当前支持字段及含义如下，默认值为 Timestamp。
+1. Timestamp：SQL 的执行时间
+2. QueryTime：SQL 的执行时长（秒）
+3. LockTime：锁时长（秒）
+4. RowsExamined：扫描行数
+5. RowsSent：结果集行数
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。
-                     * @param _sortBy 排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。
+                     * 设置排序字段，当前支持字段及含义如下，默认值为 Timestamp。
+1. Timestamp：SQL 的执行时间
+2. QueryTime：SQL 的执行时长（秒）
+3. LockTime：锁时长（秒）
+4. RowsExamined：扫描行数
+5. RowsSent：结果集行数
+                     * @param _sortBy 排序字段，当前支持字段及含义如下，默认值为 Timestamp。
+1. Timestamp：SQL 的执行时间
+2. QueryTime：SQL 的执行时长（秒）
+3. LockTime：锁时长（秒）
+4. RowsExamined：扫描行数
+5. RowsSent：结果集行数
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -198,15 +218,15 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取升序还是降序排列。当前支持：ASC,DESC 。
-                     * @return OrderBy 升序还是降序排列。当前支持：ASC,DESC 。
+                     * 获取升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。
+                     * @return OrderBy 升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置升序还是降序排列。当前支持：ASC,DESC 。
-                     * @param _orderBy 升序还是降序排列。当前支持：ASC,DESC 。
+                     * 设置升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。
+                     * @param _orderBy 升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -240,15 +260,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取一次性返回的记录数量，默认为100，最大为400。
-                     * @return Limit 一次性返回的记录数量，默认为100，最大为400。
+                     * 获取一次性返回的记录数量，默认为100，最大为800。
+                     * @return Limit 一次性返回的记录数量，默认为100，最大为800。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一次性返回的记录数量，默认为100，最大为400。
-                     * @param _limit 一次性返回的记录数量，默认为100，最大为400。
+                     * 设置一次性返回的记录数量，默认为100，最大为800。
+                     * @param _limit 一次性返回的记录数量，默认为100，最大为800。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -305,7 +325,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -343,13 +363,18 @@ namespace TencentCloud
                     bool m_dataBasesHasBeenSet;
 
                     /**
-                     * 排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。
+                     * 排序字段，当前支持字段及含义如下，默认值为 Timestamp。
+1. Timestamp：SQL 的执行时间
+2. QueryTime：SQL 的执行时长（秒）
+3. LockTime：锁时长（秒）
+4. RowsExamined：扫描行数
+5. RowsSent：结果集行数
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 升序还是降序排列。当前支持：ASC,DESC 。
+                     * 升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
@@ -361,7 +386,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 一次性返回的记录数量，默认为100，最大为400。
+                     * 一次性返回的记录数量，默认为100，最大为800。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

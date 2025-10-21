@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ using namespace std;
 DescribeInstanceRenewNodesResponse::DescribeInstanceRenewNodesResponse() :
     m_totalCntHasBeenSet(false),
     m_nodeListHasBeenSet(false),
-    m_metaInfoHasBeenSet(false)
+    m_metaInfoHasBeenSet(false),
+    m_redisInfoHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,19 @@ CoreInternalOutcome DescribeInstanceRenewNodesResponse::Deserialize(const string
         m_metaInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RedisInfo") && !rsp["RedisInfo"].IsNull())
+    {
+        if (!rsp["RedisInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RedisInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RedisInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_redisInfo.push_back((*itr).GetString());
+        }
+        m_redisInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,11 +167,24 @@ string DescribeInstanceRenewNodesResponse::ToJsonString() const
         }
     }
 
+    if (m_redisInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedisInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_redisInfo.begin(); itr != m_redisInfo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -193,6 +220,16 @@ vector<string> DescribeInstanceRenewNodesResponse::GetMetaInfo() const
 bool DescribeInstanceRenewNodesResponse::MetaInfoHasBeenSet() const
 {
     return m_metaInfoHasBeenSet;
+}
+
+vector<string> DescribeInstanceRenewNodesResponse::GetRedisInfo() const
+{
+    return m_redisInfo;
+}
+
+bool DescribeInstanceRenewNodesResponse::RedisInfoHasBeenSet() const
+{
+    return m_redisInfoHasBeenSet;
 }
 
 

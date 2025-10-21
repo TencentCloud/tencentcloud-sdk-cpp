@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解析规则类型
-                     * @return SchemaType 解析规则类型
+                     * 获取解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。
+                     * @return SchemaType 解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。
                      * 
                      */
                     int64_t GetSchemaType() const;
 
                     /**
-                     * 设置解析规则类型
-                     * @param _schemaType 解析规则类型
+                     * 设置解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。
+                     * @param _schemaType 解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。
                      * 
                      */
                     void SetSchemaType(const int64_t& _schemaType);
@@ -143,15 +143,15 @@ namespace TencentCloud
                     bool SchemaMultilinePatternHasBeenSet() const;
 
                     /**
-                     * 获取解析规则创建时间
-                     * @return SchemaCreateTime 解析规则创建时间
+                     * 获取解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss
+                     * @return SchemaCreateTime 解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetSchemaCreateTime() const;
 
                     /**
-                     * 设置解析规则创建时间
-                     * @param _schemaCreateTime 解析规则创建时间
+                     * 设置解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss
+                     * @param _schemaCreateTime 解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetSchemaCreateTime(const std::string& _schemaCreateTime);
@@ -191,7 +191,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解析规则类型
+                     * 解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。
                      */
                     int64_t m_schemaType;
                     bool m_schemaTypeHasBeenSet;
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_schemaMultilinePatternHasBeenSet;
 
                     /**
-                     * 解析规则创建时间
+                     * 解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_schemaCreateTime;
                     bool m_schemaCreateTimeHasBeenSet;

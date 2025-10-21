@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ UserInfo::UserInfo() :
     m_authRoleHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_userDescHasBeenSet(false)
+    m_userDescHasBeenSet(false),
+    m_consolePassUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_userDescHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsolePassUpdateTime") && !value["ConsolePassUpdateTime"].IsNull())
+    {
+        if (!value["ConsolePassUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.ConsolePassUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consolePassUpdateTime = string(value["ConsolePassUpdateTime"].GetString());
+        m_consolePassUpdateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UserDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consolePassUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsolePassUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consolePassUpdateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void UserInfo::SetUserDesc(const string& _userDesc)
 bool UserInfo::UserDescHasBeenSet() const
 {
     return m_userDescHasBeenSet;
+}
+
+string UserInfo::GetConsolePassUpdateTime() const
+{
+    return m_consolePassUpdateTime;
+}
+
+void UserInfo::SetConsolePassUpdateTime(const string& _consolePassUpdateTime)
+{
+    m_consolePassUpdateTime = _consolePassUpdateTime;
+    m_consolePassUpdateTimeHasBeenSet = true;
+}
+
+bool UserInfo::ConsolePassUpdateTimeHasBeenSet() const
+{
+    return m_consolePassUpdateTimeHasBeenSet;
 }
 

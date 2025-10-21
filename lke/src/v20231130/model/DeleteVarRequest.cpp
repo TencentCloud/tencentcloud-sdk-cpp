@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteVarRequest::DeleteVarRequest() :
     m_appBizIdHasBeenSet(false),
-    m_varIdHasBeenSet(false)
+    m_varIdHasBeenSet(false),
+    m_varModuleTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteVarRequest::ToJsonString() const
         string key = "VarId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_varId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_varModuleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VarModuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_varModuleType, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteVarRequest::SetVarId(const string& _varId)
 bool DeleteVarRequest::VarIdHasBeenSet() const
 {
     return m_varIdHasBeenSet;
+}
+
+uint64_t DeleteVarRequest::GetVarModuleType() const
+{
+    return m_varModuleType;
+}
+
+void DeleteVarRequest::SetVarModuleType(const uint64_t& _varModuleType)
+{
+    m_varModuleType = _varModuleType;
+    m_varModuleTypeHasBeenSet = true;
+}
+
+bool DeleteVarRequest::VarModuleTypeHasBeenSet() const
+{
+    return m_varModuleTypeHasBeenSet;
 }
 
 

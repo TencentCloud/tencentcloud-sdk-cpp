@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabel.h>
+#include <tencentcloud/lke/v20231130/model/UpdatePeriodInfo.h>
 
 
 namespace TencentCloud
@@ -410,6 +411,38 @@ namespace TencentCloud
                      */
                     bool IsDownloadHasBeenSet() const;
 
+                    /**
+                     * 获取自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SplitRule 自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSplitRule() const;
+
+                    /**
+                     * 判断参数 SplitRule 是否已赋值
+                     * @return SplitRule 是否已赋值
+                     * 
+                     */
+                    bool SplitRuleHasBeenSet() const;
+
+                    /**
+                     * 获取文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatePeriodInfo 文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UpdatePeriodInfo GetUpdatePeriodInfo() const;
+
+                    /**
+                     * 判断参数 UpdatePeriodInfo 是否已赋值
+                     * @return UpdatePeriodInfo 是否已赋值
+                     * 
+                     */
+                    bool UpdatePeriodInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -568,6 +601,20 @@ namespace TencentCloud
                      */
                     bool m_isDownload;
                     bool m_isDownloadHasBeenSet;
+
+                    /**
+                     * 自定义切分规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_splitRule;
+                    bool m_splitRuleHasBeenSet;
+
+                    /**
+                     * 文档更新频率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UpdatePeriodInfo m_updatePeriodInfo;
+                    bool m_updatePeriodInfoHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,10 @@
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchContractReviewTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchContractReviewTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationAuthorizationUrlRequest.h>
@@ -45,8 +49,12 @@
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateContractDiffTaskWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
@@ -87,6 +95,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
@@ -99,6 +109,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateMiniAppPrepareFlowRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateMiniAppPrepareFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
@@ -131,6 +143,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateSealResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h>
@@ -155,6 +169,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
@@ -165,8 +181,14 @@
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
@@ -185,6 +207,10 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeInformationExtractionWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
@@ -203,6 +229,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h>
@@ -213,6 +241,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h>
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
@@ -227,6 +257,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsRequest.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateTemplateRequest.h>
@@ -277,6 +309,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchContractReviewTaskResponse> CreateBatchContractReviewTaskOutcome;
+                typedef std::future<CreateBatchContractReviewTaskOutcome> CreateBatchContractReviewTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchContractReviewTaskRequest&, CreateBatchContractReviewTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchContractReviewTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchInformationExtractionTaskResponse> CreateBatchInformationExtractionTaskOutcome;
+                typedef std::future<CreateBatchInformationExtractionTaskOutcome> CreateBatchInformationExtractionTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchInformationExtractionTaskRequest&, CreateBatchInformationExtractionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInformationExtractionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchInitOrganizationUrlResponse> CreateBatchInitOrganizationUrlOutcome;
                 typedef std::future<CreateBatchInitOrganizationUrlOutcome> CreateBatchInitOrganizationUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchInitOrganizationUrlRequest&, CreateBatchInitOrganizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInitOrganizationUrlAsyncHandler;
@@ -292,9 +330,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchSignUrlResponse> CreateBatchSignUrlOutcome;
                 typedef std::future<CreateBatchSignUrlOutcome> CreateBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchSignUrlRequest&, CreateBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateContractComparisonTaskResponse> CreateContractComparisonTaskOutcome;
+                typedef std::future<CreateContractComparisonTaskOutcome> CreateContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateContractComparisonTaskRequest&, CreateContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateContractDiffTaskWebUrlResponse> CreateContractDiffTaskWebUrlOutcome;
                 typedef std::future<CreateContractDiffTaskWebUrlOutcome> CreateContractDiffTaskWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateContractDiffTaskWebUrlRequest&, CreateContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractDiffTaskWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateContractReviewWebUrlResponse> CreateContractReviewWebUrlOutcome;
+                typedef std::future<CreateContractReviewWebUrlOutcome> CreateContractReviewWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateContractReviewWebUrlRequest&, CreateContractReviewWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContractReviewWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConvertTaskApiResponse> CreateConvertTaskApiOutcome;
                 typedef std::future<CreateConvertTaskApiOutcome> CreateConvertTaskApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateConvertTaskApiRequest&, CreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConvertTaskApiAsyncHandler;
@@ -355,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowSignUrlResponse> CreateFlowSignUrlOutcome;
                 typedef std::future<CreateFlowSignUrlOutcome> CreateFlowSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignUrlRequest&, CreateFlowSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInformationExtractionWebUrlResponse> CreateInformationExtractionWebUrlOutcome;
+                typedef std::future<CreateInformationExtractionWebUrlOutcome> CreateInformationExtractionWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateInformationExtractionWebUrlRequest&, CreateInformationExtractionWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInformationExtractionWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationDepartmentResponse> CreateIntegrationDepartmentOutcome;
                 typedef std::future<CreateIntegrationDepartmentOutcome> CreateIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationDepartmentRequest&, CreateIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationDepartmentAsyncHandler;
@@ -373,6 +420,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLegalSealQrCodeResponse> CreateLegalSealQrCodeOutcome;
                 typedef std::future<CreateLegalSealQrCodeOutcome> CreateLegalSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateLegalSealQrCodeRequest&, CreateLegalSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLegalSealQrCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMiniAppPrepareFlowResponse> CreateMiniAppPrepareFlowOutcome;
+                typedef std::future<CreateMiniAppPrepareFlowOutcome> CreateMiniAppPrepareFlowOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateMiniAppPrepareFlowRequest&, CreateMiniAppPrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMiniAppPrepareFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateModifyAdminAuthorizationUrlResponse> CreateModifyAdminAuthorizationUrlOutcome;
                 typedef std::future<CreateModifyAdminAuthorizationUrlOutcome> CreateModifyAdminAuthorizationUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateModifyAdminAuthorizationUrlRequest&, CreateModifyAdminAuthorizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModifyAdminAuthorizationUrlAsyncHandler;
@@ -421,6 +471,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSealPolicyResponse> CreateSealPolicyOutcome;
                 typedef std::future<CreateSealPolicyOutcome> CreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSealPolicyRequest&, CreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSingleSignOnEmployeesResponse> CreateSingleSignOnEmployeesOutcome;
+                typedef std::future<CreateSingleSignOnEmployeesOutcome> CreateSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateSingleSignOnEmployeesRequest&, CreateSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignEnableUrlResponse> CreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<CreateUserAutoSignEnableUrlOutcome> CreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignEnableUrlRequest&, CreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignEnableUrlAsyncHandler;
@@ -457,6 +510,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSingleSignOnEmployeesResponse> DeleteSingleSignOnEmployeesOutcome;
+                typedef std::future<DeleteSingleSignOnEmployeesOutcome> DeleteSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteSingleSignOnEmployeesRequest&, DeleteSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationTasksResponse> DescribeBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationTasksOutcome> DescribeBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBatchOrganizationRegistrationTasksRequest&, DescribeBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationTasksAsyncHandler;
@@ -472,9 +528,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCancelFlowsTaskResponse> DescribeCancelFlowsTaskOutcome;
                 typedef std::future<DescribeCancelFlowsTaskOutcome> DescribeCancelFlowsTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeCancelFlowsTaskRequest&, DescribeCancelFlowsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCancelFlowsTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractComparisonTaskResponse> DescribeContractComparisonTaskOutcome;
+                typedef std::future<DescribeContractComparisonTaskOutcome> DescribeContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractComparisonTaskRequest&, DescribeContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContractDiffTaskWebUrlResponse> DescribeContractDiffTaskWebUrlOutcome;
                 typedef std::future<DescribeContractDiffTaskWebUrlOutcome> DescribeContractDiffTaskWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractDiffTaskWebUrlRequest&, DescribeContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractDiffTaskWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractReviewTaskResponse> DescribeContractReviewTaskOutcome;
+                typedef std::future<DescribeContractReviewTaskOutcome> DescribeContractReviewTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractReviewTaskRequest&, DescribeContractReviewTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractReviewWebUrlResponse> DescribeContractReviewWebUrlOutcome;
+                typedef std::future<DescribeContractReviewWebUrlOutcome> DescribeContractReviewWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractReviewWebUrlRequest&, DescribeContractReviewWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthDetailResponse> DescribeExtendedServiceAuthDetailOutcome;
                 typedef std::future<DescribeExtendedServiceAuthDetailOutcome> DescribeExtendedServiceAuthDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthDetailRequest&, DescribeExtendedServiceAuthDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthDetailAsyncHandler;
@@ -502,6 +567,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
                 typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInformationExtractionTaskResponse> DescribeInformationExtractionTaskOutcome;
+                typedef std::future<DescribeInformationExtractionTaskOutcome> DescribeInformationExtractionTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeInformationExtractionTaskRequest&, DescribeInformationExtractionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInformationExtractionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInformationExtractionWebUrlResponse> DescribeInformationExtractionWebUrlOutcome;
+                typedef std::future<DescribeInformationExtractionWebUrlOutcome> DescribeInformationExtractionWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeInformationExtractionWebUrlRequest&, DescribeInformationExtractionWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInformationExtractionWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationDepartmentsResponse> DescribeIntegrationDepartmentsOutcome;
                 typedef std::future<DescribeIntegrationDepartmentsOutcome> DescribeIntegrationDepartmentsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationDepartmentsRequest&, DescribeIntegrationDepartmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationDepartmentsAsyncHandler;
@@ -529,6 +600,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSignFaceVideoResponse> DescribeSignFaceVideoOutcome;
                 typedef std::future<DescribeSignFaceVideoOutcome> DescribeSignFaceVideoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeSignFaceVideoRequest&, DescribeSignFaceVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignFaceVideoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSingleSignOnEmployeesResponse> DescribeSingleSignOnEmployeesOutcome;
+                typedef std::future<DescribeSingleSignOnEmployeesOutcome> DescribeSingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeSingleSignOnEmployeesRequest&, DescribeSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
@@ -544,6 +618,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableUserAutoSignResponse> DisableUserAutoSignOutcome;
                 typedef std::future<DisableUserAutoSignOutcome> DisableUserAutoSignOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DisableUserAutoSignRequest&, DisableUserAutoSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableUserAutoSignAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportContractComparisonTaskResponse> ExportContractComparisonTaskOutcome;
+                typedef std::future<ExportContractComparisonTaskOutcome> ExportContractComparisonTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ExportContractComparisonTaskRequest&, ExportContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportContractComparisonTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskResultApiResponse> GetTaskResultApiOutcome;
                 typedef std::future<GetTaskResultApiOutcome> GetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::GetTaskResultApiRequest&, GetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskResultApiAsyncHandler;
@@ -565,6 +642,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPartnerAutoSignAuthUrlResponse> ModifyPartnerAutoSignAuthUrlOutcome;
                 typedef std::future<ModifyPartnerAutoSignAuthUrlOutcome> ModifyPartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyPartnerAutoSignAuthUrlRequest&, ModifyPartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartnerAutoSignAuthUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySingleSignOnEmployeesResponse> ModifySingleSignOnEmployeesOutcome;
+                typedef std::future<ModifySingleSignOnEmployeesOutcome> ModifySingleSignOnEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifySingleSignOnEmployeesRequest&, ModifySingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySingleSignOnEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateSealsResponse> OperateSealsOutcome;
                 typedef std::future<OperateSealsOutcome> OperateSealsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::OperateSealsRequest&, OperateSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateSealsAsyncHandler;
@@ -699,6 +779,36 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
 
                 /**
+                 *此接口（CreateBatchContractReviewTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。
+
+适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。
+
+注: 
+1. PDF格式限制大小为10M以下
+2. 仅支持5份PDF文件批量发起（一份PDF对应一个审查任务）
+                 * @param req CreateBatchContractReviewTaskRequest
+                 * @return CreateBatchContractReviewTaskOutcome
+                 */
+                CreateBatchContractReviewTaskOutcome CreateBatchContractReviewTask(const Model::CreateBatchContractReviewTaskRequest &request);
+                void CreateBatchContractReviewTaskAsync(const Model::CreateBatchContractReviewTaskRequest& request, const CreateBatchContractReviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchContractReviewTaskOutcomeCallable CreateBatchContractReviewTaskCallable(const Model::CreateBatchContractReviewTaskRequest& request);
+
+                /**
+                 *此接口（CreateBatchInformationExtractionTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。<br/>
+
+适用场景：根据合同关键词（字段名称）来提取PDF合同文件的字段结果信息。
+
+注: 
+1. PDF格式限制大小为10M以下
+2. 仅支持5个PDF文件批量发起（一份PDF对应一个合同提取任务）
+                 * @param req CreateBatchInformationExtractionTaskRequest
+                 * @return CreateBatchInformationExtractionTaskOutcome
+                 */
+                CreateBatchInformationExtractionTaskOutcome CreateBatchInformationExtractionTask(const Model::CreateBatchInformationExtractionTaskRequest &request);
+                void CreateBatchInformationExtractionTaskAsync(const Model::CreateBatchInformationExtractionTaskRequest& request, const CreateBatchInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchInformationExtractionTaskOutcomeCallable CreateBatchInformationExtractionTaskCallable(const Model::CreateBatchInformationExtractionTaskRequest& request);
+
+                /**
                  *支持企业进行批量初始化操作：
 
 此接口存在以下限制：
@@ -793,6 +903,16 @@ namespace TencentCloud
                 CreateBatchSignUrlOutcomeCallable CreateBatchSignUrlCallable(const Model::CreateBatchSignUrlRequest& request);
 
                 /**
+                 *此接口（CreateContractComparisonTask）用于创建合同对比任务。
+适用场景：对比两份合同中字段（如：金额、日期、甲方名称等）的内容差异。
+                 * @param req CreateContractComparisonTaskRequest
+                 * @return CreateContractComparisonTaskOutcome
+                 */
+                CreateContractComparisonTaskOutcome CreateContractComparisonTask(const Model::CreateContractComparisonTaskRequest &request);
+                void CreateContractComparisonTaskAsync(const Model::CreateContractComparisonTaskRequest& request, const CreateContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateContractComparisonTaskOutcomeCallable CreateContractComparisonTaskCallable(const Model::CreateContractComparisonTaskRequest& request);
+
+                /**
                  *接口（CreateContractDiffTaskWebUrl）用于创建合同对比的可嵌入web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
 注：本接口生成的web页面暂不支持<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreateWebThemeConfig" target="_blank">设置本企业嵌入式页面主题配置</a>
 
@@ -806,6 +926,21 @@ namespace TencentCloud
                 CreateContractDiffTaskWebUrlOutcome CreateContractDiffTaskWebUrl(const Model::CreateContractDiffTaskWebUrlRequest &request);
                 void CreateContractDiffTaskWebUrlAsync(const Model::CreateContractDiffTaskWebUrlRequest& request, const CreateContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContractDiffTaskWebUrlOutcomeCallable CreateContractDiffTaskWebUrlCallable(const Model::CreateContractDiffTaskWebUrlRequest& request);
+
+                /**
+                 *此接口（CreateContractReviewWebUrl）用来创建合同审查web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+
+适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。
+
+注: 
+1. pdf、word格式限制大小为10M以下
+2. 如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开
+                 * @param req CreateContractReviewWebUrlRequest
+                 * @return CreateContractReviewWebUrlOutcome
+                 */
+                CreateContractReviewWebUrlOutcome CreateContractReviewWebUrl(const Model::CreateContractReviewWebUrlRequest &request);
+                void CreateContractReviewWebUrlAsync(const Model::CreateContractReviewWebUrlRequest& request, const CreateContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateContractReviewWebUrlOutcomeCallable CreateContractReviewWebUrlCallable(const Model::CreateContractReviewWebUrlRequest& request);
 
                 /**
                  *此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />
@@ -876,9 +1011,6 @@ namespace TencentCloud
                 /**
                  *此接口（CreateDynamicFlowApprover）接口主要用于补充动态签署方2.0合同的签署方信息，包括但不限于名字、手机号和签署区域等信息。
 
-
-**功能开通**
-动态签署方2.0功能的使用需要先<font color="red">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href="https://qian.tencent.com/developers/company/dynamic_signer_v2" target="_blank">动态签署方2.0</a>文档。
 
 **使用条件**
 - 在发起合同时，必须将OpenDynamicSignFlow参数设置为true，以确保合同以动态签署方2.0的方式处理，否则默认处理为普通合同。
@@ -1336,6 +1468,19 @@ namespace TencentCloud
                 CreateFlowSignUrlOutcomeCallable CreateFlowSignUrlCallable(const Model::CreateFlowSignUrlRequest& request);
 
                 /**
+                 *此接口（CreateInformationExtractionWebUrl）用来创建合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+
+注: 
+1. pdf、word格式限制大小为10M以下
+2. pdg、jpeg、jpg格式限制大小为5M以下
+                 * @param req CreateInformationExtractionWebUrlRequest
+                 * @return CreateInformationExtractionWebUrlOutcome
+                 */
+                CreateInformationExtractionWebUrlOutcome CreateInformationExtractionWebUrl(const Model::CreateInformationExtractionWebUrlRequest &request);
+                void CreateInformationExtractionWebUrlAsync(const Model::CreateInformationExtractionWebUrlRequest& request, const CreateInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInformationExtractionWebUrlOutcomeCallable CreateInformationExtractionWebUrlCallable(const Model::CreateInformationExtractionWebUrlRequest& request);
+
+                /**
                  *此接口（CreateIntegrationDepartment）用于创建企业的部门信息，支持绑定客户系统部门ID。
                  * @param req CreateIntegrationDepartmentRequest
                  * @return CreateIntegrationDepartmentOutcome
@@ -1455,10 +1600,38 @@ namespace TencentCloud
                 CreateLegalSealQrCodeOutcomeCallable CreateLegalSealQrCodeCallable(const Model::CreateLegalSealQrCodeRequest& request);
 
                 /**
+                 *创建小程序发起流程链接，在小程序页面上完成签署人等信息的编辑与确认后，可快速发起流程。
+ <br/>
+适用场景：如果需要签署人在自己的APP、小程序、H5应用中发起合同，可在收集合同信息，签署人等信息后（非必选），通过此接口获取跳转腾讯电子签小程序的合同发起跳转链接，跳转到腾讯电子签小程序继续合同的发起。
+
+跳转到小程序的实现，参考微信官方文档（分为<a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html">全屏</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html">半屏</a>两种方式），如何配置也可以请参考: <a href="https://qian.tencent.com/developers/company/openwxminiprogram">跳转电子签小程序配置</a>
+
+注：
+<ul>
+<li>1. 签署链接的有效期为<font color="red">90天</font>，超过有效期链接不可用</li>
+<li>2. <font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li>
+ <li>3. 调用接口后，<font color="red">流程不会立即发起，需使用链接跳转到小程序上继续发起流程操作</font>。</li>
+<li>4. <font color="red">使用链接成功发起一份合同后，链接立即失效</font></li>
+</ul>
+
+其中小程序的原始Id如下，或者查看小程序信息自助获取。
+
+| 小程序 | AppID | 原始ID |
+| ------------ | ------------ | ------------ |
+| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |
+| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |
+                 * @param req CreateMiniAppPrepareFlowRequest
+                 * @return CreateMiniAppPrepareFlowOutcome
+                 */
+                CreateMiniAppPrepareFlowOutcome CreateMiniAppPrepareFlow(const Model::CreateMiniAppPrepareFlowRequest &request);
+                void CreateMiniAppPrepareFlowAsync(const Model::CreateMiniAppPrepareFlowRequest& request, const CreateMiniAppPrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMiniAppPrepareFlowOutcomeCallable CreateMiniAppPrepareFlowCallable(const Model::CreateMiniAppPrepareFlowRequest& request);
+
+                /**
                  *本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。
 
 注意:
-1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到
+1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!企业认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到授权书是否审核失败的结果。
                  * @param req CreateModifyAdminAuthorizationUrlRequest
                  * @return CreateModifyAdminAuthorizationUrlOutcome
                  */
@@ -1603,7 +1776,7 @@ namespace TencentCloud
 
 
 **该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权**
-![image](https://qcloudimg.tencent-cloud.cn/raw/489aa0bf74941469b5e740f428f17c3a.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/4f89c8d5ccc1397db964257fd73dd5e1.png)
                  * @param req CreatePartnerAutoSignAuthUrlRequest
                  * @return CreatePartnerAutoSignAuthUrlOutcome
                  */
@@ -1740,6 +1913,22 @@ namespace TencentCloud
                 CreateSealPolicyOutcomeCallable CreateSealPolicyCallable(const Model::CreateSealPolicyRequest& request);
 
                 /**
+                 *此接口（CreateSingleSignOnEmployees）用于创建单点登录企业员工。
+创建好的员工，可以通过腾讯电子签提供的链接， 如下图位置，进行登录。
+此操作的功能：
+1. 可以绑定已经实名的员工，然后 sso 登录实名绑定。
+2. 可以提前导入员工，在 sso 登录的时候进行实名。
+3. 如果已经绑定过，可以直接通过 sso 链接登录腾讯电子签。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/0cd98ca2cc49ea1472a2397cea9a3ef6.png)
+                 * @param req CreateSingleSignOnEmployeesRequest
+                 * @return CreateSingleSignOnEmployeesOutcome
+                 */
+                CreateSingleSignOnEmployeesOutcome CreateSingleSignOnEmployees(const Model::CreateSingleSignOnEmployeesRequest &request);
+                void CreateSingleSignOnEmployeesAsync(const Model::CreateSingleSignOnEmployeesRequest& request, const CreateSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSingleSignOnEmployeesOutcomeCallable CreateSingleSignOnEmployeesCallable(const Model::CreateSingleSignOnEmployeesRequest& request);
+
+                /**
                  *获取个人用户自动签的开通链接。
 
 注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`
@@ -1788,7 +1977,7 @@ namespace TencentCloud
                 CreateUserNameChangeUrlOutcomeCallable CreateUserNameChangeUrlCallable(const Model::CreateUserNameChangeUrlRequest& request);
 
                 /**
-                 *生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。
+                 *生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。用户点击此接口生成的链接完成实名认证后，其数据将通过[企业引导个人实名认证后回调](https://qian.tencent.com/developers/company/callback_types_staffs/#%E5%8D%81%E4%BA%8C-%E4%BC%81%E4%B8%9A%E5%BC%95%E5%AF%BC%E4%B8%AA%E4%BA%BA%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E5%90%8E%E5%9B%9E%E8%B0%83)返回
 
 注： 调用此接口需要购买<font color="red"><b>单独的实名套餐包</b></font>。使用前请联系对接的客户经理沟通。
                  * @param req CreateUserVerifyUrlRequest
@@ -1888,6 +2077,19 @@ namespace TencentCloud
                 DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
 
                 /**
+                 *此接口（DeleteSingleSignOnEmployees）用于删除单点登录企业员工。
+注意：
+此接口只能删除未跟腾讯电子签绑定的单点登录企业员工，
+如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要企业的超级管理员或者组织管理员在腾讯电子签控制台对当前企业员工进行离职操作，如下图操作。
+![image](https://qcloudimg.tencent-cloud.cn/raw/5e69f6e11859972d466900040f68c105.png)
+                 * @param req DeleteSingleSignOnEmployeesRequest
+                 * @return DeleteSingleSignOnEmployeesOutcome
+                 */
+                DeleteSingleSignOnEmployeesOutcome DeleteSingleSignOnEmployees(const Model::DeleteSingleSignOnEmployeesRequest &request);
+                void DeleteSingleSignOnEmployeesAsync(const Model::DeleteSingleSignOnEmployeesRequest& request, const DeleteSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSingleSignOnEmployeesOutcomeCallable DeleteSingleSignOnEmployeesCallable(const Model::DeleteSingleSignOnEmployeesRequest& request);
+
+                /**
                  *本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。
                  * @param req DescribeBatchOrganizationRegistrationTasksRequest
                  * @return DescribeBatchOrganizationRegistrationTasksOutcome
@@ -1937,6 +2139,15 @@ namespace TencentCloud
                 DescribeCancelFlowsTaskOutcomeCallable DescribeCancelFlowsTaskCallable(const Model::DescribeCancelFlowsTaskRequest& request);
 
                 /**
+                 *本接口（DescribeContractComparisonTask）用于查询合同对比任务结果详情。
+                 * @param req DescribeContractComparisonTaskRequest
+                 * @return DescribeContractComparisonTaskOutcome
+                 */
+                DescribeContractComparisonTaskOutcome DescribeContractComparisonTask(const Model::DescribeContractComparisonTaskRequest &request);
+                void DescribeContractComparisonTaskAsync(const Model::DescribeContractComparisonTaskRequest& request, const DescribeContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractComparisonTaskOutcomeCallable DescribeContractComparisonTaskCallable(const Model::DescribeContractComparisonTaskRequest& request);
+
+                /**
                  *接口（DescribeContractDiffTaskWebUrl）用于获取合同对比结果可嵌入的web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
 注：本接口生成的web页面暂不支持<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreateWebThemeConfig" target="_blank">设置本企业嵌入式页面主题配置</a>
 
@@ -1948,6 +2159,28 @@ namespace TencentCloud
                 DescribeContractDiffTaskWebUrlOutcome DescribeContractDiffTaskWebUrl(const Model::DescribeContractDiffTaskWebUrlRequest &request);
                 void DescribeContractDiffTaskWebUrlAsync(const Model::DescribeContractDiffTaskWebUrlRequest& request, const DescribeContractDiffTaskWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContractDiffTaskWebUrlOutcomeCallable DescribeContractDiffTaskWebUrlCallable(const Model::DescribeContractDiffTaskWebUrlRequest& request);
+
+                /**
+                 *本接口（DescribeContractReviewTask）用于获取合同审查任务详情，包括任务的状态和识别出的风险信息。
+                 * @param req DescribeContractReviewTaskRequest
+                 * @return DescribeContractReviewTaskOutcome
+                 */
+                DescribeContractReviewTaskOutcome DescribeContractReviewTask(const Model::DescribeContractReviewTaskRequest &request);
+                void DescribeContractReviewTaskAsync(const Model::DescribeContractReviewTaskRequest& request, const DescribeContractReviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractReviewTaskOutcomeCallable DescribeContractReviewTaskCallable(const Model::DescribeContractReviewTaskRequest& request);
+
+                /**
+                 *此接口（DescribeContractReviewWebUrl）用来创建合同审查web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+
+适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。
+
+注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`
+                 * @param req DescribeContractReviewWebUrlRequest
+                 * @return DescribeContractReviewWebUrlOutcome
+                 */
+                DescribeContractReviewWebUrlOutcome DescribeContractReviewWebUrl(const Model::DescribeContractReviewWebUrlRequest &request);
+                void DescribeContractReviewWebUrlAsync(const Model::DescribeContractReviewWebUrlRequest& request, const DescribeContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractReviewWebUrlOutcomeCallable DescribeContractReviewWebUrlCallable(const Model::DescribeContractReviewWebUrlRequest& request);
 
                 /**
                  *查询企业扩展服务的授权详情（列表），当前支持查询以下内容：
@@ -2125,6 +2358,24 @@ namespace TencentCloud
                 DescribeFlowTemplatesOutcomeCallable DescribeFlowTemplatesCallable(const Model::DescribeFlowTemplatesRequest& request);
 
                 /**
+                 *本接口（DescribeInformationExtractionTask）用于获取合同智能提取任务详情，包括任务的状态和提取的字段结果信息。
+                 * @param req DescribeInformationExtractionTaskRequest
+                 * @return DescribeInformationExtractionTaskOutcome
+                 */
+                DescribeInformationExtractionTaskOutcome DescribeInformationExtractionTask(const Model::DescribeInformationExtractionTaskRequest &request);
+                void DescribeInformationExtractionTaskAsync(const Model::DescribeInformationExtractionTaskRequest& request, const DescribeInformationExtractionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInformationExtractionTaskOutcomeCallable DescribeInformationExtractionTaskCallable(const Model::DescribeInformationExtractionTaskRequest& request);
+
+                /**
+                 *此接口（DescribeInformationExtractionWebUrl）用来获取合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
+                 * @param req DescribeInformationExtractionWebUrlRequest
+                 * @return DescribeInformationExtractionWebUrlOutcome
+                 */
+                DescribeInformationExtractionWebUrlOutcome DescribeInformationExtractionWebUrl(const Model::DescribeInformationExtractionWebUrlRequest &request);
+                void DescribeInformationExtractionWebUrlAsync(const Model::DescribeInformationExtractionWebUrlRequest& request, const DescribeInformationExtractionWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInformationExtractionWebUrlOutcomeCallable DescribeInformationExtractionWebUrlCallable(const Model::DescribeInformationExtractionWebUrlRequest& request);
+
+                /**
                  *此接口（DescribeIntegrationDepartments）用于查询企业的部门信息列表，支持查询单个部门节点或单个部门节点及一级子节点部门列表。
                  * @param req DescribeIntegrationDepartmentsRequest
                  * @return DescribeIntegrationDepartmentsOutcome
@@ -2144,6 +2395,21 @@ namespace TencentCloud
 
                 /**
                  *此接口（DescribeIntegrationRoles）用于分页查询企业角色列表，列表按照角色创建时间升序排列。
+
+角色分为系统默认角色与企业自定义角色，其中系统默认角色不可以禁用、删除、编辑权限项，只可往默认角色中添加成员。企业自定义角色为企业根据自身需要新增的角色，可根据企业具体情况设置各个角色的权限，例如新增财务岗、销售岗等角色。
+
+企业版的系统默认角色包含如下角色：
+
+| 角色名称                     | 角色描述                                                                 |
+|------------------------------|--------------------------------------------------------------------------|
+| 超级管理员（电子签业务最高权限，e.g.法务/业务负责人） | 所有功能和数据管理权限，只能设置一位超管。                              |
+| IT信息管理员（IT系统负责人，e.g. CTO）        | 组织员工、计费模块、应用模块等权限能力。                                |
+| 企业合同管理员（企业法务负责人）             | 企业全部合同管理、可申请出证等权限能力。                                |
+| 企业模板管理员                  | 企业全部模板管理权限能力。                                              |
+| 企业印章管理员（企业行政负责人）             | 管理企业的所有电子印章，如添加印章、启用停用印章、印章授权等。          |
+| 用印审批岗（各部门的印章管理岗）             | 可对被授权的印章进行日常使用管理，如合同盖章用印的审核及登记。          |
+| 部门管理员（部门的合同+印章+模板管理）         | 部门级（含子部门）所有合同管理权限能力。                                |
+| 业务员（销售员、采购员）             | 发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力。      |
                  * @param req DescribeIntegrationRolesRequest
                  * @return DescribeIntegrationRolesOutcome
                  */
@@ -2216,6 +2482,15 @@ namespace TencentCloud
                 DescribeSignFaceVideoOutcomeCallable DescribeSignFaceVideoCallable(const Model::DescribeSignFaceVideoRequest& request);
 
                 /**
+                 *此接口（DescribeSingleSignOnEmployees）用于查询单点登录企业员工。
+                 * @param req DescribeSingleSignOnEmployeesRequest
+                 * @return DescribeSingleSignOnEmployeesOutcome
+                 */
+                DescribeSingleSignOnEmployeesOutcome DescribeSingleSignOnEmployees(const Model::DescribeSingleSignOnEmployeesRequest &request);
+                void DescribeSingleSignOnEmployeesAsync(const Model::DescribeSingleSignOnEmployeesRequest& request, const DescribeSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSingleSignOnEmployeesOutcomeCallable DescribeSingleSignOnEmployeesCallable(const Model::DescribeSingleSignOnEmployeesRequest& request);
+
+                /**
                  *通过AuthCode查询个人用户是否实名
 
 
@@ -2243,10 +2518,10 @@ namespace TencentCloud
                 DescribeUserAutoSignStatusOutcomeCallable DescribeUserAutoSignStatusCallable(const Model::DescribeUserAutoSignStatusRequest& request);
 
                 /**
-                 *查询用户模版类型，分为两种模式：
+                 *查询用户模板类型，分为两种模式：
 <ul>
-<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息</li>
-<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息，被绑定的模版数量</li>
+<li>QueryBindTemplate:false，查询用户合同模板类型，返回用户合同模板类型ID，用户合同模板类型名称，用户合同模板类型描述信息</li>
+<li>QueryBindTemplate:false，查询用户合同模板类型，返回用户合同模板类型ID，用户合同模板类型名称，用户合同模板类型描述信息，被绑定的模板数量</li>
 </ul>
                  * @param req DescribeUserFlowTypeRequest
                  * @return DescribeUserFlowTypeOutcome
@@ -2286,6 +2561,15 @@ namespace TencentCloud
                 DisableUserAutoSignOutcome DisableUserAutoSign(const Model::DisableUserAutoSignRequest &request);
                 void DisableUserAutoSignAsync(const Model::DisableUserAutoSignRequest& request, const DisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableUserAutoSignOutcomeCallable DisableUserAutoSignCallable(const Model::DisableUserAutoSignRequest& request);
+
+                /**
+                 *本接口（ExportContractComparisonTask）用于导出指定的合同对比任务的结果文件。任务完成后，用户可根据不同的使用场景，选择导出可视化对比报告（PDF）或结构化差异明细（EXCEL）。
+                 * @param req ExportContractComparisonTaskRequest
+                 * @return ExportContractComparisonTaskOutcome
+                 */
+                ExportContractComparisonTaskOutcome ExportContractComparisonTask(const Model::ExportContractComparisonTaskRequest &request);
+                void ExportContractComparisonTaskAsync(const Model::ExportContractComparisonTaskRequest& request, const ExportContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportContractComparisonTaskOutcomeCallable ExportContractComparisonTaskCallable(const Model::ExportContractComparisonTaskRequest& request);
 
                 /**
                  *此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi" target="_blank">创建文件转换任务接口</a>进行资源文件的转换操作<br />
@@ -2402,6 +2686,16 @@ namespace TencentCloud
                 ModifyPartnerAutoSignAuthUrlOutcomeCallable ModifyPartnerAutoSignAuthUrlCallable(const Model::ModifyPartnerAutoSignAuthUrlRequest& request);
 
                 /**
+                 *此接口（ModifySingleSignOnEmployees）用于修改单点登录企业员工。
+ 注意： 此接口只能修改未跟腾讯电子签绑定的单点登录企业员工， 如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要在腾讯电子签小程序进行个人信息变更操作。
+                 * @param req ModifySingleSignOnEmployeesRequest
+                 * @return ModifySingleSignOnEmployeesOutcome
+                 */
+                ModifySingleSignOnEmployeesOutcome ModifySingleSignOnEmployees(const Model::ModifySingleSignOnEmployeesRequest &request);
+                void ModifySingleSignOnEmployeesAsync(const Model::ModifySingleSignOnEmployeesRequest& request, const ModifySingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySingleSignOnEmployeesOutcomeCallable ModifySingleSignOnEmployeesCallable(const Model::ModifySingleSignOnEmployeesRequest& request);
+
+                /**
                  *修改印章状态（停用、启用）
                  * @param req OperateSealsRequest
                  * @return OperateSealsOutcome
@@ -2434,7 +2728,9 @@ namespace TencentCloud
                 OperateTemplateOutcomeCallable OperateTemplateCallable(const Model::OperateTemplateRequest& request);
 
                 /**
-                 *给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。
+                 *已经不再使用
+
+给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。
 
 注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`
                  * @param req RenewAutoSignLicenseRequest

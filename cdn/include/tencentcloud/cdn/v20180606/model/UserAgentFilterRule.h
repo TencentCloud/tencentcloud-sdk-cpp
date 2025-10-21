@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,18 +113,18 @@ path: 根据完整访问路径生效
                     bool RulePathsHasBeenSet() const;
 
                     /**
-                     * 获取UserAgent列表
+                     * 获取UserAgent列表，UserAgent 个数不能超过 10个
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserAgents UserAgent列表
+                     * @return UserAgents UserAgent列表，UserAgent 个数不能超过 10个
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserAgents() const;
 
                     /**
-                     * 设置UserAgent列表
+                     * 设置UserAgent列表，UserAgent 个数不能超过 10个
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userAgents UserAgent列表
+                     * @param _userAgents UserAgent列表，UserAgent 个数不能超过 10个
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,7 +183,7 @@ path: 根据完整访问路径生效
                     bool m_rulePathsHasBeenSet;
 
                     /**
-                     * UserAgent列表
+                     * UserAgent列表，UserAgent 个数不能超过 10个
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userAgents;

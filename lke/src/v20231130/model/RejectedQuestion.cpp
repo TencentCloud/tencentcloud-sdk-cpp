@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ RejectedQuestion::RejectedQuestion() :
     m_statusDescHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_isAllowEditHasBeenSet(false),
-    m_isAllowDeleteHasBeenSet(false)
+    m_isAllowDeleteHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RejectedQuestion::Deserialize(const rapidjson::Value &value)
         m_isAllowDeleteHasBeenSet = true;
     }
 
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RejectedQuestion.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RejectedQuestion::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsAllowDelete";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAllowDelete, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RejectedQuestion::SetIsAllowDelete(const bool& _isAllowDelete)
 bool RejectedQuestion::IsAllowDeleteHasBeenSet() const
 {
     return m_isAllowDeleteHasBeenSet;
+}
+
+string RejectedQuestion::GetOperator() const
+{
+    return m_operator;
+}
+
+void RejectedQuestion::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool RejectedQuestion::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 

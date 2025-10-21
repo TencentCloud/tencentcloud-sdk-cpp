@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -574,6 +574,27 @@ namespace TencentCloud
                     bool AccessedSubStatusHasBeenSet() const;
 
                     /**
+                     * 获取接入/卸载失败原因
+                     * @return AccessedErrorReason 接入/卸载失败原因
+                     * 
+                     */
+                    std::string GetAccessedErrorReason() const;
+
+                    /**
+                     * 设置接入/卸载失败原因
+                     * @param _accessedErrorReason 接入/卸载失败原因
+                     * 
+                     */
+                    void SetAccessedErrorReason(const std::string& _accessedErrorReason);
+
+                    /**
+                     * 判断参数 AccessedErrorReason 是否已赋值
+                     * @return AccessedErrorReason 是否已赋值
+                     * 
+                     */
+                    bool AccessedErrorReasonHasBeenSet() const;
+
+                    /**
                      * 获取节点总数
                      * @return NodeCount 节点总数
                      * 
@@ -916,6 +937,12 @@ namespace TencentCloud
                      */
                     std::string m_accessedSubStatus;
                     bool m_accessedSubStatusHasBeenSet;
+
+                    /**
+                     * 接入/卸载失败原因
+                     */
+                    std::string m_accessedErrorReason;
+                    bool m_accessedErrorReasonHasBeenSet;
 
                     /**
                      * 节点总数

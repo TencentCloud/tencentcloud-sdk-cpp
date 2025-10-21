@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @return InstanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * @param _instanceId ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略
-                     * @return MsgRetentionTime 实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略
+                     * 获取实例日志的最长保留时间，单位分钟，最大90天，最小为1min
+                     * @return MsgRetentionTime 实例日志的最长保留时间，单位分钟，最大90天，最小为1min
                      * 
                      */
                     int64_t GetMsgRetentionTime() const;
 
                     /**
-                     * 设置实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略
-                     * @param _msgRetentionTime 实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略
+                     * 设置实例日志的最长保留时间，单位分钟，最大90天，最小为1min
+                     * @param _msgRetentionTime 实例日志的最长保留时间，单位分钟，最大90天，最小为1min
                      * 
                      */
                     void SetMsgRetentionTime(const int64_t& _msgRetentionTime);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool MaxMessageByteHasBeenSet() const;
 
                     /**
-                     * 获取集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
-                     * @return UncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * 获取是否允许未同步的副本选为 leader: 1 开启  0 关闭
+                     * @return UncleanLeaderElectionEnable 是否允许未同步的副本选为 leader: 1 开启  0 关闭
                      * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
-                     * 设置集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
-                     * @param _uncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * 设置是否允许未同步的副本选为 leader: 1 开启  0 关闭
+                     * @param _uncleanLeaderElectionEnable 是否允许未同步的副本选为 leader: 1 开启  0 关闭
                      * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
@@ -279,13 +279,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略
+                     * 实例日志的最长保留时间，单位分钟，最大90天，最小为1min
                      */
                     int64_t m_msgRetentionTime;
                     bool m_msgRetentionTimeHasBeenSet;
@@ -333,7 +333,7 @@ namespace TencentCloud
                     bool m_maxMessageByteHasBeenSet;
 
                     /**
-                     * 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * 是否允许未同步的副本选为 leader: 1 开启  0 关闭
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,6 +188,119 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取共享知识库类型，0普通，1公众号
+                     * @return KnowledgeType 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    int64_t GetKnowledgeType() const;
+
+                    /**
+                     * 设置共享知识库类型，0普通，1公众号
+                     * @param _knowledgeType 共享知识库类型，0普通，1公众号
+                     * 
+                     */
+                    void SetKnowledgeType(const int64_t& _knowledgeType);
+
+                    /**
+                     * 判断参数 KnowledgeType 是否已赋值
+                     * @return KnowledgeType 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取拥有者id
+                     * @return OwnerStaffId 拥有者id
+                     * 
+                     */
+                    std::string GetOwnerStaffId() const;
+
+                    /**
+                     * 设置拥有者id
+                     * @param _ownerStaffId 拥有者id
+                     * 
+                     */
+                    void SetOwnerStaffId(const std::string& _ownerStaffId);
+
+                    /**
+                     * 判断参数 OwnerStaffId 是否已赋值
+                     * @return OwnerStaffId 是否已赋值
+                     * 
+                     */
+                    bool OwnerStaffIdHasBeenSet() const;
+
+                    /**
+                     * 获取知识库文档数量,当前仅支持公众号知识库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DocTotal 知识库文档数量,当前仅支持公众号知识库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDocTotal() const;
+
+                    /**
+                     * 设置知识库文档数量,当前仅支持公众号知识库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _docTotal 知识库文档数量,当前仅支持公众号知识库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDocTotal(const int64_t& _docTotal);
+
+                    /**
+                     * 判断参数 DocTotal 是否已赋值
+                     * @return DocTotal 是否已赋值
+                     * 
+                     */
+                    bool DocTotalHasBeenSet() const;
+
+                    /**
+                     * 获取知识库处理中状态标记，1：向量embedding变更中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessingFlags 知识库处理中状态标记，1：向量embedding变更中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetProcessingFlags() const;
+
+                    /**
+                     * 设置知识库处理中状态标记，1：向量embedding变更中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processingFlags 知识库处理中状态标记，1：向量embedding变更中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessingFlags(const std::vector<int64_t>& _processingFlags);
+
+                    /**
+                     * 判断参数 ProcessingFlags 是否已赋值
+                     * @return ProcessingFlags 是否已赋值
+                     * 
+                     */
+                    bool ProcessingFlagsHasBeenSet() const;
+
+                    /**
+                     * 获取知识库拥有者的名字
+                     * @return OwnerStaffName 知识库拥有者的名字
+                     * 
+                     */
+                    std::string GetOwnerStaffName() const;
+
+                    /**
+                     * 设置知识库拥有者的名字
+                     * @param _ownerStaffName 知识库拥有者的名字
+                     * 
+                     */
+                    void SetOwnerStaffName(const std::string& _ownerStaffName);
+
+                    /**
+                     * 判断参数 OwnerStaffName 是否已赋值
+                     * @return OwnerStaffName 是否已赋值
+                     * 
+                     */
+                    bool OwnerStaffNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,6 +342,38 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 共享知识库类型，0普通，1公众号
+                     */
+                    int64_t m_knowledgeType;
+                    bool m_knowledgeTypeHasBeenSet;
+
+                    /**
+                     * 拥有者id
+                     */
+                    std::string m_ownerStaffId;
+                    bool m_ownerStaffIdHasBeenSet;
+
+                    /**
+                     * 知识库文档数量,当前仅支持公众号知识库
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_docTotal;
+                    bool m_docTotalHasBeenSet;
+
+                    /**
+                     * 知识库处理中状态标记，1：向量embedding变更中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_processingFlags;
+                    bool m_processingFlagsHasBeenSet;
+
+                    /**
+                     * 知识库拥有者的名字
+                     */
+                    std::string m_ownerStaffName;
+                    bool m_ownerStaffNameHasBeenSet;
 
                 };
             }

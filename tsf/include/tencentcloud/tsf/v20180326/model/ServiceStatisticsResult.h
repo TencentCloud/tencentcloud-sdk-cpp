@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取微服务Id
-                     * @return MicroserviceId 微服务Id
+                     * 获取微服务ID
+                     * @return MicroserviceId 微服务ID
                      * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
-                     * 设置微服务Id
-                     * @param _microserviceId 微服务Id
+                     * 设置微服务ID
+                     * @param _microserviceId 微服务ID
                      * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组id
-                     * @return GroupId 部署组id
+                     * 获取部署组ID
+                     * @return GroupId 部署组ID
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组id
-                     * @param _groupId 部署组id
+                     * 设置部署组ID
+                     * @param _groupId 部署组ID
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组类型
-                     * @return ClusterType 部署组类型
+                     * 获取集群类型，C：容器集群，V：虚拟机集群
+                     * @return ClusterType 集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置部署组类型
-                     * @param _clusterType 部署组类型
+                     * 设置集群类型，C：容器集群，V：虚拟机集群
+                     * @param _clusterType 集群类型，C：容器集群，V：虚拟机集群
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool InstanceExistHasBeenSet() const;
 
                     /**
-                     * 获取应用id
-                     * @return ApplicationId 应用id
+                     * 获取应用ID
+                     * @return ApplicationId 应用ID
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用id
-                     * @param _applicationId 应用id
+                     * 设置应用ID
+                     * @param _applicationId 应用ID
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取微服务类型
-                     * @return MicroserviceType 微服务类型
+                     * 获取微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用
+                     * @return MicroserviceType 微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用
                      * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
-                     * 设置微服务类型
-                     * @param _microserviceType 微服务类型
+                     * 设置微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用
+                     * @param _microserviceType 微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用
                      * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
@@ -594,15 +594,15 @@ namespace TencentCloud
                     bool InstanceTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取normal/error
-                     * @return Status normal/error
+                     * 获取状态。normal：正常，warn：警告，error：错误
+                     * @return Status 状态。normal：正常，warn：警告，error：错误
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置normal/error
-                     * @param _status normal/error
+                     * 设置状态。normal：正常，warn：警告，error：错误
+                     * @param _status 状态。normal：正常，warn：警告，error：错误
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -615,15 +615,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取normal/warn/error
-                     * @return ErrorRateLevel normal/warn/error
+                     * 获取请求错误率等级。normal：正常，warn：警告，error：错误
+                     * @return ErrorRateLevel 请求错误率等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     std::string GetErrorRateLevel() const;
 
                     /**
-                     * 设置normal/warn/error
-                     * @param _errorRateLevel normal/warn/error
+                     * 设置请求错误率等级。normal：正常，warn：警告，error：错误
+                     * @param _errorRateLevel 请求错误率等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     void SetErrorRateLevel(const std::string& _errorRateLevel);
@@ -636,15 +636,15 @@ namespace TencentCloud
                     bool ErrorRateLevelHasBeenSet() const;
 
                     /**
-                     * 获取normal/warn/error
-                     * @return AvgTimeConsumingLevel normal/warn/error
+                     * 获取请求平均耗时等级。normal：正常，warn：警告，error：错误
+                     * @return AvgTimeConsumingLevel 请求平均耗时等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     std::string GetAvgTimeConsumingLevel() const;
 
                     /**
-                     * 设置normal/warn/error
-                     * @param _avgTimeConsumingLevel normal/warn/error
+                     * 设置请求平均耗时等级。normal：正常，warn：警告，error：错误
+                     * @param _avgTimeConsumingLevel 请求平均耗时等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     void SetAvgTimeConsumingLevel(const std::string& _avgTimeConsumingLevel);
@@ -657,15 +657,15 @@ namespace TencentCloud
                     bool AvgTimeConsumingLevelHasBeenSet() const;
 
                     /**
-                     * 获取normal/warn/error
-                     * @return ApdexLevel normal/warn/error
+                     * 获取应用程序性能指数等级。normal：正常，warn：警告，error：错误
+                     * @return ApdexLevel 应用程序性能指数等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     std::string GetApdexLevel() const;
 
                     /**
-                     * 设置normal/warn/error
-                     * @param _apdexLevel normal/warn/error
+                     * 设置应用程序性能指数等级。normal：正常，warn：警告，error：错误
+                     * @param _apdexLevel 应用程序性能指数等级。normal：正常，warn：警告，error：错误
                      * 
                      */
                     void SetApdexLevel(const std::string& _apdexLevel);
@@ -692,7 +692,7 @@ namespace TencentCloud
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 微服务Id
+                     * 微服务ID
                      */
                     std::string m_microserviceId;
                     bool m_microserviceIdHasBeenSet;
@@ -740,7 +740,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 部署组id
+                     * 部署组ID
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -752,7 +752,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 部署组类型
+                     * 集群类型，C：容器集群，V：虚拟机集群
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
@@ -770,13 +770,13 @@ namespace TencentCloud
                     bool m_instanceExistHasBeenSet;
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 微服务类型
+                     * 微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
@@ -836,25 +836,25 @@ namespace TencentCloud
                     bool m_instanceTotalCountHasBeenSet;
 
                     /**
-                     * normal/error
+                     * 状态。normal：正常，warn：警告，error：错误
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * normal/warn/error
+                     * 请求错误率等级。normal：正常，warn：警告，error：错误
                      */
                     std::string m_errorRateLevel;
                     bool m_errorRateLevelHasBeenSet;
 
                     /**
-                     * normal/warn/error
+                     * 请求平均耗时等级。normal：正常，warn：警告，error：错误
                      */
                     std::string m_avgTimeConsumingLevel;
                     bool m_avgTimeConsumingLevelHasBeenSet;
 
                     /**
-                     * normal/warn/error
+                     * 应用程序性能指数等级。normal：正常，warn：警告，error：错误
                      */
                     std::string m_apdexLevel;
                     bool m_apdexLevelHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ SLInstanceInfo::SLInstanceInfo() :
     m_tagsHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_isolateTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_deployRoleHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,16 @@ CoreInternalOutcome SLInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployRole") && !value["DeployRole"].IsNull())
+    {
+        if (!value["DeployRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.DeployRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployRole = string(value["DeployRole"].GetString());
+        m_deployRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +440,14 @@ void SLInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -736,5 +755,21 @@ void SLInstanceInfo::SetExpireTime(const string& _expireTime)
 bool SLInstanceInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string SLInstanceInfo::GetDeployRole() const
+{
+    return m_deployRole;
+}
+
+void SLInstanceInfo::SetDeployRole(const string& _deployRole)
+{
+    m_deployRole = _deployRole;
+    m_deployRoleHasBeenSet = true;
+}
+
+bool SLInstanceInfo::DeployRoleHasBeenSet() const
+{
+    return m_deployRoleHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DeleteJobRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DeleteJobResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteQueueRequest.h>
@@ -53,6 +55,12 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeClustersResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobSubmitInfoRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobSubmitInfoResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobsRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobsResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobsOverviewRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeJobsOverviewResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
@@ -69,6 +77,10 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h>
+#include <tencentcloud/thpc/v20230321/model/SubmitJobRequest.h>
+#include <tencentcloud/thpc/v20230321/model/SubmitJobResponse.h>
+#include <tencentcloud/thpc/v20230321/model/TerminateJobRequest.h>
+#include <tencentcloud/thpc/v20230321/model/TerminateJobResponse.h>
 #include <tencentcloud/thpc/v20230321/model/TerminateWorkspacesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/TerminateWorkspacesResponse.h>
 
@@ -109,6 +121,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClusterStorageOptionResponse> DeleteClusterStorageOptionOutcome;
                 typedef std::future<DeleteClusterStorageOptionOutcome> DeleteClusterStorageOptionOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteClusterStorageOptionRequest&, DeleteClusterStorageOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterStorageOptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteJobResponse> DeleteJobOutcome;
+                typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DeleteJobRequest&, DeleteJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNodesResponse> DeleteNodesOutcome;
                 typedef std::future<DeleteNodesOutcome> DeleteNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteNodesRequest&, DeleteNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodesAsyncHandler;
@@ -130,6 +145,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInitNodeScriptsResponse> DescribeInitNodeScriptsOutcome;
                 typedef std::future<DescribeInitNodeScriptsOutcome> DescribeInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeInitNodeScriptsRequest&, DescribeInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInitNodeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobSubmitInfoResponse> DescribeJobSubmitInfoOutcome;
+                typedef std::future<DescribeJobSubmitInfoOutcome> DescribeJobSubmitInfoOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeJobSubmitInfoRequest&, DescribeJobSubmitInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSubmitInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
+                typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobsOverviewResponse> DescribeJobsOverviewOutcome;
+                typedef std::future<DescribeJobsOverviewOutcome> DescribeJobsOverviewOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeJobsOverviewRequest&, DescribeJobsOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
                 typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
@@ -154,6 +178,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
                 typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitJobResponse> SubmitJobOutcome;
+                typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::SubmitJobRequest&, SubmitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateJobResponse> TerminateJobOutcome;
+                typedef std::future<TerminateJobOutcome> TerminateJobOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::TerminateJobRequest&, TerminateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateWorkspacesResponse> TerminateWorkspacesOutcome;
                 typedef std::future<TerminateWorkspacesOutcome> TerminateWorkspacesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::TerminateWorkspacesRequest&, TerminateWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateWorkspacesAsyncHandler;
@@ -237,6 +267,15 @@ namespace TencentCloud
                 DeleteClusterStorageOptionOutcomeCallable DeleteClusterStorageOptionCallable(const Model::DeleteClusterStorageOptionRequest& request);
 
                 /**
+                 *本接口 (DeleteJob) 用于删除一个作业任务。
+                 * @param req DeleteJobRequest
+                 * @return DeleteJobOutcome
+                 */
+                DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest &request);
+                void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request);
+
+                /**
                  *本接口(DeleteNodes)用于删除指定集群中一个或者多个计算节点或者登录节点。
                  * @param req DeleteNodesRequest
                  * @return DeleteNodesOutcome
@@ -301,6 +340,33 @@ namespace TencentCloud
                 DescribeInitNodeScriptsOutcome DescribeInitNodeScripts(const Model::DescribeInitNodeScriptsRequest &request);
                 void DescribeInitNodeScriptsAsync(const Model::DescribeInitNodeScriptsRequest& request, const DescribeInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInitNodeScriptsOutcomeCallable DescribeInitNodeScriptsCallable(const Model::DescribeInitNodeScriptsRequest& request);
+
+                /**
+                 *本接口用于查询作业的提交信息。
+                 * @param req DescribeJobSubmitInfoRequest
+                 * @return DescribeJobSubmitInfoOutcome
+                 */
+                DescribeJobSubmitInfoOutcome DescribeJobSubmitInfo(const Model::DescribeJobSubmitInfoRequest &request);
+                void DescribeJobSubmitInfoAsync(const Model::DescribeJobSubmitInfoRequest& request, const DescribeJobSubmitInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobSubmitInfoOutcomeCallable DescribeJobSubmitInfoCallable(const Model::DescribeJobSubmitInfoRequest& request);
+
+                /**
+                 *本接口 (DescribeJobs) 用于查询作业任务列表信息。
+                 * @param req DescribeJobsRequest
+                 * @return DescribeJobsOutcome
+                 */
+                DescribeJobsOutcome DescribeJobs(const Model::DescribeJobsRequest &request);
+                void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobsOutcomeCallable DescribeJobsCallable(const Model::DescribeJobsRequest& request);
+
+                /**
+                 *本接口 (DescribeJobs) 用于查询作业任务列表信息。
+                 * @param req DescribeJobsOverviewRequest
+                 * @return DescribeJobsOverviewOutcome
+                 */
+                DescribeJobsOverviewOutcome DescribeJobsOverview(const Model::DescribeJobsOverviewRequest &request);
+                void DescribeJobsOverviewAsync(const Model::DescribeJobsOverviewRequest& request, const DescribeJobsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobsOverviewOutcomeCallable DescribeJobsOverviewCallable(const Model::DescribeJobsOverviewRequest& request);
 
                 /**
                  *本接口 (DescribeNodes) 用于查询指定集群节点概览信息列表。
@@ -373,6 +439,24 @@ namespace TencentCloud
                 SetAutoScalingConfigurationOutcome SetAutoScalingConfiguration(const Model::SetAutoScalingConfigurationRequest &request);
                 void SetAutoScalingConfigurationAsync(const Model::SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAutoScalingConfigurationOutcomeCallable SetAutoScalingConfigurationCallable(const Model::SetAutoScalingConfigurationRequest& request);
+
+                /**
+                 *本接口 (SubmitJob) 用于提交一个作业任务。
+                 * @param req SubmitJobRequest
+                 * @return SubmitJobOutcome
+                 */
+                SubmitJobOutcome SubmitJob(const Model::SubmitJobRequest &request);
+                void SubmitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitJobOutcomeCallable SubmitJobCallable(const Model::SubmitJobRequest& request);
+
+                /**
+                 *本接口 (TerminateJob) 用于终止一个作业任务。
+                 * @param req TerminateJobRequest
+                 * @return TerminateJobOutcome
+                 */
+                TerminateJobOutcome TerminateJob(const Model::TerminateJobRequest &request);
+                void TerminateJobAsync(const Model::TerminateJobRequest& request, const TerminateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateJobOutcomeCallable TerminateJobCallable(const Model::TerminateJobRequest& request);
 
                 /**
                  *本接口 (TerminateWorkspaces) 用于主动退还工作空间。

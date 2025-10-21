@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,14 @@ using namespace std;
 SaleParam::SaleParam() :
     m_paramKeyHasBeenSet(false),
     m_paramKeyNameHasBeenSet(false),
+    m_paramIdHasBeenSet(false),
+    m_paramValueIdHasBeenSet(false),
     m_paramValueHasBeenSet(false),
     m_paramValueNameHasBeenSet(false),
-    m_paramTypeHasBeenSet(false)
+    m_paramTypeHasBeenSet(false),
+    m_moduleIdHasBeenSet(false),
+    m_moduleKeyHasBeenSet(false),
+    m_moduleNameHasBeenSet(false)
 {
 }
 
@@ -52,6 +57,26 @@ CoreInternalOutcome SaleParam::Deserialize(const rapidjson::Value &value)
         }
         m_paramKeyName = string(value["ParamKeyName"].GetString());
         m_paramKeyNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParamId") && !value["ParamId"].IsNull())
+    {
+        if (!value["ParamId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleParam.ParamId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramId = string(value["ParamId"].GetString());
+        m_paramIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParamValueId") && !value["ParamValueId"].IsNull())
+    {
+        if (!value["ParamValueId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleParam.ParamValueId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramValueId = string(value["ParamValueId"].GetString());
+        m_paramValueIdHasBeenSet = true;
     }
 
     if (value.HasMember("ParamValue") && !value["ParamValue"].IsNull())
@@ -84,6 +109,36 @@ CoreInternalOutcome SaleParam::Deserialize(const rapidjson::Value &value)
         m_paramTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ModuleId") && !value["ModuleId"].IsNull())
+    {
+        if (!value["ModuleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleParam.ModuleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moduleId = string(value["ModuleId"].GetString());
+        m_moduleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModuleKey") && !value["ModuleKey"].IsNull())
+    {
+        if (!value["ModuleKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleParam.ModuleKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moduleKey = string(value["ModuleKey"].GetString());
+        m_moduleKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModuleName") && !value["ModuleName"].IsNull())
+    {
+        if (!value["ModuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleParam.ModuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moduleName = string(value["ModuleName"].GetString());
+        m_moduleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -105,6 +160,22 @@ void SaleParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ParamKeyName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramKeyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramValueIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamValueId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramValueId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_paramValueHasBeenSet)
@@ -129,6 +200,30 @@ void SaleParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ParamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moduleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moduleKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moduleKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_moduleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moduleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -164,6 +259,38 @@ void SaleParam::SetParamKeyName(const string& _paramKeyName)
 bool SaleParam::ParamKeyNameHasBeenSet() const
 {
     return m_paramKeyNameHasBeenSet;
+}
+
+string SaleParam::GetParamId() const
+{
+    return m_paramId;
+}
+
+void SaleParam::SetParamId(const string& _paramId)
+{
+    m_paramId = _paramId;
+    m_paramIdHasBeenSet = true;
+}
+
+bool SaleParam::ParamIdHasBeenSet() const
+{
+    return m_paramIdHasBeenSet;
+}
+
+string SaleParam::GetParamValueId() const
+{
+    return m_paramValueId;
+}
+
+void SaleParam::SetParamValueId(const string& _paramValueId)
+{
+    m_paramValueId = _paramValueId;
+    m_paramValueIdHasBeenSet = true;
+}
+
+bool SaleParam::ParamValueIdHasBeenSet() const
+{
+    return m_paramValueIdHasBeenSet;
 }
 
 string SaleParam::GetParamValue() const
@@ -212,5 +339,53 @@ void SaleParam::SetParamType(const string& _paramType)
 bool SaleParam::ParamTypeHasBeenSet() const
 {
     return m_paramTypeHasBeenSet;
+}
+
+string SaleParam::GetModuleId() const
+{
+    return m_moduleId;
+}
+
+void SaleParam::SetModuleId(const string& _moduleId)
+{
+    m_moduleId = _moduleId;
+    m_moduleIdHasBeenSet = true;
+}
+
+bool SaleParam::ModuleIdHasBeenSet() const
+{
+    return m_moduleIdHasBeenSet;
+}
+
+string SaleParam::GetModuleKey() const
+{
+    return m_moduleKey;
+}
+
+void SaleParam::SetModuleKey(const string& _moduleKey)
+{
+    m_moduleKey = _moduleKey;
+    m_moduleKeyHasBeenSet = true;
+}
+
+bool SaleParam::ModuleKeyHasBeenSet() const
+{
+    return m_moduleKeyHasBeenSet;
+}
+
+string SaleParam::GetModuleName() const
+{
+    return m_moduleName;
+}
+
+void SaleParam::SetModuleName(const string& _moduleName)
+{
+    m_moduleName = _moduleName;
+    m_moduleNameHasBeenSet = true;
+}
+
+bool SaleParam::ModuleNameHasBeenSet() const
+{
+    return m_moduleNameHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本类信息。
+                     * 获取人脸核身识别结果及文本类信息。
 - 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
 - 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Text 文本类信息。
+                     * @return Text 人脸核身识别结果及文本类信息。
 - 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
 - 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -180,10 +180,54 @@ namespace TencentCloud
                      */
                     bool IntentionActionResultHasBeenSet() const;
 
+                    /**
+                     * 获取本次请求是否配置开启意愿校验。 
+false：未开启意愿校验 
+true：已开启意愿校验 
+说明：若请求开启了意愿校验，可结合IntentionVerifyType中具体使用的校验模式从对应的出参Result中获取最终的核验结果；若请求没有开启意愿校验，则可在出参Text中获取最终的核验结果。
+                     * @return IsVerifyIntention 本次请求是否配置开启意愿校验。 
+false：未开启意愿校验 
+true：已开启意愿校验 
+说明：若请求开启了意愿校验，可结合IntentionVerifyType中具体使用的校验模式从对应的出参Result中获取最终的核验结果；若请求没有开启意愿校验，则可在出参Text中获取最终的核验结果。
+                     * 
+                     */
+                    bool GetIsVerifyIntention() const;
+
+                    /**
+                     * 判断参数 IsVerifyIntention 是否已赋值
+                     * @return IsVerifyIntention 是否已赋值
+                     * 
+                     */
+                    bool IsVerifyIntentionHasBeenSet() const;
+
+                    /**
+                     * 获取本次请求意愿校验使用的具体模式。 
+0：问答模式 
+1：点头确认模式 
+2：朗读模式 
+若未使用意愿核身功能，该字段返回值可以不处理。 
+注意：此字段可能返回 null，表示取不到有效值
+                     * @return IntentionVerifyType 本次请求意愿校验使用的具体模式。 
+0：问答模式 
+1：点头确认模式 
+2：朗读模式 
+若未使用意愿核身功能，该字段返回值可以不处理。 
+注意：此字段可能返回 null，表示取不到有效值
+                     * 
+                     */
+                    std::string GetIntentionVerifyType() const;
+
+                    /**
+                     * 判断参数 IntentionVerifyType 是否已赋值
+                     * @return IntentionVerifyType 是否已赋值
+                     * 
+                     */
+                    bool IntentionVerifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文本类信息。
+                     * 人脸核身识别结果及文本类信息。
 - 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
 - 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -239,6 +283,26 @@ namespace TencentCloud
                      */
                     IntentionActionResult m_intentionActionResult;
                     bool m_intentionActionResultHasBeenSet;
+
+                    /**
+                     * 本次请求是否配置开启意愿校验。 
+false：未开启意愿校验 
+true：已开启意愿校验 
+说明：若请求开启了意愿校验，可结合IntentionVerifyType中具体使用的校验模式从对应的出参Result中获取最终的核验结果；若请求没有开启意愿校验，则可在出参Text中获取最终的核验结果。
+                     */
+                    bool m_isVerifyIntention;
+                    bool m_isVerifyIntentionHasBeenSet;
+
+                    /**
+                     * 本次请求意愿校验使用的具体模式。 
+0：问答模式 
+1：点头确认模式 
+2：朗读模式 
+若未使用意愿核身功能，该字段返回值可以不处理。 
+注意：此字段可能返回 null，表示取不到有效值
+                     */
+                    std::string m_intentionVerifyType;
+                    bool m_intentionVerifyTypeHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool HpaMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取扩容观察期，单位秒
+                     * @return ScaleUpStabilizationWindowSeconds 扩容观察期，单位秒
+                     * 
+                     */
+                    int64_t GetScaleUpStabilizationWindowSeconds() const;
+
+                    /**
+                     * 设置扩容观察期，单位秒
+                     * @param _scaleUpStabilizationWindowSeconds 扩容观察期，单位秒
+                     * 
+                     */
+                    void SetScaleUpStabilizationWindowSeconds(const int64_t& _scaleUpStabilizationWindowSeconds);
+
+                    /**
+                     * 判断参数 ScaleUpStabilizationWindowSeconds 是否已赋值
+                     * @return ScaleUpStabilizationWindowSeconds 是否已赋值
+                     * 
+                     */
+                    bool ScaleUpStabilizationWindowSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取缩容观察期，单位秒
+                     * @return ScaleDownStabilizationWindowSeconds 缩容观察期，单位秒
+                     * 
+                     */
+                    int64_t GetScaleDownStabilizationWindowSeconds() const;
+
+                    /**
+                     * 设置缩容观察期，单位秒
+                     * @param _scaleDownStabilizationWindowSeconds 缩容观察期，单位秒
+                     * 
+                     */
+                    void SetScaleDownStabilizationWindowSeconds(const int64_t& _scaleDownStabilizationWindowSeconds);
+
+                    /**
+                     * 判断参数 ScaleDownStabilizationWindowSeconds 是否已赋值
+                     * @return ScaleDownStabilizationWindowSeconds 是否已赋值
+                     * 
+                     */
+                    bool ScaleDownStabilizationWindowSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +196,18 @@ namespace TencentCloud
                      */
                     std::vector<Option> m_hpaMetrics;
                     bool m_hpaMetricsHasBeenSet;
+
+                    /**
+                     * 扩容观察期，单位秒
+                     */
+                    int64_t m_scaleUpStabilizationWindowSeconds;
+                    bool m_scaleUpStabilizationWindowSecondsHasBeenSet;
+
+                    /**
+                     * 缩容观察期，单位秒
+                     */
+                    int64_t m_scaleDownStabilizationWindowSeconds;
+                    bool m_scaleDownStabilizationWindowSecondsHasBeenSet;
 
                 };
             }

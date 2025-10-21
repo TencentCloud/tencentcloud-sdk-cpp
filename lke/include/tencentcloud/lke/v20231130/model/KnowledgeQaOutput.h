@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/InputBoxConfig.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,52 @@ namespace TencentCloud
                      */
                     bool UseRecommendedHasBeenSet() const;
 
+                    /**
+                     * 获取推荐问模式，0.结合知识库&对话历史推荐问题Prompt(默认) 1.仅结合知识库输出推荐问的prompt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecommendedPromptMode 推荐问模式，0.结合知识库&对话历史推荐问题Prompt(默认) 1.仅结合知识库输出推荐问的prompt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRecommendedPromptMode() const;
+
+                    /**
+                     * 设置推荐问模式，0.结合知识库&对话历史推荐问题Prompt(默认) 1.仅结合知识库输出推荐问的prompt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recommendedPromptMode 推荐问模式，0.结合知识库&对话历史推荐问题Prompt(默认) 1.仅结合知识库输出推荐问的prompt
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecommendedPromptMode(const uint64_t& _recommendedPromptMode);
+
+                    /**
+                     * 判断参数 RecommendedPromptMode 是否已赋值
+                     * @return RecommendedPromptMode 是否已赋值
+                     * 
+                     */
+                    bool RecommendedPromptModeHasBeenSet() const;
+
+                    /**
+                     * 获取输入框按钮配置
+                     * @return InputBoxConfig 输入框按钮配置
+                     * 
+                     */
+                    InputBoxConfig GetInputBoxConfig() const;
+
+                    /**
+                     * 设置输入框按钮配置
+                     * @param _inputBoxConfig 输入框按钮配置
+                     * 
+                     */
+                    void SetInputBoxConfig(const InputBoxConfig& _inputBoxConfig);
+
+                    /**
+                     * 判断参数 InputBoxConfig 是否已赋值
+                     * @return InputBoxConfig 是否已赋值
+                     * 
+                     */
+                    bool InputBoxConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +318,19 @@ namespace TencentCloud
                      */
                     bool m_useRecommended;
                     bool m_useRecommendedHasBeenSet;
+
+                    /**
+                     * 推荐问模式，0.结合知识库&对话历史推荐问题Prompt(默认) 1.仅结合知识库输出推荐问的prompt
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_recommendedPromptMode;
+                    bool m_recommendedPromptModeHasBeenSet;
+
+                    /**
+                     * 输入框按钮配置
+                     */
+                    InputBoxConfig m_inputBoxConfig;
+                    bool m_inputBoxConfigHasBeenSet;
 
                 };
             }

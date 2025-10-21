@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,12 +143,16 @@
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersAuthPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersAuthPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyConfigRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribePolicyConfigResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeResourceToShareMemberRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeResourceToShareMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitMembersRequest.h>
@@ -471,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationMembersResponse> DescribeOrganizationMembersOutcome;
                 typedef std::future<DescribeOrganizationMembersOutcome> DescribeOrganizationMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMembersRequest&, DescribeOrganizationMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationMembersAuthPolicyResponse> DescribeOrganizationMembersAuthPolicyOutcome;
+                typedef std::future<DescribeOrganizationMembersAuthPolicyOutcome> DescribeOrganizationMembersAuthPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMembersAuthPolicyRequest&, DescribeOrganizationMembersAuthPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMembersAuthPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationNodesResponse> DescribeOrganizationNodesOutcome;
                 typedef std::future<DescribeOrganizationNodesOutcome> DescribeOrganizationNodesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationNodesRequest&, DescribeOrganizationNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationNodesAsyncHandler;
@@ -480,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePolicyConfigResponse> DescribePolicyConfigOutcome;
                 typedef std::future<DescribePolicyConfigOutcome> DescribePolicyConfigOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribePolicyConfigRequest&, DescribePolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceToShareMemberResponse> DescribeResourceToShareMemberOutcome;
+                typedef std::future<DescribeResourceToShareMemberOutcome> DescribeResourceToShareMemberOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeResourceToShareMemberRequest&, DescribeResourceToShareMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceToShareMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShareAreasResponse> DescribeShareAreasOutcome;
                 typedef std::future<DescribeShareAreasOutcome> DescribeShareAreasOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeShareAreasRequest&, DescribeShareAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShareAreasAsyncHandler;
@@ -1216,6 +1226,15 @@ namespace TencentCloud
                 DescribeOrganizationMembersOutcomeCallable DescribeOrganizationMembersCallable(const Model::DescribeOrganizationMembersRequest& request);
 
                 /**
+                 *查询组织成员访问策略列表
+                 * @param req DescribeOrganizationMembersAuthPolicyRequest
+                 * @return DescribeOrganizationMembersAuthPolicyOutcome
+                 */
+                DescribeOrganizationMembersAuthPolicyOutcome DescribeOrganizationMembersAuthPolicy(const Model::DescribeOrganizationMembersAuthPolicyRequest &request);
+                void DescribeOrganizationMembersAuthPolicyAsync(const Model::DescribeOrganizationMembersAuthPolicyRequest& request, const DescribeOrganizationMembersAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationMembersAuthPolicyOutcomeCallable DescribeOrganizationMembersAuthPolicyCallable(const Model::DescribeOrganizationMembersAuthPolicyRequest& request);
+
+                /**
                  *获取组织节点列表
                  * @param req DescribeOrganizationNodesRequest
                  * @return DescribeOrganizationNodesOutcome
@@ -1241,6 +1260,15 @@ namespace TencentCloud
                 DescribePolicyConfigOutcome DescribePolicyConfig(const Model::DescribePolicyConfigRequest &request);
                 void DescribePolicyConfigAsync(const Model::DescribePolicyConfigRequest& request, const DescribePolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePolicyConfigOutcomeCallable DescribePolicyConfigCallable(const Model::DescribePolicyConfigRequest& request);
+
+                /**
+                 *获取与我共享的资源列表。
+                 * @param req DescribeResourceToShareMemberRequest
+                 * @return DescribeResourceToShareMemberOutcome
+                 */
+                DescribeResourceToShareMemberOutcome DescribeResourceToShareMember(const Model::DescribeResourceToShareMemberRequest &request);
+                void DescribeResourceToShareMemberAsync(const Model::DescribeResourceToShareMemberRequest& request, const DescribeResourceToShareMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceToShareMemberOutcomeCallable DescribeResourceToShareMemberCallable(const Model::DescribeResourceToShareMemberRequest& request);
 
                 /**
                  *获取可共享地域列表

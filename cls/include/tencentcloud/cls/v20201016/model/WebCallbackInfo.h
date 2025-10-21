@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -223,15 +223,15 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                     bool SubUinHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。秒级时间戳
-                     * @return CreateTime 创建时间。秒级时间戳
+                     * 获取创建时间。秒(s)级时间戳
+                     * @return CreateTime 创建时间。秒(s)级时间戳
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。秒级时间戳
-                     * @param _createTime 创建时间。秒级时间戳
+                     * 设置创建时间。秒(s)级时间戳
+                     * @param _createTime 创建时间。秒(s)级时间戳
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -244,15 +244,15 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。秒级时间戳
-                     * @return UpdateTime 更新时间。秒级时间戳
+                     * 获取更新时间。秒(s)级时间戳
+                     * @return UpdateTime 更新时间。秒(s)级时间戳
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间。秒级时间戳
-                     * @param _updateTime 更新时间。秒级时间戳
+                     * 设置更新时间。秒(s)级时间戳
+                     * @param _updateTime 更新时间。秒(s)级时间戳
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -317,13 +317,13 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                     bool m_subUinHasBeenSet;
 
                     /**
-                     * 创建时间。秒级时间戳
+                     * 创建时间。秒(s)级时间戳
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间。秒级时间戳
+                     * 更新时间。秒(s)级时间戳
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

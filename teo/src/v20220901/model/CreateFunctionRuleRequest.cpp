@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ using namespace std;
 CreateFunctionRuleRequest::CreateFunctionRuleRequest() :
     m_zoneIdHasBeenSet(false),
     m_functionRuleConditionsHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
     m_functionIdHasBeenSet(false),
+    m_regionMappingSelectionsHasBeenSet(false),
+    m_weightedSelectionsHasBeenSet(false),
     m_remarkHasBeenSet(false)
 {
 }
@@ -60,12 +63,50 @@ string CreateFunctionRuleRequest::ToJsonString() const
         }
     }
 
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_functionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FunctionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_functionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionMappingSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionMappingSelections";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionMappingSelections.begin(); itr != m_regionMappingSelections.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightedSelectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeightedSelections";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_weightedSelections.begin(); itr != m_weightedSelections.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_remarkHasBeenSet)
@@ -116,6 +157,22 @@ bool CreateFunctionRuleRequest::FunctionRuleConditionsHasBeenSet() const
     return m_functionRuleConditionsHasBeenSet;
 }
 
+string CreateFunctionRuleRequest::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void CreateFunctionRuleRequest::SetTriggerType(const string& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool CreateFunctionRuleRequest::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
+}
+
 string CreateFunctionRuleRequest::GetFunctionId() const
 {
     return m_functionId;
@@ -130,6 +187,38 @@ void CreateFunctionRuleRequest::SetFunctionId(const string& _functionId)
 bool CreateFunctionRuleRequest::FunctionIdHasBeenSet() const
 {
     return m_functionIdHasBeenSet;
+}
+
+vector<FunctionRegionSelection> CreateFunctionRuleRequest::GetRegionMappingSelections() const
+{
+    return m_regionMappingSelections;
+}
+
+void CreateFunctionRuleRequest::SetRegionMappingSelections(const vector<FunctionRegionSelection>& _regionMappingSelections)
+{
+    m_regionMappingSelections = _regionMappingSelections;
+    m_regionMappingSelectionsHasBeenSet = true;
+}
+
+bool CreateFunctionRuleRequest::RegionMappingSelectionsHasBeenSet() const
+{
+    return m_regionMappingSelectionsHasBeenSet;
+}
+
+vector<FunctionWeightedSelection> CreateFunctionRuleRequest::GetWeightedSelections() const
+{
+    return m_weightedSelections;
+}
+
+void CreateFunctionRuleRequest::SetWeightedSelections(const vector<FunctionWeightedSelection>& _weightedSelections)
+{
+    m_weightedSelections = _weightedSelections;
+    m_weightedSelectionsHasBeenSet = true;
+}
+
+bool CreateFunctionRuleRequest::WeightedSelectionsHasBeenSet() const
+{
+    return m_weightedSelectionsHasBeenSet;
 }
 
 string CreateFunctionRuleRequest::GetRemark() const

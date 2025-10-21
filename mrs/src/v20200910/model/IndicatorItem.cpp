@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ IndicatorItem::IndicatorItem() :
     m_idHasBeenSet(false),
     m_coordsHasBeenSet(false),
     m_inferNormalHasBeenSet(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_methodHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
         m_sampleHasBeenSet = true;
     }
 
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Method` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = string(value["Method"].GetString());
+        m_methodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Sample";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sample.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void IndicatorItem::SetSample(const string& _sample)
 bool IndicatorItem::SampleHasBeenSet() const
 {
     return m_sampleHasBeenSet;
+}
+
+string IndicatorItem::GetMethod() const
+{
+    return m_method;
+}
+
+void IndicatorItem::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool IndicatorItem::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
 }
 

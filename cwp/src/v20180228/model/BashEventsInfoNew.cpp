@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,8 @@ BashEventsInfoNew::BashEventsInfoNew() :
     m_userHasBeenSet(false),
     m_pidHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_detectByHasBeenSet(false)
+    m_detectByHasBeenSet(false),
+    m_bashCmdDecodedHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,16 @@ CoreInternalOutcome BashEventsInfoNew::Deserialize(const rapidjson::Value &value
         m_detectByHasBeenSet = true;
     }
 
+    if (value.HasMember("BashCmdDecoded") && !value["BashCmdDecoded"].IsNull())
+    {
+        if (!value["BashCmdDecoded"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.BashCmdDecoded` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bashCmdDecoded = string(value["BashCmdDecoded"].GetString());
+        m_bashCmdDecodedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +574,14 @@ void BashEventsInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DetectBy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_detectBy, allocator);
+    }
+
+    if (m_bashCmdDecodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BashCmdDecoded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bashCmdDecoded.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -998,5 +1017,21 @@ void BashEventsInfoNew::SetDetectBy(const int64_t& _detectBy)
 bool BashEventsInfoNew::DetectByHasBeenSet() const
 {
     return m_detectByHasBeenSet;
+}
+
+string BashEventsInfoNew::GetBashCmdDecoded() const
+{
+    return m_bashCmdDecoded;
+}
+
+void BashEventsInfoNew::SetBashCmdDecoded(const string& _bashCmdDecoded)
+{
+    m_bashCmdDecoded = _bashCmdDecoded;
+    m_bashCmdDecodedHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::BashCmdDecodedHasBeenSet() const
+{
+    return m_bashCmdDecodedHasBeenSet;
 }
 

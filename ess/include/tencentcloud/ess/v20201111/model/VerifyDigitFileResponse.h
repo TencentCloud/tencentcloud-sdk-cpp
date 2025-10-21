@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool VerifyResultHasBeenSet() const;
 
                     /**
-                     * 获取验签序列号, 为11为数组组成的字符串
-                     * @return VerifySerialNo 验签序列号, 为11为数组组成的字符串
+                     * 获取验签序列号, 为11位数字组成的字符串
+                     * @return VerifySerialNo 验签序列号, 为11位数字组成的字符串
                      * 
                      */
                     std::string GetVerifySerialNo() const;
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_verifyResultHasBeenSet;
 
                     /**
-                     * 验签序列号, 为11为数组组成的字符串
+                     * 验签序列号, 为11位数字组成的字符串
                      */
                     std::string m_verifySerialNo;
                     bool m_verifySerialNoHasBeenSet;

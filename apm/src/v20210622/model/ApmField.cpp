@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ ApmField::ApmField() :
     m_unitHasBeenSet(false),
     m_compareValsHasBeenSet(false),
     m_lastPeriodValueHasBeenSet(false),
-    m_compareValHasBeenSet(false)
+    m_compareValHasBeenSet(false),
+    m_nameCNHasBeenSet(false),
+    m_nameENHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,26 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
         m_compareValHasBeenSet = true;
     }
 
+    if (value.HasMember("NameCN") && !value["NameCN"].IsNull())
+    {
+        if (!value["NameCN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmField.NameCN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameCN = string(value["NameCN"].GetString());
+        m_nameCNHasBeenSet = true;
+    }
+
+    if (value.HasMember("NameEN") && !value["NameEN"].IsNull())
+    {
+        if (!value["NameEN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmField.NameEN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameEN = string(value["NameEN"].GetString());
+        m_nameENHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -182,6 +204,22 @@ void ApmField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CompareVal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_compareVal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameCNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameCN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameCN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameENHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameEN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameEN.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -281,5 +319,37 @@ void ApmField::SetCompareVal(const string& _compareVal)
 bool ApmField::CompareValHasBeenSet() const
 {
     return m_compareValHasBeenSet;
+}
+
+string ApmField::GetNameCN() const
+{
+    return m_nameCN;
+}
+
+void ApmField::SetNameCN(const string& _nameCN)
+{
+    m_nameCN = _nameCN;
+    m_nameCNHasBeenSet = true;
+}
+
+bool ApmField::NameCNHasBeenSet() const
+{
+    return m_nameCNHasBeenSet;
+}
+
+string ApmField::GetNameEN() const
+{
+    return m_nameEN;
+}
+
+void ApmField::SetNameEN(const string& _nameEN)
+{
+    m_nameEN = _nameEN;
+    m_nameENHasBeenSet = true;
+}
+
+bool ApmField::NameENHasBeenSet() const
+{
+    return m_nameENHasBeenSet;
 }
 

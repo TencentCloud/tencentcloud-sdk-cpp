@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool AlarmNoticeDeliverConfigHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return CreateTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _createTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近更新时间。
-                     * @return UpdateTime 最近更新时间。
+                     * 获取最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @return UpdateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近更新时间。
-                     * @param _updateTime 最近更新时间。
+                     * 设置最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * @param _updateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -391,13 +391,13 @@ namespace TencentCloud
                     bool m_alarmNoticeDeliverConfigHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近更新时间。
+                     * 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

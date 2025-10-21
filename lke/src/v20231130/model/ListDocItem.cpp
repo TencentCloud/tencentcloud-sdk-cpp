@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,8 @@ ListDocItem::ListDocItem() :
     m_cateBizIdHasBeenSet(false),
     m_customerKnowledgeIdHasBeenSet(false),
     m_attributeFlagsHasBeenSet(false),
-    m_isDisabledHasBeenSet(false)
+    m_isDisabledHasBeenSet(false),
+    m_staffNameHasBeenSet(false)
 {
 }
 
@@ -430,6 +431,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_isDisabledHasBeenSet = true;
     }
 
+    if (value.HasMember("StaffName") && !value["StaffName"].IsNull())
+    {
+        if (!value["StaffName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.StaffName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffName = string(value["StaffName"].GetString());
+        m_staffNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -732,6 +743,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsDisabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDisabled, allocator);
+    }
+
+    if (m_staffNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1295,5 +1314,21 @@ void ListDocItem::SetIsDisabled(const bool& _isDisabled)
 bool ListDocItem::IsDisabledHasBeenSet() const
 {
     return m_isDisabledHasBeenSet;
+}
+
+string ListDocItem::GetStaffName() const
+{
+    return m_staffName;
+}
+
+void ListDocItem::SetStaffName(const string& _staffName)
+{
+    m_staffName = _staffName;
+    m_staffNameHasBeenSet = true;
+}
+
+bool ListDocItem::StaffNameHasBeenSet() const
+{
+    return m_staffNameHasBeenSet;
 }
 

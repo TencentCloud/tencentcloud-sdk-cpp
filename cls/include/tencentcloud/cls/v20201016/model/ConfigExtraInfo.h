@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,15 +116,27 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取类型：container_stdout、container_file、host_file
-                     * @return Type 类型：container_stdout、container_file、host_file
+                     * 获取自建k8s集群日志采集类型，支持
+- container_stdout 标准输出
+- container_file 标准文件
+- host_file 节点文件
+                     * @return Type 自建k8s集群日志采集类型，支持
+- container_stdout 标准输出
+- container_file 标准文件
+- host_file 节点文件
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型：container_stdout、container_file、host_file
-                     * @param _type 类型：container_stdout、container_file、host_file
+                     * 设置自建k8s集群日志采集类型，支持
+- container_stdout 标准输出
+- container_file 标准文件
+- host_file 节点文件
+                     * @param _type 自建k8s集群日志采集类型，支持
+- container_stdout 标准输出
+- container_file 标准文件
+- host_file 节点文件
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -289,14 +301,18 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @return UpdateTime 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _updateTime 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -310,14 +326,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -352,14 +372,18 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * @return GroupId 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * @param _groupId 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -394,14 +418,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @return LogsetId 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * @param _logsetId 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -534,7 +562,10 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 类型：container_stdout、container_file、host_file
+                     * 自建k8s集群日志采集类型，支持
+- container_stdout 标准输出
+- container_file 标准文件
+- host_file 节点文件
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -584,12 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 更新时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 创建时间
+- 时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -602,6 +635,7 @@ namespace TencentCloud
 
                     /**
                      * 机器组ID
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -614,6 +648,7 @@ namespace TencentCloud
 
                     /**
                      * 日志集ID
+- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;

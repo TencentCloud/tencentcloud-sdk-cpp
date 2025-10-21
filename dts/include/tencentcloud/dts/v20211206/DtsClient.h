@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,6 +137,8 @@
 #include <tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResetSubscribeRequest.h>
 #include <tencentcloud/dts/v20211206/model/ResetSubscribeResponse.h>
+#include <tencentcloud/dts/v20211206/model/ResetSyncJobRequest.h>
+#include <tencentcloud/dts/v20211206/model/ResetSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResizeSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ResizeSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResumeMigrateJobRequest.h>
@@ -350,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetSubscribeResponse> ResetSubscribeOutcome;
                 typedef std::future<ResetSubscribeOutcome> ResetSubscribeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ResetSubscribeRequest&, ResetSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetSyncJobResponse> ResetSyncJobOutcome;
+                typedef std::future<ResetSyncJobOutcome> ResetSyncJobOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ResetSyncJobRequest&, ResetSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResizeSyncJobResponse> ResizeSyncJobOutcome;
                 typedef std::future<ResizeSyncJobOutcome> ResizeSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ResizeSyncJobRequest&, ResizeSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeSyncJobAsyncHandler;
@@ -462,7 +467,8 @@ namespace TencentCloud
                 CreateCompareTaskOutcomeCallable CreateCompareTaskCallable(const Model::CreateCompareTaskRequest& request);
 
                 /**
-                 *为订阅实例创建消费者组
+                 *为订阅实例创建消费者组。
+只有状态为运行中的实例支持创建消费组。
                  * @param req CreateConsumerGroupRequest
                  * @return CreateConsumerGroupOutcome
                  */
@@ -471,10 +477,9 @@ namespace TencentCloud
                 CreateConsumerGroupOutcomeCallable CreateConsumerGroupCallable(const Model::CreateConsumerGroupRequest& request);
 
                 /**
-                 *校验迁移任务，
+                 *创建校验迁移任务，
 在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，
 校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移
-
                  * @param req CreateMigrateCheckJobRequest
                  * @return CreateMigrateCheckJobOutcome
                  */
@@ -732,7 +737,7 @@ namespace TencentCloud
                 IsolateSubscribeOutcomeCallable IsolateSubscribeCallable(const Model::IsolateSubscribeRequest& request);
 
                 /**
-                 *隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。
+                 *隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线(DestroySyncJob)操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。
                  * @param req IsolateSyncJobRequest
                  * @return IsolateSyncJobOutcome
                  */
@@ -895,7 +900,7 @@ namespace TencentCloud
                 RecoverMigrateJobOutcomeCallable RecoverMigrateJobCallable(const Model::RecoverMigrateJobRequest& request);
 
                 /**
-                 *解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。
+                 *解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。注意，此接口只支持按量计费实例。
                  * @param req RecoverSyncJobRequest
                  * @return RecoverSyncJobOutcome
                  */
@@ -914,13 +919,22 @@ namespace TencentCloud
 
                 /**
                  *本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。
-可以调用 DescribeSubscribeDetail 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。
+可以调用 [DescribeSubscribeDetail](https://cloud.tencent.com/document/product/571/102944) 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。
                  * @param req ResetSubscribeRequest
                  * @return ResetSubscribeOutcome
                  */
                 ResetSubscribeOutcome ResetSubscribe(const Model::ResetSubscribeRequest &request);
                 void ResetSubscribeAsync(const Model::ResetSubscribeRequest& request, const ResetSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetSubscribeOutcomeCallable ResetSubscribeCallable(const Model::ResetSubscribeRequest& request);
+
+                /**
+                 *重置已经结束的同步任务，重置后可以重新配置启动任务。
+                 * @param req ResetSyncJobRequest
+                 * @return ResetSyncJobOutcome
+                 */
+                ResetSyncJobOutcome ResetSyncJob(const Model::ResetSyncJobRequest &request);
+                void ResetSyncJobAsync(const Model::ResetSyncJobRequest& request, const ResetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetSyncJobOutcomeCallable ResetSyncJobCallable(const Model::ResetSyncJobRequest& request);
 
                 /**
                  *调整同步任务规格，此接口只支持按量计费任务的调整，调用此接口后不会立即生效，后台调整时间大概为3~5分钟。调用此接口后可通过查询同步任务信息接口DescribeSyncJobs，获取变配后的状态。
@@ -977,7 +991,7 @@ namespace TencentCloud
                 SkipSyncCheckItemOutcomeCallable SkipSyncCheckItemCallable(const Model::SkipSyncCheckItemRequest& request);
 
                 /**
-                 *启动一致性校验任务，启动之前需要先通过接口`CreateCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeCompareTasks` 查询一致性校验任务列表来获得启动后的状态
+                 *启动一致性校验任务，启动之前需要先通过接口 [CreateCompareTask](https://cloud.tencent.com/document/product/571/82093) 创建一致性校验任务，启动后可通过接口 [DescribeCompareTasks](https://cloud.tencent.com/document/product/571/82088) 查询一致性校验任务列表来获得启动后的状态
                  * @param req StartCompareRequest
                  * @return StartCompareOutcome
                  */

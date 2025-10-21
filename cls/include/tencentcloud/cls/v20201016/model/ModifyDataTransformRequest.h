@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加工任务id
-                     * @return TaskId 加工任务id
+                     * 获取数据加工任务ID
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * @return TaskId 数据加工任务ID
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置加工任务id
-                     * @param _taskId 加工任务id
+                     * 设置数据加工任务ID
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * @param _taskId 数据加工任务ID
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,14 +70,38 @@ namespace TencentCloud
 
                     /**
                      * 获取加工任务名称
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。
+
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * @return Name 加工任务名称
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。
+
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置加工任务名称
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。
+
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * @param _name 加工任务名称
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。
+
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -192,13 +220,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加工任务id
+                     * 数据加工任务ID
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 加工任务名称
+- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。
+
+名称限制
+- 不能为空字符串
+- 不能包含字符'|'
+- 最长 255 个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

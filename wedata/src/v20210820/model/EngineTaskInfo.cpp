@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ using namespace std;
 EngineTaskInfo::EngineTaskInfo() :
     m_engineSubmitTimeHasBeenSet(false),
     m_engineExeTimeHasBeenSet(false),
-    m_engineExeTimesHasBeenSet(false),
+    m_engineExeTimeCostHasBeenSet(false),
     m_cuConsumeHasBeenSet(false),
     m_resourceUsageHasBeenSet(false),
     m_engineNameHasBeenSet(false),
@@ -40,7 +40,12 @@ EngineTaskInfo::EngineTaskInfo() :
     m_outputSmallFilesNumHasBeenSet(false),
     m_waitTimeHasBeenSet(false),
     m_queryResultTimeHasBeenSet(false),
-    m_cmdArgsHasBeenSet(false)
+    m_cmdArgsHasBeenSet(false),
+    m_vCoreSecondsHasBeenSet(false),
+    m_memorySecondsHasBeenSet(false),
+    m_emrUserNameHasBeenSet(false),
+    m_queryIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -69,14 +74,14 @@ CoreInternalOutcome EngineTaskInfo::Deserialize(const rapidjson::Value &value)
         m_engineExeTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("EngineExeTimes") && !value["EngineExeTimes"].IsNull())
+    if (value.HasMember("EngineExeTimeCost") && !value["EngineExeTimeCost"].IsNull())
     {
-        if (!value["EngineExeTimes"].IsUint64())
+        if (!value["EngineExeTimeCost"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.EngineExeTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.EngineExeTimeCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_engineExeTimes = value["EngineExeTimes"].GetUint64();
-        m_engineExeTimesHasBeenSet = true;
+        m_engineExeTimeCost = value["EngineExeTimeCost"].GetDouble();
+        m_engineExeTimeCostHasBeenSet = true;
     }
 
     if (value.HasMember("CuConsume") && !value["CuConsume"].IsNull())
@@ -249,6 +254,56 @@ CoreInternalOutcome EngineTaskInfo::Deserialize(const rapidjson::Value &value)
         m_cmdArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("VCoreSeconds") && !value["VCoreSeconds"].IsNull())
+    {
+        if (!value["VCoreSeconds"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.VCoreSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vCoreSeconds = value["VCoreSeconds"].GetUint64();
+        m_vCoreSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemorySeconds") && !value["MemorySeconds"].IsNull())
+    {
+        if (!value["MemorySeconds"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.MemorySeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memorySeconds = value["MemorySeconds"].GetUint64();
+        m_memorySecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EmrUserName") && !value["EmrUserName"].IsNull())
+    {
+        if (!value["EmrUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.EmrUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_emrUserName = string(value["EmrUserName"].GetString());
+        m_emrUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueryId") && !value["QueryId"].IsNull())
+    {
+        if (!value["QueryId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.QueryId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryId = string(value["QueryId"].GetString());
+        m_queryIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineTaskInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -272,12 +327,12 @@ void EngineTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_engineExeTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_engineExeTimesHasBeenSet)
+    if (m_engineExeTimeCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EngineExeTimes";
+        string key = "EngineExeTimeCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_engineExeTimes, allocator);
+        value.AddMember(iKey, m_engineExeTimeCost, allocator);
     }
 
     if (m_cuConsumeHasBeenSet)
@@ -416,6 +471,46 @@ void EngineTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_cmdArgs.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_vCoreSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VCoreSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vCoreSeconds, allocator);
+    }
+
+    if (m_memorySecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemorySeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memorySeconds, allocator);
+    }
+
+    if (m_emrUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmrUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emrUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -451,20 +546,20 @@ bool EngineTaskInfo::EngineExeTimeHasBeenSet() const
     return m_engineExeTimeHasBeenSet;
 }
 
-uint64_t EngineTaskInfo::GetEngineExeTimes() const
+double EngineTaskInfo::GetEngineExeTimeCost() const
 {
-    return m_engineExeTimes;
+    return m_engineExeTimeCost;
 }
 
-void EngineTaskInfo::SetEngineExeTimes(const uint64_t& _engineExeTimes)
+void EngineTaskInfo::SetEngineExeTimeCost(const double& _engineExeTimeCost)
 {
-    m_engineExeTimes = _engineExeTimes;
-    m_engineExeTimesHasBeenSet = true;
+    m_engineExeTimeCost = _engineExeTimeCost;
+    m_engineExeTimeCostHasBeenSet = true;
 }
 
-bool EngineTaskInfo::EngineExeTimesHasBeenSet() const
+bool EngineTaskInfo::EngineExeTimeCostHasBeenSet() const
 {
-    return m_engineExeTimesHasBeenSet;
+    return m_engineExeTimeCostHasBeenSet;
 }
 
 uint64_t EngineTaskInfo::GetCuConsume() const
@@ -737,5 +832,85 @@ void EngineTaskInfo::SetCmdArgs(const string& _cmdArgs)
 bool EngineTaskInfo::CmdArgsHasBeenSet() const
 {
     return m_cmdArgsHasBeenSet;
+}
+
+uint64_t EngineTaskInfo::GetVCoreSeconds() const
+{
+    return m_vCoreSeconds;
+}
+
+void EngineTaskInfo::SetVCoreSeconds(const uint64_t& _vCoreSeconds)
+{
+    m_vCoreSeconds = _vCoreSeconds;
+    m_vCoreSecondsHasBeenSet = true;
+}
+
+bool EngineTaskInfo::VCoreSecondsHasBeenSet() const
+{
+    return m_vCoreSecondsHasBeenSet;
+}
+
+uint64_t EngineTaskInfo::GetMemorySeconds() const
+{
+    return m_memorySeconds;
+}
+
+void EngineTaskInfo::SetMemorySeconds(const uint64_t& _memorySeconds)
+{
+    m_memorySeconds = _memorySeconds;
+    m_memorySecondsHasBeenSet = true;
+}
+
+bool EngineTaskInfo::MemorySecondsHasBeenSet() const
+{
+    return m_memorySecondsHasBeenSet;
+}
+
+string EngineTaskInfo::GetEmrUserName() const
+{
+    return m_emrUserName;
+}
+
+void EngineTaskInfo::SetEmrUserName(const string& _emrUserName)
+{
+    m_emrUserName = _emrUserName;
+    m_emrUserNameHasBeenSet = true;
+}
+
+bool EngineTaskInfo::EmrUserNameHasBeenSet() const
+{
+    return m_emrUserNameHasBeenSet;
+}
+
+string EngineTaskInfo::GetQueryId() const
+{
+    return m_queryId;
+}
+
+void EngineTaskInfo::SetQueryId(const string& _queryId)
+{
+    m_queryId = _queryId;
+    m_queryIdHasBeenSet = true;
+}
+
+bool EngineTaskInfo::QueryIdHasBeenSet() const
+{
+    return m_queryIdHasBeenSet;
+}
+
+string EngineTaskInfo::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void EngineTaskInfo::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool EngineTaskInfo::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 

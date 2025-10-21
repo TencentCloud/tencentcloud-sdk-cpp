@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,11 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_tasksHasBeenSet(false),
     m_linksHasBeenSet(false),
     m_paramsHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false)
+    m_workflowTypeHasBeenSet(false),
+    m_updateUserHasBeenSet(false),
+    m_updateUserIdHasBeenSet(false),
+    m_bundleIdHasBeenSet(false),
+    m_bundleInfoHasBeenSet(false)
 {
 }
 
@@ -213,6 +217,46 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_workflowTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateUser") && !value["UpdateUser"].IsNull())
+    {
+        if (!value["UpdateUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.UpdateUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUser = string(value["UpdateUser"].GetString());
+        m_updateUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateUserId") && !value["UpdateUserId"].IsNull())
+    {
+        if (!value["UpdateUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.UpdateUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUserId = string(value["UpdateUserId"].GetString());
+        m_updateUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleId") && !value["BundleId"].IsNull())
+    {
+        if (!value["BundleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.BundleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleId = string(value["BundleId"].GetString());
+        m_bundleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BundleInfo") && !value["BundleInfo"].IsNull())
+    {
+        if (!value["BundleInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.BundleInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleInfo = string(value["BundleInfo"].GetString());
+        m_bundleInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +395,38 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "WorkflowType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +654,69 @@ void WorkflowDsDTO::SetWorkflowType(const string& _workflowType)
 bool WorkflowDsDTO::WorkflowTypeHasBeenSet() const
 {
     return m_workflowTypeHasBeenSet;
+}
+
+string WorkflowDsDTO::GetUpdateUser() const
+{
+    return m_updateUser;
+}
+
+void WorkflowDsDTO::SetUpdateUser(const string& _updateUser)
+{
+    m_updateUser = _updateUser;
+    m_updateUserHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::UpdateUserHasBeenSet() const
+{
+    return m_updateUserHasBeenSet;
+}
+
+string WorkflowDsDTO::GetUpdateUserId() const
+{
+    return m_updateUserId;
+}
+
+void WorkflowDsDTO::SetUpdateUserId(const string& _updateUserId)
+{
+    m_updateUserId = _updateUserId;
+    m_updateUserIdHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::UpdateUserIdHasBeenSet() const
+{
+    return m_updateUserIdHasBeenSet;
+}
+
+string WorkflowDsDTO::GetBundleId() const
+{
+    return m_bundleId;
+}
+
+void WorkflowDsDTO::SetBundleId(const string& _bundleId)
+{
+    m_bundleId = _bundleId;
+    m_bundleIdHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::BundleIdHasBeenSet() const
+{
+    return m_bundleIdHasBeenSet;
+}
+
+string WorkflowDsDTO::GetBundleInfo() const
+{
+    return m_bundleInfo;
+}
+
+void WorkflowDsDTO::SetBundleInfo(const string& _bundleInfo)
+{
+    m_bundleInfo = _bundleInfo;
+    m_bundleInfoHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::BundleInfoHasBeenSet() const
+{
+    return m_bundleInfoHasBeenSet;
 }
 

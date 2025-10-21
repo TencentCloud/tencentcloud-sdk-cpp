@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ VisionRecognitionResult::VisionRecognitionResult() :
     m_statusHasBeenSet(false),
     m_detectedClassificationsHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_alternativeSummaryHasBeenSet(false)
+    m_alternativeSummaryHasBeenSet(false),
+    m_errorCodeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome VisionRecognitionResult::Deserialize(const rapidjson::Value 
         m_alternativeSummaryHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorCode") && !value["ErrorCode"].IsNull())
+    {
+        if (!value["ErrorCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VisionRecognitionResult.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorCode = string(value["ErrorCode"].GetString());
+        m_errorCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void VisionRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "AlternativeSummary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alternativeSummary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void VisionRecognitionResult::SetAlternativeSummary(const string& _alternativeSu
 bool VisionRecognitionResult::AlternativeSummaryHasBeenSet() const
 {
     return m_alternativeSummaryHasBeenSet;
+}
+
+string VisionRecognitionResult::GetErrorCode() const
+{
+    return m_errorCode;
+}
+
+void VisionRecognitionResult::SetErrorCode(const string& _errorCode)
+{
+    m_errorCode = _errorCode;
+    m_errorCodeHasBeenSet = true;
+}
+
+bool VisionRecognitionResult::ErrorCodeHasBeenSet() const
+{
+    return m_errorCodeHasBeenSet;
 }
 

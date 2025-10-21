@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,10 +62,11 @@ namespace TencentCloud
 <li>action-adaptive-substream：自适应码流</li>
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
+<li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityType 原子任务类型：
 <li>input: 起始节点</li>
 <li>output：终止节点</li>
@@ -80,10 +81,11 @@ namespace TencentCloud
 <li>action-adaptive-substream：自适应码流</li>
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
+<li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityType() const;
@@ -103,10 +105,11 @@ namespace TencentCloud
 <li>action-adaptive-substream：自适应码流</li>
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
+<li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityType 原子任务类型：
 <li>input: 起始节点</li>
 <li>output：终止节点</li>
@@ -121,10 +124,11 @@ namespace TencentCloud
 <li>action-adaptive-substream：自适应码流</li>
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
+<li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -138,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReardriveIndex 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetReardriveIndex() const;
 
                     /**
                      * 设置后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reardriveIndex 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReardriveIndex(const std::vector<int64_t>& _reardriveIndex);
@@ -203,17 +203,17 @@ namespace TencentCloud
 <li>action-adaptive-substream：自适应码流</li>
 <li>action-AIQualityControl：媒体质检</li>
 <li>action-SmartSubtitles：智能字幕</li>
+<li>action-exec-rules：判断规则</li>
+<li>action-SmartErase：智能擦除</li>
 
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
                      * 后驱节点索引数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_reardriveIndex;
                     bool m_reardriveIndexHasBeenSet;

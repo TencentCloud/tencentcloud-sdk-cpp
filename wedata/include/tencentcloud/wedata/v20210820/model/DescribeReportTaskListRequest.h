@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,27 +83,6 @@ namespace TencentCloud
                      * 
                      */
                     bool PageSizeHasBeenSet() const;
-
-                    /**
-                     * 获取租户id
-                     * @return TenantId 租户id
-                     * 
-                     */
-                    std::string GetTenantId() const;
-
-                    /**
-                     * 设置租户id
-                     * @param _tenantId 租户id
-                     * 
-                     */
-                    void SetTenantId(const std::string& _tenantId);
-
-                    /**
-                     * 判断参数 TenantId 是否已赋值
-                     * @return TenantId 是否已赋值
-                     * 
-                     */
-                    bool TenantIdHasBeenSet() const;
 
                     /**
                      * 获取项目id
@@ -307,12 +286,6 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
-
-                    /**
-                     * 租户id
-                     */
-                    std::string m_tenantId;
-                    bool m_tenantIdHasBeenSet;
 
                     /**
                      * 项目id

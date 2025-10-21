@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@ DescribeDeviceHardwareInfoItem::DescribeDeviceHardwareInfoItem() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_hardDiskSizeHasBeenSet(false),
-    m_monitorHasBeenSet(false)
+    m_monitorHasBeenSet(false),
+    m_remarkNameHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome DescribeDeviceHardwareInfoItem::Deserialize(const rapidjson:
         m_monitorHasBeenSet = true;
     }
 
+    if (value.HasMember("RemarkName") && !value["RemarkName"].IsNull())
+    {
+        if (!value["RemarkName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.RemarkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remarkName = string(value["RemarkName"].GetString());
+        m_remarkNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void DescribeDeviceHardwareInfoItem::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Monitor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_monitor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemarkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remarkName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void DescribeDeviceHardwareInfoItem::SetMonitor(const string& _monitor)
 bool DescribeDeviceHardwareInfoItem::MonitorHasBeenSet() const
 {
     return m_monitorHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetRemarkName() const
+{
+    return m_remarkName;
+}
+
+void DescribeDeviceHardwareInfoItem::SetRemarkName(const string& _remarkName)
+{
+    m_remarkName = _remarkName;
+    m_remarkNameHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::RemarkNameHasBeenSet() const
+{
+    return m_remarkNameHasBeenSet;
 }
 

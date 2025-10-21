@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ CreateInput::CreateInput() :
     m_securityGroupIdsHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_rISTSettingsHasBeenSet(false),
-    m_inputRegionHasBeenSet(false)
+    m_inputRegionHasBeenSet(false),
+    m_failOverOptionHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,23 @@ CoreInternalOutcome CreateInput::Deserialize(const rapidjson::Value &value)
         m_inputRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("FailOverOption") && !value["FailOverOption"].IsNull())
+    {
+        if (!value["FailOverOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateInput.FailOverOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_failOverOption.Deserialize(value["FailOverOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_failOverOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +417,15 @@ void CreateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InputRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failOverOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailOverOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_failOverOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -642,5 +669,21 @@ void CreateInput::SetInputRegion(const string& _inputRegion)
 bool CreateInput::InputRegionHasBeenSet() const
 {
     return m_inputRegionHasBeenSet;
+}
+
+FailOverOption CreateInput::GetFailOverOption() const
+{
+    return m_failOverOption;
+}
+
+void CreateInput::SetFailOverOption(const FailOverOption& _failOverOption)
+{
+    m_failOverOption = _failOverOption;
+    m_failOverOptionHasBeenSet = true;
+}
+
+bool CreateInput::FailOverOptionHasBeenSet() const
+{
+    return m_failOverOptionHasBeenSet;
 }
 

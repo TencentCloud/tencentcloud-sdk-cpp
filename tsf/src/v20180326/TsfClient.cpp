@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2706,6 +2706,49 @@ TsfClient::DeleteUnitRuleOutcomeCallable TsfClient::DeleteUnitRuleCallable(const
     return task->get_future();
 }
 
+TsfClient::DeployContainerApplicationOutcome TsfClient::DeployContainerApplication(const DeployContainerApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployContainerApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployContainerApplicationResponse rsp = DeployContainerApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployContainerApplicationOutcome(rsp);
+        else
+            return DeployContainerApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployContainerApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeployContainerApplicationAsync(const DeployContainerApplicationRequest& request, const DeployContainerApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployContainerApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeployContainerApplicationOutcomeCallable TsfClient::DeployContainerApplicationCallable(const DeployContainerApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployContainerApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployContainerApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeployContainerGroupOutcome TsfClient::DeployContainerGroup(const DeployContainerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployContainerGroup");
@@ -5286,6 +5329,92 @@ TsfClient::DescribeLanesOutcomeCallable TsfClient::DescribeLanesCallable(const D
     return task->get_future();
 }
 
+TsfClient::DescribeLicensesOutcome TsfClient::DescribeLicenses(const DescribeLicensesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicensesResponse rsp = DescribeLicensesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicensesOutcome(rsp);
+        else
+            return DescribeLicensesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicensesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeLicensesAsync(const DescribeLicensesRequest& request, const DescribeLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicenses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeLicensesOutcomeCallable TsfClient::DescribeLicensesCallable(const DescribeLicensesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicensesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicenses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeLogCapacityOutcome TsfClient::DescribeLogCapacity(const DescribeLogCapacityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogCapacity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogCapacityResponse rsp = DescribeLogCapacityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogCapacityOutcome(rsp);
+        else
+            return DescribeLogCapacityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogCapacityOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeLogCapacityAsync(const DescribeLogCapacityRequest& request, const DescribeLogCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogCapacity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeLogCapacityOutcomeCallable TsfClient::DescribeLogCapacityCallable(const DescribeLogCapacityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogCapacityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogCapacity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeMicroserviceOutcome TsfClient::DescribeMicroservice(const DescribeMicroserviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMicroservice");
@@ -6096,6 +6225,49 @@ TsfClient::DescribeRepositoryOutcomeCallable TsfClient::DescribeRepositoryCallab
         [this, request]()
         {
             return this->DescribeRepository(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeResourceConfigOutcome TsfClient::DescribeResourceConfig(const DescribeResourceConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceConfigResponse rsp = DescribeResourceConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceConfigOutcome(rsp);
+        else
+            return DescribeResourceConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeResourceConfigAsync(const DescribeResourceConfigRequest& request, const DescribeResourceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeResourceConfigOutcomeCallable TsfClient::DescribeResourceConfigCallable(const DescribeResourceConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceConfig(request);
         }
     );
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含具体参数建议等信息
+                     * @return MustHasContext 是否包含具体参数建议等信息
+                     * 
+                     */
+                    bool GetMustHasContext() const;
+
+                    /**
+                     * 设置是否包含具体参数建议等信息
+                     * @param _mustHasContext 是否包含具体参数建议等信息
+                     * 
+                     */
+                    void SetMustHasContext(const bool& _mustHasContext);
+
+                    /**
+                     * 判断参数 MustHasContext 是否已赋值
+                     * @return MustHasContext 是否已赋值
+                     * 
+                     */
+                    bool MustHasContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 是否包含具体参数建议等信息
+                     */
+                    bool m_mustHasContext;
+                    bool m_mustHasContextHasBeenSet;
 
                 };
             }

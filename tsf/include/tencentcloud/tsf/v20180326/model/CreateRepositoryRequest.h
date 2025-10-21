@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RepositoryTypeHasBeenSet() const;
 
                     /**
-                     * 获取仓库所在桶名称
-                     * @return BucketName 仓库所在桶名称
+                     * 获取仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
+                     * @return BucketName 仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置仓库所在桶名称
-                     * @param _bucketName 仓库所在桶名称
+                     * 设置仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
+                     * @param _bucketName 仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库所在桶地域
-                     * @return BucketRegion 仓库所在桶地域
+                     * 获取仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
+                     * @return BucketRegion 仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置仓库所在桶地域
-                     * @param _bucketRegion 仓库所在桶地域
+                     * 设置仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
+                     * @param _bucketRegion 仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_repositoryTypeHasBeenSet;
 
                     /**
-                     * 仓库所在桶名称
+                     * 仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 仓库所在桶地域
+                     * 仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;

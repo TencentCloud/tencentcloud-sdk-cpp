@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,9 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_payModeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_isolatedTimeHasBeenSet(false),
-    m_containerHasBeenSet(false)
+    m_containerHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_enableDeletionProtectionHasBeenSet(false)
 {
 }
 
@@ -328,6 +330,36 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_containerHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDeletionProtection") && !value["EnableDeletionProtection"].IsNull())
+    {
+        if (!value["EnableDeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.EnableDeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeletionProtection = value["EnableDeletionProtection"].GetBool();
+        m_enableDeletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +585,29 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Container";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_container, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableDeletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeletionProtection, allocator);
     }
 
 }
@@ -972,5 +1027,37 @@ void RabbitMQClusterInfo::SetContainer(const bool& _container)
 bool RabbitMQClusterInfo::ContainerHasBeenSet() const
 {
     return m_containerHasBeenSet;
+}
+
+vector<Tag> RabbitMQClusterInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void RabbitMQClusterInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+bool RabbitMQClusterInfo::GetEnableDeletionProtection() const
+{
+    return m_enableDeletionProtection;
+}
+
+void RabbitMQClusterInfo::SetEnableDeletionProtection(const bool& _enableDeletionProtection)
+{
+    m_enableDeletionProtection = _enableDeletionProtection;
+    m_enableDeletionProtectionHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::EnableDeletionProtectionHasBeenSet() const
+{
+    return m_enableDeletionProtectionHasBeenSet;
 }
 

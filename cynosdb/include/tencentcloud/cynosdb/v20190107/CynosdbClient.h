@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,6 +315,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RenewClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RenewClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ReplayInstanceAuditLogRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ReplayInstanceAuditLogResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RestartInstanceRequest.h>
@@ -805,6 +807,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewClustersResponse> RenewClustersOutcome;
                 typedef std::future<RenewClustersOutcome> RenewClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RenewClustersRequest&, RenewClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplayInstanceAuditLogResponse> ReplayInstanceAuditLogOutcome;
+                typedef std::future<ReplayInstanceAuditLogOutcome> ReplayInstanceAuditLogOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ReplayInstanceAuditLogRequest&, ReplayInstanceAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplayInstanceAuditLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
                 typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ResetAccountPasswordRequest&, ResetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
@@ -2178,6 +2183,15 @@ namespace TencentCloud
                 RenewClustersOutcome RenewClusters(const Model::RenewClustersRequest &request);
                 void RenewClustersAsync(const Model::RenewClustersRequest& request, const RenewClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewClustersOutcomeCallable RenewClustersCallable(const Model::RenewClustersRequest& request);
+
+                /**
+                 *回放实例审计日志
+                 * @param req ReplayInstanceAuditLogRequest
+                 * @return ReplayInstanceAuditLogOutcome
+                 */
+                ReplayInstanceAuditLogOutcome ReplayInstanceAuditLog(const Model::ReplayInstanceAuditLogRequest &request);
+                void ReplayInstanceAuditLogAsync(const Model::ReplayInstanceAuditLogRequest& request, const ReplayInstanceAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplayInstanceAuditLogOutcomeCallable ReplayInstanceAuditLogCallable(const Model::ReplayInstanceAuditLogRequest& request);
 
                 /**
                  *本接口（ResetAccountPassword）用于修改数据库账号密码。

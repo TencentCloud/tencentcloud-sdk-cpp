@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,8 +24,10 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
   include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
+  include/tencentcloud/apm/v20210622/model/ServiceDetail.h
   include/tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
   include/tencentcloud/apm/v20210622/model/Instrument.h
@@ -37,6 +39,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmServiceMetric.h
   include/tencentcloud/apm/v20210622/model/ApmField.h
   include/tencentcloud/apm/v20210622/model/Line.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
@@ -44,6 +47,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/APMKVItem.h
   include/tencentcloud/apm/v20210622/model/OrderBy.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
@@ -75,8 +79,10 @@ set(apm_src
   src/v20210622/model/ApmInstanceDetail.cpp
   src/v20210622/model/CreateApmInstanceRequest.cpp
   src/v20210622/model/ModifyGeneralApmApplicationConfigRequest.cpp
+  src/v20210622/model/DescribeApmServiceMetricRequest.cpp
   src/v20210622/model/DescribeServiceOverviewResponse.cpp
   src/v20210622/model/QueryMetricItem.cpp
+  src/v20210622/model/ServiceDetail.cpp
   src/v20210622/model/TerminateApmInstanceRequest.cpp
   src/v20210622/model/DescribeApmInstancesResponse.cpp
   src/v20210622/model/Instrument.cpp
@@ -88,6 +94,7 @@ set(apm_src
   src/v20210622/model/DescribeServiceOverviewRequest.cpp
   src/v20210622/model/DescribeApmAgentResponse.cpp
   src/v20210622/model/DescribeTagValuesRequest.cpp
+  src/v20210622/model/ApmServiceMetric.cpp
   src/v20210622/model/ApmField.cpp
   src/v20210622/model/Line.cpp
   src/v20210622/model/DescribeGeneralSpanListResponse.cpp
@@ -95,6 +102,7 @@ set(apm_src
   src/v20210622/model/DescribeGeneralSpanListRequest.cpp
   src/v20210622/model/APMKVItem.cpp
   src/v20210622/model/OrderBy.cpp
+  src/v20210622/model/DescribeApmServiceMetricResponse.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
   src/v20210622/model/ApmTag.cpp

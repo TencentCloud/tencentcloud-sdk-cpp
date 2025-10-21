@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -396,23 +396,44 @@ namespace TencentCloud
                     /**
                      * 获取用户是否举报该发送者
                      * @return UserComplainted 用户是否举报该发送者
-                     * 
+                     * @deprecated
                      */
                     bool GetUserComplainted() const;
 
                     /**
                      * 设置用户是否举报该发送者
                      * @param _userComplainted 用户是否举报该发送者
-                     * 
+                     * @deprecated
                      */
                     void SetUserComplainted(const bool& _userComplainted);
 
                     /**
                      * 判断参数 UserComplainted 是否已赋值
                      * @return UserComplainted 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UserComplaintedHasBeenSet() const;
+
+                    /**
+                     * 获取用户是否举报该发送者
+                     * @return UserComplained 用户是否举报该发送者
+                     * 
+                     */
+                    bool GetUserComplained() const;
+
+                    /**
+                     * 设置用户是否举报该发送者
+                     * @param _userComplained 用户是否举报该发送者
+                     * 
+                     */
+                    void SetUserComplained(const bool& _userComplained);
+
+                    /**
+                     * 判断参数 UserComplained 是否已赋值
+                     * @return UserComplained 是否已赋值
+                     * 
+                     */
+                    bool UserComplainedHasBeenSet() const;
 
                 private:
 
@@ -516,6 +537,12 @@ namespace TencentCloud
                      */
                     bool m_userComplainted;
                     bool m_userComplaintedHasBeenSet;
+
+                    /**
+                     * 用户是否举报该发送者
+                     */
+                    bool m_userComplained;
+                    bool m_userComplainedHasBeenSet;
 
                 };
             }

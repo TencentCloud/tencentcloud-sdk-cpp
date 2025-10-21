@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -487,6 +487,48 @@ namespace TencentCloud
                      */
                     bool ClearLinkHasBeenSet() const;
 
+                    /**
+                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * @return MainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * 
+                     */
+                    std::string GetMainCyclicConfig() const;
+
+                    /**
+                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * @param _mainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * 
+                     */
+                    void SetMainCyclicConfig(const std::string& _mainCyclicConfig);
+
+                    /**
+                     * 判断参数 MainCyclicConfig 是否已赋值
+                     * @return MainCyclicConfig 是否已赋值
+                     * 
+                     */
+                    bool MainCyclicConfigHasBeenSet() const;
+
+                    /**
+                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * @return SubordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * 
+                     */
+                    std::string GetSubordinateCyclicConfig() const;
+
+                    /**
+                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * @param _subordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * 
+                     */
+                    void SetSubordinateCyclicConfig(const std::string& _subordinateCyclicConfig);
+
+                    /**
+                     * 判断参数 SubordinateCyclicConfig 是否已赋值
+                     * @return SubordinateCyclicConfig 是否已赋值
+                     * 
+                     */
+                    bool SubordinateCyclicConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +657,18 @@ namespace TencentCloud
                      */
                     bool m_clearLink;
                     bool m_clearLinkHasBeenSet;
+
+                    /**
+                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     */
+                    std::string m_mainCyclicConfig;
+                    bool m_mainCyclicConfigHasBeenSet;
+
+                    /**
+                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     */
+                    std::string m_subordinateCyclicConfig;
+                    bool m_subordinateCyclicConfigHasBeenSet;
 
                 };
             }

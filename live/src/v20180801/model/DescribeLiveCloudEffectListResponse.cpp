@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
 DescribeLiveCloudEffectListResponse::DescribeLiveCloudEffectListResponse() :
-    m_infoListHasBeenSet(false)
+    m_infoListHasBeenSet(false),
+    m_enableCreateNumHasBeenSet(false),
+    m_totalNumHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeLiveCloudEffectListResponse::Deserialize(const strin
         m_infoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableCreateNum") && !rsp["EnableCreateNum"].IsNull())
+    {
+        if (!rsp["EnableCreateNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableCreateNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCreateNum = rsp["EnableCreateNum"].GetInt64();
+        m_enableCreateNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalNum") && !rsp["TotalNum"].IsNull())
+    {
+        if (!rsp["TotalNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalNum = rsp["TotalNum"].GetInt64();
+        m_totalNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,11 +129,27 @@ string DescribeLiveCloudEffectListResponse::ToJsonString() const
         }
     }
 
+    if (m_enableCreateNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCreateNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCreateNum, allocator);
+    }
+
+    if (m_totalNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalNum, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -127,6 +165,26 @@ vector<CloudEffectInfo> DescribeLiveCloudEffectListResponse::GetInfoList() const
 bool DescribeLiveCloudEffectListResponse::InfoListHasBeenSet() const
 {
     return m_infoListHasBeenSet;
+}
+
+int64_t DescribeLiveCloudEffectListResponse::GetEnableCreateNum() const
+{
+    return m_enableCreateNum;
+}
+
+bool DescribeLiveCloudEffectListResponse::EnableCreateNumHasBeenSet() const
+{
+    return m_enableCreateNumHasBeenSet;
+}
+
+int64_t DescribeLiveCloudEffectListResponse::GetTotalNum() const
+{
+    return m_totalNum;
+}
+
+bool DescribeLiveCloudEffectListResponse::TotalNumHasBeenSet() const
+{
+    return m_totalNumHasBeenSet;
 }
 
 

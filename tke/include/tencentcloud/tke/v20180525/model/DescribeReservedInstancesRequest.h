@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取status
-按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。
+按照**【状态**】进行过滤。状态：Creating：创建中、Active：生效中、Expired：已过期、Refunded：已退还。
 类型：String
 必选：否
 
@@ -144,7 +144,7 @@ reserved-instance-not-deduct
 按照**【上个周期未抵扣的预留券**】进行过滤。Values可不设置。
 必选：否
                      * @return Filters status
-按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。
+按照**【状态**】进行过滤。状态：Creating：创建中、Active：生效中、Expired：已过期、Refunded：已退还。
 类型：String
 必选：否
 
@@ -206,7 +206,7 @@ reserved-instance-not-deduct
 
                     /**
                      * 设置status
-按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。
+按照**【状态**】进行过滤。状态：Creating：创建中、Active：生效中、Expired：已过期、Refunded：已退还。
 类型：String
 必选：否
 
@@ -263,7 +263,7 @@ reserved-instance-not-deduct
 按照**【上个周期未抵扣的预留券**】进行过滤。Values可不设置。
 必选：否
                      * @param _filters status
-按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。
+按照**【状态**】进行过滤。状态：Creating：创建中、Active：生效中、Expired：已过期、Refunded：已退还。
 类型：String
 必选：否
 
@@ -388,7 +388,7 @@ reserved-instance-not-deduct
 
                     /**
                      * status
-按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。
+按照**【状态**】进行过滤。状态：Creating：创建中、Active：生效中、Expired：已过期、Refunded：已退还。
 类型：String
 必选：否
 

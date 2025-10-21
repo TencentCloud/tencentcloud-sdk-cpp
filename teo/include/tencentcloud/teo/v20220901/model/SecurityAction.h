@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/DenyActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/RedirectActionParameters.h>
+#include <tencentcloud/teo/v20220901/model/AllowActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/ChallengeActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/BlockIPActionParameters.h>
 #include <tencentcloud/teo/v20220901/model/ReturnCustomPageActionParameters.h>
@@ -155,6 +156,27 @@ namespace TencentCloud
                     bool RedirectActionParametersHasBeenSet() const;
 
                     /**
+                     * 获取当 Name 为 Allow 时的附加参数。
+                     * @return AllowActionParameters 当 Name 为 Allow 时的附加参数。
+                     * 
+                     */
+                    AllowActionParameters GetAllowActionParameters() const;
+
+                    /**
+                     * 设置当 Name 为 Allow 时的附加参数。
+                     * @param _allowActionParameters 当 Name 为 Allow 时的附加参数。
+                     * 
+                     */
+                    void SetAllowActionParameters(const AllowActionParameters& _allowActionParameters);
+
+                    /**
+                     * 判断参数 AllowActionParameters 是否已赋值
+                     * @return AllowActionParameters 是否已赋值
+                     * 
+                     */
+                    bool AllowActionParametersHasBeenSet() const;
+
+                    /**
                      * 获取当 Name 为 Challenge 时的附加参数。
                      * @return ChallengeActionParameters 当 Name 为 Challenge 时的附加参数。
                      * 
@@ -246,6 +268,12 @@ namespace TencentCloud
                      */
                     RedirectActionParameters m_redirectActionParameters;
                     bool m_redirectActionParametersHasBeenSet;
+
+                    /**
+                     * 当 Name 为 Allow 时的附加参数。
+                     */
+                    AllowActionParameters m_allowActionParameters;
+                    bool m_allowActionParametersHasBeenSet;
 
                     /**
                      * 当 Name 为 Challenge 时的附加参数。

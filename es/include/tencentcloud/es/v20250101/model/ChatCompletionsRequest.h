@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20250101/model/Message.h>
 #include <tencentcloud/es/v20250101/model/OnlineSearchOptions.h>
+#include <tencentcloud/es/v20250101/model/Tool.h>
 
 
 namespace TencentCloud
@@ -191,6 +192,69 @@ namespace TencentCloud
                      */
                     bool OnlineSearchOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * @return Tools 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * 
+                     */
+                    std::vector<Tool> GetTools() const;
+
+                    /**
+                     * 设置可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * @param _tools 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * 
+                     */
+                    void SetTools(const std::vector<Tool>& _tools);
+
+                    /**
+                     * 判断参数 Tools 是否已赋值
+                     * @return Tools 是否已赋值
+                     * 
+                     */
+                    bool ToolsHasBeenSet() const;
+
+                    /**
+                     * 获取工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * @return ToolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * 
+                     */
+                    std::string GetToolChoice() const;
+
+                    /**
+                     * 设置工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * @param _toolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * 
+                     */
+                    void SetToolChoice(const std::string& _toolChoice);
+
+                    /**
+                     * 判断参数 ToolChoice 是否已赋值
+                     * @return ToolChoice 是否已赋值
+                     * 
+                     */
+                    bool ToolChoiceHasBeenSet() const;
+
+                    /**
+                     * 获取强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * @return CustomTool 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * 
+                     */
+                    Tool GetCustomTool() const;
+
+                    /**
+                     * 设置强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * @param _customTool 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * 
+                     */
+                    void SetCustomTool(const Tool& _customTool);
+
+                    /**
+                     * 判断参数 CustomTool 是否已赋值
+                     * @return CustomTool 是否已赋值
+                     * 
+                     */
+                    bool CustomToolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +298,24 @@ namespace TencentCloud
                      */
                     OnlineSearchOptions m_onlineSearchOptions;
                     bool m_onlineSearchOptionsHasBeenSet;
+
+                    /**
+                     * 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     */
+                    std::vector<Tool> m_tools;
+                    bool m_toolsHasBeenSet;
+
+                    /**
+                     * 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     */
+                    std::string m_toolChoice;
+                    bool m_toolChoiceHasBeenSet;
+
+                    /**
+                     * 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     */
+                    Tool m_customTool;
+                    bool m_customToolHasBeenSet;
 
                 };
             }

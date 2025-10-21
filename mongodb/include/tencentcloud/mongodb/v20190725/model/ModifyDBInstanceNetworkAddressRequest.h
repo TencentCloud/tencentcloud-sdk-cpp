@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,15 +102,15 @@ namespace TencentCloud
                     bool OldIpExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
-                     * @return NewUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
+                     * 获取切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。
+                     * @return NewUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。
                      * 
                      */
                     std::string GetNewUniqVpcId() const;
 
                     /**
-                     * 设置切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
-                     * @param _newUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
+                     * 设置切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。
+                     * @param _newUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。
                      * 
                      */
                     void SetNewUniqVpcId(const std::string& _newUniqVpcId);
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool NewUniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
-                     * @return NewUniqSubnetId 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
+                     * 获取切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。
+                     * @return NewUniqSubnetId 切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。
                      * 
                      */
                     std::string GetNewUniqSubnetId() const;
 
                     /**
-                     * 设置切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
-                     * @param _newUniqSubnetId 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
+                     * 设置切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。
+                     * @param _newUniqSubnetId 切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。
                      * 
                      */
                     void SetNewUniqSubnetId(const std::string& _newUniqSubnetId);
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_oldIpExpiredTimeHasBeenSet;
 
                     /**
-                     * 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
+                     * 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。
                      */
                     std::string m_newUniqVpcId;
                     bool m_newUniqVpcIdHasBeenSet;
 
                     /**
-                     * 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
+                     * 切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。
                      */
                     std::string m_newUniqSubnetId;
                     bool m_newUniqSubnetIdHasBeenSet;

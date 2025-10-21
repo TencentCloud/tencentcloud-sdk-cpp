@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模版对应的合同类型
+                * 模板对应的合同类型
                 */
                 class TemplateUserFlowType : public AbstractModel
                 {
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取每个合同类型绑定的模版数量	
-                     * @return TemplateNum 每个合同类型绑定的模版数量	
+                     * 获取每个合同类型绑定的模板数量	
+                     * @return TemplateNum 每个合同类型绑定的模板数量	
                      * 
                      */
                     int64_t GetTemplateNum() const;
 
                     /**
-                     * 设置每个合同类型绑定的模版数量	
-                     * @param _templateNum 每个合同类型绑定的模版数量	
+                     * 设置每个合同类型绑定的模板数量	
+                     * @param _templateNum 每个合同类型绑定的模板数量	
                      * 
                      */
                     void SetTemplateNum(const int64_t& _templateNum);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 每个合同类型绑定的模版数量	
+                     * 每个合同类型绑定的模板数量	
                      */
                     int64_t m_templateNum;
                     bool m_templateNumHasBeenSet;

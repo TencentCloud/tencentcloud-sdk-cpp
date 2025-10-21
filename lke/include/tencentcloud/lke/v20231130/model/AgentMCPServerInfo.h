@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginHeader.h>
+#include <tencentcloud/lke/v20231130/model/AgentPluginQuery.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,27 @@ namespace TencentCloud
                      */
                     bool SseReadTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取mcp server query信息
+                     * @return Query mcp server query信息
+                     * 
+                     */
+                    std::vector<AgentPluginQuery> GetQuery() const;
+
+                    /**
+                     * 设置mcp server query信息
+                     * @param _query mcp server query信息
+                     * 
+                     */
+                    void SetQuery(const std::vector<AgentPluginQuery>& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +178,12 @@ namespace TencentCloud
                      */
                     int64_t m_sseReadTimeout;
                     bool m_sseReadTimeoutHasBeenSet;
+
+                    /**
+                     * mcp server query信息
+                     */
+                    std::vector<AgentPluginQuery> m_query;
+                    bool m_queryHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return Value 标签值
+                     * 获取标签值。普通场景下，该值不需要填写；高级场景下，需要两个层级进行分组时才填写。
+                     * @return Value 标签值。普通场景下，该值不需要填写；高级场景下，需要两个层级进行分组时才填写。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置标签值
-                     * @param _value 标签值
+                     * 设置标签值。普通场景下，该值不需要填写；高级场景下，需要两个层级进行分组时才填写。
+                     * @param _value 标签值。普通场景下，该值不需要填写；高级场景下，需要两个层级进行分组时才填写。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述
+                     * @return Description 标签描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置标签描述
+                     * @param _description 标签描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 标签值
+                     * 标签值。普通场景下，该值不需要填写；高级场景下，需要两个层级进行分组时才填写。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 标签描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

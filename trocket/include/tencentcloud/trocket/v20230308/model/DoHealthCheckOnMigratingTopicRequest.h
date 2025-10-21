@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取必填，是否忽略当前检查
-                     * @return IgnoreCheck 必填，是否忽略当前检查
+                     * 获取是否忽略当前检查
+                     * @return IgnoreCheck 是否忽略当前检查
                      * 
                      */
                     bool GetIgnoreCheck() const;
 
                     /**
-                     * 设置必填，是否忽略当前检查
-                     * @param _ignoreCheck 必填，是否忽略当前检查
+                     * 设置是否忽略当前检查
+                     * @param _ignoreCheck 是否忽略当前检查
                      * 
                      */
                     void SetIgnoreCheck(const bool& _ignoreCheck);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 必填，是否忽略当前检查
+                     * 是否忽略当前检查
                      */
                     bool m_ignoreCheck;
                     bool m_ignoreCheckHasBeenSet;

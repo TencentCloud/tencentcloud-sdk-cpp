@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间ID
-                     * @return RoomId 房间ID
+                     * 获取课堂ID
+                     * @return RoomId 课堂ID
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
-                     * 设置房间ID
-                     * @param _roomId 房间ID
+                     * 设置课堂ID
+                     * @param _roomId 课堂ID
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间ID
+                     * 课堂ID
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;

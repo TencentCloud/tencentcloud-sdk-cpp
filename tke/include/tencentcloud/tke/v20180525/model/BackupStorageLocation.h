@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,14 +153,22 @@ namespace TencentCloud
 
                     /**
                      * 获取存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * @return State 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * @param _state 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -248,6 +256,8 @@ namespace TencentCloud
 
                     /**
                      * 存储仓库状态
+- Available: 可用
+- Unavailable: 不可用
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

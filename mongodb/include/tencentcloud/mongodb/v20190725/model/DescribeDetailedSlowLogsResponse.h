@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取满足条件的慢日志数量
-                     * @return TotalCount 满足条件的慢日志数量
+                     * 获取满足条件的慢日志数量。
+                     * @return TotalCount 满足条件的慢日志数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取慢日志详情
-                     * @return DetailedSlowLogs 慢日志详情
+                     * 获取慢日志详情。
+                     * @return DetailedSlowLogs 慢日志详情。
                      * 
                      */
                     std::vector<SlowLogItem> GetDetailedSlowLogs() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 满足条件的慢日志数量
+                     * 满足条件的慢日志数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 慢日志详情
+                     * 慢日志详情。
                      */
                     std::vector<SlowLogItem> m_detailedSlowLogs;
                     bool m_detailedSlowLogsHasBeenSet;

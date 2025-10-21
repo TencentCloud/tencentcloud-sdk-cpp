@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,48 @@ namespace TencentCloud
                     bool ParamKeyNameHasBeenSet() const;
 
                     /**
+                     * 获取参数 Id
+                     * @return ParamId 参数 Id
+                     * 
+                     */
+                    std::string GetParamId() const;
+
+                    /**
+                     * 设置参数 Id
+                     * @param _paramId 参数 Id
+                     * 
+                     */
+                    void SetParamId(const std::string& _paramId);
+
+                    /**
+                     * 判断参数 ParamId 是否已赋值
+                     * @return ParamId 是否已赋值
+                     * 
+                     */
+                    bool ParamIdHasBeenSet() const;
+
+                    /**
+                     * 获取参数值 Id
+                     * @return ParamValueId 参数值 Id
+                     * 
+                     */
+                    std::string GetParamValueId() const;
+
+                    /**
+                     * 设置参数值 Id
+                     * @param _paramValueId 参数值 Id
+                     * 
+                     */
+                    void SetParamValueId(const std::string& _paramValueId);
+
+                    /**
+                     * 判断参数 ParamValueId 是否已赋值
+                     * @return ParamValueId 是否已赋值
+                     * 
+                     */
+                    bool ParamValueIdHasBeenSet() const;
+
+                    /**
                      * 获取售卖参数值，当ParamType=Quant时，该值有可能为Null
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamValue 售卖参数值，当ParamType=Quant时，该值有可能为Null
@@ -167,6 +209,69 @@ namespace TencentCloud
                      */
                     bool ParamTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模块ID
+                     * @return ModuleId 模块ID
+                     * 
+                     */
+                    std::string GetModuleId() const;
+
+                    /**
+                     * 设置模块ID
+                     * @param _moduleId 模块ID
+                     * 
+                     */
+                    void SetModuleId(const std::string& _moduleId);
+
+                    /**
+                     * 判断参数 ModuleId 是否已赋值
+                     * @return ModuleId 是否已赋值
+                     * 
+                     */
+                    bool ModuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取模块key
+                     * @return ModuleKey 模块key
+                     * 
+                     */
+                    std::string GetModuleKey() const;
+
+                    /**
+                     * 设置模块key
+                     * @param _moduleKey 模块key
+                     * 
+                     */
+                    void SetModuleKey(const std::string& _moduleKey);
+
+                    /**
+                     * 判断参数 ModuleKey 是否已赋值
+                     * @return ModuleKey 是否已赋值
+                     * 
+                     */
+                    bool ModuleKeyHasBeenSet() const;
+
+                    /**
+                     * 获取模块名称
+                     * @return ModuleName 模块名称
+                     * 
+                     */
+                    std::string GetModuleName() const;
+
+                    /**
+                     * 设置模块名称
+                     * @param _moduleName 模块名称
+                     * 
+                     */
+                    void SetModuleName(const std::string& _moduleName);
+
+                    /**
+                     * 判断参数 ModuleName 是否已赋值
+                     * @return ModuleName 是否已赋值
+                     * 
+                     */
+                    bool ModuleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,6 +286,18 @@ namespace TencentCloud
                      */
                     std::string m_paramKeyName;
                     bool m_paramKeyNameHasBeenSet;
+
+                    /**
+                     * 参数 Id
+                     */
+                    std::string m_paramId;
+                    bool m_paramIdHasBeenSet;
+
+                    /**
+                     * 参数值 Id
+                     */
+                    std::string m_paramValueId;
+                    bool m_paramValueIdHasBeenSet;
 
                     /**
                      * 售卖参数值，当ParamType=Quant时，该值有可能为Null
@@ -202,6 +319,24 @@ namespace TencentCloud
                      */
                     std::string m_paramType;
                     bool m_paramTypeHasBeenSet;
+
+                    /**
+                     * 模块ID
+                     */
+                    std::string m_moduleId;
+                    bool m_moduleIdHasBeenSet;
+
+                    /**
+                     * 模块key
+                     */
+                    std::string m_moduleKey;
+                    bool m_moduleKeyHasBeenSet;
+
+                    /**
+                     * 模块名称
+                     */
+                    std::string m_moduleName;
+                    bool m_moduleNameHasBeenSet;
 
                 };
             }

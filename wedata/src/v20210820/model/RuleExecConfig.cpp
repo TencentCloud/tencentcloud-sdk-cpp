@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ RuleExecConfig::RuleExecConfig() :
     m_queueNameHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_dlcGroupNameHasBeenSet(false)
+    m_dlcGroupNameHasBeenSet(false),
+    m_engineParamHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome RuleExecConfig::Deserialize(const rapidjson::Value &value)
         m_dlcGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineParam") && !value["EngineParam"].IsNull())
+    {
+        if (!value["EngineParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecConfig.EngineParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineParam = string(value["EngineParam"].GetString());
+        m_engineParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void RuleExecConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DlcGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dlcGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void RuleExecConfig::SetDlcGroupName(const string& _dlcGroupName)
 bool RuleExecConfig::DlcGroupNameHasBeenSet() const
 {
     return m_dlcGroupNameHasBeenSet;
+}
+
+string RuleExecConfig::GetEngineParam() const
+{
+    return m_engineParam;
+}
+
+void RuleExecConfig::SetEngineParam(const string& _engineParam)
+{
+    m_engineParam = _engineParam;
+    m_engineParamHasBeenSet = true;
+}
+
+bool RuleExecConfig::EngineParamHasBeenSet() const
+{
+    return m_engineParamHasBeenSet;
 }
 

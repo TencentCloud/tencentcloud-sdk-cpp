@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ using namespace std;
 
 DifferenceItem::DifferenceItem() :
     m_dbHasBeenSet(false),
+    m_schemaHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_chunkHasBeenSet(false),
     m_srcItemHasBeenSet(false),
@@ -47,6 +48,16 @@ CoreInternalOutcome DifferenceItem::Deserialize(const rapidjson::Value &value)
         }
         m_db = string(value["Db"].GetString());
         m_dbHasBeenSet = true;
+    }
+
+    if (value.HasMember("Schema") && !value["Schema"].IsNull())
+    {
+        if (!value["Schema"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DifferenceItem.Schema` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schema = string(value["Schema"].GetString());
+        m_schemaHasBeenSet = true;
     }
 
     if (value.HasMember("Table") && !value["Table"].IsNull())
@@ -154,6 +165,14 @@ void DifferenceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_db.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,22 @@ void DifferenceItem::SetDb(const string& _db)
 bool DifferenceItem::DbHasBeenSet() const
 {
     return m_dbHasBeenSet;
+}
+
+string DifferenceItem::GetSchema() const
+{
+    return m_schema;
+}
+
+void DifferenceItem::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool DifferenceItem::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
 }
 
 string DifferenceItem::GetTable() const

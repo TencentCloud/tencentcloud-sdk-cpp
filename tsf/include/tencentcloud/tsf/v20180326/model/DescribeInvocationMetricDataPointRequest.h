@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取维度，并且 维度 key value 不能为空
-                     * @return MetricDimensionValues 维度，并且 维度 key value 不能为空
+                     * 获取查询指标维度, 不能为空
+                     * @return MetricDimensionValues 查询指标维度, 不能为空
                      * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
-                     * 设置维度，并且 维度 key value 不能为空
-                     * @param _metricDimensionValues 维度，并且 维度 key value 不能为空
+                     * 设置查询指标维度, 不能为空
+                     * @param _metricDimensionValues 查询指标维度, 不能为空
                      * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool MetricDimensionValuesHasBeenSet() const;
 
                     /**
-                     * 获取指标，并且 key, value 不能为空
-                     * @return Metrics 指标，并且 key, value 不能为空
+                     * 获取指标，不能为空
+                     * @return Metrics 指标，不能为空
                      * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
-                     * 设置指标，并且 key, value 不能为空
-                     * @param _metrics 指标，并且 key, value 不能为空
+                     * 设置指标，不能为空
+                     * @param _metrics 指标，不能为空
                      * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取调用视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @return Kind 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 获取视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER
+                     * @return Kind 视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置调用视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @param _kind 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 设置视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER
+                     * @param _kind 视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -152,31 +152,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 维度，并且 维度 key value 不能为空
+                     * 查询指标维度, 不能为空
                      */
                     std::vector<MetricDimensionValue> m_metricDimensionValues;
                     bool m_metricDimensionValuesHasBeenSet;
 
                     /**
-                     * 指标，并且 key, value 不能为空
+                     * 指标，不能为空
                      */
                     std::vector<Metric> m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

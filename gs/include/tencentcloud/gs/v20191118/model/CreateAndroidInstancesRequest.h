@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/AndroidInstanceLabel.h>
 
 
 namespace TencentCloud
@@ -191,6 +192,27 @@ A6：六开
                      */
                     bool ImageIdHasBeenSet() const;
 
+                    /**
+                     * 获取安卓实例标签列表
+                     * @return Labels 安卓实例标签列表
+                     * 
+                     */
+                    std::vector<AndroidInstanceLabel> GetLabels() const;
+
+                    /**
+                     * 设置安卓实例标签列表
+                     * @param _labels 安卓实例标签列表
+                     * 
+                     */
+                    void SetLabels(const std::vector<AndroidInstanceLabel>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +255,12 @@ A6：六开
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
+
+                    /**
+                     * 安卓实例标签列表
+                     */
+                    std::vector<AndroidInstanceLabel> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

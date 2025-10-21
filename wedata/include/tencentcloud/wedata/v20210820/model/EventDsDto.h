@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -397,6 +397,106 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取事件消费有效次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidConsumeCount 事件消费有效次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetValidConsumeCount() const;
+
+                    /**
+                     * 设置事件消费有效次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _validConsumeCount 事件消费有效次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValidConsumeCount(const int64_t& _validConsumeCount);
+
+                    /**
+                     * 判断参数 ValidConsumeCount 是否已赋值
+                     * @return ValidConsumeCount 是否已赋值
+                     * 
+                     */
+                    bool ValidConsumeCountHasBeenSet() const;
+
+                    /**
+                     * 获取事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     * 
+                     */
+                    bool EventIdHasBeenSet() const;
+
+                    /**
+                     * 获取bundleId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleId bundleId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleId() const;
+
+                    /**
+                     * 设置bundleId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleId bundleId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleId(const std::string& _bundleId);
+
+                    /**
+                     * 判断参数 BundleId 是否已赋值
+                     * @return BundleId 是否已赋值
+                     * 
+                     */
+                    bool BundleIdHasBeenSet() const;
+
+                    /**
+                     * 获取bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleInfo bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleInfo() const;
+
+                    /**
+                     * 设置bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleInfo bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleInfo(const std::string& _bundleInfo);
+
+                    /**
+                     * 判断参数 BundleInfo 是否已赋值
+                     * @return BundleInfo 是否已赋值
+                     * 
+                     */
+                    bool BundleInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +596,34 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 事件消费有效次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_validConsumeCount;
+                    bool m_validConsumeCountHasBeenSet;
+
+                    /**
+                     * 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
+
+                    /**
+                     * bundleId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleId;
+                    bool m_bundleIdHasBeenSet;
+
+                    /**
+                     * bundle信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleInfo;
+                    bool m_bundleInfoHasBeenSet;
 
                 };
             }

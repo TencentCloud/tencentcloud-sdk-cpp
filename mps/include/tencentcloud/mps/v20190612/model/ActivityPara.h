@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/ExecRulesTask.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/SmartEraseTaskInput.h>
 
 
 namespace TencentCloud
@@ -308,6 +310,31 @@ namespace TencentCloud
                     bool QualityControlTaskHasBeenSet() const;
 
                     /**
+                     * 获取任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecRulesTask 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExecRulesTask GetExecRulesTask() const;
+
+                    /**
+                     * 设置任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _execRulesTask 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecRulesTask(const ExecRulesTask& _execRulesTask);
+
+                    /**
+                     * 判断参数 ExecRulesTask 是否已赋值
+                     * @return ExecRulesTask 是否已赋值
+                     * 
+                     */
+                    bool ExecRulesTaskHasBeenSet() const;
+
+                    /**
                      * 获取智能字幕任务
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartSubtitlesTask 智能字幕任务
@@ -331,6 +358,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SmartSubtitlesTaskHasBeenSet() const;
+
+                    /**
+                     * 获取智能擦除任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartEraseTask 智能擦除任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartEraseTaskInput GetSmartEraseTask() const;
+
+                    /**
+                     * 设置智能擦除任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartEraseTask 智能擦除任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask);
+
+                    /**
+                     * 判断参数 SmartEraseTask 是否已赋值
+                     * @return SmartEraseTask 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskHasBeenSet() const;
 
                 private:
 
@@ -405,11 +457,25 @@ namespace TencentCloud
                     bool m_qualityControlTaskHasBeenSet;
 
                     /**
+                     * 任务条件判断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExecRulesTask m_execRulesTask;
+                    bool m_execRulesTaskHasBeenSet;
+
+                    /**
                      * 智能字幕任务
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartSubtitlesTaskInput m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
+                     * 智能擦除任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartEraseTaskInput m_smartEraseTask;
+                    bool m_smartEraseTaskHasBeenSet;
 
                 };
             }

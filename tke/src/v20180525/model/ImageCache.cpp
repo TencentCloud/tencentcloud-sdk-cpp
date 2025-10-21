@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,10 @@ ImageCache::ImageCache() :
     m_eventsHasBeenSet(false),
     m_lastMatchedTimeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_retentionDaysHasBeenSet(false),
+    m_imageRegistryCredentialsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -152,6 +155,56 @@ CoreInternalOutcome ImageCache::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionDays") && !value["RetentionDays"].IsNull())
+    {
+        if (!value["RetentionDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageCache.RetentionDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionDays = value["RetentionDays"].GetUint64();
+        m_retentionDaysHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageRegistryCredentials") && !value["ImageRegistryCredentials"].IsNull())
+    {
+        if (!value["ImageRegistryCredentials"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageCache.ImageRegistryCredentials` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageRegistryCredentials"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImageRegistryCredential item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageRegistryCredentials.push_back(item);
+        }
+        m_imageRegistryCredentialsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageCache.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +302,44 @@ void ImageCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionDays, allocator);
+    }
+
+    if (m_imageRegistryCredentialsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryCredentials";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageRegistryCredentials.begin(); itr != m_imageRegistryCredentials.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -412,5 +503,53 @@ void ImageCache::SetStatus(const string& _status)
 bool ImageCache::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t ImageCache::GetRetentionDays() const
+{
+    return m_retentionDays;
+}
+
+void ImageCache::SetRetentionDays(const uint64_t& _retentionDays)
+{
+    m_retentionDays = _retentionDays;
+    m_retentionDaysHasBeenSet = true;
+}
+
+bool ImageCache::RetentionDaysHasBeenSet() const
+{
+    return m_retentionDaysHasBeenSet;
+}
+
+vector<ImageRegistryCredential> ImageCache::GetImageRegistryCredentials() const
+{
+    return m_imageRegistryCredentials;
+}
+
+void ImageCache::SetImageRegistryCredentials(const vector<ImageRegistryCredential>& _imageRegistryCredentials)
+{
+    m_imageRegistryCredentials = _imageRegistryCredentials;
+    m_imageRegistryCredentialsHasBeenSet = true;
+}
+
+bool ImageCache::ImageRegistryCredentialsHasBeenSet() const
+{
+    return m_imageRegistryCredentialsHasBeenSet;
+}
+
+vector<Tag> ImageCache::GetTags() const
+{
+    return m_tags;
+}
+
+void ImageCache::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ImageCache::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool MaxMessageBytesHasBeenSet() const;
 
                     /**
-                     * 获取Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
-                     * @return SegmentMs Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * 获取Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
+                     * @return SegmentMs Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
                      * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
-                     * 设置Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
-                     * @param _segmentMs Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * 设置Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
+                     * @param _segmentMs Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
                      * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
@@ -472,7 +472,7 @@ namespace TencentCloud
                     bool m_maxMessageBytesHasBeenSet;
 
                     /**
-                     * Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;

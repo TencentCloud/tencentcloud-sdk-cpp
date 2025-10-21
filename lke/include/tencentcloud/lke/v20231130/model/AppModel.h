@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ModelParams.h>
 
 
 namespace TencentCloud
@@ -321,6 +322,31 @@ namespace TencentCloud
                      */
                     bool ResourceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取模型参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelParams 模型参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ModelParams GetModelParams() const;
+
+                    /**
+                     * 设置模型参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelParams 模型参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelParams(const ModelParams& _modelParams);
+
+                    /**
+                     * 判断参数 ModelParams 是否已赋值
+                     * @return ModelParams 是否已赋值
+                     * 
+                     */
+                    bool ModelParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +425,13 @@ namespace TencentCloud
                      */
                     uint64_t m_resourceStatus;
                     bool m_resourceStatusHasBeenSet;
+
+                    /**
+                     * 模型参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelParams m_modelParams;
+                    bool m_modelParamsHasBeenSet;
 
                 };
             }

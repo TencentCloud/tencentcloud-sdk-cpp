@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ using namespace std;
 AgentInput::AgentInput() :
     m_inputTypeHasBeenSet(false),
     m_userInputValueHasBeenSet(false),
-    m_customVarIdHasBeenSet(false)
+    m_customVarIdHasBeenSet(false),
+    m_envVarIdHasBeenSet(false),
+    m_appVarIdHasBeenSet(false),
+    m_systemVariableHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,43 @@ CoreInternalOutcome AgentInput::Deserialize(const rapidjson::Value &value)
         m_customVarIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvVarId") && !value["EnvVarId"].IsNull())
+    {
+        if (!value["EnvVarId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInput.EnvVarId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envVarId = string(value["EnvVarId"].GetString());
+        m_envVarIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppVarId") && !value["AppVarId"].IsNull())
+    {
+        if (!value["AppVarId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInput.AppVarId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appVarId = string(value["AppVarId"].GetString());
+        m_appVarIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SystemVariable") && !value["SystemVariable"].IsNull())
+    {
+        if (!value["SystemVariable"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInput.SystemVariable` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_systemVariable.Deserialize(value["SystemVariable"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_systemVariableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +139,31 @@ void AgentInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CustomVarId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customVarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envVarIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvVarId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envVarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appVarIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppVarId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appVarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemVariableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemVariable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemVariable.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +215,53 @@ void AgentInput::SetCustomVarId(const string& _customVarId)
 bool AgentInput::CustomVarIdHasBeenSet() const
 {
     return m_customVarIdHasBeenSet;
+}
+
+string AgentInput::GetEnvVarId() const
+{
+    return m_envVarId;
+}
+
+void AgentInput::SetEnvVarId(const string& _envVarId)
+{
+    m_envVarId = _envVarId;
+    m_envVarIdHasBeenSet = true;
+}
+
+bool AgentInput::EnvVarIdHasBeenSet() const
+{
+    return m_envVarIdHasBeenSet;
+}
+
+string AgentInput::GetAppVarId() const
+{
+    return m_appVarId;
+}
+
+void AgentInput::SetAppVarId(const string& _appVarId)
+{
+    m_appVarId = _appVarId;
+    m_appVarIdHasBeenSet = true;
+}
+
+bool AgentInput::AppVarIdHasBeenSet() const
+{
+    return m_appVarIdHasBeenSet;
+}
+
+AgentInputSystemVariable AgentInput::GetSystemVariable() const
+{
+    return m_systemVariable;
+}
+
+void AgentInput::SetSystemVariable(const AgentInputSystemVariable& _systemVariable)
+{
+    m_systemVariable = _systemVariable;
+    m_systemVariableHasBeenSet = true;
+}
+
+bool AgentInput::SystemVariableHasBeenSet() const
+{
+    return m_systemVariableHasBeenSet;
 }
 

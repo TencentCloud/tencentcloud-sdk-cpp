@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BackupPeriodHasBeenSet() const;
 
                     /**
-                     * 获取数据备份保留时长
-                     * @return BaseBackupRetentionPeriod 数据备份保留时长
+                     * 获取数据备份保留时长。单位：天
+                     * @return BaseBackupRetentionPeriod 数据备份保留时长。单位：天
                      * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
-                     * 设置数据备份保留时长
-                     * @param _baseBackupRetentionPeriod 数据备份保留时长
+                     * 设置数据备份保留时长。单位：天
+                     * @param _baseBackupRetentionPeriod 数据备份保留时长。单位：天
                      * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PlanNameHasBeenSet() const;
 
                     /**
-                     * 获取日志备份保留时长。
-                     * @return LogBackupRetentionPeriod 日志备份保留时长。
+                     * 获取日志备份保留时长。单位：天
+                     * @return LogBackupRetentionPeriod 日志备份保留时长。单位：天
                      * 
                      */
                     uint64_t GetLogBackupRetentionPeriod() const;
 
                     /**
-                     * 设置日志备份保留时长。
-                     * @param _logBackupRetentionPeriod 日志备份保留时长。
+                     * 设置日志备份保留时长。单位：天
+                     * @param _logBackupRetentionPeriod 日志备份保留时长。单位：天
                      * 
                      */
                     void SetLogBackupRetentionPeriod(const uint64_t& _logBackupRetentionPeriod);
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_backupPeriodHasBeenSet;
 
                     /**
-                     * 数据备份保留时长
+                     * 数据备份保留时长。单位：天
                      */
                     uint64_t m_baseBackupRetentionPeriod;
                     bool m_baseBackupRetentionPeriodHasBeenSet;
@@ -316,7 +316,7 @@ namespace TencentCloud
                     bool m_planNameHasBeenSet;
 
                     /**
-                     * 日志备份保留时长。
+                     * 日志备份保留时长。单位：天
                      */
                     uint64_t m_logBackupRetentionPeriod;
                     bool m_logBackupRetentionPeriodHasBeenSet;

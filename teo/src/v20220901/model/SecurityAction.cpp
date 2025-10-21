@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ SecurityAction::SecurityAction() :
     m_nameHasBeenSet(false),
     m_denyActionParametersHasBeenSet(false),
     m_redirectActionParametersHasBeenSet(false),
+    m_allowActionParametersHasBeenSet(false),
     m_challengeActionParametersHasBeenSet(false),
     m_blockIPActionParametersHasBeenSet(false),
     m_returnCustomPageActionParametersHasBeenSet(false)
@@ -77,6 +78,23 @@ CoreInternalOutcome SecurityAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_redirectActionParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowActionParameters") && !value["AllowActionParameters"].IsNull())
+    {
+        if (!value["AllowActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityAction.AllowActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_allowActionParameters.Deserialize(value["AllowActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_allowActionParametersHasBeenSet = true;
     }
 
     if (value.HasMember("ChallengeActionParameters") && !value["ChallengeActionParameters"].IsNull())
@@ -163,6 +181,15 @@ void SecurityAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_redirectActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_allowActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_allowActionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_challengeActionParametersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -239,6 +266,22 @@ void SecurityAction::SetRedirectActionParameters(const RedirectActionParameters&
 bool SecurityAction::RedirectActionParametersHasBeenSet() const
 {
     return m_redirectActionParametersHasBeenSet;
+}
+
+AllowActionParameters SecurityAction::GetAllowActionParameters() const
+{
+    return m_allowActionParameters;
+}
+
+void SecurityAction::SetAllowActionParameters(const AllowActionParameters& _allowActionParameters)
+{
+    m_allowActionParameters = _allowActionParameters;
+    m_allowActionParametersHasBeenSet = true;
+}
+
+bool SecurityAction::AllowActionParametersHasBeenSet() const
+{
+    return m_allowActionParametersHasBeenSet;
 }
 
 ChallengeActionParameters SecurityAction::GetChallengeActionParameters() const

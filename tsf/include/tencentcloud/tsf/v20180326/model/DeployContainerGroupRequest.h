@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID，分组唯一标识
-                     * @return GroupId 部署组ID，分组唯一标识
+                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID，分组唯一标识
-                     * @param _groupId 部署组ID，分组唯一标识
+                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -704,42 +704,42 @@ namespace TencentCloud
                     /**
                      * 获取数据卷信息-废弃，请用VolumeInfoList参数
                      * @return VolumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
-                     * 
+                     * @deprecated
                      */
                     VolumeInfo GetVolumeInfos() const;
 
                     /**
                      * 设置数据卷信息-废弃，请用VolumeInfoList参数
                      * @param _volumeInfos 数据卷信息-废弃，请用VolumeInfoList参数
-                     * 
+                     * @deprecated
                      */
                     void SetVolumeInfos(const VolumeInfo& _volumeInfos);
 
                     /**
                      * 判断参数 VolumeInfos 是否已赋值
                      * @return VolumeInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VolumeInfosHasBeenSet() const;
 
                     /**
                      * 获取数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      * @return VolumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
-                     * 
+                     * @deprecated
                      */
                     VolumeMountInfo GetVolumeMountInfos() const;
 
                     /**
                      * 设置数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
                      * @param _volumeMountInfos 数据卷挂载点信息-废弃，请用VolumeMountInfoList参数
-                     * 
+                     * @deprecated
                      */
                     void SetVolumeMountInfos(const VolumeMountInfo& _volumeMountInfos);
 
                     /**
                      * 判断参数 VolumeMountInfos 是否已赋值
                      * @return VolumeMountInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VolumeMountInfosHasBeenSet() const;
 
@@ -851,7 +851,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组ID，分组唯一标识
+                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

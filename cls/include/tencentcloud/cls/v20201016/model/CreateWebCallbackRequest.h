@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知内容名称。
-                     * @return Name 通知内容名称。
+                     * 获取通知内容名称。最大支持255个字节
+                     * @return Name 通知内容名称。最大支持255个字节
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置通知内容名称。
-                     * @param _name 通知内容名称。
+                     * 设置通知内容名称。最大支持255个字节
+                     * @param _name 通知内容名称。最大支持255个字节
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -143,15 +143,15 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调。
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取秘钥。
-                     * @return Key 秘钥。
+                     * 获取秘钥。最大支持1024个字节
+                     * @return Key 秘钥。最大支持1024个字节
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置秘钥。
-                     * @param _key 秘钥。
+                     * 设置秘钥。最大支持1024个字节
+                     * @param _key 秘钥。最大支持1024个字节
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -166,7 +166,7 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调。
                 private:
 
                     /**
-                     * 通知内容名称。
+                     * 通知内容名称。最大支持255个字节
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -194,7 +194,7 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调。
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 秘钥。
+                     * 秘钥。最大支持1024个字节
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

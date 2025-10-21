@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ STTConfig::STTConfig() :
     m_alternativeLanguageHasBeenSet(false),
     m_customParamHasBeenSet(false),
     m_vadSilenceTimeHasBeenSet(false),
-    m_hotWordListHasBeenSet(false)
+    m_hotWordListHasBeenSet(false),
+    m_vadLevelHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome STTConfig::Deserialize(const rapidjson::Value &value)
         m_hotWordListHasBeenSet = true;
     }
 
+    if (value.HasMember("VadLevel") && !value["VadLevel"].IsNull())
+    {
+        if (!value["VadLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.VadLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadLevel = value["VadLevel"].GetUint64();
+        m_vadLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void STTConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HotWordList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hotWordList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vadLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadLevel, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void STTConfig::SetHotWordList(const string& _hotWordList)
 bool STTConfig::HotWordListHasBeenSet() const
 {
     return m_hotWordListHasBeenSet;
+}
+
+uint64_t STTConfig::GetVadLevel() const
+{
+    return m_vadLevel;
+}
+
+void STTConfig::SetVadLevel(const uint64_t& _vadLevel)
+{
+    m_vadLevel = _vadLevel;
+    m_vadLevelHasBeenSet = true;
+}
+
+bool STTConfig::VadLevelHasBeenSet() const
+{
+    return m_vadLevelHasBeenSet;
 }
 

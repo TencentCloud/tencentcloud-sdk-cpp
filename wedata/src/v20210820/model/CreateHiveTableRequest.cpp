@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ CreateHiveTableRequest::CreateHiveTableRequest() :
     m_dDLSqlHasBeenSet(false),
     m_privilegeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_inchargeHasBeenSet(false),
     m_dataOptimizationResourceHasBeenSet(false),
     m_smartOptimizerWrittenHasBeenSet(false),
@@ -81,6 +82,14 @@ string CreateHiveTableRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inchargeHasBeenSet)
@@ -209,6 +218,22 @@ void CreateHiveTableRequest::SetProjectId(const string& _projectId)
 bool CreateHiveTableRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateHiveTableRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 string CreateHiveTableRequest::GetIncharge() const

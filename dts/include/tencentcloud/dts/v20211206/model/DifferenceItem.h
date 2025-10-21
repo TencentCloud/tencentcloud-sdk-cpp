@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DbHasBeenSet() const;
+
+                    /**
+                     * 获取schema
+                     * @return Schema schema
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置schema
+                     * @param _schema schema
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
 
                     /**
                      * 获取表名
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
+
+                    /**
+                     * schema
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
 
                     /**
                      * 表名

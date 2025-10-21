@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板ID，用于唯一确认参数模板，不可修改
-                     * @return TemplateId 参数模板ID，用于唯一确认参数模板，不可修改
+                     * 获取参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取
+                     * @return TemplateId 参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置参数模板ID，用于唯一确认参数模板，不可修改
-                     * @param _templateId 参数模板ID，用于唯一确认参数模板，不可修改
+                     * 设置参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取
+                     * @param _templateId 参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板ID，用于唯一确认参数模板，不可修改
+                     * 参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

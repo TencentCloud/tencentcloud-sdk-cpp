@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,8 @@ CertificateInfoSubmitRequest::CertificateInfoSubmitRequest() :
     m_techEmailHasBeenSet(false),
     m_techTitleHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_caTypeHasBeenSet(false)
+    m_caTypeHasBeenSet(false),
+    m_signAlgoHasBeenSet(false)
 {
 }
 
@@ -396,6 +397,14 @@ string CertificateInfoSubmitRequest::ToJsonString() const
         string key = "CaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_caType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signAlgoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignAlgo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signAlgo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1044,6 +1053,22 @@ void CertificateInfoSubmitRequest::SetCaType(const string& _caType)
 bool CertificateInfoSubmitRequest::CaTypeHasBeenSet() const
 {
     return m_caTypeHasBeenSet;
+}
+
+string CertificateInfoSubmitRequest::GetSignAlgo() const
+{
+    return m_signAlgo;
+}
+
+void CertificateInfoSubmitRequest::SetSignAlgo(const string& _signAlgo)
+{
+    m_signAlgo = _signAlgo;
+    m_signAlgoHasBeenSet = true;
+}
+
+bool CertificateInfoSubmitRequest::SignAlgoHasBeenSet() const
+{
+    return m_signAlgoHasBeenSet;
 }
 
 

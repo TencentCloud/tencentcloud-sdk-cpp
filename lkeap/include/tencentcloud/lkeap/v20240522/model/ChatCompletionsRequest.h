@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lkeap/v20240522/model/Message.h>
+#include <tencentcloud/lkeap/v20240522/model/Thinking.h>
 
 
 namespace TencentCloud
@@ -148,15 +149,23 @@ namespace TencentCloud
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取最大生成的token数量，默认为4096，最大可设置为16384
-                     * @return MaxTokens 最大生成的token数量，默认为4096，最大可设置为16384
+                     * 获取模型最大输出长度（单位 token），不包含思维链内容。
+默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。
+输出 token 的总长度受模型的上下文长度限制。
+                     * @return MaxTokens 模型最大输出长度（单位 token），不包含思维链内容。
+默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。
+输出 token 的总长度受模型的上下文长度限制。
                      * 
                      */
                     int64_t GetMaxTokens() const;
 
                     /**
-                     * 设置最大生成的token数量，默认为4096，最大可设置为16384
-                     * @param _maxTokens 最大生成的token数量，默认为4096，最大可设置为16384
+                     * 设置模型最大输出长度（单位 token），不包含思维链内容。
+默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。
+输出 token 的总长度受模型的上下文长度限制。
+                     * @param _maxTokens 模型最大输出长度（单位 token），不包含思维链内容。
+默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。
+输出 token 的总长度受模型的上下文长度限制。
                      * 
                      */
                     void SetMaxTokens(const int64_t& _maxTokens);
@@ -188,6 +197,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableSearchHasBeenSet() const;
+
+                    /**
+                     * 获取思维链开关，本参数仅在deepseek v3.1时生效
+                     * @return Thinking 思维链开关，本参数仅在deepseek v3.1时生效
+                     * 
+                     */
+                    Thinking GetThinking() const;
+
+                    /**
+                     * 设置思维链开关，本参数仅在deepseek v3.1时生效
+                     * @param _thinking 思维链开关，本参数仅在deepseek v3.1时生效
+                     * 
+                     */
+                    void SetThinking(const Thinking& _thinking);
+
+                    /**
+                     * 判断参数 Thinking 是否已赋值
+                     * @return Thinking 是否已赋值
+                     * 
+                     */
+                    bool ThinkingHasBeenSet() const;
 
                 private:
 
@@ -221,7 +251,9 @@ namespace TencentCloud
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * 最大生成的token数量，默认为4096，最大可设置为16384
+                     * 模型最大输出长度（单位 token），不包含思维链内容。
+默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。
+输出 token 的总长度受模型的上下文长度限制。
                      */
                     int64_t m_maxTokens;
                     bool m_maxTokensHasBeenSet;
@@ -231,6 +263,12 @@ namespace TencentCloud
                      */
                     bool m_enableSearch;
                     bool m_enableSearchHasBeenSet;
+
+                    /**
+                     * 思维链开关，本参数仅在deepseek v3.1时生效
+                     */
+                    Thinking m_thinking;
+                    bool m_thinkingHasBeenSet;
 
                 };
             }

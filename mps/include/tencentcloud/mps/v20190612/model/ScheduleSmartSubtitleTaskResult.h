@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取识别任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 识别任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartSubtitlesTaskInput GetInput() const;
 
                     /**
                      * 设置识别任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 识别任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const SmartSubtitlesTaskInput& _input);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取识别任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 识别任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SmartSubtitlesResult> GetOutput() const;
 
                     /**
                      * 设置识别任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 识别任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::vector<SmartSubtitlesResult>& _output);
@@ -184,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 设置任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -209,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -260,28 +244,24 @@ namespace TencentCloud
 
                     /**
                      * 识别任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartSubtitlesTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 识别任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SmartSubtitlesResult> m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
                      * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ set(omics_public_header
 
 set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DeleteVolumeDataRequest.h
+  include/tencentcloud/omics/v20221128/model/RunGroupTimeoutNotification.h
   include/tencentcloud/omics/v20221128/model/RetryRunsResponse.h
   include/tencentcloud/omics/v20221128/model/RunApplicationResponse.h
   include/tencentcloud/omics/v20221128/model/ExecutionTime.h
@@ -31,6 +32,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/GetRunMetadataFileResponse.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentResponse.h
+  include/tencentcloud/omics/v20221128/model/RunOption.h
   include/tencentcloud/omics/v20221128/model/Environment.h
   include/tencentcloud/omics/v20221128/model/GetRunCallsRequest.h
   include/tencentcloud/omics/v20221128/model/RunWorkflowRequest.h
@@ -39,6 +41,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/TableColumn.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeRequest.h
   include/tencentcloud/omics/v20221128/model/SecurityGroupOption.h
+  include/tencentcloud/omics/v20221128/model/NotificationType.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesRowsRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h
@@ -64,6 +67,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/Filter.h
   include/tencentcloud/omics/v20221128/model/ResourceIds.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h
+  include/tencentcloud/omics/v20221128/model/VolumeAutoScaleUpRule.h
   include/tencentcloud/omics/v20221128/model/Volume.h
   include/tencentcloud/omics/v20221128/model/VolumeInfo.h
   include/tencentcloud/omics/v20221128/model/TerminateRunGroupRequest.h
@@ -80,8 +84,9 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/TableRow.h
   include/tencentcloud/omics/v20221128/model/DeleteVolumeDataResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h
-  include/tencentcloud/omics/v20221128/model/RunOption.h
+  include/tencentcloud/omics/v20221128/model/RunGroupNotification.h
   include/tencentcloud/omics/v20221128/model/NFOption.h
+  include/tencentcloud/omics/v20221128/model/RunGroupResultNotification.h
   include/tencentcloud/omics/v20221128/model/Table.h
   include/tencentcloud/omics/v20221128/model/CVMOption.h
   include/tencentcloud/omics/v20221128/model/RunMetadata.h
@@ -92,6 +97,7 @@ set(omics_public_header_model
 set(omics_src
   src/v20221128/OmicsClient.cpp
   src/v20221128/model/DeleteVolumeDataRequest.cpp
+  src/v20221128/model/RunGroupTimeoutNotification.cpp
   src/v20221128/model/RetryRunsResponse.cpp
   src/v20221128/model/RunApplicationResponse.cpp
   src/v20221128/model/ExecutionTime.cpp
@@ -103,6 +109,7 @@ set(omics_src
   src/v20221128/model/GetRunMetadataFileResponse.cpp
   src/v20221128/model/CreateVolumeResponse.cpp
   src/v20221128/model/DeleteEnvironmentResponse.cpp
+  src/v20221128/model/RunOption.cpp
   src/v20221128/model/Environment.cpp
   src/v20221128/model/GetRunCallsRequest.cpp
   src/v20221128/model/RunWorkflowRequest.cpp
@@ -111,6 +118,7 @@ set(omics_src
   src/v20221128/model/TableColumn.cpp
   src/v20221128/model/CreateVolumeRequest.cpp
   src/v20221128/model/SecurityGroupOption.cpp
+  src/v20221128/model/NotificationType.cpp
   src/v20221128/model/DescribeTablesRowsRequest.cpp
   src/v20221128/model/DescribeEnvironmentsResponse.cpp
   src/v20221128/model/ModifyVolumeResponse.cpp
@@ -136,6 +144,7 @@ set(omics_src
   src/v20221128/model/Filter.cpp
   src/v20221128/model/ResourceIds.cpp
   src/v20221128/model/DescribeRunGroupsResponse.cpp
+  src/v20221128/model/VolumeAutoScaleUpRule.cpp
   src/v20221128/model/Volume.cpp
   src/v20221128/model/VolumeInfo.cpp
   src/v20221128/model/TerminateRunGroupRequest.cpp
@@ -152,8 +161,9 @@ set(omics_src
   src/v20221128/model/TableRow.cpp
   src/v20221128/model/DeleteVolumeDataResponse.cpp
   src/v20221128/model/DescribeEnvironmentsRequest.cpp
-  src/v20221128/model/RunOption.cpp
+  src/v20221128/model/RunGroupNotification.cpp
   src/v20221128/model/NFOption.cpp
+  src/v20221128/model/RunGroupResultNotification.cpp
   src/v20221128/model/Table.cpp
   src/v20221128/model/CVMOption.cpp
   src/v20221128/model/RunMetadata.cpp

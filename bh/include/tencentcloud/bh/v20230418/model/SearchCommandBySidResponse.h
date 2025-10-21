@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/Command.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取命令列表
+                     * @return CommandSet 命令列表
+                     * 
+                     */
+                    std::vector<Command> GetCommandSet() const;
+
+                    /**
+                     * 判断参数 CommandSet 是否已赋值
+                     * @return CommandSet 是否已赋值
+                     * 
+                     */
+                    bool CommandSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 命令列表
+                     */
+                    std::vector<Command> m_commandSet;
+                    bool m_commandSetHasBeenSet;
 
                 };
             }

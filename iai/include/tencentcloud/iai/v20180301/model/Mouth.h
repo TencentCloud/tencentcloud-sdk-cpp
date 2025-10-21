@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,19 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否张嘴信息。
-AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
-                     * @return MouthOpen 是否张嘴信息。
-AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * 获取是否张嘴信息。 
+
+- AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * @return MouthOpen 是否张嘴信息。 
+
+- AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
                      * 
                      */
                     AttributeItem GetMouthOpen() const;
 
                     /**
-                     * 设置是否张嘴信息。
-AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
-                     * @param _mouthOpen 是否张嘴信息。
-AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * 设置是否张嘴信息。 
+
+- AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * @param _mouthOpen 是否张嘴信息。 
+
+- AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
                      * 
                      */
                     void SetMouthOpen(const AttributeItem& _mouthOpen);
@@ -75,8 +79,9 @@ AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
                 private:
 
                     /**
-                     * 是否张嘴信息。
-AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * 是否张嘴信息。 
+
+- AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
                      */
                     AttributeItem m_mouthOpen;
                     bool m_mouthOpenHasBeenSet;

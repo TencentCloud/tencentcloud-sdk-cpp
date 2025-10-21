@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ AndroidInstanceImage::AndroidInstanceImage() :
     m_androidInstanceImageNameHasBeenSet(false),
     m_androidInstanceImageStateHasBeenSet(false),
     m_androidInstanceImageZoneHasBeenSet(false),
-    m_androidVersionHasBeenSet(false)
+    m_androidInstanceImageDescriptionHasBeenSet(false),
+    m_androidVersionHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,16 @@ CoreInternalOutcome AndroidInstanceImage::Deserialize(const rapidjson::Value &va
         m_androidInstanceImageZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("AndroidInstanceImageDescription") && !value["AndroidInstanceImageDescription"].IsNull())
+    {
+        if (!value["AndroidInstanceImageDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceImage.AndroidInstanceImageDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_androidInstanceImageDescription = string(value["AndroidInstanceImageDescription"].GetString());
+        m_androidInstanceImageDescriptionHasBeenSet = true;
+    }
+
     if (value.HasMember("AndroidVersion") && !value["AndroidVersion"].IsNull())
     {
         if (!value["AndroidVersion"].IsString())
@@ -82,6 +94,16 @@ CoreInternalOutcome AndroidInstanceImage::Deserialize(const rapidjson::Value &va
         }
         m_androidVersion = string(value["AndroidVersion"].GetString());
         m_androidVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceImage.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
 
@@ -123,12 +145,28 @@ void AndroidInstanceImage::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_androidInstanceImageZone.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_androidInstanceImageDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceImageDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_androidInstanceImageDescription.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_androidVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AndroidVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_androidVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -198,6 +236,22 @@ bool AndroidInstanceImage::AndroidInstanceImageZoneHasBeenSet() const
     return m_androidInstanceImageZoneHasBeenSet;
 }
 
+string AndroidInstanceImage::GetAndroidInstanceImageDescription() const
+{
+    return m_androidInstanceImageDescription;
+}
+
+void AndroidInstanceImage::SetAndroidInstanceImageDescription(const string& _androidInstanceImageDescription)
+{
+    m_androidInstanceImageDescription = _androidInstanceImageDescription;
+    m_androidInstanceImageDescriptionHasBeenSet = true;
+}
+
+bool AndroidInstanceImage::AndroidInstanceImageDescriptionHasBeenSet() const
+{
+    return m_androidInstanceImageDescriptionHasBeenSet;
+}
+
 string AndroidInstanceImage::GetAndroidVersion() const
 {
     return m_androidVersion;
@@ -212,5 +266,21 @@ void AndroidInstanceImage::SetAndroidVersion(const string& _androidVersion)
 bool AndroidInstanceImage::AndroidVersionHasBeenSet() const
 {
     return m_androidVersionHasBeenSet;
+}
+
+string AndroidInstanceImage::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void AndroidInstanceImage::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool AndroidInstanceImage::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

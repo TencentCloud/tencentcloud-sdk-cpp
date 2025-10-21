@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 WebSearchOptions::WebSearchOptions() :
     m_knowledgeHasBeenSet(false),
     m_userLocationHasBeenSet(false),
-    m_processesHasBeenSet(false)
+    m_processesHasBeenSet(false),
+    m_enableImageHasBeenSet(false),
+    m_enableMusicHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,26 @@ CoreInternalOutcome WebSearchOptions::Deserialize(const rapidjson::Value &value)
         m_processesHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableImage") && !value["EnableImage"].IsNull())
+    {
+        if (!value["EnableImage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebSearchOptions.EnableImage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableImage = value["EnableImage"].GetBool();
+        m_enableImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableMusic") && !value["EnableMusic"].IsNull())
+    {
+        if (!value["EnableMusic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebSearchOptions.EnableMusic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMusic = value["EnableMusic"].GetBool();
+        m_enableMusicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +138,22 @@ void WebSearchOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Processes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_processes, allocator);
+    }
+
+    if (m_enableImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableImage, allocator);
+    }
+
+    if (m_enableMusicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMusic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMusic, allocator);
     }
 
 }
@@ -167,5 +205,37 @@ void WebSearchOptions::SetProcesses(const bool& _processes)
 bool WebSearchOptions::ProcessesHasBeenSet() const
 {
     return m_processesHasBeenSet;
+}
+
+bool WebSearchOptions::GetEnableImage() const
+{
+    return m_enableImage;
+}
+
+void WebSearchOptions::SetEnableImage(const bool& _enableImage)
+{
+    m_enableImage = _enableImage;
+    m_enableImageHasBeenSet = true;
+}
+
+bool WebSearchOptions::EnableImageHasBeenSet() const
+{
+    return m_enableImageHasBeenSet;
+}
+
+bool WebSearchOptions::GetEnableMusic() const
+{
+    return m_enableMusic;
+}
+
+void WebSearchOptions::SetEnableMusic(const bool& _enableMusic)
+{
+    m_enableMusic = _enableMusic;
+    m_enableMusicHasBeenSet = true;
+}
+
+bool WebSearchOptions::EnableMusicHasBeenSet() const
+{
+    return m_enableMusicHasBeenSet;
 }
 

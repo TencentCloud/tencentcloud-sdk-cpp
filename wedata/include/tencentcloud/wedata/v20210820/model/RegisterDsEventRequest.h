@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool DimensionFormatHasBeenSet() const;
 
+                    /**
+                     * 获取事件消费有效次数
+                     * @return ValidConsumeCount 事件消费有效次数
+                     * 
+                     */
+                    int64_t GetValidConsumeCount() const;
+
+                    /**
+                     * 设置事件消费有效次数
+                     * @param _validConsumeCount 事件消费有效次数
+                     * 
+                     */
+                    void SetValidConsumeCount(const int64_t& _validConsumeCount);
+
+                    /**
+                     * 判断参数 ValidConsumeCount 是否已赋值
+                     * @return ValidConsumeCount 是否已赋值
+                     * 
+                     */
+                    bool ValidConsumeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_dimensionFormat;
                     bool m_dimensionFormatHasBeenSet;
+
+                    /**
+                     * 事件消费有效次数
+                     */
+                    int64_t m_validConsumeCount;
+                    bool m_validConsumeCountHasBeenSet;
 
                 };
             }

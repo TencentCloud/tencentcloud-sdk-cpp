@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,14 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_targetGroupInstancesHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_fullListenSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_sessionExpireTimeHasBeenSet(false)
+    m_sessionExpireTimeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -99,6 +102,23 @@ string CreateTargetGroupRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -144,6 +164,14 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "SessionExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -250,6 +278,38 @@ bool CreateTargetGroupRequest::ProtocolHasBeenSet() const
     return m_protocolHasBeenSet;
 }
 
+TargetGroupHealthCheck CreateTargetGroupRequest::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void CreateTargetGroupRequest::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
+string CreateTargetGroupRequest::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void CreateTargetGroupRequest::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
+}
+
 vector<TagInfo> CreateTargetGroupRequest::GetTags() const
 {
     return m_tags;
@@ -328,6 +388,22 @@ void CreateTargetGroupRequest::SetSessionExpireTime(const uint64_t& _sessionExpi
 bool CreateTargetGroupRequest::SessionExpireTimeHasBeenSet() const
 {
     return m_sessionExpireTimeHasBeenSet;
+}
+
+string CreateTargetGroupRequest::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void CreateTargetGroupRequest::SetIpVersion(const string& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 
 

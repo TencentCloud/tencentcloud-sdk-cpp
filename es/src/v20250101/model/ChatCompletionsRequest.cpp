@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_topPHasBeenSet(false),
     m_temperatureHasBeenSet(false),
     m_onlineSearchHasBeenSet(false),
-    m_onlineSearchOptionsHasBeenSet(false)
+    m_onlineSearchOptionsHasBeenSet(false),
+    m_toolsHasBeenSet(false),
+    m_toolChoiceHasBeenSet(false),
+    m_customToolHasBeenSet(false)
 {
 }
 
@@ -102,6 +105,38 @@ string ChatCompletionsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_onlineSearchOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_toolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tools";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tools.begin(); itr != m_tools.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_toolChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolChoice";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolChoice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customToolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTool";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customTool.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -222,6 +257,54 @@ void ChatCompletionsRequest::SetOnlineSearchOptions(const OnlineSearchOptions& _
 bool ChatCompletionsRequest::OnlineSearchOptionsHasBeenSet() const
 {
     return m_onlineSearchOptionsHasBeenSet;
+}
+
+vector<Tool> ChatCompletionsRequest::GetTools() const
+{
+    return m_tools;
+}
+
+void ChatCompletionsRequest::SetTools(const vector<Tool>& _tools)
+{
+    m_tools = _tools;
+    m_toolsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ToolsHasBeenSet() const
+{
+    return m_toolsHasBeenSet;
+}
+
+string ChatCompletionsRequest::GetToolChoice() const
+{
+    return m_toolChoice;
+}
+
+void ChatCompletionsRequest::SetToolChoice(const string& _toolChoice)
+{
+    m_toolChoice = _toolChoice;
+    m_toolChoiceHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ToolChoiceHasBeenSet() const
+{
+    return m_toolChoiceHasBeenSet;
+}
+
+Tool ChatCompletionsRequest::GetCustomTool() const
+{
+    return m_customTool;
+}
+
+void ChatCompletionsRequest::SetCustomTool(const Tool& _customTool)
+{
+    m_customTool = _customTool;
+    m_customToolHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::CustomToolHasBeenSet() const
+{
+    return m_customToolHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -446,6 +446,48 @@ namespace TencentCloud
                      */
                     bool TraceSquashHasBeenSet() const;
 
+                    /**
+                     * 获取探针熔断内存阈值
+                     * @return DisableMemoryUsed 探针熔断内存阈值
+                     * 
+                     */
+                    int64_t GetDisableMemoryUsed() const;
+
+                    /**
+                     * 设置探针熔断内存阈值
+                     * @param _disableMemoryUsed 探针熔断内存阈值
+                     * 
+                     */
+                    void SetDisableMemoryUsed(const int64_t& _disableMemoryUsed);
+
+                    /**
+                     * 判断参数 DisableMemoryUsed 是否已赋值
+                     * @return DisableMemoryUsed 是否已赋值
+                     * 
+                     */
+                    bool DisableMemoryUsedHasBeenSet() const;
+
+                    /**
+                     * 获取探针熔断CPU阈值
+                     * @return DisableCpuUsed 探针熔断CPU阈值
+                     * 
+                     */
+                    int64_t GetDisableCpuUsed() const;
+
+                    /**
+                     * 设置探针熔断CPU阈值
+                     * @param _disableCpuUsed 探针熔断CPU阈值
+                     * 
+                     */
+                    void SetDisableCpuUsed(const int64_t& _disableCpuUsed);
+
+                    /**
+                     * 判断参数 DisableCpuUsed 是否已赋值
+                     * @return DisableCpuUsed 是否已赋值
+                     * 
+                     */
+                    bool DisableCpuUsedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +603,18 @@ namespace TencentCloud
                      */
                     bool m_traceSquash;
                     bool m_traceSquashHasBeenSet;
+
+                    /**
+                     * 探针熔断内存阈值
+                     */
+                    int64_t m_disableMemoryUsed;
+                    bool m_disableMemoryUsedHasBeenSet;
+
+                    /**
+                     * 探针熔断CPU阈值
+                     */
+                    int64_t m_disableCpuUsed;
+                    bool m_disableCpuUsedHasBeenSet;
 
                 };
             }

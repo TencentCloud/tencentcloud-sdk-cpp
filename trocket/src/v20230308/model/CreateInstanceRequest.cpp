@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_instanceTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_skuCodeHasBeenSet(false),
+    m_vpcListHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_vpcListHasBeenSet(false),
     m_enablePublicHasBeenSet(false),
     m_billingFlowHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
@@ -73,6 +73,21 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_skuCode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_vpcListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcList.begin(); itr != m_vpcList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -90,21 +105,6 @@ string CreateInstanceRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_vpcListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_vpcList.begin(); itr != m_vpcList.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -259,6 +259,22 @@ bool CreateInstanceRequest::SkuCodeHasBeenSet() const
     return m_skuCodeHasBeenSet;
 }
 
+vector<VpcInfo> CreateInstanceRequest::GetVpcList() const
+{
+    return m_vpcList;
+}
+
+void CreateInstanceRequest::SetVpcList(const vector<VpcInfo>& _vpcList)
+{
+    m_vpcList = _vpcList;
+    m_vpcListHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::VpcListHasBeenSet() const
+{
+    return m_vpcListHasBeenSet;
+}
+
 string CreateInstanceRequest::GetRemark() const
 {
     return m_remark;
@@ -289,22 +305,6 @@ void CreateInstanceRequest::SetTagList(const vector<Tag>& _tagList)
 bool CreateInstanceRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
-}
-
-vector<VpcInfo> CreateInstanceRequest::GetVpcList() const
-{
-    return m_vpcList;
-}
-
-void CreateInstanceRequest::SetVpcList(const vector<VpcInfo>& _vpcList)
-{
-    m_vpcList = _vpcList;
-    m_vpcListHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::VpcListHasBeenSet() const
-{
-    return m_vpcListHasBeenSet;
 }
 
 bool CreateInstanceRequest::GetEnablePublic() const

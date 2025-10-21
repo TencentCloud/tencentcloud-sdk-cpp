@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,15 +68,103 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取topic所在的地域
-                     * @return Region topic所在的地域
+                     * 获取topic所在的地域。
+- 1:广州
+- 4:上海
+- 5:中国香港
+- 7:上海金融
+- 8:北京
+- 9:新加坡
+- 11:深圳金融
+- 15:硅谷
+- 16:成都
+- 17:法兰克福
+- 18:首尔
+- 19:重庆
+- 22:弗吉尼亚
+- 23:曼谷
+- 25:东京
+- 33:南京
+- 36:天津
+- 39:台北
+- 46:北京金融
+- 72:雅加达
+- 74:圣保罗
+- 78:上海自动驾驶云
+                     * @return Region topic所在的地域。
+- 1:广州
+- 4:上海
+- 5:中国香港
+- 7:上海金融
+- 8:北京
+- 9:新加坡
+- 11:深圳金融
+- 15:硅谷
+- 16:成都
+- 17:法兰克福
+- 18:首尔
+- 19:重庆
+- 22:弗吉尼亚
+- 23:曼谷
+- 25:东京
+- 33:南京
+- 36:天津
+- 39:台北
+- 46:北京金融
+- 72:雅加达
+- 74:圣保罗
+- 78:上海自动驾驶云
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置topic所在的地域
-                     * @param _region topic所在的地域
+                     * 设置topic所在的地域。
+- 1:广州
+- 4:上海
+- 5:中国香港
+- 7:上海金融
+- 8:北京
+- 9:新加坡
+- 11:深圳金融
+- 15:硅谷
+- 16:成都
+- 17:法兰克福
+- 18:首尔
+- 19:重庆
+- 22:弗吉尼亚
+- 23:曼谷
+- 25:东京
+- 33:南京
+- 36:天津
+- 39:台北
+- 46:北京金融
+- 72:雅加达
+- 74:圣保罗
+- 78:上海自动驾驶云
+                     * @param _region topic所在的地域。
+- 1:广州
+- 4:上海
+- 5:中国香港
+- 7:上海金融
+- 8:北京
+- 9:新加坡
+- 11:深圳金融
+- 15:硅谷
+- 16:成都
+- 17:法兰克福
+- 18:首尔
+- 19:重庆
+- 22:弗吉尼亚
+- 23:曼谷
+- 25:东京
+- 33:南京
+- 36:天津
+- 39:台北
+- 46:北京金融
+- 72:雅加达
+- 74:圣保罗
+- 78:上海自动驾驶云
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -97,7 +185,29 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * topic所在的地域
+                     * topic所在的地域。
+- 1:广州
+- 4:上海
+- 5:中国香港
+- 7:上海金融
+- 8:北京
+- 9:新加坡
+- 11:深圳金融
+- 15:硅谷
+- 16:成都
+- 17:法兰克福
+- 18:首尔
+- 19:重庆
+- 22:弗吉尼亚
+- 23:曼谷
+- 25:东京
+- 33:南京
+- 36:天津
+- 39:台北
+- 46:北京金融
+- 72:雅加达
+- 74:圣保罗
+- 78:上海自动驾驶云
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

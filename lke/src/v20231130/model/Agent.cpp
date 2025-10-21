@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ Agent::Agent() :
     m_toolsHasBeenSet(false),
     m_pluginsHasBeenSet(false),
     m_isStartingAgentHasBeenSet(false),
-    m_agentTypeHasBeenSet(false)
+    m_agentTypeHasBeenSet(false),
+    m_agentModeHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -191,6 +193,33 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_agentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentMode") && !value["AgentMode"].IsNull())
+    {
+        if (!value["AgentMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.AgentMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentMode = value["AgentMode"].GetInt64();
+        m_agentModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedConfig") && !value["AdvancedConfig"].IsNull())
+    {
+        if (!value["AdvancedConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.AdvancedConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedConfig.Deserialize(value["AdvancedConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +341,23 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AgentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentType, allocator);
+    }
+
+    if (m_agentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentMode, allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -507,5 +553,37 @@ void Agent::SetAgentType(const uint64_t& _agentType)
 bool Agent::AgentTypeHasBeenSet() const
 {
     return m_agentTypeHasBeenSet;
+}
+
+int64_t Agent::GetAgentMode() const
+{
+    return m_agentMode;
+}
+
+void Agent::SetAgentMode(const int64_t& _agentMode)
+{
+    m_agentMode = _agentMode;
+    m_agentModeHasBeenSet = true;
+}
+
+bool Agent::AgentModeHasBeenSet() const
+{
+    return m_agentModeHasBeenSet;
+}
+
+AgentAdvancedConfig Agent::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void Agent::SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool Agent::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 

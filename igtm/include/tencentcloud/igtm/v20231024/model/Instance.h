@@ -1,0 +1,642 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IGTM_V20231024_MODEL_INSTANCE_H_
+#define TENCENTCLOUD_IGTM_V20231024_MODEL_INSTANCE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Igtm
+    {
+        namespace V20231024
+        {
+            namespace Model
+            {
+                /**
+                * 返回实例
+                */
+                class Instance : public AbstractModel
+                {
+                public:
+                    Instance();
+                    ~Instance() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名
+                     * @return InstanceName 实例名
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名
+                     * @param _instanceName 实例名
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取资源 id
+                     * @return ResourceId 资源 id
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源 id
+                     * @param _resourceId 资源 id
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取业务域名
+                     * @return Domain 业务域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置业务域名
+                     * @param _domain 业务域名
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取Cname域名接入方式
+CUSTOM: 自定义接入域名
+SYSTEM: 系统接入域名
+                     * @return AccessType Cname域名接入方式
+CUSTOM: 自定义接入域名
+SYSTEM: 系统接入域名
+                     * 
+                     */
+                    std::string GetAccessType() const;
+
+                    /**
+                     * 设置Cname域名接入方式
+CUSTOM: 自定义接入域名
+SYSTEM: 系统接入域名
+                     * @param _accessType Cname域名接入方式
+CUSTOM: 自定义接入域名
+SYSTEM: 系统接入域名
+                     * 
+                     */
+                    void SetAccessType(const std::string& _accessType);
+
+                    /**
+                     * 判断参数 AccessType 是否已赋值
+                     * @return AccessType 是否已赋值
+                     * 
+                     */
+                    bool AccessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取接入域名
+                     * @return AccessDomain 接入域名
+                     * 
+                     */
+                    std::string GetAccessDomain() const;
+
+                    /**
+                     * 设置接入域名
+                     * @param _accessDomain 接入域名
+                     * 
+                     */
+                    void SetAccessDomain(const std::string& _accessDomain);
+
+                    /**
+                     * 判断参数 AccessDomain 是否已赋值
+                     * @return AccessDomain 是否已赋值
+                     * 
+                     */
+                    bool AccessDomainHasBeenSet() const;
+
+                    /**
+                     * 获取接入子域名
+                     * @return AccessSubDomain 接入子域名
+                     * 
+                     */
+                    std::string GetAccessSubDomain() const;
+
+                    /**
+                     * 设置接入子域名
+                     * @param _accessSubDomain 接入子域名
+                     * 
+                     */
+                    void SetAccessSubDomain(const std::string& _accessSubDomain);
+
+                    /**
+                     * 判断参数 AccessSubDomain 是否已赋值
+                     * @return AccessSubDomain 是否已赋值
+                     * 
+                     */
+                    bool AccessSubDomainHasBeenSet() const;
+
+                    /**
+                     * 获取全局记录过期时间
+                     * @return GlobalTtl 全局记录过期时间
+                     * 
+                     */
+                    int64_t GetGlobalTtl() const;
+
+                    /**
+                     * 设置全局记录过期时间
+                     * @param _globalTtl 全局记录过期时间
+                     * 
+                     */
+                    void SetGlobalTtl(const int64_t& _globalTtl);
+
+                    /**
+                     * 判断参数 GlobalTtl 是否已赋值
+                     * @return GlobalTtl 是否已赋值
+                     * 
+                     */
+                    bool GlobalTtlHasBeenSet() const;
+
+                    /**
+                     * 获取套餐类型
+FREE: 免费版
+STANDARD：标准版
+ULTIMATE：旗舰版
+                     * @return PackageType 套餐类型
+FREE: 免费版
+STANDARD：标准版
+ULTIMATE：旗舰版
+                     * 
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置套餐类型
+FREE: 免费版
+STANDARD：标准版
+ULTIMATE：旗舰版
+                     * @param _packageType 套餐类型
+FREE: 免费版
+STANDARD：标准版
+ULTIMATE：旗舰版
+                     * 
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     * 
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行状态
+NORMAL: 健康
+FAULTY: 有风险
+DOWN: 宕机
+UNKNOWN: 未知
+                     * @return WorkingStatus 实例运行状态
+NORMAL: 健康
+FAULTY: 有风险
+DOWN: 宕机
+UNKNOWN: 未知
+                     * 
+                     */
+                    std::string GetWorkingStatus() const;
+
+                    /**
+                     * 设置实例运行状态
+NORMAL: 健康
+FAULTY: 有风险
+DOWN: 宕机
+UNKNOWN: 未知
+                     * @param _workingStatus 实例运行状态
+NORMAL: 健康
+FAULTY: 有风险
+DOWN: 宕机
+UNKNOWN: 未知
+                     * 
+                     */
+                    void SetWorkingStatus(const std::string& _workingStatus);
+
+                    /**
+                     * 判断参数 WorkingStatus 是否已赋值
+                     * @return WorkingStatus 是否已赋值
+                     * 
+                     */
+                    bool WorkingStatusHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * @return Status 实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * @param _status 实例状态，ENABLED: 正常，DISABLED: 禁用
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否cname接入：true已接入；false未接入
+                     * @return IsCnameConfigured 是否cname接入：true已接入；false未接入
+                     * 
+                     */
+                    bool GetIsCnameConfigured() const;
+
+                    /**
+                     * 设置是否cname接入：true已接入；false未接入
+                     * @param _isCnameConfigured 是否cname接入：true已接入；false未接入
+                     * 
+                     */
+                    void SetIsCnameConfigured(const bool& _isCnameConfigured);
+
+                    /**
+                     * 判断参数 IsCnameConfigured 是否已赋值
+                     * @return IsCnameConfigured 是否已赋值
+                     * 
+                     */
+                    bool IsCnameConfiguredHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Remark 备注
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+                     * @param _remark 备注
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取策略数量
+                     * @return StrategyNum 策略数量
+                     * 
+                     */
+                    int64_t GetStrategyNum() const;
+
+                    /**
+                     * 设置策略数量
+                     * @param _strategyNum 策略数量
+                     * 
+                     */
+                    void SetStrategyNum(const int64_t& _strategyNum);
+
+                    /**
+                     * 判断参数 StrategyNum 是否已赋值
+                     * @return StrategyNum 是否已赋值
+                     * 
+                     */
+                    bool StrategyNumHasBeenSet() const;
+
+                    /**
+                     * 获取绑定地址池个数
+                     * @return AddressPoolNum 绑定地址池个数
+                     * 
+                     */
+                    int64_t GetAddressPoolNum() const;
+
+                    /**
+                     * 设置绑定地址池个数
+                     * @param _addressPoolNum 绑定地址池个数
+                     * 
+                     */
+                    void SetAddressPoolNum(const int64_t& _addressPoolNum);
+
+                    /**
+                     * 判断参数 AddressPoolNum 是否已赋值
+                     * @return AddressPoolNum 是否已赋值
+                     * 
+                     */
+                    bool AddressPoolNumHasBeenSet() const;
+
+                    /**
+                     * 获取绑定监控器数量
+                     * @return MonitorNum 绑定监控器数量
+                     * 
+                     */
+                    int64_t GetMonitorNum() const;
+
+                    /**
+                     * 设置绑定监控器数量
+                     * @param _monitorNum 绑定监控器数量
+                     * 
+                     */
+                    void SetMonitorNum(const int64_t& _monitorNum);
+
+                    /**
+                     * 判断参数 MonitorNum 是否已赋值
+                     * @return MonitorNum 是否已赋值
+                     * 
+                     */
+                    bool MonitorNumHasBeenSet() const;
+
+                    /**
+                     * 获取地址池id
+                     * @return PoolId 地址池id
+                     * 
+                     */
+                    uint64_t GetPoolId() const;
+
+                    /**
+                     * 设置地址池id
+                     * @param _poolId 地址池id
+                     * 
+                     */
+                    void SetPoolId(const uint64_t& _poolId);
+
+                    /**
+                     * 判断参数 PoolId 是否已赋值
+                     * @return PoolId 是否已赋值
+                     * 
+                     */
+                    bool PoolIdHasBeenSet() const;
+
+                    /**
+                     * 获取地址池名称
+                     * @return PoolName 地址池名称
+                     * 
+                     */
+                    std::string GetPoolName() const;
+
+                    /**
+                     * 设置地址池名称
+                     * @param _poolName 地址池名称
+                     * 
+                     */
+                    void SetPoolName(const std::string& _poolName);
+
+                    /**
+                     * 判断参数 PoolName 是否已赋值
+                     * @return PoolName 是否已赋值
+                     * 
+                     */
+                    bool PoolNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间
+                     * @return CreatedOn 实例创建时间
+                     * 
+                     */
+                    std::string GetCreatedOn() const;
+
+                    /**
+                     * 设置实例创建时间
+                     * @param _createdOn 实例创建时间
+                     * 
+                     */
+                    void SetCreatedOn(const std::string& _createdOn);
+
+                    /**
+                     * 判断参数 CreatedOn 是否已赋值
+                     * @return CreatedOn 是否已赋值
+                     * 
+                     */
+                    bool CreatedOnHasBeenSet() const;
+
+                    /**
+                     * 获取实例更新时间
+                     * @return UpdatedOn 实例更新时间
+                     * 
+                     */
+                    std::string GetUpdatedOn() const;
+
+                    /**
+                     * 设置实例更新时间
+                     * @param _updatedOn 实例更新时间
+                     * 
+                     */
+                    void SetUpdatedOn(const std::string& _updatedOn);
+
+                    /**
+                     * 判断参数 UpdatedOn 是否已赋值
+                     * @return UpdatedOn 是否已赋值
+                     * 
+                     */
+                    bool UpdatedOnHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 实例名
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 资源 id
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 业务域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * Cname域名接入方式
+CUSTOM: 自定义接入域名
+SYSTEM: 系统接入域名
+                     */
+                    std::string m_accessType;
+                    bool m_accessTypeHasBeenSet;
+
+                    /**
+                     * 接入域名
+                     */
+                    std::string m_accessDomain;
+                    bool m_accessDomainHasBeenSet;
+
+                    /**
+                     * 接入子域名
+                     */
+                    std::string m_accessSubDomain;
+                    bool m_accessSubDomainHasBeenSet;
+
+                    /**
+                     * 全局记录过期时间
+                     */
+                    int64_t m_globalTtl;
+                    bool m_globalTtlHasBeenSet;
+
+                    /**
+                     * 套餐类型
+FREE: 免费版
+STANDARD：标准版
+ULTIMATE：旗舰版
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 实例运行状态
+NORMAL: 健康
+FAULTY: 有风险
+DOWN: 宕机
+UNKNOWN: 未知
+                     */
+                    std::string m_workingStatus;
+                    bool m_workingStatusHasBeenSet;
+
+                    /**
+                     * 实例状态，ENABLED: 正常，DISABLED: 禁用
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否cname接入：true已接入；false未接入
+                     */
+                    bool m_isCnameConfigured;
+                    bool m_isCnameConfiguredHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 策略数量
+                     */
+                    int64_t m_strategyNum;
+                    bool m_strategyNumHasBeenSet;
+
+                    /**
+                     * 绑定地址池个数
+                     */
+                    int64_t m_addressPoolNum;
+                    bool m_addressPoolNumHasBeenSet;
+
+                    /**
+                     * 绑定监控器数量
+                     */
+                    int64_t m_monitorNum;
+                    bool m_monitorNumHasBeenSet;
+
+                    /**
+                     * 地址池id
+                     */
+                    uint64_t m_poolId;
+                    bool m_poolIdHasBeenSet;
+
+                    /**
+                     * 地址池名称
+                     */
+                    std::string m_poolName;
+                    bool m_poolNameHasBeenSet;
+
+                    /**
+                     * 实例创建时间
+                     */
+                    std::string m_createdOn;
+                    bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 实例更新时间
+                     */
+                    std::string m_updatedOn;
+                    bool m_updatedOnHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IGTM_V20231024_MODEL_INSTANCE_H_

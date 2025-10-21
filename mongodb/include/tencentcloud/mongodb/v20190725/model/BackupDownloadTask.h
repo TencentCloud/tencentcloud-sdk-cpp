@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreateTime 任务创建时间
+                     * 获取任务创建时间。
+                     * @return CreateTime 任务创建时间。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createTime 任务创建时间
+                     * 设置任务创建时间。
+                     * @param _createTime 任务创建时间。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份文件名
-                     * @return BackupName 备份文件名
+                     * 获取备份文件名。
+                     * @return BackupName 备份文件名。
                      * 
                      */
                     std::string GetBackupName() const;
 
                     /**
-                     * 设置备份文件名
-                     * @param _backupName 备份文件名
+                     * 设置备份文件名。
+                     * @param _backupName 备份文件名。
                      * 
                      */
                     void SetBackupName(const std::string& _backupName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BackupNameHasBeenSet() const;
 
                     /**
-                     * 获取分片名称
-                     * @return ReplicaSetId 分片名称
+                     * 获取分片名称。
+                     * @return ReplicaSetId 分片名称。
                      * 
                      */
                     std::string GetReplicaSetId() const;
 
                     /**
-                     * 设置分片名称
-                     * @param _replicaSetId 分片名称
+                     * 设置分片名称。
+                     * @param _replicaSetId 分片名称。
                      * 
                      */
                     void SetReplicaSetId(const std::string& _replicaSetId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ReplicaSetIdHasBeenSet() const;
 
                     /**
-                     * 获取备份数据大小，单位为字节
-                     * @return BackupSize 备份数据大小，单位为字节
+                     * 获取备份数据大小，单位：字节。
+                     * @return BackupSize 备份数据大小，单位：字节。
                      * 
                      */
                     int64_t GetBackupSize() const;
 
                     /**
-                     * 设置备份数据大小，单位为字节
-                     * @param _backupSize 备份数据大小，单位为字节
+                     * 设置备份数据大小，单位：字节。
+                     * @param _backupSize 备份数据大小，单位：字节。
                      * 
                      */
                     void SetBackupSize(const int64_t& _backupSize);
@@ -131,15 +131,35 @@ namespace TencentCloud
                     bool BackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @return Status 任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 获取任务状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
+                     * @return Status 任务状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @param _status 任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 设置任务状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
+                     * @param _status 任务状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -152,15 +172,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务进度百分比
-                     * @return Percent 任务进度百分比
+                     * 获取任务进度百分比。
+                     * @return Percent 任务进度百分比。
                      * 
                      */
                     int64_t GetPercent() const;
 
                     /**
-                     * 设置任务进度百分比
-                     * @param _percent 任务进度百分比
+                     * 设置任务进度百分比。
+                     * @param _percent 任务进度百分比。
                      * 
                      */
                     void SetPercent(const int64_t& _percent);
@@ -173,15 +193,15 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取耗时，单位为秒
-                     * @return TimeSpend 耗时，单位为秒
+                     * 获取耗时，单位为秒。
+                     * @return TimeSpend 耗时，单位为秒。
                      * 
                      */
                     int64_t GetTimeSpend() const;
 
                     /**
-                     * 设置耗时，单位为秒
-                     * @param _timeSpend 耗时，单位为秒
+                     * 设置耗时，单位为秒。
+                     * @param _timeSpend 耗时，单位为秒。
                      * 
                      */
                     void SetTimeSpend(const int64_t& _timeSpend);
@@ -194,15 +214,15 @@ namespace TencentCloud
                     bool TimeSpendHasBeenSet() const;
 
                     /**
-                     * 获取备份数据下载链接
-                     * @return Url 备份数据下载链接
+                     * 获取备份数据下载链接。
+                     * @return Url 备份数据下载链接。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置备份数据下载链接
-                     * @param _url 备份数据下载链接
+                     * 设置备份数据下载链接。
+                     * @param _url 备份数据下载链接。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -215,15 +235,39 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取备份文件备份类型，0-逻辑备份，1-物理备份
-                     * @return BackupMethod 备份文件备份类型，0-逻辑备份，1-物理备份
+                     * 获取备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+- 3：快照备份。
+**说明**:
+1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
+2. 实例开通存储加密，则备份方式不能为物理备份。
+                     * @return BackupMethod 备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+- 3：快照备份。
+**说明**:
+1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
+2. 实例开通存储加密，则备份方式不能为物理备份。
                      * 
                      */
                     int64_t GetBackupMethod() const;
 
                     /**
-                     * 设置备份文件备份类型，0-逻辑备份，1-物理备份
-                     * @param _backupMethod 备份文件备份类型，0-逻辑备份，1-物理备份
+                     * 设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+- 3：快照备份。
+**说明**:
+1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
+2. 实例开通存储加密，则备份方式不能为物理备份。
+                     * @param _backupMethod 备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+- 3：快照备份。
+**说明**:
+1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
+2. 实例开通存储加密，则备份方式不能为物理备份。
                      * 
                      */
                     void SetBackupMethod(const int64_t& _backupMethod);
@@ -236,15 +280,15 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取发起备份时指定的备注信息
-                     * @return BackupDesc 发起备份时指定的备注信息
+                     * 获取发起备份时指定的备注信息。
+                     * @return BackupDesc 发起备份时指定的备注信息。
                      * 
                      */
                     std::string GetBackupDesc() const;
 
                     /**
-                     * 设置发起备份时指定的备注信息
-                     * @param _backupDesc 发起备份时指定的备注信息
+                     * 设置发起备份时指定的备注信息。
+                     * @param _backupDesc 发起备份时指定的备注信息。
                      * 
                      */
                     void SetBackupDesc(const std::string& _backupDesc);
@@ -301,61 +345,72 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务创建时间
+                     * 任务创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 备份文件名
+                     * 备份文件名。
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;
 
                     /**
-                     * 分片名称
+                     * 分片名称。
                      */
                     std::string m_replicaSetId;
                     bool m_replicaSetIdHasBeenSet;
 
                     /**
-                     * 备份数据大小，单位为字节
+                     * 备份数据大小，单位：字节。
                      */
                     int64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
-                     * 任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 任务状态。
+- 0：等待执行。
+- 1：正在下载。
+- 2：下载完成。
+- 3：下载失败。
+- 4：等待重试。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务进度百分比
+                     * 任务进度百分比。
                      */
                     int64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 耗时，单位为秒
+                     * 耗时，单位为秒。
                      */
                     int64_t m_timeSpend;
                     bool m_timeSpendHasBeenSet;
 
                     /**
-                     * 备份数据下载链接
+                     * 备份数据下载链接。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 备份文件备份类型，0-逻辑备份，1-物理备份
+                     * 备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+- 3：快照备份。
+**说明**:
+1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
+2. 实例开通存储加密，则备份方式不能为物理备份。
                      */
                     int64_t m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * 发起备份时指定的备注信息
+                     * 发起备份时指定的备注信息。
                      */
                     std::string m_backupDesc;
                     bool m_backupDescHasBeenSet;

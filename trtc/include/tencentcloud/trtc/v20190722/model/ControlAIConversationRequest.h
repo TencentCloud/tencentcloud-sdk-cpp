@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/ServerPushText.h>
+#include <tencentcloud/trtc/v20190722/model/InvokeLLM.h>
 
 
 namespace TencentCloud
@@ -65,23 +66,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取控制命令，目前支持命令如下：
-
-- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本
-                     * @return Command 控制命令，目前支持命令如下：
-
-- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本
+                     * 获取控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
+                     * @return Command 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置控制命令，目前支持命令如下：
-
-- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本
-                     * @param _command 控制命令，目前支持命令如下：
-
-- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本
+                     * 设置控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
+                     * @param _command 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -114,6 +107,27 @@ namespace TencentCloud
                      */
                     bool ServerPushTextHasBeenSet() const;
 
+                    /**
+                     * 获取服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * @return InvokeLLM 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * 
+                     */
+                    InvokeLLM GetInvokeLLM() const;
+
+                    /**
+                     * 设置服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * @param _invokeLLM 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * 
+                     */
+                    void SetInvokeLLM(const InvokeLLM& _invokeLLM);
+
+                    /**
+                     * 判断参数 InvokeLLM 是否已赋值
+                     * @return InvokeLLM 是否已赋值
+                     * 
+                     */
+                    bool InvokeLLMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,9 +137,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 控制命令，目前支持命令如下：
-
-- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本
+                     * 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -135,6 +147,12 @@ namespace TencentCloud
                      */
                     ServerPushText m_serverPushText;
                     bool m_serverPushTextHasBeenSet;
+
+                    /**
+                     * 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     */
+                    InvokeLLM m_invokeLLM;
+                    bool m_invokeLLMHasBeenSet;
 
                 };
             }

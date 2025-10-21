@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -346,6 +346,27 @@ namespace TencentCloud
                      */
                     bool PiracyRiskHasBeenSet() const;
 
+                    /**
+                     * 获取终端备注名
+                     * @return RemarkName 终端备注名
+                     * 
+                     */
+                    std::string GetRemarkName() const;
+
+                    /**
+                     * 设置终端备注名
+                     * @param _remarkName 终端备注名
+                     * 
+                     */
+                    void SetRemarkName(const std::string& _remarkName);
+
+                    /**
+                     * 判断参数 RemarkName 是否已赋值
+                     * @return RemarkName 是否已赋值
+                     * 
+                     */
+                    bool RemarkNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +452,12 @@ namespace TencentCloud
                      */
                     int64_t m_piracyRisk;
                     bool m_piracyRiskHasBeenSet;
+
+                    /**
+                     * 终端备注名
+                     */
+                    std::string m_remarkName;
+                    bool m_remarkNameHasBeenSet;
 
                 };
             }

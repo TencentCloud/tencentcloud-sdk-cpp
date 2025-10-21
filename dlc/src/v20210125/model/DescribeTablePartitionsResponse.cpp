@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeTablePartitionsResponse::DescribeTablePartitionsResponse()
+DescribeTablePartitionsResponse::DescribeTablePartitionsResponse() :
+    m_mixedPartitionsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeTablePartitionsResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("MixedPartitions") && !rsp["MixedPartitions"].IsNull())
+    {
+        if (!rsp["MixedPartitions"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MixedPartitions` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mixedPartitions.Deserialize(rsp["MixedPartitions"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mixedPartitionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -71,16 +89,35 @@ string DescribeTablePartitionsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_mixedPartitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MixedPartitions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mixedPartitions.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
     return buffer.GetString();
 }
 
+
+MixedTablePartitions DescribeTablePartitionsResponse::GetMixedPartitions() const
+{
+    return m_mixedPartitions;
+}
+
+bool DescribeTablePartitionsResponse::MixedPartitionsHasBeenSet() const
+{
+    return m_mixedPartitionsHasBeenSet;
+}
 
 

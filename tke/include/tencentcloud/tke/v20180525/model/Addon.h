@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,15 +110,39 @@ namespace TencentCloud
                     bool RawValuesHasBeenSet() const;
 
                     /**
-                     * 获取addon的状态
-                     * @return Phase addon的状态
+                     * 获取addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
+                     * @return Phase addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      * 
                      */
                     std::string GetPhase() const;
 
                     /**
-                     * 设置addon的状态
-                     * @param _phase addon的状态
+                     * 设置addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
+                     * @param _phase addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      * 
                      */
                     void SetPhase(const std::string& _phase);
@@ -193,7 +217,13 @@ namespace TencentCloud
                     bool m_rawValuesHasBeenSet;
 
                     /**
-                     * addon的状态
+                     * addon的状态：
+- Installing：安装中
+- Upgrading：升级中
+- Terminating：删除中
+- Succeeded：安装/升级成功
+- InstallFailed：安装失败
+- UpgradFailed：升级失败
                      */
                     std::string m_phase;
                     bool m_phaseHasBeenSet;

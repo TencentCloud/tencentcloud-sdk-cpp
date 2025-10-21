@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @return Description 规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 获取事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * @return Description 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @param _description 规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 设置事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * @param _description 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

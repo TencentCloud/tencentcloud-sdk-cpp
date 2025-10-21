@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ AlarmInfo::AlarmInfo() :
     m_monitorObjectTypeHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
     m_classificationsHasBeenSet(false),
-    m_multiConditionsHasBeenSet(false)
+    m_multiConditionsHasBeenSet(false),
+    m_monitorNoticeHasBeenSet(false)
 {
 }
 
@@ -330,6 +331,23 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
         m_multiConditionsHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorNotice") && !value["MonitorNotice"].IsNull())
+    {
+        if (!value["MonitorNotice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.MonitorNotice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_monitorNotice.Deserialize(value["MonitorNotice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_monitorNoticeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -550,6 +568,15 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_monitorNoticeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorNotice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_monitorNotice.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -889,5 +916,21 @@ void AlarmInfo::SetMultiConditions(const vector<MultiCondition>& _multiCondition
 bool AlarmInfo::MultiConditionsHasBeenSet() const
 {
     return m_multiConditionsHasBeenSet;
+}
+
+MonitorNotice AlarmInfo::GetMonitorNotice() const
+{
+    return m_monitorNotice;
+}
+
+void AlarmInfo::SetMonitorNotice(const MonitorNotice& _monitorNotice)
+{
+    m_monitorNotice = _monitorNotice;
+    m_monitorNoticeHasBeenSet = true;
+}
+
+bool AlarmInfo::MonitorNoticeHasBeenSet() const
+{
+    return m_monitorNoticeHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,6 +319,153 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取密钥是否是主副本。0:主本，1:同步副本。
+                     * @return IsSyncReplica 密钥是否是主副本。0:主本，1:同步副本。
+                     * 
+                     */
+                    int64_t GetIsSyncReplica() const;
+
+                    /**
+                     * 设置密钥是否是主副本。0:主本，1:同步副本。
+                     * @param _isSyncReplica 密钥是否是主副本。0:主本，1:同步副本。
+                     * 
+                     */
+                    void SetIsSyncReplica(const int64_t& _isSyncReplica);
+
+                    /**
+                     * 判断参数 IsSyncReplica 是否已赋值
+                     * @return IsSyncReplica 是否已赋值
+                     * 
+                     */
+                    bool IsSyncReplicaHasBeenSet() const;
+
+                    /**
+                     * 获取同步的原始地域
+                     * @return SourceRegion 同步的原始地域
+                     * 
+                     */
+                    std::string GetSourceRegion() const;
+
+                    /**
+                     * 设置同步的原始地域
+                     * @param _sourceRegion 同步的原始地域
+                     * 
+                     */
+                    void SetSourceRegion(const std::string& _sourceRegion);
+
+                    /**
+                     * 判断参数 SourceRegion 是否已赋值
+                     * @return SourceRegion 是否已赋值
+                     * 
+                     */
+                    bool SourceRegionHasBeenSet() const;
+
+                    /**
+                     * 获取密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。
+                     * @return SyncStatus 密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。
+                     * 
+                     */
+                    int64_t GetSyncStatus() const;
+
+                    /**
+                     * 设置密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。
+                     * @param _syncStatus 密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。
+                     * 
+                     */
+                    void SetSyncStatus(const int64_t& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
+                    /**
+                     * 获取同步的结果描述
+                     * @return SyncMessages 同步的结果描述
+                     * 
+                     */
+                    std::string GetSyncMessages() const;
+
+                    /**
+                     * 设置同步的结果描述
+                     * @param _syncMessages 同步的结果描述
+                     * 
+                     */
+                    void SetSyncMessages(const std::string& _syncMessages);
+
+                    /**
+                     * 判断参数 SyncMessages 是否已赋值
+                     * @return SyncMessages 是否已赋值
+                     * 
+                     */
+                    bool SyncMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取同步的开始时间
+                     * @return SyncStartTime 同步的开始时间
+                     * 
+                     */
+                    uint64_t GetSyncStartTime() const;
+
+                    /**
+                     * 设置同步的开始时间
+                     * @param _syncStartTime 同步的开始时间
+                     * 
+                     */
+                    void SetSyncStartTime(const uint64_t& _syncStartTime);
+
+                    /**
+                     * 判断参数 SyncStartTime 是否已赋值
+                     * @return SyncStartTime 是否已赋值
+                     * 
+                     */
+                    bool SyncStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取同步的结束时间
+                     * @return SyncEndTime 同步的结束时间
+                     * 
+                     */
+                    uint64_t GetSyncEndTime() const;
+
+                    /**
+                     * 设置同步的结束时间
+                     * @param _syncEndTime 同步的结束时间
+                     * 
+                     */
+                    void SetSyncEndTime(const uint64_t& _syncEndTime);
+
+                    /**
+                     * 判断参数 SyncEndTime 是否已赋值
+                     * @return SyncEndTime 是否已赋值
+                     * 
+                     */
+                    bool SyncEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取同步的原始集群，如果为空，是公有云公共集群
+                     * @return SourceHsmClusterId 同步的原始集群，如果为空，是公有云公共集群
+                     * 
+                     */
+                    std::string GetSourceHsmClusterId() const;
+
+                    /**
+                     * 设置同步的原始集群，如果为空，是公有云公共集群
+                     * @param _sourceHsmClusterId 同步的原始集群，如果为空，是公有云公共集群
+                     * 
+                     */
+                    void SetSourceHsmClusterId(const std::string& _sourceHsmClusterId);
+
+                    /**
+                     * 判断参数 SourceHsmClusterId 是否已赋值
+                     * @return SourceHsmClusterId 是否已赋值
+                     * 
+                     */
+                    bool SourceHsmClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +545,48 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 密钥是否是主副本。0:主本，1:同步副本。
+                     */
+                    int64_t m_isSyncReplica;
+                    bool m_isSyncReplicaHasBeenSet;
+
+                    /**
+                     * 同步的原始地域
+                     */
+                    std::string m_sourceRegion;
+                    bool m_sourceRegionHasBeenSet;
+
+                    /**
+                     * 密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。
+                     */
+                    int64_t m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
+
+                    /**
+                     * 同步的结果描述
+                     */
+                    std::string m_syncMessages;
+                    bool m_syncMessagesHasBeenSet;
+
+                    /**
+                     * 同步的开始时间
+                     */
+                    uint64_t m_syncStartTime;
+                    bool m_syncStartTimeHasBeenSet;
+
+                    /**
+                     * 同步的结束时间
+                     */
+                    uint64_t m_syncEndTime;
+                    bool m_syncEndTimeHasBeenSet;
+
+                    /**
+                     * 同步的原始集群，如果为空，是公有云公共集群
+                     */
+                    std::string m_sourceHsmClusterId;
+                    bool m_sourceHsmClusterIdHasBeenSet;
 
                 };
             }

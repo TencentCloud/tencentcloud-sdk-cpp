@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ModifyModuleStatusRequest::ModifyModuleStatusRequest() :
     m_apiProtectionHasBeenSet(false),
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_gzipAnalysisHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyModuleStatusRequest::ToJsonString() const
         string key = "RateLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rateLimit, allocator);
+    }
+
+    if (m_gzipAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GzipAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gzipAnalysis, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyModuleStatusRequest::SetRateLimit(const uint64_t& _rateLimit)
 bool ModifyModuleStatusRequest::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+uint64_t ModifyModuleStatusRequest::GetGzipAnalysis() const
+{
+    return m_gzipAnalysis;
+}
+
+void ModifyModuleStatusRequest::SetGzipAnalysis(const uint64_t& _gzipAnalysis)
+{
+    m_gzipAnalysis = _gzipAnalysis;
+    m_gzipAnalysisHasBeenSet = true;
+}
+
+bool ModifyModuleStatusRequest::GzipAnalysisHasBeenSet() const
+{
+    return m_gzipAnalysisHasBeenSet;
 }
 
 

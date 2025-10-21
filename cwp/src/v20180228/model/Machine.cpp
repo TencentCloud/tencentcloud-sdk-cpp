@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,8 @@ Machine::Machine() :
     m_vpcIdHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_agentVersionHasBeenSet(false)
 {
 }
 
@@ -426,6 +427,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentVersion") && !value["AgentVersion"].IsNull())
+    {
+        if (!value["AgentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.AgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentVersion = string(value["AgentVersion"].GetString());
+        m_agentVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -711,6 +722,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1242,5 +1261,21 @@ void Machine::SetRemark(const string& _remark)
 bool Machine::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string Machine::GetAgentVersion() const
+{
+    return m_agentVersion;
+}
+
+void Machine::SetAgentVersion(const string& _agentVersion)
+{
+    m_agentVersion = _agentVersion;
+    m_agentVersionHasBeenSet = true;
+}
+
+bool Machine::AgentVersionHasBeenSet() const
+{
+    return m_agentVersionHasBeenSet;
 }
 

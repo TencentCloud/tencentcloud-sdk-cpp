@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-4wdeb0zv
-                     * @return DBInstanceId 实例ID，形如postgres-4wdeb0zv
+                     * 获取实例ID，形如postgres-4wdeb0zv。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如postgres-4wdeb0zv。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-4wdeb0zv
-                     * @param _dBInstanceId 实例ID，形如postgres-4wdeb0zv
+                     * 设置实例ID，形如postgres-4wdeb0zv。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如postgres-4wdeb0zv。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例账户名
-                     * @return UserName 实例账户名
+                     * 获取实例账户名。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
+                     * @return UserName 实例账户名。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置实例账户名
-                     * @param _userName 实例账户名
+                     * 设置实例账户名。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
+                     * @param _userName 实例账户名。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -85,15 +85,47 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取UserName账户对应的新密码
-                     * @return Password UserName账户对应的新密码
+                     * 获取UserName账户对应的新密码。
+密码设置规则如下：
+- 长度8~ 32位，推荐使用12位以上的密码
+- 不能以" / "开头
+- 必须包含以下四项:
+  1.    小写字母a ~ z
+  2.    大写字母 A ～ Z
+  3.    数字 0 ～ 9
+  4.    特殊字符 ()`~!@#$%^&*-+=_|{}[]:<>,.?/
+                     * @return Password UserName账户对应的新密码。
+密码设置规则如下：
+- 长度8~ 32位，推荐使用12位以上的密码
+- 不能以" / "开头
+- 必须包含以下四项:
+  1.    小写字母a ~ z
+  2.    大写字母 A ～ Z
+  3.    数字 0 ～ 9
+  4.    特殊字符 ()`~!@#$%^&*-+=_|{}[]:<>,.?/
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置UserName账户对应的新密码
-                     * @param _password UserName账户对应的新密码
+                     * 设置UserName账户对应的新密码。
+密码设置规则如下：
+- 长度8~ 32位，推荐使用12位以上的密码
+- 不能以" / "开头
+- 必须包含以下四项:
+  1.    小写字母a ~ z
+  2.    大写字母 A ～ Z
+  3.    数字 0 ～ 9
+  4.    特殊字符 ()`~!@#$%^&*-+=_|{}[]:<>,.?/
+                     * @param _password UserName账户对应的新密码。
+密码设置规则如下：
+- 长度8~ 32位，推荐使用12位以上的密码
+- 不能以" / "开头
+- 必须包含以下四项:
+  1.    小写字母a ~ z
+  2.    大写字母 A ～ Z
+  3.    数字 0 ～ 9
+  4.    特殊字符 ()`~!@#$%^&*-+=_|{}[]:<>,.?/
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -108,19 +140,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-4wdeb0zv
+                     * 实例ID，形如postgres-4wdeb0zv。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 实例账户名
+                     * 实例账户名。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * UserName账户对应的新密码
+                     * UserName账户对应的新密码。
+密码设置规则如下：
+- 长度8~ 32位，推荐使用12位以上的密码
+- 不能以" / "开头
+- 必须包含以下四项:
+  1.    小写字母a ~ z
+  2.    大写字母 A ～ Z
+  3.    数字 0 ～ 9
+  4.    特殊字符 ()`~!@#$%^&*-+=_|{}[]:<>,.?/
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

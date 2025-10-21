@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -224,6 +224,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。
+                     * @return RecordType 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。
+                     * 
+                     */
+                    std::string GetRecordType() const;
+
+                    /**
+                     * 设置录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。
+                     * @param _recordType 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。
+                     * 
+                     */
+                    void SetRecordType(const std::string& _recordType);
+
+                    /**
+                     * 判断参数 RecordType 是否已赋值
+                     * @return RecordType 是否已赋值
+                     * 
+                     */
+                    bool RecordTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +296,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 录制类型，取值为video（音视频录制）、audio（纯音频录制）、auto（自动探测）。
+                     */
+                    std::string m_recordType;
+                    bool m_recordTypeHasBeenSet;
 
                 };
             }

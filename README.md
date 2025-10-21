@@ -82,7 +82,7 @@ vcpkg install openssl:x64-windows
 # 从源代码构建 SDK
 
 ## 安装指定产品 SDK（推荐）
-1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
+1. 前往 [CNB](https://cnb.cool/tencent/cloud/api/sdk/tencentcloud-sdk-cpp)、[Github](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 - linux / macos
@@ -313,7 +313,7 @@ target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentclo
 
 **注意，您必须明确知道您调用的接口所需参数，否则可能会调用失败。**
 
-Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cpp/blob/master/example/common_client/DescribeInstances.cpp)
+Common Client参考[example](example/common_client/DescribeInstances.cpp)
 
 
 ## C++ SDK支持压缩协议使用方式

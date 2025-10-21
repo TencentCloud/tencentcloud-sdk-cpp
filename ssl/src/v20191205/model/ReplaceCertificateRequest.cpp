@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ReplaceCertificateRequest::ReplaceCertificateRequest() :
     m_csrkeyPasswordHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_certCSREncryptAlgoHasBeenSet(false),
-    m_certCSRKeyParameterHasBeenSet(false)
+    m_certCSRKeyParameterHasBeenSet(false),
+    m_signAlgoHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ReplaceCertificateRequest::ToJsonString() const
         string key = "CertCSRKeyParameter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certCSRKeyParameter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signAlgoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignAlgo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signAlgo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ReplaceCertificateRequest::SetCertCSRKeyParameter(const string& _certCSRKey
 bool ReplaceCertificateRequest::CertCSRKeyParameterHasBeenSet() const
 {
     return m_certCSRKeyParameterHasBeenSet;
+}
+
+string ReplaceCertificateRequest::GetSignAlgo() const
+{
+    return m_signAlgo;
+}
+
+void ReplaceCertificateRequest::SetSignAlgo(const string& _signAlgo)
+{
+    m_signAlgo = _signAlgo;
+    m_signAlgoHasBeenSet = true;
+}
+
+bool ReplaceCertificateRequest::SignAlgoHasBeenSet() const
+{
+    return m_signAlgoHasBeenSet;
 }
 
 

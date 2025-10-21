@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,18 +109,18 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,10 +159,10 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取更新时间, 秒级时间戳
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime 更新时间, 秒级时间戳
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -170,10 +170,10 @@ namespace TencentCloud
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置更新时间, 秒级时间戳
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime 更新时间, 秒级时间戳
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -245,6 +245,31 @@ namespace TencentCloud
                      */
                     bool IsAllowDeleteHasBeenSet() const;
 
+                    /**
+                     * 获取操作人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Operator 操作人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operator 操作人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * 
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,7 +290,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 状态
+                     * 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
@@ -279,7 +304,7 @@ namespace TencentCloud
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间, 秒级时间戳
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -301,6 +326,13 @@ namespace TencentCloud
                      */
                     bool m_isAllowDelete;
                     bool m_isAllowDeleteHasBeenSet;
+
+                    /**
+                     * 操作人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h
+  include/tencentcloud/lkeap/v20240522/model/Thinking.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h
@@ -91,6 +92,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
   include/tencentcloud/lkeap/v20240522/model/Message.h
+  include/tencentcloud/lkeap/v20240522/model/ErrorInfo.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DeleteDocsRequest.h
@@ -153,6 +155,7 @@ set(lkeap_src
   src/v20240522/model/ReconstructDocumentFailedPage.cpp
   src/v20240522/model/SplitDocumentFailedPage.cpp
   src/v20240522/model/ModifyAttributeLabelResponse.cpp
+  src/v20240522/model/Thinking.cpp
   src/v20240522/model/QueryRewriteResponse.cpp
   src/v20240522/model/UploadDocRequest.cpp
   src/v20240522/model/DeleteQAsResponse.cpp
@@ -170,6 +173,7 @@ set(lkeap_src
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
   src/v20240522/model/Message.cpp
+  src/v20240522/model/ErrorInfo.cpp
   src/v20240522/model/CreateKnowledgeBaseRequest.cpp
   src/v20240522/model/ChatCompletionsResponse.cpp
   src/v20240522/model/DeleteDocsRequest.cpp

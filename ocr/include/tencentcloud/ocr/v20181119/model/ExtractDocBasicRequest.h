@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,7 @@ RideHailingDriverLicense -- 网约车驾驶证
 RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
-InvoiceEng -- 海外发票模版
+InvoiceEng -- 国际发票模板
 Coin --钱币识别模板
 OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
@@ -199,7 +199,7 @@ RideHailingDriverLicense -- 网约车驾驶证
 RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
-InvoiceEng -- 海外发票模版
+InvoiceEng -- 国际发票模板
 Coin --钱币识别模板
 OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
@@ -219,7 +219,7 @@ RideHailingDriverLicense -- 网约车驾驶证
 RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
-InvoiceEng -- 海外发票模版
+InvoiceEng -- 国际发票模板
 Coin --钱币识别模板
 OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
@@ -234,7 +234,7 @@ RideHailingDriverLicense -- 网约车驾驶证
 RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
-InvoiceEng -- 海外发票模版
+InvoiceEng -- 国际发票模板
 Coin --钱币识别模板
 OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
@@ -322,7 +322,7 @@ RideHailingDriverLicense -- 网约车驾驶证
 RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
-InvoiceEng -- 海外发票模版
+InvoiceEng -- 国际发票模板
 Coin --钱币识别模板
 OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别

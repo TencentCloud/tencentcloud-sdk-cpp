@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ContractNameHasBeenSet() const;
 
                     /**
-                     * 获取合约方法名
-                     * @return FuncName 合约方法名
+                     * 获取合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义
+                     * @return FuncName 合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义
                      * 
                      */
                     std::string GetFuncName() const;
 
                     /**
-                     * 设置合约方法名
-                     * @param _funcName 合约方法名
+                     * 设置合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义
+                     * @param _funcName 合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义
                      * 
                      */
                     void SetFuncName(const std::string& _funcName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FuncNameHasBeenSet() const;
 
                     /**
-                     * 获取合约方法入参，json格式字符串，key/value都是string类型的map
-                     * @return FuncParam 合约方法入参，json格式字符串，key/value都是string类型的map
+                     * 获取合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义
+                     * @return FuncParam 合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义
                      * 
                      */
                     std::string GetFuncParam() const;
 
                     /**
-                     * 设置合约方法入参，json格式字符串，key/value都是string类型的map
-                     * @param _funcParam 合约方法入参，json格式字符串，key/value都是string类型的map
+                     * 设置合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义
+                     * @param _funcParam 合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义
                      * 
                      */
                     void SetFuncParam(const std::string& _funcParam);
@@ -189,13 +189,13 @@ namespace TencentCloud
                     bool m_contractNameHasBeenSet;
 
                     /**
-                     * 合约方法名
+                     * 合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义
                      */
                     std::string m_funcName;
                     bool m_funcNameHasBeenSet;
 
                     /**
-                     * 合约方法入参，json格式字符串，key/value都是string类型的map
+                     * 合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义
                      */
                     std::string m_funcParam;
                     bool m_funcParamHasBeenSet;

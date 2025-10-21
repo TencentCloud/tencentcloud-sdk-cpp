@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ ScaleOutClusterRequest::ScaleOutClusterRequest() :
     m_zoneHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_scaleOutServiceConfGroupsInfoHasBeenSet(false),
-    m_nodeMarksHasBeenSet(false)
+    m_nodeMarksHasBeenSet(false),
+    m_warehouseNameHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,14 @@ string ScaleOutClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nodeMarks.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_warehouseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarehouseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_warehouseName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -605,6 +614,22 @@ void ScaleOutClusterRequest::SetNodeMarks(const NodeMark& _nodeMarks)
 bool ScaleOutClusterRequest::NodeMarksHasBeenSet() const
 {
     return m_nodeMarksHasBeenSet;
+}
+
+string ScaleOutClusterRequest::GetWarehouseName() const
+{
+    return m_warehouseName;
+}
+
+void ScaleOutClusterRequest::SetWarehouseName(const string& _warehouseName)
+{
+    m_warehouseName = _warehouseName;
+    m_warehouseNameHasBeenSet = true;
+}
+
+bool ScaleOutClusterRequest::WarehouseNameHasBeenSet() const
+{
+    return m_warehouseNameHasBeenSet;
 }
 
 

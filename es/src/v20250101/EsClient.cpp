@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,49 @@ EsClient::GetDocumentParseResultOutcomeCallable EsClient::GetDocumentParseResult
         [this, request]()
         {
             return this->GetDocumentParseResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::GetMultiModalEmbeddingOutcome EsClient::GetMultiModalEmbedding(const GetMultiModalEmbeddingRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMultiModalEmbedding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMultiModalEmbeddingResponse rsp = GetMultiModalEmbeddingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMultiModalEmbeddingOutcome(rsp);
+        else
+            return GetMultiModalEmbeddingOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMultiModalEmbeddingOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::GetMultiModalEmbeddingAsync(const GetMultiModalEmbeddingRequest& request, const GetMultiModalEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetMultiModalEmbedding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::GetMultiModalEmbeddingOutcomeCallable EsClient::GetMultiModalEmbeddingCallable(const GetMultiModalEmbeddingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetMultiModalEmbeddingOutcome()>>(
+        [this, request]()
+        {
+            return this->GetMultiModalEmbedding(request);
         }
     );
 

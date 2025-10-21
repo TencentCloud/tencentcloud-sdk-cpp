@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询时间范围启始时间，毫秒级unix时间戳
-                     * @return From 查询时间范围启始时间，毫秒级unix时间戳
+                     * 获取查询时间范围启始时间，毫秒级unix时间戳(ms)
+                     * @return From 查询时间范围启始时间，毫秒级unix时间戳(ms)
                      * 
                      */
                     uint64_t GetFrom() const;
 
                     /**
-                     * 设置查询时间范围启始时间，毫秒级unix时间戳
-                     * @param _from 查询时间范围启始时间，毫秒级unix时间戳
+                     * 设置查询时间范围启始时间，毫秒级unix时间戳(ms)
+                     * @param _from 查询时间范围启始时间，毫秒级unix时间戳(ms)
                      * 
                      */
                     void SetFrom(const uint64_t& _from);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取查询时间范围结束时间，毫秒级unix时间戳
-                     * @return To 查询时间范围结束时间，毫秒级unix时间戳
+                     * 获取查询时间范围结束时间，毫秒级unix时间戳(ms)
+                     * @return To 查询时间范围结束时间，毫秒级unix时间戳(ms)
                      * 
                      */
                     uint64_t GetTo() const;
 
                     /**
-                     * 设置查询时间范围结束时间，毫秒级unix时间戳
-                     * @param _to 查询时间范围结束时间，毫秒级unix时间戳
+                     * 设置查询时间范围结束时间，毫秒级unix时间戳(ms)
+                     * @param _to 查询时间范围结束时间，毫秒级unix时间戳(ms)
                      * 
                      */
                     void SetTo(const uint64_t& _to);
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询时间范围启始时间，毫秒级unix时间戳
+                     * 查询时间范围启始时间，毫秒级unix时间戳(ms)
                      */
                     uint64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 查询时间范围结束时间，毫秒级unix时间戳
+                     * 查询时间范围结束时间，毫秒级unix时间戳(ms)
                      */
                     uint64_t m_to;
                     bool m_toHasBeenSet;

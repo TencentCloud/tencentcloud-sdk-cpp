@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标主题id
-                     * @return TopicId 目标主题id
+                     * 获取日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @return TopicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置目标主题id
-                     * @param _topicId 目标主题id
+                     * 设置日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * @param _topicId 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取别名
+限制：不能包含字符 |。
                      * @return Alias 别名
+限制：不能包含字符 |。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
+限制：不能包含字符 |。
                      * @param _alias 别名
+限制：不能包含字符 |。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -91,13 +99,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标主题id
+                     * 日志主题ID
+- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 别名
+限制：不能包含字符 |。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

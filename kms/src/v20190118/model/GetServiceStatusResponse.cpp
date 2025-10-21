@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_isAllowedDataKeyHostedHasBeenSet(false),
     m_dataKeyLimitHasBeenSet(false),
     m_freeDataKeyLimitHasBeenSet(false),
-    m_dataKeyUsedCountHasBeenSet(false)
+    m_dataKeyUsedCountHasBeenSet(false),
+    m_syncTaskListHasBeenSet(false),
+    m_isAllowedSyncHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,36 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_dataKeyUsedCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SyncTaskList") && !rsp["SyncTaskList"].IsNull())
+    {
+        if (!rsp["SyncTaskList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SyncTaskList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SyncTaskList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DestinationSyncConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_syncTaskList.push_back(item);
+        }
+        m_syncTaskListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsAllowedSync") && !rsp["IsAllowedSync"].IsNull())
+    {
+        if (!rsp["IsAllowedSync"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsAllowedSync` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAllowedSync = rsp["IsAllowedSync"].GetBool();
+        m_isAllowedSyncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -392,11 +424,34 @@ string GetServiceStatusResponse::ToJsonString() const
         value.AddMember(iKey, m_dataKeyUsedCount, allocator);
     }
 
+    if (m_syncTaskListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncTaskList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_syncTaskList.begin(); itr != m_syncTaskList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isAllowedSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAllowedSync";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAllowedSync, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -562,6 +617,26 @@ uint64_t GetServiceStatusResponse::GetDataKeyUsedCount() const
 bool GetServiceStatusResponse::DataKeyUsedCountHasBeenSet() const
 {
     return m_dataKeyUsedCountHasBeenSet;
+}
+
+vector<DestinationSyncConfig> GetServiceStatusResponse::GetSyncTaskList() const
+{
+    return m_syncTaskList;
+}
+
+bool GetServiceStatusResponse::SyncTaskListHasBeenSet() const
+{
+    return m_syncTaskListHasBeenSet;
+}
+
+bool GetServiceStatusResponse::GetIsAllowedSync() const
+{
+    return m_isAllowedSync;
+}
+
+bool GetServiceStatusResponse::IsAllowedSyncHasBeenSet() const
+{
+    return m_isAllowedSyncHasBeenSet;
 }
 
 

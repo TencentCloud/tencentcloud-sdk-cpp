@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
-                     * @return AccessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * 获取实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * @return AccessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
-                     * @param _accessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * 设置实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * @param _accessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -185,21 +185,21 @@ namespace TencentCloud
                     /**
                      * 获取此参数为数组类型，可以传多个键值对结构对象。
 MongoDB可定义如下的参数：
-'AuthDatabase':'admin',
-'AuthFlag': "1",
-'AuthMechanism':"SCRAM-SHA-1",
-"fetchMethod":"oplog",
-"connectMode":"srv",
-"EncryptedConnProtocol":"mongo_atlas_ssl"；
+'AuthDatabase':'admin',    //认证库
+'AuthFlag': "1",       //实例是否需要认证，"0": 不用认证；"1":需要认证
+'AuthMechanism':"SCRAM-SHA-1",    //实例认证方式
+"fetchMethod":"oplog",    //fetchMethod表示迁移方式，支持oplog、change_stream
+"connectMode":"srv",    //外网srv连接模式
+"EncryptedConnProtocol":"mongo_atlas_ssl"；    //加密连接方式
 其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * @return ExtraAttr 此参数为数组类型，可以传多个键值对结构对象。
 MongoDB可定义如下的参数：
-'AuthDatabase':'admin',
-'AuthFlag': "1",
-'AuthMechanism':"SCRAM-SHA-1",
-"fetchMethod":"oplog",
-"connectMode":"srv",
-"EncryptedConnProtocol":"mongo_atlas_ssl"；
+'AuthDatabase':'admin',    //认证库
+'AuthFlag': "1",       //实例是否需要认证，"0": 不用认证；"1":需要认证
+'AuthMechanism':"SCRAM-SHA-1",    //实例认证方式
+"fetchMethod":"oplog",    //fetchMethod表示迁移方式，支持oplog、change_stream
+"connectMode":"srv",    //外网srv连接模式
+"EncryptedConnProtocol":"mongo_atlas_ssl"；    //加密连接方式
 其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * 
                      */
@@ -208,21 +208,21 @@ MongoDB可定义如下的参数：
                     /**
                      * 设置此参数为数组类型，可以传多个键值对结构对象。
 MongoDB可定义如下的参数：
-'AuthDatabase':'admin',
-'AuthFlag': "1",
-'AuthMechanism':"SCRAM-SHA-1",
-"fetchMethod":"oplog",
-"connectMode":"srv",
-"EncryptedConnProtocol":"mongo_atlas_ssl"；
+'AuthDatabase':'admin',    //认证库
+'AuthFlag': "1",       //实例是否需要认证，"0": 不用认证；"1":需要认证
+'AuthMechanism':"SCRAM-SHA-1",    //实例认证方式
+"fetchMethod":"oplog",    //fetchMethod表示迁移方式，支持oplog、change_stream
+"connectMode":"srv",    //外网srv连接模式
+"EncryptedConnProtocol":"mongo_atlas_ssl"；    //加密连接方式
 其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * @param _extraAttr 此参数为数组类型，可以传多个键值对结构对象。
 MongoDB可定义如下的参数：
-'AuthDatabase':'admin',
-'AuthFlag': "1",
-'AuthMechanism':"SCRAM-SHA-1",
-"fetchMethod":"oplog",
-"connectMode":"srv",
-"EncryptedConnProtocol":"mongo_atlas_ssl"；
+'AuthDatabase':'admin',    //认证库
+'AuthFlag': "1",       //实例是否需要认证，"0": 不用认证；"1":需要认证
+'AuthMechanism':"SCRAM-SHA-1",    //实例认证方式
+"fetchMethod":"oplog",    //fetchMethod表示迁移方式，支持oplog、change_stream
+"connectMode":"srv",    //外网srv连接模式
+"EncryptedConnProtocol":"mongo_atlas_ssl"；    //加密连接方式
 其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      * 
                      */
@@ -307,7 +307,7 @@ MongoDB可定义如下的参数：
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
@@ -341,12 +341,12 @@ MongoDB可定义如下的参数：
                     /**
                      * 此参数为数组类型，可以传多个键值对结构对象。
 MongoDB可定义如下的参数：
-'AuthDatabase':'admin',
-'AuthFlag': "1",
-'AuthMechanism':"SCRAM-SHA-1",
-"fetchMethod":"oplog",
-"connectMode":"srv",
-"EncryptedConnProtocol":"mongo_atlas_ssl"；
+'AuthDatabase':'admin',    //认证库
+'AuthFlag': "1",       //实例是否需要认证，"0": 不用认证；"1":需要认证
+'AuthMechanism':"SCRAM-SHA-1",    //实例认证方式
+"fetchMethod":"oplog",    //fetchMethod表示迁移方式，支持oplog、change_stream
+"connectMode":"srv",    //外网srv连接模式
+"EncryptedConnProtocol":"mongo_atlas_ssl"；    //加密连接方式
 其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;

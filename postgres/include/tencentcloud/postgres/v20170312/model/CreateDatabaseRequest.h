@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-6fego161
-                     * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 获取实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-6fego161
-                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 设置实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建的数据库名
-                     * @return DatabaseName 创建的数据库名
+                     * 获取创建的数据库名。
+名称规范：由字母（a-z, A-Z）、数字（0-9）、下划线（_）组成，以字母或（_）开头，最多63个字符。不能使用系统保留关键字，不能为postgres。
+                     * @return DatabaseName 创建的数据库名。
+名称规范：由字母（a-z, A-Z）、数字（0-9）、下划线（_）组成，以字母或（_）开头，最多63个字符。不能使用系统保留关键字，不能为postgres。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置创建的数据库名
-                     * @param _databaseName 创建的数据库名
+                     * 设置创建的数据库名。
+名称规范：由字母（a-z, A-Z）、数字（0-9）、下划线（_）组成，以字母或（_）开头，最多63个字符。不能使用系统保留关键字，不能为postgres。
+                     * @param _databaseName 创建的数据库名。
+名称规范：由字母（a-z, A-Z）、数字（0-9）、下划线（_）组成，以字母或（_）开头，最多63个字符。不能使用系统保留关键字，不能为postgres。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库的所有者
-                     * @return DatabaseOwner 数据库的所有者
+                     * 获取数据库的所有者。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
+                     * @return DatabaseOwner 数据库的所有者。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      * 
                      */
                     std::string GetDatabaseOwner() const;
 
                     /**
-                     * 设置数据库的所有者
-                     * @param _databaseOwner 数据库的所有者
+                     * 设置数据库的所有者。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
+                     * @param _databaseOwner 数据库的所有者。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      * 
                      */
                     void SetDatabaseOwner(const std::string& _databaseOwner);
@@ -106,15 +110,23 @@ namespace TencentCloud
                     bool DatabaseOwnerHasBeenSet() const;
 
                     /**
-                     * 获取数据库的字符编码
-                     * @return Encoding 数据库的字符编码
+                     * 获取数据库的字符编码。
+支持的常用字符集包括：UTF8、LATIN1、LATIN2、WIN1250、WIN1251、WIN1252、KOI8R、EUC_JP、EUC_KR
+默认值：UTF8
+                     * @return Encoding 数据库的字符编码。
+支持的常用字符集包括：UTF8、LATIN1、LATIN2、WIN1250、WIN1251、WIN1252、KOI8R、EUC_JP、EUC_KR
+默认值：UTF8
                      * 
                      */
                     std::string GetEncoding() const;
 
                     /**
-                     * 设置数据库的字符编码
-                     * @param _encoding 数据库的字符编码
+                     * 设置数据库的字符编码。
+支持的常用字符集包括：UTF8、LATIN1、LATIN2、WIN1250、WIN1251、WIN1252、KOI8R、EUC_JP、EUC_KR
+默认值：UTF8
+                     * @param _encoding 数据库的字符编码。
+支持的常用字符集包括：UTF8、LATIN1、LATIN2、WIN1250、WIN1251、WIN1252、KOI8R、EUC_JP、EUC_KR
+默认值：UTF8
                      * 
                      */
                     void SetEncoding(const std::string& _encoding);
@@ -171,25 +183,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-6fego161
+                     * 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 创建的数据库名
+                     * 创建的数据库名。
+名称规范：由字母（a-z, A-Z）、数字（0-9）、下划线（_）组成，以字母或（_）开头，最多63个字符。不能使用系统保留关键字，不能为postgres。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 数据库的所有者
+                     * 数据库的所有者。可通过[DescribeAccounts](https://cloud.tencent.com/document/api/409/18109)接口获取
                      */
                     std::string m_databaseOwner;
                     bool m_databaseOwnerHasBeenSet;
 
                     /**
-                     * 数据库的字符编码
+                     * 数据库的字符编码。
+支持的常用字符集包括：UTF8、LATIN1、LATIN2、WIN1250、WIN1251、WIN1252、KOI8R、EUC_JP、EUC_KR
+默认值：UTF8
                      */
                     std::string m_encoding;
                     bool m_encodingHasBeenSet;

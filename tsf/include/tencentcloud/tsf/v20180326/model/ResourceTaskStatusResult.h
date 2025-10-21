@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务的执行状态
-                     * @return TaskStatus 任务的执行状态
+                     * 获取变更状态：
+- `0`：成功
+- `1`：失败
+- `2`：执行中
+                     * @return TaskStatus 变更状态：
+- `0`：成功
+- `1`：失败
+- `2`：执行中
                      * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
-                     * 设置任务的执行状态
-                     * @param _taskStatus 任务的执行状态
+                     * 设置变更状态：
+- `0`：成功
+- `1`：失败
+- `2`：执行中
+                     * @param _taskStatus 变更状态：
+- `0`：成功
+- `1`：失败
+- `2`：执行中
                      * 
                      */
                     void SetTaskStatus(const uint64_t& _taskStatus);
@@ -70,7 +82,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务的执行状态
+                     * 变更状态：
+- `0`：成功
+- `1`：失败
+- `2`：执行中
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;

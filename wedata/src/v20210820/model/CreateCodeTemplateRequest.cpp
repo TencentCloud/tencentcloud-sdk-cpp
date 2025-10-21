@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ CreateCodeTemplateRequest::CreateCodeTemplateRequest() :
     m_taskTypeHasBeenSet(false),
     m_codeTemplateDescHasBeenSet(false),
     m_folderIdHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_productNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateCodeTemplateRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateCodeTemplateRequest::SetContent(const string& _content)
 bool CreateCodeTemplateRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string CreateCodeTemplateRequest::GetProductName() const
+{
+    return m_productName;
+}
+
+void CreateCodeTemplateRequest::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool CreateCodeTemplateRequest::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
 }
 
 

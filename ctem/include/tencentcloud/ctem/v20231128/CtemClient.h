@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,14 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeDomainsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeEnterprisesRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeEnterprisesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeAppsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeAppsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWebsitesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWebsitesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeGithubsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeHttpsRequest.h>
@@ -49,6 +57,12 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageCodesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageCodesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageDatasRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageDatasResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeManagesRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeManagesResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeNetDisksRequest.h>
@@ -71,6 +85,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerResponse.h>
+#include <tencentcloud/ctem/v20231128/model/ModifyLabelRequest.h>
+#include <tencentcloud/ctem/v20231128/model/ModifyLabelResponse.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordRequest.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordResponse.h>
 
@@ -114,6 +130,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnterprisesResponse> DescribeEnterprisesOutcome;
                 typedef std::future<DescribeEnterprisesOutcome> DescribeEnterprisesOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeEnterprisesRequest&, DescribeEnterprisesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterprisesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeAppsResponse> DescribeFakeAppsOutcome;
+                typedef std::future<DescribeFakeAppsOutcome> DescribeFakeAppsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeAppsRequest&, DescribeFakeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeAppsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeMiniProgramsResponse> DescribeFakeMiniProgramsOutcome;
+                typedef std::future<DescribeFakeMiniProgramsOutcome> DescribeFakeMiniProgramsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeMiniProgramsRequest&, DescribeFakeMiniProgramsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeMiniProgramsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeWebsitesResponse> DescribeFakeWebsitesOutcome;
+                typedef std::future<DescribeFakeWebsitesOutcome> DescribeFakeWebsitesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeWebsitesRequest&, DescribeFakeWebsitesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeWebsitesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFakeWechatOfficialsResponse> DescribeFakeWechatOfficialsOutcome;
+                typedef std::future<DescribeFakeWechatOfficialsOutcome> DescribeFakeWechatOfficialsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeFakeWechatOfficialsRequest&, DescribeFakeWechatOfficialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFakeWechatOfficialsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGithubsResponse> DescribeGithubsOutcome;
                 typedef std::future<DescribeGithubsOutcome> DescribeGithubsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeGithubsRequest&, DescribeGithubsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGithubsAsyncHandler;
@@ -126,6 +154,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobRecordsResponse> DescribeJobRecordsOutcome;
                 typedef std::future<DescribeJobRecordsOutcome> DescribeJobRecordsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeJobRecordsRequest&, DescribeJobRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLeakageCodesResponse> DescribeLeakageCodesOutcome;
+                typedef std::future<DescribeLeakageCodesOutcome> DescribeLeakageCodesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeLeakageCodesRequest&, DescribeLeakageCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakageCodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLeakageDatasResponse> DescribeLeakageDatasOutcome;
+                typedef std::future<DescribeLeakageDatasOutcome> DescribeLeakageDatasOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeLeakageDatasRequest&, DescribeLeakageDatasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakageDatasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLeakageEmailsResponse> DescribeLeakageEmailsOutcome;
+                typedef std::future<DescribeLeakageEmailsOutcome> DescribeLeakageEmailsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeLeakageEmailsRequest&, DescribeLeakageEmailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakageEmailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeManagesResponse> DescribeManagesOutcome;
                 typedef std::future<DescribeManagesOutcome> DescribeManagesOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeManagesRequest&, DescribeManagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagesAsyncHandler;
@@ -159,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomerResponse> ModifyCustomerOutcome;
                 typedef std::future<ModifyCustomerOutcome> ModifyCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::ModifyCustomerRequest&, ModifyCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLabelResponse> ModifyLabelOutcome;
+                typedef std::future<ModifyLabelOutcome> ModifyLabelOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::ModifyLabelRequest&, ModifyLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobRecordResponse> StopJobRecordOutcome;
                 typedef std::future<StopJobRecordOutcome> StopJobRecordOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::StopJobRecordRequest&, StopJobRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobRecordAsyncHandler;
@@ -247,6 +287,42 @@ namespace TencentCloud
                 DescribeEnterprisesOutcomeCallable DescribeEnterprisesCallable(const Model::DescribeEnterprisesRequest& request);
 
                 /**
+                 *查询仿冒应用
+                 * @param req DescribeFakeAppsRequest
+                 * @return DescribeFakeAppsOutcome
+                 */
+                DescribeFakeAppsOutcome DescribeFakeApps(const Model::DescribeFakeAppsRequest &request);
+                void DescribeFakeAppsAsync(const Model::DescribeFakeAppsRequest& request, const DescribeFakeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeAppsOutcomeCallable DescribeFakeAppsCallable(const Model::DescribeFakeAppsRequest& request);
+
+                /**
+                 *查询仿冒小程序
+                 * @param req DescribeFakeMiniProgramsRequest
+                 * @return DescribeFakeMiniProgramsOutcome
+                 */
+                DescribeFakeMiniProgramsOutcome DescribeFakeMiniPrograms(const Model::DescribeFakeMiniProgramsRequest &request);
+                void DescribeFakeMiniProgramsAsync(const Model::DescribeFakeMiniProgramsRequest& request, const DescribeFakeMiniProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeMiniProgramsOutcomeCallable DescribeFakeMiniProgramsCallable(const Model::DescribeFakeMiniProgramsRequest& request);
+
+                /**
+                 *查询仿冒网站
+                 * @param req DescribeFakeWebsitesRequest
+                 * @return DescribeFakeWebsitesOutcome
+                 */
+                DescribeFakeWebsitesOutcome DescribeFakeWebsites(const Model::DescribeFakeWebsitesRequest &request);
+                void DescribeFakeWebsitesAsync(const Model::DescribeFakeWebsitesRequest& request, const DescribeFakeWebsitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeWebsitesOutcomeCallable DescribeFakeWebsitesCallable(const Model::DescribeFakeWebsitesRequest& request);
+
+                /**
+                 *查询仿冒公众号
+                 * @param req DescribeFakeWechatOfficialsRequest
+                 * @return DescribeFakeWechatOfficialsOutcome
+                 */
+                DescribeFakeWechatOfficialsOutcome DescribeFakeWechatOfficials(const Model::DescribeFakeWechatOfficialsRequest &request);
+                void DescribeFakeWechatOfficialsAsync(const Model::DescribeFakeWechatOfficialsRequest& request, const DescribeFakeWechatOfficialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFakeWechatOfficialsOutcomeCallable DescribeFakeWechatOfficialsCallable(const Model::DescribeFakeWechatOfficialsRequest& request);
+
+                /**
                  *查看Github泄露数据
                  * @param req DescribeGithubsRequest
                  * @return DescribeGithubsOutcome
@@ -281,6 +357,33 @@ namespace TencentCloud
                 DescribeJobRecordsOutcome DescribeJobRecords(const Model::DescribeJobRecordsRequest &request);
                 void DescribeJobRecordsAsync(const Model::DescribeJobRecordsRequest& request, const DescribeJobRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobRecordsOutcomeCallable DescribeJobRecordsCallable(const Model::DescribeJobRecordsRequest& request);
+
+                /**
+                 *获取代码泄露数据
+                 * @param req DescribeLeakageCodesRequest
+                 * @return DescribeLeakageCodesOutcome
+                 */
+                DescribeLeakageCodesOutcome DescribeLeakageCodes(const Model::DescribeLeakageCodesRequest &request);
+                void DescribeLeakageCodesAsync(const Model::DescribeLeakageCodesRequest& request, const DescribeLeakageCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLeakageCodesOutcomeCallable DescribeLeakageCodesCallable(const Model::DescribeLeakageCodesRequest& request);
+
+                /**
+                 *获取数据泄露事件
+                 * @param req DescribeLeakageDatasRequest
+                 * @return DescribeLeakageDatasOutcome
+                 */
+                DescribeLeakageDatasOutcome DescribeLeakageDatas(const Model::DescribeLeakageDatasRequest &request);
+                void DescribeLeakageDatasAsync(const Model::DescribeLeakageDatasRequest& request, const DescribeLeakageDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLeakageDatasOutcomeCallable DescribeLeakageDatasCallable(const Model::DescribeLeakageDatasRequest& request);
+
+                /**
+                 *获取邮箱泄露数据
+                 * @param req DescribeLeakageEmailsRequest
+                 * @return DescribeLeakageEmailsOutcome
+                 */
+                DescribeLeakageEmailsOutcome DescribeLeakageEmails(const Model::DescribeLeakageEmailsRequest &request);
+                void DescribeLeakageEmailsAsync(const Model::DescribeLeakageEmailsRequest& request, const DescribeLeakageEmailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLeakageEmailsOutcomeCallable DescribeLeakageEmailsCallable(const Model::DescribeLeakageEmailsRequest& request);
 
                 /**
                  *查看后台管理数据
@@ -380,6 +483,15 @@ namespace TencentCloud
                 ModifyCustomerOutcome ModifyCustomer(const Model::ModifyCustomerRequest &request);
                 void ModifyCustomerAsync(const Model::ModifyCustomerRequest& request, const ModifyCustomerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomerOutcomeCallable ModifyCustomerCallable(const Model::ModifyCustomerRequest& request);
+
+                /**
+                 *修改标签
+                 * @param req ModifyLabelRequest
+                 * @return ModifyLabelOutcome
+                 */
+                ModifyLabelOutcome ModifyLabel(const Model::ModifyLabelRequest &request);
+                void ModifyLabelAsync(const Model::ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLabelOutcomeCallable ModifyLabelCallable(const Model::ModifyLabelRequest& request);
 
                 /**
                  *停止扫描

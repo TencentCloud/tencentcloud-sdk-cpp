@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ProvinceIdHasBeenSet() const;
 
                     /**
-                     * 获取国家ID，暂只支持国内：1。
-                     * @return CountryId 国家ID，暂只支持国内：1。
+                     * 获取国家ID，暂只支持境内：1。
+                     * @return CountryId 国家ID，暂只支持境内：1。
                      * 
                      */
                     uint64_t GetCountryId() const;
 
                     /**
-                     * 设置国家ID，暂只支持国内：1。
-                     * @param _countryId 国家ID，暂只支持国内：1。
+                     * 设置国家ID，暂只支持境内：1。
+                     * @param _countryId 国家ID，暂只支持境内：1。
                      * 
                      */
                     void SetCountryId(const uint64_t& _countryId);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_provinceIdHasBeenSet;
 
                     /**
-                     * 国家ID，暂只支持国内：1。
+                     * 国家ID，暂只支持境内：1。
                      */
                     uint64_t m_countryId;
                     bool m_countryIdHasBeenSet;

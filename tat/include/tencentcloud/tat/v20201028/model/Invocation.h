@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CommandIdHasBeenSet() const;
+
+                    /**
+                     * 获取执行的命令的名称
+                     * @return CommandName 执行的命令的名称
+                     * 
+                     */
+                    std::string GetCommandName() const;
+
+                    /**
+                     * 设置执行的命令的名称
+                     * @param _commandName 执行的命令的名称
+                     * 
+                     */
+                    void SetCommandName(const std::string& _commandName);
+
+                    /**
+                     * 判断参数 CommandName 是否已赋值
+                     * @return CommandName 是否已赋值
+                     * 
+                     */
+                    bool CommandNameHasBeenSet() const;
 
                     /**
                      * 获取执行任务状态。取值范围：
@@ -532,6 +553,12 @@ namespace TencentCloud
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
+
+                    /**
+                     * 执行的命令的名称
+                     */
+                    std::string m_commandName;
+                    bool m_commandNameHasBeenSet;
 
                     /**
                      * 执行任务状态。取值范围：

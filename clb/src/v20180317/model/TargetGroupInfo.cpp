@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,17 @@ TargetGroupInfo::TargetGroupInfo() :
     m_updatedTimeHasBeenSet(false),
     m_associatedRuleHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_scheduleAlgorithmHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
     m_targetGroupTypeHasBeenSet(false),
     m_associatedRuleCountHasBeenSet(false),
     m_registeredInstancesCountHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_fullListenSwitchHasBeenSet(false)
+    m_fullListenSwitchHasBeenSet(false),
+    m_keepaliveEnableHasBeenSet(false),
+    m_sessionExpireTimeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -133,6 +138,33 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleAlgorithm") && !value["ScheduleAlgorithm"].IsNull())
+    {
+        if (!value["ScheduleAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.ScheduleAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleAlgorithm = string(value["ScheduleAlgorithm"].GetString());
+        m_scheduleAlgorithmHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheck") && !value["HealthCheck"].IsNull())
+    {
+        if (!value["HealthCheck"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.HealthCheck` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckHasBeenSet = true;
+    }
+
     if (value.HasMember("TargetGroupType") && !value["TargetGroupType"].IsNull())
     {
         if (!value["TargetGroupType"].IsString())
@@ -201,6 +233,36 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         }
         m_fullListenSwitch = value["FullListenSwitch"].GetBool();
         m_fullListenSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepaliveEnable") && !value["KeepaliveEnable"].IsNull())
+    {
+        if (!value["KeepaliveEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.KeepaliveEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepaliveEnable = value["KeepaliveEnable"].GetBool();
+        m_keepaliveEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionExpireTime") && !value["SessionExpireTime"].IsNull())
+    {
+        if (!value["SessionExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.SessionExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionExpireTime = value["SessionExpireTime"].GetInt64();
+        m_sessionExpireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.IpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = string(value["IpVersion"].GetString());
+        m_ipVersionHasBeenSet = true;
     }
 
 
@@ -281,6 +343,23 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scheduleAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_targetGroupTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -334,6 +413,30 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FullListenSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fullListenSwitch, allocator);
+    }
+
+    if (m_keepaliveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_sessionExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -467,6 +570,38 @@ bool TargetGroupInfo::ProtocolHasBeenSet() const
     return m_protocolHasBeenSet;
 }
 
+string TargetGroupInfo::GetScheduleAlgorithm() const
+{
+    return m_scheduleAlgorithm;
+}
+
+void TargetGroupInfo::SetScheduleAlgorithm(const string& _scheduleAlgorithm)
+{
+    m_scheduleAlgorithm = _scheduleAlgorithm;
+    m_scheduleAlgorithmHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ScheduleAlgorithmHasBeenSet() const
+{
+    return m_scheduleAlgorithmHasBeenSet;
+}
+
+TargetGroupHealthCheck TargetGroupInfo::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void TargetGroupInfo::SetHealthCheck(const TargetGroupHealthCheck& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool TargetGroupInfo::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
 string TargetGroupInfo::GetTargetGroupType() const
 {
     return m_targetGroupType;
@@ -561,5 +696,53 @@ void TargetGroupInfo::SetFullListenSwitch(const bool& _fullListenSwitch)
 bool TargetGroupInfo::FullListenSwitchHasBeenSet() const
 {
     return m_fullListenSwitchHasBeenSet;
+}
+
+bool TargetGroupInfo::GetKeepaliveEnable() const
+{
+    return m_keepaliveEnable;
+}
+
+void TargetGroupInfo::SetKeepaliveEnable(const bool& _keepaliveEnable)
+{
+    m_keepaliveEnable = _keepaliveEnable;
+    m_keepaliveEnableHasBeenSet = true;
+}
+
+bool TargetGroupInfo::KeepaliveEnableHasBeenSet() const
+{
+    return m_keepaliveEnableHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetSessionExpireTime() const
+{
+    return m_sessionExpireTime;
+}
+
+void TargetGroupInfo::SetSessionExpireTime(const int64_t& _sessionExpireTime)
+{
+    m_sessionExpireTime = _sessionExpireTime;
+    m_sessionExpireTimeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::SessionExpireTimeHasBeenSet() const
+{
+    return m_sessionExpireTimeHasBeenSet;
+}
+
+string TargetGroupInfo::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void TargetGroupInfo::SetIpVersion(const string& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool TargetGroupInfo::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

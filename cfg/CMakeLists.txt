@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/DescribePolicy.h
   include/tencentcloud/cfg/v20210820/model/ActionFilter.h
   include/tencentcloud/cfg/v20210820/model/PolicyTriggerLog.h
+  include/tencentcloud/cfg/v20210820/model/TaskTarget.h
   include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateRequest.h
   include/tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceRequest.h
@@ -111,6 +112,7 @@ set(cfg_src
   src/v20210820/model/DescribePolicy.cpp
   src/v20210820/model/ActionFilter.cpp
   src/v20210820/model/PolicyTriggerLog.cpp
+  src/v20210820/model/TaskTarget.cpp
   src/v20210820/model/ModifyTaskRunStatusResponse.cpp
   src/v20210820/model/DescribeTemplateRequest.cpp
   src/v20210820/model/ExecuteTaskInstanceRequest.cpp

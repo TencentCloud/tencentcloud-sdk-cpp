@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
-                     * @return RuleName 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * 获取事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * @return RuleName 事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
-                     * @param _ruleName 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * 设置事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * @param _ruleName 事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @return Description 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 获取事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * @return Description 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @param _description 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 设置事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * @param _description 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * 事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

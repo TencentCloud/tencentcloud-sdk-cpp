@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,6 +241,27 @@ namespace TencentCloud
                      */
                     bool SubAccountUinHasBeenSet() const;
 
+                    /**
+                     * 获取自动扩容标识：0-非自动，1-自动
+                     * @return AutoScaleTag 自动扩容标识：0-非自动，1-自动
+                     * 
+                     */
+                    uint64_t GetAutoScaleTag() const;
+
+                    /**
+                     * 设置自动扩容标识：0-非自动，1-自动
+                     * @param _autoScaleTag 自动扩容标识：0-非自动，1-自动
+                     * 
+                     */
+                    void SetAutoScaleTag(const uint64_t& _autoScaleTag);
+
+                    /**
+                     * 判断参数 AutoScaleTag 是否已赋值
+                     * @return AutoScaleTag 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +318,12 @@ namespace TencentCloud
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 自动扩容标识：0-非自动，1-自动
+                     */
+                    uint64_t m_autoScaleTag;
+                    bool m_autoScaleTagHasBeenSet;
 
                 };
             }

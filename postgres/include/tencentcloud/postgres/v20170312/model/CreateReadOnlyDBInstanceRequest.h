@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取只读实例的主实例ID。
-                     * @return MasterDBInstanceId 只读实例的主实例ID。
+                     * 获取只读实例的主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return MasterDBInstanceId 只读实例的主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
-                     * 设置只读实例的主实例ID。
-                     * @param _masterDBInstanceId 只读实例的主实例ID。
+                     * 设置只读实例的主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _masterDBInstanceId 只读实例的主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例容量大小，单位：GB。
-                     * @return Storage 实例容量大小，单位：GB。
+                     * 获取实例硬盘容量大小，单位：GB。该参数的设置步长为10。
+                     * @return Storage 实例硬盘容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置实例容量大小，单位：GB。
-                     * @param _storage 实例容量大小，单位：GB。
+                     * 设置实例硬盘容量大小，单位：GB。该参数的设置步长为10。
+                     * @param _storage 实例硬盘容量大小，单位：GB。该参数的设置步长为10。
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目ID。默认值为0，表示归属默认项目。
+                     * @return ProjectId 项目ID。默认值为0，表示归属默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
+                     * 设置项目ID。默认值为0，表示归属默认项目。
+                     * @param _projectId 项目ID。默认值为0，表示归属默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -486,15 +486,15 @@ namespace TencentCloud
                     bool NeedSupportIpv6HasBeenSet() const;
 
                     /**
-                     * 获取实例名(后续支持)
-                     * @return Name 实例名(后续支持)
+                     * 获取实例名。仅支持长度小于60的中文/英文/数字/"_"/"-"
+                     * @return Name 实例名。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名(后续支持)
-                     * @param _name 实例名(后续支持)
+                     * 设置实例名。仅支持长度小于60的中文/英文/数字/"_"/"-"
+                     * @param _name 实例名。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -558,7 +558,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 只读实例的主实例ID。
+                     * 只读实例的主实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_masterDBInstanceId;
                     bool m_masterDBInstanceIdHasBeenSet;
@@ -570,7 +570,7 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * 实例容量大小，单位：GB。
+                     * 实例硬盘容量大小，单位：GB。该参数的设置步长为10。
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -635,7 +635,7 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 项目ID。
+                     * 项目ID。默认值为0，表示归属默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -675,7 +675,7 @@ namespace TencentCloud
                     bool m_needSupportIpv6HasBeenSet;
 
                     /**
-                     * 实例名(后续支持)
+                     * 实例名。仅支持长度小于60的中文/英文/数字/"_"/"-"
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

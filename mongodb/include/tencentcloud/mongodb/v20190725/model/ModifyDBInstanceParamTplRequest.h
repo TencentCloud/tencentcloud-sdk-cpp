@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待修改的参数模板 ID，示例：tpl-jglr91vew。
-                     * @return TplId 待修改的参数模板 ID，示例：tpl-jglr91vew。
+                     * 获取待修改的参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @return TplId 待修改的参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     std::string GetTplId() const;
 
                     /**
-                     * 设置待修改的参数模板 ID，示例：tpl-jglr91vew。
-                     * @param _tplId 待修改的参数模板 ID，示例：tpl-jglr91vew。
+                     * 设置待修改的参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
+                     * @param _tplId 待修改的参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      * 
                      */
                     void SetTplId(const std::string& _tplId);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待修改的参数模板 ID，示例：tpl-jglr91vew。
+                     * 待修改的参数模板 ID。请通过接口 [DescribeDBInstanceParamTpl](https://cloud.tencent.com/document/product/240/109155) 获取模板 ID。
                      */
                     std::string m_tplId;
                     bool m_tplIdHasBeenSet;

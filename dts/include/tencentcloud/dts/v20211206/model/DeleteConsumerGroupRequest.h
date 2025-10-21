@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据订阅实例的 ID
-                     * @return SubscribeId 数据订阅实例的 ID
+                     * 获取数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
+                     * @return SubscribeId 数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置数据订阅实例的 ID
-                     * @param _subscribeId 数据订阅实例的 ID
+                     * 设置数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
+                     * @param _subscribeId 数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -65,18 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。
-请务必保证消费组名称正确。
+请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * @return ConsumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。
-请务必保证消费组名称正确。
+请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
                      * 设置消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。
-请务必保证消费组名称正确。
+请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * @param _consumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。
-请务必保证消费组名称正确。
+请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -90,18 +94,18 @@ namespace TencentCloud
 
                     /**
                      * 获取账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。
-请务必保证账户名称正确。
+请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * @return AccountName 账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。
-请务必保证账户名称正确。
+请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。
-请务必保证账户名称正确。
+请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * @param _accountName 账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。
-请务必保证账户名称正确。
+请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -116,21 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据订阅实例的 ID
+                     * 数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
                      * 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。
-请务必保证消费组名称正确。
+请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
                      * 账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。
-请务必保证账户名称正确。
+请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;

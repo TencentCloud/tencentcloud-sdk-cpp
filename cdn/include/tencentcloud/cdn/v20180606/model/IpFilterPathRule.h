@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,11 +82,11 @@ blacklist：黑名单
                     /**
                      * 获取IP 黑白名单列表
 支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）
-最多可填充 200 个白名单或 500 个黑名单；
+最多可填充 500 个白名单或 200 个黑名单；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters IP 黑白名单列表
 支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）
-最多可填充 200 个白名单或 500 个黑名单；
+最多可填充 500 个白名单或 200 个黑名单；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,11 +95,11 @@ blacklist：黑名单
                     /**
                      * 设置IP 黑白名单列表
 支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）
-最多可填充 200 个白名单或 500 个黑名单；
+最多可填充 500 个白名单或 200 个黑名单；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filters IP 黑白名单列表
 支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）
-最多可填充 200 个白名单或 500 个黑名单；
+最多可填充 500 个白名单或 200 个黑名单；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -229,7 +229,7 @@ blacklist：黑名单
                     /**
                      * IP 黑白名单列表
 支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）
-最多可填充 200 个白名单或 500 个黑名单；
+最多可填充 500 个白名单或 200 个黑名单；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_filters;

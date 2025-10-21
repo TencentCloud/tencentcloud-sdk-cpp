@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,16 +249,14 @@ namespace TencentCloud
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * @return ImageState 镜像状态:
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * 
@@ -270,16 +268,14 @@ IMPORTFAILED-导入失败
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * @param _imageState 镜像状态:
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      * 
@@ -610,8 +606,7 @@ IMPORTFAILED-导入失败
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
-USING-使用中
-SYNCING-同步中
+SYNCING-复制中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
                      */

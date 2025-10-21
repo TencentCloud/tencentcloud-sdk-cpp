@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PartitionNumHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return RetentionMs 过期时间
+                     * 获取过期时间，单位ms
+                     * @return RetentionMs 过期时间，单位ms
                      * 
                      */
                     uint64_t GetRetentionMs() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _retentionMs 过期时间
+                     * 设置过期时间，单位ms
+                     * @param _retentionMs 过期时间，单位ms
                      * 
                      */
                     void SetRetentionMs(const uint64_t& _retentionMs);
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_partitionNumHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间，单位ms
                      */
                     uint64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;

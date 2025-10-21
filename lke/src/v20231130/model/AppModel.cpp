@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ AppModel::AppModel() :
     m_usageTypeHasBeenSet(false),
     m_temperatureHasBeenSet(false),
     m_topPHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false)
+    m_resourceStatusHasBeenSet(false),
+    m_modelParamsHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,23 @@ CoreInternalOutcome AppModel::Deserialize(const rapidjson::Value &value)
         m_resourceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelParams") && !value["ModelParams"].IsNull())
+    {
+        if (!value["ModelParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.ModelParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelParams.Deserialize(value["ModelParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +261,15 @@ void AppModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ResourceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceStatus, allocator);
+    }
+
+    if (m_modelParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -422,5 +449,21 @@ void AppModel::SetResourceStatus(const uint64_t& _resourceStatus)
 bool AppModel::ResourceStatusHasBeenSet() const
 {
     return m_resourceStatusHasBeenSet;
+}
+
+ModelParams AppModel::GetModelParams() const
+{
+    return m_modelParams;
+}
+
+void AppModel::SetModelParams(const ModelParams& _modelParams)
+{
+    m_modelParams = _modelParams;
+    m_modelParamsHasBeenSet = true;
+}
+
+bool AppModel::ModelParamsHasBeenSet() const
+{
+    return m_modelParamsHasBeenSet;
 }
 

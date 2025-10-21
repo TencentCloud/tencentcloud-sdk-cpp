@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,11 @@ ApplicationDataStatistics::ApplicationDataStatistics() :
     m_pcuDataNumHasBeenSet(false),
     m_pcuDataMainlandHasBeenSet(false),
     m_pcuDataOverseaHasBeenSet(false),
-    m_pcuDataSumHasBeenSet(false)
+    m_pcuDataSumHasBeenSet(false),
+    m_miniGameDataNumHasBeenSet(false),
+    m_miniGameDataMainlandHasBeenSet(false),
+    m_miniGameDataOverseaHasBeenSet(false),
+    m_miniGameDataSumHasBeenSet(false)
 {
 }
 
@@ -262,6 +266,76 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Valu
         m_pcuDataSumHasBeenSet = true;
     }
 
+    if (value.HasMember("MiniGameDataNum") && !value["MiniGameDataNum"].IsNull())
+    {
+        if (!value["MiniGameDataNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.MiniGameDataNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_miniGameDataNum = value["MiniGameDataNum"].GetUint64();
+        m_miniGameDataNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniGameDataMainland") && !value["MiniGameDataMainland"].IsNull())
+    {
+        if (!value["MiniGameDataMainland"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.MiniGameDataMainland` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MiniGameDataMainland"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatisticsItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_miniGameDataMainland.push_back(item);
+        }
+        m_miniGameDataMainlandHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniGameDataOversea") && !value["MiniGameDataOversea"].IsNull())
+    {
+        if (!value["MiniGameDataOversea"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.MiniGameDataOversea` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MiniGameDataOversea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatisticsItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_miniGameDataOversea.push_back(item);
+        }
+        m_miniGameDataOverseaHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniGameDataSum") && !value["MiniGameDataSum"].IsNull())
+    {
+        if (!value["MiniGameDataSum"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApplicationDataStatistics.MiniGameDataSum` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MiniGameDataSum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatisticsItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_miniGameDataSum.push_back(item);
+        }
+        m_miniGameDataSumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +504,59 @@ void ApplicationDataStatistics::ToJsonObject(rapidjson::Value &value, rapidjson:
 
         int i=0;
         for (auto itr = m_pcuDataSum.begin(); itr != m_pcuDataSum.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_miniGameDataNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniGameDataNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_miniGameDataNum, allocator);
+    }
+
+    if (m_miniGameDataMainlandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniGameDataMainland";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_miniGameDataMainland.begin(); itr != m_miniGameDataMainland.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_miniGameDataOverseaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniGameDataOversea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_miniGameDataOversea.begin(); itr != m_miniGameDataOversea.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_miniGameDataSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniGameDataSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_miniGameDataSum.begin(); itr != m_miniGameDataSum.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -645,5 +772,69 @@ void ApplicationDataStatistics::SetPcuDataSum(const vector<StatisticsItem>& _pcu
 bool ApplicationDataStatistics::PcuDataSumHasBeenSet() const
 {
     return m_pcuDataSumHasBeenSet;
+}
+
+uint64_t ApplicationDataStatistics::GetMiniGameDataNum() const
+{
+    return m_miniGameDataNum;
+}
+
+void ApplicationDataStatistics::SetMiniGameDataNum(const uint64_t& _miniGameDataNum)
+{
+    m_miniGameDataNum = _miniGameDataNum;
+    m_miniGameDataNumHasBeenSet = true;
+}
+
+bool ApplicationDataStatistics::MiniGameDataNumHasBeenSet() const
+{
+    return m_miniGameDataNumHasBeenSet;
+}
+
+vector<StatisticsItem> ApplicationDataStatistics::GetMiniGameDataMainland() const
+{
+    return m_miniGameDataMainland;
+}
+
+void ApplicationDataStatistics::SetMiniGameDataMainland(const vector<StatisticsItem>& _miniGameDataMainland)
+{
+    m_miniGameDataMainland = _miniGameDataMainland;
+    m_miniGameDataMainlandHasBeenSet = true;
+}
+
+bool ApplicationDataStatistics::MiniGameDataMainlandHasBeenSet() const
+{
+    return m_miniGameDataMainlandHasBeenSet;
+}
+
+vector<StatisticsItem> ApplicationDataStatistics::GetMiniGameDataOversea() const
+{
+    return m_miniGameDataOversea;
+}
+
+void ApplicationDataStatistics::SetMiniGameDataOversea(const vector<StatisticsItem>& _miniGameDataOversea)
+{
+    m_miniGameDataOversea = _miniGameDataOversea;
+    m_miniGameDataOverseaHasBeenSet = true;
+}
+
+bool ApplicationDataStatistics::MiniGameDataOverseaHasBeenSet() const
+{
+    return m_miniGameDataOverseaHasBeenSet;
+}
+
+vector<StatisticsItem> ApplicationDataStatistics::GetMiniGameDataSum() const
+{
+    return m_miniGameDataSum;
+}
+
+void ApplicationDataStatistics::SetMiniGameDataSum(const vector<StatisticsItem>& _miniGameDataSum)
+{
+    m_miniGameDataSum = _miniGameDataSum;
+    m_miniGameDataSumHasBeenSet = true;
+}
+
+bool ApplicationDataStatistics::MiniGameDataSumHasBeenSet() const
+{
+    return m_miniGameDataSumHasBeenSet;
 }
 

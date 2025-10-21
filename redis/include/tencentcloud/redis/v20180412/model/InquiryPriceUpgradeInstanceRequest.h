@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @return RedisShardNum 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 获取分片数量。
+- 实例为标准架构，RedisShardNum 默认为1。
+- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。
+                     * @return RedisShardNum 分片数量。
+- 实例为标准架构，RedisShardNum 默认为1。
+- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。
                      * 
                      */
                     uint64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
-                     * @param _redisShardNum 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 设置分片数量。
+- 实例为标准架构，RedisShardNum 默认为1。
+- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。
+                     * @param _redisShardNum 分片数量。
+- 实例为标准架构，RedisShardNum 默认为1。
+- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。
                      * 
                      */
                     void SetRedisShardNum(const uint64_t& _redisShardNum);
@@ -141,7 +149,9 @@ namespace TencentCloud
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * 分片数量。
+- 实例为标准架构，RedisShardNum 默认为1。
+- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。
                      */
                     uint64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;

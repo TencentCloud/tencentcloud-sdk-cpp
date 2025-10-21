@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 #include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
 #include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
 #include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
+#include <tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h>
 
 
 namespace TencentCloud
@@ -1060,6 +1061,48 @@ CLOSE 关闭
                      */
                     bool EnableDestroyProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取自动扩盘参数
+                     * @return AutoScaleDiskInfoList 自动扩盘参数
+                     * 
+                     */
+                    std::vector<AutoScaleDiskInfo> GetAutoScaleDiskInfoList() const;
+
+                    /**
+                     * 设置自动扩盘参数
+                     * @param _autoScaleDiskInfoList 自动扩盘参数
+                     * 
+                     */
+                    void SetAutoScaleDiskInfoList(const std::vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList);
+
+                    /**
+                     * 判断参数 AutoScaleDiskInfoList 是否已赋值
+                     * @return AutoScaleDiskInfoList 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleDiskInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取自动扩盘删除参数
+                     * @return AutoScaleDiskDeleteNodeTypeList 自动扩盘删除参数
+                     * 
+                     */
+                    std::vector<std::string> GetAutoScaleDiskDeleteNodeTypeList() const;
+
+                    /**
+                     * 设置自动扩盘删除参数
+                     * @param _autoScaleDiskDeleteNodeTypeList 自动扩盘删除参数
+                     * 
+                     */
+                    void SetAutoScaleDiskDeleteNodeTypeList(const std::vector<std::string>& _autoScaleDiskDeleteNodeTypeList);
+
+                    /**
+                     * 判断参数 AutoScaleDiskDeleteNodeTypeList 是否已赋值
+                     * @return AutoScaleDiskDeleteNodeTypeList 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleDiskDeleteNodeTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1346,6 +1389,18 @@ CLOSE 关闭
                      */
                     std::string m_enableDestroyProtection;
                     bool m_enableDestroyProtectionHasBeenSet;
+
+                    /**
+                     * 自动扩盘参数
+                     */
+                    std::vector<AutoScaleDiskInfo> m_autoScaleDiskInfoList;
+                    bool m_autoScaleDiskInfoListHasBeenSet;
+
+                    /**
+                     * 自动扩盘删除参数
+                     */
+                    std::vector<std::string> m_autoScaleDiskDeleteNodeTypeList;
+                    bool m_autoScaleDiskDeleteNodeTypeListHasBeenSet;
 
                 };
             }

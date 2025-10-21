@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/Metadata.h>
+#include <tencentcloud/tse/v20201207/model/Filter.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,27 @@ namespace TencentCloud
                      */
                     bool SyncToGlobalRegistryHasBeenSet() const;
 
+                    /**
+                     * 获取过滤筛选条件
+                     * @return StatusFilter 过滤筛选条件
+                     * 
+                     */
+                    std::vector<Filter> GetStatusFilter() const;
+
+                    /**
+                     * 设置过滤筛选条件
+                     * @param _statusFilter 过滤筛选条件
+                     * 
+                     */
+                    void SetStatusFilter(const std::vector<Filter>& _statusFilter);
+
+                    /**
+                     * 判断参数 StatusFilter 是否已赋值
+                     * @return StatusFilter 是否已赋值
+                     * 
+                     */
+                    bool StatusFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +363,12 @@ namespace TencentCloud
                      */
                     std::string m_syncToGlobalRegistry;
                     bool m_syncToGlobalRegistryHasBeenSet;
+
+                    /**
+                     * 过滤筛选条件
+                     */
+                    std::vector<Filter> m_statusFilter;
+                    bool m_statusFilterHasBeenSet;
 
                 };
             }

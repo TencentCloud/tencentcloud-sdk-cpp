@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的机器组ID
-                     * @return GroupId 查询的机器组ID
+                     * 获取查询的机器组ID。
+
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。
+                     * @return GroupId 查询的机器组ID。
+
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置查询的机器组ID
-                     * @param _groupId 查询的机器组ID
+                     * 设置查询的机器组ID。
+
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。
+                     * @param _groupId 查询的机器组ID。
+
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -66,59 +74,59 @@ namespace TencentCloud
 
                     /**
                      * 获取ip
-- 按照【ip】进行过滤。
+- 按照ip进行过滤。
 - 类型：String
 - 必选：否
 
 instance
-- 按照【instance】进行过滤。
+- 按照实例id进行过滤。
 - 类型：String
 - 必选：否
 
 version
-- 按照【LogListener版本】进行过滤。
+- 按照LogListener版本进行过滤。
 - 类型：String
 - 必选：否
 
 status
-- 按照【状态】进行过滤。
+- 按照机器状态进行过滤。
 - 类型：String
 - 必选：否
 - 可选值：0：离线，1：正常
 
 offlineTime
-- 按照【机器离线时间】进行过滤。
+- 按照机器离线时间进行过滤。
 - 类型：String
 - 必选：否
-- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
+- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @return Filters ip
-- 按照【ip】进行过滤。
+- 按照ip进行过滤。
 - 类型：String
 - 必选：否
 
 instance
-- 按照【instance】进行过滤。
+- 按照实例id进行过滤。
 - 类型：String
 - 必选：否
 
 version
-- 按照【LogListener版本】进行过滤。
+- 按照LogListener版本进行过滤。
 - 类型：String
 - 必选：否
 
 status
-- 按照【状态】进行过滤。
+- 按照机器状态进行过滤。
 - 类型：String
 - 必选：否
 - 可选值：0：离线，1：正常
 
 offlineTime
-- 按照【机器离线时间】进行过滤。
+- 按照机器离线时间进行过滤。
 - 类型：String
 - 必选：否
-- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
+- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -127,59 +135,59 @@ offlineTime
 
                     /**
                      * 设置ip
-- 按照【ip】进行过滤。
+- 按照ip进行过滤。
 - 类型：String
 - 必选：否
 
 instance
-- 按照【instance】进行过滤。
+- 按照实例id进行过滤。
 - 类型：String
 - 必选：否
 
 version
-- 按照【LogListener版本】进行过滤。
+- 按照LogListener版本进行过滤。
 - 类型：String
 - 必选：否
 
 status
-- 按照【状态】进行过滤。
+- 按照机器状态进行过滤。
 - 类型：String
 - 必选：否
 - 可选值：0：离线，1：正常
 
 offlineTime
-- 按照【机器离线时间】进行过滤。
+- 按照机器离线时间进行过滤。
 - 类型：String
 - 必选：否
-- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
+- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @param _filters ip
-- 按照【ip】进行过滤。
+- 按照ip进行过滤。
 - 类型：String
 - 必选：否
 
 instance
-- 按照【instance】进行过滤。
+- 按照实例id进行过滤。
 - 类型：String
 - 必选：否
 
 version
-- 按照【LogListener版本】进行过滤。
+- 按照LogListener版本进行过滤。
 - 类型：String
 - 必选：否
 
 status
-- 按照【状态】进行过滤。
+- 按照机器状态进行过滤。
 - 类型：String
 - 必选：否
 - 可选值：0：离线，1：正常
 
 offlineTime
-- 按照【机器离线时间】进行过滤。
+- 按照机器离线时间进行过滤。
 - 类型：String
 - 必选：否
-- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
+- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * 
@@ -238,38 +246,40 @@ offlineTime
                 private:
 
                     /**
-                     * 查询的机器组ID
+                     * 查询的机器组ID。
+
+- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * ip
-- 按照【ip】进行过滤。
+- 按照ip进行过滤。
 - 类型：String
 - 必选：否
 
 instance
-- 按照【instance】进行过滤。
+- 按照实例id进行过滤。
 - 类型：String
 - 必选：否
 
 version
-- 按照【LogListener版本】进行过滤。
+- 按照LogListener版本进行过滤。
 - 类型：String
 - 必选：否
 
 status
-- 按照【状态】进行过滤。
+- 按照机器状态进行过滤。
 - 类型：String
 - 必选：否
 - 可选值：0：离线，1：正常
 
 offlineTime
-- 按照【机器离线时间】进行过滤。
+- 按照机器离线时间进行过滤。
 - 类型：String
 - 必选：否
-- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
+- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */

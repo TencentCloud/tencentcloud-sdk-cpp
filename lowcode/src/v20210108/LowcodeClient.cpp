@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,49 @@ LowcodeClient::LowcodeClient(const Credential &credential, const string &region,
 }
 
 
+LowcodeClient::CheckDeployAppOutcome LowcodeClient::CheckDeployApp(const CheckDeployAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckDeployApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckDeployAppResponse rsp = CheckDeployAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckDeployAppOutcome(rsp);
+        else
+            return CheckDeployAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckDeployAppOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::CheckDeployAppAsync(const CheckDeployAppRequest& request, const CheckDeployAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckDeployApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::CheckDeployAppOutcomeCallable LowcodeClient::CheckDeployAppCallable(const CheckDeployAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckDeployAppOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckDeployApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LowcodeClient::CreateKnowledgeSetOutcome LowcodeClient::CreateKnowledgeSet(const CreateKnowledgeSetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateKnowledgeSet");
@@ -76,6 +119,49 @@ LowcodeClient::CreateKnowledgeSetOutcomeCallable LowcodeClient::CreateKnowledgeS
         [this, request]()
         {
             return this->CreateKnowledgeSet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DeleteAppBindWxAppOutcome LowcodeClient::DeleteAppBindWxApp(const DeleteAppBindWxAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAppBindWxApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAppBindWxAppResponse rsp = DeleteAppBindWxAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAppBindWxAppOutcome(rsp);
+        else
+            return DeleteAppBindWxAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAppBindWxAppOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DeleteAppBindWxAppAsync(const DeleteAppBindWxAppRequest& request, const DeleteAppBindWxAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAppBindWxApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DeleteAppBindWxAppOutcomeCallable LowcodeClient::DeleteAppBindWxAppCallable(const DeleteAppBindWxAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAppBindWxAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAppBindWxApp(request);
         }
     );
 
@@ -162,6 +248,92 @@ LowcodeClient::DeleteKnowledgeSetOutcomeCallable LowcodeClient::DeleteKnowledgeS
         [this, request]()
         {
             return this->DeleteKnowledgeSet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DeployAppOutcome LowcodeClient::DeployApp(const DeployAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployAppResponse rsp = DeployAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployAppOutcome(rsp);
+        else
+            return DeployAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployAppOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DeployAppAsync(const DeployAppRequest& request, const DeployAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DeployAppOutcomeCallable LowcodeClient::DeployAppCallable(const DeployAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DescribeAppsOutcome LowcodeClient::DescribeApps(const DescribeAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppsResponse rsp = DescribeAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppsOutcome(rsp);
+        else
+            return DescribeAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppsOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeAppsAsync(const DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeAppsOutcomeCallable LowcodeClient::DescribeAppsCallable(const DescribeAppsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApps(request);
         }
     );
 
@@ -334,6 +506,135 @@ LowcodeClient::DescribeKnowledgeSetListOutcomeCallable LowcodeClient::DescribeKn
         [this, request]()
         {
             return this->DescribeKnowledgeSetList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DescribeRelatedUsersOutcome LowcodeClient::DescribeRelatedUsers(const DescribeRelatedUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelatedUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelatedUsersResponse rsp = DescribeRelatedUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelatedUsersOutcome(rsp);
+        else
+            return DescribeRelatedUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelatedUsersOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeRelatedUsersAsync(const DescribeRelatedUsersRequest& request, const DescribeRelatedUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRelatedUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeRelatedUsersOutcomeCallable LowcodeClient::DescribeRelatedUsersCallable(const DescribeRelatedUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRelatedUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRelatedUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::DescribeResourceRoleListOutcome LowcodeClient::DescribeResourceRoleList(const DescribeResourceRoleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceRoleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceRoleListResponse rsp = DescribeResourceRoleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceRoleListOutcome(rsp);
+        else
+            return DescribeResourceRoleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceRoleListOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::DescribeResourceRoleListAsync(const DescribeResourceRoleListRequest& request, const DescribeResourceRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceRoleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::DescribeResourceRoleListOutcomeCallable LowcodeClient::DescribeResourceRoleListCallable(const DescribeResourceRoleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceRoleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceRoleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LowcodeClient::PutWxAppIdToWeAppOutcome LowcodeClient::PutWxAppIdToWeApp(const PutWxAppIdToWeAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutWxAppIdToWeApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutWxAppIdToWeAppResponse rsp = PutWxAppIdToWeAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutWxAppIdToWeAppOutcome(rsp);
+        else
+            return PutWxAppIdToWeAppOutcome(o.GetError());
+    }
+    else
+    {
+        return PutWxAppIdToWeAppOutcome(outcome.GetError());
+    }
+}
+
+void LowcodeClient::PutWxAppIdToWeAppAsync(const PutWxAppIdToWeAppRequest& request, const PutWxAppIdToWeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutWxAppIdToWeApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LowcodeClient::PutWxAppIdToWeAppOutcomeCallable LowcodeClient::PutWxAppIdToWeAppCallable(const PutWxAppIdToWeAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutWxAppIdToWeAppOutcome()>>(
+        [this, request]()
+        {
+            return this->PutWxAppIdToWeApp(request);
         }
     );
 

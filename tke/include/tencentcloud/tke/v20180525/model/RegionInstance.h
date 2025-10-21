@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取地域状态
-                     * @return Status 地域状态
+                     * 获取地域状态\n- alluser: 所有用户可见
+                     * @return Status 地域状态\n- alluser: 所有用户可见
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置地域状态
-                     * @param _status 地域状态
+                     * 设置地域状态\n- alluser: 所有用户可见
+                     * @param _status 地域状态\n- alluser: 所有用户可见
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 地域状态
+                     * 地域状态\n- alluser: 所有用户可见
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

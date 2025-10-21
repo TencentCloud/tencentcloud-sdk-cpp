@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeNatGatewaysResponse::DescribeNatGatewaysResponse() :
     m_natGatewaySetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_verboseLevelHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeNatGatewaysResponse::Deserialize(const string &paylo
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VerboseLevel") && !rsp["VerboseLevel"].IsNull())
+    {
+        if (!rsp["VerboseLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VerboseLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verboseLevel = string(rsp["VerboseLevel"].GetString());
+        m_verboseLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,11 +137,19 @@ string DescribeNatGatewaysResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_verboseLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerboseLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verboseLevel.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -156,6 +175,16 @@ uint64_t DescribeNatGatewaysResponse::GetTotalCount() const
 bool DescribeNatGatewaysResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeNatGatewaysResponse::GetVerboseLevel() const
+{
+    return m_verboseLevel;
+}
+
+bool DescribeNatGatewaysResponse::VerboseLevelHasBeenSet() const
+{
+    return m_verboseLevelHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@
 #include <tencentcloud/teo/v20220901/model/UpstreamHTTP2Parameters.h>
 #include <tencentcloud/teo/v20220901/model/HostHeaderParameters.h>
 #include <tencentcloud/teo/v20220901/model/ForceRedirectHTTPSParameters.h>
+#include <tencentcloud/teo/v20220901/model/OriginPullProtocolParameters.h>
 #include <tencentcloud/teo/v20220901/model/CompressionParameters.h>
 #include <tencentcloud/teo/v20220901/model/HSTSParameters.h>
 #include <tencentcloud/teo/v20220901/model/ClientIPHeaderParameters.h>
@@ -59,6 +60,7 @@
 #include <tencentcloud/teo/v20220901/model/ResponseSpeedLimitParameters.h>
 #include <tencentcloud/teo/v20220901/model/SetContentIdentifierParameters.h>
 #include <tencentcloud/teo/v20220901/model/VaryParameters.h>
+#include <tencentcloud/teo/v20220901/model/ContentCompressionParameters.h>
 
 
 namespace TencentCloud
@@ -647,6 +649,31 @@ namespace TencentCloud
                     bool ForceRedirectHTTPSParametersHasBeenSet() const;
 
                     /**
+                     * 获取回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginPullProtocolParameters 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OriginPullProtocolParameters GetOriginPullProtocolParameters() const;
+
+                    /**
+                     * 设置回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _originPullProtocolParameters 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOriginPullProtocolParameters(const OriginPullProtocolParameters& _originPullProtocolParameters);
+
+                    /**
+                     * 判断参数 OriginPullProtocolParameters 是否已赋值
+                     * @return OriginPullProtocolParameters 是否已赋值
+                     * 
+                     */
+                    bool OriginPullProtocolParametersHasBeenSet() const;
+
+                    /**
                      * 获取智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionParameters 智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
@@ -1121,6 +1148,27 @@ namespace TencentCloud
                      */
                     bool VaryParametersHasBeenSet() const;
 
+                    /**
+                     * 获取内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * @return ContentCompressionParameters 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 
+                     */
+                    ContentCompressionParameters GetContentCompressionParameters() const;
+
+                    /**
+                     * 设置内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * @param _contentCompressionParameters 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 
+                     */
+                    void SetContentCompressionParameters(const ContentCompressionParameters& _contentCompressionParameters);
+
+                    /**
+                     * 判断参数 ContentCompressionParameters 是否已赋值
+                     * @return ContentCompressionParameters 是否已赋值
+                     * 
+                     */
+                    bool ContentCompressionParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1278,6 +1326,13 @@ namespace TencentCloud
                     bool m_forceRedirectHTTPSParametersHasBeenSet;
 
                     /**
+                     * 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginPullProtocolParameters m_originPullProtocolParameters;
+                    bool m_originPullProtocolParametersHasBeenSet;
+
+                    /**
                      * 智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -1409,6 +1464,12 @@ namespace TencentCloud
                      */
                     VaryParameters m_varyParameters;
                     bool m_varyParametersHasBeenSet;
+
+                    /**
+                     * 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     */
+                    ContentCompressionParameters m_contentCompressionParameters;
+                    bool m_contentCompressionParametersHasBeenSet;
 
                 };
             }

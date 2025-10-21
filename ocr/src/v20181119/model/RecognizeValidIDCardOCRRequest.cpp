@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ RecognizeValidIDCardOCRRequest::RecognizeValidIDCardOCRRequest() :
     m_enableCopyCheckHasBeenSet(false),
     m_enableReshootCheckHasBeenSet(false),
     m_enablePSCheckHasBeenSet(false),
-    m_enableWordCheckHasBeenSet(false)
+    m_enableWordCheckHasBeenSet(false),
+    m_enableQualityCheckHasBeenSet(false),
+    m_enableElectronCheckHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,22 @@ string RecognizeValidIDCardOCRRequest::ToJsonString() const
         string key = "EnableWordCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableWordCheck, allocator);
+    }
+
+    if (m_enableQualityCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableQualityCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableQualityCheck, allocator);
+    }
+
+    if (m_enableElectronCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableElectronCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableElectronCheck, allocator);
     }
 
 
@@ -314,6 +332,38 @@ void RecognizeValidIDCardOCRRequest::SetEnableWordCheck(const bool& _enableWordC
 bool RecognizeValidIDCardOCRRequest::EnableWordCheckHasBeenSet() const
 {
     return m_enableWordCheckHasBeenSet;
+}
+
+bool RecognizeValidIDCardOCRRequest::GetEnableQualityCheck() const
+{
+    return m_enableQualityCheck;
+}
+
+void RecognizeValidIDCardOCRRequest::SetEnableQualityCheck(const bool& _enableQualityCheck)
+{
+    m_enableQualityCheck = _enableQualityCheck;
+    m_enableQualityCheckHasBeenSet = true;
+}
+
+bool RecognizeValidIDCardOCRRequest::EnableQualityCheckHasBeenSet() const
+{
+    return m_enableQualityCheckHasBeenSet;
+}
+
+bool RecognizeValidIDCardOCRRequest::GetEnableElectronCheck() const
+{
+    return m_enableElectronCheck;
+}
+
+void RecognizeValidIDCardOCRRequest::SetEnableElectronCheck(const bool& _enableElectronCheck)
+{
+    m_enableElectronCheck = _enableElectronCheck;
+    m_enableElectronCheckHasBeenSet = true;
+}
+
+bool RecognizeValidIDCardOCRRequest::EnableElectronCheckHasBeenSet() const
+{
+    return m_enableElectronCheckHasBeenSet;
 }
 
 

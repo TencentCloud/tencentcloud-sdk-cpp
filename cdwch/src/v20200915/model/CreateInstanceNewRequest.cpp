@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_hAZkHasBeenSet(false),
     m_commonSpecHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
-    m_secondaryZoneInfoHasBeenSet(false)
+    m_secondaryZoneInfoHasBeenSet(false),
+    m_ckDefaultUserPwdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,14 @@ string CreateInstanceNewRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ckDefaultUserPwdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CkDefaultUserPwd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ckDefaultUserPwd.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -457,6 +466,22 @@ void CreateInstanceNewRequest::SetSecondaryZoneInfo(const vector<SecondaryZoneIn
 bool CreateInstanceNewRequest::SecondaryZoneInfoHasBeenSet() const
 {
     return m_secondaryZoneInfoHasBeenSet;
+}
+
+string CreateInstanceNewRequest::GetCkDefaultUserPwd() const
+{
+    return m_ckDefaultUserPwd;
+}
+
+void CreateInstanceNewRequest::SetCkDefaultUserPwd(const string& _ckDefaultUserPwd)
+{
+    m_ckDefaultUserPwd = _ckDefaultUserPwd;
+    m_ckDefaultUserPwdHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::CkDefaultUserPwdHasBeenSet() const
+{
+    return m_ckDefaultUserPwdHasBeenSet;
 }
 
 

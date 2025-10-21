@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -375,6 +375,60 @@ namespace TencentCloud
                      */
                     bool TurnDetectionHasBeenSet() const;
 
+                    /**
+                     * 获取机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * @return SubtitleMode 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * 
+                     */
+                    uint64_t GetSubtitleMode() const;
+
+                    /**
+                     * 设置机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * @param _subtitleMode 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     * 
+                     */
+                    void SetSubtitleMode(const uint64_t& _subtitleMode);
+
+                    /**
+                     * 判断参数 SubtitleMode 是否已赋值
+                     * @return SubtitleMode 是否已赋值
+                     * 
+                     */
+                    bool SubtitleModeHasBeenSet() const;
+
+                    /**
+                     * 获取打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @return InterruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    std::vector<std::string> GetInterruptWordList() const;
+
+                    /**
+                     * 设置打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * @param _interruptWordList 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     * 
+                     */
+                    void SetInterruptWordList(const std::vector<std::string>& _interruptWordList);
+
+                    /**
+                     * 判断参数 InterruptWordList 是否已赋值
+                     * @return InterruptWordList 是否已赋值
+                     * 
+                     */
+                    bool InterruptWordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -468,6 +522,21 @@ namespace TencentCloud
                      */
                     TurnDetection m_turnDetection;
                     bool m_turnDetectionHasBeenSet;
+
+                    /**
+                     * 机器人字幕显示模式。
+- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。
+- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。
+                     */
+                    uint64_t m_subtitleMode;
+                    bool m_subtitleModeHasBeenSet;
+
+                    /**
+                     * 打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。
+注意：打断词不会触发AI回复。
+                     */
+                    std::vector<std::string> m_interruptWordList;
+                    bool m_interruptWordListHasBeenSet;
 
                 };
             }

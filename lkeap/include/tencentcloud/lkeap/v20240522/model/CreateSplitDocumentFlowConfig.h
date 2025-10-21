@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,19 +83,19 @@ namespace TencentCloud
                      * 获取智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
-2：只返回每一页的MD，
+2：只返回每一页的MD；
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
 
 
                      * @return ResultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
-2：只返回每一页的MD，
+2：只返回每一页的MD；
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
 
 
                      * @deprecated
@@ -106,19 +106,19 @@ namespace TencentCloud
                      * 设置智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
-2：只返回每一页的MD，
+2：只返回每一页的MD；
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
 
 
                      * @param _resultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
-2：只返回每一页的MD，
+2：只返回每一页的MD；
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
 
 
                      * @deprecated
@@ -174,6 +174,113 @@ namespace TencentCloud
                      */
                     bool MaxChunkSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否忽略返回失败页码
+                     * @return IgnoreFailedPage 是否忽略返回失败页码
+                     * 
+                     */
+                    bool GetIgnoreFailedPage() const;
+
+                    /**
+                     * 设置是否忽略返回失败页码
+                     * @param _ignoreFailedPage 是否忽略返回失败页码
+                     * 
+                     */
+                    void SetIgnoreFailedPage(const bool& _ignoreFailedPage);
+
+                    /**
+                     * 判断参数 IgnoreFailedPage 是否已赋值
+                     * @return IgnoreFailedPage 是否已赋值
+                     * 
+                     */
+                    bool IgnoreFailedPageHasBeenSet() const;
+
+                    /**
+                     * 获取智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD；
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
+
+
+                     * @return SplitResultType 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD；
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
+
+
+                     * 
+                     */
+                    std::string GetSplitResultType() const;
+
+                    /**
+                     * 设置智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD；
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
+
+
+                     * @param _splitResultType 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD；
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
+
+
+                     * 
+                     */
+                    void SetSplitResultType(const std::string& _splitResultType);
+
+                    /**
+                     * 判断参数 SplitResultType 是否已赋值
+                     * @return SplitResultType 是否已赋值
+                     * 
+                     */
+                    bool SplitResultTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Markdown文件中表格返回的形式
+0，表格以MD形式返回
+1，表格以HTML形式返回
+默认为
+                     * @return SplitTableResultType Markdown文件中表格返回的形式
+0，表格以MD形式返回
+1，表格以HTML形式返回
+默认为
+                     * 
+                     */
+                    std::string GetSplitTableResultType() const;
+
+                    /**
+                     * 设置Markdown文件中表格返回的形式
+0，表格以MD形式返回
+1，表格以HTML形式返回
+默认为
+                     * @param _splitTableResultType Markdown文件中表格返回的形式
+0，表格以MD形式返回
+1，表格以HTML形式返回
+默认为
+                     * 
+                     */
+                    void SetSplitTableResultType(const std::string& _splitTableResultType);
+
+                    /**
+                     * 判断参数 SplitTableResultType 是否已赋值
+                     * @return SplitTableResultType 是否已赋值
+                     * 
+                     */
+                    bool SplitTableResultTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,10 +296,10 @@ namespace TencentCloud
                      * 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
-2：只返回每一页的MD，
+2：只返回每一页的MD；
 3：返回全文MD + 每一页的OCR原始Json；
-4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
 
 
                      */
@@ -210,6 +317,35 @@ namespace TencentCloud
                      */
                     int64_t m_maxChunkSize;
                     bool m_maxChunkSizeHasBeenSet;
+
+                    /**
+                     * 是否忽略返回失败页码
+                     */
+                    bool m_ignoreFailedPage;
+                    bool m_ignoreFailedPageHasBeenSet;
+
+                    /**
+                     * 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD；
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD；
+5：返回全文md，每一页ocr原始json，每一页md。
+
+
+                     */
+                    std::string m_splitResultType;
+                    bool m_splitResultTypeHasBeenSet;
+
+                    /**
+                     * Markdown文件中表格返回的形式
+0，表格以MD形式返回
+1，表格以HTML形式返回
+默认为
+                     */
+                    std::string m_splitTableResultType;
+                    bool m_splitTableResultTypeHasBeenSet;
 
                 };
             }

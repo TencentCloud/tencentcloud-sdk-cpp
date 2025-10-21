@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ ChannelCreateMultiFlowSignQRCodeRequest::ChannelCreateMultiFlowSignQRCodeRequest
     m_approverRestrictionsHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_forbidPersonalMultipleSignHasBeenSet(false),
-    m_flowNameAppendScannerInfoHasBeenSet(false)
+    m_flowNameAppendScannerInfoHasBeenSet(false),
+    m_qrCodeNameHasBeenSet(false),
+    m_qrCodeExpiredOnHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,22 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         string key = "FlowNameAppendScannerInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowNameAppendScannerInfo, allocator);
+    }
+
+    if (m_qrCodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QrCodeName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_qrCodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qrCodeExpiredOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QrCodeExpiredOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qrCodeExpiredOn, allocator);
     }
 
 
@@ -381,6 +399,38 @@ void ChannelCreateMultiFlowSignQRCodeRequest::SetFlowNameAppendScannerInfo(const
 bool ChannelCreateMultiFlowSignQRCodeRequest::FlowNameAppendScannerInfoHasBeenSet() const
 {
     return m_flowNameAppendScannerInfoHasBeenSet;
+}
+
+string ChannelCreateMultiFlowSignQRCodeRequest::GetQrCodeName() const
+{
+    return m_qrCodeName;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetQrCodeName(const string& _qrCodeName)
+{
+    m_qrCodeName = _qrCodeName;
+    m_qrCodeNameHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::QrCodeNameHasBeenSet() const
+{
+    return m_qrCodeNameHasBeenSet;
+}
+
+int64_t ChannelCreateMultiFlowSignQRCodeRequest::GetQrCodeExpiredOn() const
+{
+    return m_qrCodeExpiredOn;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetQrCodeExpiredOn(const int64_t& _qrCodeExpiredOn)
+{
+    m_qrCodeExpiredOn = _qrCodeExpiredOn;
+    m_qrCodeExpiredOnHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::QrCodeExpiredOnHasBeenSet() const
+{
+    return m_qrCodeExpiredOnHasBeenSet;
 }
 
 

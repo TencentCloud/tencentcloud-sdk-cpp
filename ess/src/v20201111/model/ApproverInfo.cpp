@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,8 @@ ApproverInfo::ApproverInfo() :
     m_signInstructionContentHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_signEndpointsHasBeenSet(false)
+    m_signEndpointsHasBeenSet(false),
+    m_registerInfoHasBeenSet(false)
 {
 }
 
@@ -342,6 +343,23 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signEndpointsHasBeenSet = true;
     }
 
+    if (value.HasMember("RegisterInfo") && !value["RegisterInfo"].IsNull())
+    {
+        if (!value["RegisterInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.RegisterInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registerInfo.Deserialize(value["RegisterInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registerInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -581,6 +599,15 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_registerInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -968,5 +995,21 @@ void ApproverInfo::SetSignEndpoints(const vector<string>& _signEndpoints)
 bool ApproverInfo::SignEndpointsHasBeenSet() const
 {
     return m_signEndpointsHasBeenSet;
+}
+
+RegisterInfo ApproverInfo::GetRegisterInfo() const
+{
+    return m_registerInfo;
+}
+
+void ApproverInfo::SetRegisterInfo(const RegisterInfo& _registerInfo)
+{
+    m_registerInfo = _registerInfo;
+    m_registerInfoHasBeenSet = true;
+}
+
+bool ApproverInfo::RegisterInfoHasBeenSet() const
+{
+    return m_registerInfoHasBeenSet;
 }
 

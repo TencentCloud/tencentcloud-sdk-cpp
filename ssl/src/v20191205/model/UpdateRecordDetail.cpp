@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,9 @@ UpdateRecordDetail::UpdateRecordDetail() :
     m_secretNameHasBeenSet(false),
     m_envIdHasBeenSet(false),
     m_tCBTypeHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_algorithmHasBeenSet(false),
+    m_oldAlgorithmHasBeenSet(false)
 {
 }
 
@@ -285,6 +287,26 @@ CoreInternalOutcome UpdateRecordDetail::Deserialize(const rapidjson::Value &valu
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Algorithm") && !value["Algorithm"].IsNull())
+    {
+        if (!value["Algorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.Algorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_algorithm = string(value["Algorithm"].GetString());
+        m_algorithmHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldAlgorithm") && !value["OldAlgorithm"].IsNull())
+    {
+        if (!value["OldAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.OldAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldAlgorithm = string(value["OldAlgorithm"].GetString());
+        m_oldAlgorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +501,22 @@ void UpdateRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_algorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Algorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +888,37 @@ void UpdateRecordDetail::SetUrl(const string& _url)
 bool UpdateRecordDetail::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string UpdateRecordDetail::GetAlgorithm() const
+{
+    return m_algorithm;
+}
+
+void UpdateRecordDetail::SetAlgorithm(const string& _algorithm)
+{
+    m_algorithm = _algorithm;
+    m_algorithmHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::AlgorithmHasBeenSet() const
+{
+    return m_algorithmHasBeenSet;
+}
+
+string UpdateRecordDetail::GetOldAlgorithm() const
+{
+    return m_oldAlgorithm;
+}
+
+void UpdateRecordDetail::SetOldAlgorithm(const string& _oldAlgorithm)
+{
+    m_oldAlgorithm = _oldAlgorithm;
+    m_oldAlgorithmHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::OldAlgorithmHasBeenSet() const
+{
+    return m_oldAlgorithmHasBeenSet;
 }
 

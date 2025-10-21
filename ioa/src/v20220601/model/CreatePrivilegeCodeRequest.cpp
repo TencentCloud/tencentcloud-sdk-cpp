@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,9 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 CreatePrivilegeCodeRequest::CreatePrivilegeCodeRequest() :
+    m_midHasBeenSet(false),
     m_domainInstanceIdHasBeenSet(false),
-    m_midHasBeenSet(false)
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,14 @@ string CreatePrivilegeCodeRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_midHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mid.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_domainInstanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -43,12 +52,12 @@ string CreatePrivilegeCodeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_midHasBeenSet)
+    if (m_osTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Mid";
+        string key = "OsType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_mid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_osType, allocator);
     }
 
 
@@ -58,6 +67,22 @@ string CreatePrivilegeCodeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrivilegeCodeRequest::GetMid() const
+{
+    return m_mid;
+}
+
+void CreatePrivilegeCodeRequest::SetMid(const string& _mid)
+{
+    m_mid = _mid;
+    m_midHasBeenSet = true;
+}
+
+bool CreatePrivilegeCodeRequest::MidHasBeenSet() const
+{
+    return m_midHasBeenSet;
+}
 
 string CreatePrivilegeCodeRequest::GetDomainInstanceId() const
 {
@@ -75,20 +100,20 @@ bool CreatePrivilegeCodeRequest::DomainInstanceIdHasBeenSet() const
     return m_domainInstanceIdHasBeenSet;
 }
 
-string CreatePrivilegeCodeRequest::GetMid() const
+int64_t CreatePrivilegeCodeRequest::GetOsType() const
 {
-    return m_mid;
+    return m_osType;
 }
 
-void CreatePrivilegeCodeRequest::SetMid(const string& _mid)
+void CreatePrivilegeCodeRequest::SetOsType(const int64_t& _osType)
 {
-    m_mid = _mid;
-    m_midHasBeenSet = true;
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
 }
 
-bool CreatePrivilegeCodeRequest::MidHasBeenSet() const
+bool CreatePrivilegeCodeRequest::OsTypeHasBeenSet() const
 {
-    return m_midHasBeenSet;
+    return m_osTypeHasBeenSet;
 }
 
 

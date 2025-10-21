@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。
-                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。
+                     * 获取指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。
-                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。
+                     * 设置指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取秒级备份时间戳，7天内
-                     * @return BackupTimestamp 秒级备份时间戳，7天内
+                     * 获取秒级备份时间戳。
+- 设置范围：支持7天内任意秒级时间点。
+-  时间戳格式：Unix 时间戳。
+                     * @return BackupTimestamp 秒级备份时间戳。
+- 设置范围：支持7天内任意秒级时间点。
+-  时间戳格式：Unix 时间戳。
                      * 
                      */
                     int64_t GetBackupTimestamp() const;
 
                     /**
-                     * 设置秒级备份时间戳，7天内
-                     * @param _backupTimestamp 秒级备份时间戳，7天内
+                     * 设置秒级备份时间戳。
+- 设置范围：支持7天内任意秒级时间点。
+-  时间戳格式：Unix 时间戳。
+                     * @param _backupTimestamp 秒级备份时间戳。
+- 设置范围：支持7天内任意秒级时间点。
+-  时间戳格式：Unix 时间戳。
                      * 
                      */
                     void SetBackupTimestamp(const int64_t& _backupTimestamp);
@@ -87,13 +95,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。
+                     * 指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 秒级备份时间戳，7天内
+                     * 秒级备份时间戳。
+- 设置范围：支持7天内任意秒级时间点。
+-  时间戳格式：Unix 时间戳。
                      */
                     int64_t m_backupTimestamp;
                     bool m_backupTimestampHasBeenSet;

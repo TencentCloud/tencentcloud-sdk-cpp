@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,6 +203,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQProducersRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQProducersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointRequest.h>
@@ -241,6 +243,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ExecuteDisasterRecoveryRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ExecuteDisasterRecoveryResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/GetTopicListRequest.h>
@@ -603,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
                 typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQProducersResponse> DescribeRocketMQProducersOutcome;
+                typedef std::future<DescribeRocketMQProducersOutcome> DescribeRocketMQProducersOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQProducersRequest&, DescribeRocketMQProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQProducersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQPublicAccessMonitorDataResponse> DescribeRocketMQPublicAccessMonitorDataOutcome;
                 typedef std::future<DescribeRocketMQPublicAccessMonitorDataOutcome> DescribeRocketMQPublicAccessMonitorDataOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQPublicAccessMonitorDataRequest&, DescribeRocketMQPublicAccessMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQPublicAccessMonitorDataAsyncHandler;
@@ -660,6 +667,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExecuteDisasterRecoveryResponse> ExecuteDisasterRecoveryOutcome;
+                typedef std::future<ExecuteDisasterRecoveryOutcome> ExecuteDisasterRecoveryOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ExecuteDisasterRecoveryRequest&, ExecuteDisasterRecoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteDisasterRecoveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportRocketMQMessageDetailResponse> ExportRocketMQMessageDetailOutcome;
                 typedef std::future<ExportRocketMQMessageDetailOutcome> ExportRocketMQMessageDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ExportRocketMQMessageDetailRequest&, ExportRocketMQMessageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportRocketMQMessageDetailAsyncHandler;
@@ -1593,6 +1603,15 @@ namespace TencentCloud
                 DescribeRocketMQNamespacesOutcomeCallable DescribeRocketMQNamespacesCallable(const Model::DescribeRocketMQNamespacesRequest& request);
 
                 /**
+                 *查询 RocketMQ 指定主题下的生产者客户端列表。
+                 * @param req DescribeRocketMQProducersRequest
+                 * @return DescribeRocketMQProducersOutcome
+                 */
+                DescribeRocketMQProducersOutcome DescribeRocketMQProducers(const Model::DescribeRocketMQProducersRequest &request);
+                void DescribeRocketMQProducersAsync(const Model::DescribeRocketMQProducersRequest& request, const DescribeRocketMQProducersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQProducersOutcomeCallable DescribeRocketMQProducersCallable(const Model::DescribeRocketMQProducersRequest& request);
+
+                /**
                  *从腾讯云可观测平台拉取公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。
                  * @param req DescribeRocketMQPublicAccessMonitorDataRequest
                  * @return DescribeRocketMQPublicAccessMonitorDataOutcome
@@ -1768,6 +1787,15 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *执行域名异地访问切换，域名的访问指向将切换至备份集群。
+                 * @param req ExecuteDisasterRecoveryRequest
+                 * @return ExecuteDisasterRecoveryOutcome
+                 */
+                ExecuteDisasterRecoveryOutcome ExecuteDisasterRecovery(const Model::ExecuteDisasterRecoveryRequest &request);
+                void ExecuteDisasterRecoveryAsync(const Model::ExecuteDisasterRecoveryRequest& request, const ExecuteDisasterRecoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteDisasterRecoveryOutcomeCallable ExecuteDisasterRecoveryCallable(const Model::ExecuteDisasterRecoveryRequest& request);
 
                 /**
                  *导出RocketMQ消息详情
@@ -2107,7 +2135,7 @@ BatchReceivePolicy 的接口会一次性返回多条消息：
                 SendMsgOutcomeCallable SendMsgCallable(const Model::SendMsgRequest& request);
 
                 /**
-                 *发送RocketMQ消息
+                 *发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。
                  * @param req SendRocketMQMessageRequest
                  * @return SendRocketMQMessageOutcome
                  */

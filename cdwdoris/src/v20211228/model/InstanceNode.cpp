@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ InstanceNode::InstanceNode() :
     m_feRoleHasBeenSet(false),
     m_uUIDHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_virtualZoneHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_computeGroupIdHasBeenSet(false)
 {
@@ -163,6 +164,16 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("VirtualZone") && !value["VirtualZone"].IsNull())
+    {
+        if (!value["VirtualZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.VirtualZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualZone = string(value["VirtualZone"].GetString());
+        m_virtualZoneHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -284,6 +295,14 @@ void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virtualZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirtualZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virtualZone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -495,6 +514,22 @@ void InstanceNode::SetZone(const string& _zone)
 bool InstanceNode::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string InstanceNode::GetVirtualZone() const
+{
+    return m_virtualZone;
+}
+
+void InstanceNode::SetVirtualZone(const string& _virtualZone)
+{
+    m_virtualZone = _virtualZone;
+    m_virtualZoneHasBeenSet = true;
+}
+
+bool InstanceNode::VirtualZoneHasBeenSet() const
+{
+    return m_virtualZoneHasBeenSet;
 }
 
 string InstanceNode::GetCreateTime() const

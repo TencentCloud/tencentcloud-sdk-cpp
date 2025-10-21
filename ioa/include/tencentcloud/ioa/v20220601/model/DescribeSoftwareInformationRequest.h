@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool ConditionHasBeenSet() const;
 
+                    /**
+                     * 获取0:win 2:mac
+                     * @return OsType 0:win 2:mac
+                     * 
+                     */
+                    int64_t GetOsType() const;
+
+                    /**
+                     * 设置0:win 2:mac
+                     * @param _osType 0:win 2:mac
+                     * 
+                     */
+                    void SetOsType(const int64_t& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +124,12 @@ namespace TencentCloud
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
+
+                    /**
+                     * 0:win 2:mac
+                     */
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

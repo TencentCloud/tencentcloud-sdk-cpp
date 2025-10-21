@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ set(dcdb_public_header
   )
 
 set(dcdb_public_header_model
+  include/tencentcloud/dcdb/v20180411/model/DescribeInstanceSSLAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h
   include/tencentcloud/dcdb/v20180411/model/InitDCDBInstancesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBTmpInstancesRequest.h
@@ -37,6 +38,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyInstanceSSLAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/ShardBriefInfo.h
@@ -47,6 +49,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlRequest.h
   include/tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeInstanceSSLAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceResponse.h
@@ -67,6 +70,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeProcessListRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/BriefNodeInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectResponse.h
@@ -104,6 +108,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/Project.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyInstanceProtectedPropertyRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseTable.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesRequest.h
@@ -151,8 +156,10 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/BackupConfig.h
   include/tencentcloud/dcdb/v20180411/model/Database.h
   include/tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesRequest.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobRequest.h
   include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/Filter.h
   include/tencentcloud/dcdb/v20180411/model/ShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipRequest.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessRequest.h
@@ -162,11 +169,14 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyInstanceProtectedPropertyResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h
   include/tencentcloud/dcdb/v20180411/model/CloseDBExtranetAccessResponse.h
+  include/tencentcloud/dcdb/v20180411/model/Process.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h
   include/tencentcloud/dcdb/v20180411/model/KillSessionResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyInstanceSSLAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/SlowLogData.h
   include/tencentcloud/dcdb/v20180411/model/CreateOnlineDDLJobRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h
@@ -180,7 +190,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowRequest.h
-  include/tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeProcessListResponse.h
   include/tencentcloud/dcdb/v20180411/model/Account.h
   include/tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceRequest.h
@@ -229,6 +239,7 @@ set(dcdb_public_header_model
 
 set(dcdb_src
   src/v20180411/DcdbClient.cpp
+  src/v20180411/model/DescribeInstanceSSLAttributesResponse.cpp
   src/v20180411/model/DescribeUserTasksResponse.cpp
   src/v20180411/model/InitDCDBInstancesResponse.cpp
   src/v20180411/model/DescribeDBTmpInstancesRequest.cpp
@@ -247,6 +258,7 @@ set(dcdb_src
   src/v20180411/model/ModifyInstanceVportResponse.cpp
   src/v20180411/model/DescribeDCDBInstanceDetailRequest.cpp
   src/v20180411/model/DescribeFileDownloadUrlResponse.cpp
+  src/v20180411/model/ModifyInstanceSSLAttributesRequest.cpp
   src/v20180411/model/ModifyInstanceVipResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
   src/v20180411/model/ShardBriefInfo.cpp
@@ -257,6 +269,7 @@ set(dcdb_src
   src/v20180411/model/CancelDcnJobResponse.cpp
   src/v20180411/model/DescribeFileDownloadUrlRequest.cpp
   src/v20180411/model/UpgradeDCDBInstanceResponse.cpp
+  src/v20180411/model/DescribeInstanceSSLAttributesRequest.cpp
   src/v20180411/model/DescribeDBSyncModeResponse.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceResponse.cpp
@@ -277,6 +290,7 @@ set(dcdb_src
   src/v20180411/model/ModifyAccountDescriptionResponse.cpp
   src/v20180411/model/DestroyDCDBInstanceRequest.cpp
   src/v20180411/model/OpenDBExtranetAccessResponse.cpp
+  src/v20180411/model/DescribeProcessListRequest.cpp
   src/v20180411/model/CreateDCDBInstanceResponse.cpp
   src/v20180411/model/BriefNodeInfo.cpp
   src/v20180411/model/ModifyDBInstancesProjectResponse.cpp
@@ -314,6 +328,7 @@ set(dcdb_src
   src/v20180411/model/RenewDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeDBEncryptAttributesResponse.cpp
   src/v20180411/model/Project.cpp
+  src/v20180411/model/ModifyInstanceProtectedPropertyRequest.cpp
   src/v20180411/model/CreateTmpDCDBInstanceRequest.cpp
   src/v20180411/model/DatabaseTable.cpp
   src/v20180411/model/DescribeDBEncryptAttributesRequest.cpp
@@ -361,8 +376,10 @@ set(dcdb_src
   src/v20180411/model/BackupConfig.cpp
   src/v20180411/model/Database.cpp
   src/v20180411/model/GrantAccountPrivilegesResponse.cpp
+  src/v20180411/model/ModifyAccountPrivilegesRequest.cpp
   src/v20180411/model/CancelDcnJobRequest.cpp
   src/v20180411/model/IsolateHourDCDBInstanceResponse.cpp
+  src/v20180411/model/Filter.cpp
   src/v20180411/model/ShardInfo.cpp
   src/v20180411/model/ModifyInstanceVipRequest.cpp
   src/v20180411/model/OpenDBExtranetAccessRequest.cpp
@@ -372,11 +389,14 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBSaleInfoResponse.cpp
   src/v20180411/model/ModifyDBInstancesProjectRequest.cpp
   src/v20180411/model/CreateHourDCDBInstanceRequest.cpp
+  src/v20180411/model/ModifyInstanceProtectedPropertyResponse.cpp
   src/v20180411/model/DescribeDBSyncModeRequest.cpp
   src/v20180411/model/CloseDBExtranetAccessResponse.cpp
+  src/v20180411/model/Process.cpp
   src/v20180411/model/ModifyAccountDescriptionRequest.cpp
   src/v20180411/model/KillSessionResponse.cpp
   src/v20180411/model/DescribeProjectsRequest.cpp
+  src/v20180411/model/ModifyInstanceSSLAttributesResponse.cpp
   src/v20180411/model/SlowLogData.cpp
   src/v20180411/model/CreateOnlineDDLJobRequest.cpp
   src/v20180411/model/DescribeDatabasesResponse.cpp
@@ -390,7 +410,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBInstancesResponse.cpp
   src/v20180411/model/ModifyAccountPrivilegesResponse.cpp
   src/v20180411/model/DescribeFlowRequest.cpp
-  src/v20180411/model/ModifyAccountPrivilegesRequest.cpp
+  src/v20180411/model/DescribeProcessListResponse.cpp
   src/v20180411/model/Account.cpp
   src/v20180411/model/CreateDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceRequest.cpp

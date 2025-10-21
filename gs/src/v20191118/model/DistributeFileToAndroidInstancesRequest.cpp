@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DistributeFileToAndroidInstancesRequest::DistributeFileToAndroidInstancesRequest() :
     m_androidInstanceIdsHasBeenSet(false),
     m_fileURLHasBeenSet(false),
-    m_destinationDirectoryHasBeenSet(false)
+    m_destinationDirectoryHasBeenSet(false),
+    m_destinationFileNameHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DistributeFileToAndroidInstancesRequest::ToJsonString() const
         string key = "DestinationDirectory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_destinationDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationFileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destinationFileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DistributeFileToAndroidInstancesRequest::SetDestinationDirectory(const stri
 bool DistributeFileToAndroidInstancesRequest::DestinationDirectoryHasBeenSet() const
 {
     return m_destinationDirectoryHasBeenSet;
+}
+
+string DistributeFileToAndroidInstancesRequest::GetDestinationFileName() const
+{
+    return m_destinationFileName;
+}
+
+void DistributeFileToAndroidInstancesRequest::SetDestinationFileName(const string& _destinationFileName)
+{
+    m_destinationFileName = _destinationFileName;
+    m_destinationFileNameHasBeenSet = true;
+}
+
+bool DistributeFileToAndroidInstancesRequest::DestinationFileNameHasBeenSet() const
+{
+    return m_destinationFileNameHasBeenSet;
 }
 
 

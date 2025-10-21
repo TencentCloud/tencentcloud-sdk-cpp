@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,18 +20,21 @@ set(tcbr_public_header
 
 set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServersResponse.h
+  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
   include/tencentcloud/tcbr/v20220217/model/RepositoryInfo.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayRequest.h
   include/tencentcloud/tcbr/v20220217/model/StorageInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeEnvBaseInfoResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunServerRequest.h
-  include/tencentcloud/tcbr/v20220217/model/FunctionInfo.h
+  include/tencentcloud/tcbr/v20220217/model/CreateVpcInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskResponse.h
   include/tencentcloud/tcbr/v20220217/model/TaskStepInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsRequest.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayResponse.h
   include/tencentcloud/tcbr/v20220217/model/DeployParam.h
+  include/tencentcloud/tcbr/v20220217/model/DiffConfigItem.h
+  include/tencentcloud/tcbr/v20220217/model/VolumeConf.h
   include/tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h
   include/tencentcloud/tcbr/v20220217/model/StaticStorageInfo.h
   include/tencentcloud/tcbr/v20220217/model/UpdateCloudRunServerRequest.h
@@ -44,10 +47,11 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h
   include/tencentcloud/tcbr/v20220217/model/HpaPolicy.h
   include/tencentcloud/tcbr/v20220217/model/OnlineVersionInfo.h
-  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
+  include/tencentcloud/tcbr/v20220217/model/FunctionInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServerDetailResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunEnvResponse.h
   include/tencentcloud/tcbr/v20220217/model/EnvBaseInfo.h
+  include/tencentcloud/tcbr/v20220217/model/VpcConf.h
   include/tencentcloud/tcbr/v20220217/model/ServerBaseInfo.h
   include/tencentcloud/tcbr/v20220217/model/TimerScale.h
   include/tencentcloud/tcbr/v20220217/model/EnvInfo.h
@@ -65,18 +69,21 @@ set(tcbr_public_header_model
 set(tcbr_src
   src/v20220217/TcbrClient.cpp
   src/v20220217/model/DescribeCloudRunServersResponse.cpp
+  src/v20220217/model/ServerBaseConfig.cpp
   src/v20220217/model/RepositoryInfo.cpp
   src/v20220217/model/ReleaseGrayRequest.cpp
   src/v20220217/model/StorageInfo.cpp
   src/v20220217/model/DescribeEnvBaseInfoResponse.cpp
   src/v20220217/model/CreateCloudRunServerRequest.cpp
-  src/v20220217/model/FunctionInfo.cpp
+  src/v20220217/model/CreateVpcInfo.cpp
   src/v20220217/model/DescribeServerManageTaskResponse.cpp
   src/v20220217/model/TaskStepInfo.cpp
   src/v20220217/model/DescribeCloudRunEnvsResponse.cpp
   src/v20220217/model/DescribeCloudRunEnvsRequest.cpp
   src/v20220217/model/ReleaseGrayResponse.cpp
   src/v20220217/model/DeployParam.cpp
+  src/v20220217/model/DiffConfigItem.cpp
+  src/v20220217/model/VolumeConf.cpp
   src/v20220217/model/OperateServerManageRequest.cpp
   src/v20220217/model/StaticStorageInfo.cpp
   src/v20220217/model/UpdateCloudRunServerRequest.cpp
@@ -89,10 +96,11 @@ set(tcbr_src
   src/v20220217/model/DescribeServerManageTaskRequest.cpp
   src/v20220217/model/HpaPolicy.cpp
   src/v20220217/model/OnlineVersionInfo.cpp
-  src/v20220217/model/ServerBaseConfig.cpp
+  src/v20220217/model/FunctionInfo.cpp
   src/v20220217/model/DescribeCloudRunServerDetailResponse.cpp
   src/v20220217/model/CreateCloudRunEnvResponse.cpp
   src/v20220217/model/EnvBaseInfo.cpp
+  src/v20220217/model/VpcConf.cpp
   src/v20220217/model/ServerBaseInfo.cpp
   src/v20220217/model/TimerScale.cpp
   src/v20220217/model/EnvInfo.cpp

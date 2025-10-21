@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@
 #include <tencentcloud/gwlb/v20240906/model/DeregisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersRequest.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResponse.h>
+#include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesRequest.h>
+#include <tencentcloud/gwlb/v20240906/model/DescribeGatewayLoadBalancersResourcesResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusRequest.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstanceStatusResponse.h>
 #include <tencentcloud/gwlb/v20240906/model/DescribeTargetGroupInstancesRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayLoadBalancersResponse> DescribeGatewayLoadBalancersOutcome;
                 typedef std::future<DescribeGatewayLoadBalancersOutcome> DescribeGatewayLoadBalancersOutcomeCallable;
                 typedef std::function<void(const GwlbClient*, const Model::DescribeGatewayLoadBalancersRequest&, DescribeGatewayLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayLoadBalancersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayLoadBalancersResourcesResponse> DescribeGatewayLoadBalancersResourcesOutcome;
+                typedef std::future<DescribeGatewayLoadBalancersResourcesOutcome> DescribeGatewayLoadBalancersResourcesOutcomeCallable;
+                typedef std::function<void(const GwlbClient*, const Model::DescribeGatewayLoadBalancersResourcesRequest&, DescribeGatewayLoadBalancersResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayLoadBalancersResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTargetGroupInstanceStatusResponse> DescribeTargetGroupInstanceStatusOutcome;
                 typedef std::future<DescribeTargetGroupInstanceStatusOutcome> DescribeTargetGroupInstanceStatusOutcomeCallable;
                 typedef std::function<void(const GwlbClient*, const Model::DescribeTargetGroupInstanceStatusRequest&, DescribeTargetGroupInstanceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupInstanceStatusAsyncHandler;
@@ -196,6 +201,15 @@ namespace TencentCloud
                 DescribeGatewayLoadBalancersOutcome DescribeGatewayLoadBalancers(const Model::DescribeGatewayLoadBalancersRequest &request);
                 void DescribeGatewayLoadBalancersAsync(const Model::DescribeGatewayLoadBalancersRequest& request, const DescribeGatewayLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatewayLoadBalancersOutcomeCallable DescribeGatewayLoadBalancersCallable(const Model::DescribeGatewayLoadBalancersRequest& request);
+
+                /**
+                 *查询用户在当前地域支持可用区列表
+                 * @param req DescribeGatewayLoadBalancersResourcesRequest
+                 * @return DescribeGatewayLoadBalancersResourcesOutcome
+                 */
+                DescribeGatewayLoadBalancersResourcesOutcome DescribeGatewayLoadBalancersResources(const Model::DescribeGatewayLoadBalancersResourcesRequest &request);
+                void DescribeGatewayLoadBalancersResourcesAsync(const Model::DescribeGatewayLoadBalancersResourcesRequest& request, const DescribeGatewayLoadBalancersResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayLoadBalancersResourcesOutcomeCallable DescribeGatewayLoadBalancersResourcesCallable(const Model::DescribeGatewayLoadBalancersResourcesRequest& request);
 
                 /**
                  *查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。

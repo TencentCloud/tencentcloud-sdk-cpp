@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/GroupInfo.h>
 #include <tencentcloud/ocr/v20181119/model/WordItem.h>
+#include <tencentcloud/ocr/v20181119/model/SealInfo.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,20 @@ namespace TencentCloud
                      */
                     bool WordListHasBeenSet() const;
 
+                    /**
+                     * 获取全部印章信息
+                     * @return SealInfos 全部印章信息
+                     * 
+                     */
+                    std::vector<SealInfo> GetSealInfos() const;
+
+                    /**
+                     * 判断参数 SealInfos 是否已赋值
+                     * @return SealInfos 是否已赋值
+                     * 
+                     */
+                    bool SealInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -109,6 +124,12 @@ namespace TencentCloud
                      */
                     std::vector<WordItem> m_wordList;
                     bool m_wordListHasBeenSet;
+
+                    /**
+                     * 全部印章信息
+                     */
+                    std::vector<SealInfo> m_sealInfos;
+                    bool m_sealInfosHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ RuleEngineAction::RuleEngineAction() :
     m_upstreamHTTP2ParametersHasBeenSet(false),
     m_hostHeaderParametersHasBeenSet(false),
     m_forceRedirectHTTPSParametersHasBeenSet(false),
+    m_originPullProtocolParametersHasBeenSet(false),
     m_compressionParametersHasBeenSet(false),
     m_hSTSParametersHasBeenSet(false),
     m_clientIPHeaderParametersHasBeenSet(false),
@@ -56,7 +57,8 @@ RuleEngineAction::RuleEngineAction() :
     m_modifyRequestHeaderParametersHasBeenSet(false),
     m_responseSpeedLimitParametersHasBeenSet(false),
     m_setContentIdentifierParametersHasBeenSet(false),
-    m_varyParametersHasBeenSet(false)
+    m_varyParametersHasBeenSet(false),
+    m_contentCompressionParametersHasBeenSet(false)
 {
 }
 
@@ -345,6 +347,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_forceRedirectHTTPSParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginPullProtocolParameters") && !value["OriginPullProtocolParameters"].IsNull())
+    {
+        if (!value["OriginPullProtocolParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.OriginPullProtocolParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_originPullProtocolParameters.Deserialize(value["OriginPullProtocolParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_originPullProtocolParametersHasBeenSet = true;
     }
 
     if (value.HasMember("CompressionParameters") && !value["CompressionParameters"].IsNull())
@@ -670,6 +689,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_varyParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("ContentCompressionParameters") && !value["ContentCompressionParameters"].IsNull())
+    {
+        if (!value["ContentCompressionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.ContentCompressionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_contentCompressionParameters.Deserialize(value["ContentCompressionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_contentCompressionParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -827,6 +863,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_forceRedirectHTTPSParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originPullProtocolParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPullProtocolParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_originPullProtocolParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_compressionParametersHasBeenSet)
@@ -998,6 +1043,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_varyParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_contentCompressionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentCompressionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_contentCompressionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1273,6 +1327,22 @@ void RuleEngineAction::SetForceRedirectHTTPSParameters(const ForceRedirectHTTPSP
 bool RuleEngineAction::ForceRedirectHTTPSParametersHasBeenSet() const
 {
     return m_forceRedirectHTTPSParametersHasBeenSet;
+}
+
+OriginPullProtocolParameters RuleEngineAction::GetOriginPullProtocolParameters() const
+{
+    return m_originPullProtocolParameters;
+}
+
+void RuleEngineAction::SetOriginPullProtocolParameters(const OriginPullProtocolParameters& _originPullProtocolParameters)
+{
+    m_originPullProtocolParameters = _originPullProtocolParameters;
+    m_originPullProtocolParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::OriginPullProtocolParametersHasBeenSet() const
+{
+    return m_originPullProtocolParametersHasBeenSet;
 }
 
 CompressionParameters RuleEngineAction::GetCompressionParameters() const
@@ -1577,5 +1647,21 @@ void RuleEngineAction::SetVaryParameters(const VaryParameters& _varyParameters)
 bool RuleEngineAction::VaryParametersHasBeenSet() const
 {
     return m_varyParametersHasBeenSet;
+}
+
+ContentCompressionParameters RuleEngineAction::GetContentCompressionParameters() const
+{
+    return m_contentCompressionParameters;
+}
+
+void RuleEngineAction::SetContentCompressionParameters(const ContentCompressionParameters& _contentCompressionParameters)
+{
+    m_contentCompressionParameters = _contentCompressionParameters;
+    m_contentCompressionParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::ContentCompressionParametersHasBeenSet() const
+{
+    return m_contentCompressionParametersHasBeenSet;
 }
 

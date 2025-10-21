@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBAssetVO> GetData() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionList 地域枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetRegionList() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTypeList 资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAssetTypeList() const;
@@ -111,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcList Vpc枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetVpcList() const;
@@ -127,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Appid枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppIdList Appid枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAppIdList() const;
@@ -145,42 +133,36 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBAssetVO> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 地域枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_regionList;
                     bool m_regionListHasBeenSet;
 
                     /**
                      * 资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_assetTypeList;
                     bool m_assetTypeListHasBeenSet;
 
                     /**
                      * Vpc枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_vpcList;
                     bool m_vpcListHasBeenSet;
 
                     /**
                      * Appid枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_appIdList;
                     bool m_appIdListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AgentInputUserInputValue.h>
+#include <tencentcloud/lke/v20231130/model/AgentInputSystemVariable.h>
 
 
 namespace TencentCloud
@@ -110,6 +111,69 @@ namespace TencentCloud
                      */
                     bool CustomVarIdHasBeenSet() const;
 
+                    /**
+                     * 获取环境变量参数
+                     * @return EnvVarId 环境变量参数
+                     * 
+                     */
+                    std::string GetEnvVarId() const;
+
+                    /**
+                     * 设置环境变量参数
+                     * @param _envVarId 环境变量参数
+                     * 
+                     */
+                    void SetEnvVarId(const std::string& _envVarId);
+
+                    /**
+                     * 判断参数 EnvVarId 是否已赋值
+                     * @return EnvVarId 是否已赋值
+                     * 
+                     */
+                    bool EnvVarIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用变量参数
+                     * @return AppVarId 应用变量参数
+                     * 
+                     */
+                    std::string GetAppVarId() const;
+
+                    /**
+                     * 设置应用变量参数
+                     * @param _appVarId 应用变量参数
+                     * 
+                     */
+                    void SetAppVarId(const std::string& _appVarId);
+
+                    /**
+                     * 判断参数 AppVarId 是否已赋值
+                     * @return AppVarId 是否已赋值
+                     * 
+                     */
+                    bool AppVarIdHasBeenSet() const;
+
+                    /**
+                     * 获取系统参数
+                     * @return SystemVariable 系统参数
+                     * 
+                     */
+                    AgentInputSystemVariable GetSystemVariable() const;
+
+                    /**
+                     * 设置系统参数
+                     * @param _systemVariable 系统参数
+                     * 
+                     */
+                    void SetSystemVariable(const AgentInputSystemVariable& _systemVariable);
+
+                    /**
+                     * 判断参数 SystemVariable 是否已赋值
+                     * @return SystemVariable 是否已赋值
+                     * 
+                     */
+                    bool SystemVariableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +193,24 @@ namespace TencentCloud
                      */
                     std::string m_customVarId;
                     bool m_customVarIdHasBeenSet;
+
+                    /**
+                     * 环境变量参数
+                     */
+                    std::string m_envVarId;
+                    bool m_envVarIdHasBeenSet;
+
+                    /**
+                     * 应用变量参数
+                     */
+                    std::string m_appVarId;
+                    bool m_appVarIdHasBeenSet;
+
+                    /**
+                     * 系统参数
+                     */
+                    AgentInputSystemVariable m_systemVariable;
+                    bool m_systemVariableHasBeenSet;
 
                 };
             }

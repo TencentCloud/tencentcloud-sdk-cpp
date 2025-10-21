@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool DestinationDirectoryHasBeenSet() const;
 
+                    /**
+                     * 获取目标文件名
+                     * @return DestinationFileName 目标文件名
+                     * 
+                     */
+                    std::string GetDestinationFileName() const;
+
+                    /**
+                     * 设置目标文件名
+                     * @param _destinationFileName 目标文件名
+                     * 
+                     */
+                    void SetDestinationFileName(const std::string& _destinationFileName);
+
+                    /**
+                     * 判断参数 DestinationFileName 是否已赋值
+                     * @return DestinationFileName 是否已赋值
+                     * 
+                     */
+                    bool DestinationFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_destinationDirectory;
                     bool m_destinationDirectoryHasBeenSet;
+
+                    /**
+                     * 目标文件名
+                     */
+                    std::string m_destinationFileName;
+                    bool m_destinationFileNameHasBeenSet;
 
                 };
             }

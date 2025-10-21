@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,11 +88,11 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                      * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                      * 
                      */
@@ -101,11 +101,11 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     /**
                      * 设置按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                      * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                      * 
                      */
@@ -119,15 +119,15 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。
-                     * @return OrderBy 排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。
+                     * 获取排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。
+                     * @return OrderBy 排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。
-                     * @param _orderBy 排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。
+                     * 设置排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。
+                     * @param _orderBy 排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -140,15 +140,15 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，包括升序：asc，降序：desc。
-                     * @return OrderByType 排序方式，包括升序：asc，降序：desc。
+                     * 获取排序方式，包括升序：asc，降序：desc。默认值：asc。
+                     * @return OrderByType 排序方式，包括升序：asc，降序：desc。默认值：asc。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，包括升序：asc，降序：desc。
-                     * @param _orderByType 排序方式，包括升序：asc，降序：desc。
+                     * 设置排序方式，包括升序：asc，降序：desc。默认值：asc。
+                     * @param _orderByType 排序方式，包括升序：asc，降序：desc。默认值：asc。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -177,20 +177,20 @@ db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                     /**
                      * 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string。
-db-instance-name：按照实例名过滤，类型为string。
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string。
 db-instance-ip：按照实例私有网络IP地址过滤，类型为string。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。
+                     * 排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，包括升序：asc，降序：desc。
+                     * 排序方式，包括升序：asc，降序：desc。默认值：asc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取等待（默认策略）或 执行
+                     * 获取等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PollingNullStrategy 等待（默认策略）或 执行
+                     * @return PollingNullStrategy 等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPollingNullStrategy() const;
 
                     /**
-                     * 设置等待（默认策略）或 执行
+                     * 设置等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pollingNullStrategy 等待（默认策略）或 执行
+                     * @param _pollingNullStrategy 等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -71,14 +75,89 @@ namespace TencentCloud
                      */
                     bool PollingNullStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskDependencyExecutingStrategies 仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTaskDependencyExecutingStrategies() const;
+
+                    /**
+                     * 设置仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskDependencyExecutingStrategies 仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskDependencyExecutingStrategies(const std::vector<std::string>& _taskDependencyExecutingStrategies);
+
+                    /**
+                     * 判断参数 TaskDependencyExecutingStrategies 是否已赋值
+                     * @return TaskDependencyExecutingStrategies 是否已赋值
+                     * 
+                     */
+                    bool TaskDependencyExecutingStrategiesHasBeenSet() const;
+
+                    /**
+                     * 获取仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskDependencyExecutingTimeoutValue 仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTaskDependencyExecutingTimeoutValue() const;
+
+                    /**
+                     * 设置仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskDependencyExecutingTimeoutValue 仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskDependencyExecutingTimeoutValue(const int64_t& _taskDependencyExecutingTimeoutValue);
+
+                    /**
+                     * 判断参数 TaskDependencyExecutingTimeoutValue 是否已赋值
+                     * @return TaskDependencyExecutingTimeoutValue 是否已赋值
+                     * 
+                     */
+                    bool TaskDependencyExecutingTimeoutValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 等待（默认策略）或 执行
+                     * 等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pollingNullStrategy;
                     bool m_pollingNullStrategyHasBeenSet;
+
+                    /**
+                     * 仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_taskDependencyExecutingStrategies;
+                    bool m_taskDependencyExecutingStrategiesHasBeenSet;
+
+                    /**
+                     * 仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskDependencyExecutingTimeoutValue;
+                    bool m_taskDependencyExecutingTimeoutValueHasBeenSet;
 
                 };
             }

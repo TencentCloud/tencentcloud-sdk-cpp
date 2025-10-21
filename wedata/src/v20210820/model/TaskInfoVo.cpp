@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ TaskInfoVo::TaskInfoVo() :
     m_engineExeUserHasBeenSet(false),
     m_engineExeStartTimeHasBeenSet(false),
     m_engineExeEndTimeHasBeenSet(false),
-    m_productSourceHasBeenSet(false)
+    m_productSourceHasBeenSet(false),
+    m_integrationTypeHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome TaskInfoVo::Deserialize(const rapidjson::Value &value)
         m_productSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("IntegrationType") && !value["IntegrationType"].IsNull())
+    {
+        if (!value["IntegrationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoVo.IntegrationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_integrationType = string(value["IntegrationType"].GetString());
+        m_integrationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void TaskInfoVo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProductSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_integrationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntegrationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_integrationType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void TaskInfoVo::SetProductSource(const string& _productSource)
 bool TaskInfoVo::ProductSourceHasBeenSet() const
 {
     return m_productSourceHasBeenSet;
+}
+
+string TaskInfoVo::GetIntegrationType() const
+{
+    return m_integrationType;
+}
+
+void TaskInfoVo::SetIntegrationType(const string& _integrationType)
+{
+    m_integrationType = _integrationType;
+    m_integrationTypeHasBeenSet = true;
+}
+
+bool TaskInfoVo::IntegrationTypeHasBeenSet() const
+{
+    return m_integrationTypeHasBeenSet;
 }
 

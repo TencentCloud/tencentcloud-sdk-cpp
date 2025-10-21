@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 TaskIdListKey::TaskIdListKey() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_targetAppIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome TaskIdListKey::Deserialize(const rapidjson::Value &value)
         m_taskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetAppId") && !value["TargetAppId"].IsNull())
+    {
+        if (!value["TargetAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskIdListKey.TargetAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetAppId = string(value["TargetAppId"].GetString());
+        m_targetAppIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void TaskIdListKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetAppId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void TaskIdListKey::SetTaskId(const string& _taskId)
 bool TaskIdListKey::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string TaskIdListKey::GetTargetAppId() const
+{
+    return m_targetAppId;
+}
+
+void TaskIdListKey::SetTargetAppId(const string& _targetAppId)
+{
+    m_targetAppId = _targetAppId;
+    m_targetAppIdHasBeenSet = true;
+}
+
+bool TaskIdListKey::TargetAppIdHasBeenSet() const
+{
+    return m_targetAppIdHasBeenSet;
 }
 

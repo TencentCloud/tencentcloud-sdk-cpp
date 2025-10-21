@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/ServerCertInfo.h>
 #include <tencentcloud/teo/v20220901/model/MutualTLS.h>
+#include <tencentcloud/teo/v20220901/model/UpstreamCertInfo.h>
 
 
 namespace TencentCloud
@@ -198,6 +199,27 @@ namespace TencentCloud
                      */
                     bool ClientCertInfoHasBeenSet() const;
 
+                    /**
+                     * 获取用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。
+                     * @return UpstreamCertInfo 用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。
+                     * 
+                     */
+                    UpstreamCertInfo GetUpstreamCertInfo() const;
+
+                    /**
+                     * 设置用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。
+                     * @param _upstreamCertInfo 用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。
+                     * 
+                     */
+                    void SetUpstreamCertInfo(const UpstreamCertInfo& _upstreamCertInfo);
+
+                    /**
+                     * 判断参数 UpstreamCertInfo 是否已赋值
+                     * @return UpstreamCertInfo 是否已赋值
+                     * 
+                     */
+                    bool UpstreamCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +264,12 @@ namespace TencentCloud
                      */
                     MutualTLS m_clientCertInfo;
                     bool m_clientCertInfoHasBeenSet;
+
+                    /**
+                     * 用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。
+                     */
+                    UpstreamCertInfo m_upstreamCertInfo;
+                    bool m_upstreamCertInfoHasBeenSet;
 
                 };
             }

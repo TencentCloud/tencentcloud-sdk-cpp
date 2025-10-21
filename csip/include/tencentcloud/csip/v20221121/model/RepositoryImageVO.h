@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCreateTime 镜像创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceCreateTime() const;
 
                     /**
                      * 设置镜像创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCreateTime 镜像创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCreateTime(const std::string& _instanceCreateTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像大小带单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceSize 镜像大小带单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceSize() const;
 
                     /**
                      * 设置镜像大小带单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceSize 镜像大小带单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceSize(const std::string& _instanceSize);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构建次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildCount 构建次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBuildCount() const;
 
                     /**
                      * 设置构建次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildCount 构建次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildCount(const int64_t& _buildCount);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 镜像类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置镜像类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 镜像类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthStatus 授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthStatus() const;
 
                     /**
                      * 设置授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authStatus 授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthStatus(const int64_t& _authStatus);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 镜像版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置镜像版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 镜像版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryUrl 仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryUrl() const;
 
                     /**
                      * 设置仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryUrl 仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryUrl(const std::string& _repositoryUrl);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVulRisk() const;
 
                     /**
                      * 设置漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulRisk(const int64_t& _vulRisk);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckCount 检查任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCheckCount() const;
 
                     /**
                      * 设置检查任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkCount 检查任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckCount(const int64_t& _checkCount);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckTime 体检时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckTime() const;
 
                     /**
                      * 设置体检时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkTime 体检时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckTime(const std::string& _checkTime);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -525,133 +449,114 @@ namespace TencentCloud
 
                     /**
                      * 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 镜像名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 镜像创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceCreateTime;
                     bool m_instanceCreateTimeHasBeenSet;
 
                     /**
                      * 镜像大小带单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceSize;
                     bool m_instanceSizeHasBeenSet;
 
                     /**
                      * 构建次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_buildCount;
                     bool m_buildCountHasBeenSet;
 
                     /**
                      * 镜像类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authStatus;
                     bool m_authStatusHasBeenSet;
 
                     /**
                      * 镜像版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryUrl;
                     bool m_repositoryUrlHasBeenSet;
 
                     /**
                      * 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;
 
                     /**
                      * 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vulRisk;
                     bool m_vulRiskHasBeenSet;
 
                     /**
                      * 检查任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_checkCount;
                     bool m_checkCountHasBeenSet;
 
                     /**
                      * 体检时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkTime;
                     bool m_checkTimeHasBeenSet;
 
                     /**
                      * 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;

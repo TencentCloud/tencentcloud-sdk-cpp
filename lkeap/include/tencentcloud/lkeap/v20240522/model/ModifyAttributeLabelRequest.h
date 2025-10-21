@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取知识库ID
-                     * @return KnowledgeBaseId 知识库ID
+                     * 获取说明：知识库ID
+备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）
+                     * @return KnowledgeBaseId 说明：知识库ID
+备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）
                      * 
                      */
                     std::string GetKnowledgeBaseId() const;
 
                     /**
-                     * 设置知识库ID
-                     * @param _knowledgeBaseId 知识库ID
+                     * 设置说明：知识库ID
+备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）
+                     * @param _knowledgeBaseId 说明：知识库ID
+备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）
                      * 
                      */
                     void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
@@ -65,15 +69,19 @@ namespace TencentCloud
                     bool KnowledgeBaseIdHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeId 属性ID
+                     * 获取说明：属性ID
+备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系
+                     * @return AttributeId 说明：属性ID
+备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系
                      * 
                      */
                     std::string GetAttributeId() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeId 属性ID
+                     * 设置说明：属性ID
+备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系
+                     * @param _attributeId 说明：属性ID
+备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系
                      * 
                      */
                     void SetAttributeId(const std::string& _attributeId);
@@ -86,15 +94,19 @@ namespace TencentCloud
                     bool AttributeIdHasBeenSet() const;
 
                     /**
-                     * 获取属性标识，最大40个英文字符，如style
-                     * @return AttributeKey 属性标识，最大40个英文字符，如style
+                     * 获取说明：属性标识，
+备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style
+                     * @return AttributeKey 说明：属性标识，
+备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style
                      * 
                      */
                     std::string GetAttributeKey() const;
 
                     /**
-                     * 设置属性标识，最大40个英文字符，如style
-                     * @param _attributeKey 属性标识，最大40个英文字符，如style
+                     * 设置说明：属性标识，
+备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style
+                     * @param _attributeKey 说明：属性标识，
+备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style
                      * 
                      */
                     void SetAttributeKey(const std::string& _attributeKey);
@@ -107,15 +119,19 @@ namespace TencentCloud
                     bool AttributeKeyHasBeenSet() const;
 
                     /**
-                     * 获取属性名称，最大80个英文字符，如风格
-                     * @return AttributeName 属性名称，最大80个英文字符，如风格
+                     * 获取说明：属性名称
+备注：支持中英文字符。最大支持80个中英文字符，如风格
+                     * @return AttributeName 说明：属性名称
+备注：支持中英文字符。最大支持80个中英文字符，如风格
                      * 
                      */
                     std::string GetAttributeName() const;
 
                     /**
-                     * 设置属性名称，最大80个英文字符，如风格
-                     * @param _attributeName 属性名称，最大80个英文字符，如风格
+                     * 设置说明：属性名称
+备注：支持中英文字符。最大支持80个中英文字符，如风格
+                     * @param _attributeName 说明：属性名称
+备注：支持中英文字符。最大支持80个中英文字符，如风格
                      * 
                      */
                     void SetAttributeName(const std::string& _attributeName);
@@ -128,15 +144,27 @@ namespace TencentCloud
                     bool AttributeNameHasBeenSet() const;
 
                     /**
-                     * 获取属性标签
-                     * @return Labels 属性标签
+                     * 获取说明：标签ID（LabelId）以及标签名（LabelName）
+备注：
+- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；
+- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值
+                     * @return Labels 说明：标签ID（LabelId）以及标签名（LabelName）
+备注：
+- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；
+- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值
                      * 
                      */
                     std::vector<AttributeLabelItem> GetLabels() const;
 
                     /**
-                     * 设置属性标签
-                     * @param _labels 属性标签
+                     * 设置说明：标签ID（LabelId）以及标签名（LabelName）
+备注：
+- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；
+- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值
+                     * @param _labels 说明：标签ID（LabelId）以及标签名（LabelName）
+备注：
+- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；
+- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值
                      * 
                      */
                     void SetLabels(const std::vector<AttributeLabelItem>& _labels);
@@ -148,37 +176,71 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取说明：删除的标签id
+                     * @return DeleteLabelIds 说明：删除的标签id
+                     * 
+                     */
+                    std::vector<std::string> GetDeleteLabelIds() const;
+
+                    /**
+                     * 设置说明：删除的标签id
+                     * @param _deleteLabelIds 说明：删除的标签id
+                     * 
+                     */
+                    void SetDeleteLabelIds(const std::vector<std::string>& _deleteLabelIds);
+
+                    /**
+                     * 判断参数 DeleteLabelIds 是否已赋值
+                     * @return DeleteLabelIds 是否已赋值
+                     * 
+                     */
+                    bool DeleteLabelIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 知识库ID
+                     * 说明：知识库ID
+备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）
                      */
                     std::string m_knowledgeBaseId;
                     bool m_knowledgeBaseIdHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 说明：属性ID
+备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系
                      */
                     std::string m_attributeId;
                     bool m_attributeIdHasBeenSet;
 
                     /**
-                     * 属性标识，最大40个英文字符，如style
+                     * 说明：属性标识，
+备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style
                      */
                     std::string m_attributeKey;
                     bool m_attributeKeyHasBeenSet;
 
                     /**
-                     * 属性名称，最大80个英文字符，如风格
+                     * 说明：属性名称
+备注：支持中英文字符。最大支持80个中英文字符，如风格
                      */
                     std::string m_attributeName;
                     bool m_attributeNameHasBeenSet;
 
                     /**
-                     * 属性标签
+                     * 说明：标签ID（LabelId）以及标签名（LabelName）
+备注：
+- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；
+- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值
                      */
                     std::vector<AttributeLabelItem> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 说明：删除的标签id
+                     */
+                    std::vector<std::string> m_deleteLabelIds;
+                    bool m_deleteLabelIdsHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。
+                     * @return ApplicationId 应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。
+                     * @param _applicationId 应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return OrderType 排序方式
+                     * 获取排序方式，0：升序，1：降序
+                     * @return OrderType 排序方式，0：升序，1：降序
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _orderType 排序方式
+                     * 设置排序方式，0：升序，1：降序
+                     * @param _orderType 排序方式，0：升序，1：降序
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认值：0
+                     * @return Offset 偏移量，默认值：0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认值：0
+                     * @param _offset 偏移量，默认值：0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页个数
-                     * @return Limit 分页个数
+                     * 获取分页个数，默认值：20
+                     * @return Limit 分页个数，默认值：20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页个数
-                     * @param _limit 分页个数
+                     * 设置分页个数，默认值：20
+                     * @param _limit 分页个数，默认值：20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。
+                     * @return NamespaceId 命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。
+                     * @param _namespaceId 命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。
+                     * @return ClusterId 集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。
+                     * @param _clusterId 集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return GroupIdList 无
+                     * 获取部署组ID列表
+                     * @return GroupIdList 部署组ID列表
                      * 
                      */
                     std::vector<std::string> GetGroupIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _groupIdList 无
+                     * 设置部署组ID列表
+                     * @param _groupIdList 部署组ID列表
                      * 
                      */
                     void SetGroupIdList(const std::vector<std::string>& _groupIdList);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * 应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
@@ -294,31 +294,31 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * 排序方式，0：升序，1：降序
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认值：0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页个数
+                     * 分页个数，默认值：20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 命名空间ID
+                     * 命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * 集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 无
+                     * 部署组ID列表
                      */
                     std::vector<std::string> m_groupIdList;
                     bool m_groupIdListHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,13 +142,13 @@ namespace TencentCloud
                      * 获取状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
-<li> failed：失败；</li>
+<li>failed：失败；</li>
 <li>timeout：超时；</li>
 <li>canceled：已取消。</li>
                      * @return Status 状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
-<li> failed：失败；</li>
+<li>failed：失败；</li>
 <li>timeout：超时；</li>
 <li>canceled：已取消。</li>
                      * 
@@ -159,13 +159,13 @@ namespace TencentCloud
                      * 设置状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
-<li> failed：失败；</li>
+<li>failed：失败；</li>
 <li>timeout：超时；</li>
 <li>canceled：已取消。</li>
                      * @param _status 状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
-<li> failed：失败；</li>
+<li>failed：失败；</li>
 <li>timeout：超时；</li>
 <li>canceled：已取消。</li>
                      * 
@@ -221,6 +221,68 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取刷新、预热失败类型。取值有：
+<li>taskFailed：任务失败；</li>
+<li>quotaExceeded：配额超限；</li>
+<li>downloadManifestFailed：下载描述文件失败；</li>
+<li>accessDenied：访问被拒绝。</li>
+<li>originPullFailed：回源失败。</li>
+                     * @return FailType 刷新、预热失败类型。取值有：
+<li>taskFailed：任务失败；</li>
+<li>quotaExceeded：配额超限；</li>
+<li>downloadManifestFailed：下载描述文件失败；</li>
+<li>accessDenied：访问被拒绝。</li>
+<li>originPullFailed：回源失败。</li>
+                     * 
+                     */
+                    std::string GetFailType() const;
+
+                    /**
+                     * 设置刷新、预热失败类型。取值有：
+<li>taskFailed：任务失败；</li>
+<li>quotaExceeded：配额超限；</li>
+<li>downloadManifestFailed：下载描述文件失败；</li>
+<li>accessDenied：访问被拒绝。</li>
+<li>originPullFailed：回源失败。</li>
+                     * @param _failType 刷新、预热失败类型。取值有：
+<li>taskFailed：任务失败；</li>
+<li>quotaExceeded：配额超限；</li>
+<li>downloadManifestFailed：下载描述文件失败；</li>
+<li>accessDenied：访问被拒绝。</li>
+<li>originPullFailed：回源失败。</li>
+                     * 
+                     */
+                    void SetFailType(const std::string& _failType);
+
+                    /**
+                     * 判断参数 FailType 是否已赋值
+                     * @return FailType 是否已赋值
+                     * 
+                     */
+                    bool FailTypeHasBeenSet() const;
+
+                    /**
+                     * 获取清除缓存、预热缓存的失败原因描述。
+                     * @return FailMessage 清除缓存、预热缓存的失败原因描述。
+                     * 
+                     */
+                    std::string GetFailMessage() const;
+
+                    /**
+                     * 设置清除缓存、预热缓存的失败原因描述。
+                     * @param _failMessage 清除缓存、预热缓存的失败原因描述。
+                     * 
+                     */
+                    void SetFailMessage(const std::string& _failMessage);
+
+                    /**
+                     * 判断参数 FailMessage 是否已赋值
+                     * @return FailMessage 是否已赋值
+                     * 
+                     */
+                    bool FailMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -253,7 +315,7 @@ namespace TencentCloud
                      * 状态。取值有：
 <li>processing：处理中；</li>
 <li>success：成功；</li>
-<li> failed：失败；</li>
+<li>failed：失败；</li>
 <li>timeout：超时；</li>
 <li>canceled：已取消。</li>
                      */
@@ -271,6 +333,23 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 刷新、预热失败类型。取值有：
+<li>taskFailed：任务失败；</li>
+<li>quotaExceeded：配额超限；</li>
+<li>downloadManifestFailed：下载描述文件失败；</li>
+<li>accessDenied：访问被拒绝。</li>
+<li>originPullFailed：回源失败。</li>
+                     */
+                    std::string m_failType;
+                    bool m_failTypeHasBeenSet;
+
+                    /**
+                     * 清除缓存、预热缓存的失败原因描述。
+                     */
+                    std::string m_failMessage;
+                    bool m_failMessageHasBeenSet;
 
                 };
             }

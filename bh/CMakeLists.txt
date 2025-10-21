@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -100,6 +100,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/ModifyUserRequest.h
   include/tencentcloud/bh/v20230418/model/CreateCmdTemplateResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteOperationTasksResponse.h
+  include/tencentcloud/bh/v20230418/model/Command.h
   include/tencentcloud/bh/v20230418/model/ModifyAclRequest.h
   include/tencentcloud/bh/v20230418/model/SearchAuditLogRequest.h
   include/tencentcloud/bh/v20230418/model/CreateResourceResponse.h
@@ -162,6 +163,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/CreateOperationTaskRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeCmdTemplatesResponse.h
   include/tencentcloud/bh/v20230418/model/UnlockUserRequest.h
+  include/tencentcloud/bh/v20230418/model/ReplayInformation.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceAccountRequest.h
   include/tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteCmdTemplatesRequest.h
@@ -294,6 +296,7 @@ set(bh_src
   src/v20230418/model/ModifyUserRequest.cpp
   src/v20230418/model/CreateCmdTemplateResponse.cpp
   src/v20230418/model/DeleteOperationTasksResponse.cpp
+  src/v20230418/model/Command.cpp
   src/v20230418/model/ModifyAclRequest.cpp
   src/v20230418/model/SearchAuditLogRequest.cpp
   src/v20230418/model/CreateResourceResponse.cpp
@@ -356,6 +359,7 @@ set(bh_src
   src/v20230418/model/CreateOperationTaskRequest.cpp
   src/v20230418/model/DescribeCmdTemplatesResponse.cpp
   src/v20230418/model/UnlockUserRequest.cpp
+  src/v20230418/model/ReplayInformation.cpp
   src/v20230418/model/CreateDeviceAccountRequest.cpp
   src/v20230418/model/AddDeviceGroupMembersResponse.cpp
   src/v20230418/model/DeleteCmdTemplatesRequest.cpp

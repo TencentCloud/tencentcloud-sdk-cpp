@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace std;
 KnowledgeDetailInfo::KnowledgeDetailInfo() :
     m_knowledgeHasBeenSet(false),
     m_appListHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_permissionIdsHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,19 @@ CoreInternalOutcome KnowledgeDetailInfo::Deserialize(const rapidjson::Value &val
         m_userHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionIds") && !value["PermissionIds"].IsNull())
+    {
+        if (!value["PermissionIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeDetailInfo.PermissionIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PermissionIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_permissionIds.push_back((*itr).GetString());
+        }
+        m_permissionIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -124,6 +138,19 @@ void KnowledgeDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_user.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_permissionIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_permissionIds.begin(); itr != m_permissionIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -175,5 +202,21 @@ void KnowledgeDetailInfo::SetUser(const UserBaseInfo& _user)
 bool KnowledgeDetailInfo::UserHasBeenSet() const
 {
     return m_userHasBeenSet;
+}
+
+vector<string> KnowledgeDetailInfo::GetPermissionIds() const
+{
+    return m_permissionIds;
+}
+
+void KnowledgeDetailInfo::SetPermissionIds(const vector<string>& _permissionIds)
+{
+    m_permissionIds = _permissionIds;
+    m_permissionIdsHasBeenSet = true;
+}
+
+bool KnowledgeDetailInfo::PermissionIdsHasBeenSet() const
+{
+    return m_permissionIdsHasBeenSet;
 }
 

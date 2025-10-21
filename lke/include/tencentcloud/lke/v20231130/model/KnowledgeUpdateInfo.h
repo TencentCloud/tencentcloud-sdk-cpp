@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmbeddingModel Embedding模型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetEmbeddingModel() const;
 
@@ -106,14 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _embeddingModel Embedding模型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetEmbeddingModel(const std::string& _embeddingModel);
 
                     /**
                      * 判断参数 EmbeddingModel 是否已赋值
                      * @return EmbeddingModel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EmbeddingModelHasBeenSet() const;
 
@@ -122,7 +122,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QaExtractModel 问答提取模型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetQaExtractModel() const;
 
@@ -131,16 +131,37 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qaExtractModel 问答提取模型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetQaExtractModel(const std::string& _qaExtractModel);
 
                     /**
                      * 判断参数 QaExtractModel 是否已赋值
                      * @return QaExtractModel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QaExtractModelHasBeenSet() const;
+
+                    /**
+                     * 获取拥有者id
+                     * @return OwnerStaffId 拥有者id
+                     * 
+                     */
+                    std::string GetOwnerStaffId() const;
+
+                    /**
+                     * 设置拥有者id
+                     * @param _ownerStaffId 拥有者id
+                     * 
+                     */
+                    void SetOwnerStaffId(const std::string& _ownerStaffId);
+
+                    /**
+                     * 判断参数 OwnerStaffId 是否已赋值
+                     * @return OwnerStaffId 是否已赋值
+                     * 
+                     */
+                    bool OwnerStaffIdHasBeenSet() const;
 
                 private:
 
@@ -170,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_qaExtractModel;
                     bool m_qaExtractModelHasBeenSet;
+
+                    /**
+                     * 拥有者id
+                     */
+                    std::string m_ownerStaffId;
+                    bool m_ownerStaffIdHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,6 +241,20 @@ namespace TencentCloud
                      */
                     bool IsCopyingHasBeenSet() const;
 
+                    /**
+                     * 获取智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * @return AgentType 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     * 
+                     */
+                    std::string GetAgentType() const;
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -326,6 +340,12 @@ namespace TencentCloud
                      */
                     bool m_isCopying;
                     bool m_isCopyingHasBeenSet;
+
+                    /**
+                     * 智能体类型 dialogue 对话式智能体，wechat 公众号智能体
+                     */
+                    std::string m_agentType;
+                    bool m_agentTypeHasBeenSet;
 
                 };
             }

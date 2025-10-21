@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页后的配置项列表
-                     * @return Result 分页后的配置项列表
+                     * 获取分页后的配置项列表。
+                     * @return Result 分页后的配置项列表。
                      * 
                      */
                     TsfPageConfig GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页后的配置项列表
+                     * 分页后的配置项列表。
                      */
                     TsfPageConfig m_result;
                     bool m_resultHasBeenSet;

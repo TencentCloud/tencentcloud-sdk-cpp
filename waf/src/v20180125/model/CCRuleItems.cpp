@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ CCRuleItems::CCRuleItems() :
     m_createTimeHasBeenSet(false),
     m_limitMethodHasBeenSet(false),
     m_celRuleHasBeenSet(false),
-    m_logicalOpHasBeenSet(false)
+    m_logicalOpHasBeenSet(false),
+    m_pageIdHasBeenSet(false),
+    m_actionRatioHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,26 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_logicalOpHasBeenSet = true;
     }
 
+    if (value.HasMember("PageId") && !value["PageId"].IsNull())
+    {
+        if (!value["PageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.PageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageId = string(value["PageId"].GetString());
+        m_pageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActionRatio") && !value["ActionRatio"].IsNull())
+    {
+        if (!value["ActionRatio"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.ActionRatio` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionRatio = value["ActionRatio"].GetUint64();
+        m_actionRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "LogicalOp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_actionRatio, allocator);
     }
 
 }
@@ -710,5 +748,37 @@ void CCRuleItems::SetLogicalOp(const string& _logicalOp)
 bool CCRuleItems::LogicalOpHasBeenSet() const
 {
     return m_logicalOpHasBeenSet;
+}
+
+string CCRuleItems::GetPageId() const
+{
+    return m_pageId;
+}
+
+void CCRuleItems::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool CCRuleItems::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
+}
+
+uint64_t CCRuleItems::GetActionRatio() const
+{
+    return m_actionRatio;
+}
+
+void CCRuleItems::SetActionRatio(const uint64_t& _actionRatio)
+{
+    m_actionRatio = _actionRatio;
+    m_actionRatioHasBeenSet = true;
+}
+
+bool CCRuleItems::ActionRatioHasBeenSet() const
+{
+    return m_actionRatioHasBeenSet;
 }
 

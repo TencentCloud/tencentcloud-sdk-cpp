@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ BizCatalogsInfo::BizCatalogsInfo() :
     m_levelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_parentIdHasBeenSet(false),
-    m_positionHasBeenSet(false)
+    m_positionHasBeenSet(false),
+    m_nameEnHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome BizCatalogsInfo::Deserialize(const rapidjson::Value &value)
         m_positionHasBeenSet = true;
     }
 
+    if (value.HasMember("NameEn") && !value["NameEn"].IsNull())
+    {
+        if (!value["NameEn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BizCatalogsInfo.NameEn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameEn = string(value["NameEn"].GetString());
+        m_nameEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void BizCatalogsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_position, allocator);
+    }
+
+    if (m_nameEnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameEn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void BizCatalogsInfo::SetPosition(const int64_t& _position)
 bool BizCatalogsInfo::PositionHasBeenSet() const
 {
     return m_positionHasBeenSet;
+}
+
+string BizCatalogsInfo::GetNameEn() const
+{
+    return m_nameEn;
+}
+
+void BizCatalogsInfo::SetNameEn(const string& _nameEn)
+{
+    m_nameEn = _nameEn;
+    m_nameEnHasBeenSet = true;
+}
+
+bool BizCatalogsInfo::NameEnHasBeenSet() const
+{
+    return m_nameEnHasBeenSet;
 }
 

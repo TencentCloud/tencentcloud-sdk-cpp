@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 DescribeWorkflowRunRequest::DescribeWorkflowRunRequest() :
+    m_appBizIdHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string DescribeWorkflowRunRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_appBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_workflowRunIdHasBeenSet)
     {
@@ -49,6 +58,22 @@ string DescribeWorkflowRunRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeWorkflowRunRequest::GetAppBizId() const
+{
+    return m_appBizId;
+}
+
+void DescribeWorkflowRunRequest::SetAppBizId(const string& _appBizId)
+{
+    m_appBizId = _appBizId;
+    m_appBizIdHasBeenSet = true;
+}
+
+bool DescribeWorkflowRunRequest::AppBizIdHasBeenSet() const
+{
+    return m_appBizIdHasBeenSet;
+}
 
 string DescribeWorkflowRunRequest::GetWorkflowRunId() const
 {

@@ -1,0 +1,146 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/wedata/v20250806/model/BindProject.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Wedata::V20250806::Model;
+using namespace std;
+
+BindProject::BindProject() :
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
+    m_projectDisplayNameHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BindProject::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindProject.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindProject.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectDisplayName") && !value["ProjectDisplayName"].IsNull())
+    {
+        if (!value["ProjectDisplayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindProject.ProjectDisplayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectDisplayName = string(value["ProjectDisplayName"].GetString());
+        m_projectDisplayNameHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BindProject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectDisplayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectDisplayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectDisplayName.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string BindProject::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void BindProject::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool BindProject::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string BindProject::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void BindProject::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool BindProject::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
+}
+
+string BindProject::GetProjectDisplayName() const
+{
+    return m_projectDisplayName;
+}
+
+void BindProject::SetProjectDisplayName(const string& _projectDisplayName)
+{
+    m_projectDisplayName = _projectDisplayName;
+    m_projectDisplayNameHasBeenSet = true;
+}
+
+bool BindProject::ProjectDisplayNameHasBeenSet() const
+{
+    return m_projectDisplayNameHasBeenSet;
+}
+

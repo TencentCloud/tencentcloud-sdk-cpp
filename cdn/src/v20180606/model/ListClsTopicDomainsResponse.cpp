@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ ListClsTopicDomainsResponse::ListClsTopicDomainsResponse() :
     m_topicIdHasBeenSet(false),
     m_domainAreaConfigsHasBeenSet(false),
     m_topicNameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_inheritDomainTagsHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome ListClsTopicDomainsResponse::Deserialize(const string &paylo
         m_updateTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InheritDomainTags") && !rsp["InheritDomainTags"].IsNull())
+    {
+        if (!rsp["InheritDomainTags"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InheritDomainTags` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_inheritDomainTags = rsp["InheritDomainTags"].GetBool();
+        m_inheritDomainTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,11 +232,19 @@ string ListClsTopicDomainsResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_inheritDomainTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InheritDomainTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inheritDomainTags, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -301,6 +320,16 @@ string ListClsTopicDomainsResponse::GetUpdateTime() const
 bool ListClsTopicDomainsResponse::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+bool ListClsTopicDomainsResponse::GetInheritDomainTags() const
+{
+    return m_inheritDomainTags;
+}
+
+bool ListClsTopicDomainsResponse::InheritDomainTagsHasBeenSet() const
+{
+    return m_inheritDomainTagsHasBeenSet;
 }
 
 

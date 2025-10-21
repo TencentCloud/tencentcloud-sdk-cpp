@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取标识
-                     * @return Flag 标识
+                     * 获取可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * @return Flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置标识
-                     * @param _flag 标识
+                     * 设置可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * @param _flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态
-                     * @return ZoneStatus 可用区状态
+                     * 获取可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * @return ZoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
-                     * 设置可用区状态
-                     * @param _zoneStatus 可用区状态
+                     * 设置可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * @param _zoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 标识
+                     * 可用区是否售罄标识，true表示已售罄，false表示未售罄。
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区状态
+                     * 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
                      */
                     int64_t m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;

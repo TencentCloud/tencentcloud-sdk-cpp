@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool SqlTypeHasBeenSet() const;
 
                     /**
-                     * 获取SQL模版内容。
-                     * @return SqlTemplate SQL模版内容。
+                     * 获取SQL模板内容。
+                     * @return SqlTemplate SQL模板内容。
                      * 
                      */
                     std::string GetSqlTemplate() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool SqlTemplateHasBeenSet() const;
 
                     /**
-                     * 获取SQL模版ID。
-                     * @return SqlId SQL模版ID。
+                     * 获取SQL模板ID。
+                     * @return SqlId SQL模板ID。
                      * 
                      */
                     int64_t GetSqlId() const;
@@ -134,13 +134,13 @@ namespace TencentCloud
                     bool m_sqlTypeHasBeenSet;
 
                     /**
-                     * SQL模版内容。
+                     * SQL模板内容。
                      */
                     std::string m_sqlTemplate;
                     bool m_sqlTemplateHasBeenSet;
 
                     /**
-                     * SQL模版ID。
+                     * SQL模板ID。
                      */
                     int64_t m_sqlId;
                     bool m_sqlIdHasBeenSet;

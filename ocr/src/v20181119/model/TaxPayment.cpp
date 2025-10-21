@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace std;
 
 TaxPayment::TaxPayment() :
     m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_tableItemsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome TaxPayment::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("TableItems") && !value["TableItems"].IsNull())
+    {
+        if (!value["TableItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaxPayment.TableItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TableItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OtherInvoiceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tableItems.push_back(item);
+        }
+        m_tableItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void TaxPayment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tableItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tableItems.begin(); itr != m_tableItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void TaxPayment::SetContent(const vector<OtherInvoiceItem>& _content)
 bool TaxPayment::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<OtherInvoiceList> TaxPayment::GetTableItems() const
+{
+    return m_tableItems;
+}
+
+void TaxPayment::SetTableItems(const vector<OtherInvoiceList>& _tableItems)
+{
+    m_tableItems = _tableItems;
+    m_tableItemsHasBeenSet = true;
+}
+
+bool TaxPayment::TableItemsHasBeenSet() const
+{
+    return m_tableItemsHasBeenSet;
 }
 

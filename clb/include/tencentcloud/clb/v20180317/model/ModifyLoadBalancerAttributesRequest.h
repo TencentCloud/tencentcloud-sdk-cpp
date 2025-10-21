@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -224,6 +224,27 @@ namespace TencentCloud
                      */
                     bool ModifyClassicDomainHasBeenSet() const;
 
+                    /**
+                     * 获取关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。
+                     * @return AssociateEndpoint 关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。
+                     * 
+                     */
+                    std::string GetAssociateEndpoint() const;
+
+                    /**
+                     * 设置关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。
+                     * @param _associateEndpoint 关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。
+                     * 
+                     */
+                    void SetAssociateEndpoint(const std::string& _associateEndpoint);
+
+                    /**
+                     * 判断参数 AssociateEndpoint 是否已赋值
+                     * @return AssociateEndpoint 是否已赋值
+                     * 
+                     */
+                    bool AssociateEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,6 +297,12 @@ namespace TencentCloud
                      */
                     bool m_modifyClassicDomain;
                     bool m_modifyClassicDomainHasBeenSet;
+
+                    /**
+                     * 关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。
+                     */
+                    std::string m_associateEndpoint;
+                    bool m_associateEndpointHasBeenSet;
 
                 };
             }

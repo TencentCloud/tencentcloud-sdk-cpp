@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ ProcessImageRequest::ProcessImageRequest() :
     m_inputInfoHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
+    m_outputPathHasBeenSet(false),
     m_imageTaskHasBeenSet(false)
 {
 }
@@ -61,6 +62,14 @@ string ProcessImageRequest::ToJsonString() const
         string key = "OutputDir";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outputDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageTaskHasBeenSet)
@@ -126,6 +135,22 @@ void ProcessImageRequest::SetOutputDir(const string& _outputDir)
 bool ProcessImageRequest::OutputDirHasBeenSet() const
 {
     return m_outputDirHasBeenSet;
+}
+
+string ProcessImageRequest::GetOutputPath() const
+{
+    return m_outputPath;
+}
+
+void ProcessImageRequest::SetOutputPath(const string& _outputPath)
+{
+    m_outputPath = _outputPath;
+    m_outputPathHasBeenSet = true;
+}
+
+bool ProcessImageRequest::OutputPathHasBeenSet() const
+{
+    return m_outputPathHasBeenSet;
 }
 
 ImageTaskInput ProcessImageRequest::GetImageTask() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取日志时间戳
-                     * @return Timestamp 日志时间戳
+                     * 获取日志时间戳，单位毫秒
+                     * @return Timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置日志时间戳
-                     * @param _timestamp 日志时间戳
+                     * 设置日志时间戳，单位毫秒
+                     * @param _timestamp 日志时间戳，单位毫秒
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 日志时间戳
+                     * 日志时间戳，单位毫秒
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

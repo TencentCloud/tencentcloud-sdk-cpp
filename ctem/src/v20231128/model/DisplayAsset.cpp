@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,11 @@ DisplayAsset::DisplayAsset() :
     m_provinceHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_ispHasBeenSet(false),
-    m_displayToolCommonHasBeenSet(false)
+    m_displayToolCommonHasBeenSet(false),
+    m_portsHasBeenSet(false),
+    m_servicesHasBeenSet(false),
+    m_domainsHasBeenSet(false),
+    m_lastModifyHasBeenSet(false)
 {
 }
 
@@ -124,6 +128,46 @@ CoreInternalOutcome DisplayAsset::Deserialize(const rapidjson::Value &value)
         m_displayToolCommonHasBeenSet = true;
     }
 
+    if (value.HasMember("Ports") && !value["Ports"].IsNull())
+    {
+        if (!value["Ports"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.Ports` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ports = string(value["Ports"].GetString());
+        m_portsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Services") && !value["Services"].IsNull())
+    {
+        if (!value["Services"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.Services` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_services = string(value["Services"].GetString());
+        m_servicesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domains") && !value["Domains"].IsNull())
+    {
+        if (!value["Domains"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.Domains` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domains = string(value["Domains"].GetString());
+        m_domainsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastModify") && !value["LastModify"].IsNull())
+    {
+        if (!value["LastModify"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.LastModify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastModify = string(value["LastModify"].GetString());
+        m_lastModifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +238,38 @@ void DisplayAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_displayToolCommon.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_portsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ports";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ports.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_servicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Services";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_services.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domains.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastModifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastModify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastModify.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +401,69 @@ void DisplayAsset::SetDisplayToolCommon(const DisplayToolCommon& _displayToolCom
 bool DisplayAsset::DisplayToolCommonHasBeenSet() const
 {
     return m_displayToolCommonHasBeenSet;
+}
+
+string DisplayAsset::GetPorts() const
+{
+    return m_ports;
+}
+
+void DisplayAsset::SetPorts(const string& _ports)
+{
+    m_ports = _ports;
+    m_portsHasBeenSet = true;
+}
+
+bool DisplayAsset::PortsHasBeenSet() const
+{
+    return m_portsHasBeenSet;
+}
+
+string DisplayAsset::GetServices() const
+{
+    return m_services;
+}
+
+void DisplayAsset::SetServices(const string& _services)
+{
+    m_services = _services;
+    m_servicesHasBeenSet = true;
+}
+
+bool DisplayAsset::ServicesHasBeenSet() const
+{
+    return m_servicesHasBeenSet;
+}
+
+string DisplayAsset::GetDomains() const
+{
+    return m_domains;
+}
+
+void DisplayAsset::SetDomains(const string& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool DisplayAsset::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
+}
+
+string DisplayAsset::GetLastModify() const
+{
+    return m_lastModify;
+}
+
+void DisplayAsset::SetLastModify(const string& _lastModify)
+{
+    m_lastModify = _lastModify;
+    m_lastModifyHasBeenSet = true;
+}
+
+bool DisplayAsset::LastModifyHasBeenSet() const
+{
+    return m_lastModifyHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/SubtitlePosition.h>
 
 
 namespace TencentCloud
@@ -91,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginSubtitlePath 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginSubtitlePath() const;
 
                     /**
                      * 设置基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originSubtitlePath 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginSubtitlePath(const std::string& _originSubtitlePath);
@@ -116,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranslateSubtitlePath 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranslateSubtitlePath() const;
 
                     /**
                      * 设置基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _translateSubtitlePath 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranslateSubtitlePath(const std::string& _translateSubtitlePath);
@@ -138,6 +131,81 @@ namespace TencentCloud
                      * 
                      */
                     bool TranslateSubtitlePathHasBeenSet() const;
+
+                    /**
+                     * 获取擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubtitlePosition GetSubtitlePos() const;
+
+                    /**
+                     * 设置擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitlePos(const SubtitlePosition& _subtitlePos);
+
+                    /**
+                     * 判断参数 SubtitlePos 是否已赋值
+                     * @return SubtitlePos 是否已赋值
+                     * 
+                     */
+                    bool SubtitlePosHasBeenSet() const;
+
+                    /**
+                     * 获取音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoiceClonedVideo 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoiceClonedVideo() const;
+
+                    /**
+                     * 设置音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voiceClonedVideo 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoiceClonedVideo(const std::string& _voiceClonedVideo);
+
+                    /**
+                     * 判断参数 VoiceClonedVideo 是否已赋值
+                     * @return VoiceClonedVideo 是否已赋值
+                     * 
+                     */
+                    bool VoiceClonedVideoHasBeenSet() const;
+
+                    /**
+                     * 获取音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoiceClonedMarkFile 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoiceClonedMarkFile() const;
+
+                    /**
+                     * 设置音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voiceClonedMarkFile 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoiceClonedMarkFile(const std::string& _voiceClonedMarkFile);
+
+                    /**
+                     * 判断参数 VoiceClonedMarkFile 是否已赋值
+                     * @return VoiceClonedMarkFile 是否已赋值
+                     * 
+                     */
+                    bool VoiceClonedMarkFileHasBeenSet() const;
 
                 private:
 
@@ -155,17 +223,36 @@ namespace TencentCloud
 
                     /**
                      * 基于画面提取的字幕文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originSubtitlePath;
                     bool m_originSubtitlePathHasBeenSet;
 
                     /**
                      * 基于画面提取的字幕翻译文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_translateSubtitlePath;
                     bool m_translateSubtitlePathHasBeenSet;
+
+                    /**
+                     * 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubtitlePosition m_subtitlePos;
+                    bool m_subtitlePosHasBeenSet;
+
+                    /**
+                     * 音色克隆后的视频文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voiceClonedVideo;
+                    bool m_voiceClonedVideoHasBeenSet;
+
+                    /**
+                     * 音色克隆的标注文件地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voiceClonedMarkFile;
+                    bool m_voiceClonedMarkFileHasBeenSet;
 
                 };
             }

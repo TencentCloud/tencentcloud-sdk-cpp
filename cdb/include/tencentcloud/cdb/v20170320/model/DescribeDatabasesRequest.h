@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次请求数量，默认值为20，最小值为1，最大值为100。
-                     * @return Limit 单次请求数量，默认值为20，最小值为1，最大值为100。
+                     * 获取单次请求数量，默认值为20，最小值为1，最大值为5000。
+                     * @return Limit 单次请求数量，默认值为20，最小值为1，最大值为5000。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求数量，默认值为20，最小值为1，最大值为100。
-                     * @param _limit 单次请求数量，默认值为20，最小值为1，最大值为100。
+                     * 设置单次请求数量，默认值为20，最小值为1，最大值为5000。
+                     * @param _limit 单次请求数量，默认值为20，最小值为1，最大值为5000。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次请求数量，默认值为20，最小值为1，最大值为100。
+                     * 单次请求数量，默认值为20，最小值为1，最大值为5000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

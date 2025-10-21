@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,34 @@ namespace TencentCloud
                      */
                     bool SealIdHasBeenSet() const;
 
+                    /**
+                     * 获取人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * @return SealOperatorVerifyPath 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * 
+                     */
+                    std::string GetSealOperatorVerifyPath() const;
+
+                    /**
+                     * 判断参数 SealOperatorVerifyPath 是否已赋值
+                     * @return SealOperatorVerifyPath 是否已赋值
+                     * 
+                     */
+                    bool SealOperatorVerifyPathHasBeenSet() const;
+
+                    /**
+                     * 获取人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * @return SealOperatorVerifyQrcodeUrl 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * 
+                     */
+                    std::string GetSealOperatorVerifyQrcodeUrl() const;
+
+                    /**
+                     * 判断参数 SealOperatorVerifyQrcodeUrl 是否已赋值
+                     * @return SealOperatorVerifyQrcodeUrl 是否已赋值
+                     * 
+                     */
+                    bool SealOperatorVerifyQrcodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +98,18 @@ namespace TencentCloud
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
+
+                    /**
+                     * 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     */
+                    std::string m_sealOperatorVerifyPath;
+                    bool m_sealOperatorVerifyPathHasBeenSet;
+
+                    /**
+                     * 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     */
+                    std::string m_sealOperatorVerifyQrcodeUrl;
+                    bool m_sealOperatorVerifyQrcodeUrlHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2620,6 +2620,49 @@ OrganizationClient::DescribeOrganizationMembersOutcomeCallable OrganizationClien
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcome OrganizationClient::DescribeOrganizationMembersAuthPolicy(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationMembersAuthPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationMembersAuthPolicyResponse rsp = DescribeOrganizationMembersAuthPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationMembersAuthPolicyOutcome(rsp);
+        else
+            return DescribeOrganizationMembersAuthPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationMembersAuthPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationMembersAuthPolicyAsync(const DescribeOrganizationMembersAuthPolicyRequest& request, const DescribeOrganizationMembersAuthPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationMembersAuthPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationMembersAuthPolicyOutcomeCallable OrganizationClient::DescribeOrganizationMembersAuthPolicyCallable(const DescribeOrganizationMembersAuthPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationMembersAuthPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationMembersAuthPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationNodesOutcome OrganizationClient::DescribeOrganizationNodes(const DescribeOrganizationNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationNodes");
@@ -2742,6 +2785,49 @@ OrganizationClient::DescribePolicyConfigOutcomeCallable OrganizationClient::Desc
         [this, request]()
         {
             return this->DescribePolicyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribeResourceToShareMemberOutcome OrganizationClient::DescribeResourceToShareMember(const DescribeResourceToShareMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceToShareMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceToShareMemberResponse rsp = DescribeResourceToShareMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceToShareMemberOutcome(rsp);
+        else
+            return DescribeResourceToShareMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceToShareMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeResourceToShareMemberAsync(const DescribeResourceToShareMemberRequest& request, const DescribeResourceToShareMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceToShareMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeResourceToShareMemberOutcomeCallable OrganizationClient::DescribeResourceToShareMemberCallable(const DescribeResourceToShareMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceToShareMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceToShareMember(request);
         }
     );
 

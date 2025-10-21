@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ SubmitTemplateToVideoJobRequest::SubmitTemplateToVideoJobRequest() :
     m_templateHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_logoAddHasBeenSet(false),
-    m_logoParamHasBeenSet(false)
+    m_logoParamHasBeenSet(false),
+    m_resolutionHasBeenSet(false),
+    m_bGMHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,22 @@ string SubmitTemplateToVideoJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logoParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bGMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BGM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bGM, allocator);
     }
 
 
@@ -147,6 +165,38 @@ void SubmitTemplateToVideoJobRequest::SetLogoParam(const LogoParam& _logoParam)
 bool SubmitTemplateToVideoJobRequest::LogoParamHasBeenSet() const
 {
     return m_logoParamHasBeenSet;
+}
+
+string SubmitTemplateToVideoJobRequest::GetResolution() const
+{
+    return m_resolution;
+}
+
+void SubmitTemplateToVideoJobRequest::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool SubmitTemplateToVideoJobRequest::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
+}
+
+bool SubmitTemplateToVideoJobRequest::GetBGM() const
+{
+    return m_bGM;
+}
+
+void SubmitTemplateToVideoJobRequest::SetBGM(const bool& _bGM)
+{
+    m_bGM = _bGM;
+    m_bGMHasBeenSet = true;
+}
+
+bool SubmitTemplateToVideoJobRequest::BGMHasBeenSet() const
+{
+    return m_bGMHasBeenSet;
 }
 
 

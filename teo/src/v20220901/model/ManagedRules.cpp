@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ ManagedRules::ManagedRules() :
     m_detectionOnlyHasBeenSet(false),
     m_semanticAnalysisHasBeenSet(false),
     m_autoUpdateHasBeenSet(false),
-    m_managedRuleGroupsHasBeenSet(false)
+    m_managedRuleGroupsHasBeenSet(false),
+    m_frequentScanningProtectionHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,23 @@ CoreInternalOutcome ManagedRules::Deserialize(const rapidjson::Value &value)
         m_managedRuleGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("FrequentScanningProtection") && !value["FrequentScanningProtection"].IsNull())
+    {
+        if (!value["FrequentScanningProtection"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManagedRules.FrequentScanningProtection` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_frequentScanningProtection.Deserialize(value["FrequentScanningProtection"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_frequentScanningProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +172,15 @@ void ManagedRules::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_frequentScanningProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrequentScanningProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_frequentScanningProtection.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -237,5 +264,21 @@ void ManagedRules::SetManagedRuleGroups(const vector<ManagedRuleGroup>& _managed
 bool ManagedRules::ManagedRuleGroupsHasBeenSet() const
 {
     return m_managedRuleGroupsHasBeenSet;
+}
+
+FrequentScanningProtection ManagedRules::GetFrequentScanningProtection() const
+{
+    return m_frequentScanningProtection;
+}
+
+void ManagedRules::SetFrequentScanningProtection(const FrequentScanningProtection& _frequentScanningProtection)
+{
+    m_frequentScanningProtection = _frequentScanningProtection;
+    m_frequentScanningProtectionHasBeenSet = true;
+}
+
+bool ManagedRules::FrequentScanningProtectionHasBeenSet() const
+{
+    return m_frequentScanningProtectionHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,9 @@ ListInstancesRequest::ListInstancesRequest() :
     m_executorGroupIdListHasBeenSet(false),
     m_startTimeFromHasBeenSet(false),
     m_startTimeToHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_lastUpdateTimeFromHasBeenSet(false),
+    m_lastUpdateTimeToHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,22 @@ string ListInstancesRequest::ToJsonString() const
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastUpdateTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lastUpdateTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastUpdateTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lastUpdateTimeTo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -549,6 +567,38 @@ void ListInstancesRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool ListInstancesRequest::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string ListInstancesRequest::GetLastUpdateTimeFrom() const
+{
+    return m_lastUpdateTimeFrom;
+}
+
+void ListInstancesRequest::SetLastUpdateTimeFrom(const string& _lastUpdateTimeFrom)
+{
+    m_lastUpdateTimeFrom = _lastUpdateTimeFrom;
+    m_lastUpdateTimeFromHasBeenSet = true;
+}
+
+bool ListInstancesRequest::LastUpdateTimeFromHasBeenSet() const
+{
+    return m_lastUpdateTimeFromHasBeenSet;
+}
+
+string ListInstancesRequest::GetLastUpdateTimeTo() const
+{
+    return m_lastUpdateTimeTo;
+}
+
+void ListInstancesRequest::SetLastUpdateTimeTo(const string& _lastUpdateTimeTo)
+{
+    m_lastUpdateTimeTo = _lastUpdateTimeTo;
+    m_lastUpdateTimeToHasBeenSet = true;
+}
+
+bool ListInstancesRequest::LastUpdateTimeToHasBeenSet() const
+{
+    return m_lastUpdateTimeToHasBeenSet;
 }
 
 

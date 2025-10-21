@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ MQTTClientSubscription::MQTTClientSubscription() :
     m_topicFilterHasBeenSet(false),
     m_qosHasBeenSet(false),
     m_lagHasBeenSet(false),
-    m_inflightHasBeenSet(false)
+    m_inflightHasBeenSet(false),
+    m_userPropertiesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome MQTTClientSubscription::Deserialize(const rapidjson::Value &
         m_inflightHasBeenSet = true;
     }
 
+    if (value.HasMember("UserProperties") && !value["UserProperties"].IsNull())
+    {
+        if (!value["UserProperties"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MQTTClientSubscription.UserProperties` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserProperties"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubscriptionUserProperty item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userProperties.push_back(item);
+        }
+        m_userPropertiesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void MQTTClientSubscription::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Inflight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inflight, allocator);
+    }
+
+    if (m_userPropertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserProperties";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userProperties.begin(); itr != m_userProperties.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void MQTTClientSubscription::SetInflight(const int64_t& _inflight)
 bool MQTTClientSubscription::InflightHasBeenSet() const
 {
     return m_inflightHasBeenSet;
+}
+
+vector<SubscriptionUserProperty> MQTTClientSubscription::GetUserProperties() const
+{
+    return m_userProperties;
+}
+
+void MQTTClientSubscription::SetUserProperties(const vector<SubscriptionUserProperty>& _userProperties)
+{
+    m_userProperties = _userProperties;
+    m_userPropertiesHasBeenSet = true;
+}
+
+bool MQTTClientSubscription::UserPropertiesHasBeenSet() const
+{
+    return m_userPropertiesHasBeenSet;
 }
 

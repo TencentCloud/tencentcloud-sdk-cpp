@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ Operation::Operation() :
     m_tasksHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_rollbackTagHasBeenSet(false),
-    m_subAccountUinHasBeenSet(false)
+    m_subAccountUinHasBeenSet(false),
+    m_autoScaleTagHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
         m_subAccountUinHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoScaleTag") && !value["AutoScaleTag"].IsNull())
+    {
+        if (!value["AutoScaleTag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Operation.AutoScaleTag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoScaleTag = value["AutoScaleTag"].GetUint64();
+        m_autoScaleTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void Operation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoScaleTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoScaleTag, allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void Operation::SetSubAccountUin(const string& _subAccountUin)
 bool Operation::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+uint64_t Operation::GetAutoScaleTag() const
+{
+    return m_autoScaleTag;
+}
+
+void Operation::SetAutoScaleTag(const uint64_t& _autoScaleTag)
+{
+    m_autoScaleTag = _autoScaleTag;
+    m_autoScaleTagHasBeenSet = true;
+}
+
+bool Operation::AutoScaleTagHasBeenSet() const
+{
+    return m_autoScaleTagHasBeenSet;
 }
 

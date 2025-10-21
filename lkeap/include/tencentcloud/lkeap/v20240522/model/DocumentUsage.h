@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,69 @@ namespace TencentCloud
                      */
                     bool MllmTokensHasBeenSet() const;
 
+                    /**
+                     * 获取解析成功页数
+                     * @return SuccessPageNum 解析成功页数
+                     * 
+                     */
+                    int64_t GetSuccessPageNum() const;
+
+                    /**
+                     * 设置解析成功页数
+                     * @param _successPageNum 解析成功页数
+                     * 
+                     */
+                    void SetSuccessPageNum(const int64_t& _successPageNum);
+
+                    /**
+                     * 判断参数 SuccessPageNum 是否已赋值
+                     * @return SuccessPageNum 是否已赋值
+                     * 
+                     */
+                    bool SuccessPageNumHasBeenSet() const;
+
+                    /**
+                     * 获取解析失败页数
+                     * @return FailPageNum 解析失败页数
+                     * 
+                     */
+                    int64_t GetFailPageNum() const;
+
+                    /**
+                     * 设置解析失败页数
+                     * @param _failPageNum 解析失败页数
+                     * 
+                     */
+                    void SetFailPageNum(const int64_t& _failPageNum);
+
+                    /**
+                     * 判断参数 FailPageNum 是否已赋值
+                     * @return FailPageNum 是否已赋值
+                     * 
+                     */
+                    bool FailPageNumHasBeenSet() const;
+
+                    /**
+                     * 获取文件大小，单位：字节
+                     * @return FileSize 文件大小，单位：字节
+                     * 
+                     */
+                    int64_t GetFileSize() const;
+
+                    /**
+                     * 设置文件大小，单位：字节
+                     * @param _fileSize 文件大小，单位：字节
+                     * 
+                     */
+                    void SetFileSize(const int64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     * 
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +245,24 @@ namespace TencentCloud
                      */
                     int64_t m_mllmTokens;
                     bool m_mllmTokensHasBeenSet;
+
+                    /**
+                     * 解析成功页数
+                     */
+                    int64_t m_successPageNum;
+                    bool m_successPageNumHasBeenSet;
+
+                    /**
+                     * 解析失败页数
+                     */
+                    int64_t m_failPageNum;
+                    bool m_failPageNumHasBeenSet;
+
+                    /**
+                     * 文件大小，单位：字节
+                     */
+                    int64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

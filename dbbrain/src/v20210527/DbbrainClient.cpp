@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1717,6 +1717,49 @@ DbbrainClient::DescribeHealthScoreOutcomeCallable DbbrainClient::DescribeHealthS
     return task->get_future();
 }
 
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcome DbbrainClient::DescribeHealthScoreTimeSeries(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthScoreTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthScoreTimeSeriesResponse rsp = DescribeHealthScoreTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthScoreTimeSeriesOutcome(rsp);
+        else
+            return DescribeHealthScoreTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthScoreTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeHealthScoreTimeSeriesAsync(const DescribeHealthScoreTimeSeriesRequest& request, const DescribeHealthScoreTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthScoreTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeHealthScoreTimeSeriesOutcomeCallable DbbrainClient::DescribeHealthScoreTimeSeriesCallable(const DescribeHealthScoreTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthScoreTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthScoreTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeIndexRecommendAggregationSlowLogsOutcome DbbrainClient::DescribeIndexRecommendAggregationSlowLogs(const DescribeIndexRecommendAggregationSlowLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIndexRecommendAggregationSlowLogs");
@@ -1839,6 +1882,49 @@ DbbrainClient::DescribeMailProfileOutcomeCallable DbbrainClient::DescribeMailPro
         [this, request]()
         {
             return this->DescribeMailProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeMetricTopProxiesOutcome DbbrainClient::DescribeMetricTopProxies(const DescribeMetricTopProxiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMetricTopProxies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMetricTopProxiesResponse rsp = DescribeMetricTopProxiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMetricTopProxiesOutcome(rsp);
+        else
+            return DescribeMetricTopProxiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMetricTopProxiesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMetricTopProxiesAsync(const DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMetricTopProxies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeMetricTopProxiesOutcomeCallable DbbrainClient::DescribeMetricTopProxiesCallable(const DescribeMetricTopProxiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMetricTopProxiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMetricTopProxies(request);
         }
     );
 
@@ -2312,6 +2398,49 @@ DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRed
         [this, request]()
         {
             return this->DescribeRedisTopBigKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcome DbbrainClient::DescribeRedisTopCostCommands(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopCostCommands");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopCostCommandsResponse rsp = DescribeRedisTopCostCommandsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopCostCommandsOutcome(rsp);
+        else
+            return DescribeRedisTopCostCommandsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopCostCommandsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopCostCommandsAsync(const DescribeRedisTopCostCommandsRequest& request, const DescribeRedisTopCostCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopCostCommands(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopCostCommandsOutcomeCallable DbbrainClient::DescribeRedisTopCostCommandsCallable(const DescribeRedisTopCostCommandsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopCostCommandsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopCostCommands(request);
         }
     );
 

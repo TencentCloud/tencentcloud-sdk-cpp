@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ VolumeInfo::VolumeInfo() :
     m_volumeNameHasBeenSet(false),
     m_volumeConfigHasBeenSet(false),
     m_configMapOptionsHasBeenSet(false),
-    m_emptyDirOptionHasBeenSet(false)
+    m_emptyDirOptionHasBeenSet(false),
+    m_volumeClaimTemplateOptionHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,23 @@ CoreInternalOutcome VolumeInfo::Deserialize(const rapidjson::Value &value)
         m_emptyDirOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("VolumeClaimTemplateOption") && !value["VolumeClaimTemplateOption"].IsNull())
+    {
+        if (!value["VolumeClaimTemplateOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeInfo.VolumeClaimTemplateOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volumeClaimTemplateOption.Deserialize(value["VolumeClaimTemplateOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeClaimTemplateOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +172,15 @@ void VolumeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_emptyDirOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumeClaimTemplateOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeClaimTemplateOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeClaimTemplateOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -237,5 +264,21 @@ void VolumeInfo::SetEmptyDirOption(const EmptyDirOption& _emptyDirOption)
 bool VolumeInfo::EmptyDirOptionHasBeenSet() const
 {
     return m_emptyDirOptionHasBeenSet;
+}
+
+VolumeClaimTemplatesOption VolumeInfo::GetVolumeClaimTemplateOption() const
+{
+    return m_volumeClaimTemplateOption;
+}
+
+void VolumeInfo::SetVolumeClaimTemplateOption(const VolumeClaimTemplatesOption& _volumeClaimTemplateOption)
+{
+    m_volumeClaimTemplateOption = _volumeClaimTemplateOption;
+    m_volumeClaimTemplateOptionHasBeenSet = true;
+}
+
+bool VolumeInfo::VolumeClaimTemplateOptionHasBeenSet() const
+{
+    return m_volumeClaimTemplateOptionHasBeenSet;
 }
 

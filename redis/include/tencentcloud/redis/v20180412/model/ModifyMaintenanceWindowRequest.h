@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * @return EndTime 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * @param _endTime 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -121,6 +125,7 @@ namespace TencentCloud
 
                     /**
                      * 维护时间窗结束时间，如：19:00。
+**说明：**维护时间窗时长，当前支持：30分钟、1小时、1.5小时、2小时、3小时。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

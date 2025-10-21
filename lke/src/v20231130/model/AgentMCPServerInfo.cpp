@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ AgentMCPServerInfo::AgentMCPServerInfo() :
     m_mcpServerUrlHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_sseReadTimeoutHasBeenSet(false)
+    m_sseReadTimeoutHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome AgentMCPServerInfo::Deserialize(const rapidjson::Value &valu
         m_sseReadTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("Query") && !value["Query"].IsNull())
+    {
+        if (!value["Query"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentMCPServerInfo.Query` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Query"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentPluginQuery item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_query.push_back(item);
+        }
+        m_queryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +148,21 @@ void AgentMCPServerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SseReadTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sseReadTimeout, allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_query.begin(); itr != m_query.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -194,5 +230,21 @@ void AgentMCPServerInfo::SetSseReadTimeout(const int64_t& _sseReadTimeout)
 bool AgentMCPServerInfo::SseReadTimeoutHasBeenSet() const
 {
     return m_sseReadTimeoutHasBeenSet;
+}
+
+vector<AgentPluginQuery> AgentMCPServerInfo::GetQuery() const
+{
+    return m_query;
+}
+
+void AgentMCPServerInfo::SetQuery(const vector<AgentPluginQuery>& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool AgentMCPServerInfo::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
 }
 

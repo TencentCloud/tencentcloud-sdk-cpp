@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/Task.h
   include/tencentcloud/batch/v20170312/model/InstanceTypeConfig.h
   include/tencentcloud/batch/v20170312/model/CommandLine.h
+  include/tencentcloud/batch/v20170312/model/DescribeJobMonitorDataResponse.h
   include/tencentcloud/batch/v20170312/model/Externals.h
   include/tencentcloud/batch/v20170312/model/TerminateComputeNodesResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvActivitiesResponse.h
@@ -44,6 +45,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/MountDataDisk.h
   include/tencentcloud/batch/v20170312/model/TaskView.h
   include/tencentcloud/batch/v20170312/model/Tag.h
+  include/tencentcloud/batch/v20170312/model/EnhancedService.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvResponse.h
   include/tencentcloud/batch/v20170312/model/TerminateJobRequest.h
   include/tencentcloud/batch/v20170312/model/DetachInstancesResponse.h
@@ -63,6 +65,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/TerminateJobResponse.h
   include/tencentcloud/batch/v20170312/model/ComputeEnvCreateInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosRequest.h
+  include/tencentcloud/batch/v20170312/model/DataPointView.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvRequest.h
   include/tencentcloud/batch/v20170312/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskTemplatesResponse.h
@@ -81,12 +84,13 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DetachInstancesRequest.h
   include/tencentcloud/batch/v20170312/model/Instance.h
   include/tencentcloud/batch/v20170312/model/OutputMapping.h
-  include/tencentcloud/batch/v20170312/model/EnhancedService.h
+  include/tencentcloud/batch/v20170312/model/DescribeJobMonitorDataRequest.h
   include/tencentcloud/batch/v20170312/model/RunAutomationServiceEnabled.h
   include/tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosResponse.h
   include/tencentcloud/batch/v20170312/model/RunSecurityServiceEnabled.h
   include/tencentcloud/batch/v20170312/model/DescribeJobRequest.h
+  include/tencentcloud/batch/v20170312/model/Dimension.h
   include/tencentcloud/batch/v20170312/model/RedirectInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesResponse.h
   include/tencentcloud/batch/v20170312/model/ModifyTaskTemplateResponse.h
@@ -156,6 +160,7 @@ set(batch_src
   src/v20170312/model/Task.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
   src/v20170312/model/CommandLine.cpp
+  src/v20170312/model/DescribeJobMonitorDataResponse.cpp
   src/v20170312/model/Externals.cpp
   src/v20170312/model/TerminateComputeNodesResponse.cpp
   src/v20170312/model/DescribeComputeEnvActivitiesResponse.cpp
@@ -164,6 +169,7 @@ set(batch_src
   src/v20170312/model/MountDataDisk.cpp
   src/v20170312/model/TaskView.cpp
   src/v20170312/model/Tag.cpp
+  src/v20170312/model/EnhancedService.cpp
   src/v20170312/model/DescribeComputeEnvResponse.cpp
   src/v20170312/model/TerminateJobRequest.cpp
   src/v20170312/model/DetachInstancesResponse.cpp
@@ -183,6 +189,7 @@ set(batch_src
   src/v20170312/model/TerminateJobResponse.cpp
   src/v20170312/model/ComputeEnvCreateInfo.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfosRequest.cpp
+  src/v20170312/model/DataPointView.cpp
   src/v20170312/model/DescribeComputeEnvRequest.cpp
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
   src/v20170312/model/DescribeTaskTemplatesResponse.cpp
@@ -201,12 +208,13 @@ set(batch_src
   src/v20170312/model/DetachInstancesRequest.cpp
   src/v20170312/model/Instance.cpp
   src/v20170312/model/OutputMapping.cpp
-  src/v20170312/model/EnhancedService.cpp
+  src/v20170312/model/DescribeJobMonitorDataRequest.cpp
   src/v20170312/model/RunAutomationServiceEnabled.cpp
   src/v20170312/model/DescribeJobSubmitInfoResponse.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfosResponse.cpp
   src/v20170312/model/RunSecurityServiceEnabled.cpp
   src/v20170312/model/DescribeJobRequest.cpp
+  src/v20170312/model/Dimension.cpp
   src/v20170312/model/RedirectInfo.cpp
   src/v20170312/model/DescribeInstanceCategoriesResponse.cpp
   src/v20170312/model/ModifyTaskTemplateResponse.cpp

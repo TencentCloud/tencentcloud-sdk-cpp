@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyClusterSlaveZoneRequest::ModifyClusterSlaveZoneRequest() :
     m_clusterIdHasBeenSet(false),
     m_oldSlaveZoneHasBeenSet(false),
     m_newSlaveZoneHasBeenSet(false),
-    m_binlogSyncWayHasBeenSet(false)
+    m_binlogSyncWayHasBeenSet(false),
+    m_semiSyncTimeoutHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyClusterSlaveZoneRequest::ToJsonString() const
         string key = "BinlogSyncWay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_binlogSyncWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_semiSyncTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemiSyncTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_semiSyncTimeout, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyClusterSlaveZoneRequest::SetBinlogSyncWay(const string& _binlogSyncWa
 bool ModifyClusterSlaveZoneRequest::BinlogSyncWayHasBeenSet() const
 {
     return m_binlogSyncWayHasBeenSet;
+}
+
+int64_t ModifyClusterSlaveZoneRequest::GetSemiSyncTimeout() const
+{
+    return m_semiSyncTimeout;
+}
+
+void ModifyClusterSlaveZoneRequest::SetSemiSyncTimeout(const int64_t& _semiSyncTimeout)
+{
+    m_semiSyncTimeout = _semiSyncTimeout;
+    m_semiSyncTimeoutHasBeenSet = true;
+}
+
+bool ModifyClusterSlaveZoneRequest::SemiSyncTimeoutHasBeenSet() const
+{
+    return m_semiSyncTimeoutHasBeenSet;
 }
 
 

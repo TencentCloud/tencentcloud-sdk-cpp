@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。
+                     * @return ClusterId 集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。
+                     * @param _clusterId 集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NamespaceDescHasBeenSet() const;
 
                     /**
-                     * 获取命名空间资源类型(默认值为DEF)
-                     * @return NamespaceResourceType 命名空间资源类型(默认值为DEF)
+                     * 获取命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
+                     * @return NamespaceResourceType 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      * 
                      */
                     std::string GetNamespaceResourceType() const;
 
                     /**
-                     * 设置命名空间资源类型(默认值为DEF)
-                     * @param _namespaceResourceType 命名空间资源类型(默认值为DEF)
+                     * 设置命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
+                     * @param _namespaceResourceType 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      * 
                      */
                     void SetNamespaceResourceType(const std::string& _namespaceResourceType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NamespaceResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
-                     * @return NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 获取命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
+                     * @return NamespaceType 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      * 
                      */
                     std::string GetNamespaceType() const;
 
                     /**
-                     * 设置是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
-                     * @param _namespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 设置命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
+                     * @param _namespaceType 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      * 
                      */
                     void SetNamespaceType(const std::string& _namespaceType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool NamespaceTypeHasBeenSet() const;
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。
+                     * @return NamespaceId 命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。
+                     * @param _namespaceId 命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool IsHaEnableHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的数据集ID
-                     * @return ProgramId 需要绑定的数据集ID
+                     * 获取需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
+                     * @return ProgramId 需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
-                     * 设置需要绑定的数据集ID
-                     * @param _programId 需要绑定的数据集ID
+                     * 设置需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
+                     * @param _programId 需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ProgramIdHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的数据集ID
-                     * @return ProgramIdList 需要绑定的数据集ID
+                     * 获取需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
+                     * @return ProgramIdList 需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置需要绑定的数据集ID
-                     * @param _programIdList 需要绑定的数据集ID
+                     * 设置需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
+                     * @param _programIdList 需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool ProgramIdListHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建k8s命名空间标识
+                     * @return CreateK8sNamespaceFlag 是否创建k8s命名空间标识
+                     * 
+                     */
+                    bool GetCreateK8sNamespaceFlag() const;
+
+                    /**
+                     * 设置是否创建k8s命名空间标识
+                     * @param _createK8sNamespaceFlag 是否创建k8s命名空间标识
+                     * 
+                     */
+                    void SetCreateK8sNamespaceFlag(const bool& _createK8sNamespaceFlag);
+
+                    /**
+                     * 判断参数 CreateK8sNamespaceFlag 是否已赋值
+                     * @return CreateK8sNamespaceFlag 是否已赋值
+                     * 
+                     */
+                    bool CreateK8sNamespaceFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,7 +261,7 @@ namespace TencentCloud
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * 集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -252,19 +273,19 @@ namespace TencentCloud
                     bool m_namespaceDescHasBeenSet;
 
                     /**
-                     * 命名空间资源类型(默认值为DEF)
+                     * 命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型
                      */
                     std::string m_namespaceResourceType;
                     bool m_namespaceResourceTypeHasBeenSet;
 
                     /**
-                     * 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间
                      */
                     std::string m_namespaceType;
                     bool m_namespaceTypeHasBeenSet;
 
                     /**
-                     * 命名空间ID
+                     * 命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -276,16 +297,22 @@ namespace TencentCloud
                     bool m_isHaEnableHasBeenSet;
 
                     /**
-                     * 需要绑定的数据集ID
+                     * 需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;
 
                     /**
-                     * 需要绑定的数据集ID
+                     * 需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
+
+                    /**
+                     * 是否创建k8s命名空间标识
+                     */
+                    bool m_createK8sNamespaceFlag;
+                    bool m_createK8sNamespaceFlagHasBeenSet;
 
                 };
             }

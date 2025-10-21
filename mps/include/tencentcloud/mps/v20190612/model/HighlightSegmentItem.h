@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播切片对应直播起始时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置直播切片对应直播起始时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -161,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直播切片对应直播结束时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 直播切片对应直播结束时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置直播切片对应直播结束时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 直播切片对应直播结束时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -183,6 +175,48 @@ namespace TencentCloud
                      * 
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取集锦标题。
+                     * @return Title 集锦标题。
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置集锦标题。
+                     * @param _title 集锦标题。
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取集锦概要。
+                     * @return Summary 集锦概要。
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置集锦概要。
+                     * @param _summary 集锦概要。
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
 
                 private:
 
@@ -213,17 +247,27 @@ namespace TencentCloud
 
                     /**
                      * 直播切片对应直播起始时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 直播切片对应直播结束时间点，采用 ISO 日期格式。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 集锦标题。
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * 集锦概要。
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
 
                 };
             }

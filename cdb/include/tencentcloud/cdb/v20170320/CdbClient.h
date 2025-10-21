@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,6 +197,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstancePasswordComplexityResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeRequest.h>
@@ -283,6 +285,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceLogToCLSRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceLogToCLSResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceModesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
@@ -311,6 +315,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyRemoteBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupVipVportResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h>
@@ -644,6 +650,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePasswordComplexityResponse> DescribeInstancePasswordComplexityOutcome;
+                typedef std::future<DescribeInstancePasswordComplexityOutcome> DescribeInstancePasswordComplexityOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeInstancePasswordComplexityRequest&, DescribeInstancePasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePasswordComplexityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceUpgradeCheckJobResponse> DescribeInstanceUpgradeCheckJobOutcome;
                 typedef std::future<DescribeInstanceUpgradeCheckJobOutcome> DescribeInstanceUpgradeCheckJobOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceUpgradeCheckJobRequest&, DescribeInstanceUpgradeCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUpgradeCheckJobAsyncHandler;
@@ -773,6 +782,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceLogToCLSResponse> ModifyDBInstanceLogToCLSOutcome;
                 typedef std::future<ModifyDBInstanceLogToCLSOutcome> ModifyDBInstanceLogToCLSOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceLogToCLSRequest&, ModifyDBInstanceLogToCLSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceLogToCLSAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceModesResponse> ModifyDBInstanceModesOutcome;
+                typedef std::future<ModifyDBInstanceModesOutcome> ModifyDBInstanceModesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceModesRequest&, ModifyDBInstanceModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceModesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -815,6 +827,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRoGroupInfoResponse> ModifyRoGroupInfoOutcome;
                 typedef std::future<ModifyRoGroupInfoOutcome> ModifyRoGroupInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupInfoRequest&, ModifyRoGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoGroupVipVportResponse> ModifyRoGroupVipVportOutcome;
+                typedef std::future<ModifyRoGroupVipVportOutcome> ModifyRoGroupVipVportOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupVipVportRequest&, ModifyRoGroupVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupVipVportAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTimeWindowResponse> ModifyTimeWindowOutcome;
                 typedef std::future<ModifyTimeWindowOutcome> ModifyTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyTimeWindowRequest&, ModifyTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimeWindowAsyncHandler;
@@ -1224,7 +1239,7 @@ namespace TencentCloud
                 DeleteAuditRuleOutcomeCallable DeleteAuditRuleCallable(const Model::DeleteAuditRuleRequest& request);
 
                 /**
-                 *删除审计规则模板
+                 *本接口（DeleteAuditRuleTemplates）用于删除审计规则模板。
                  * @param req DeleteAuditRuleTemplatesRequest
                  * @return DeleteAuditRuleTemplatesOutcome
                  */
@@ -1233,7 +1248,7 @@ namespace TencentCloud
                 DeleteAuditRuleTemplatesOutcomeCallable DeleteAuditRuleTemplatesCallable(const Model::DeleteAuditRuleTemplatesRequest& request);
 
                 /**
-                 *本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。
+                 *本接口（DeleteBackup）用于删除数据库备份。本接口只支持删除手动发起的备份。
                  * @param req DeleteBackupRequest
                  * @return DeleteBackupOutcome
                  */
@@ -1434,7 +1449,7 @@ namespace TencentCloud
                 DescribeBackupOverviewOutcomeCallable DescribeBackupOverviewCallable(const Model::DescribeBackupOverviewRequest& request);
 
                 /**
-                 *本接口(DescribeBackupSummaries)用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。
+                 *本接口（DescribeBackupSummaries）用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。
                  * @param req DescribeBackupSummariesRequest
                  * @return DescribeBackupSummariesOutcome
                  */
@@ -1569,7 +1584,7 @@ namespace TencentCloud
                 DescribeDBInstanceGTIDOutcomeCallable DescribeDBInstanceGTIDCallable(const Model::DescribeDBInstanceGTIDRequest& request);
 
                 /**
-                 *本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密）。
+                 *本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密），只读实例不支持查询。
                  * @param req DescribeDBInstanceInfoRequest
                  * @return DescribeDBInstanceInfoOutcome
                  */
@@ -1578,7 +1593,7 @@ namespace TencentCloud
                 DescribeDBInstanceInfoOutcomeCallable DescribeDBInstanceInfoCallable(const Model::DescribeDBInstanceInfoRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。
+                 *本接口（DescribeDBInstanceLogToCLS）用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。
                  * @param req DescribeDBInstanceLogToCLSRequest
                  * @return DescribeDBInstanceLogToCLSOutcome
                  */
@@ -1716,6 +1731,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
+                 *该接口（DescribeInstancePasswordComplexity）用于查询实例的密码复杂度参数列表。
+                 * @param req DescribeInstancePasswordComplexityRequest
+                 * @return DescribeInstancePasswordComplexityOutcome
+                 */
+                DescribeInstancePasswordComplexityOutcome DescribeInstancePasswordComplexity(const Model::DescribeInstancePasswordComplexityRequest &request);
+                void DescribeInstancePasswordComplexityAsync(const Model::DescribeInstancePasswordComplexityRequest& request, const DescribeInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePasswordComplexityOutcomeCallable DescribeInstancePasswordComplexityCallable(const Model::DescribeInstancePasswordComplexityRequest& request);
+
+                /**
                  *该接口（DescribeInstanceUpgradeCheckJob）查询实例版本升级校验任务。
                  * @param req DescribeInstanceUpgradeCheckJobRequest
                  * @return DescribeInstanceUpgradeCheckJobOutcome
@@ -1743,7 +1767,8 @@ namespace TencentCloud
                 DescribeLocalBinlogConfigOutcomeCallable DescribeLocalBinlogConfigCallable(const Model::DescribeLocalBinlogConfigRequest& request);
 
                 /**
-                 *该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。
+                 *该接口（DescribeParamTemplateInfo）用于查询参数模板详情。
+说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
                  */
@@ -1825,7 +1850,7 @@ namespace TencentCloud
                 DescribeRollbackRangeTimeOutcomeCallable DescribeRollbackRangeTimeCallable(const Model::DescribeRollbackRangeTimeRequest& request);
 
                 /**
-                 *本接口(DescribeRollbackTaskDetail)用于查询云数据库实例回档任务详情。
+                 *本接口（DescribeRollbackTaskDetail）用于查询云数据库实例回档任务详情。
                  * @param req DescribeRollbackTaskDetailRequest
                  * @return DescribeRollbackTaskDetailOutcome
                  */
@@ -1834,7 +1859,7 @@ namespace TencentCloud
                 DescribeRollbackTaskDetailOutcomeCallable DescribeRollbackTaskDetailCallable(const Model::DescribeRollbackTaskDetailRequest& request);
 
                 /**
-                 *查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。
+                 *本接口（DescribeSSLStatus）用于查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。
                  * @param req DescribeSSLStatusRequest
                  * @return DescribeSSLStatusOutcome
                  */
@@ -1853,7 +1878,8 @@ namespace TencentCloud
                 DescribeSlowLogDataOutcomeCallable DescribeSlowLogDataCallable(const Model::DescribeSlowLogDataRequest& request);
 
                 /**
-                 *本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。说明：若单次查询数据量过大，则有可能响应超时，建议缩短单次查询时间范围，如一小时，避免导致超时。
+                 *本接口（DescribeSlowLogs）用于获取云数据库实例的慢查询日志。
+说明：若单次查询数据量过大，则有可能响应超时，建议缩短单次查询时间范围，如一小时，避免导致超时。
                  * @param req DescribeSlowLogsRequest
                  * @return DescribeSlowLogsOutcome
                  */
@@ -1871,7 +1897,7 @@ namespace TencentCloud
                 DescribeSupportedPrivilegesOutcomeCallable DescribeSupportedPrivilegesCallable(const Model::DescribeSupportedPrivilegesRequest& request);
 
                 /**
-                 *本接口(DescribeTableColumns)用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。
+                 *本接口（DescribeTableColumns）用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。
                  * @param req DescribeTableColumnsRequest
                  * @return DescribeTableColumnsOutcome
                  */
@@ -1889,7 +1915,7 @@ namespace TencentCloud
                 DescribeTablesOutcomeCallable DescribeTablesCallable(const Model::DescribeTablesRequest& request);
 
                 /**
-                 *本接口(DescribeTagsOfInstanceIds)用于获取云数据库实例的标签信息。
+                 *本接口（DescribeTagsOfInstanceIds）用于获取云数据库实例的标签信息。
                  * @param req DescribeTagsOfInstanceIdsRequest
                  * @return DescribeTagsOfInstanceIdsOutcome
                  */
@@ -1934,7 +1960,7 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
-                 *本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。
+                 *本接口（InquiryPriceUpgradeInstances）用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。
                  * @param req InquiryPriceUpgradeInstancesRequest
                  * @return InquiryPriceUpgradeInstancesOutcome
                  */
@@ -2047,7 +2073,7 @@ namespace TencentCloud
                 ModifyAutoRenewFlagOutcomeCallable ModifyAutoRenewFlagCallable(const Model::ModifyAutoRenewFlagRequest& request);
 
                 /**
-                 *本接口(ModifyBackupConfig)用于修改数据库备份配置信息。
+                 *本接口（ModifyBackupConfig）用于修改数据库备份配置信息。
                  * @param req ModifyBackupConfigRequest
                  * @return ModifyBackupConfigOutcome
                  */
@@ -2108,6 +2134,15 @@ namespace TencentCloud
                 ModifyDBInstanceLogToCLSOutcome ModifyDBInstanceLogToCLS(const Model::ModifyDBInstanceLogToCLSRequest &request);
                 void ModifyDBInstanceLogToCLSAsync(const Model::ModifyDBInstanceLogToCLSRequest& request, const ModifyDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceLogToCLSOutcomeCallable ModifyDBInstanceLogToCLSCallable(const Model::ModifyDBInstanceLogToCLSRequest& request);
+
+                /**
+                 *该接口（ModifyDBInstanceModes）用于更改云数据库的模式。
+                 * @param req ModifyDBInstanceModesRequest
+                 * @return ModifyDBInstanceModesOutcome
+                 */
+                ModifyDBInstanceModesOutcome ModifyDBInstanceModes(const Model::ModifyDBInstanceModesRequest &request);
+                void ModifyDBInstanceModesAsync(const Model::ModifyDBInstanceModesRequest& request, const ModifyDBInstanceModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceModesOutcomeCallable ModifyDBInstanceModesCallable(const Model::ModifyDBInstanceModesRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。
@@ -2182,7 +2217,7 @@ namespace TencentCloud
                 ModifyInstanceTagOutcomeCallable ModifyInstanceTagCallable(const Model::ModifyInstanceTagRequest& request);
 
                 /**
-                 *该接口用于修改实例本地binlog保留策略。
+                 *本接口（ModifyLocalBinlogConfig）用于修改实例本地 binlog 保留策略。
                  * @param req ModifyLocalBinlogConfigRequest
                  * @return ModifyLocalBinlogConfigOutcome
                  */
@@ -2238,6 +2273,15 @@ namespace TencentCloud
                 ModifyRoGroupInfoOutcomeCallable ModifyRoGroupInfoCallable(const Model::ModifyRoGroupInfoRequest& request);
 
                 /**
+                 *该接口（ModifyRoGroupVipVport）用于修改Ro组的vip和vport。
+                 * @param req ModifyRoGroupVipVportRequest
+                 * @return ModifyRoGroupVipVportOutcome
+                 */
+                ModifyRoGroupVipVportOutcome ModifyRoGroupVipVport(const Model::ModifyRoGroupVipVportRequest &request);
+                void ModifyRoGroupVipVportAsync(const Model::ModifyRoGroupVipVportRequest& request, const ModifyRoGroupVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoGroupVipVportOutcomeCallable ModifyRoGroupVipVportCallable(const Model::ModifyRoGroupVipVportRequest& request);
+
+                /**
                  *本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。
                  * @param req ModifyTimeWindowRequest
                  * @return ModifyTimeWindowOutcome
@@ -2249,7 +2293,7 @@ namespace TencentCloud
                 /**
                  *本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态，即通过 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询到 Status 值为 5 的实例。
 
-该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，若返回实例为空，则实例资源已全部释放。
+该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，其中5代表已隔离，6代表下线中，7代表已下线。若返回实例为空，则实例资源已全部释放。
 
 注意，实例下线后，相关资源和数据将无法找回，请谨慎操作。
                  * @param req OfflineIsolatedInstancesRequest
@@ -2431,7 +2475,7 @@ namespace TencentCloud
                 StopReplicationOutcomeCallable StopReplicationCallable(const Model::StopReplicationRequest& request);
 
                 /**
-                 *本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeAsyncRequestInfo 查询任务的执行情况。
+                 *本接口（StopRollback）用于撤销实例正在进行的回档任务，该接口返回一个异步任务 ID。撤销结果可以通过 [DescribeAsyncRequestInfo](https://cloud.tencent.com/document/api/236/20410) 查询任务的执行情况。
                  * @param req StopRollbackRequest
                  * @return StopRollbackOutcome
                  */
@@ -2503,7 +2547,7 @@ namespace TencentCloud
                 UpgradeDBInstanceOutcomeCallable UpgradeDBInstanceCallable(const Model::UpgradeDBInstanceRequest& request);
 
                 /**
-                 *本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例等。
+                 *本接口（UpgradeDBInstanceEngineVersion）用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例等。升级前请通过 [SubmitInstanceUpgradeCheckJob](https://cloud.tencent.com/document/product/236/110468) 提交升级检查任务，通过后才能升级。
                  * @param req UpgradeDBInstanceEngineVersionRequest
                  * @return UpgradeDBInstanceEngineVersionOutcome
                  */

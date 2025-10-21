@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gs/v20191118/model/AndroidAppCosInfo.h>
+#include <tencentcloud/gs/v20191118/model/FileCosInfo.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用
-                     * @return CosType Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用
+                     * 获取Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原
+                     * @return CosType Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原
                      * 
                      */
                     std::string GetCosType() const;
 
                     /**
-                     * 设置Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用
-                     * @param _cosType Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用
+                     * 设置Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原
+                     * @param _cosType Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原
                      * 
                      */
                     void SetCosType(const std::string& _cosType);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool CosTypeHasBeenSet() const;
 
                     /**
-                     * 获取云手机 Cos 数据
-                     * @return AndroidAppCosInfo 云手机 Cos 数据
+                     * 获取云手机应用管理 Cos 数据
+                     * @return AndroidAppCosInfo 云手机应用管理 Cos 数据
                      * 
                      */
                     AndroidAppCosInfo GetAndroidAppCosInfo() const;
 
                     /**
-                     * 设置云手机 Cos 数据
-                     * @param _androidAppCosInfo 云手机 Cos 数据
+                     * 设置云手机应用管理 Cos 数据
+                     * @param _androidAppCosInfo 云手机应用管理 Cos 数据
                      * 
                      */
                     void SetAndroidAppCosInfo(const AndroidAppCosInfo& _androidAppCosInfo);
@@ -85,19 +86,46 @@ namespace TencentCloud
                      */
                     bool AndroidAppCosInfoHasBeenSet() const;
 
+                    /**
+                     * 获取云手机文件管理 Cos 数据
+                     * @return AndroidAppFileCosInfo 云手机文件管理 Cos 数据
+                     * 
+                     */
+                    FileCosInfo GetAndroidAppFileCosInfo() const;
+
+                    /**
+                     * 设置云手机文件管理 Cos 数据
+                     * @param _androidAppFileCosInfo 云手机文件管理 Cos 数据
+                     * 
+                     */
+                    void SetAndroidAppFileCosInfo(const FileCosInfo& _androidAppFileCosInfo);
+
+                    /**
+                     * 判断参数 AndroidAppFileCosInfo 是否已赋值
+                     * @return AndroidAppFileCosInfo 是否已赋值
+                     * 
+                     */
+                    bool AndroidAppFileCosInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用
+                     * Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原
                      */
                     std::string m_cosType;
                     bool m_cosTypeHasBeenSet;
 
                     /**
-                     * 云手机 Cos 数据
+                     * 云手机应用管理 Cos 数据
                      */
                     AndroidAppCosInfo m_androidAppCosInfo;
                     bool m_androidAppCosInfoHasBeenSet;
+
+                    /**
+                     * 云手机文件管理 Cos 数据
+                     */
+                    FileCosInfo m_androidAppFileCosInfo;
+                    bool m_androidAppFileCosInfoHasBeenSet;
 
                 };
             }

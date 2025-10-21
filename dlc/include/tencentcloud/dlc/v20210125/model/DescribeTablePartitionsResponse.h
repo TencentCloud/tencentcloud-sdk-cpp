@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/MixedTablePartitions.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取分区信息值
+                     * @return MixedPartitions 分区信息值
+                     * 
+                     */
+                    MixedTablePartitions GetMixedPartitions() const;
+
+                    /**
+                     * 判断参数 MixedPartitions 是否已赋值
+                     * @return MixedPartitions 是否已赋值
+                     * 
+                     */
+                    bool MixedPartitionsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 分区信息值
+                     */
+                    MixedTablePartitions m_mixedPartitions;
+                    bool m_mixedPartitionsHasBeenSet;
 
                 };
             }

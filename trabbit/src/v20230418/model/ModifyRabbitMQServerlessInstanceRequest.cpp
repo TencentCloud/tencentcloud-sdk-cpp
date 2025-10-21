@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ ModifyRabbitMQServerlessInstanceRequest::ModifyRabbitMQServerlessInstanceRequest
     m_instanceIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_traceFlagHasBeenSet(false)
+    m_traceFlagHasBeenSet(false),
+    m_sendReceiveRatioHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyRabbitMQServerlessInstanceRequest::ToJsonString() const
         string key = "TraceFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_traceFlag, allocator);
+    }
+
+    if (m_sendReceiveRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendReceiveRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sendReceiveRatio, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyRabbitMQServerlessInstanceRequest::SetTraceFlag(const bool& _traceFla
 bool ModifyRabbitMQServerlessInstanceRequest::TraceFlagHasBeenSet() const
 {
     return m_traceFlagHasBeenSet;
+}
+
+double ModifyRabbitMQServerlessInstanceRequest::GetSendReceiveRatio() const
+{
+    return m_sendReceiveRatio;
+}
+
+void ModifyRabbitMQServerlessInstanceRequest::SetSendReceiveRatio(const double& _sendReceiveRatio)
+{
+    m_sendReceiveRatio = _sendReceiveRatio;
+    m_sendReceiveRatioHasBeenSet = true;
+}
+
+bool ModifyRabbitMQServerlessInstanceRequest::SendReceiveRatioHasBeenSet() const
+{
+    return m_sendReceiveRatioHasBeenSet;
 }
 
 

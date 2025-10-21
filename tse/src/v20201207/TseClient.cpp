@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2527,6 +2527,49 @@ TseClient::DescribeCloudNativeAPIGatewayServicesOutcomeCallable TseClient::Descr
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGatewayServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesLightOutcome TseClient::DescribeCloudNativeAPIGatewayServicesLight(const DescribeCloudNativeAPIGatewayServicesLightRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayServicesLight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayServicesLightResponse rsp = DescribeCloudNativeAPIGatewayServicesLightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayServicesLightOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayServicesLightOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayServicesLightOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayServicesLightAsync(const DescribeCloudNativeAPIGatewayServicesLightRequest& request, const DescribeCloudNativeAPIGatewayServicesLightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayServicesLight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesLightOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayServicesLightCallable(const DescribeCloudNativeAPIGatewayServicesLightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayServicesLightOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayServicesLight(request);
         }
     );
 

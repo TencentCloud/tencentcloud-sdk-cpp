@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool ClusterDescHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
+                     * 获取集群类型，C表示容器集群，V表示虚拟机集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 集群类型
+                     * @return ClusterType 集群类型，C表示容器集群，V表示虚拟机集群
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
+                     * 设置集群类型，C表示容器集群，V表示虚拟机集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterType 集群类型
+                     * @param _clusterType 集群类型，C表示容器集群，V表示虚拟机集群
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -419,18 +419,18 @@ namespace TencentCloud
                     bool DeleteFlagHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取创建时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime 创建时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置创建时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime 创建时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -444,18 +444,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取更新时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime 更新时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置更新时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime 更新时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -894,18 +894,18 @@ namespace TencentCloud
                     bool KuberneteApiServerHasBeenSet() const;
 
                     /**
-                     * 获取K : kubeconfig, S : service account
+                     * 获取K 表示通过kubeconfig 导入, S 表示通过service account导入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KuberneteNativeType K : kubeconfig, S : service account
+                     * @return KuberneteNativeType K 表示通过kubeconfig 导入, S 表示通过service account导入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKuberneteNativeType() const;
 
                     /**
-                     * 设置K : kubeconfig, S : service account
+                     * 设置K 表示通过kubeconfig 导入, S 表示通过service account导入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kuberneteNativeType K : kubeconfig, S : service account
+                     * @param _kuberneteNativeType K 表示通过kubeconfig 导入, S 表示通过service account导入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -919,18 +919,18 @@ namespace TencentCloud
                     bool KuberneteNativeTypeHasBeenSet() const;
 
                     /**
-                     * 获取native secret
+                     * 获取Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KuberneteNativeSecret native secret
+                     * @return KuberneteNativeSecret Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKuberneteNativeSecret() const;
 
                     /**
-                     * 设置native secret
+                     * 设置Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kuberneteNativeSecret native secret
+                     * @param _kuberneteNativeSecret Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1008,7 +1008,7 @@ namespace TencentCloud
                     bool m_clusterDescHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，C表示容器集群，V表示虚拟机集群
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
@@ -1092,14 +1092,14 @@ namespace TencentCloud
                     bool m_deleteFlagHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间，格式为​​YYYY-MM-DD HH:MM:SS
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
@@ -1225,14 +1225,14 @@ namespace TencentCloud
                     bool m_kuberneteApiServerHasBeenSet;
 
                     /**
-                     * K : kubeconfig, S : service account
+                     * K 表示通过kubeconfig 导入, S 表示通过service account导入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kuberneteNativeType;
                     bool m_kuberneteNativeTypeHasBeenSet;
 
                     /**
-                     * native secret
+                     * Kubernetes 密钥
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kuberneteNativeSecret;

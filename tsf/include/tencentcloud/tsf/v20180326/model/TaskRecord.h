@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取执行类型
-                     * @return ExecuteType 执行类型
+                     * 获取任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @return ExecuteType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     std::string GetExecuteType() const;
 
                     /**
-                     * 设置执行类型
-                     * @param _executeType 执行类型
+                     * 设置任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
+                     * @param _executeType 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      * 
                      */
                     void SetExecuteType(const std::string& _executeType);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取超时时间
-                     * @return TimeOut 超时时间
+                     * 获取超时时间，单位：毫秒。
+                     * @return TimeOut 超时时间，单位：毫秒。
                      * 
                      */
                     int64_t GetTimeOut() const;
 
                     /**
-                     * 设置超时时间
-                     * @param _timeOut 超时时间
+                     * 设置超时时间，单位：毫秒。
+                     * @param _timeOut 超时时间，单位：毫秒。
                      * 
                      */
                     void SetTimeOut(const int64_t& _timeOut);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool RetryCountHasBeenSet() const;
 
                     /**
-                     * 获取重试间隔
-                     * @return RetryInterval 重试间隔
+                     * 获取重试间隔，单位：毫秒。
+                     * @return RetryInterval 重试间隔，单位：毫秒。
                      * 
                      */
                     int64_t GetRetryInterval() const;
 
                     /**
-                     * 设置重试间隔
-                     * @param _retryInterval 重试间隔
+                     * 设置重试间隔，单位：毫秒。
+                     * @param _retryInterval 重试间隔，单位：毫秒。
                      * 
                      */
                     void SetRetryInterval(const int64_t& _retryInterval);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool TaskRuleHasBeenSet() const;
 
                     /**
-                     * 获取是否启用任务,ENABLED/DISABLED
-                     * @return TaskState 是否启用任务,ENABLED/DISABLED
+                     * 获取任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
+                     * @return TaskState 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      * 
                      */
                     std::string GetTaskState() const;
 
                     /**
-                     * 设置是否启用任务,ENABLED/DISABLED
-                     * @param _taskState 是否启用任务,ENABLED/DISABLED
+                     * 设置任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
+                     * @param _taskState 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      * 
                      */
                     void SetTaskState(const std::string& _taskState);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool TaskLogIdHasBeenSet() const;
 
                     /**
-                     * 获取触发类型
-                     * @return TriggerType 触发类型
+                     * 获取触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发
+                     * @return TriggerType 触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
-                     * 设置触发类型
-                     * @param _triggerType 触发类型
+                     * 设置触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发
+                     * @param _triggerType 触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发
                      * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
@@ -484,7 +484,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 执行类型
+                     * 任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行
                      */
                     std::string m_executeType;
                     bool m_executeTypeHasBeenSet;
@@ -502,7 +502,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 超时时间
+                     * 超时时间，单位：毫秒。
                      */
                     int64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
@@ -514,7 +514,7 @@ namespace TencentCloud
                     bool m_retryCountHasBeenSet;
 
                     /**
-                     * 重试间隔
+                     * 重试间隔，单位：毫秒。
                      */
                     int64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
@@ -526,7 +526,7 @@ namespace TencentCloud
                     bool m_taskRuleHasBeenSet;
 
                     /**
-                     * 是否启用任务,ENABLED/DISABLED
+                     * 任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用
                      */
                     std::string m_taskState;
                     bool m_taskStateHasBeenSet;
@@ -580,7 +580,7 @@ namespace TencentCloud
                     bool m_taskLogIdHasBeenSet;
 
                     /**
-                     * 触发类型
+                     * 触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发
                      */
                     std::string m_triggerType;
                     bool m_triggerTypeHasBeenSet;

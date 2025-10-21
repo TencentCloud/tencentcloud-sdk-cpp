@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,8 @@ EventContent::EventContent() :
     m_qualityEnhanceCompleteEventHasBeenSet(false),
     m_mediaCastStatusChangedEventHasBeenSet(false),
     m_persistenceCompleteEventHasBeenSet(false),
-    m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet(false)
+    m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet(false),
+    m_processMediaByMPSCompleteEventHasBeenSet(false)
 {
 }
 
@@ -537,6 +538,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessMediaByMPSCompleteEvent") && !value["ProcessMediaByMPSCompleteEvent"].IsNull())
+    {
+        if (!value["ProcessMediaByMPSCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.ProcessMediaByMPSCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_processMediaByMPSCompleteEvent.Deserialize(value["ProcessMediaByMPSCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_processMediaByMPSCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -801,6 +819,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_complexAdaptiveDynamicStreamingCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_processMediaByMPSCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessMediaByMPSCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_processMediaByMPSCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1268,5 +1295,21 @@ void EventContent::SetComplexAdaptiveDynamicStreamingCompleteEvent(const Complex
 bool EventContent::ComplexAdaptiveDynamicStreamingCompleteEventHasBeenSet() const
 {
     return m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet;
+}
+
+ProcessMediaByMPS EventContent::GetProcessMediaByMPSCompleteEvent() const
+{
+    return m_processMediaByMPSCompleteEvent;
+}
+
+void EventContent::SetProcessMediaByMPSCompleteEvent(const ProcessMediaByMPS& _processMediaByMPSCompleteEvent)
+{
+    m_processMediaByMPSCompleteEvent = _processMediaByMPSCompleteEvent;
+    m_processMediaByMPSCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::ProcessMediaByMPSCompleteEventHasBeenSet() const
+{
+    return m_processMediaByMPSCompleteEventHasBeenSet;
 }
 

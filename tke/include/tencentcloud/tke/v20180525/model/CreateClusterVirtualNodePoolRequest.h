@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id
-                     * @return ClusterId 集群Id
+                     * 获取集群ID，通过DescribeClusters接口获取
+                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群Id
-                     * @param _clusterId 集群Id
+                     * 设置集群ID，通过DescribeClusters接口获取
+                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID列表
-                     * @return SecurityGroupIds 安全组ID列表
+                     * 获取安全组ID列表，必选参数
+                     * @return SecurityGroupIds 安全组ID列表，必选参数
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID列表
-                     * @param _securityGroupIds 安全组ID列表
+                     * 设置安全组ID列表，必选参数
+                     * @param _securityGroupIds 安全组ID列表，必选参数
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool VirtualNodesHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关
-                     * @return DeletionProtection 删除保护开关
+                     * 获取删除保护开关，默认关闭
+                     * @return DeletionProtection 删除保护开关，默认关闭
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关
-                     * @param _deletionProtection 删除保护开关
+                     * 设置删除保护开关，默认关闭
+                     * @param _deletionProtection 删除保护开关，默认关闭
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -245,7 +245,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群Id
+                     * 集群ID，通过DescribeClusters接口获取
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 安全组ID列表
+                     * 安全组ID列表，必选参数
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -287,7 +287,7 @@ namespace TencentCloud
                     bool m_virtualNodesHasBeenSet;
 
                     /**
-                     * 删除保护开关
+                     * 删除保护开关，默认关闭
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;

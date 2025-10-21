@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -613,6 +613,27 @@ namespace TencentCloud
                      */
                     bool DetectByHasBeenSet() const;
 
+                    /**
+                     * 获取执行命令(解码后)
+                     * @return BashCmdDecoded 执行命令(解码后)
+                     * 
+                     */
+                    std::string GetBashCmdDecoded() const;
+
+                    /**
+                     * 设置执行命令(解码后)
+                     * @param _bashCmdDecoded 执行命令(解码后)
+                     * 
+                     */
+                    void SetBashCmdDecoded(const std::string& _bashCmdDecoded);
+
+                    /**
+                     * 判断参数 BashCmdDecoded 是否已赋值
+                     * @return BashCmdDecoded 是否已赋值
+                     * 
+                     */
+                    bool BashCmdDecodedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -776,6 +797,12 @@ namespace TencentCloud
                      */
                     int64_t m_detectBy;
                     bool m_detectByHasBeenSet;
+
+                    /**
+                     * 执行命令(解码后)
+                     */
+                    std::string m_bashCmdDecoded;
+                    bool m_bashCmdDecodedHasBeenSet;
 
                 };
             }

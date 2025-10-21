@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,8 +67,12 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云CKafka实例ID。
 KafkaType为0时，KafkaInstance必填
+
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @return KafkaInstance 腾讯云CKafka实例ID。
 KafkaType为0时，KafkaInstance必填
+
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     std::string GetKafkaInstance() const;
@@ -76,8 +80,12 @@ KafkaType为0时，KafkaInstance必填
                     /**
                      * 设置腾讯云CKafka实例ID。
 KafkaType为0时，KafkaInstance必填
+
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * @param _kafkaInstance 腾讯云CKafka实例ID。
 KafkaType为0时，KafkaInstance必填
+
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -167,6 +175,8 @@ KafkaType为1时，ServerAddr必填
                     /**
                      * 腾讯云CKafka实例ID。
 KafkaType为0时，KafkaInstance必填
+
+- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;

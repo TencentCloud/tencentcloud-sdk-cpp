@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像服务器地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 镜像服务器地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像服务器地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _server 镜像服务器地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServer(const std::string& _server);
@@ -124,7 +120,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像服务器地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;

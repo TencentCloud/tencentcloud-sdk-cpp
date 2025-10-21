@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ModelParams.h>
 
 
 namespace TencentCloud
@@ -214,6 +215,48 @@ namespace TencentCloud
                      */
                     bool InstructionsWordsLimitHasBeenSet() const;
 
+                    /**
+                     * 获取单次会话最大推理轮数
+                     * @return MaxReasoningRound 单次会话最大推理轮数
+                     * 
+                     */
+                    uint64_t GetMaxReasoningRound() const;
+
+                    /**
+                     * 设置单次会话最大推理轮数
+                     * @param _maxReasoningRound 单次会话最大推理轮数
+                     * 
+                     */
+                    void SetMaxReasoningRound(const uint64_t& _maxReasoningRound);
+
+                    /**
+                     * 判断参数 MaxReasoningRound 是否已赋值
+                     * @return MaxReasoningRound 是否已赋值
+                     * 
+                     */
+                    bool MaxReasoningRoundHasBeenSet() const;
+
+                    /**
+                     * 获取模型参数
+                     * @return ModelParams 模型参数
+                     * 
+                     */
+                    ModelParams GetModelParams() const;
+
+                    /**
+                     * 设置模型参数
+                     * @param _modelParams 模型参数
+                     * 
+                     */
+                    void SetModelParams(const ModelParams& _modelParams);
+
+                    /**
+                     * 判断参数 ModelParams 是否已赋值
+                     * @return ModelParams 是否已赋值
+                     * 
+                     */
+                    bool ModelParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +306,18 @@ namespace TencentCloud
                      */
                     uint64_t m_instructionsWordsLimit;
                     bool m_instructionsWordsLimitHasBeenSet;
+
+                    /**
+                     * 单次会话最大推理轮数
+                     */
+                    uint64_t m_maxReasoningRound;
+                    bool m_maxReasoningRoundHasBeenSet;
+
+                    /**
+                     * 模型参数
+                     */
+                    ModelParams m_modelParams;
+                    bool m_modelParamsHasBeenSet;
 
                 };
             }

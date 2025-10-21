@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,22 +49,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 获取任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
-                     * @return Type 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * @return Type 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 设置任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
-                     * @param _type 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * @param _type 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      * 
                      */
@@ -142,8 +142,8 @@ TransTextRecognition 时有效。
                 private:
 
                     /**
-                     * 任务的类型，取值范围：
-<li>AsrFullTextRecognition：语音全文识别，</li>
+                     * 任务的类型，取值范围： 
+<li>AsrFullTextRecognition：语音全文识别，</li> 
 <li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string m_type;

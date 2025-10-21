@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool AlternateExchangeHasBeenSet() const;
 
+                    /**
+                     * 获取延迟类型的exchange背后对应的exchange类型, 支持 "fanout","direct","topic","headers"
+                     * @return DelayedExchangeType 延迟类型的exchange背后对应的exchange类型, 支持 "fanout","direct","topic","headers"
+                     * 
+                     */
+                    std::string GetDelayedExchangeType() const;
+
+                    /**
+                     * 设置延迟类型的exchange背后对应的exchange类型, 支持 "fanout","direct","topic","headers"
+                     * @param _delayedExchangeType 延迟类型的exchange背后对应的exchange类型, 支持 "fanout","direct","topic","headers"
+                     * 
+                     */
+                    void SetDelayedExchangeType(const std::string& _delayedExchangeType);
+
+                    /**
+                     * 判断参数 DelayedExchangeType 是否已赋值
+                     * @return DelayedExchangeType 是否已赋值
+                     * 
+                     */
+                    bool DelayedExchangeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_alternateExchange;
                     bool m_alternateExchangeHasBeenSet;
+
+                    /**
+                     * 延迟类型的exchange背后对应的exchange类型, 支持 "fanout","direct","topic","headers"
+                     */
+                    std::string m_delayedExchangeType;
+                    bool m_delayedExchangeTypeHasBeenSet;
 
                 };
             }

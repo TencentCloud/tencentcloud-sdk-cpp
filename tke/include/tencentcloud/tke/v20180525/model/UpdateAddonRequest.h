@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @return ClusterId 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @param _clusterId 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取addon名称
-                     * @return AddonName addon名称
+                     * 获取addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @return AddonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     std::string GetAddonName() const;
 
                     /**
-                     * 设置addon名称
-                     * @param _addonName addon名称
+                     * 设置addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
+                     * @param _addonName addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      * 
                      */
                     void SetAddonName(const std::string& _addonName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AddonVersionHasBeenSet() const;
 
                     /**
-                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
-                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
+                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
+                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
                      * 
                      */
                     std::string GetRawValues() const;
 
                     /**
-                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
-                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
+                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
+                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
                      * 
                      */
                     void SetRawValues(const std::string& _rawValues);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool UpdateStrategyHasBeenSet() const;
 
                     /**
-                     * 获取是否仅做更新检查，设置为true时仅做检查，不会更新组件
-                     * @return DryRun 是否仅做更新检查，设置为true时仅做检查，不会更新组件
+                     * 获取是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。
+                     * @return DryRun 是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否仅做更新检查，设置为true时仅做检查，不会更新组件
-                     * @param _dryRun 是否仅做更新检查，设置为true时仅做检查，不会更新组件
+                     * 设置是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。
+                     * @param _dryRun 是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * addon名称
+                     * addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。
                      */
                     std::string m_addonName;
                     bool m_addonNameHasBeenSet;
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_addonVersionHasBeenSet;
 
                     /**
-                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
+                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_updateStrategyHasBeenSet;
 
                     /**
-                     * 是否仅做更新检查，设置为true时仅做检查，不会更新组件
+                     * 是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

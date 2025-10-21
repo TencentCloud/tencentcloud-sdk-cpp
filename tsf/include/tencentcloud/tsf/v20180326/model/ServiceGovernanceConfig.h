@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnableGovernanceHasBeenSet() const;
 
                     /**
-                     * 获取服务治理类型（枚举：SHARE、EXCLUSIVE）
-                     * @return GovernanceType 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 获取服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * @return GovernanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      * 
                      */
                     std::string GetGovernanceType() const;
 
                     /**
-                     * 设置服务治理类型（枚举：SHARE、EXCLUSIVE）
-                     * @param _governanceType 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 设置服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * @param _governanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      * 
                      */
                     void SetGovernanceType(const std::string& _governanceType);
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_enableGovernanceHasBeenSet;
 
                     /**
-                     * 服务治理类型（枚举：SHARE、EXCLUSIVE）
+                     * 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
                      */
                     std::string m_governanceType;
                     bool m_governanceTypeHasBeenSet;

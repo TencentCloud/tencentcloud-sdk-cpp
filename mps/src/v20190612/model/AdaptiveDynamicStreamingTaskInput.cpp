@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_segmentObjectNameHasBeenSet(false),
     m_addOnSubtitlesHasBeenSet(false),
     m_drmInfoHasBeenSet(false),
-    m_definitionTypeHasBeenSet(false)
+    m_definitionTypeHasBeenSet(false),
+    m_subtitleTemplateHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,33 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_definitionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleTemplate") && !value["SubtitleTemplate"].IsNull())
+    {
+        if (!value["SubtitleTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.SubtitleTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleTemplate.Deserialize(value["SubtitleTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleTemplateHasBeenSet = true;
+    }
+
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -255,6 +284,23 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         string key = "DefinitionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_definitionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -402,5 +448,37 @@ void AdaptiveDynamicStreamingTaskInput::SetDefinitionType(const string& _definit
 bool AdaptiveDynamicStreamingTaskInput::DefinitionTypeHasBeenSet() const
 {
     return m_definitionTypeHasBeenSet;
+}
+
+SubtitleTemplate AdaptiveDynamicStreamingTaskInput::GetSubtitleTemplate() const
+{
+    return m_subtitleTemplate;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate)
+{
+    m_subtitleTemplate = _subtitleTemplate;
+    m_subtitleTemplateHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::SubtitleTemplateHasBeenSet() const
+{
+    return m_subtitleTemplateHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTaskInput::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,21 +133,21 @@ namespace TencentCloud
                     /**
                      * 获取应用包版本
                      * @return PackageVersion 应用包版本
-                     * 
+                     * @deprecated
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置应用包版本
                      * @param _packageVersion 应用包版本
-                     * 
+                     * @deprecated
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PackageVersionHasBeenSet() const;
 
@@ -171,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PackageLabelHasBeenSet() const;
+
+                    /**
+                     * 获取应用包版本号
+                     * @return VersionName 应用包版本号
+                     * 
+                     */
+                    std::string GetVersionName() const;
+
+                    /**
+                     * 设置应用包版本号
+                     * @param _versionName 应用包版本号
+                     * 
+                     */
+                    void SetVersionName(const std::string& _versionName);
+
+                    /**
+                     * 判断参数 VersionName 是否已赋值
+                     * @return VersionName 是否已赋值
+                     * 
+                     */
+                    bool VersionNameHasBeenSet() const;
 
                 private:
 
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_packageLabel;
                     bool m_packageLabelHasBeenSet;
+
+                    /**
+                     * 应用包版本号
+                     */
+                    std::string m_versionName;
+                    bool m_versionNameHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@
 #include <tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h>
 #include <tencentcloud/oceanus/v20190422/model/SubEks.h>
 #include <tencentcloud/oceanus/v20190422/model/Setats.h>
+#include <tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h>
+#include <tencentcloud/oceanus/v20190422/model/SlaveZone.h>
 
 
 namespace TencentCloud
@@ -1292,6 +1294,102 @@ namespace TencentCloud
                      */
                     bool SetatsHasBeenSet() const;
 
+                    /**
+                     * 获取[]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Yarns []
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HadoopYarnItem> GetYarns() const;
+
+                    /**
+                     * 设置[]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _yarns []
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetYarns(const std::vector<HadoopYarnItem>& _yarns);
+
+                    /**
+                     * 判断参数 Yarns 是否已赋值
+                     * @return Yarns 是否已赋值
+                     * 
+                     */
+                    bool YarnsHasBeenSet() const;
+
+                    /**
+                     * 获取0 单可用区 1多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeploymentMode 0 单可用区 1多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDeploymentMode() const;
+
+                    /**
+                     * 设置0 单可用区 1多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deploymentMode 0 单可用区 1多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeploymentMode(const int64_t& _deploymentMode);
+
+                    /**
+                     * 判断参数 DeploymentMode 是否已赋值
+                     * @return DeploymentMode 是否已赋值
+                     * 
+                     */
+                    bool DeploymentModeHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZones 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SlaveZone> GetSlaveZones() const;
+
+                    /**
+                     * 设置备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaveZones 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaveZones(const std::vector<SlaveZone>& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     * 
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
+                    /**
+                     * 获取集群的日志cos存储
+                     * @return LogCOSBucket 集群的日志cos存储
+                     * 
+                     */
+                    std::string GetLogCOSBucket() const;
+
+                    /**
+                     * 设置集群的日志cos存储
+                     * @param _logCOSBucket 集群的日志cos存储
+                     * 
+                     */
+                    void SetLogCOSBucket(const std::string& _logCOSBucket);
+
+                    /**
+                     * 判断参数 LogCOSBucket 是否已赋值
+                     * @return LogCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool LogCOSBucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1642,6 +1740,33 @@ namespace TencentCloud
                      */
                     Setats m_setats;
                     bool m_setatsHasBeenSet;
+
+                    /**
+                     * []
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HadoopYarnItem> m_yarns;
+                    bool m_yarnsHasBeenSet;
+
+                    /**
+                     * 0 单可用区 1多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deploymentMode;
+                    bool m_deploymentModeHasBeenSet;
+
+                    /**
+                     * 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SlaveZone> m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * 集群的日志cos存储
+                     */
+                    std::string m_logCOSBucket;
+                    bool m_logCOSBucketHasBeenSet;
 
                 };
             }

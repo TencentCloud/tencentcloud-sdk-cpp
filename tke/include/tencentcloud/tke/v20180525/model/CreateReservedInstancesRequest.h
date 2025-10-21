@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取预留券名称。
-                     * @return InstanceName 预留券名称。
+                     * 获取预留券名称，名称不得超过60个字符。
+                     * @return InstanceName 预留券名称，名称不得超过60个字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置预留券名称。
-                     * @param _instanceName 预留券名称。
+                     * 设置预留券名称，名称不得超过60个字符。
+                     * @param _instanceName 预留券名称，名称不得超过60个字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -149,6 +149,31 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * @return DryRun 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * 
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * @param _dryRun 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     * 
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     * 
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,7 +195,7 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 预留券名称。
+                     * 预留券名称，名称不得超过60个字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -180,6 +205,13 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 是否只预检此次请求。
+true：只预检，不会创建实例。默认值为：false。
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

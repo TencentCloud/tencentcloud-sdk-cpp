@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupName 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableGroupName() const;
 
                     /**
                      * 设置表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableGroupName 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableGroupName(const std::string& _tableGroupName);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云上table的唯一键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableInstanceId 腾讯云上table的唯一键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableInstanceId() const;
 
                     /**
                      * 设置腾讯云上table的唯一键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableInstanceId 腾讯云上table的唯一键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableInstanceId(const std::string& _tableInstanceId);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审批人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteUser 审批人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecuteUser() const;
 
                     /**
                      * 设置审批人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeUser 审批人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteUser(const std::string& _executeUser);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteStatus 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecuteStatus() const;
 
                     /**
                      * 设置执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeStatus 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteStatus(const std::string& _executeStatus);
@@ -383,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该申请单是否可以被当前用户审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanCensor 该申请单是否可以被当前用户审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanCensor() const;
 
                     /**
                      * 设置该申请单是否可以被当前用户审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canCensor 该申请单是否可以被当前用户审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanCensor(const bool& _canCensor);
@@ -408,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该申请单是否可以被当前用户撤回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanWithdrawal 该申请单是否可以被当前用户撤回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanWithdrawal() const;
 
                     /**
                      * 设置该申请单是否可以被当前用户撤回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canWithdrawal 该申请单是否可以被当前用户撤回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanWithdrawal(const bool& _canWithdrawal);
@@ -459,7 +431,6 @@ namespace TencentCloud
 
                     /**
                      * 表格组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableGroupName;
                     bool m_tableGroupNameHasBeenSet;
@@ -502,42 +473,36 @@ namespace TencentCloud
 
                     /**
                      * 腾讯云上table的唯一键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableInstanceId;
                     bool m_tableInstanceIdHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 审批人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executeUser;
                     bool m_executeUserHasBeenSet;
 
                     /**
                      * 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executeStatus;
                     bool m_executeStatusHasBeenSet;
 
                     /**
                      * 该申请单是否可以被当前用户审批
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canCensor;
                     bool m_canCensorHasBeenSet;
 
                     /**
                      * 该申请单是否可以被当前用户撤回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canWithdrawal;
                     bool m_canWithdrawalHasBeenSet;

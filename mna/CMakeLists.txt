@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/DeleteL3ConnResponse.h
   include/tencentcloud/mna/v20210119/model/GetDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h
+  include/tencentcloud/mna/v20210119/model/OrderInfo.h
   include/tencentcloud/mna/v20210119/model/FlowDetails.h
   include/tencentcloud/mna/v20210119/model/UpdateL3ConnResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateHardwareResponse.h
@@ -34,6 +35,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/UpdateL3CidrResponse.h
   include/tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagRequest.h
   include/tencentcloud/mna/v20210119/model/GetFlowPackagesResponse.h
+  include/tencentcloud/mna/v20210119/model/ReportOrderRequest.h
   include/tencentcloud/mna/v20210119/model/DeleteL3ConnRequest.h
   include/tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h
   include/tencentcloud/mna/v20210119/model/GetActiveDeviceCountResponse.h
@@ -49,6 +51,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionRequest.h
+  include/tencentcloud/mna/v20210119/model/ReportOrderResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowAlarmInfoRequest.h
   include/tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h
   include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h
@@ -123,6 +126,7 @@ set(mna_src
   src/v20210119/model/DeleteL3ConnResponse.cpp
   src/v20210119/model/GetDeviceResponse.cpp
   src/v20210119/model/GetMultiFlowStatisticResponse.cpp
+  src/v20210119/model/OrderInfo.cpp
   src/v20210119/model/FlowDetails.cpp
   src/v20210119/model/UpdateL3ConnResponse.cpp
   src/v20210119/model/UpdateHardwareResponse.cpp
@@ -135,6 +139,7 @@ set(mna_src
   src/v20210119/model/UpdateL3CidrResponse.cpp
   src/v20210119/model/ModifyPackageRenewFlagRequest.cpp
   src/v20210119/model/GetFlowPackagesResponse.cpp
+  src/v20210119/model/ReportOrderRequest.cpp
   src/v20210119/model/DeleteL3ConnRequest.cpp
   src/v20210119/model/GetVendorHardwareResponse.cpp
   src/v20210119/model/GetActiveDeviceCountResponse.cpp
@@ -150,6 +155,7 @@ set(mna_src
   src/v20210119/model/GetFlowStatisticByGroupResponse.cpp
   src/v20210119/model/GetNetMonitorResponse.cpp
   src/v20210119/model/GetFlowStatisticByRegionRequest.cpp
+  src/v20210119/model/ReportOrderResponse.cpp
   src/v20210119/model/GetFlowAlarmInfoRequest.cpp
   src/v20210119/model/GetVendorHardwareRequest.cpp
   src/v20210119/model/CreateEncryptedKeyRequest.cpp

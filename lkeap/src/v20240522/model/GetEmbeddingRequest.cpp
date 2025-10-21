@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace std;
 
 GetEmbeddingRequest::GetEmbeddingRequest() :
     m_modelHasBeenSet(false),
-    m_inputsHasBeenSet(false)
+    m_inputsHasBeenSet(false),
+    m_textTypeHasBeenSet(false),
+    m_instructionHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string GetEmbeddingRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_textTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_textType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instructionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Instruction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instruction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +112,38 @@ void GetEmbeddingRequest::SetInputs(const vector<string>& _inputs)
 bool GetEmbeddingRequest::InputsHasBeenSet() const
 {
     return m_inputsHasBeenSet;
+}
+
+string GetEmbeddingRequest::GetTextType() const
+{
+    return m_textType;
+}
+
+void GetEmbeddingRequest::SetTextType(const string& _textType)
+{
+    m_textType = _textType;
+    m_textTypeHasBeenSet = true;
+}
+
+bool GetEmbeddingRequest::TextTypeHasBeenSet() const
+{
+    return m_textTypeHasBeenSet;
+}
+
+string GetEmbeddingRequest::GetInstruction() const
+{
+    return m_instruction;
+}
+
+void GetEmbeddingRequest::SetInstruction(const string& _instruction)
+{
+    m_instruction = _instruction;
+    m_instructionHasBeenSet = true;
+}
+
+bool GetEmbeddingRequest::InstructionHasBeenSet() const
+{
+    return m_instructionHasBeenSet;
 }
 
 

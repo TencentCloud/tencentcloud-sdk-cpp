@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态值
-                     * @return Status 状态值
+                     * 获取状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。
+                     * @return Status 状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态值
-                     * @param _status 状态值
+                     * 设置状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。
+                     * @param _status 状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态值
-                     * @return Code 状态值
+                     * 获取状态值，为负数时任务异常。
+                     * @return Code 状态值，为负数时任务异常。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置状态值
-                     * @param _code 状态值
+                     * 设置状态值，为负数时任务异常。
+                     * @param _code 状态值，为负数时任务异常。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间
-                     * @return CostTime 执行时间
+                     * 获取执行时间，单位：秒。
+                     * @return CostTime 执行时间，单位：秒。
                      * 
                      */
                     int64_t GetCostTime() const;
 
                     /**
-                     * 设置执行时间
-                     * @param _costTime 执行时间
+                     * 设置执行时间，单位：秒。
+                     * @param _costTime 执行时间，单位：秒。
                      * 
                      */
                     void SetCostTime(const int64_t& _costTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取执行进度
-                     * @return Process 执行进度
+                     * 获取执行进度，单位：百分比。
+                     * @return Process 执行进度，单位：百分比。
                      * 
                      */
                     int64_t GetProcess() const;
 
                     /**
-                     * 设置执行进度
-                     * @param _process 执行进度
+                     * 设置执行进度，单位：百分比。
+                     * @param _process 执行进度，单位：百分比。
                      * 
                      */
                     void SetProcess(const int64_t& _process);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
-                     * @return FileSize 文件大小
+                     * 获取文件大小，单位：byte。
+                     * @return FileSize 文件大小，单位：byte。
                      * 
                      */
                     std::string GetFileSize() const;
 
                     /**
-                     * 设置文件大小
-                     * @param _fileSize 文件大小
+                     * 设置文件大小，单位：byte。
+                     * @param _fileSize 文件大小，单位：byte。
                      * 
                      */
                     void SetFileSize(const std::string& _fileSize);
@@ -322,19 +322,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态值
+                     * 状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态值
+                     * 状态值，为负数时任务异常。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 执行时间
+                     * 执行时间，单位：秒。
                      */
                     int64_t m_costTime;
                     bool m_costTimeHasBeenSet;
@@ -358,7 +358,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 执行进度
+                     * 执行进度，单位：百分比。
                      */
                     int64_t m_process;
                     bool m_processHasBeenSet;
@@ -370,7 +370,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * 文件大小，单位：byte。
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;

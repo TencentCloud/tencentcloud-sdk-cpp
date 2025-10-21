@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,8 @@ TaskResponseInfo::TaskResponseInfo() :
     m_prestoMonitorMetricsHasBeenSet(false),
     m_resultFormatHasBeenSet(false),
     m_engineTypeDetailHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_jobTimeSumHasBeenSet(false)
 {
 }
 
@@ -523,6 +524,16 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
         m_resourceGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("JobTimeSum") && !value["JobTimeSum"].IsNull())
+    {
+        if (!value["JobTimeSum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResponseInfo.JobTimeSum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobTimeSum = value["JobTimeSum"].GetInt64();
+        m_jobTimeSumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -875,6 +886,14 @@ void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTimeSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobTimeSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobTimeSum, allocator);
     }
 
 }
@@ -1566,5 +1585,21 @@ void TaskResponseInfo::SetResourceGroupName(const string& _resourceGroupName)
 bool TaskResponseInfo::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+int64_t TaskResponseInfo::GetJobTimeSum() const
+{
+    return m_jobTimeSum;
+}
+
+void TaskResponseInfo::SetJobTimeSum(const int64_t& _jobTimeSum)
+{
+    m_jobTimeSum = _jobTimeSum;
+    m_jobTimeSumHasBeenSet = true;
+}
+
+bool TaskResponseInfo::JobTimeSumHasBeenSet() const
+{
+    return m_jobTimeSumHasBeenSet;
 }
 

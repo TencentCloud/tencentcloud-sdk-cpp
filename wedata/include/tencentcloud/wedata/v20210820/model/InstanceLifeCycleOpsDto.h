@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,6 +470,31 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroup 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroup() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroup 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroup(const std::string& _resourceGroup);
+
+                    /**
+                     * 判断参数 ResourceGroup 是否已赋值
+                     * @return ResourceGroup 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +614,13 @@ namespace TencentCloud
                      */
                     TaskTypeOpsDto m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroup;
+                    bool m_resourceGroupHasBeenSet;
 
                 };
             }

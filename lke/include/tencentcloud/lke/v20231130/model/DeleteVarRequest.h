@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool VarIdHasBeenSet() const;
 
+                    /**
+                     * 获取参数类型
+                     * @return VarModuleType 参数类型
+                     * 
+                     */
+                    uint64_t GetVarModuleType() const;
+
+                    /**
+                     * 设置参数类型
+                     * @param _varModuleType 参数类型
+                     * 
+                     */
+                    void SetVarModuleType(const uint64_t& _varModuleType);
+
+                    /**
+                     * 判断参数 VarModuleType 是否已赋值
+                     * @return VarModuleType 是否已赋值
+                     * 
+                     */
+                    bool VarModuleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_varId;
                     bool m_varIdHasBeenSet;
+
+                    /**
+                     * 参数类型
+                     */
+                    uint64_t m_varModuleType;
+                    bool m_varModuleTypeHasBeenSet;
 
                 };
             }

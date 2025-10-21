@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ DescribeIntegrationTaskRequest::DescribeIntegrationTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_instanceVersionHasBeenSet(false)
+    m_instanceVersionHasBeenSet(false),
+    m_extConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string DescribeIntegrationTaskRequest::ToJsonString() const
         string key = "InstanceVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceVersion, allocator);
+    }
+
+    if (m_extConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extConfig.begin(); itr != m_extConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void DescribeIntegrationTaskRequest::SetInstanceVersion(const int64_t& _instance
 bool DescribeIntegrationTaskRequest::InstanceVersionHasBeenSet() const
 {
     return m_instanceVersionHasBeenSet;
+}
+
+vector<RecordField> DescribeIntegrationTaskRequest::GetExtConfig() const
+{
+    return m_extConfig;
+}
+
+void DescribeIntegrationTaskRequest::SetExtConfig(const vector<RecordField>& _extConfig)
+{
+    m_extConfig = _extConfig;
+    m_extConfigHasBeenSet = true;
+}
+
+bool DescribeIntegrationTaskRequest::ExtConfigHasBeenSet() const
+{
+    return m_extConfigHasBeenSet;
 }
 
 

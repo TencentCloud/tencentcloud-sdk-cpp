@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,13 @@ ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_targetGroupIdHasBeenSet(false),
     m_targetGroupNameHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_allDeadToAliveHasBeenSet(false)
+    m_allDeadToAliveHasBeenSet(false),
+    m_tcpIdleConnectTimeoutHasBeenSet(false),
+    m_othersIdleConnectTimeoutHasBeenSet(false),
+    m_rescheduleUnbindRsHasBeenSet(false),
+    m_rescheduleUnbindRsStartTimeHasBeenSet(false),
+    m_rescheduleUnhealthyHasBeenSet(false),
+    m_rescheduleUnhealthyStartTimeHasBeenSet(false)
 {
 }
 
@@ -68,6 +74,54 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "AllDeadToAlive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allDeadToAlive, allocator);
+    }
+
+    if (m_tcpIdleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpIdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tcpIdleConnectTimeout, allocator);
+    }
+
+    if (m_othersIdleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OthersIdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_othersIdleConnectTimeout, allocator);
+    }
+
+    if (m_rescheduleUnbindRsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnbindRs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleUnbindRs, allocator);
+    }
+
+    if (m_rescheduleUnbindRsStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnbindRsStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleUnbindRsStartTime, allocator);
+    }
+
+    if (m_rescheduleUnhealthyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnhealthy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleUnhealthy, allocator);
+    }
+
+    if (m_rescheduleUnhealthyStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleUnhealthyStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rescheduleUnhealthyStartTime, allocator);
     }
 
 
@@ -140,6 +194,102 @@ void ModifyTargetGroupAttributeRequest::SetAllDeadToAlive(const bool& _allDeadTo
 bool ModifyTargetGroupAttributeRequest::AllDeadToAliveHasBeenSet() const
 {
     return m_allDeadToAliveHasBeenSet;
+}
+
+int64_t ModifyTargetGroupAttributeRequest::GetTcpIdleConnectTimeout() const
+{
+    return m_tcpIdleConnectTimeout;
+}
+
+void ModifyTargetGroupAttributeRequest::SetTcpIdleConnectTimeout(const int64_t& _tcpIdleConnectTimeout)
+{
+    m_tcpIdleConnectTimeout = _tcpIdleConnectTimeout;
+    m_tcpIdleConnectTimeoutHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::TcpIdleConnectTimeoutHasBeenSet() const
+{
+    return m_tcpIdleConnectTimeoutHasBeenSet;
+}
+
+int64_t ModifyTargetGroupAttributeRequest::GetOthersIdleConnectTimeout() const
+{
+    return m_othersIdleConnectTimeout;
+}
+
+void ModifyTargetGroupAttributeRequest::SetOthersIdleConnectTimeout(const int64_t& _othersIdleConnectTimeout)
+{
+    m_othersIdleConnectTimeout = _othersIdleConnectTimeout;
+    m_othersIdleConnectTimeoutHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::OthersIdleConnectTimeoutHasBeenSet() const
+{
+    return m_othersIdleConnectTimeoutHasBeenSet;
+}
+
+bool ModifyTargetGroupAttributeRequest::GetRescheduleUnbindRs() const
+{
+    return m_rescheduleUnbindRs;
+}
+
+void ModifyTargetGroupAttributeRequest::SetRescheduleUnbindRs(const bool& _rescheduleUnbindRs)
+{
+    m_rescheduleUnbindRs = _rescheduleUnbindRs;
+    m_rescheduleUnbindRsHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::RescheduleUnbindRsHasBeenSet() const
+{
+    return m_rescheduleUnbindRsHasBeenSet;
+}
+
+int64_t ModifyTargetGroupAttributeRequest::GetRescheduleUnbindRsStartTime() const
+{
+    return m_rescheduleUnbindRsStartTime;
+}
+
+void ModifyTargetGroupAttributeRequest::SetRescheduleUnbindRsStartTime(const int64_t& _rescheduleUnbindRsStartTime)
+{
+    m_rescheduleUnbindRsStartTime = _rescheduleUnbindRsStartTime;
+    m_rescheduleUnbindRsStartTimeHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::RescheduleUnbindRsStartTimeHasBeenSet() const
+{
+    return m_rescheduleUnbindRsStartTimeHasBeenSet;
+}
+
+bool ModifyTargetGroupAttributeRequest::GetRescheduleUnhealthy() const
+{
+    return m_rescheduleUnhealthy;
+}
+
+void ModifyTargetGroupAttributeRequest::SetRescheduleUnhealthy(const bool& _rescheduleUnhealthy)
+{
+    m_rescheduleUnhealthy = _rescheduleUnhealthy;
+    m_rescheduleUnhealthyHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::RescheduleUnhealthyHasBeenSet() const
+{
+    return m_rescheduleUnhealthyHasBeenSet;
+}
+
+int64_t ModifyTargetGroupAttributeRequest::GetRescheduleUnhealthyStartTime() const
+{
+    return m_rescheduleUnhealthyStartTime;
+}
+
+void ModifyTargetGroupAttributeRequest::SetRescheduleUnhealthyStartTime(const int64_t& _rescheduleUnhealthyStartTime)
+{
+    m_rescheduleUnhealthyStartTime = _rescheduleUnhealthyStartTime;
+    m_rescheduleUnhealthyStartTimeHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::RescheduleUnhealthyStartTimeHasBeenSet() const
+{
+    return m_rescheduleUnhealthyStartTimeHasBeenSet;
 }
 
 

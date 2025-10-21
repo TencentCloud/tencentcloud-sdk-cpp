@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -191,6 +191,85 @@ namespace TencentCloud
                      */
                     bool PSCheckHasBeenSet() const;
 
+                    /**
+                     * 获取是否模糊：
+0:正常
+1:模糊
+                     * @return BlurCheck 是否模糊：
+0:正常
+1:模糊
+                     * 
+                     */
+                    int64_t GetBlurCheck() const;
+
+                    /**
+                     * 设置是否模糊：
+0:正常
+1:模糊
+                     * @param _blurCheck 是否模糊：
+0:正常
+1:模糊
+                     * 
+                     */
+                    void SetBlurCheck(const int64_t& _blurCheck);
+
+                    /**
+                     * 判断参数 BlurCheck 是否已赋值
+                     * @return BlurCheck 是否已赋值
+                     * 
+                     */
+                    bool BlurCheckHasBeenSet() const;
+
+                    /**
+                     * 获取模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * @return BlurScore 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * 
+                     */
+                    double GetBlurScore() const;
+
+                    /**
+                     * 设置模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * @param _blurScore 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * 
+                     */
+                    void SetBlurScore(const double& _blurScore);
+
+                    /**
+                     * 判断参数 BlurScore 是否已赋值
+                     * @return BlurScore 是否已赋值
+                     * 
+                     */
+                    bool BlurScoreHasBeenSet() const;
+
+                    /**
+                     * 获取是否电子身份证
+0：否
+1：是电子身份证
+                     * @return ElectronCheck 是否电子身份证
+0：否
+1：是电子身份证
+                     * 
+                     */
+                    int64_t GetElectronCheck() const;
+
+                    /**
+                     * 设置是否电子身份证
+0：否
+1：是电子身份证
+                     * @param _electronCheck 是否电子身份证
+0：否
+1：是电子身份证
+                     * 
+                     */
+                    void SetElectronCheck(const int64_t& _electronCheck);
+
+                    /**
+                     * 判断参数 ElectronCheck 是否已赋值
+                     * @return ElectronCheck 是否已赋值
+                     * 
+                     */
+                    bool ElectronCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +311,28 @@ namespace TencentCloud
                      */
                     int64_t m_pSCheck;
                     bool m_pSCheckHasBeenSet;
+
+                    /**
+                     * 是否模糊：
+0:正常
+1:模糊
+                     */
+                    int64_t m_blurCheck;
+                    bool m_blurCheckHasBeenSet;
+
+                    /**
+                     * 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     */
+                    double m_blurScore;
+                    bool m_blurScoreHasBeenSet;
+
+                    /**
+                     * 是否电子身份证
+0：否
+1：是电子身份证
+                     */
+                    int64_t m_electronCheck;
+                    bool m_electronCheckHasBeenSet;
 
                 };
             }

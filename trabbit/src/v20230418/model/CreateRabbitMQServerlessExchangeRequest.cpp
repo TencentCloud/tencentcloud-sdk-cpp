@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ CreateRabbitMQServerlessExchangeRequest::CreateRabbitMQServerlessExchangeRequest
     m_durableHasBeenSet(false),
     m_autoDeleteHasBeenSet(false),
     m_internalHasBeenSet(false),
-    m_alternateExchangeHasBeenSet(false)
+    m_alternateExchangeHasBeenSet(false),
+    m_delayedExchangeTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateRabbitMQServerlessExchangeRequest::ToJsonString() const
         string key = "AlternateExchange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alternateExchange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayedExchangeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayedExchangeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_delayedExchangeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateRabbitMQServerlessExchangeRequest::SetAlternateExchange(const string&
 bool CreateRabbitMQServerlessExchangeRequest::AlternateExchangeHasBeenSet() const
 {
     return m_alternateExchangeHasBeenSet;
+}
+
+string CreateRabbitMQServerlessExchangeRequest::GetDelayedExchangeType() const
+{
+    return m_delayedExchangeType;
+}
+
+void CreateRabbitMQServerlessExchangeRequest::SetDelayedExchangeType(const string& _delayedExchangeType)
+{
+    m_delayedExchangeType = _delayedExchangeType;
+    m_delayedExchangeTypeHasBeenSet = true;
+}
+
+bool CreateRabbitMQServerlessExchangeRequest::DelayedExchangeTypeHasBeenSet() const
+{
+    return m_delayedExchangeTypeHasBeenSet;
 }
 
 

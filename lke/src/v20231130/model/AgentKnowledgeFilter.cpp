@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace std;
 AgentKnowledgeFilter::AgentKnowledgeFilter() :
     m_filterTypeHasBeenSet(false),
     m_docAndAnswerHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_knowledgeListHasBeenSet(false),
+    m_allKnowledgeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,36 @@ CoreInternalOutcome AgentKnowledgeFilter::Deserialize(const rapidjson::Value &va
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeList") && !value["KnowledgeList"].IsNull())
+    {
+        if (!value["KnowledgeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentKnowledgeFilter.KnowledgeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentKnowledge item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeList.push_back(item);
+        }
+        m_knowledgeListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllKnowledge") && !value["AllKnowledge"].IsNull())
+    {
+        if (!value["AllKnowledge"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentKnowledgeFilter.AllKnowledge` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allKnowledge = value["AllKnowledge"].GetBool();
+        m_allKnowledgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +139,29 @@ void AgentKnowledgeFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tag.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeList.begin(); itr != m_knowledgeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_allKnowledgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllKnowledge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allKnowledge, allocator);
     }
 
 }
@@ -158,5 +213,37 @@ void AgentKnowledgeFilter::SetTag(const AgentKnowledgeFilterTag& _tag)
 bool AgentKnowledgeFilter::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+vector<AgentKnowledge> AgentKnowledgeFilter::GetKnowledgeList() const
+{
+    return m_knowledgeList;
+}
+
+void AgentKnowledgeFilter::SetKnowledgeList(const vector<AgentKnowledge>& _knowledgeList)
+{
+    m_knowledgeList = _knowledgeList;
+    m_knowledgeListHasBeenSet = true;
+}
+
+bool AgentKnowledgeFilter::KnowledgeListHasBeenSet() const
+{
+    return m_knowledgeListHasBeenSet;
+}
+
+bool AgentKnowledgeFilter::GetAllKnowledge() const
+{
+    return m_allKnowledge;
+}
+
+void AgentKnowledgeFilter::SetAllKnowledge(const bool& _allKnowledge)
+{
+    m_allKnowledge = _allKnowledge;
+    m_allKnowledgeHasBeenSet = true;
+}
+
+bool AgentKnowledgeFilter::AllKnowledgeHasBeenSet() const
+{
+    return m_allKnowledgeHasBeenSet;
 }
 

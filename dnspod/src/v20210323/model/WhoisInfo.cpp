@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ WhoisInfo::WhoisInfo() :
     m_registrarHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_updatedDateHasBeenSet(false),
-    m_dnssecHasBeenSet(false)
+    m_dnssecHasBeenSet(false),
+    m_registrarTypeHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,16 @@ CoreInternalOutcome WhoisInfo::Deserialize(const rapidjson::Value &value)
         m_dnssecHasBeenSet = true;
     }
 
+    if (value.HasMember("RegistrarType") && !value["RegistrarType"].IsNull())
+    {
+        if (!value["RegistrarType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WhoisInfo.RegistrarType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrarType = string(value["RegistrarType"].GetString());
+        m_registrarTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -283,6 +294,14 @@ void WhoisInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Dnssec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dnssec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrarTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrarType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrarType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -462,5 +481,21 @@ void WhoisInfo::SetDnssec(const string& _dnssec)
 bool WhoisInfo::DnssecHasBeenSet() const
 {
     return m_dnssecHasBeenSet;
+}
+
+string WhoisInfo::GetRegistrarType() const
+{
+    return m_registrarType;
+}
+
+void WhoisInfo::SetRegistrarType(const string& _registrarType)
+{
+    m_registrarType = _registrarType;
+    m_registrarTypeHasBeenSet = true;
+}
+
+bool WhoisInfo::RegistrarTypeHasBeenSet() const
+{
+    return m_registrarTypeHasBeenSet;
 }
 

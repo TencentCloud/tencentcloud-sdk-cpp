@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命令模版。
-                     * @return Cmd 命令模版。
+                     * 获取命令模板。
+                     * @return Cmd 命令模板。
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置命令模版。
-                     * @param _cmd 命令模版。
+                     * 设置命令模板。
+                     * @param _cmd 命令模板。
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ExecTimesHasBeenSet() const;
 
                     /**
-                     * 获取总耗时。
-                     * @return QueryTime 总耗时。
+                     * 获取总耗时。单位：s
+                     * @return QueryTime 总耗时。单位：s
                      * 
                      */
                     double GetQueryTime() const;
 
                     /**
-                     * 设置总耗时。
-                     * @param _queryTime 总耗时。
+                     * 设置总耗时。单位：s
+                     * @param _queryTime 总耗时。单位：s
                      * 
                      */
                     void SetQueryTime(const double& _queryTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool QueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取平均执行时间。
-                     * @return QueryTimeAvg 平均执行时间。
+                     * 获取平均执行时间。单位：s
+                     * @return QueryTimeAvg 平均执行时间。单位：s
                      * 
                      */
                     double GetQueryTimeAvg() const;
 
                     /**
-                     * 设置平均执行时间。
-                     * @param _queryTimeAvg 平均执行时间。
+                     * 设置平均执行时间。单位：s
+                     * @param _queryTimeAvg 平均执行时间。单位：s
                      * 
                      */
                     void SetQueryTimeAvg(const double& _queryTimeAvg);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool QueryTimeAvgHasBeenSet() const;
 
                     /**
-                     * 获取最大执行时间。
-                     * @return QueryTimeMax 最大执行时间。
+                     * 获取最大执行时间。单位：s
+                     * @return QueryTimeMax 最大执行时间。单位：s
                      * 
                      */
                     double GetQueryTimeMax() const;
 
                     /**
-                     * 设置最大执行时间。
-                     * @param _queryTimeMax 最大执行时间。
+                     * 设置最大执行时间。单位：s
+                     * @param _queryTimeMax 最大执行时间。单位：s
                      * 
                      */
                     void SetQueryTimeMax(const double& _queryTimeMax);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool QueryTimeMaxHasBeenSet() const;
 
                     /**
-                     * 获取最小执行时间。
-                     * @return QueryTimeMin 最小执行时间。
+                     * 获取最小执行时间。单位：s
+                     * @return QueryTimeMin 最小执行时间。单位：s
                      * 
                      */
                     double GetQueryTimeMin() const;
 
                     /**
-                     * 设置最小执行时间。
-                     * @param _queryTimeMin 最小执行时间。
+                     * 设置最小执行时间。单位：s
+                     * @param _queryTimeMin 最小执行时间。单位：s
                      * 
                      */
                     void SetQueryTimeMin(const double& _queryTimeMin);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool QueryTimeMinHasBeenSet() const;
 
                     /**
-                     * 获取总耗时占比
-                     * @return QueryTimeRatio 总耗时占比
+                     * 获取总耗时占比。单位：%
+                     * @return QueryTimeRatio 总耗时占比。单位：%
                      * 
                      */
                     double GetQueryTimeRatio() const;
 
                     /**
-                     * 设置总耗时占比
-                     * @param _queryTimeRatio 总耗时占比
+                     * 设置总耗时占比。单位：%
+                     * @param _queryTimeRatio 总耗时占比。单位：%
                      * 
                      */
                     void SetQueryTimeRatio(const double& _queryTimeRatio);
@@ -217,7 +217,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命令模版。
+                     * 命令模板。
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
@@ -235,31 +235,31 @@ namespace TencentCloud
                     bool m_execTimesHasBeenSet;
 
                     /**
-                     * 总耗时。
+                     * 总耗时。单位：s
                      */
                     double m_queryTime;
                     bool m_queryTimeHasBeenSet;
 
                     /**
-                     * 平均执行时间。
+                     * 平均执行时间。单位：s
                      */
                     double m_queryTimeAvg;
                     bool m_queryTimeAvgHasBeenSet;
 
                     /**
-                     * 最大执行时间。
+                     * 最大执行时间。单位：s
                      */
                     double m_queryTimeMax;
                     bool m_queryTimeMaxHasBeenSet;
 
                     /**
-                     * 最小执行时间。
+                     * 最小执行时间。单位：s
                      */
                     double m_queryTimeMin;
                     bool m_queryTimeMinHasBeenSet;
 
                     /**
-                     * 总耗时占比
+                     * 总耗时占比。单位：%
                      */
                     double m_queryTimeRatio;
                     bool m_queryTimeRatioHasBeenSet;

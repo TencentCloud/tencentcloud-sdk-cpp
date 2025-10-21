@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ using namespace std;
 
 RealTimeTaskSpeed::RealTimeTaskSpeed() :
     m_recordsSpeedListHasBeenSet(false),
-    m_bytesSpeedListHasBeenSet(false)
+    m_bytesSpeedListHasBeenSet(false),
+    m_recordsLogSpeedHasBeenSet(false),
+    m_bytesLogSpeedHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,46 @@ CoreInternalOutcome RealTimeTaskSpeed::Deserialize(const rapidjson::Value &value
         m_bytesSpeedListHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordsLogSpeed") && !value["RecordsLogSpeed"].IsNull())
+    {
+        if (!value["RecordsLogSpeed"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RealTimeTaskSpeed.RecordsLogSpeed` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecordsLogSpeed"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecordsSpeed item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recordsLogSpeed.push_back(item);
+        }
+        m_recordsLogSpeedHasBeenSet = true;
+    }
+
+    if (value.HasMember("BytesLogSpeed") && !value["BytesLogSpeed"].IsNull())
+    {
+        if (!value["BytesLogSpeed"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RealTimeTaskSpeed.BytesLogSpeed` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BytesLogSpeed"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BytesSpeed item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_bytesLogSpeed.push_back(item);
+        }
+        m_bytesLogSpeedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -102,6 +144,36 @@ void RealTimeTaskSpeed::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 
         int i=0;
         for (auto itr = m_bytesSpeedList.begin(); itr != m_bytesSpeedList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_recordsLogSpeedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordsLogSpeed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recordsLogSpeed.begin(); itr != m_recordsLogSpeed.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_bytesLogSpeedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BytesLogSpeed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_bytesLogSpeed.begin(); itr != m_bytesLogSpeed.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -141,5 +213,37 @@ void RealTimeTaskSpeed::SetBytesSpeedList(const vector<BytesSpeed>& _bytesSpeedL
 bool RealTimeTaskSpeed::BytesSpeedListHasBeenSet() const
 {
     return m_bytesSpeedListHasBeenSet;
+}
+
+vector<RecordsSpeed> RealTimeTaskSpeed::GetRecordsLogSpeed() const
+{
+    return m_recordsLogSpeed;
+}
+
+void RealTimeTaskSpeed::SetRecordsLogSpeed(const vector<RecordsSpeed>& _recordsLogSpeed)
+{
+    m_recordsLogSpeed = _recordsLogSpeed;
+    m_recordsLogSpeedHasBeenSet = true;
+}
+
+bool RealTimeTaskSpeed::RecordsLogSpeedHasBeenSet() const
+{
+    return m_recordsLogSpeedHasBeenSet;
+}
+
+vector<BytesSpeed> RealTimeTaskSpeed::GetBytesLogSpeed() const
+{
+    return m_bytesLogSpeed;
+}
+
+void RealTimeTaskSpeed::SetBytesLogSpeed(const vector<BytesSpeed>& _bytesLogSpeed)
+{
+    m_bytesLogSpeed = _bytesLogSpeed;
+    m_bytesLogSpeedHasBeenSet = true;
+}
+
+bool RealTimeTaskSpeed::BytesLogSpeedHasBeenSet() const
+{
+    return m_bytesLogSpeedHasBeenSet;
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -468,6 +468,27 @@ namespace TencentCloud
                      */
                     bool DatasourceConnectionSubnetCidrBlockHasBeenSet() const;
 
+                    /**
+                     * 获取支持 eg
+                     * @return EGSupport 支持 eg
+                     * 
+                     */
+                    int64_t GetEGSupport() const;
+
+                    /**
+                     * 设置支持 eg
+                     * @param _eGSupport 支持 eg
+                     * 
+                     */
+                    void SetEGSupport(const int64_t& _eGSupport);
+
+                    /**
+                     * 判断参数 EGSupport 是否已赋值
+                     * @return EGSupport 是否已赋值
+                     * 
+                     */
+                    bool EGSupportHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +609,12 @@ namespace TencentCloud
                      */
                     std::string m_datasourceConnectionSubnetCidrBlock;
                     bool m_datasourceConnectionSubnetCidrBlockHasBeenSet;
+
+                    /**
+                     * 支持 eg
+                     */
+                    int64_t m_eGSupport;
+                    bool m_eGSupportHasBeenSet;
 
                 };
             }

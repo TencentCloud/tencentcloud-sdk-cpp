@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,7 +114,9 @@ InstanceInfo::InstanceInfo() :
     m_readWriteModeHasBeenSet(false),
     m_enableScheduleRecoverGroupHasBeenSet(false),
     m_enableScheduleOperationDurationHasBeenSet(false),
-    m_enableDestroyProtectionHasBeenSet(false)
+    m_enableDestroyProtectionHasBeenSet(false),
+    m_showKibanaIpPortHasBeenSet(false),
+    m_isCdzLiteHasBeenSet(false)
 {
 }
 
@@ -1189,6 +1191,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_enableDestroyProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("ShowKibanaIpPort") && !value["ShowKibanaIpPort"].IsNull())
+    {
+        if (!value["ShowKibanaIpPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ShowKibanaIpPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_showKibanaIpPort = string(value["ShowKibanaIpPort"].GetString());
+        m_showKibanaIpPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCdzLite") && !value["IsCdzLite"].IsNull())
+    {
+        if (!value["IsCdzLite"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsCdzLite` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCdzLite = value["IsCdzLite"].GetBool();
+        m_isCdzLiteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2002,6 +2024,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableDestroyProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enableDestroyProtection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showKibanaIpPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowKibanaIpPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_showKibanaIpPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCdzLiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCdzLite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCdzLite, allocator);
     }
 
 }
@@ -3509,5 +3547,37 @@ void InstanceInfo::SetEnableDestroyProtection(const string& _enableDestroyProtec
 bool InstanceInfo::EnableDestroyProtectionHasBeenSet() const
 {
     return m_enableDestroyProtectionHasBeenSet;
+}
+
+string InstanceInfo::GetShowKibanaIpPort() const
+{
+    return m_showKibanaIpPort;
+}
+
+void InstanceInfo::SetShowKibanaIpPort(const string& _showKibanaIpPort)
+{
+    m_showKibanaIpPort = _showKibanaIpPort;
+    m_showKibanaIpPortHasBeenSet = true;
+}
+
+bool InstanceInfo::ShowKibanaIpPortHasBeenSet() const
+{
+    return m_showKibanaIpPortHasBeenSet;
+}
+
+bool InstanceInfo::GetIsCdzLite() const
+{
+    return m_isCdzLite;
+}
+
+void InstanceInfo::SetIsCdzLite(const bool& _isCdzLite)
+{
+    m_isCdzLite = _isCdzLite;
+    m_isCdzLiteHasBeenSet = true;
+}
+
+bool InstanceInfo::IsCdzLiteHasBeenSet() const
+{
+    return m_isCdzLiteHasBeenSet;
 }
 

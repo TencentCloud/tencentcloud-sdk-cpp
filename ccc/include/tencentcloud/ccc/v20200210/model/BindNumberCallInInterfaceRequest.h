@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool CallInInterfaceHasBeenSet() const;
 
+                    /**
+                     * 获取绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * @return NumberType 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * 
+                     */
+                    std::string GetNumberType() const;
+
+                    /**
+                     * 设置绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * @param _numberType 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     * 
+                     */
+                    void SetNumberType(const std::string& _numberType);
+
+                    /**
+                     * 判断参数 NumberType 是否已赋值
+                     * @return NumberType 是否已赋值
+                     * 
+                     */
+                    bool NumberTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     Interface m_callInInterface;
                     bool m_callInInterfaceHasBeenSet;
+
+                    /**
+                     * 绑定号码类型: inner: 内线号码 | number: 正常线路号码
+                     */
+                    std::string m_numberType;
+                    bool m_numberTypeHasBeenSet;
 
                 };
             }

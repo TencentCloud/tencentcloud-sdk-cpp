@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ DescribeInsightListRequest::DescribeInsightListRequest() :
     m_endTimeHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_mustHasContextHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeInsightListRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mustHasContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MustHasContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mustHasContext, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeInsightListRequest::SetType(const string& _type)
 bool DescribeInsightListRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+bool DescribeInsightListRequest::GetMustHasContext() const
+{
+    return m_mustHasContext;
+}
+
+void DescribeInsightListRequest::SetMustHasContext(const bool& _mustHasContext)
+{
+    m_mustHasContext = _mustHasContext;
+    m_mustHasContextHasBeenSet = true;
+}
+
+bool DescribeInsightListRequest::MustHasContextHasBeenSet() const
+{
+    return m_mustHasContextHasBeenSet;
 }
 
 

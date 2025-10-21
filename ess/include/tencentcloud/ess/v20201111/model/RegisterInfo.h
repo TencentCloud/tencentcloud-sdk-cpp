@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<font color="red">字段不再使用</font>，法人姓名
-                     * @return LegalName <font color="red">字段不再使用</font>，法人姓名
+                     * 获取法人姓名
+                     * @return LegalName 法人姓名
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置<font color="red">字段不再使用</font>，法人姓名
-                     * @param _legalName <font color="red">字段不再使用</font>，法人姓名
+                     * 设置法人姓名
+                     * @param _legalName 法人姓名
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool UsccHasBeenSet() const;
 
                     /**
-                     * 获取<font color="red">字段不再使用</font>，社会统一信用代码
-                     * @return UnifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 获取社会统一信用代码
+                     * @return UnifiedSocialCreditCode 社会统一信用代码
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
-                     * 设置<font color="red">字段不再使用</font>，社会统一信用代码
-                     * @param _unifiedSocialCreditCode <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 设置社会统一信用代码
+                     * @param _unifiedSocialCreditCode 社会统一信用代码
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -112,6 +112,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UnifiedSocialCreditCodeHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @return OrganizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    std::string GetOrganizationAddress() const;
+
+                    /**
+                     * 设置组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * @param _organizationAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     * 
+                     */
+                    void SetOrganizationAddress(const std::string& _organizationAddress);
+
+                    /**
+                     * 判断参数 OrganizationAddress 是否已赋值
+                     * @return OrganizationAddress 是否已赋值
+                     * 
+                     */
+                    bool OrganizationAddressHasBeenSet() const;
 
                     /**
                      * 获取指定企业认证的授权方式 支持多选:
@@ -155,13 +176,13 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取指定企业认证的授权方式 支持多选:
+                     * 获取指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @return AuthorizationType 指定企业认证的授权方式 支持多选:
+                     * @return AuthorizationType 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
@@ -172,13 +193,13 @@ namespace TencentCloud
                     int64_t GetAuthorizationType() const;
 
                     /**
-                     * 设置指定企业认证的授权方式 支持多选:
+                     * 设置指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @param _authorizationType 指定企业认证的授权方式 支持多选:
+                     * @param _authorizationType 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>
@@ -198,7 +219,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <font color="red">字段不再使用</font>，法人姓名
+                     * 法人姓名
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
@@ -211,10 +232,16 @@ namespace TencentCloud
                     bool m_usccHasBeenSet;
 
                     /**
-                     * <font color="red">字段不再使用</font>，社会统一信用代码
+                     * 社会统一信用代码
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
+
+                    /**
+                     * 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。
+                     */
+                    std::string m_organizationAddress;
+                    bool m_organizationAddressHasBeenSet;
 
                     /**
                      * 指定企业认证的授权方式 支持多选:
@@ -228,7 +255,7 @@ namespace TencentCloud
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 指定企业认证的授权方式 支持多选:
+                     * 指定企业认证的授权方式:
 
 <ul>
 <li><strong>2</strong>: 法人授权方式</li>

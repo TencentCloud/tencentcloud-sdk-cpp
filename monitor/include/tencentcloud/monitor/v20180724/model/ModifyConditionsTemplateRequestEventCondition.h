@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,86 +49,128 @@ namespace TencentCloud
                     /**
                      * 获取告警通知周期
                      * @return AlarmNotifyPeriod 告警通知周期
-                     * 
+                     * @deprecated
                      */
                     std::string GetAlarmNotifyPeriod() const;
 
                     /**
                      * 设置告警通知周期
                      * @param _alarmNotifyPeriod 告警通知周期
-                     * 
+                     * @deprecated
                      */
                     void SetAlarmNotifyPeriod(const std::string& _alarmNotifyPeriod);
 
                     /**
                      * 判断参数 AlarmNotifyPeriod 是否已赋值
                      * @return AlarmNotifyPeriod 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
                      * 获取告警通知方式
                      * @return AlarmNotifyType 告警通知方式
-                     * 
+                     * @deprecated
                      */
                     std::string GetAlarmNotifyType() const;
 
                     /**
                      * 设置告警通知方式
                      * @param _alarmNotifyType 告警通知方式
-                     * 
+                     * @deprecated
                      */
                     void SetAlarmNotifyType(const std::string& _alarmNotifyType);
 
                     /**
                      * 判断参数 AlarmNotifyType 是否已赋值
                      * @return AlarmNotifyType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取事件ID
                      * @return EventID 事件ID
-                     * 
+                     * @deprecated
                      */
                     std::string GetEventID() const;
 
                     /**
                      * 设置事件ID
                      * @param _eventID 事件ID
-                     * 
+                     * @deprecated
                      */
                     void SetEventID(const std::string& _eventID);
 
                     /**
                      * 判断参数 EventID 是否已赋值
                      * @return EventID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EventIDHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleID 规则ID
-                     * 
+                     * @deprecated
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则ID
                      * @param _ruleID 规则ID
-                     * 
+                     * @deprecated
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RuleIDHasBeenSet() const;
+
+                    /**
+                     * 获取重构后的eventType
+                     * @return MetricName 重构后的eventType
+                     * 
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置重构后的eventType
+                     * @param _metricName 重构后的eventType
+                     * 
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     * 
+                     */
+                    bool MetricNameHasBeenSet() const;
+
+                    /**
+                     * 获取事件描述信息
+                     * @return Description 事件描述信息
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置事件描述信息
+                     * @param _description 事件描述信息
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
 
                 private:
 
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
+
+                    /**
+                     * 重构后的eventType
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 事件描述信息
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

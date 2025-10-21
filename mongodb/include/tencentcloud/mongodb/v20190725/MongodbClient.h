@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,8 @@
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
@@ -291,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetBackupRulesResponse> SetBackupRulesOutcome;
                 typedef std::future<SetBackupRulesOutcome> SetBackupRulesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetBackupRulesRequest&, SetBackupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetDBInstanceDeletionProtectionResponse> SetDBInstanceDeletionProtectionOutcome;
+                typedef std::future<SetDBInstanceDeletionProtectionOutcome> SetDBInstanceDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetDBInstanceDeletionProtectionRequest&, SetDBInstanceDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDBInstanceDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetInstanceMaintenanceResponse> SetInstanceMaintenanceOutcome;
                 typedef std::future<SetInstanceMaintenanceOutcome> SetInstanceMaintenanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetInstanceMaintenanceRequest&, SetInstanceMaintenanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceMaintenanceAsyncHandler;
@@ -337,7 +342,7 @@ namespace TencentCloud
                 CreateBackupDownloadTaskOutcomeCallable CreateBackupDownloadTaskCallable(const Model::CreateBackupDownloadTaskRequest& request);
 
                 /**
-                 *本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。
+                 *本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可通过接口查询 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/35767) 获取。
                  * @param req CreateDBInstanceRequest
                  * @return CreateDBInstanceOutcome
                  */
@@ -392,7 +397,7 @@ namespace TencentCloud
                 DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
 
                 /**
-                 *查询备份下载任务信息
+                 *本接口（DescribeBackupDownloadTask）用于查询备份下载任务信息。
                  * @param req DescribeBackupDownloadTaskRequest
                  * @return DescribeBackupDownloadTaskOutcome
                  */
@@ -502,7 +507,7 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
-                 *查询实例慢日志详情
+                 *本接口（DescribeDetailedSlowLogs）用于查询实例慢日志详情。
                  * @param req DescribeDetailedSlowLogsRequest
                  * @return DescribeDetailedSlowLogsOutcome
                  */
@@ -547,7 +552,7 @@ namespace TencentCloud
                 DescribeSlowLogsOutcomeCallable DescribeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request);
 
                 /**
-                 *本接口(DescribeSpecInfo)用于查询实例的售卖规格。
+                 *本接口（DescribeSpecInfo）用于查询实例的售卖规格。
                  * @param req DescribeSpecInfoRequest
                  * @return DescribeSpecInfoOutcome
                  */
@@ -630,7 +635,7 @@ namespace TencentCloud
                 InquirePriceRenewDBInstancesOutcomeCallable InquirePriceRenewDBInstancesCallable(const Model::InquirePriceRenewDBInstancesRequest& request);
 
                 /**
-                 *本接口(IsolateDBInstance)用于隔离MongoDB云数据库按量计费实例。隔离后实例保留在回收站中，不能再写入数据。隔离一定时间后，实例会彻底删除，回收站保存时间请参考按量计费的服务条款。在隔离中的按量计费实例无法恢复，请谨慎操作。
+                 *本接口（IsolateDBInstance）用于隔离 MongoDB 云数据库按量计费实例。隔离后实例保留在回收站中，不能再写入数据。隔离一定时间后，实例会彻底删除，回收站保存时间请参考按量计费的服务条款。已删除的按量计费实例无法恢复，请谨慎操作。
                  * @param req IsolateDBInstanceRequest
                  * @return IsolateDBInstanceOutcome
                  */
@@ -639,7 +644,7 @@ namespace TencentCloud
                 IsolateDBInstanceOutcomeCallable IsolateDBInstanceCallable(const Model::IsolateDBInstanceRequest& request);
 
                 /**
-                 *本接口(KillOps)用于终止MongoDB云数据库实例上执行的特定操作。
+                 *本接口（KillOps）用于终止 MongoDB 云数据库实例上执行的特定操作。
                  * @param req KillOpsRequest
                  * @return KillOpsOutcome
                  */
@@ -676,7 +681,7 @@ namespace TencentCloud
                 ModifyDBInstanceSecurityGroupOutcomeCallable ModifyDBInstanceSecurityGroupCallable(const Model::ModifyDBInstanceSecurityGroupRequest& request);
 
                 /**
-                 *本接口（ModifyDBInstanceSpec）用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。
+                 *本接口（ModifyDBInstanceSpec）用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)）获取。
                  * @param req ModifyDBInstanceSpecRequest
                  * @return ModifyDBInstanceSpecOutcome
                  */
@@ -721,7 +726,7 @@ namespace TencentCloud
                 RenewDBInstancesOutcomeCallable RenewDBInstancesCallable(const Model::RenewDBInstancesRequest& request);
 
                 /**
-                 *修改实例用户的密码
+                 *本接口（ResetDBInstancePassword）用于重置实例访问密码。
                  * @param req ResetDBInstancePasswordRequest
                  * @return ResetDBInstancePasswordOutcome
                  */
@@ -730,7 +735,7 @@ namespace TencentCloud
                 ResetDBInstancePasswordOutcomeCallable ResetDBInstancePasswordCallable(const Model::ResetDBInstancePasswordRequest& request);
 
                 /**
-                 *本接口用于重启数据库节点。
+                 *本接口（RestartNodes）用于批量重启数据库节点。
                  * @param req RestartNodesRequest
                  * @return RestartNodesOutcome
                  */
@@ -757,6 +762,15 @@ namespace TencentCloud
                 SetBackupRulesOutcomeCallable SetBackupRulesCallable(const Model::SetBackupRulesRequest& request);
 
                 /**
+                 *本接口（SetDBInstanceDeletionProtection）用于设置实例销毁保护
+                 * @param req SetDBInstanceDeletionProtectionRequest
+                 * @return SetDBInstanceDeletionProtectionOutcome
+                 */
+                SetDBInstanceDeletionProtectionOutcome SetDBInstanceDeletionProtection(const Model::SetDBInstanceDeletionProtectionRequest &request);
+                void SetDBInstanceDeletionProtectionAsync(const Model::SetDBInstanceDeletionProtectionRequest& request, const SetDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDBInstanceDeletionProtectionOutcomeCallable SetDBInstanceDeletionProtectionCallable(const Model::SetDBInstanceDeletionProtectionRequest& request);
+
+                /**
                  *本接口（SetInstanceMaintenance ） 用于设置实例维护时间窗。
                  * @param req SetInstanceMaintenanceRequest
                  * @return SetInstanceMaintenanceOutcome
@@ -766,7 +780,7 @@ namespace TencentCloud
                 SetInstanceMaintenanceOutcomeCallable SetInstanceMaintenanceCallable(const Model::SetInstanceMaintenanceRequest& request);
 
                 /**
-                 *本接口（TerminateDBInstances）可将包年包月实例退还隔离。
+                 *本接口（TerminateDBInstances）用于退还包年包月计费实例。
                  * @param req TerminateDBInstancesRequest
                  * @return TerminateDBInstancesOutcome
                  */

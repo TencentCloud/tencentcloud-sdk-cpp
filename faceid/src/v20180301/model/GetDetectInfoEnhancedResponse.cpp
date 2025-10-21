@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ GetDetectInfoEnhancedResponse::GetDetectInfoEnhancedResponse() :
     m_intentionVerifyDataHasBeenSet(false),
     m_intentionQuestionResultHasBeenSet(false),
     m_intentionActionResultHasBeenSet(false),
-    m_encryptedBodyHasBeenSet(false)
+    m_encryptedBodyHasBeenSet(false),
+    m_isVerifyIntentionHasBeenSet(false),
+    m_intentionVerifyTypeHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome GetDetectInfoEnhancedResponse::Deserialize(const string &pay
         m_encryptedBodyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsVerifyIntention") && !rsp["IsVerifyIntention"].IsNull())
+    {
+        if (!rsp["IsVerifyIntention"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsVerifyIntention` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isVerifyIntention = rsp["IsVerifyIntention"].GetBool();
+        m_isVerifyIntentionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IntentionVerifyType") && !rsp["IntentionVerifyType"].IsNull())
+    {
+        if (!rsp["IntentionVerifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionVerifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionVerifyType = string(rsp["IntentionVerifyType"].GetString());
+        m_intentionVerifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,11 +328,27 @@ string GetDetectInfoEnhancedResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isVerifyIntentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsVerifyIntention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isVerifyIntention, allocator);
+    }
+
+    if (m_intentionVerifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionVerifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intentionVerifyType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
     value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
-    
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     value.Accept(writer);
@@ -406,6 +444,26 @@ string GetDetectInfoEnhancedResponse::GetEncryptedBody() const
 bool GetDetectInfoEnhancedResponse::EncryptedBodyHasBeenSet() const
 {
     return m_encryptedBodyHasBeenSet;
+}
+
+bool GetDetectInfoEnhancedResponse::GetIsVerifyIntention() const
+{
+    return m_isVerifyIntention;
+}
+
+bool GetDetectInfoEnhancedResponse::IsVerifyIntentionHasBeenSet() const
+{
+    return m_isVerifyIntentionHasBeenSet;
+}
+
+string GetDetectInfoEnhancedResponse::GetIntentionVerifyType() const
+{
+    return m_intentionVerifyType;
+}
+
+bool GetDetectInfoEnhancedResponse::IntentionVerifyTypeHasBeenSet() const
+{
+    return m_intentionVerifyTypeHasBeenSet;
 }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取屏蔽规则ID。
-                     * @return TaskId 屏蔽规则ID。
+                     * 获取屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID
+                     * @return TaskId 屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置屏蔽规则ID。
-                     * @param _taskId 屏蔽规则ID。
+                     * 设置屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID
+                     * @param _taskId 屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道组id。
-                     * @return AlarmNoticeId 通知渠道组id。
+                     * 获取通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id
+                     * @return AlarmNoticeId 通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id
                      * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
-                     * 设置通知渠道组id。
-                     * @param _alarmNoticeId 通知渠道组id。
+                     * 设置通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id
+                     * @param _alarmNoticeId 通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id
                      * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AlarmNoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽开始时间（秒级时间戳）。
-                     * @return StartTime 屏蔽开始时间（秒级时间戳）。
+                     * 获取屏蔽开始时间，秒级(s)时间戳。
+                     * @return StartTime 屏蔽开始时间，秒级(s)时间戳。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置屏蔽开始时间（秒级时间戳）。
-                     * @param _startTime 屏蔽开始时间（秒级时间戳）。
+                     * 设置屏蔽开始时间，秒级(s)时间戳。
+                     * @param _startTime 屏蔽开始时间，秒级(s)时间戳。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽结束时间（秒级时间戳）。
-                     * @return EndTime 屏蔽结束时间（秒级时间戳）。
+                     * 获取屏蔽结束时间，秒级(s)时间戳。
+                     * @return EndTime 屏蔽结束时间，秒级(s)时间戳。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置屏蔽结束时间（秒级时间戳）。
-                     * @param _endTime 屏蔽结束时间（秒级时间戳）。
+                     * 设置屏蔽结束时间，秒级(s)时间戳。
+                     * @param _endTime 屏蔽结束时间，秒级(s)时间戳。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -191,14 +191,18 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。
+枚举：0（未生效），1（生效中），2（已失效）
                      * @return Status 规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。
+枚举：0（未生效），1（生效中），2（已失效）
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。
+枚举：0（未生效），1（生效中），2（已失效）
                      * @param _status 规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。
+枚举：0（未生效），1（生效中），2（已失效）
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -213,25 +217,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 屏蔽规则ID。
+                     * 屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 通知渠道组id。
+                     * 通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id
                      */
                     std::string m_alarmNoticeId;
                     bool m_alarmNoticeIdHasBeenSet;
 
                     /**
-                     * 屏蔽开始时间（秒级时间戳）。
+                     * 屏蔽开始时间，秒级(s)时间戳。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 屏蔽结束时间（秒级时间戳）。
+                     * 屏蔽结束时间，秒级(s)时间戳。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -256,6 +260,7 @@ namespace TencentCloud
 
                     /**
                      * 规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。
+枚举：0（未生效），1（生效中），2（已失效）
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

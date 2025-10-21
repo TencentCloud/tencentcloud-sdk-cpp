@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份记录ID 
-                     * @return BackupId 备份记录ID 
+                     * 获取备份记录ID。
+                     * @return BackupId 备份记录ID。
                      * 
                      */
                     std::string GetBackupId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份时间戳
-                     * @return BackupTimestamp 备份时间戳
+                     * 获取备份时间戳。
+                     * @return BackupTimestamp 备份时间戳。
                      * 
                      */
                     int64_t GetBackupTimestamp() const;
@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool BackupTimestampHasBeenSet() const;
 
                     /**
-                     * 获取备份不存在的时间戳范围
+                     * 获取备份不存在的时间戳范围。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MissingTimestamps 备份不存在的时间戳范围
+                     * @return MissingTimestamps 备份不存在的时间戳范围。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool MissingTimestampsHasBeenSet() const;
 
                     /**
-                     * 获取实例开启秒级备份的时间戳
-                     * @return StartTimestamp 实例开启秒级备份的时间戳
+                     * 获取实例开启秒级备份的时间戳。
+                     * @return StartTimestamp 实例开启秒级备份的时间戳。
                      * 
                      */
                     int64_t GetStartTimestamp() const;
@@ -105,26 +105,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份记录ID 
+                     * 备份记录ID。
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份时间戳
+                     * 备份时间戳。
                      */
                     int64_t m_backupTimestamp;
                     bool m_backupTimestampHasBeenSet;
 
                     /**
-                     * 备份不存在的时间戳范围
+                     * 备份不存在的时间戳范围。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecondLevelBackupMissingTimestamps> m_missingTimestamps;
                     bool m_missingTimestampsHasBeenSet;
 
                     /**
-                     * 实例开启秒级备份的时间戳
+                     * 实例开启秒级备份的时间戳。
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;

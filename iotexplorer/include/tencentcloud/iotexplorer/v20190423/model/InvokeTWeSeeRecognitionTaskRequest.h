@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionObjectDetectConfig.h>
 
 
 namespace TencentCloud
@@ -297,6 +299,77 @@ namespace TencentCloud
                      */
                     bool SummaryQOSHasBeenSet() const;
 
+                    /**
+                     * 获取摘要输出配置
+                     * @return SummaryConfig 摘要输出配置
+                     * 
+                     */
+                    VisionSummaryConfig GetSummaryConfig() const;
+
+                    /**
+                     * 设置摘要输出配置
+                     * @param _summaryConfig 摘要输出配置
+                     * 
+                     */
+                    void SetSummaryConfig(const VisionSummaryConfig& _summaryConfig);
+
+                    /**
+                     * 判断参数 SummaryConfig 是否已赋值
+                     * @return SummaryConfig 是否已赋值
+                     * 
+                     */
+                    bool SummaryConfigHasBeenSet() const;
+
+                    /**
+                     * 获取算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * @return ServiceType 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * @param _serviceType 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标检测配置
+                     * @return ObjectDetectConfig 目标检测配置
+                     * 
+                     */
+                    VisionObjectDetectConfig GetObjectDetectConfig() const;
+
+                    /**
+                     * 设置目标检测配置
+                     * @param _objectDetectConfig 目标检测配置
+                     * 
+                     */
+                    void SetObjectDetectConfig(const VisionObjectDetectConfig& _objectDetectConfig);
+
+                    /**
+                     * 判断参数 ObjectDetectConfig 是否已赋值
+                     * @return ObjectDetectConfig 是否已赋值
+                     * 
+                     */
+                    bool ObjectDetectConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +443,26 @@ namespace TencentCloud
                      */
                     std::string m_summaryQOS;
                     bool m_summaryQOSHasBeenSet;
+
+                    /**
+                     * 摘要输出配置
+                     */
+                    VisionSummaryConfig m_summaryConfig;
+                    bool m_summaryConfigHasBeenSet;
+
+                    /**
+                     * 算法类型，可能取值：
+- `Summary`：视频/图片摘要
+- `ObjectDetect`：目标检测
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * 目标检测配置
+                     */
+                    VisionObjectDetectConfig m_objectDetectConfig;
+                    bool m_objectDetectConfigHasBeenSet;
 
                 };
             }

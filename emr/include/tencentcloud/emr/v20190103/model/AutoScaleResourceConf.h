@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,6 +321,27 @@ namespace TencentCloud
                     bool YarnNodeLabelHasBeenSet() const;
 
                     /**
+                     * 获取对应的计算组
+                     * @return WarehouseName 对应的计算组
+                     * 
+                     */
+                    std::string GetWarehouseName() const;
+
+                    /**
+                     * 设置对应的计算组
+                     * @param _warehouseName 对应的计算组
+                     * 
+                     */
+                    void SetWarehouseName(const std::string& _warehouseName);
+
+                    /**
+                     * 判断参数 WarehouseName 是否已赋值
+                     * @return WarehouseName 是否已赋值
+                     * 
+                     */
+                    bool WarehouseNameHasBeenSet() const;
+
+                    /**
                      * 获取伸缩组状态
                      * @return GroupStatus 伸缩组状态
                      * 
@@ -385,14 +406,18 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩组更多设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraAdvanceAttrs 伸缩组更多设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScaleGroupAdvanceAttrs GetExtraAdvanceAttrs() const;
 
                     /**
                      * 设置伸缩组更多设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraAdvanceAttrs 伸缩组更多设置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraAdvanceAttrs(const AutoScaleGroupAdvanceAttrs& _extraAdvanceAttrs);
@@ -485,6 +510,12 @@ namespace TencentCloud
                     bool m_yarnNodeLabelHasBeenSet;
 
                     /**
+                     * 对应的计算组
+                     */
+                    std::string m_warehouseName;
+                    bool m_warehouseNameHasBeenSet;
+
+                    /**
                      * 伸缩组状态
                      */
                     int64_t m_groupStatus;
@@ -504,6 +535,7 @@ namespace TencentCloud
 
                     /**
                      * 伸缩组更多设置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScaleGroupAdvanceAttrs m_extraAdvanceAttrs;
                     bool m_extraAdvanceAttrsHasBeenSet;

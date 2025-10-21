@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool ServerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取vpcId
+                     * @return VpcId vpcId
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpcId
+                     * @param _vpcId vpcId
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_serverType;
                     bool m_serverTypeHasBeenSet;
+
+                    /**
+                     * vpcId
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

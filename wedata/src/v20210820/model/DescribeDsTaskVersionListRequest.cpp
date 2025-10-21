@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 DescribeDsTaskVersionListRequest::DescribeDsTaskVersionListRequest() :
     m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_isOnlyCurrentEditingVersionHasBeenSet(false)
+    m_isOnlyCurrentEditingVersionHasBeenSet(false),
+    m_isOnlyProductVersionHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeDsTaskVersionListRequest::ToJsonString() const
         string key = "IsOnlyCurrentEditingVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOnlyCurrentEditingVersion, allocator);
+    }
+
+    if (m_isOnlyProductVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOnlyProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOnlyProductVersion, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeDsTaskVersionListRequest::SetIsOnlyCurrentEditingVersion(const bool
 bool DescribeDsTaskVersionListRequest::IsOnlyCurrentEditingVersionHasBeenSet() const
 {
     return m_isOnlyCurrentEditingVersionHasBeenSet;
+}
+
+bool DescribeDsTaskVersionListRequest::GetIsOnlyProductVersion() const
+{
+    return m_isOnlyProductVersion;
+}
+
+void DescribeDsTaskVersionListRequest::SetIsOnlyProductVersion(const bool& _isOnlyProductVersion)
+{
+    m_isOnlyProductVersion = _isOnlyProductVersion;
+    m_isOnlyProductVersionHasBeenSet = true;
+}
+
+bool DescribeDsTaskVersionListRequest::IsOnlyProductVersionHasBeenSet() const
+{
+    return m_isOnlyProductVersionHasBeenSet;
 }
 
 

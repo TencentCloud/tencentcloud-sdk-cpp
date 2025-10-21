@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/ApproverOption.h>
 #include <tencentcloud/ess/v20201111/model/ComponentLimit.h>
+#include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
 
 
 namespace TencentCloud
@@ -120,18 +121,18 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 获取签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
-                     * @return ApproverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @return ApproverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      * 
                      */
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 设置签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
-                     * @param _approverMobile 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * @param _approverMobile 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      * 
                      */
@@ -973,6 +974,31 @@ namespace TencentCloud
                      */
                     bool SignEndpointsHasBeenSet() const;
 
+                    /**
+                     * 获取快速注册相关信息
+
+                     * @return RegisterInfo 快速注册相关信息
+
+                     * 
+                     */
+                    RegisterInfo GetRegisterInfo() const;
+
+                    /**
+                     * 设置快速注册相关信息
+
+                     * @param _registerInfo 快速注册相关信息
+
+                     * 
+                     */
+                    void SetRegisterInfo(const RegisterInfo& _registerInfo);
+
+                    /**
+                     * 判断参数 RegisterInfo 是否已赋值
+                     * @return RegisterInfo 是否已赋值
+                     * 
+                     */
+                    bool RegisterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -995,7 +1021,7 @@ namespace TencentCloud
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
+                     * 签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此合同签署方。
                      */
                     std::string m_approverMobile;
@@ -1223,6 +1249,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_signEndpoints;
                     bool m_signEndpointsHasBeenSet;
+
+                    /**
+                     * 快速注册相关信息
+
+                     */
+                    RegisterInfo m_registerInfo;
+                    bool m_registerInfoHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace std;
 ListSharedKnowledgeRequest::ListSharedKnowledgeRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_keywordHasBeenSet(false),
+    m_knowledgeTypesHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string ListSharedKnowledgeRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_knowledgeTypes.begin(); itr != m_knowledgeTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void ListSharedKnowledgeRequest::SetKeyword(const string& _keyword)
 bool ListSharedKnowledgeRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+vector<int64_t> ListSharedKnowledgeRequest::GetKnowledgeTypes() const
+{
+    return m_knowledgeTypes;
+}
+
+void ListSharedKnowledgeRequest::SetKnowledgeTypes(const vector<int64_t>& _knowledgeTypes)
+{
+    m_knowledgeTypes = _knowledgeTypes;
+    m_knowledgeTypesHasBeenSet = true;
+}
+
+bool ListSharedKnowledgeRequest::KnowledgeTypesHasBeenSet() const
+{
+    return m_knowledgeTypesHasBeenSet;
 }
 
 

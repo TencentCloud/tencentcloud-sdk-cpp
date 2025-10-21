@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,6 +178,52 @@ namespace TencentCloud
                      */
                     bool ForbidEditWatermarkHasBeenSet() const;
 
+                    /**
+                     * 获取印章描述
+                     * @return SealDescription 印章描述
+                     * 
+                     */
+                    std::string GetSealDescription() const;
+
+                    /**
+                     * 设置印章描述
+                     * @param _sealDescription 印章描述
+                     * 
+                     */
+                    void SetSealDescription(const std::string& _sealDescription);
+
+                    /**
+                     * 判断参数 SealDescription 是否已赋值
+                     * @return SealDescription 是否已赋值
+                     * 
+                     */
+                    bool SealDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁止编辑印章描述内容
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @return ForbidEditSealDescription 是否禁止编辑印章描述内容
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    bool GetForbidEditSealDescription() const;
+
+                    /**
+                     * 设置是否禁止编辑印章描述内容
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * @param _forbidEditSealDescription 是否禁止编辑印章描述内容
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     * 
+                     */
+                    void SetForbidEditSealDescription(const bool& _forbidEditSealDescription);
+
+                    /**
+                     * 判断参数 ForbidEditSealDescription 是否已赋值
+                     * @return ForbidEditSealDescription 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditSealDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +261,19 @@ namespace TencentCloud
                      */
                     bool m_forbidEditWatermark;
                     bool m_forbidEditWatermarkHasBeenSet;
+
+                    /**
+                     * 印章描述
+                     */
+                    std::string m_sealDescription;
+                    bool m_sealDescriptionHasBeenSet;
+
+                    /**
+                     * 是否禁止编辑印章描述内容
+<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>
+                     */
+                    bool m_forbidEditSealDescription;
+                    bool m_forbidEditSealDescriptionHasBeenSet;
 
                 };
             }

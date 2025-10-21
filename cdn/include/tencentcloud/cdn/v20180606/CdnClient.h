@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,24 +33,14 @@
 #include <tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnDomainRequest.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnDomainResponse.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnFailedLogTaskRequest.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnFailedLogTaskResponse.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h>
-#include <tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordRequest.h>
 #include <tencentcloud/cdn/v20180606/model/CreateVerifyRecordResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DeleteClsLogTopicResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DeleteScdnDomainRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DeleteScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeBillingDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeCcDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeCcDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDomainLogsRequest.h>
@@ -61,8 +51,6 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnOriginIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeDDoSDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeDDoSDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDiagnoseReportResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataRequest.h>
@@ -73,8 +61,6 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeHttpsPackagesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeHttpsPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h>
@@ -99,60 +85,28 @@
 #include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnBotRecordsResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnConfigResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeScdnTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeUrlViolationsResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeWafDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DescribeWafDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/DisableCachesRequest.h>
-#include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DisableClsLogTopicResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DuplicateDomainConfigResponse.h>
-#include <tencentcloud/cdn/v20180606/model/EnableCachesRequest.h>
-#include <tencentcloud/cdn/v20180606/model/EnableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/EnableClsLogTopicRequest.h>
 #include <tencentcloud/cdn/v20180606/model/EnableClsLogTopicResponse.h>
-#include <tencentcloud/cdn/v20180606/model/GetDisableRecordsRequest.h>
-#include <tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnDomainsRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnDomainsResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnTopBotDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListScdnTopBotDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopBotDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopBotDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopCcDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopCcDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopClsLogDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopClsLogDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopDDoSDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataResponse.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopWafDataRequest.h>
-#include <tencentcloud/cdn/v20180606/model/ListTopWafDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ModifyDomainConfigRequest.h>
@@ -169,20 +123,14 @@
 #include <tencentcloud/cdn/v20180606/model/SearchClsLogResponse.h>
 #include <tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h>
-#include <tencentcloud/cdn/v20180606/model/StartScdnDomainRequest.h>
-#include <tencentcloud/cdn/v20180606/model/StartScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/StopCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/StopCdnDomainResponse.h>
-#include <tencentcloud/cdn/v20180606/model/StopScdnDomainRequest.h>
-#include <tencentcloud/cdn/v20180606/model/StopScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h>
-#include <tencentcloud/cdn/v20180606/model/UpdateScdnDomainRequest.h>
-#include <tencentcloud/cdn/v20180606/model/UpdateScdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/cdn/v20180606/model/VerifyDomainRecordResponse.h>
 
@@ -214,15 +162,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEdgePackTaskResponse> CreateEdgePackTaskOutcome;
                 typedef std::future<CreateEdgePackTaskOutcome> CreateEdgePackTaskOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateEdgePackTaskRequest&, CreateEdgePackTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgePackTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateScdnDomainResponse> CreateScdnDomainOutcome;
-                typedef std::future<CreateScdnDomainOutcome> CreateScdnDomainOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::CreateScdnDomainRequest&, CreateScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateScdnFailedLogTaskResponse> CreateScdnFailedLogTaskOutcome;
-                typedef std::future<CreateScdnFailedLogTaskOutcome> CreateScdnFailedLogTaskOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::CreateScdnFailedLogTaskRequest&, CreateScdnFailedLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnFailedLogTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateScdnLogTaskResponse> CreateScdnLogTaskOutcome;
-                typedef std::future<CreateScdnLogTaskOutcome> CreateScdnLogTaskOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::CreateScdnLogTaskRequest&, CreateScdnLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScdnLogTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVerifyRecordResponse> CreateVerifyRecordOutcome;
                 typedef std::future<CreateVerifyRecordOutcome> CreateVerifyRecordOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::CreateVerifyRecordRequest&, CreateVerifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifyRecordAsyncHandler;
@@ -232,15 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClsLogTopicResponse> DeleteClsLogTopicOutcome;
                 typedef std::future<DeleteClsLogTopicOutcome> DeleteClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DeleteClsLogTopicRequest&, DeleteClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClsLogTopicAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteScdnDomainResponse> DeleteScdnDomainOutcome;
-                typedef std::future<DeleteScdnDomainOutcome> DeleteScdnDomainOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DeleteScdnDomainRequest&, DeleteScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillingDataResponse> DescribeBillingDataOutcome;
                 typedef std::future<DescribeBillingDataOutcome> DescribeBillingDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeBillingDataRequest&, DescribeBillingDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCcDataResponse> DescribeCcDataOutcome;
-                typedef std::future<DescribeCcDataOutcome> DescribeCcDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeCcDataRequest&, DescribeCcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdnDataResponse> DescribeCdnDataOutcome;
                 typedef std::future<DescribeCdnDataOutcome> DescribeCdnDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCdnDataRequest&, DescribeCdnDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnDataAsyncHandler;
@@ -256,9 +189,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCertDomainsResponse> DescribeCertDomainsOutcome;
                 typedef std::future<DescribeCertDomainsOutcome> DescribeCertDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCertDomainsRequest&, DescribeCertDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertDomainsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDDoSDataResponse> DescribeDDoSDataOutcome;
-                typedef std::future<DescribeDDoSDataOutcome> DescribeDDoSDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeDDoSDataRequest&, DescribeDDoSDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagnoseReportResponse> DescribeDiagnoseReportOutcome;
                 typedef std::future<DescribeDiagnoseReportOutcome> DescribeDiagnoseReportOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDiagnoseReportRequest&, DescribeDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseReportAsyncHandler;
@@ -274,9 +204,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgePackTaskStatusResponse> DescribeEdgePackTaskStatusOutcome;
                 typedef std::future<DescribeEdgePackTaskStatusOutcome> DescribeEdgePackTaskStatusOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeEdgePackTaskStatusRequest&, DescribeEdgePackTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgePackTaskStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEventLogDataResponse> DescribeEventLogDataOutcome;
-                typedef std::future<DescribeEventLogDataOutcome> DescribeEventLogDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeEventLogDataRequest&, DescribeEventLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventLogDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHttpsPackagesResponse> DescribeHttpsPackagesOutcome;
                 typedef std::future<DescribeHttpsPackagesOutcome> DescribeHttpsPackagesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeHttpsPackagesRequest&, DescribeHttpsPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHttpsPackagesAsyncHandler;
@@ -313,21 +240,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReportDataResponse> DescribeReportDataOutcome;
                 typedef std::future<DescribeReportDataOutcome> DescribeReportDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeReportDataRequest&, DescribeReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScdnBotDataResponse> DescribeScdnBotDataOutcome;
-                typedef std::future<DescribeScdnBotDataOutcome> DescribeScdnBotDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeScdnBotDataRequest&, DescribeScdnBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnBotDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScdnBotRecordsResponse> DescribeScdnBotRecordsOutcome;
-                typedef std::future<DescribeScdnBotRecordsOutcome> DescribeScdnBotRecordsOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeScdnBotRecordsRequest&, DescribeScdnBotRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnBotRecordsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScdnConfigResponse> DescribeScdnConfigOutcome;
-                typedef std::future<DescribeScdnConfigOutcome> DescribeScdnConfigOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeScdnConfigRequest&, DescribeScdnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnConfigAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScdnIpStrategyResponse> DescribeScdnIpStrategyOutcome;
-                typedef std::future<DescribeScdnIpStrategyOutcome> DescribeScdnIpStrategyOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeScdnIpStrategyRequest&, DescribeScdnIpStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnIpStrategyAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScdnTopDataResponse> DescribeScdnTopDataOutcome;
-                typedef std::future<DescribeScdnTopDataOutcome> DescribeScdnTopDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeScdnTopDataRequest&, DescribeScdnTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnTopDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopDataResponse> DescribeTopDataOutcome;
                 typedef std::future<DescribeTopDataOutcome> DescribeTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeTopDataRequest&, DescribeTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopDataAsyncHandler;
@@ -337,27 +249,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUrlViolationsResponse> DescribeUrlViolationsOutcome;
                 typedef std::future<DescribeUrlViolationsOutcome> DescribeUrlViolationsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeUrlViolationsRequest&, DescribeUrlViolationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUrlViolationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWafDataResponse> DescribeWafDataOutcome;
-                typedef std::future<DescribeWafDataOutcome> DescribeWafDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DescribeWafDataRequest&, DescribeWafDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DisableCachesResponse> DisableCachesOutcome;
-                typedef std::future<DisableCachesOutcome> DisableCachesOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::DisableCachesRequest&, DisableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableClsLogTopicResponse> DisableClsLogTopicOutcome;
                 typedef std::future<DisableClsLogTopicOutcome> DisableClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DisableClsLogTopicRequest&, DisableClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClsLogTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DuplicateDomainConfigResponse> DuplicateDomainConfigOutcome;
                 typedef std::future<DuplicateDomainConfigOutcome> DuplicateDomainConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DuplicateDomainConfigRequest&, DuplicateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateDomainConfigAsyncHandler;
-                typedef Outcome<Core::Error, Model::EnableCachesResponse> EnableCachesOutcome;
-                typedef std::future<EnableCachesOutcome> EnableCachesOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::EnableCachesRequest&, EnableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableCachesAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableClsLogTopicResponse> EnableClsLogTopicOutcome;
                 typedef std::future<EnableClsLogTopicOutcome> EnableClsLogTopicOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::EnableClsLogTopicRequest&, EnableClsLogTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClsLogTopicAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetDisableRecordsResponse> GetDisableRecordsOutcome;
-                typedef std::future<GetDisableRecordsOutcome> GetDisableRecordsOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::GetDisableRecordsRequest&, GetDisableRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDisableRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListClsLogTopicsResponse> ListClsLogTopicsOutcome;
                 typedef std::future<ListClsLogTopicsOutcome> ListClsLogTopicsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListClsLogTopicsRequest&, ListClsLogTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClsLogTopicsAsyncHandler;
@@ -367,33 +267,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListDiagnoseReportResponse> ListDiagnoseReportOutcome;
                 typedef std::future<ListDiagnoseReportOutcome> ListDiagnoseReportOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListDiagnoseReportRequest&, ListDiagnoseReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListScdnDomainsResponse> ListScdnDomainsOutcome;
-                typedef std::future<ListScdnDomainsOutcome> ListScdnDomainsOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListScdnDomainsRequest&, ListScdnDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnDomainsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListScdnLogTasksResponse> ListScdnLogTasksOutcome;
-                typedef std::future<ListScdnLogTasksOutcome> ListScdnLogTasksOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListScdnLogTasksRequest&, ListScdnLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnLogTasksAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListScdnTopBotDataResponse> ListScdnTopBotDataOutcome;
-                typedef std::future<ListScdnTopBotDataOutcome> ListScdnTopBotDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListScdnTopBotDataRequest&, ListScdnTopBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScdnTopBotDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListTopBotDataResponse> ListTopBotDataOutcome;
-                typedef std::future<ListTopBotDataOutcome> ListTopBotDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListTopBotDataRequest&, ListTopBotDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopBotDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListTopCcDataResponse> ListTopCcDataOutcome;
-                typedef std::future<ListTopCcDataOutcome> ListTopCcDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListTopCcDataRequest&, ListTopCcDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopCcDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopClsLogDataResponse> ListTopClsLogDataOutcome;
                 typedef std::future<ListTopClsLogDataOutcome> ListTopClsLogDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopClsLogDataRequest&, ListTopClsLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopClsLogDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListTopDDoSDataResponse> ListTopDDoSDataOutcome;
-                typedef std::future<ListTopDDoSDataOutcome> ListTopDDoSDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListTopDDoSDataRequest&, ListTopDDoSDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDDoSDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTopDataResponse> ListTopDataOutcome;
                 typedef std::future<ListTopDataOutcome> ListTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopDataRequest&, ListTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListTopWafDataResponse> ListTopWafDataOutcome;
-                typedef std::future<ListTopWafDataOutcome> ListTopWafDataOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::ListTopWafDataRequest&, ListTopWafDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopWafDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManageClsTopicDomainsResponse> ManageClsTopicDomainsOutcome;
                 typedef std::future<ManageClsTopicDomainsOutcome> ManageClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ManageClsTopicDomainsRequest&, ManageClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageClsTopicDomainsAsyncHandler;
@@ -418,15 +297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartCdnDomainResponse> StartCdnDomainOutcome;
                 typedef std::future<StartCdnDomainOutcome> StartCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::StartCdnDomainRequest&, StartCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::StartScdnDomainResponse> StartScdnDomainOutcome;
-                typedef std::future<StartScdnDomainOutcome> StartScdnDomainOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::StartScdnDomainRequest&, StartScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartScdnDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopCdnDomainResponse> StopCdnDomainOutcome;
                 typedef std::future<StopCdnDomainOutcome> StopCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::StopCdnDomainRequest&, StopCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCdnDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::StopScdnDomainResponse> StopScdnDomainOutcome;
-                typedef std::future<StopScdnDomainOutcome> StopScdnDomainOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::StopScdnDomainRequest&, StopScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScdnDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDomainConfigResponse> UpdateDomainConfigOutcome;
                 typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdateDomainConfigRequest&, UpdateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainConfigAsyncHandler;
@@ -436,9 +309,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePayTypeResponse> UpdatePayTypeOutcome;
                 typedef std::future<UpdatePayTypeOutcome> UpdatePayTypeOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdatePayTypeRequest&, UpdatePayTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePayTypeAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateScdnDomainResponse> UpdateScdnDomainOutcome;
-                typedef std::future<UpdateScdnDomainOutcome> UpdateScdnDomainOutcomeCallable;
-                typedef std::function<void(const CdnClient*, const Model::UpdateScdnDomainRequest&, UpdateScdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScdnDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -473,7 +343,9 @@ namespace TencentCloud
                 CreateClsLogTopicOutcomeCallable CreateClsLogTopicCallable(const Model::CreateClsLogTopicRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 CreateDiagnoseUrl 用于添加域名诊断任务URL。
                  * @param req CreateDiagnoseUrlRequest
                  * @return CreateDiagnoseUrlOutcome
@@ -490,39 +362,6 @@ CreateDiagnoseUrl 用于添加域名诊断任务URL。
                 CreateEdgePackTaskOutcome CreateEdgePackTask(const Model::CreateEdgePackTaskRequest &request);
                 void CreateEdgePackTaskAsync(const Model::CreateEdgePackTaskRequest& request, const CreateEdgePackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEdgePackTaskOutcomeCallable CreateEdgePackTaskCallable(const Model::CreateEdgePackTaskRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-CreateScdnDomain 用于创建 SCDN 加速域名
-                 * @param req CreateScdnDomainRequest
-                 * @return CreateScdnDomainOutcome
-                 */
-                CreateScdnDomainOutcome CreateScdnDomain(const Model::CreateScdnDomainRequest &request);
-                void CreateScdnDomainAsync(const Model::CreateScdnDomainRequest& request, const CreateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateScdnDomainOutcomeCallable CreateScdnDomainCallable(const Model::CreateScdnDomainRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-CreateScdnFailedLogTask 用于重试创建失败的事件日志任务
-                 * @param req CreateScdnFailedLogTaskRequest
-                 * @return CreateScdnFailedLogTaskOutcome
-                 */
-                CreateScdnFailedLogTaskOutcome CreateScdnFailedLogTask(const Model::CreateScdnFailedLogTaskRequest &request);
-                void CreateScdnFailedLogTaskAsync(const Model::CreateScdnFailedLogTaskRequest& request, const CreateScdnFailedLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateScdnFailedLogTaskOutcomeCallable CreateScdnFailedLogTaskCallable(const Model::CreateScdnFailedLogTaskRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-CreateScdnLogTask 用于创建事件日志任务
-                 * @param req CreateScdnLogTaskRequest
-                 * @return CreateScdnLogTaskOutcome
-                 */
-                CreateScdnLogTaskOutcome CreateScdnLogTask(const Model::CreateScdnLogTaskRequest &request);
-                void CreateScdnLogTaskAsync(const Model::CreateScdnLogTaskRequest& request, const CreateScdnLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateScdnLogTaskOutcomeCallable CreateScdnLogTaskCallable(const Model::CreateScdnLogTaskRequest& request);
 
                 /**
                  *CreateVerifyRecord 用于生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。
@@ -555,17 +394,6 @@ CreateScdnLogTask 用于创建事件日志任务
                 DeleteClsLogTopicOutcomeCallable DeleteClsLogTopicCallable(const Model::DeleteClsLogTopicRequest& request);
 
                 /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-删除SCDN域名
-                 * @param req DeleteScdnDomainRequest
-                 * @return DeleteScdnDomainOutcome
-                 */
-                DeleteScdnDomainOutcome DeleteScdnDomain(const Model::DeleteScdnDomainRequest &request);
-                void DeleteScdnDomainAsync(const Model::DeleteScdnDomainRequest& request, const DeleteScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteScdnDomainOutcomeCallable DeleteScdnDomainCallable(const Model::DeleteScdnDomainRequest& request);
-
-                /**
                  *DescribeBillingData 用于查询实际计费数据明细。
                  * @param req DescribeBillingDataRequest
                  * @return DescribeBillingDataOutcome
@@ -573,17 +401,6 @@ CreateScdnLogTask 用于创建事件日志任务
                 DescribeBillingDataOutcome DescribeBillingData(const Model::DescribeBillingDataRequest &request);
                 void DescribeBillingDataAsync(const Model::DescribeBillingDataRequest& request, const DescribeBillingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillingDataOutcomeCallable DescribeBillingDataCallable(const Model::DescribeBillingDataRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-CC统计数据查询
-                 * @param req DescribeCcDataRequest
-                 * @return DescribeCcDataOutcome
-                 */
-                DescribeCcDataOutcome DescribeCcData(const Model::DescribeCcDataRequest &request);
-                void DescribeCcDataAsync(const Model::DescribeCcDataRequest& request, const DescribeCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCcDataOutcomeCallable DescribeCcDataCallable(const Model::DescribeCcDataRequest& request);
 
                 /**
                  *DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：
@@ -645,18 +462,9 @@ CC统计数据查询
                 DescribeCertDomainsOutcomeCallable DescribeCertDomainsCallable(const Model::DescribeCertDomainsRequest& request);
 
                 /**
-                 *SCDN平台下线，接口开始预下线处理
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
 
-DDoS统计数据查询
-                 * @param req DescribeDDoSDataRequest
-                 * @return DescribeDDoSDataOutcome
-                 */
-                DescribeDDoSDataOutcome DescribeDDoSData(const Model::DescribeDDoSDataRequest &request);
-                void DescribeDDoSDataAsync(const Model::DescribeDDoSDataRequest& request, const DescribeDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDDoSDataOutcomeCallable DescribeDDoSDataCallable(const Model::DescribeDDoSDataRequest& request);
-
-                /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+### <font color=red>**该接口已废弃** </font><br>
 DescribeDiagnoseReport 用于获取指定报告id的内容。
                  * @param req DescribeDiagnoseReportRequest
                  * @return DescribeDiagnoseReportOutcome
@@ -701,17 +509,6 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeEdgePackTaskStatusOutcome DescribeEdgePackTaskStatus(const Model::DescribeEdgePackTaskStatusRequest &request);
                 void DescribeEdgePackTaskStatusAsync(const Model::DescribeEdgePackTaskStatusRequest& request, const DescribeEdgePackTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEdgePackTaskStatusOutcomeCallable DescribeEdgePackTaskStatusCallable(const Model::DescribeEdgePackTaskStatusRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-DescribeEventLogData 用于查询事件日志统计曲线
-                 * @param req DescribeEventLogDataRequest
-                 * @return DescribeEventLogDataOutcome
-                 */
-                DescribeEventLogDataOutcome DescribeEventLogData(const Model::DescribeEventLogDataRequest &request);
-                void DescribeEventLogDataAsync(const Model::DescribeEventLogDataRequest& request, const DescribeEventLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEventLogDataOutcomeCallable DescribeEventLogDataCallable(const Model::DescribeEventLogDataRequest& request);
 
                 /**
                  *DescribeHttpsPackages 用于查询 CDN HTTPS请求包详情。
@@ -837,61 +634,6 @@ DescribeEventLogData 用于查询事件日志统计曲线
                 DescribeReportDataOutcomeCallable DescribeReportDataCallable(const Model::DescribeReportDataRequest& request);
 
                 /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-获取BOT统计数据列表
-                 * @param req DescribeScdnBotDataRequest
-                 * @return DescribeScdnBotDataOutcome
-                 */
-                DescribeScdnBotDataOutcome DescribeScdnBotData(const Model::DescribeScdnBotDataRequest &request);
-                void DescribeScdnBotDataAsync(const Model::DescribeScdnBotDataRequest& request, const DescribeScdnBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScdnBotDataOutcomeCallable DescribeScdnBotDataCallable(const Model::DescribeScdnBotDataRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-查询BOT会话记录列表
-                 * @param req DescribeScdnBotRecordsRequest
-                 * @return DescribeScdnBotRecordsOutcome
-                 */
-                DescribeScdnBotRecordsOutcome DescribeScdnBotRecords(const Model::DescribeScdnBotRecordsRequest &request);
-                void DescribeScdnBotRecordsAsync(const Model::DescribeScdnBotRecordsRequest& request, const DescribeScdnBotRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScdnBotRecordsOutcomeCallable DescribeScdnBotRecordsCallable(const Model::DescribeScdnBotRecordsRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
-                 * @param req DescribeScdnConfigRequest
-                 * @return DescribeScdnConfigOutcome
-                 */
-                DescribeScdnConfigOutcome DescribeScdnConfig(const Model::DescribeScdnConfigRequest &request);
-                void DescribeScdnConfigAsync(const Model::DescribeScdnConfigRequest& request, const DescribeScdnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScdnConfigOutcomeCallable DescribeScdnConfigCallable(const Model::DescribeScdnConfigRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-查询在SCDN IP安全策略
-                 * @param req DescribeScdnIpStrategyRequest
-                 * @return DescribeScdnIpStrategyOutcome
-                 */
-                DescribeScdnIpStrategyOutcome DescribeScdnIpStrategy(const Model::DescribeScdnIpStrategyRequest &request);
-                void DescribeScdnIpStrategyAsync(const Model::DescribeScdnIpStrategyRequest& request, const DescribeScdnIpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScdnIpStrategyOutcomeCallable DescribeScdnIpStrategyCallable(const Model::DescribeScdnIpStrategyRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-获取SCDN的Top数据
-                 * @param req DescribeScdnTopDataRequest
-                 * @return DescribeScdnTopDataOutcome
-                 */
-                DescribeScdnTopDataOutcome DescribeScdnTopData(const Model::DescribeScdnTopDataRequest &request);
-                void DescribeScdnTopDataAsync(const Model::DescribeScdnTopDataRequest& request, const DescribeScdnTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScdnTopDataOutcomeCallable DescribeScdnTopDataCallable(const Model::DescribeScdnTopDataRequest& request);
-
-                /**
                  *DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：
 
 + 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP
@@ -929,27 +671,6 @@ DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置
                 DescribeUrlViolationsOutcomeCallable DescribeUrlViolationsCallable(const Model::DescribeUrlViolationsRequest& request);
 
                 /**
-                 *SCDN平台下线，接口开始预下线处理
-
-Waf统计数据查询
-                 * @param req DescribeWafDataRequest
-                 * @return DescribeWafDataOutcome
-                 */
-                DescribeWafDataOutcome DescribeWafData(const Model::DescribeWafDataRequest &request);
-                void DescribeWafDataAsync(const Model::DescribeWafDataRequest& request, const DescribeWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWafDataOutcomeCallable DescribeWafDataCallable(const Model::DescribeWafDataRequest& request);
-
-                /**
-                 *### <font color=red>**该接口已废弃** </font><br>
-DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。
-                 * @param req DisableCachesRequest
-                 * @return DisableCachesOutcome
-                 */
-                DisableCachesOutcome DisableCaches(const Model::DisableCachesRequest &request);
-                void DisableCachesAsync(const Model::DisableCachesRequest& request, const DisableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DisableCachesOutcomeCallable DisableCachesCallable(const Model::DisableCachesRequest& request);
-
-                /**
                  *DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约为 5~15 分钟。
 
                  * @param req DisableClsLogTopicRequest
@@ -969,16 +690,6 @@ DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中�
                 DuplicateDomainConfigOutcomeCallable DuplicateDomainConfigCallable(const Model::DuplicateDomainConfigRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
-EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。
-                 * @param req EnableCachesRequest
-                 * @return EnableCachesOutcome
-                 */
-                EnableCachesOutcome EnableCaches(const Model::EnableCachesRequest &request);
-                void EnableCachesAsync(const Model::EnableCachesRequest& request, const EnableCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnableCachesOutcomeCallable EnableCachesCallable(const Model::EnableCachesRequest& request);
-
-                /**
                  *EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约为 5~15 分钟。
                  * @param req EnableClsLogTopicRequest
                  * @return EnableClsLogTopicOutcome
@@ -986,16 +697,6 @@ EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时
                 EnableClsLogTopicOutcome EnableClsLogTopic(const Model::EnableClsLogTopicRequest &request);
                 void EnableClsLogTopicAsync(const Model::EnableClsLogTopicRequest& request, const EnableClsLogTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClsLogTopicOutcomeCallable EnableClsLogTopicCallable(const Model::EnableClsLogTopicRequest& request);
-
-                /**
-                 *### <font color=red>**该接口已废弃** </font><br>
-GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。
-                 * @param req GetDisableRecordsRequest
-                 * @return GetDisableRecordsOutcome
-                 */
-                GetDisableRecordsOutcome GetDisableRecords(const Model::GetDisableRecordsRequest &request);
-                void GetDisableRecordsAsync(const Model::GetDisableRecordsRequest& request, const GetDisableRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetDisableRecordsOutcomeCallable GetDisableRecordsCallable(const Model::GetDisableRecordsRequest& request);
 
                 /**
                  *ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。
@@ -1016,7 +717,9 @@ GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。
                 ListClsTopicDomainsOutcomeCallable ListClsTopicDomainsCallable(const Model::ListClsTopicDomainsRequest& request);
 
                 /**
-                 *### <font color=red>**该接口已废弃** </font><br>
+                 *以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)
+
+### <font color=red>**该接口已废弃** </font><br>
 ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。
                  * @param req ListDiagnoseReportRequest
                  * @return ListDiagnoseReportOutcome
@@ -1026,61 +729,6 @@ ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要�
                 ListDiagnoseReportOutcomeCallable ListDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request);
 
                 /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息
-                 * @param req ListScdnDomainsRequest
-                 * @return ListScdnDomainsOutcome
-                 */
-                ListScdnDomainsOutcome ListScdnDomains(const Model::ListScdnDomainsRequest &request);
-                void ListScdnDomainsAsync(const Model::ListScdnDomainsRequest& request, const ListScdnDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListScdnDomainsOutcomeCallable ListScdnDomainsCallable(const Model::ListScdnDomainsRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息
-                 * @param req ListScdnLogTasksRequest
-                 * @return ListScdnLogTasksOutcome
-                 */
-                ListScdnLogTasksOutcome ListScdnLogTasks(const Model::ListScdnLogTasksRequest &request);
-                void ListScdnLogTasksAsync(const Model::ListScdnLogTasksRequest& request, const ListScdnLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListScdnLogTasksOutcomeCallable ListScdnLogTasksCallable(const Model::ListScdnLogTasksRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-获取Bot攻击的Top数据列表
-                 * @param req ListScdnTopBotDataRequest
-                 * @return ListScdnTopBotDataOutcome
-                 */
-                ListScdnTopBotDataOutcome ListScdnTopBotData(const Model::ListScdnTopBotDataRequest &request);
-                void ListScdnTopBotDataAsync(const Model::ListScdnTopBotDataRequest& request, const ListScdnTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListScdnTopBotDataOutcomeCallable ListScdnTopBotDataCallable(const Model::ListScdnTopBotDataRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-获取Bot攻击的Top信息
-                 * @param req ListTopBotDataRequest
-                 * @return ListTopBotDataOutcome
-                 */
-                ListTopBotDataOutcome ListTopBotData(const Model::ListTopBotDataRequest &request);
-                void ListTopBotDataAsync(const Model::ListTopBotDataRequest& request, const ListTopBotDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListTopBotDataOutcomeCallable ListTopBotDataCallable(const Model::ListTopBotDataRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-获取CC攻击Top数据
-                 * @param req ListTopCcDataRequest
-                 * @return ListTopCcDataOutcome
-                 */
-                ListTopCcDataOutcome ListTopCcData(const Model::ListTopCcDataRequest &request);
-                void ListTopCcDataAsync(const Model::ListTopCcDataRequest& request, const ListTopCcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListTopCcDataOutcomeCallable ListTopCcDataCallable(const Model::ListTopCcDataRequest& request);
-
-                /**
                  *通过CLS日志计算Top信息。支持近7天的日志数据。
                  * @param req ListTopClsLogDataRequest
                  * @return ListTopClsLogDataOutcome
@@ -1088,17 +736,6 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListTopClsLogDataOutcome ListTopClsLogData(const Model::ListTopClsLogDataRequest &request);
                 void ListTopClsLogDataAsync(const Model::ListTopClsLogDataRequest& request, const ListTopClsLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopClsLogDataOutcomeCallable ListTopClsLogDataCallable(const Model::ListTopClsLogDataRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-获取DDoS攻击Top数据
-                 * @param req ListTopDDoSDataRequest
-                 * @return ListTopDDoSDataOutcome
-                 */
-                ListTopDDoSDataOutcome ListTopDDoSData(const Model::ListTopDDoSDataRequest &request);
-                void ListTopDDoSDataAsync(const Model::ListTopDDoSDataRequest& request, const ListTopDDoSDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListTopDDoSDataOutcomeCallable ListTopDDoSDataCallable(const Model::ListTopDDoSDataRequest& request);
 
                 /**
                  *ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：
@@ -1116,17 +753,6 @@ ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任�
                 ListTopDataOutcome ListTopData(const Model::ListTopDataRequest &request);
                 void ListTopDataAsync(const Model::ListTopDataRequest& request, const ListTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopDataOutcomeCallable ListTopDataCallable(const Model::ListTopDataRequest& request);
-
-                /**
-                 *SCDN平台下线，接口开始预下线处理
-
-获取Waf攻击Top数据
-                 * @param req ListTopWafDataRequest
-                 * @return ListTopWafDataOutcome
-                 */
-                ListTopWafDataOutcome ListTopWafData(const Model::ListTopWafDataRequest &request);
-                void ListTopWafDataAsync(const Model::ListTopWafDataRequest& request, const ListTopWafDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListTopWafDataOutcomeCallable ListTopWafDataCallable(const Model::ListTopWafDataRequest& request);
 
                 /**
                  *ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。
@@ -1208,17 +834,6 @@ Value 字段，使用 json 进行序列化，其中固定 update 作为 key，�
                 StartCdnDomainOutcomeCallable StartCdnDomainCallable(const Model::StartCdnDomainRequest& request);
 
                 /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-StartScdnDomain 用于开启域名的安全防护配置
-                 * @param req StartScdnDomainRequest
-                 * @return StartScdnDomainOutcome
-                 */
-                StartScdnDomainOutcome StartScdnDomain(const Model::StartScdnDomainRequest &request);
-                void StartScdnDomainAsync(const Model::StartScdnDomainRequest& request, const StartScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StartScdnDomainOutcomeCallable StartScdnDomainCallable(const Model::StartScdnDomainRequest& request);
-
-                /**
                  *StopCdnDomain 用于停止域名的加速服务。
 注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。
                  * @param req StopCdnDomainRequest
@@ -1229,19 +844,8 @@ StartScdnDomain 用于开启域名的安全防护配置
                 StopCdnDomainOutcomeCallable StopCdnDomainCallable(const Model::StopCdnDomainRequest& request);
 
                 /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-StopScdnDomain 用于关闭域名的安全防护配置
-                 * @param req StopScdnDomainRequest
-                 * @return StopScdnDomainOutcome
-                 */
-                StopScdnDomainOutcome StopScdnDomain(const Model::StopScdnDomainRequest &request);
-                void StopScdnDomainAsync(const Model::StopScdnDomainRequest& request, const StopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StopScdnDomainOutcomeCallable StopScdnDomainCallable(const Model::StopScdnDomainRequest& request);
-
-                /**
                  *UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。
-注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。
+注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口；如果仅修改单独配置项只传对应配置参数即可。
 操作审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到操作审计。
                  * @param req UpdateDomainConfigRequest
                  * @return UpdateDomainConfigOutcome
@@ -1267,17 +871,6 @@ StopScdnDomain 用于关闭域名的安全防护配置
                 UpdatePayTypeOutcome UpdatePayType(const Model::UpdatePayTypeRequest &request);
                 void UpdatePayTypeAsync(const Model::UpdatePayTypeRequest& request, const UpdatePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePayTypeOutcomeCallable UpdatePayTypeCallable(const Model::UpdatePayTypeRequest& request);
-
-                /**
-                 *SCDN平台已经正式下线，接口开始预下线处理
-
-UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置
-                 * @param req UpdateScdnDomainRequest
-                 * @return UpdateScdnDomainOutcome
-                 */
-                UpdateScdnDomainOutcome UpdateScdnDomain(const Model::UpdateScdnDomainRequest &request);
-                void UpdateScdnDomainAsync(const Model::UpdateScdnDomainRequest& request, const UpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateScdnDomainOutcomeCallable UpdateScdnDomainCallable(const Model::UpdateScdnDomainRequest& request);
 
                 /**
                  *VerifyDomainRecord 用于验证域名解析值。

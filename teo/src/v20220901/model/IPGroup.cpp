@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ IPGroup::IPGroup() :
     m_groupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_iPTotalCountHasBeenSet(false),
     m_iPExpireInfoHasBeenSet(false)
 {
 }
@@ -64,6 +65,16 @@ CoreInternalOutcome IPGroup::Deserialize(const rapidjson::Value &value)
             m_content.push_back((*itr).GetString());
         }
         m_contentHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPTotalCount") && !value["IPTotalCount"].IsNull())
+    {
+        if (!value["IPTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPGroup.IPTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPTotalCount = value["IPTotalCount"].GetInt64();
+        m_iPTotalCountHasBeenSet = true;
     }
 
     if (value.HasMember("IPExpireInfo") && !value["IPExpireInfo"].IsNull())
@@ -120,6 +131,14 @@ void IPGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_iPTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPTotalCount, allocator);
     }
 
     if (m_iPExpireInfoHasBeenSet)
@@ -186,6 +205,22 @@ void IPGroup::SetContent(const vector<string>& _content)
 bool IPGroup::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+int64_t IPGroup::GetIPTotalCount() const
+{
+    return m_iPTotalCount;
+}
+
+void IPGroup::SetIPTotalCount(const int64_t& _iPTotalCount)
+{
+    m_iPTotalCount = _iPTotalCount;
+    m_iPTotalCountHasBeenSet = true;
+}
+
+bool IPGroup::IPTotalCountHasBeenSet() const
+{
+    return m_iPTotalCountHasBeenSet;
 }
 
 vector<IPExpireInfo> IPGroup::GetIPExpireInfo() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,42 +91,42 @@ namespace TencentCloud
                     /**
                      * 获取消费TPS
                      * @return TPS 消费TPS
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetTPS() const;
 
                     /**
                      * 设置消费TPS
                      * @param _tPS 消费TPS
-                     * 
+                     * @deprecated
                      */
                     void SetTPS(const uint64_t& _tPS);
 
                     /**
                      * 判断参数 TPS 是否已赋值
                      * @return TPS 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TPSHasBeenSet() const;
 
                     /**
                      * 获取总堆积数量
                      * @return TotalAccumulative 总堆积数量
-                     * 
+                     * @deprecated
                      */
                     int64_t GetTotalAccumulative() const;
 
                     /**
                      * 设置总堆积数量
                      * @param _totalAccumulative 总堆积数量
-                     * 
+                     * @deprecated
                      */
                     void SetTotalAccumulative(const int64_t& _totalAccumulative);
 
                     /**
                      * 判断参数 TotalAccumulative 是否已赋值
                      * @return TotalAccumulative 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TotalAccumulativeHasBeenSet() const;
 
@@ -431,6 +431,27 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取订阅的主题个数
+                     * @return SubscribeTopicNum 订阅的主题个数
+                     * 
+                     */
+                    int64_t GetSubscribeTopicNum() const;
+
+                    /**
+                     * 设置订阅的主题个数
+                     * @param _subscribeTopicNum 订阅的主题个数
+                     * 
+                     */
+                    void SetSubscribeTopicNum(const int64_t& _subscribeTopicNum);
+
+                    /**
+                     * 判断参数 SubscribeTopicNum 是否已赋值
+                     * @return SubscribeTopicNum 是否已赋值
+                     * 
+                     */
+                    bool SubscribeTopicNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +562,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 订阅的主题个数
+                     */
+                    int64_t m_subscribeTopicNum;
+                    bool m_subscribeTopicNumHasBeenSet;
 
                 };
             }

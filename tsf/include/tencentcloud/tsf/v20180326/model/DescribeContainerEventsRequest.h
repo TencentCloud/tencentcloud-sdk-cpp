@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取event 的资源类型, group 或者 instance
-                     * @return ResourceType event 的资源类型, group 或者 instance
+                     * 获取event 的资源类型, 仅支持 group
+                     * @return ResourceType event 的资源类型, 仅支持 group
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置event 的资源类型, group 或者 instance
-                     * @param _resourceType event 的资源类型, group 或者 instance
+                     * 设置event 的资源类型, 仅支持 group
+                     * @param _resourceType event 的资源类型, 仅支持 group
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取event 的资源 id
-                     * @return ResourceId event 的资源 id
+                     * 获取部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。
+                     * @return ResourceId 部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置event 的资源 id
-                     * @param _resourceId event 的资源 id
+                     * 设置部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。
+                     * @param _resourceId 部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取当类型是 instance 时需要
-                     * @return GroupId 当类型是 instance 时需要
+                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置当类型是 instance 时需要
-                     * @param _groupId 当类型是 instance 时需要
+                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取event的资源kind
-                     * @return Kind event的资源kind
+                     * 获取event的资源种类
+                     * @return Kind event的资源种类
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置event的资源kind
-                     * @param _kind event的资源kind
+                     * 设置event的资源种类
+                     * @param _kind event的资源种类
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取event 的type
-                     * @return Type event 的type
+                     * 获取event 的事件级别
+                     * @return Type event 的事件级别
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置event 的type
-                     * @param _type event 的type
+                     * 设置event 的事件级别
+                     * @param _type event 的事件级别
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -234,13 +234,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * event 的资源类型, group 或者 instance
+                     * event 的资源类型, 仅支持 group
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * event 的资源 id
+                     * 部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -258,19 +258,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 当类型是 instance 时需要
+                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * event的资源kind
+                     * event的资源种类
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * event 的type
+                     * event 的事件级别
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

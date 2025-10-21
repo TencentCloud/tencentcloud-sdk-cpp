@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 DescribeCloudStorageAIServiceRequest::DescribeCloudStorageAIServiceRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeCloudStorageAIServiceRequest::ToJsonString() const
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeCloudStorageAIServiceRequest::SetServiceType(const string& _service
 bool DescribeCloudStorageAIServiceRequest::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageAIServiceRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DescribeCloudStorageAIServiceRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+string DescribeCloudStorageAIServiceRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeCloudStorageAIServiceRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

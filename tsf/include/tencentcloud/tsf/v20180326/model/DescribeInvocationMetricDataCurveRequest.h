@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询开始时间
-                     * @return StartTime 查询开始时间
+                     * 获取开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间
-                     * @param _startTime 查询开始时间
+                     * 设置开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 开始时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param _endTime 查询结束时间
+                     * 设置结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 结束时间，格式yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询时间粒度，单位秒可选值：60、3600、86400
-                     * @return Period 查询时间粒度，单位秒可选值：60、3600、86400
+                     * 获取查询时间粒度，单位秒。可选值：60、3600、86400
+                     * @return Period 查询时间粒度，单位秒。可选值：60、3600、86400
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置查询时间粒度，单位秒可选值：60、3600、86400
-                     * @param _period 查询时间粒度，单位秒可选值：60、3600、86400
+                     * 设置查询时间粒度，单位秒。可选值：60、3600、86400
+                     * @param _period 查询时间粒度，单位秒。可选值：60、3600、86400
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
-                     * @return MetricDimensions 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
+                     * 获取查询指标维度，不能为空
+                     * @return MetricDimensions 查询指标维度，不能为空
                      * 
                      */
                     std::vector<MetricDimension> GetMetricDimensions() const;
 
                     /**
-                     * 设置查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
-                     * @param _metricDimensions 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
+                     * 设置查询指标维度，不能为空
+                     * @param _metricDimensions 查询指标维度，不能为空
                      * 
                      */
                     void SetMetricDimensions(const std::vector<MetricDimension>& _metricDimensions);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool MetricDimensionsHasBeenSet() const;
 
                     /**
-                     * 获取查询指标名，不能为空.
-                     * @return Metrics 查询指标名，不能为空.
+                     * 获取查询指标名，不能为空
+                     * @return Metrics 查询指标名，不能为空
                      * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
-                     * 设置查询指标名，不能为空.
-                     * @param _metrics 查询指标名，不能为空.
+                     * 设置查询指标名，不能为空
+                     * @param _metrics 查询指标名，不能为空
                      * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取视图视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @return Kind 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 获取视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER
+                     * @return Kind 视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置视图视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @param _kind 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 设置视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER
+                     * @param _kind 视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -194,37 +194,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询开始时间
+                     * 开始时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * 结束时间，格式yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询时间粒度，单位秒可选值：60、3600、86400
+                     * 查询时间粒度，单位秒。可选值：60、3600、86400
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
+                     * 查询指标维度，不能为空
                      */
                     std::vector<MetricDimension> m_metricDimensions;
                     bool m_metricDimensionsHasBeenSet;
 
                     /**
-                     * 查询指标名，不能为空.
+                     * 查询指标名，不能为空
                      */
                     std::vector<Metric> m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

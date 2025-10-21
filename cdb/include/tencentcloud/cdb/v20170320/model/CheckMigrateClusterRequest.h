@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id。
-                     * @return InstanceId 实例Id。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id。
-                     * @param _instanceId 实例Id。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例CPU核数
-                     * @return Cpu 实例CPU核数
+                     * 获取实例 CPU 核数。当 InstanceId 为主实例时必传。
+                     * @return Cpu 实例 CPU 核数。当 InstanceId 为主实例时必传。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例CPU核数
-                     * @param _cpu 实例CPU核数
+                     * 设置实例 CPU 核数。当 InstanceId 为主实例时必传。
+                     * @param _cpu 实例 CPU 核数。当 InstanceId 为主实例时必传。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取实例内存大小，单位：MB
-                     * @return Memory 实例内存大小，单位：MB
+                     * 获取实例内存大小，单位：MB。当 InstanceId 为主实例时必传。
+                     * @return Memory 实例内存大小，单位：MB。当 InstanceId 为主实例时必传。
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存大小，单位：MB
-                     * @param _memory 实例内存大小，单位：MB
+                     * 设置实例内存大小，单位：MB。当 InstanceId 为主实例时必传。
+                     * @param _memory 实例内存大小，单位：MB。当 InstanceId 为主实例时必传。
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例硬盘大小，单位：GB
-                     * @return Volume 实例硬盘大小，单位：GB
+                     * 获取实例硬盘大小，单位：GB。
+                     * @return Volume 实例硬盘大小，单位：GB。
                      * 
                      */
                     int64_t GetVolume() const;
 
                     /**
-                     * 设置实例硬盘大小，单位：GB
-                     * @param _volume 实例硬盘大小，单位：GB
+                     * 设置实例硬盘大小，单位：GB。
+                     * @param _volume 实例硬盘大小，单位：GB。
                      * 
                      */
                     void SetVolume(const int64_t& _volume);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘
-                     * @return DiskType 磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘
+                     * 获取磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。
+                     * @return DiskType 磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘
-                     * @param _diskType 磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘
+                     * 设置磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。
+                     * @param _diskType 磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取云盘版节点拓扑配置。
-                     * @return ClusterTopology 云盘版节点拓扑配置。
+                     * 获取云盘版节点拓扑配置。当 InstanceId 为主实例时必传。
+                     * @return ClusterTopology 云盘版节点拓扑配置。当 InstanceId 为主实例时必传。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置云盘版节点拓扑配置。
-                     * @param _clusterTopology 云盘版节点拓扑配置。
+                     * 设置云盘版节点拓扑配置。当 InstanceId 为主实例时必传。
+                     * @param _clusterTopology 云盘版节点拓扑配置。当 InstanceId 为主实例时必传。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取只读实例信息
-                     * @return RoInfo 只读实例信息
+                     * 获取只读实例信息。
+                     * @return RoInfo 只读实例信息。
                      * 
                      */
                     std::vector<MigrateClusterRoInfo> GetRoInfo() const;
 
                     /**
-                     * 设置只读实例信息
-                     * @param _roInfo 只读实例信息
+                     * 设置只读实例信息。
+                     * @param _roInfo 只读实例信息。
                      * 
                      */
                     void SetRoInfo(const std::vector<MigrateClusterRoInfo>& _roInfo);
@@ -215,37 +215,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例CPU核数
+                     * 实例 CPU 核数。当 InstanceId 为主实例时必传。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 实例内存大小，单位：MB
+                     * 实例内存大小，单位：MB。当 InstanceId 为主实例时必传。
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例硬盘大小，单位：GB
+                     * 实例硬盘大小，单位：GB。
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘
+                     * 磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 云盘版节点拓扑配置。
+                     * 云盘版节点拓扑配置。当 InstanceId 为主实例时必传。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 只读实例信息
+                     * 只读实例信息。
                      */
                     std::vector<MigrateClusterRoInfo> m_roInfo;
                     bool m_roInfoHasBeenSet;

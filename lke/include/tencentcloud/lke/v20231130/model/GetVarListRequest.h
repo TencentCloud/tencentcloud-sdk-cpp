@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool VarTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要内部变量(默认false)
+                     * @return NeedInternalVar 是否需要内部变量(默认false)
+                     * 
+                     */
+                    bool GetNeedInternalVar() const;
+
+                    /**
+                     * 设置是否需要内部变量(默认false)
+                     * @param _needInternalVar 是否需要内部变量(默认false)
+                     * 
+                     */
+                    void SetNeedInternalVar(const bool& _needInternalVar);
+
+                    /**
+                     * 判断参数 NeedInternalVar 是否已赋值
+                     * @return NeedInternalVar 是否已赋值
+                     * 
+                     */
+                    bool NeedInternalVarHasBeenSet() const;
+
+                    /**
+                     * 获取变量类型
+                     * @return VarModuleType 变量类型
+                     * 
+                     */
+                    int64_t GetVarModuleType() const;
+
+                    /**
+                     * 设置变量类型
+                     * @param _varModuleType 变量类型
+                     * 
+                     */
+                    void SetVarModuleType(const int64_t& _varModuleType);
+
+                    /**
+                     * 判断参数 VarModuleType 是否已赋值
+                     * @return VarModuleType 是否已赋值
+                     * 
+                     */
+                    bool VarModuleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     std::string m_varType;
                     bool m_varTypeHasBeenSet;
+
+                    /**
+                     * 是否需要内部变量(默认false)
+                     */
+                    bool m_needInternalVar;
+                    bool m_needInternalVarHasBeenSet;
+
+                    /**
+                     * 变量类型
+                     */
+                    int64_t m_varModuleType;
+                    bool m_varModuleTypeHasBeenSet;
 
                 };
             }

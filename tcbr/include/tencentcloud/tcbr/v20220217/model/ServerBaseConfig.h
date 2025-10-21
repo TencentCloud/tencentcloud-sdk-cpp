@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/HpaPolicy.h>
 #include <tencentcloud/tcbr/v20220217/model/TimerScale.h>
+#include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
+#include <tencentcloud/tcbr/v20220217/model/VolumeConf.h>
 
 
 namespace TencentCloud
@@ -640,6 +642,48 @@ namespace TencentCloud
                      */
                     bool SessionAffinityHasBeenSet() const;
 
+                    /**
+                     * 获取Vpc 配置参数
+                     * @return VpcConf Vpc 配置参数
+                     * 
+                     */
+                    VpcConf GetVpcConf() const;
+
+                    /**
+                     * 设置Vpc 配置参数
+                     * @param _vpcConf Vpc 配置参数
+                     * 
+                     */
+                    void SetVpcConf(const VpcConf& _vpcConf);
+
+                    /**
+                     * 判断参数 VpcConf 是否已赋值
+                     * @return VpcConf 是否已赋值
+                     * 
+                     */
+                    bool VpcConfHasBeenSet() const;
+
+                    /**
+                     * 获取存储配置信息
+                     * @return VolumesConf 存储配置信息
+                     * 
+                     */
+                    std::vector<VolumeConf> GetVolumesConf() const;
+
+                    /**
+                     * 设置存储配置信息
+                     * @param _volumesConf 存储配置信息
+                     * 
+                     */
+                    void SetVolumesConf(const std::vector<VolumeConf>& _volumesConf);
+
+                    /**
+                     * 判断参数 VolumesConf 是否已赋值
+                     * @return VolumesConf 是否已赋值
+                     * 
+                     */
+                    bool VolumesConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +854,18 @@ namespace TencentCloud
                      */
                     std::string m_sessionAffinity;
                     bool m_sessionAffinityHasBeenSet;
+
+                    /**
+                     * Vpc 配置参数
+                     */
+                    VpcConf m_vpcConf;
+                    bool m_vpcConfHasBeenSet;
+
+                    /**
+                     * 存储配置信息
+                     */
+                    std::vector<VolumeConf> m_volumesConf;
+                    bool m_volumesConfHasBeenSet;
 
                 };
             }

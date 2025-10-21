@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,6 +276,52 @@ namespace TencentCloud
                      */
                     bool FullNamespaceV4HasBeenSet() const;
 
+                    /**
+                     * 获取订阅的主题个数
+                     * @return SubscribeTopicNum 订阅的主题个数
+                     * 
+                     */
+                    int64_t GetSubscribeTopicNum() const;
+
+                    /**
+                     * 设置订阅的主题个数
+                     * @param _subscribeTopicNum 订阅的主题个数
+                     * 
+                     */
+                    void SetSubscribeTopicNum(const int64_t& _subscribeTopicNum);
+
+                    /**
+                     * 判断参数 SubscribeTopicNum 是否已赋值
+                     * @return SubscribeTopicNum 是否已赋值
+                     * 
+                     */
+                    bool SubscribeTopicNumHasBeenSet() const;
+
+                    /**
+                     * 获取1753153590
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 1753153590
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置1753153590
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 1753153590
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +388,19 @@ namespace TencentCloud
                      */
                     std::string m_fullNamespaceV4;
                     bool m_fullNamespaceV4HasBeenSet;
+
+                    /**
+                     * 订阅的主题个数
+                     */
+                    int64_t m_subscribeTopicNum;
+                    bool m_subscribeTopicNumHasBeenSet;
+
+                    /**
+                     * 1753153590
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

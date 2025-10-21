@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool BackupDBTableListHasBeenSet() const;
 
                     /**
-                     * 获取手动备份别名
-                     * @return ManualBackupName 手动备份别名
+                     * 获取手动备份别名，输入长度请在60个字符内。
+                     * @return ManualBackupName 手动备份别名，输入长度请在60个字符内。
                      * 
                      */
                     std::string GetManualBackupName() const;
 
                     /**
-                     * 设置手动备份别名
-                     * @param _manualBackupName 手动备份别名
+                     * 设置手动备份别名，输入长度请在60个字符内。
+                     * @param _manualBackupName 手动备份别名，输入长度请在60个字符内。
                      * 
                      */
                     void SetManualBackupName(const std::string& _manualBackupName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ManualBackupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。
-                     * @return EncryptionFlag 是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。
+                     * 获取是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。
+                     * @return EncryptionFlag 是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。
                      * 
                      */
                     std::string GetEncryptionFlag() const;
 
                     /**
-                     * 设置是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。
-                     * @param _encryptionFlag 是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。
+                     * 设置是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。
+                     * @param _encryptionFlag 是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。
                      * 
                      */
                     void SetEncryptionFlag(const std::string& _encryptionFlag);
@@ -174,13 +174,13 @@ namespace TencentCloud
                     bool m_backupDBTableListHasBeenSet;
 
                     /**
-                     * 手动备份别名
+                     * 手动备份别名，输入长度请在60个字符内。
                      */
                     std::string m_manualBackupName;
                     bool m_manualBackupNameHasBeenSet;
 
                     /**
-                     * 是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。
+                     * 是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。
                      */
                     std::string m_encryptionFlag;
                     bool m_encryptionFlagHasBeenSet;

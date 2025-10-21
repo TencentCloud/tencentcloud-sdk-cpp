@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ ModifyJobRequest::ModifyJobRequest() :
     m_remarkHasBeenSet(false),
     m_targetFolderIdHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_continueAlarmHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyJobRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_continueAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContinueAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_continueAlarm, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyJobRequest::SetDescription(const string& _description)
 bool ModifyJobRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t ModifyJobRequest::GetContinueAlarm() const
+{
+    return m_continueAlarm;
+}
+
+void ModifyJobRequest::SetContinueAlarm(const int64_t& _continueAlarm)
+{
+    m_continueAlarm = _continueAlarm;
+    m_continueAlarmHasBeenSet = true;
+}
+
+bool ModifyJobRequest::ContinueAlarmHasBeenSet() const
+{
+    return m_continueAlarmHasBeenSet;
 }
 
 

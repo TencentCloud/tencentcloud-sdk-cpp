@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -122,6 +122,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpSchedulesRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateCoolDownPolicyResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/SnapshotRemainPolicy.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeRestoreTaskDetailRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateBackUpScheduleResponse.h
@@ -288,6 +289,7 @@ set(cdwdoris_src
   src/v20211228/model/DescribeBackUpSchedulesRequest.cpp
   src/v20211228/model/DescribeClusterConfigsRequest.cpp
   src/v20211228/model/CreateCoolDownPolicyResponse.cpp
+  src/v20211228/model/SnapshotRemainPolicy.cpp
   src/v20211228/model/ModifyWorkloadGroupResponse.cpp
   src/v20211228/model/DescribeRestoreTaskDetailRequest.cpp
   src/v20211228/model/CreateBackUpScheduleResponse.cpp

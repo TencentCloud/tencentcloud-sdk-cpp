@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,92 @@ CsipClient::AddNewBindRoleUserOutcomeCallable CsipClient::AddNewBindRoleUserCall
         [this, request]()
         {
             return this->AddNewBindRoleUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::CreateAccessKeyCheckTaskOutcome CsipClient::CreateAccessKeyCheckTask(const CreateAccessKeyCheckTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessKeyCheckTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessKeyCheckTaskResponse rsp = CreateAccessKeyCheckTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessKeyCheckTaskOutcome(rsp);
+        else
+            return CreateAccessKeyCheckTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessKeyCheckTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateAccessKeyCheckTaskAsync(const CreateAccessKeyCheckTaskRequest& request, const CreateAccessKeyCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessKeyCheckTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::CreateAccessKeyCheckTaskOutcomeCallable CsipClient::CreateAccessKeyCheckTaskCallable(const CreateAccessKeyCheckTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessKeyCheckTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessKeyCheckTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::CreateAccessKeySyncTaskOutcome CsipClient::CreateAccessKeySyncTask(const CreateAccessKeySyncTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessKeySyncTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessKeySyncTaskResponse rsp = CreateAccessKeySyncTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessKeySyncTaskOutcome(rsp);
+        else
+            return CreateAccessKeySyncTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessKeySyncTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateAccessKeySyncTaskAsync(const CreateAccessKeySyncTaskRequest& request, const CreateAccessKeySyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessKeySyncTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::CreateAccessKeySyncTaskOutcomeCallable CsipClient::CreateAccessKeySyncTaskCallable(const CreateAccessKeySyncTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessKeySyncTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessKeySyncTask(request);
         }
     );
 
@@ -255,6 +341,350 @@ CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCall
     return task->get_future();
 }
 
+CsipClient::DescribeAbnormalCallRecordOutcome CsipClient::DescribeAbnormalCallRecord(const DescribeAbnormalCallRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAbnormalCallRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAbnormalCallRecordResponse rsp = DescribeAbnormalCallRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAbnormalCallRecordOutcome(rsp);
+        else
+            return DescribeAbnormalCallRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAbnormalCallRecordOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAbnormalCallRecordAsync(const DescribeAbnormalCallRecordRequest& request, const DescribeAbnormalCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAbnormalCallRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAbnormalCallRecordOutcomeCallable CsipClient::DescribeAbnormalCallRecordCallable(const DescribeAbnormalCallRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAbnormalCallRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAbnormalCallRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyAlarmOutcome CsipClient::DescribeAccessKeyAlarm(const DescribeAccessKeyAlarmRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyAlarm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyAlarmResponse rsp = DescribeAccessKeyAlarmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyAlarmOutcome(rsp);
+        else
+            return DescribeAccessKeyAlarmOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyAlarmOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyAlarmAsync(const DescribeAccessKeyAlarmRequest& request, const DescribeAccessKeyAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyAlarm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyAlarmOutcomeCallable CsipClient::DescribeAccessKeyAlarmCallable(const DescribeAccessKeyAlarmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyAlarmOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyAlarm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyAlarmDetailOutcome CsipClient::DescribeAccessKeyAlarmDetail(const DescribeAccessKeyAlarmDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyAlarmDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyAlarmDetailResponse rsp = DescribeAccessKeyAlarmDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyAlarmDetailOutcome(rsp);
+        else
+            return DescribeAccessKeyAlarmDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyAlarmDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyAlarmDetailAsync(const DescribeAccessKeyAlarmDetailRequest& request, const DescribeAccessKeyAlarmDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyAlarmDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyAlarmDetailOutcomeCallable CsipClient::DescribeAccessKeyAlarmDetailCallable(const DescribeAccessKeyAlarmDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyAlarmDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyAlarmDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyAssetOutcome CsipClient::DescribeAccessKeyAsset(const DescribeAccessKeyAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyAssetResponse rsp = DescribeAccessKeyAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyAssetOutcome(rsp);
+        else
+            return DescribeAccessKeyAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyAssetOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyAssetAsync(const DescribeAccessKeyAssetRequest& request, const DescribeAccessKeyAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyAsset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyAssetOutcomeCallable CsipClient::DescribeAccessKeyAssetCallable(const DescribeAccessKeyAssetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyAssetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyAsset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyRiskOutcome CsipClient::DescribeAccessKeyRisk(const DescribeAccessKeyRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyRiskResponse rsp = DescribeAccessKeyRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyRiskOutcome(rsp);
+        else
+            return DescribeAccessKeyRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyRiskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyRiskAsync(const DescribeAccessKeyRiskRequest& request, const DescribeAccessKeyRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyRisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyRiskOutcomeCallable CsipClient::DescribeAccessKeyRiskCallable(const DescribeAccessKeyRiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyRiskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyRisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyRiskDetailOutcome CsipClient::DescribeAccessKeyRiskDetail(const DescribeAccessKeyRiskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyRiskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyRiskDetailResponse rsp = DescribeAccessKeyRiskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyRiskDetailOutcome(rsp);
+        else
+            return DescribeAccessKeyRiskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyRiskDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyRiskDetailAsync(const DescribeAccessKeyRiskDetailRequest& request, const DescribeAccessKeyRiskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyRiskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyRiskDetailOutcomeCallable CsipClient::DescribeAccessKeyRiskDetailCallable(const DescribeAccessKeyRiskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyRiskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyRiskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyUserDetailOutcome CsipClient::DescribeAccessKeyUserDetail(const DescribeAccessKeyUserDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyUserDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyUserDetailResponse rsp = DescribeAccessKeyUserDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyUserDetailOutcome(rsp);
+        else
+            return DescribeAccessKeyUserDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyUserDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyUserDetailAsync(const DescribeAccessKeyUserDetailRequest& request, const DescribeAccessKeyUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyUserDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyUserDetailOutcomeCallable CsipClient::DescribeAccessKeyUserDetailCallable(const DescribeAccessKeyUserDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyUserDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyUserDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAccessKeyUserListOutcome CsipClient::DescribeAccessKeyUserList(const DescribeAccessKeyUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyUserListResponse rsp = DescribeAccessKeyUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyUserListOutcome(rsp);
+        else
+            return DescribeAccessKeyUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyUserListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyUserListAsync(const DescribeAccessKeyUserListRequest& request, const DescribeAccessKeyUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessKeyUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAccessKeyUserListOutcomeCallable CsipClient::DescribeAccessKeyUserListCallable(const DescribeAccessKeyUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessKeyUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessKeyUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeAlertListOutcome CsipClient::DescribeAlertList(const DescribeAlertListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlertList");
@@ -291,6 +721,49 @@ CsipClient::DescribeAlertListOutcomeCallable CsipClient::DescribeAlertListCallab
         [this, request]()
         {
             return this->DescribeAlertList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeAssetProcessListOutcome CsipClient::DescribeAssetProcessList(const DescribeAssetProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetProcessListResponse rsp = DescribeAssetProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetProcessListOutcome(rsp);
+        else
+            return DescribeAssetProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetProcessListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAssetProcessListAsync(const DescribeAssetProcessListRequest& request, const DescribeAssetProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAssetProcessListOutcomeCallable CsipClient::DescribeAssetProcessListCallable(const DescribeAssetProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetProcessList(request);
         }
     );
 
@@ -556,6 +1029,49 @@ CsipClient::DescribeCVMAssetsOutcomeCallable CsipClient::DescribeCVMAssetsCallab
     return task->get_future();
 }
 
+CsipClient::DescribeCallRecordOutcome CsipClient::DescribeCallRecord(const DescribeCallRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCallRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCallRecordResponse rsp = DescribeCallRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCallRecordOutcome(rsp);
+        else
+            return DescribeCallRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCallRecordOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCallRecordAsync(const DescribeCallRecordRequest& request, const DescribeCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCallRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeCallRecordOutcomeCallable CsipClient::DescribeCallRecordCallable(const DescribeCallRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCallRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCallRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCheckViewRisksOutcome CsipClient::DescribeCheckViewRisks(const DescribeCheckViewRisksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCheckViewRisks");
@@ -678,6 +1194,49 @@ CsipClient::DescribeClusterPodAssetsOutcomeCallable CsipClient::DescribeClusterP
         [this, request]()
         {
             return this->DescribeClusterPodAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeConfigCheckRulesOutcome CsipClient::DescribeConfigCheckRules(const DescribeConfigCheckRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigCheckRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigCheckRulesResponse rsp = DescribeConfigCheckRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigCheckRulesOutcome(rsp);
+        else
+            return DescribeConfigCheckRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigCheckRulesOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeConfigCheckRulesAsync(const DescribeConfigCheckRulesRequest& request, const DescribeConfigCheckRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigCheckRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeConfigCheckRulesOutcomeCallable CsipClient::DescribeConfigCheckRulesCallable(const DescribeConfigCheckRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigCheckRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigCheckRules(request);
         }
     );
 
@@ -986,6 +1545,49 @@ CsipClient::DescribeGatewayAssetsOutcomeCallable CsipClient::DescribeGatewayAsse
     return task->get_future();
 }
 
+CsipClient::DescribeHighBaseLineRiskListOutcome CsipClient::DescribeHighBaseLineRiskList(const DescribeHighBaseLineRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHighBaseLineRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHighBaseLineRiskListResponse rsp = DescribeHighBaseLineRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHighBaseLineRiskListOutcome(rsp);
+        else
+            return DescribeHighBaseLineRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHighBaseLineRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeHighBaseLineRiskListAsync(const DescribeHighBaseLineRiskListRequest& request, const DescribeHighBaseLineRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHighBaseLineRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeHighBaseLineRiskListOutcomeCallable CsipClient::DescribeHighBaseLineRiskListCallable(const DescribeHighBaseLineRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHighBaseLineRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHighBaseLineRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeListenerListOutcome CsipClient::DescribeListenerList(const DescribeListenerListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListenerList");
@@ -1280,6 +1882,49 @@ CsipClient::DescribeRepositoryImageAssetsOutcomeCallable CsipClient::DescribeRep
         [this, request]()
         {
             return this->DescribeRepositoryImageAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeRiskCallRecordOutcome CsipClient::DescribeRiskCallRecord(const DescribeRiskCallRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskCallRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskCallRecordResponse rsp = DescribeRiskCallRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskCallRecordOutcome(rsp);
+        else
+            return DescribeRiskCallRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskCallRecordOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRiskCallRecordAsync(const DescribeRiskCallRecordRequest& request, const DescribeRiskCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskCallRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeRiskCallRecordOutcomeCallable CsipClient::DescribeRiskCallRecordCallable(const DescribeRiskCallRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskCallRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskCallRecord(request);
         }
     );
 
@@ -1975,6 +2620,49 @@ CsipClient::DescribeSearchBugInfoOutcomeCallable CsipClient::DescribeSearchBugIn
     return task->get_future();
 }
 
+CsipClient::DescribeSourceIPAssetOutcome CsipClient::DescribeSourceIPAsset(const DescribeSourceIPAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSourceIPAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSourceIPAssetResponse rsp = DescribeSourceIPAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSourceIPAssetOutcome(rsp);
+        else
+            return DescribeSourceIPAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSourceIPAssetOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSourceIPAssetAsync(const DescribeSourceIPAssetRequest& request, const DescribeSourceIPAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSourceIPAsset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeSourceIPAssetOutcomeCallable CsipClient::DescribeSourceIPAssetCallable(const DescribeSourceIPAssetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSourceIPAssetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSourceIPAsset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeSubUserInfoOutcome CsipClient::DescribeSubUserInfo(const DescribeSubUserInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubUserInfo");
@@ -2233,6 +2921,49 @@ CsipClient::DescribeUebaRuleOutcomeCallable CsipClient::DescribeUebaRuleCallable
     return task->get_future();
 }
 
+CsipClient::DescribeUserCallRecordOutcome CsipClient::DescribeUserCallRecord(const DescribeUserCallRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserCallRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserCallRecordResponse rsp = DescribeUserCallRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserCallRecordOutcome(rsp);
+        else
+            return DescribeUserCallRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserCallRecordOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeUserCallRecordAsync(const DescribeUserCallRecordRequest& request, const DescribeUserCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserCallRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeUserCallRecordOutcomeCallable CsipClient::DescribeUserCallRecordCallable(const DescribeUserCallRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserCallRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserCallRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeVULListOutcome CsipClient::DescribeVULList(const DescribeVULListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVULList");
@@ -2398,6 +3129,49 @@ CsipClient::DescribeVpcAssetsOutcomeCallable CsipClient::DescribeVpcAssetsCallab
         [this, request]()
         {
             return this->DescribeVpcAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeVulRiskListOutcome CsipClient::DescribeVulRiskList(const DescribeVulRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulRiskListResponse rsp = DescribeVulRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulRiskListOutcome(rsp);
+        else
+            return DescribeVulRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVulRiskListAsync(const DescribeVulRiskListRequest& request, const DescribeVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeVulRiskListOutcomeCallable CsipClient::DescribeVulRiskListCallable(const DescribeVulRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulRiskList(request);
         }
     );
 
@@ -2656,6 +3430,92 @@ CsipClient::StopRiskCenterTaskOutcomeCallable CsipClient::StopRiskCenterTaskCall
         [this, request]()
         {
             return this->StopRiskCenterTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::UpdateAccessKeyAlarmStatusOutcome CsipClient::UpdateAccessKeyAlarmStatus(const UpdateAccessKeyAlarmStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAccessKeyAlarmStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAccessKeyAlarmStatusResponse rsp = UpdateAccessKeyAlarmStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAccessKeyAlarmStatusOutcome(rsp);
+        else
+            return UpdateAccessKeyAlarmStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAccessKeyAlarmStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::UpdateAccessKeyAlarmStatusAsync(const UpdateAccessKeyAlarmStatusRequest& request, const UpdateAccessKeyAlarmStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAccessKeyAlarmStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::UpdateAccessKeyAlarmStatusOutcomeCallable CsipClient::UpdateAccessKeyAlarmStatusCallable(const UpdateAccessKeyAlarmStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAccessKeyAlarmStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAccessKeyAlarmStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::UpdateAccessKeyRemarkOutcome CsipClient::UpdateAccessKeyRemark(const UpdateAccessKeyRemarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAccessKeyRemark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAccessKeyRemarkResponse rsp = UpdateAccessKeyRemarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAccessKeyRemarkOutcome(rsp);
+        else
+            return UpdateAccessKeyRemarkOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAccessKeyRemarkOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::UpdateAccessKeyRemarkAsync(const UpdateAccessKeyRemarkRequest& request, const UpdateAccessKeyRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAccessKeyRemark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::UpdateAccessKeyRemarkOutcomeCallable CsipClient::UpdateAccessKeyRemarkCallable(const UpdateAccessKeyRemarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAccessKeyRemarkOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAccessKeyRemark(request);
         }
     );
 

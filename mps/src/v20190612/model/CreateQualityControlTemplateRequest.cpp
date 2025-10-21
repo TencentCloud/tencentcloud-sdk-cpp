@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ using namespace std;
 CreateQualityControlTemplateRequest::CreateQualityControlTemplateRequest() :
     m_nameHasBeenSet(false),
     m_qualityControlItemSetHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_recordFormatHasBeenSet(false),
+    m_strategyHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,23 @@ string CreateQualityControlTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -121,6 +140,38 @@ void CreateQualityControlTemplateRequest::SetComment(const string& _comment)
 bool CreateQualityControlTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateQualityControlTemplateRequest::GetRecordFormat() const
+{
+    return m_recordFormat;
+}
+
+void CreateQualityControlTemplateRequest::SetRecordFormat(const string& _recordFormat)
+{
+    m_recordFormat = _recordFormat;
+    m_recordFormatHasBeenSet = true;
+}
+
+bool CreateQualityControlTemplateRequest::RecordFormatHasBeenSet() const
+{
+    return m_recordFormatHasBeenSet;
+}
+
+QualityControlStrategy CreateQualityControlTemplateRequest::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void CreateQualityControlTemplateRequest::SetStrategy(const QualityControlStrategy& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool CreateQualityControlTemplateRequest::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
 }
 
 

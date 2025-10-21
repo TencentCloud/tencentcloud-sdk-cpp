@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例详情
+                * 实例详情。
                 */
                 class InstanceDetail : public AbstractModel
                 {
@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。
+                     * @param _instanceId 实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -92,15 +92,23 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，可能的返回值：1-包年包月；0-按量计费
-                     * @return PayMode 付费类型，可能的返回值：1-包年包月；0-按量计费
+                     * 获取付费类型。
+- 1：包年包月。
+- 0：按量计费。
+                     * @return PayMode 付费类型。
+- 1：包年包月。
+- 0：按量计费。
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置付费类型，可能的返回值：1-包年包月；0-按量计费
-                     * @param _payMode 付费类型，可能的返回值：1-包年包月；0-按量计费
+                     * 设置付费类型。
+- 1：包年包月。
+- 0：按量计费。
+                     * @param _payMode 付费类型。
+- 1：包年包月。
+- 0：按量计费。
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -113,15 +121,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目 ID。
+                     * @return ProjectId 项目 ID。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
+                     * 设置项目 ID。
+                     * @param _projectId 项目 ID。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -134,15 +142,23 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，可能的返回值：0-副本集实例，1-分片实例。
-                     * @return ClusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例。
+                     * 获取集群类型。
+- 0：副本集实例。
+- 1：分片实例。
+                     * @return ClusterType 集群类型。
+- 0：副本集实例。
+- 1：分片实例。
                      * 
                      */
                     uint64_t GetClusterType() const;
 
                     /**
-                     * 设置集群类型，可能的返回值：0-副本集实例，1-分片实例。
-                     * @param _clusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例。
+                     * 设置集群类型。
+- 0：副本集实例。
+- 1：分片实例。
+                     * @param _clusterType 集群类型。
+- 0：副本集实例。
+- 1：分片实例。
                      * 
                      */
                     void SetClusterType(const uint64_t& _clusterType);
@@ -197,15 +213,23 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，可能的返回值：0-基础网络，1-私有网络
-                     * @return NetType 网络类型，可能的返回值：0-基础网络，1-私有网络
+                     * 获取网络类型。
+- 0：基础网络。
+- 1：私有网络。
+                     * @return NetType 网络类型。
+- 0：基础网络。
+- 1：私有网络。
                      * 
                      */
                     uint64_t GetNetType() const;
 
                     /**
-                     * 设置网络类型，可能的返回值：0-基础网络，1-私有网络
-                     * @param _netType 网络类型，可能的返回值：0-基础网络，1-私有网络
+                     * 设置网络类型。
+- 0：基础网络。
+- 1：私有网络。
+                     * @param _netType 网络类型。
+- 0：基础网络。
+- 1：私有网络。
                      * 
                      */
                     void SetNetType(const uint64_t& _netType);
@@ -260,15 +284,35 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，可能的返回值：0-创建中，1-流程处理中，2-运行中，-2-实例已过期。
-                     * @return Status 实例状态，可能的返回值：0-创建中，1-流程处理中，2-运行中，-2-实例已过期。
+                     * 获取实例状态。
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
+                     * @return Status 实例状态。
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，可能的返回值：0-创建中，1-流程处理中，2-运行中，-2-实例已过期。
-                     * @param _status 实例状态，可能的返回值：0-创建中，1-流程处理中，2-运行中，-2-实例已过期。
+                     * 设置实例状态。
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
+                     * @param _status 实例状态。
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -365,15 +409,43 @@ namespace TencentCloud
                     bool DeadLineHasBeenSet() const;
 
                     /**
-                     * 获取实例版本信息。
-                     * @return MongoVersion 实例版本信息。
+                     * 获取实例存储引擎版本信息。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @return MongoVersion 实例存储引擎版本信息。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置实例版本信息。
-                     * @param _mongoVersion 实例版本信息。
+                     * 设置实例存储引擎版本信息。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+                     * @param _mongoVersion 实例存储引擎版本信息。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
@@ -386,15 +458,15 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例内存规格，单位为MB。
-                     * @return Memory 实例内存规格，单位为MB。
+                     * 获取实例内存规格，单位：MB。
+                     * @return Memory 实例内存规格，单位：MB。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存规格，单位为MB。
-                     * @param _memory 实例内存规格，单位为MB。
+                     * 设置实例内存规格，单位：MB。
+                     * @param _memory 实例内存规格，单位：MB。
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -407,15 +479,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例磁盘规格，单位为MB。
-                     * @return Volume 实例磁盘规格，单位为MB。
+                     * 获取实例磁盘规格，单位：MB。
+                     * @return Volume 实例磁盘规格，单位：MB。
                      * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置实例磁盘规格，单位为MB。
-                     * @param _volume 实例磁盘规格，单位为MB。
+                     * 设置实例磁盘规格，单位：MB。
+                     * @param _volume 实例磁盘规格，单位：MB。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -428,15 +500,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取实例CPU核心数。
-                     * @return CpuNum 实例CPU核心数。
+                     * 获取实例 CPU 核心数。
+                     * @return CpuNum 实例 CPU 核心数。
                      * 
                      */
                     uint64_t GetCpuNum() const;
 
                     /**
-                     * 设置实例CPU核心数。
-                     * @param _cpuNum 实例CPU核心数。
+                     * 设置实例 CPU 核心数。
+                     * @param _cpuNum 实例 CPU 核心数。
                      * 
                      */
                     void SetCpuNum(const uint64_t& _cpuNum);
@@ -450,14 +522,22 @@ namespace TencentCloud
 
                     /**
                      * 获取实例机器类型。
+- HIO10G：通用高 HIO 万兆型。
+- HCD：云盘版类型。
                      * @return MachineType 实例机器类型。
+- HIO10G：通用高 HIO 万兆型。
+- HCD：云盘版类型。
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置实例机器类型。
+- HIO10G：通用高 HIO 万兆型。
+- HCD：云盘版类型。
                      * @param _machineType 实例机器类型。
+- HIO10G：通用高 HIO 万兆型。
+- HCD：云盘版类型。
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -512,15 +592,27 @@ namespace TencentCloud
                     bool ReplicationSetNumHasBeenSet() const;
 
                     /**
-                     * 获取实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
-                     * @return AutoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
+                     * 获取实例自动续费标志。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
+                     * @return AutoRenewFlag 实例自动续费标志。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
-                     * @param _autoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
+                     * 设置实例自动续费标志。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
+                     * @param _autoRenewFlag 实例自动续费标志。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -533,15 +625,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取已用容量，单位MB。
-                     * @return UsedVolume 已用容量，单位MB。
+                     * 获取已用容量，单位：MB。
+                     * @return UsedVolume 已用容量，单位：MB。
                      * 
                      */
                     uint64_t GetUsedVolume() const;
 
                     /**
-                     * 设置已用容量，单位MB。
-                     * @param _usedVolume 已用容量，单位MB。
+                     * 设置已用容量，单位：MB。
+                     * @param _usedVolume 已用容量，单位：MB。
                      * 
                      */
                     void SetUsedVolume(const uint64_t& _usedVolume);
@@ -764,15 +856,15 @@ namespace TencentCloud
                     bool ClusterVerHasBeenSet() const;
 
                     /**
-                     * 获取协议信息，可能的返回值：1-mongodb，2-dynamodb。
-                     * @return Protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb。
+                     * 获取协议信息：mongodb。
+                     * @return Protocol 协议信息：mongodb。
                      * 
                      */
                     uint64_t GetProtocol() const;
 
                     /**
-                     * 设置协议信息，可能的返回值：1-mongodb，2-dynamodb。
-                     * @param _protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb。
+                     * 设置协议信息：mongodb。
+                     * @param _protocol 协议信息：mongodb。
                      * 
                      */
                     void SetProtocol(const uint64_t& _protocol);
@@ -785,15 +877,35 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例
-                     * @return InstanceType 实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例
+                     * 获取实例类型。
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：同时包括正式实例、只读实例与灾备实例。
+                     * @return InstanceType 实例类型。
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：同时包括正式实例、只读实例与灾备实例。
                      * 
                      */
                     uint64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例
-                     * @param _instanceType 实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例
+                     * 设置实例类型。
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：同时包括正式实例、只读实例与灾备实例。
+                     * @param _instanceType 实例类型。
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：同时包括正式实例、只读实例与灾备实例。
                      * 
                      */
                     void SetInstanceType(const uint64_t& _instanceType);
@@ -806,15 +918,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态描述
-                     * @return InstanceStatusDesc 实例状态描述
+                     * 获取实例状态描述。
+                     * @return InstanceStatusDesc 实例状态描述。
                      * 
                      */
                     std::string GetInstanceStatusDesc() const;
 
                     /**
-                     * 设置实例状态描述
-                     * @param _instanceStatusDesc 实例状态描述
+                     * 设置实例状态描述。
+                     * @param _instanceStatusDesc 实例状态描述。
                      * 
                      */
                     void SetInstanceStatusDesc(const std::string& _instanceStatusDesc);
@@ -827,15 +939,15 @@ namespace TencentCloud
                     bool InstanceStatusDescHasBeenSet() const;
 
                     /**
-                     * 获取实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
-                     * @return RealInstanceId 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 获取实例对应的物理实例 ID。回档并替换过的实例有不同的 InstanceId 和 RealInstanceId，从 barad 获取监控数据等场景下需要用物理 ID 获取。
+                     * @return RealInstanceId 实例对应的物理实例 ID。回档并替换过的实例有不同的 InstanceId 和 RealInstanceId，从 barad 获取监控数据等场景下需要用物理 ID 获取。
                      * 
                      */
                     std::string GetRealInstanceId() const;
 
                     /**
-                     * 设置实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
-                     * @param _realInstanceId 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 设置实例对应的物理实例 ID。回档并替换过的实例有不同的 InstanceId 和 RealInstanceId，从 barad 获取监控数据等场景下需要用物理 ID 获取。
+                     * @param _realInstanceId 实例对应的物理实例 ID。回档并替换过的实例有不同的 InstanceId 和 RealInstanceId，从 barad 获取监控数据等场景下需要用物理 ID 获取。
                      * 
                      */
                     void SetRealInstanceId(const std::string& _realInstanceId);
@@ -869,15 +981,15 @@ namespace TencentCloud
                     bool ZoneListHasBeenSet() const;
 
                     /**
-                     * 获取mongos节点个数。
-                     * @return MongosNodeNum mongos节点个数。
+                     * 获取mongos 节点个数。
+                     * @return MongosNodeNum mongos 节点个数。
                      * 
                      */
                     uint64_t GetMongosNodeNum() const;
 
                     /**
-                     * 设置mongos节点个数。
-                     * @param _mongosNodeNum mongos节点个数。
+                     * 设置mongos 节点个数。
+                     * @param _mongosNodeNum mongos 节点个数。
                      * 
                      */
                     void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
@@ -890,15 +1002,15 @@ namespace TencentCloud
                     bool MongosNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取mongos节点内存。
-                     * @return MongosMemory mongos节点内存。
+                     * 获取mongos 节点内存。单位：MB。
+                     * @return MongosMemory mongos 节点内存。单位：MB。
                      * 
                      */
                     uint64_t GetMongosMemory() const;
 
                     /**
-                     * 设置mongos节点内存。
-                     * @param _mongosMemory mongos节点内存。
+                     * 设置mongos 节点内存。单位：MB。
+                     * @param _mongosMemory mongos 节点内存。单位：MB。
                      * 
                      */
                     void SetMongosMemory(const uint64_t& _mongosMemory);
@@ -911,15 +1023,15 @@ namespace TencentCloud
                     bool MongosMemoryHasBeenSet() const;
 
                     /**
-                     * 获取mongos节点CPU核数。
-                     * @return MongosCpuNum mongos节点CPU核数。
+                     * 获取mongos 节点 CPU 核数。
+                     * @return MongosCpuNum mongos 节点 CPU 核数。
                      * 
                      */
                     uint64_t GetMongosCpuNum() const;
 
                     /**
-                     * 设置mongos节点CPU核数。
-                     * @param _mongosCpuNum mongos节点CPU核数。
+                     * 设置mongos 节点 CPU 核数。
+                     * @param _mongosCpuNum mongos 节点 CPU 核数。
                      * 
                      */
                     void SetMongosCpuNum(const uint64_t& _mongosCpuNum);
@@ -953,15 +1065,15 @@ namespace TencentCloud
                     bool ConfigServerNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取Config Server节点内存。
-                     * @return ConfigServerMemory Config Server节点内存。
+                     * 获取Config Server节点内存。单位：MB。
+                     * @return ConfigServerMemory Config Server节点内存。单位：MB。
                      * 
                      */
                     uint64_t GetConfigServerMemory() const;
 
                     /**
-                     * 设置Config Server节点内存。
-                     * @param _configServerMemory Config Server节点内存。
+                     * 设置Config Server节点内存。单位：MB。
+                     * @param _configServerMemory Config Server节点内存。单位：MB。
                      * 
                      */
                     void SetConfigServerMemory(const uint64_t& _configServerMemory);
@@ -974,15 +1086,15 @@ namespace TencentCloud
                     bool ConfigServerMemoryHasBeenSet() const;
 
                     /**
-                     * 获取Config Server节点磁盘大小。
-                     * @return ConfigServerVolume Config Server节点磁盘大小。
+                     * 获取Config Server节点磁盘大小。单位：MB。
+                     * @return ConfigServerVolume Config Server节点磁盘大小。单位：MB。
                      * 
                      */
                     uint64_t GetConfigServerVolume() const;
 
                     /**
-                     * 设置Config Server节点磁盘大小。
-                     * @param _configServerVolume Config Server节点磁盘大小。
+                     * 设置Config Server节点磁盘大小。单位：MB。
+                     * @param _configServerVolume Config Server节点磁盘大小。单位：MB。
                      * 
                      */
                     void SetConfigServerVolume(const uint64_t& _configServerVolume);
@@ -995,15 +1107,15 @@ namespace TencentCloud
                     bool ConfigServerVolumeHasBeenSet() const;
 
                     /**
-                     * 获取Config Server节点CPU核数。
-                     * @return ConfigServerCpuNum Config Server节点CPU核数。
+                     * 获取Config Server 节点 CPU 核数。
+                     * @return ConfigServerCpuNum Config Server 节点 CPU 核数。
                      * 
                      */
                     uint64_t GetConfigServerCpuNum() const;
 
                     /**
-                     * 设置Config Server节点CPU核数。
-                     * @param _configServerCpuNum Config Server节点CPU核数。
+                     * 设置Config Server 节点 CPU 核数。
+                     * @param _configServerCpuNum Config Server 节点 CPU 核数。
                      * 
                      */
                     void SetConfigServerCpuNum(const uint64_t& _configServerCpuNum);
@@ -1039,7 +1151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -1051,19 +1163,23 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 付费类型，可能的返回值：1-包年包月；0-按量计费
+                     * 付费类型。
+- 1：包年包月。
+- 0：按量计费。
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 项目ID。
+                     * 项目 ID。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 集群类型，可能的返回值：0-副本集实例，1-分片实例。
+                     * 集群类型。
+- 0：副本集实例。
+- 1：分片实例。
                      */
                     uint64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
@@ -1081,7 +1197,9 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 网络类型，可能的返回值：0-基础网络，1-私有网络
+                     * 网络类型。
+- 0：基础网络。
+- 1：私有网络。
                      */
                     uint64_t m_netType;
                     bool m_netTypeHasBeenSet;
@@ -1099,7 +1217,12 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例状态，可能的返回值：0-创建中，1-流程处理中，2-运行中，-2-实例已过期。
+                     * 实例状态。
+- 0：待初始化。
+- 1：流程处理中，例如：变更规格、参数修改等。
+- 2：实例正常运行中。
+- -2：已隔离（包年包月）。
+- -3：已隔离（按量计费）。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1129,31 +1252,40 @@ namespace TencentCloud
                     bool m_deadLineHasBeenSet;
 
                     /**
-                     * 实例版本信息。
+                     * 实例存储引擎版本信息。
+- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
+- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
+- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
+- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 实例内存规格，单位为MB。
+                     * 实例内存规格，单位：MB。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例磁盘规格，单位为MB。
+                     * 实例磁盘规格，单位：MB。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 实例CPU核心数。
+                     * 实例 CPU 核心数。
                      */
                     uint64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
                      * 实例机器类型。
+- HIO10G：通用高 HIO 万兆型。
+- HCD：云盘版类型。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
@@ -1171,13 +1303,16 @@ namespace TencentCloud
                     bool m_replicationSetNumHasBeenSet;
 
                     /**
-                     * 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
+                     * 实例自动续费标志。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 已用容量，单位MB。
+                     * 已用容量，单位：MB。
                      */
                     uint64_t m_usedVolume;
                     bool m_usedVolumeHasBeenSet;
@@ -1243,25 +1378,30 @@ namespace TencentCloud
                     bool m_clusterVerHasBeenSet;
 
                     /**
-                     * 协议信息，可能的返回值：1-mongodb，2-dynamodb。
+                     * 协议信息：mongodb。
                      */
                     uint64_t m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例
+                     * 实例类型。
+- 0：所有实例。
+- 1：正式实例。
+- 2：临时实例
+- 3：只读实例。
+- -1：同时包括正式实例、只读实例与灾备实例。
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例状态描述
+                     * 实例状态描述。
                      */
                     std::string m_instanceStatusDesc;
                     bool m_instanceStatusDescHasBeenSet;
 
                     /**
-                     * 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 实例对应的物理实例 ID。回档并替换过的实例有不同的 InstanceId 和 RealInstanceId，从 barad 获取监控数据等场景下需要用物理 ID 获取。
                      */
                     std::string m_realInstanceId;
                     bool m_realInstanceIdHasBeenSet;
@@ -1273,19 +1413,19 @@ namespace TencentCloud
                     bool m_zoneListHasBeenSet;
 
                     /**
-                     * mongos节点个数。
+                     * mongos 节点个数。
                      */
                     uint64_t m_mongosNodeNum;
                     bool m_mongosNodeNumHasBeenSet;
 
                     /**
-                     * mongos节点内存。
+                     * mongos 节点内存。单位：MB。
                      */
                     uint64_t m_mongosMemory;
                     bool m_mongosMemoryHasBeenSet;
 
                     /**
-                     * mongos节点CPU核数。
+                     * mongos 节点 CPU 核数。
                      */
                     uint64_t m_mongosCpuNum;
                     bool m_mongosCpuNumHasBeenSet;
@@ -1297,19 +1437,19 @@ namespace TencentCloud
                     bool m_configServerNodeNumHasBeenSet;
 
                     /**
-                     * Config Server节点内存。
+                     * Config Server节点内存。单位：MB。
                      */
                     uint64_t m_configServerMemory;
                     bool m_configServerMemoryHasBeenSet;
 
                     /**
-                     * Config Server节点磁盘大小。
+                     * Config Server节点磁盘大小。单位：MB。
                      */
                     uint64_t m_configServerVolume;
                     bool m_configServerVolumeHasBeenSet;
 
                     /**
-                     * Config Server节点CPU核数。
+                     * Config Server 节点 CPU 核数。
                      */
                     uint64_t m_configServerCpuNum;
                     bool m_configServerCpuNumHasBeenSet;

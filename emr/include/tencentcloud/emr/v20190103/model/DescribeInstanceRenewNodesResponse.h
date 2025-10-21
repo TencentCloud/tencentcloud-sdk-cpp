@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,6 +90,20 @@ namespace TencentCloud
                      */
                     bool MetaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群依赖的Redis实例Id
+                     * @return RedisInfo 集群依赖的Redis实例Id
+                     * 
+                     */
+                    std::vector<std::string> GetRedisInfo() const;
+
+                    /**
+                     * 判断参数 RedisInfo 是否已赋值
+                     * @return RedisInfo 是否已赋值
+                     * 
+                     */
+                    bool RedisInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +125,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_metaInfo;
                     bool m_metaInfoHasBeenSet;
+
+                    /**
+                     * 集群依赖的Redis实例Id
+                     */
+                    std::vector<std::string> m_redisInfo;
+                    bool m_redisInfoHasBeenSet;
 
                 };
             }

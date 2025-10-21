@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeNotebooksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribePlatformImagesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNotebooksResponse> DescribeNotebooksOutcome;
                 typedef std::future<DescribeNotebooksOutcome> DescribeNotebooksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeNotebooksRequest&, DescribeNotebooksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebooksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformImagesResponse> DescribePlatformImagesOutcome;
+                typedef std::future<DescribePlatformImagesOutcome> DescribePlatformImagesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribePlatformImagesRequest&, DescribePlatformImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrainingModelVersionResponse> DescribeTrainingModelVersionOutcome;
                 typedef std::future<DescribeTrainingModelVersionOutcome> DescribeTrainingModelVersionOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingModelVersionRequest&, DescribeTrainingModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingModelVersionAsyncHandler;
@@ -609,6 +614,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeNotebooksOutcome DescribeNotebooks(const Model::DescribeNotebooksRequest &request);
                 void DescribeNotebooksAsync(const Model::DescribeNotebooksRequest& request, const DescribeNotebooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNotebooksOutcomeCallable DescribeNotebooksCallable(const Model::DescribeNotebooksRequest& request);
+
+                /**
+                 *查询平台镜像信息
+                 * @param req DescribePlatformImagesRequest
+                 * @return DescribePlatformImagesOutcome
+                 */
+                DescribePlatformImagesOutcome DescribePlatformImages(const Model::DescribePlatformImagesRequest &request);
+                void DescribePlatformImagesAsync(const Model::DescribePlatformImagesRequest& request, const DescribePlatformImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformImagesOutcomeCallable DescribePlatformImagesCallable(const Model::DescribePlatformImagesRequest& request);
 
                 /**
                  *查询模型版本

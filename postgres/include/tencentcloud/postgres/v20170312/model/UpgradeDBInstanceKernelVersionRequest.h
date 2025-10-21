@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return DBInstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _dBInstanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -90,14 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定实例升级内核版本号完成后的切换时间。可选值:
-<li>0：立即切换
-<li>1：指定时间切换
-<li>2：维护时间窗口内切换
+<li>0：立即切换</li>
+<li>1：指定时间切换</li>
+<li>2：维护时间窗口内切换</li>
 默认值：0 
                      * @return SwitchTag 指定实例升级内核版本号完成后的切换时间。可选值:
-<li>0：立即切换
-<li>1：指定时间切换
-<li>2：维护时间窗口内切换
+<li>0：立即切换</li>
+<li>1：指定时间切换</li>
+<li>2：维护时间窗口内切换</li>
 默认值：0 
                      * 
                      */
@@ -105,14 +105,14 @@ namespace TencentCloud
 
                     /**
                      * 设置指定实例升级内核版本号完成后的切换时间。可选值:
-<li>0：立即切换
-<li>1：指定时间切换
-<li>2：维护时间窗口内切换
+<li>0：立即切换</li>
+<li>1：指定时间切换</li>
+<li>2：维护时间窗口内切换</li>
 默认值：0 
                      * @param _switchTag 指定实例升级内核版本号完成后的切换时间。可选值:
-<li>0：立即切换
-<li>1：指定时间切换
-<li>2：维护时间窗口内切换
+<li>0：立即切换</li>
+<li>1：指定时间切换</li>
+<li>2：维护时间窗口内切换</li>
 默认值：0 
                      * 
                      */
@@ -169,12 +169,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对本次升级实例内核版本号操作执行预检查。
-<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。</li>
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。</li>
 默认值：false
                      * @return DryRun 是否对本次升级实例内核版本号操作执行预检查。
-<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。</li>
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。</li>
 默认值：false
                      * 
                      */
@@ -182,12 +182,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否对本次升级实例内核版本号操作执行预检查。
-<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。</li>
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。</li>
 默认值：false
                      * @param _dryRun 是否对本次升级实例内核版本号操作执行预检查。
-<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。</li>
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。</li>
 默认值：false
                      * 
                      */
@@ -203,7 +203,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -217,9 +217,9 @@ namespace TencentCloud
 
                     /**
                      * 指定实例升级内核版本号完成后的切换时间。可选值:
-<li>0：立即切换
-<li>1：指定时间切换
-<li>2：维护时间窗口内切换
+<li>0：立即切换</li>
+<li>1：指定时间切换</li>
+<li>2：维护时间窗口内切换</li>
 默认值：0 
                      */
                     uint64_t m_switchTag;
@@ -239,8 +239,8 @@ namespace TencentCloud
 
                     /**
                      * 是否对本次升级实例内核版本号操作执行预检查。
-<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。</li>
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。</li>
 默认值：false
                      */
                     bool m_dryRun;

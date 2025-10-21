@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取machineGroupName
+                     * 获取过滤条件
+machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -55,7 +56,7 @@ machineGroupId
 - 必选：否
 
 osType
-- 按照【操作系统类型】进行过滤。
+- 按照【操作系统类型】进行过滤。0： Linux；1： Windows
 - 类型：Int
 - 必选：否
 
@@ -70,7 +71,8 @@ tag:tagKey
 - 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters machineGroupName
+                     * @return Filters 过滤条件
+machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -81,7 +83,7 @@ machineGroupId
 - 必选：否
 
 osType
-- 按照【操作系统类型】进行过滤。
+- 按照【操作系统类型】进行过滤。0： Linux；1： Windows
 - 类型：Int
 - 必选：否
 
@@ -101,7 +103,8 @@ tag:tagKey
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置machineGroupName
+                     * 设置过滤条件
+machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -112,7 +115,7 @@ machineGroupId
 - 必选：否
 
 osType
-- 按照【操作系统类型】进行过滤。
+- 按照【操作系统类型】进行过滤。0： Linux；1： Windows
 - 类型：Int
 - 必选：否
 
@@ -127,7 +130,8 @@ tag:tagKey
 - 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param _filters machineGroupName
+                     * @param _filters 过滤条件
+machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -138,7 +142,7 @@ machineGroupId
 - 必选：否
 
 osType
-- 按照【操作系统类型】进行过滤。
+- 按照【操作系统类型】进行过滤。0： Linux；1： Windows
 - 类型：Int
 - 必选：否
 
@@ -209,7 +213,8 @@ tag:tagKey
                 private:
 
                     /**
-                     * machineGroupName
+                     * 过滤条件
+machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -220,7 +225,7 @@ machineGroupId
 - 必选：否
 
 osType
-- 按照【操作系统类型】进行过滤。
+- 按照【操作系统类型】进行过滤。0： Linux；1： Windows
 - 类型：Int
 - 必选：否
 

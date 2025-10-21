@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存大小
-                     * @return Mem 内存大小
+                     * 获取内存大小，单位为 MB。
+                     * @return Mem 内存大小，单位为 MB。
                      * 
                      */
                     uint64_t GetMem() const;
 
                     /**
-                     * 设置内存大小
-                     * @param _mem 内存大小
+                     * 设置内存大小，单位为 MB。
+                     * @param _mem 内存大小，单位为 MB。
                      * 
                      */
                     void SetMem(const uint64_t& _mem);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取节点状态
-                     * @return Status 节点状态
+                     * 获取节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。
+                     * @return Status 节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置节点状态
-                     * @param _status 节点状态
+                     * 设置节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。
+                     * @param _status 节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -208,13 +208,13 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存大小
+                     * 内存大小，单位为 MB。
                      */
                     uint64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 节点状态
+                     * 节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ using namespace std;
 
 CreateEmailIdentityRequest::CreateEmailIdentityRequest() :
     m_emailIdentityHasBeenSet(false),
-    m_dKIMOptionHasBeenSet(false)
+    m_dKIMOptionHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string CreateEmailIdentityRequest::ToJsonString() const
         string key = "DKIMOption";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dKIMOption, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void CreateEmailIdentityRequest::SetDKIMOption(const uint64_t& _dKIMOption)
 bool CreateEmailIdentityRequest::DKIMOptionHasBeenSet() const
 {
     return m_dKIMOptionHasBeenSet;
+}
+
+vector<TagList> CreateEmailIdentityRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateEmailIdentityRequest::SetTagList(const vector<TagList>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateEmailIdentityRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

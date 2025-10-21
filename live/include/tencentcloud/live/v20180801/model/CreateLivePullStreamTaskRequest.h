@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -571,15 +571,15 @@ https://cloud.tencent.com/document/product/267/56208
                     bool SpecifyTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务描述，限制 512 字节。
-                     * @return Comment 任务描述，限制 512 字节。
+                     * 获取任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
+                     * @return Comment 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置任务描述，限制 512 字节。
-                     * @param _comment 任务描述，限制 512 字节。
+                     * 设置任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
+                     * @param _comment 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -1047,7 +1047,7 @@ https://cloud.tencent.com/document/product/267/56208
                     bool m_specifyTaskIdHasBeenSet;
 
                     /**
-                     * 任务描述，限制 512 字节。
+                     * 任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

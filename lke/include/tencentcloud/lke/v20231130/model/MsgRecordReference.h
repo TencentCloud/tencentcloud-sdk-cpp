@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool QaBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取文档索引id
+                     * @return Index 文档索引id
+                     * 
+                     */
+                    uint64_t GetIndex() const;
+
+                    /**
+                     * 设置文档索引id
+                     * @param _index 文档索引id
+                     * 
+                     */
+                    void SetIndex(const uint64_t& _index);
+
+                    /**
+                     * 判断参数 Index 是否已赋值
+                     * @return Index 是否已赋值
+                     * 
+                     */
+                    bool IndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_qaBizId;
                     bool m_qaBizIdHasBeenSet;
+
+                    /**
+                     * 文档索引id
+                     */
+                    uint64_t m_index;
+                    bool m_indexHasBeenSet;
 
                 };
             }

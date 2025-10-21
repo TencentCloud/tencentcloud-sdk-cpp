@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,8 @@ InstanceInfo::InstanceInfo() :
     m_expandCpuHasBeenSet(false),
     m_clusterInfoHasBeenSet(false),
     m_analysisNodeInfosHasBeenSet(false),
-    m_deviceBandwidthHasBeenSet(false)
+    m_deviceBandwidthHasBeenSet(false),
+    m_destroyProtectHasBeenSet(false)
 {
 }
 
@@ -650,6 +651,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_deviceBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("DestroyProtect") && !value["DestroyProtect"].IsNull())
+    {
+        if (!value["DestroyProtect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DestroyProtect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destroyProtect = string(value["DestroyProtect"].GetString());
+        m_destroyProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1093,6 +1104,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DeviceBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceBandwidth, allocator);
+    }
+
+    if (m_destroyProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestroyProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1896,5 +1915,21 @@ void InstanceInfo::SetDeviceBandwidth(const uint64_t& _deviceBandwidth)
 bool InstanceInfo::DeviceBandwidthHasBeenSet() const
 {
     return m_deviceBandwidthHasBeenSet;
+}
+
+string InstanceInfo::GetDestroyProtect() const
+{
+    return m_destroyProtect;
+}
+
+void InstanceInfo::SetDestroyProtect(const string& _destroyProtect)
+{
+    m_destroyProtect = _destroyProtect;
+    m_destroyProtectHasBeenSet = true;
+}
+
+bool InstanceInfo::DestroyProtectHasBeenSet() const
+{
+    return m_destroyProtectHasBeenSet;
 }
 

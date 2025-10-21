@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_publicDataStreamStatusHasBeenSet(false),
     m_prometheusEndpointInfoHasBeenSet(false),
     m_webConsoleDomainEndpointHasBeenSet(false),
-    m_controlPlaneEndpointInfoHasBeenSet(false)
+    m_controlPlaneEndpointInfoHasBeenSet(false),
+    m_publicTlsAccessEndpointHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_controlPlaneEndpointInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicTlsAccessEndpoint") && !value["PublicTlsAccessEndpoint"].IsNull())
+    {
+        if (!value["PublicTlsAccessEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.PublicTlsAccessEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicTlsAccessEndpoint = string(value["PublicTlsAccessEndpoint"].GetString());
+        m_publicTlsAccessEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +327,14 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_controlPlaneEndpointInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publicTlsAccessEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicTlsAccessEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicTlsAccessEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -543,5 +562,21 @@ void RabbitMQClusterAccessInfo::SetControlPlaneEndpointInfo(const VpcEndpointInf
 bool RabbitMQClusterAccessInfo::ControlPlaneEndpointInfoHasBeenSet() const
 {
     return m_controlPlaneEndpointInfoHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetPublicTlsAccessEndpoint() const
+{
+    return m_publicTlsAccessEndpoint;
+}
+
+void RabbitMQClusterAccessInfo::SetPublicTlsAccessEndpoint(const string& _publicTlsAccessEndpoint)
+{
+    m_publicTlsAccessEndpoint = _publicTlsAccessEndpoint;
+    m_publicTlsAccessEndpointHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::PublicTlsAccessEndpointHasBeenSet() const
+{
+    return m_publicTlsAccessEndpointHasBeenSet;
 }
 

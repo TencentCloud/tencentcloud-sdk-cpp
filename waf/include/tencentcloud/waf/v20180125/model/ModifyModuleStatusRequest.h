@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool RateLimitHasBeenSet() const;
 
+                    /**
+                     * 获取gzip 开关
+                     * @return GzipAnalysis gzip 开关
+                     * 
+                     */
+                    uint64_t GetGzipAnalysis() const;
+
+                    /**
+                     * 设置gzip 开关
+                     * @param _gzipAnalysis gzip 开关
+                     * 
+                     */
+                    void SetGzipAnalysis(const uint64_t& _gzipAnalysis);
+
+                    /**
+                     * 判断参数 GzipAnalysis 是否已赋值
+                     * @return GzipAnalysis 是否已赋值
+                     * 
+                     */
+                    bool GzipAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     uint64_t m_rateLimit;
                     bool m_rateLimitHasBeenSet;
+
+                    /**
+                     * gzip 开关
+                     */
+                    uint64_t m_gzipAnalysis;
+                    bool m_gzipAnalysisHasBeenSet;
 
                 };
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,6 +280,27 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     bool FlowGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * @return CanBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * 
+                     */
+                    bool GetCanBatchReject() const;
+
+                    /**
+                     * 设置是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * @param _canBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     * 
+                     */
+                    void SetCanBatchReject(const bool& _canBatchReject);
+
+                    /**
+                     * 判断参数 CanBatchReject 是否已赋值
+                     * @return CanBatchReject 是否已赋值
+                     * 
+                     */
+                    bool CanBatchRejectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +367,12 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
+
+                    /**
+                     * 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
+                     */
+                    bool m_canBatchReject;
+                    bool m_canBatchRejectHasBeenSet;
 
                 };
             }

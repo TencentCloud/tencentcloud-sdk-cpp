@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,10 @@ using namespace std;
 
 SearchStrategy::SearchStrategy() :
     m_strategyTypeHasBeenSet(false),
-    m_tableEnhancementHasBeenSet(false)
+    m_tableEnhancementHasBeenSet(false),
+    m_embeddingModelHasBeenSet(false),
+    m_rerankModelSwitchHasBeenSet(false),
+    m_rerankModelHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome SearchStrategy::Deserialize(const rapidjson::Value &value)
         m_tableEnhancementHasBeenSet = true;
     }
 
+    if (value.HasMember("EmbeddingModel") && !value["EmbeddingModel"].IsNull())
+    {
+        if (!value["EmbeddingModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchStrategy.EmbeddingModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_embeddingModel = string(value["EmbeddingModel"].GetString());
+        m_embeddingModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("RerankModelSwitch") && !value["RerankModelSwitch"].IsNull())
+    {
+        if (!value["RerankModelSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchStrategy.RerankModelSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rerankModelSwitch = string(value["RerankModelSwitch"].GetString());
+        m_rerankModelSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("RerankModel") && !value["RerankModel"].IsNull())
+    {
+        if (!value["RerankModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchStrategy.RerankModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rerankModel = string(value["RerankModel"].GetString());
+        m_rerankModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void SearchStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TableEnhancement";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tableEnhancement, allocator);
+    }
+
+    if (m_embeddingModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmbeddingModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_embeddingModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rerankModelSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RerankModelSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rerankModelSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rerankModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RerankModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rerankModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void SearchStrategy::SetTableEnhancement(const bool& _tableEnhancement)
 bool SearchStrategy::TableEnhancementHasBeenSet() const
 {
     return m_tableEnhancementHasBeenSet;
+}
+
+string SearchStrategy::GetEmbeddingModel() const
+{
+    return m_embeddingModel;
+}
+
+void SearchStrategy::SetEmbeddingModel(const string& _embeddingModel)
+{
+    m_embeddingModel = _embeddingModel;
+    m_embeddingModelHasBeenSet = true;
+}
+
+bool SearchStrategy::EmbeddingModelHasBeenSet() const
+{
+    return m_embeddingModelHasBeenSet;
+}
+
+string SearchStrategy::GetRerankModelSwitch() const
+{
+    return m_rerankModelSwitch;
+}
+
+void SearchStrategy::SetRerankModelSwitch(const string& _rerankModelSwitch)
+{
+    m_rerankModelSwitch = _rerankModelSwitch;
+    m_rerankModelSwitchHasBeenSet = true;
+}
+
+bool SearchStrategy::RerankModelSwitchHasBeenSet() const
+{
+    return m_rerankModelSwitchHasBeenSet;
+}
+
+string SearchStrategy::GetRerankModel() const
+{
+    return m_rerankModel;
+}
+
+void SearchStrategy::SetRerankModel(const string& _rerankModel)
+{
+    m_rerankModel = _rerankModel;
+    m_rerankModelHasBeenSet = true;
+}
+
+bool SearchStrategy::RerankModelHasBeenSet() const
+{
+    return m_rerankModelHasBeenSet;
 }
 

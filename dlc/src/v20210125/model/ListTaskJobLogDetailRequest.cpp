@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,16 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 ListTaskJobLogDetailRequest::ListTaskJobLogDetailRequest() :
-    m_taskIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
     m_ascHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_dataEngineIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false)
 {
 }
 
@@ -40,14 +42,6 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_startTimeHasBeenSet)
     {
@@ -81,6 +75,14 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ascHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -112,6 +114,22 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dataEngineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEngineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -119,22 +137,6 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ListTaskJobLogDetailRequest::GetTaskId() const
-{
-    return m_taskId;
-}
-
-void ListTaskJobLogDetailRequest::SetTaskId(const string& _taskId)
-{
-    m_taskId = _taskId;
-    m_taskIdHasBeenSet = true;
-}
-
-bool ListTaskJobLogDetailRequest::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
 
 int64_t ListTaskJobLogDetailRequest::GetStartTime() const
 {
@@ -200,6 +202,22 @@ bool ListTaskJobLogDetailRequest::ContextHasBeenSet() const
     return m_contextHasBeenSet;
 }
 
+string ListTaskJobLogDetailRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void ListTaskJobLogDetailRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
 bool ListTaskJobLogDetailRequest::GetAsc() const
 {
     return m_asc;
@@ -246,6 +264,38 @@ void ListTaskJobLogDetailRequest::SetBatchId(const string& _batchId)
 bool ListTaskJobLogDetailRequest::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+string ListTaskJobLogDetailRequest::GetDataEngineId() const
+{
+    return m_dataEngineId;
+}
+
+void ListTaskJobLogDetailRequest::SetDataEngineId(const string& _dataEngineId)
+{
+    m_dataEngineId = _dataEngineId;
+    m_dataEngineIdHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::DataEngineIdHasBeenSet() const
+{
+    return m_dataEngineIdHasBeenSet;
+}
+
+string ListTaskJobLogDetailRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void ListTaskJobLogDetailRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
 }
 
 

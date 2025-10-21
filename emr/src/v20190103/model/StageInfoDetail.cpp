@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ StageInfoDetail::StageInfoDetail() :
     m_woodJobIdHasBeenSet(false),
     m_languageKeyHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
-    m_timeConsumingHasBeenSet(false)
+    m_timeConsumingHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome StageInfoDetail::Deserialize(const rapidjson::Value &value)
         m_timeConsumingHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StageInfoDetail.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void StageInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TimeConsuming";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeConsuming.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void StageInfoDetail::SetTimeConsuming(const string& _timeConsuming)
 bool StageInfoDetail::TimeConsumingHasBeenSet() const
 {
     return m_timeConsumingHasBeenSet;
+}
+
+int64_t StageInfoDetail::GetId() const
+{
+    return m_id;
+}
+
+void StageInfoDetail::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool StageInfoDetail::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

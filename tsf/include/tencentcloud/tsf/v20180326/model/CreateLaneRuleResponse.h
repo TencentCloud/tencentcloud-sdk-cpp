@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道规则Id
-                     * @return Result 泳道规则Id
+                     * 获取灰度发布规则ID。
+                     * @return Result 灰度发布规则ID。
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道规则Id
+                     * 灰度发布规则ID。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ DisplayWechatApplet::DisplayWechatApplet() :
     m_logoHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_qrCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_recordSubjectHasBeenSet(false),
+    m_accountAppidHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,26 @@ CoreInternalOutcome DisplayWechatApplet::Deserialize(const rapidjson::Value &val
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordSubject") && !value["RecordSubject"].IsNull())
+    {
+        if (!value["RecordSubject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWechatApplet.RecordSubject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordSubject = string(value["RecordSubject"].GetString());
+        m_recordSubjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountAppid") && !value["AccountAppid"].IsNull())
+    {
+        if (!value["AccountAppid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWechatApplet.AccountAppid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountAppid = string(value["AccountAppid"].GetString());
+        m_accountAppidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +197,22 @@ void DisplayWechatApplet::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordSubject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountAppidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountAppid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountAppid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +328,37 @@ void DisplayWechatApplet::SetDescription(const string& _description)
 bool DisplayWechatApplet::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string DisplayWechatApplet::GetRecordSubject() const
+{
+    return m_recordSubject;
+}
+
+void DisplayWechatApplet::SetRecordSubject(const string& _recordSubject)
+{
+    m_recordSubject = _recordSubject;
+    m_recordSubjectHasBeenSet = true;
+}
+
+bool DisplayWechatApplet::RecordSubjectHasBeenSet() const
+{
+    return m_recordSubjectHasBeenSet;
+}
+
+string DisplayWechatApplet::GetAccountAppid() const
+{
+    return m_accountAppid;
+}
+
+void DisplayWechatApplet::SetAccountAppid(const string& _accountAppid)
+{
+    m_accountAppid = _accountAppid;
+    m_accountAppidHasBeenSet = true;
+}
+
+bool DisplayWechatApplet::AccountAppidHasBeenSet() const
+{
+    return m_accountAppidHasBeenSet;
 }
 

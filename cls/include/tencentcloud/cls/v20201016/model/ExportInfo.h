@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取日志导出起始时间
-                     * @return From 日志导出起始时间
+                     * 获取日志导出起始时间，毫秒时间戳
+                     * @return From 日志导出起始时间，毫秒时间戳
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置日志导出起始时间
-                     * @param _from 日志导出起始时间
+                     * 设置日志导出起始时间，毫秒时间戳
+                     * @param _from 日志导出起始时间，毫秒时间戳
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取日志导出结束时间
-                     * @return To 日志导出结束时间
+                     * 获取日志导出结束时间，毫秒时间戳
+                     * @return To 日志导出结束时间，毫秒时间戳
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置日志导出结束时间
-                     * @param _to 日志导出结束时间
+                     * 设置日志导出结束时间，毫秒时间戳
+                     * @param _to 日志导出结束时间，毫秒时间戳
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -300,14 +300,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @return CreateTime 日志导出创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置日志导出创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * @param _createTime 日志导出创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -422,13 +426,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 日志导出起始时间
+                     * 日志导出起始时间，毫秒时间戳
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 日志导出结束时间
+                     * 日志导出结束时间，毫秒时间戳
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
@@ -441,6 +445,7 @@ namespace TencentCloud
 
                     /**
                      * 日志导出创建时间
+时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

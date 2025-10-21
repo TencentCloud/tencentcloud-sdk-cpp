@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceRequest.h>
+#include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceResponse.h>
 #include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageRequest.h>
 #include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageResponse.h>
 #include <tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupFilesResponse.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupsRequest.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceBackupsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceLabelRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidAppsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceAppsRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceAppsResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceBackupsRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceBackupsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceImagesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsRequest.h>
@@ -87,6 +93,10 @@
 #include <tencentcloud/gs/v20191118/model/DestroyAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceRequest.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceResponse.h>
+#include <tencentcloud/gs/v20191118/model/DistributeAndroidInstanceImageToHostsRequest.h>
+#include <tencentcloud/gs/v20191118/model/DistributeAndroidInstanceImageToHostsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributePhotoToAndroidInstancesRequest.h>
@@ -135,6 +145,8 @@
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceRequest.h>
+#include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceResponse.h>
 #include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageRequest.h>
 #include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageResponse.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
@@ -187,6 +199,9 @@ namespace TencentCloud
                 GsClient(const Credential &credential, const std::string &region);
                 GsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BackUpAndroidInstanceResponse> BackUpAndroidInstanceOutcome;
+                typedef std::future<BackUpAndroidInstanceOutcome> BackUpAndroidInstanceOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::BackUpAndroidInstanceRequest&, BackUpAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BackUpAndroidInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::BackUpAndroidInstanceToStorageResponse> BackUpAndroidInstanceToStorageOutcome;
                 typedef std::future<BackUpAndroidInstanceToStorageOutcome> BackUpAndroidInstanceToStorageOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::BackUpAndroidInstanceToStorageRequest&, BackUpAndroidInstanceToStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BackUpAndroidInstanceToStorageAsyncHandler;
@@ -244,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAndroidInstanceBackupFilesResponse> DeleteAndroidInstanceBackupFilesOutcome;
                 typedef std::future<DeleteAndroidInstanceBackupFilesOutcome> DeleteAndroidInstanceBackupFilesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceBackupFilesRequest&, DeleteAndroidInstanceBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceBackupFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAndroidInstanceBackupsResponse> DeleteAndroidInstanceBackupsOutcome;
+                typedef std::future<DeleteAndroidInstanceBackupsOutcome> DeleteAndroidInstanceBackupsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceBackupsRequest&, DeleteAndroidInstanceBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAndroidInstanceImagesResponse> DeleteAndroidInstanceImagesOutcome;
                 typedef std::future<DeleteAndroidInstanceImagesOutcome> DeleteAndroidInstanceImagesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceImagesRequest&, DeleteAndroidInstanceImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceImagesAsyncHandler;
@@ -256,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAndroidInstanceAppsResponse> DescribeAndroidInstanceAppsOutcome;
                 typedef std::future<DescribeAndroidInstanceAppsOutcome> DescribeAndroidInstanceAppsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceAppsRequest&, DescribeAndroidInstanceAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceAppsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAndroidInstanceBackupsResponse> DescribeAndroidInstanceBackupsOutcome;
+                typedef std::future<DescribeAndroidInstanceBackupsOutcome> DescribeAndroidInstanceBackupsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceBackupsRequest&, DescribeAndroidInstanceBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAndroidInstanceImagesResponse> DescribeAndroidInstanceImagesOutcome;
                 typedef std::future<DescribeAndroidInstanceImagesOutcome> DescribeAndroidInstanceImagesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceImagesRequest&, DescribeAndroidInstanceImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceImagesAsyncHandler;
@@ -283,6 +304,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableAndroidInstancesAppResponse> DisableAndroidInstancesAppOutcome;
                 typedef std::future<DisableAndroidInstancesAppOutcome> DisableAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DisableAndroidInstancesAppRequest&, DisableAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisconnectAndroidInstanceResponse> DisconnectAndroidInstanceOutcome;
+                typedef std::future<DisconnectAndroidInstanceOutcome> DisconnectAndroidInstanceOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DisconnectAndroidInstanceRequest&, DisconnectAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisconnectAndroidInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DistributeAndroidInstanceImageToHostsResponse> DistributeAndroidInstanceImageToHostsOutcome;
+                typedef std::future<DistributeAndroidInstanceImageToHostsOutcome> DistributeAndroidInstanceImageToHostsOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DistributeAndroidInstanceImageToHostsRequest&, DistributeAndroidInstanceImageToHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeAndroidInstanceImageToHostsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DistributeFileToAndroidInstancesResponse> DistributeFileToAndroidInstancesOutcome;
                 typedef std::future<DistributeFileToAndroidInstancesOutcome> DistributeFileToAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DistributeFileToAndroidInstancesRequest&, DistributeFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeFileToAndroidInstancesAsyncHandler;
@@ -355,6 +382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartAndroidInstancesAppResponse> RestartAndroidInstancesAppOutcome;
                 typedef std::future<RestartAndroidInstancesAppOutcome> RestartAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RestartAndroidInstancesAppRequest&, RestartAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreAndroidInstanceResponse> RestoreAndroidInstanceOutcome;
+                typedef std::future<RestoreAndroidInstanceOutcome> RestoreAndroidInstanceOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::RestoreAndroidInstanceRequest&, RestoreAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreAndroidInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestoreAndroidInstanceFromStorageResponse> RestoreAndroidInstanceFromStorageOutcome;
                 typedef std::future<RestoreAndroidInstanceFromStorageOutcome> RestoreAndroidInstanceFromStorageOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RestoreAndroidInstanceFromStorageRequest&, RestoreAndroidInstanceFromStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreAndroidInstanceFromStorageAsyncHandler;
@@ -414,6 +444,15 @@ namespace TencentCloud
                 typedef std::function<void(const GsClient*, const Model::UploadFilesToAndroidInstancesRequest&, UploadFilesToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesToAndroidInstancesAsyncHandler;
 
 
+
+                /**
+                 *备份安卓实例。该接口需要联系我们开通内网存储才能使用。
+                 * @param req BackUpAndroidInstanceRequest
+                 * @return BackUpAndroidInstanceOutcome
+                 */
+                BackUpAndroidInstanceOutcome BackUpAndroidInstance(const Model::BackUpAndroidInstanceRequest &request);
+                void BackUpAndroidInstanceAsync(const Model::BackUpAndroidInstanceRequest& request, const BackUpAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BackUpAndroidInstanceOutcomeCallable BackUpAndroidInstanceCallable(const Model::BackUpAndroidInstanceRequest& request);
 
                 /**
                  *备份云手机数据到指定存储，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果是备份到 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。
@@ -591,6 +630,15 @@ namespace TencentCloud
                 DeleteAndroidInstanceBackupFilesOutcomeCallable DeleteAndroidInstanceBackupFilesCallable(const Model::DeleteAndroidInstanceBackupFilesRequest& request);
 
                 /**
+                 *批量删除安卓实例备份
+                 * @param req DeleteAndroidInstanceBackupsRequest
+                 * @return DeleteAndroidInstanceBackupsOutcome
+                 */
+                DeleteAndroidInstanceBackupsOutcome DeleteAndroidInstanceBackups(const Model::DeleteAndroidInstanceBackupsRequest &request);
+                void DeleteAndroidInstanceBackupsAsync(const Model::DeleteAndroidInstanceBackupsRequest& request, const DeleteAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAndroidInstanceBackupsOutcomeCallable DeleteAndroidInstanceBackupsCallable(const Model::DeleteAndroidInstanceBackupsRequest& request);
+
+                /**
                  *删除安卓实例镜像
                  * @param req DeleteAndroidInstanceImagesRequest
                  * @return DeleteAndroidInstanceImagesOutcome
@@ -625,6 +673,15 @@ namespace TencentCloud
                 DescribeAndroidInstanceAppsOutcome DescribeAndroidInstanceApps(const Model::DescribeAndroidInstanceAppsRequest &request);
                 void DescribeAndroidInstanceAppsAsync(const Model::DescribeAndroidInstanceAppsRequest& request, const DescribeAndroidInstanceAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAndroidInstanceAppsOutcomeCallable DescribeAndroidInstanceAppsCallable(const Model::DescribeAndroidInstanceAppsRequest& request);
+
+                /**
+                 *查询安卓实例备份列表
+                 * @param req DescribeAndroidInstanceBackupsRequest
+                 * @return DescribeAndroidInstanceBackupsOutcome
+                 */
+                DescribeAndroidInstanceBackupsOutcome DescribeAndroidInstanceBackups(const Model::DescribeAndroidInstanceBackupsRequest &request);
+                void DescribeAndroidInstanceBackupsAsync(const Model::DescribeAndroidInstanceBackupsRequest& request, const DescribeAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAndroidInstanceBackupsOutcomeCallable DescribeAndroidInstanceBackupsCallable(const Model::DescribeAndroidInstanceBackupsRequest& request);
 
                 /**
                  *查询安卓实例镜像信息，当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像处于可用状态。
@@ -672,7 +729,7 @@ namespace TencentCloud
                 DescribeAndroidInstancesAppBlacklistOutcomeCallable DescribeAndroidInstancesAppBlacklistCallable(const Model::DescribeAndroidInstancesAppBlacklistRequest& request);
 
                 /**
-                 *查询安装指定应用的安卓实例
+                 *批量查询安装指定应用的安卓实例
                  * @param req DescribeAndroidInstancesByAppsRequest
                  * @return DescribeAndroidInstancesByAppsOutcome
                  */
@@ -706,6 +763,24 @@ namespace TencentCloud
                 DisableAndroidInstancesAppOutcome DisableAndroidInstancesApp(const Model::DisableAndroidInstancesAppRequest &request);
                 void DisableAndroidInstancesAppAsync(const Model::DisableAndroidInstancesAppRequest& request, const DisableAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableAndroidInstancesAppOutcomeCallable DisableAndroidInstancesAppCallable(const Model::DisableAndroidInstancesAppRequest& request);
+
+                /**
+                 *断开安卓实例
+                 * @param req DisconnectAndroidInstanceRequest
+                 * @return DisconnectAndroidInstanceOutcome
+                 */
+                DisconnectAndroidInstanceOutcome DisconnectAndroidInstance(const Model::DisconnectAndroidInstanceRequest &request);
+                void DisconnectAndroidInstanceAsync(const Model::DisconnectAndroidInstanceRequest& request, const DisconnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisconnectAndroidInstanceOutcomeCallable DisconnectAndroidInstanceCallable(const Model::DisconnectAndroidInstanceRequest& request);
+
+                /**
+                 *分发安卓实例镜像至宿主机
+                 * @param req DistributeAndroidInstanceImageToHostsRequest
+                 * @return DistributeAndroidInstanceImageToHostsOutcome
+                 */
+                DistributeAndroidInstanceImageToHostsOutcome DistributeAndroidInstanceImageToHosts(const Model::DistributeAndroidInstanceImageToHostsRequest &request);
+                void DistributeAndroidInstanceImageToHostsAsync(const Model::DistributeAndroidInstanceImageToHostsRequest& request, const DistributeAndroidInstanceImageToHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DistributeAndroidInstanceImageToHostsOutcomeCallable DistributeAndroidInstanceImageToHostsCallable(const Model::DistributeAndroidInstanceImageToHostsRequest& request);
 
                 /**
                  *将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。
@@ -925,6 +1000,15 @@ namespace TencentCloud
                 RestartAndroidInstancesAppOutcome RestartAndroidInstancesApp(const Model::RestartAndroidInstancesAppRequest &request);
                 void RestartAndroidInstancesAppAsync(const Model::RestartAndroidInstancesAppRequest& request, const RestartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartAndroidInstancesAppOutcomeCallable RestartAndroidInstancesAppCallable(const Model::RestartAndroidInstancesAppRequest& request);
+
+                /**
+                 *还原安卓实例。该接口需要联系我们开通内网存储才能使用。
+                 * @param req RestoreAndroidInstanceRequest
+                 * @return RestoreAndroidInstanceOutcome
+                 */
+                RestoreAndroidInstanceOutcome RestoreAndroidInstance(const Model::RestoreAndroidInstanceRequest &request);
+                void RestoreAndroidInstanceAsync(const Model::RestoreAndroidInstanceRequest& request, const RestoreAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreAndroidInstanceOutcomeCallable RestoreAndroidInstanceCallable(const Model::RestoreAndroidInstanceRequest& request);
 
                 /**
                  *使用指定存储数据还原云手机，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果还原数据来自 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。

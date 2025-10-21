@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标实例 CPU 的核数。
-                     * @return DstCpu 目标实例 CPU 的核数。
+                     * 获取目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。
+                     * @return DstCpu 目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。
                      * 
                      */
                     double GetDstCpu() const;
 
                     /**
-                     * 设置目标实例 CPU 的核数。
-                     * @param _dstCpu 目标实例 CPU 的核数。
+                     * 设置目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。
+                     * @param _dstCpu 目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。
                      * 
                      */
                     void SetDstCpu(const double& _dstCpu);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool DstCpuHasBeenSet() const;
 
                     /**
-                     * 获取目标实例内存大小，单位：MB。
-                     * @return DstMemory 目标实例内存大小，单位：MB。
+                     * 获取目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。
+                     * @return DstMemory 目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。
                      * 
                      */
                     uint64_t GetDstMemory() const;
 
                     /**
-                     * 设置目标实例内存大小，单位：MB。
-                     * @param _dstMemory 目标实例内存大小，单位：MB。
+                     * 设置目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。
+                     * @param _dstMemory 目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。
                      * 
                      */
                     void SetDstMemory(const uint64_t& _dstMemory);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool DstMemoryHasBeenSet() const;
 
                     /**
-                     * 获取目标实例磁盘大小，单位：GB。
-                     * @return DstDisk 目标实例磁盘大小，单位：GB。
+                     * 获取目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。
+                     * @return DstDisk 目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。
                      * 
                      */
                     uint64_t GetDstDisk() const;
 
                     /**
-                     * 设置目标实例磁盘大小，单位：GB。
-                     * @param _dstDisk 目标实例磁盘大小，单位：GB。
+                     * 设置目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。
+                     * @param _dstDisk 目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。
                      * 
                      */
                     void SetDstDisk(const uint64_t& _dstDisk);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DstDiskHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库版本。
-                     * @return DstVersion 目标实例数据库版本。
+                     * 获取目标实例数据库版本。可选值：5.6，5.7，8.0。
+                     * @return DstVersion 目标实例数据库版本。可选值：5.6，5.7，8.0。
                      * 
                      */
                     std::string GetDstVersion() const;
 
                     /**
-                     * 设置目标实例数据库版本。
-                     * @param _dstVersion 目标实例数据库版本。
+                     * 设置目标实例数据库版本。可选值：5.6，5.7，8.0。
+                     * @param _dstVersion 目标实例数据库版本。可选值：5.6，5.7，8.0。
                      * 
                      */
                     void SetDstVersion(const std::string& _dstVersion);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool DstVersionHasBeenSet() const;
 
                     /**
-                     * 获取目标实例部署模型。
-                     * @return DstDeployMode 目标实例部署模型。
+                     * 获取目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。
+                     * @return DstDeployMode 目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。
                      * 
                      */
                     int64_t GetDstDeployMode() const;
 
                     /**
-                     * 设置目标实例部署模型。
-                     * @param _dstDeployMode 目标实例部署模型。
+                     * 设置目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。
+                     * @param _dstDeployMode 目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。
                      * 
                      */
                     void SetDstDeployMode(const int64_t& _dstDeployMode);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool DstDeployModeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例复制类型。
-                     * @return DstProtectMode 目标实例复制类型。
+                     * 获取目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
+                     * @return DstProtectMode 目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      * 
                      */
                     int64_t GetDstProtectMode() const;
 
                     /**
-                     * 设置目标实例复制类型。
-                     * @param _dstProtectMode 目标实例复制类型。
+                     * 设置目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
+                     * @param _dstProtectMode 目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      * 
                      */
                     void SetDstProtectMode(const int64_t& _dstProtectMode);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool DstProtectModeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例备机1可用区。
-                     * @return DstSlaveZone 目标实例备机1可用区。
+                     * 获取目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @return DstSlaveZone 目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     int64_t GetDstSlaveZone() const;
 
                     /**
-                     * 设置目标实例备机1可用区。
-                     * @param _dstSlaveZone 目标实例备机1可用区。
+                     * 设置目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @param _dstSlaveZone 目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     void SetDstSlaveZone(const int64_t& _dstSlaveZone);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool DstSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取目标实例备机2可用区。
-                     * @return DstBackupZone 目标实例备机2可用区。
+                     * 获取目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @return DstBackupZone 目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     int64_t GetDstBackupZone() const;
 
                     /**
-                     * 设置目标实例备机2可用区。
-                     * @param _dstBackupZone 目标实例备机2可用区。
+                     * 设置目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @param _dstBackupZone 目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     void SetDstBackupZone(const int64_t& _dstBackupZone);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool DstBackupZoneHasBeenSet() const;
 
                     /**
-                     * 获取目标实例类型。
-                     * @return DstCdbType 目标实例类型。
+                     * 获取目标实例类型。支持值包括："CUSTOM" - 通用型实例，"EXCLUSIVE" - 独享型实例，"ONTKE" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。
+                     * @return DstCdbType 目标实例类型。支持值包括："CUSTOM" - 通用型实例，"EXCLUSIVE" - 独享型实例，"ONTKE" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。
                      * 
                      */
                     std::string GetDstCdbType() const;
 
                     /**
-                     * 设置目标实例类型。
-                     * @param _dstCdbType 目标实例类型。
+                     * 设置目标实例类型。支持值包括："CUSTOM" - 通用型实例，"EXCLUSIVE" - 独享型实例，"ONTKE" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。
+                     * @param _dstCdbType 目标实例类型。支持值包括："CUSTOM" - 通用型实例，"EXCLUSIVE" - 独享型实例，"ONTKE" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。
                      * 
                      */
                     void SetDstCdbType(const std::string& _dstCdbType);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool DstCdbTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例主可用区。
-                     * @return DstZoneId 目标实例主可用区。
+                     * 获取目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @return DstZoneId 目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     int64_t GetDstZoneId() const;
 
                     /**
-                     * 设置目标实例主可用区。
-                     * @param _dstZoneId 目标实例主可用区。
+                     * 设置目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
+                     * @param _dstZoneId 目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      * 
                      */
                     void SetDstZoneId(const int64_t& _dstZoneId);
@@ -297,15 +297,15 @@ namespace TencentCloud
                     bool NodeDistributionHasBeenSet() const;
 
                     /**
-                     * 获取集群版的节点拓扑配置
-                     * @return ClusterTopology 集群版的节点拓扑配置
+                     * 获取集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * @return ClusterTopology 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版的节点拓扑配置
-                     * @param _clusterTopology 集群版的节点拓扑配置
+                     * 设置集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * @param _clusterTopology 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -320,67 +320,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标实例 CPU 的核数。
+                     * 目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。
                      */
                     double m_dstCpu;
                     bool m_dstCpuHasBeenSet;
 
                     /**
-                     * 目标实例内存大小，单位：MB。
+                     * 目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。
                      */
                     uint64_t m_dstMemory;
                     bool m_dstMemoryHasBeenSet;
 
                     /**
-                     * 目标实例磁盘大小，单位：GB。
+                     * 目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。
                      */
                     uint64_t m_dstDisk;
                     bool m_dstDiskHasBeenSet;
 
                     /**
-                     * 目标实例数据库版本。
+                     * 目标实例数据库版本。可选值：5.6，5.7，8.0。
                      */
                     std::string m_dstVersion;
                     bool m_dstVersionHasBeenSet;
 
                     /**
-                     * 目标实例部署模型。
+                     * 目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。
                      */
                     int64_t m_dstDeployMode;
                     bool m_dstDeployModeHasBeenSet;
 
                     /**
-                     * 目标实例复制类型。
+                     * 目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      */
                     int64_t m_dstProtectMode;
                     bool m_dstProtectModeHasBeenSet;
 
                     /**
-                     * 目标实例备机1可用区。
+                     * 目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      */
                     int64_t m_dstSlaveZone;
                     bool m_dstSlaveZoneHasBeenSet;
 
                     /**
-                     * 目标实例备机2可用区。
+                     * 目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      */
                     int64_t m_dstBackupZone;
                     bool m_dstBackupZoneHasBeenSet;
 
                     /**
-                     * 目标实例类型。
+                     * 目标实例类型。支持值包括："CUSTOM" - 通用型实例，"EXCLUSIVE" - 独享型实例，"ONTKE" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。
                      */
                     std::string m_dstCdbType;
                     bool m_dstCdbTypeHasBeenSet;
 
                     /**
-                     * 目标实例主可用区。
+                     * 目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。
                      */
                     int64_t m_dstZoneId;
                     bool m_dstZoneIdHasBeenSet;
@@ -392,7 +392,7 @@ namespace TencentCloud
                     bool m_nodeDistributionHasBeenSet;
 
                     /**
-                     * 集群版的节点拓扑配置
+                     * 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;

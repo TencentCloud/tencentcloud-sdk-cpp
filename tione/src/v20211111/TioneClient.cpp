@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1538,6 +1538,49 @@ TioneClient::DescribeNotebooksOutcomeCallable TioneClient::DescribeNotebooksCall
         [this, request]()
         {
             return this->DescribeNotebooks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribePlatformImagesOutcome TioneClient::DescribePlatformImages(const DescribePlatformImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformImagesResponse rsp = DescribePlatformImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformImagesOutcome(rsp);
+        else
+            return DescribePlatformImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformImagesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribePlatformImagesAsync(const DescribePlatformImagesRequest& request, const DescribePlatformImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlatformImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribePlatformImagesOutcomeCallable TioneClient::DescribePlatformImagesCallable(const DescribePlatformImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlatformImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlatformImages(request);
         }
     );
 

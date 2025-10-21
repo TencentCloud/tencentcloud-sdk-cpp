@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ ModelInfo::ModelInfo() :
     m_modelTypeHasBeenSet(false),
     m_modelFormatHasBeenSet(false),
     m_isPrivateModelHasBeenSet(false),
-    m_modelCategoryHasBeenSet(false)
+    m_modelCategoryHasBeenSet(false),
+    m_publicDataSourceHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,23 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_modelCategoryHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicDataSource") && !value["PublicDataSource"].IsNull())
+    {
+        if (!value["PublicDataSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.PublicDataSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicDataSource.Deserialize(value["PublicDataSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicDataSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +296,15 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ModelCategory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicDataSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDataSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -473,5 +500,21 @@ void ModelInfo::SetModelCategory(const string& _modelCategory)
 bool ModelInfo::ModelCategoryHasBeenSet() const
 {
     return m_modelCategoryHasBeenSet;
+}
+
+PublicDataSourceFS ModelInfo::GetPublicDataSource() const
+{
+    return m_publicDataSource;
+}
+
+void ModelInfo::SetPublicDataSource(const PublicDataSourceFS& _publicDataSource)
+{
+    m_publicDataSource = _publicDataSource;
+    m_publicDataSourceHasBeenSet = true;
+}
+
+bool ModelInfo::PublicDataSourceHasBeenSet() const
+{
+    return m_publicDataSourceHasBeenSet;
 }
 

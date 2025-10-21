@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -296,6 +296,56 @@ namespace TencentCloud
                      */
                     bool TitleHasBeenSet() const;
 
+                    /**
+                     * 获取知识库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KnowledgeName 知识库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKnowledgeName() const;
+
+                    /**
+                     * 设置知识库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _knowledgeName 知识库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKnowledgeName(const std::string& _knowledgeName);
+
+                    /**
+                     * 判断参数 KnowledgeName 是否已赋值
+                     * @return KnowledgeName 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeNameHasBeenSet() const;
+
+                    /**
+                     * 获取知识库标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KnowledgeBizId 知识库标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKnowledgeBizId() const;
+
+                    /**
+                     * 设置知识库标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _knowledgeBizId 知识库标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKnowledgeBizId(const std::string& _knowledgeBizId);
+
+                    /**
+                     * 判断参数 KnowledgeBizId 是否已赋值
+                     * @return KnowledgeBizId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +417,20 @@ namespace TencentCloud
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
+
+                    /**
+                     * 知识库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_knowledgeName;
+                    bool m_knowledgeNameHasBeenSet;
+
+                    /**
+                     * 知识库标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_knowledgeBizId;
+                    bool m_knowledgeBizIdHasBeenSet;
 
                 };
             }
