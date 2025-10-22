@@ -23,25 +23,28 @@ using namespace std;
 Zone::Zone() :
     m_zoneIdHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
-    m_originalNameServersHasBeenSet(false),
-    m_nameServersHasBeenSet(false),
-    m_statusHasBeenSet(false),
+    m_aliasZoneNameHasBeenSet(false),
+    m_areaHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_pausedHasBeenSet(false),
-    m_cnameSpeedUpHasBeenSet(false),
-    m_cnameStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
+    m_nSDetailHasBeenSet(false),
+    m_cNAMEDetailHasBeenSet(false),
+    m_dNSPodDetailHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_modifiedOnHasBeenSet(false),
-    m_areaHasBeenSet(false),
-    m_vanityNameServersHasBeenSet(false),
-    m_vanityNameServersIpsHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_cnameStatusHasBeenSet(false),
     m_activeStatusHasBeenSet(false),
-    m_aliasZoneNameHasBeenSet(false),
-    m_isFakeHasBeenSet(false),
     m_lockStatusHasBeenSet(false),
-    m_ownershipVerificationHasBeenSet(false)
+    m_pausedHasBeenSet(false),
+    m_isFakeHasBeenSet(false),
+    m_cnameSpeedUpHasBeenSet(false),
+    m_ownershipVerificationHasBeenSet(false),
+    m_originalNameServersHasBeenSet(false),
+    m_nameServersHasBeenSet(false),
+    m_vanityNameServersHasBeenSet(false),
+    m_vanityNameServersIpsHasBeenSet(false)
 {
 }
 
@@ -70,40 +73,24 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_zoneNameHasBeenSet = true;
     }
 
-    if (value.HasMember("OriginalNameServers") && !value["OriginalNameServers"].IsNull())
+    if (value.HasMember("AliasZoneName") && !value["AliasZoneName"].IsNull())
     {
-        if (!value["OriginalNameServers"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Zone.OriginalNameServers` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["OriginalNameServers"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["AliasZoneName"].IsString())
         {
-            m_originalNameServers.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Zone.AliasZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_originalNameServersHasBeenSet = true;
+        m_aliasZoneName = string(value["AliasZoneName"].GetString());
+        m_aliasZoneNameHasBeenSet = true;
     }
 
-    if (value.HasMember("NameServers") && !value["NameServers"].IsNull())
+    if (value.HasMember("Area") && !value["Area"].IsNull())
     {
-        if (!value["NameServers"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Zone.NameServers` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["NameServers"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Area"].IsString())
         {
-            m_nameServers.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Zone.Area` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nameServersHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -114,36 +101,6 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Paused") && !value["Paused"].IsNull())
-    {
-        if (!value["Paused"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.Paused` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_paused = value["Paused"].GetBool();
-        m_pausedHasBeenSet = true;
-    }
-
-    if (value.HasMember("CnameSpeedUp") && !value["CnameSpeedUp"].IsNull())
-    {
-        if (!value["CnameSpeedUp"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.CnameSpeedUp` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cnameSpeedUp = string(value["CnameSpeedUp"].GetString());
-        m_cnameSpeedUpHasBeenSet = true;
-    }
-
-    if (value.HasMember("CnameStatus") && !value["CnameStatus"].IsNull())
-    {
-        if (!value["CnameStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.CnameStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cnameStatus = string(value["CnameStatus"].GetString());
-        m_cnameStatusHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -186,6 +143,57 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_resourcesHasBeenSet = true;
     }
 
+    if (value.HasMember("NSDetail") && !value["NSDetail"].IsNull())
+    {
+        if (!value["NSDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.NSDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_nSDetail.Deserialize(value["NSDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_nSDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("CNAMEDetail") && !value["CNAMEDetail"].IsNull())
+    {
+        if (!value["CNAMEDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.CNAMEDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cNAMEDetail.Deserialize(value["CNAMEDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cNAMEDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("DNSPodDetail") && !value["DNSPodDetail"].IsNull())
+    {
+        if (!value["DNSPodDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.DNSPodDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dNSPodDetail.Deserialize(value["DNSPodDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dNSPodDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
     {
         if (!value["CreatedOn"].IsString())
@@ -206,14 +214,117 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_modifiedOnHasBeenSet = true;
     }
 
-    if (value.HasMember("Area") && !value["Area"].IsNull())
+    if (value.HasMember("Status") && !value["Status"].IsNull())
     {
-        if (!value["Area"].IsString())
+        if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Zone.Area` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Zone.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_area = string(value["Area"].GetString());
-        m_areaHasBeenSet = true;
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CnameStatus") && !value["CnameStatus"].IsNull())
+    {
+        if (!value["CnameStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.CnameStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnameStatus = string(value["CnameStatus"].GetString());
+        m_cnameStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActiveStatus") && !value["ActiveStatus"].IsNull())
+    {
+        if (!value["ActiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.ActiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activeStatus = string(value["ActiveStatus"].GetString());
+        m_activeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockStatus") && !value["LockStatus"].IsNull())
+    {
+        if (!value["LockStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.LockStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockStatus = string(value["LockStatus"].GetString());
+        m_lockStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Paused") && !value["Paused"].IsNull())
+    {
+        if (!value["Paused"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.Paused` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_paused = value["Paused"].GetBool();
+        m_pausedHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFake") && !value["IsFake"].IsNull())
+    {
+        if (!value["IsFake"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.IsFake` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFake = value["IsFake"].GetInt64();
+        m_isFakeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CnameSpeedUp") && !value["CnameSpeedUp"].IsNull())
+    {
+        if (!value["CnameSpeedUp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.CnameSpeedUp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnameSpeedUp = string(value["CnameSpeedUp"].GetString());
+        m_cnameSpeedUpHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
+    {
+        if (!value["OwnershipVerification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.OwnershipVerification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownershipVerificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalNameServers") && !value["OriginalNameServers"].IsNull())
+    {
+        if (!value["OriginalNameServers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zone.OriginalNameServers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OriginalNameServers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_originalNameServers.push_back((*itr).GetString());
+        }
+        m_originalNameServersHasBeenSet = true;
+    }
+
+    if (value.HasMember("NameServers") && !value["NameServers"].IsNull())
+    {
+        if (!value["NameServers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zone.NameServers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NameServers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nameServers.push_back((*itr).GetString());
+        }
+        m_nameServersHasBeenSet = true;
     }
 
     if (value.HasMember("VanityNameServers") && !value["VanityNameServers"].IsNull())
@@ -253,63 +364,6 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_vanityNameServersIpsHasBeenSet = true;
     }
 
-    if (value.HasMember("ActiveStatus") && !value["ActiveStatus"].IsNull())
-    {
-        if (!value["ActiveStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.ActiveStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_activeStatus = string(value["ActiveStatus"].GetString());
-        m_activeStatusHasBeenSet = true;
-    }
-
-    if (value.HasMember("AliasZoneName") && !value["AliasZoneName"].IsNull())
-    {
-        if (!value["AliasZoneName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.AliasZoneName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_aliasZoneName = string(value["AliasZoneName"].GetString());
-        m_aliasZoneNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("IsFake") && !value["IsFake"].IsNull())
-    {
-        if (!value["IsFake"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.IsFake` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isFake = value["IsFake"].GetInt64();
-        m_isFakeHasBeenSet = true;
-    }
-
-    if (value.HasMember("LockStatus") && !value["LockStatus"].IsNull())
-    {
-        if (!value["LockStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.LockStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_lockStatus = string(value["LockStatus"].GetString());
-        m_lockStatusHasBeenSet = true;
-    }
-
-    if (value.HasMember("OwnershipVerification") && !value["OwnershipVerification"].IsNull())
-    {
-        if (!value["OwnershipVerification"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.OwnershipVerification` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(value["OwnershipVerification"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_ownershipVerificationHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -333,38 +387,20 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_originalNameServersHasBeenSet)
+    if (m_aliasZoneNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OriginalNameServers";
+        string key = "AliasZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_originalNameServers.begin(); itr != m_originalNameServers.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_aliasZoneName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_nameServersHasBeenSet)
+    if (m_areaHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NameServers";
+        string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_nameServers.begin(); itr != m_nameServers.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -373,30 +409,6 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_pausedHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Paused";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_paused, allocator);
-    }
-
-    if (m_cnameSpeedUpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CnameSpeedUp";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedUp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cnameStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CnameStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cnameStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -429,6 +441,33 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         }
     }
 
+    if (m_nSDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NSDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nSDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cNAMEDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CNAMEDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cNAMEDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dNSPodDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSPodDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dNSPodDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createdOnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -445,12 +484,95 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_areaHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Area";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cnameStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activeStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pausedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Paused";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_paused, allocator);
+    }
+
+    if (m_isFakeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFake";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFake, allocator);
+    }
+
+    if (m_cnameSpeedUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameSpeedUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedUp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownershipVerificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnershipVerification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originalNameServersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalNameServers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_originalNameServers.begin(); itr != m_originalNameServers.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nameServersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameServers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nameServers.begin(); itr != m_nameServers.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_vanityNameServersHasBeenSet)
@@ -475,47 +597,6 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_activeStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ActiveStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_activeStatus.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_aliasZoneNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AliasZoneName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_aliasZoneName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isFakeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsFake";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isFake, allocator);
-    }
-
-    if (m_lockStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LockStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_lockStatus.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ownershipVerificationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OwnershipVerification";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -553,52 +634,36 @@ bool Zone::ZoneNameHasBeenSet() const
     return m_zoneNameHasBeenSet;
 }
 
-vector<string> Zone::GetOriginalNameServers() const
+string Zone::GetAliasZoneName() const
 {
-    return m_originalNameServers;
+    return m_aliasZoneName;
 }
 
-void Zone::SetOriginalNameServers(const vector<string>& _originalNameServers)
+void Zone::SetAliasZoneName(const string& _aliasZoneName)
 {
-    m_originalNameServers = _originalNameServers;
-    m_originalNameServersHasBeenSet = true;
+    m_aliasZoneName = _aliasZoneName;
+    m_aliasZoneNameHasBeenSet = true;
 }
 
-bool Zone::OriginalNameServersHasBeenSet() const
+bool Zone::AliasZoneNameHasBeenSet() const
 {
-    return m_originalNameServersHasBeenSet;
+    return m_aliasZoneNameHasBeenSet;
 }
 
-vector<string> Zone::GetNameServers() const
+string Zone::GetArea() const
 {
-    return m_nameServers;
+    return m_area;
 }
 
-void Zone::SetNameServers(const vector<string>& _nameServers)
+void Zone::SetArea(const string& _area)
 {
-    m_nameServers = _nameServers;
-    m_nameServersHasBeenSet = true;
+    m_area = _area;
+    m_areaHasBeenSet = true;
 }
 
-bool Zone::NameServersHasBeenSet() const
+bool Zone::AreaHasBeenSet() const
 {
-    return m_nameServersHasBeenSet;
-}
-
-string Zone::GetStatus() const
-{
-    return m_status;
-}
-
-void Zone::SetStatus(const string& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool Zone::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
+    return m_areaHasBeenSet;
 }
 
 string Zone::GetType() const
@@ -615,54 +680,6 @@ void Zone::SetType(const string& _type)
 bool Zone::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
-}
-
-bool Zone::GetPaused() const
-{
-    return m_paused;
-}
-
-void Zone::SetPaused(const bool& _paused)
-{
-    m_paused = _paused;
-    m_pausedHasBeenSet = true;
-}
-
-bool Zone::PausedHasBeenSet() const
-{
-    return m_pausedHasBeenSet;
-}
-
-string Zone::GetCnameSpeedUp() const
-{
-    return m_cnameSpeedUp;
-}
-
-void Zone::SetCnameSpeedUp(const string& _cnameSpeedUp)
-{
-    m_cnameSpeedUp = _cnameSpeedUp;
-    m_cnameSpeedUpHasBeenSet = true;
-}
-
-bool Zone::CnameSpeedUpHasBeenSet() const
-{
-    return m_cnameSpeedUpHasBeenSet;
-}
-
-string Zone::GetCnameStatus() const
-{
-    return m_cnameStatus;
-}
-
-void Zone::SetCnameStatus(const string& _cnameStatus)
-{
-    m_cnameStatus = _cnameStatus;
-    m_cnameStatusHasBeenSet = true;
-}
-
-bool Zone::CnameStatusHasBeenSet() const
-{
-    return m_cnameStatusHasBeenSet;
 }
 
 vector<Tag> Zone::GetTags() const
@@ -697,6 +714,54 @@ bool Zone::ResourcesHasBeenSet() const
     return m_resourcesHasBeenSet;
 }
 
+NSDetail Zone::GetNSDetail() const
+{
+    return m_nSDetail;
+}
+
+void Zone::SetNSDetail(const NSDetail& _nSDetail)
+{
+    m_nSDetail = _nSDetail;
+    m_nSDetailHasBeenSet = true;
+}
+
+bool Zone::NSDetailHasBeenSet() const
+{
+    return m_nSDetailHasBeenSet;
+}
+
+CNAMEDetail Zone::GetCNAMEDetail() const
+{
+    return m_cNAMEDetail;
+}
+
+void Zone::SetCNAMEDetail(const CNAMEDetail& _cNAMEDetail)
+{
+    m_cNAMEDetail = _cNAMEDetail;
+    m_cNAMEDetailHasBeenSet = true;
+}
+
+bool Zone::CNAMEDetailHasBeenSet() const
+{
+    return m_cNAMEDetailHasBeenSet;
+}
+
+DNSPodDetail Zone::GetDNSPodDetail() const
+{
+    return m_dNSPodDetail;
+}
+
+void Zone::SetDNSPodDetail(const DNSPodDetail& _dNSPodDetail)
+{
+    m_dNSPodDetail = _dNSPodDetail;
+    m_dNSPodDetailHasBeenSet = true;
+}
+
+bool Zone::DNSPodDetailHasBeenSet() const
+{
+    return m_dNSPodDetailHasBeenSet;
+}
+
 string Zone::GetCreatedOn() const
 {
     return m_createdOn;
@@ -729,20 +794,164 @@ bool Zone::ModifiedOnHasBeenSet() const
     return m_modifiedOnHasBeenSet;
 }
 
-string Zone::GetArea() const
+string Zone::GetStatus() const
 {
-    return m_area;
+    return m_status;
 }
 
-void Zone::SetArea(const string& _area)
+void Zone::SetStatus(const string& _status)
 {
-    m_area = _area;
-    m_areaHasBeenSet = true;
+    m_status = _status;
+    m_statusHasBeenSet = true;
 }
 
-bool Zone::AreaHasBeenSet() const
+bool Zone::StatusHasBeenSet() const
 {
-    return m_areaHasBeenSet;
+    return m_statusHasBeenSet;
+}
+
+string Zone::GetCnameStatus() const
+{
+    return m_cnameStatus;
+}
+
+void Zone::SetCnameStatus(const string& _cnameStatus)
+{
+    m_cnameStatus = _cnameStatus;
+    m_cnameStatusHasBeenSet = true;
+}
+
+bool Zone::CnameStatusHasBeenSet() const
+{
+    return m_cnameStatusHasBeenSet;
+}
+
+string Zone::GetActiveStatus() const
+{
+    return m_activeStatus;
+}
+
+void Zone::SetActiveStatus(const string& _activeStatus)
+{
+    m_activeStatus = _activeStatus;
+    m_activeStatusHasBeenSet = true;
+}
+
+bool Zone::ActiveStatusHasBeenSet() const
+{
+    return m_activeStatusHasBeenSet;
+}
+
+string Zone::GetLockStatus() const
+{
+    return m_lockStatus;
+}
+
+void Zone::SetLockStatus(const string& _lockStatus)
+{
+    m_lockStatus = _lockStatus;
+    m_lockStatusHasBeenSet = true;
+}
+
+bool Zone::LockStatusHasBeenSet() const
+{
+    return m_lockStatusHasBeenSet;
+}
+
+bool Zone::GetPaused() const
+{
+    return m_paused;
+}
+
+void Zone::SetPaused(const bool& _paused)
+{
+    m_paused = _paused;
+    m_pausedHasBeenSet = true;
+}
+
+bool Zone::PausedHasBeenSet() const
+{
+    return m_pausedHasBeenSet;
+}
+
+int64_t Zone::GetIsFake() const
+{
+    return m_isFake;
+}
+
+void Zone::SetIsFake(const int64_t& _isFake)
+{
+    m_isFake = _isFake;
+    m_isFakeHasBeenSet = true;
+}
+
+bool Zone::IsFakeHasBeenSet() const
+{
+    return m_isFakeHasBeenSet;
+}
+
+string Zone::GetCnameSpeedUp() const
+{
+    return m_cnameSpeedUp;
+}
+
+void Zone::SetCnameSpeedUp(const string& _cnameSpeedUp)
+{
+    m_cnameSpeedUp = _cnameSpeedUp;
+    m_cnameSpeedUpHasBeenSet = true;
+}
+
+bool Zone::CnameSpeedUpHasBeenSet() const
+{
+    return m_cnameSpeedUpHasBeenSet;
+}
+
+OwnershipVerification Zone::GetOwnershipVerification() const
+{
+    return m_ownershipVerification;
+}
+
+void Zone::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
+{
+    m_ownershipVerification = _ownershipVerification;
+    m_ownershipVerificationHasBeenSet = true;
+}
+
+bool Zone::OwnershipVerificationHasBeenSet() const
+{
+    return m_ownershipVerificationHasBeenSet;
+}
+
+vector<string> Zone::GetOriginalNameServers() const
+{
+    return m_originalNameServers;
+}
+
+void Zone::SetOriginalNameServers(const vector<string>& _originalNameServers)
+{
+    m_originalNameServers = _originalNameServers;
+    m_originalNameServersHasBeenSet = true;
+}
+
+bool Zone::OriginalNameServersHasBeenSet() const
+{
+    return m_originalNameServersHasBeenSet;
+}
+
+vector<string> Zone::GetNameServers() const
+{
+    return m_nameServers;
+}
+
+void Zone::SetNameServers(const vector<string>& _nameServers)
+{
+    m_nameServers = _nameServers;
+    m_nameServersHasBeenSet = true;
+}
+
+bool Zone::NameServersHasBeenSet() const
+{
+    return m_nameServersHasBeenSet;
 }
 
 VanityNameServers Zone::GetVanityNameServers() const
@@ -775,85 +984,5 @@ void Zone::SetVanityNameServersIps(const vector<VanityNameServersIps>& _vanityNa
 bool Zone::VanityNameServersIpsHasBeenSet() const
 {
     return m_vanityNameServersIpsHasBeenSet;
-}
-
-string Zone::GetActiveStatus() const
-{
-    return m_activeStatus;
-}
-
-void Zone::SetActiveStatus(const string& _activeStatus)
-{
-    m_activeStatus = _activeStatus;
-    m_activeStatusHasBeenSet = true;
-}
-
-bool Zone::ActiveStatusHasBeenSet() const
-{
-    return m_activeStatusHasBeenSet;
-}
-
-string Zone::GetAliasZoneName() const
-{
-    return m_aliasZoneName;
-}
-
-void Zone::SetAliasZoneName(const string& _aliasZoneName)
-{
-    m_aliasZoneName = _aliasZoneName;
-    m_aliasZoneNameHasBeenSet = true;
-}
-
-bool Zone::AliasZoneNameHasBeenSet() const
-{
-    return m_aliasZoneNameHasBeenSet;
-}
-
-int64_t Zone::GetIsFake() const
-{
-    return m_isFake;
-}
-
-void Zone::SetIsFake(const int64_t& _isFake)
-{
-    m_isFake = _isFake;
-    m_isFakeHasBeenSet = true;
-}
-
-bool Zone::IsFakeHasBeenSet() const
-{
-    return m_isFakeHasBeenSet;
-}
-
-string Zone::GetLockStatus() const
-{
-    return m_lockStatus;
-}
-
-void Zone::SetLockStatus(const string& _lockStatus)
-{
-    m_lockStatus = _lockStatus;
-    m_lockStatusHasBeenSet = true;
-}
-
-bool Zone::LockStatusHasBeenSet() const
-{
-    return m_lockStatusHasBeenSet;
-}
-
-OwnershipVerification Zone::GetOwnershipVerification() const
-{
-    return m_ownershipVerification;
-}
-
-void Zone::SetOwnershipVerification(const OwnershipVerification& _ownershipVerification)
-{
-    m_ownershipVerification = _ownershipVerification;
-    m_ownershipVerificationHasBeenSet = true;
-}
-
-bool Zone::OwnershipVerificationHasBeenSet() const
-{
-    return m_ownershipVerificationHasBeenSet;
 }
 

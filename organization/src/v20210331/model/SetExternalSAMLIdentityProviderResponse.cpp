@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-SetExternalSAMLIdentityProviderResponse::SetExternalSAMLIdentityProviderResponse()
+SetExternalSAMLIdentityProviderResponse::SetExternalSAMLIdentityProviderResponse() :
+    m_certificateIdsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome SetExternalSAMLIdentityProviderResponse::Deserialize(const s
     }
 
 
+    if (rsp.HasMember("CertificateIds") && !rsp["CertificateIds"].IsNull())
+    {
+        if (!rsp["CertificateIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CertificateIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CertificateIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_certificateIds.push_back((*itr).GetString());
+        }
+        m_certificateIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string SetExternalSAMLIdentityProviderResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_certificateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_certificateIds.begin(); itr != m_certificateIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string SetExternalSAMLIdentityProviderResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> SetExternalSAMLIdentityProviderResponse::GetCertificateIds() const
+{
+    return m_certificateIds;
+}
+
+bool SetExternalSAMLIdentityProviderResponse::CertificateIdsHasBeenSet() const
+{
+    return m_certificateIdsHasBeenSet;
+}
 
 

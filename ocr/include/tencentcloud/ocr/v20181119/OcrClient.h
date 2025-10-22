@@ -125,6 +125,8 @@
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
@@ -370,6 +372,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QuestionOCRResponse> QuestionOCROutcome;
                 typedef std::future<QuestionOCROutcome> QuestionOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuestionOCRRequest&, QuestionOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::QuestionSplitLayoutOCRResponse> QuestionSplitLayoutOCROutcome;
+                typedef std::future<QuestionSplitLayoutOCROutcome> QuestionSplitLayoutOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::QuestionSplitLayoutOCRRequest&, QuestionSplitLayoutOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionSplitLayoutOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuestionSplitOCRResponse> QuestionSplitOCROutcome;
                 typedef std::future<QuestionSplitOCROutcome> QuestionSplitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuestionSplitOCRRequest&, QuestionSplitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionSplitOCRAsyncHandler;
@@ -1284,6 +1289,17 @@ namespace TencentCloud
                 QuestionOCROutcome QuestionOCR(const Model::QuestionOCRRequest &request);
                 void QuestionOCRAsync(const Model::QuestionOCRRequest& request, const QuestionOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuestionOCROutcomeCallable QuestionOCRCallable(const Model::QuestionOCRRequest& request);
+
+                /**
+                 *试卷切题（仅检测）可将整页练习册、试卷或教辅中的题目进行自动切题，返回试题边框和题目元素的坐标位置。
+
+默认接口请求频率限制：2次/秒。
+                 * @param req QuestionSplitLayoutOCRRequest
+                 * @return QuestionSplitLayoutOCROutcome
+                 */
+                QuestionSplitLayoutOCROutcome QuestionSplitLayoutOCR(const Model::QuestionSplitLayoutOCRRequest &request);
+                void QuestionSplitLayoutOCRAsync(const Model::QuestionSplitLayoutOCRRequest& request, const QuestionSplitLayoutOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QuestionSplitLayoutOCROutcomeCallable QuestionSplitLayoutOCRCallable(const Model::QuestionSplitLayoutOCRRequest& request);
 
                 /**
                  *试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置。

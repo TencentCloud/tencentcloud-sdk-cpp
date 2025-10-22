@@ -26,7 +26,10 @@ ExclusiveInstance::ExclusiveInstance() :
     m_instanceTypeHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_instanceNamespaceIdHasBeenSet(false)
+    m_instanceNamespaceIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome ExclusiveInstance::Deserialize(const rapidjson::Value &value
         m_instanceNamespaceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveInstance.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveInstance.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveInstance.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = value["UpdateTime"].GetUint64();
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void ExclusiveInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InstanceNamespaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceNamespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void ExclusiveInstance::SetInstanceNamespaceId(const string& _instanceNamespaceI
 bool ExclusiveInstance::InstanceNamespaceIdHasBeenSet() const
 {
     return m_instanceNamespaceIdHasBeenSet;
+}
+
+string ExclusiveInstance::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ExclusiveInstance::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ExclusiveInstance::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+uint64_t ExclusiveInstance::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ExclusiveInstance::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ExclusiveInstance::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t ExclusiveInstance::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void ExclusiveInstance::SetUpdateTime(const uint64_t& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool ExclusiveInstance::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

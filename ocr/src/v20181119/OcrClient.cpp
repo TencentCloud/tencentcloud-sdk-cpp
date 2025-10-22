@@ -2233,6 +2233,49 @@ OcrClient::QuestionOCROutcomeCallable OcrClient::QuestionOCRCallable(const Quest
     return task->get_future();
 }
 
+OcrClient::QuestionSplitLayoutOCROutcome OcrClient::QuestionSplitLayoutOCR(const QuestionSplitLayoutOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuestionSplitLayoutOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuestionSplitLayoutOCRResponse rsp = QuestionSplitLayoutOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuestionSplitLayoutOCROutcome(rsp);
+        else
+            return QuestionSplitLayoutOCROutcome(o.GetError());
+    }
+    else
+    {
+        return QuestionSplitLayoutOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::QuestionSplitLayoutOCRAsync(const QuestionSplitLayoutOCRRequest& request, const QuestionSplitLayoutOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuestionSplitLayoutOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::QuestionSplitLayoutOCROutcomeCallable OcrClient::QuestionSplitLayoutOCRCallable(const QuestionSplitLayoutOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuestionSplitLayoutOCROutcome()>>(
+        [this, request]()
+        {
+            return this->QuestionSplitLayoutOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::QuestionSplitOCROutcome OcrClient::QuestionSplitOCR(const QuestionSplitOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "QuestionSplitOCR");

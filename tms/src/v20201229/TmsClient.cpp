@@ -40,6 +40,92 @@ TmsClient::TmsClient(const Credential &credential, const string &region, const C
 }
 
 
+TmsClient::CreateFinancialLLMTaskOutcome TmsClient::CreateFinancialLLMTask(const CreateFinancialLLMTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFinancialLLMTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFinancialLLMTaskResponse rsp = CreateFinancialLLMTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFinancialLLMTaskOutcome(rsp);
+        else
+            return CreateFinancialLLMTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFinancialLLMTaskOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::CreateFinancialLLMTaskAsync(const CreateFinancialLLMTaskRequest& request, const CreateFinancialLLMTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFinancialLLMTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::CreateFinancialLLMTaskOutcomeCallable TmsClient::CreateFinancialLLMTaskCallable(const CreateFinancialLLMTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFinancialLLMTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFinancialLLMTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TmsClient::GetFinancialLLMTaskResultOutcome TmsClient::GetFinancialLLMTaskResult(const GetFinancialLLMTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFinancialLLMTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFinancialLLMTaskResultResponse rsp = GetFinancialLLMTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFinancialLLMTaskResultOutcome(rsp);
+        else
+            return GetFinancialLLMTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFinancialLLMTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::GetFinancialLLMTaskResultAsync(const GetFinancialLLMTaskResultRequest& request, const GetFinancialLLMTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFinancialLLMTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::GetFinancialLLMTaskResultOutcomeCallable TmsClient::GetFinancialLLMTaskResultCallable(const GetFinancialLLMTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFinancialLLMTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFinancialLLMTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmsClient::TextModerationOutcome TmsClient::TextModeration(const TextModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextModeration");

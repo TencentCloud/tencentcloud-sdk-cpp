@@ -1337,6 +1337,27 @@ namespace TencentCloud
                      */
                     bool PartitionHasBeenSet() const;
 
+                    /**
+                     * 获取是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * @return IncrementalDeployment 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * 
+                     */
+                    bool GetIncrementalDeployment() const;
+
+                    /**
+                     * 设置是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * @param _incrementalDeployment 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * 
+                     */
+                    void SetIncrementalDeployment(const bool& _incrementalDeployment);
+
+                    /**
+                     * 判断参数 IncrementalDeployment 是否已赋值
+                     * @return IncrementalDeployment 是否已赋值
+                     * 
+                     */
+                    bool IncrementalDeploymentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1704,6 +1725,12 @@ namespace TencentCloud
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
+
+                    /**
+                     * 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     */
+                    bool m_incrementalDeployment;
+                    bool m_incrementalDeploymentHasBeenSet;
 
                 };
             }

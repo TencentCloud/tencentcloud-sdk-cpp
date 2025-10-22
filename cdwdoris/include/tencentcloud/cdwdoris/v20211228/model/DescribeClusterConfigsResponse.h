@@ -100,6 +100,20 @@ namespace TencentCloud
                      */
                     bool HasCNHasBeenSet() const;
 
+                    /**
+                     * 获取实例已经存在的jar包列表
+                     * @return ExistingJarConfList 实例已经存在的jar包列表
+                     * 
+                     */
+                    std::vector<ClusterConfigsInfoFromEMR> GetExistingJarConfList() const;
+
+                    /**
+                     * 判断参数 ExistingJarConfList 是否已赋值
+                     * @return ExistingJarConfList 是否已赋值
+                     * 
+                     */
+                    bool ExistingJarConfListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +139,12 @@ namespace TencentCloud
                      */
                     bool m_hasCN;
                     bool m_hasCNHasBeenSet;
+
+                    /**
+                     * 实例已经存在的jar包列表
+                     */
+                    std::vector<ClusterConfigsInfoFromEMR> m_existingJarConfList;
+                    bool m_existingJarConfListHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ DescribeSimpleGroupsRequest::DescribeSimpleGroupsRequest() :
     m_offsetHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_appMicroServiceTypeHasBeenSet(false)
+    m_appMicroServiceTypeHasBeenSet(false),
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string DescribeSimpleGroupsRequest::ToJsonString() const
         string key = "AppMicroServiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appMicroServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void DescribeSimpleGroupsRequest::SetAppMicroServiceType(const string& _appMicro
 bool DescribeSimpleGroupsRequest::AppMicroServiceTypeHasBeenSet() const
 {
     return m_appMicroServiceTypeHasBeenSet;
+}
+
+string DescribeSimpleGroupsRequest::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void DescribeSimpleGroupsRequest::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool DescribeSimpleGroupsRequest::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
 }
 
 

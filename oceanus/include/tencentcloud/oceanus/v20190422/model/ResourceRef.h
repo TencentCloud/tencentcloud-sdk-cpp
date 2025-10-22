@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
-                     * @return Version 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * 获取资源版本
+                     * @return Version 资源版本
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
-                     * @param _version 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * 设置资源版本
+                     * @param _version 资源版本
                      * 
                      */
                     void SetVersion(const int64_t& _version);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取引用资源类型，例如主资源设置为1，代表main class所在的jar包
-                     * @return Type 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * 获取0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * @return Type 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置引用资源类型，例如主资源设置为1，代表main class所在的jar包
-                     * @param _type 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * 设置0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * @param _type 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
+                     * 资源版本
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * 0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

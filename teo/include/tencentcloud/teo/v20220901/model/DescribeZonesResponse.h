@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取站点详细信息。
-                     * @return Zones 站点详细信息。
+                     * 获取站点列表详情。
+                     * @return Zones 站点列表详情。
                      * 
                      */
                     std::vector<Zone> GetZones() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 站点详细信息。
+                     * 站点列表详情。
                      */
                     std::vector<Zone> m_zones;
                     bool m_zonesHasBeenSet;

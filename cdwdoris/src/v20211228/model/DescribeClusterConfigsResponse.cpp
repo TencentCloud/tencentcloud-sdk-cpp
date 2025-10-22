@@ -27,7 +27,8 @@ DescribeClusterConfigsResponse::DescribeClusterConfigsResponse() :
     m_clusterConfListHasBeenSet(false),
     m_buildVersionHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
-    m_hasCNHasBeenSet(false)
+    m_hasCNHasBeenSet(false),
+    m_existingJarConfListHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,26 @@ CoreInternalOutcome DescribeClusterConfigsResponse::Deserialize(const string &pa
         m_hasCNHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExistingJarConfList") && !rsp["ExistingJarConfList"].IsNull())
+    {
+        if (!rsp["ExistingJarConfList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExistingJarConfList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExistingJarConfList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterConfigsInfoFromEMR item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_existingJarConfList.push_back(item);
+        }
+        m_existingJarConfListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +183,21 @@ string DescribeClusterConfigsResponse::ToJsonString() const
         string key = "HasCN";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasCN, allocator);
+    }
+
+    if (m_existingJarConfListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistingJarConfList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_existingJarConfList.begin(); itr != m_existingJarConfList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +250,16 @@ bool DescribeClusterConfigsResponse::GetHasCN() const
 bool DescribeClusterConfigsResponse::HasCNHasBeenSet() const
 {
     return m_hasCNHasBeenSet;
+}
+
+vector<ClusterConfigsInfoFromEMR> DescribeClusterConfigsResponse::GetExistingJarConfList() const
+{
+    return m_existingJarConfList;
+}
+
+bool DescribeClusterConfigsResponse::ExistingJarConfListHasBeenSet() const
+{
+    return m_existingJarConfListHasBeenSet;
 }
 
 

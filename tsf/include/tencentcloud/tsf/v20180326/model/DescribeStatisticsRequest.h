@@ -391,6 +391,27 @@ namespace TencentCloud
                      */
                     bool ConfigCenterInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取服务过滤
+                     * @return ServiceFilter 服务过滤
+                     * 
+                     */
+                    std::string GetServiceFilter() const;
+
+                    /**
+                     * 设置服务过滤
+                     * @param _serviceFilter 服务过滤
+                     * 
+                     */
+                    void SetServiceFilter(const std::string& _serviceFilter);
+
+                    /**
+                     * 判断参数 ServiceFilter 是否已赋值
+                     * @return ServiceFilter 是否已赋值
+                     * 
+                     */
+                    bool ServiceFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -491,6 +512,12 @@ namespace TencentCloud
                      */
                     std::string m_configCenterInstanceId;
                     bool m_configCenterInstanceIdHasBeenSet;
+
+                    /**
+                     * 服务过滤
+                     */
+                    std::string m_serviceFilter;
+                    bool m_serviceFilterHasBeenSet;
 
                 };
             }

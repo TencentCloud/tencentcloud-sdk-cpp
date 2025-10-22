@@ -26,9 +26,12 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/Tag.h>
 #include <tencentcloud/teo/v20220901/model/Resource.h>
+#include <tencentcloud/teo/v20220901/model/NSDetail.h>
+#include <tencentcloud/teo/v20220901/model/CNAMEDetail.h>
+#include <tencentcloud/teo/v20220901/model/DNSPodDetail.h>
+#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServers.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServersIps.h>
-#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 
 
 namespace TencentCloud
@@ -40,7 +43,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 站点信息
+                * 站点详情。
                 */
                 class Zone : public AbstractModel
                 {
@@ -94,110 +97,89 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取站点当前使用的 NS 列表。
-                     * @return OriginalNameServers 站点当前使用的 NS 列表。
+                     * 获取同名站点标识。允许输入数字、英文、"." 、"-" 和 "_" 组合，长度 200 个字符以内。
+                     * @return AliasZoneName 同名站点标识。允许输入数字、英文、"." 、"-" 和 "_" 组合，长度 200 个字符以内。
                      * 
                      */
-                    std::vector<std::string> GetOriginalNameServers() const;
+                    std::string GetAliasZoneName() const;
 
                     /**
-                     * 设置站点当前使用的 NS 列表。
-                     * @param _originalNameServers 站点当前使用的 NS 列表。
+                     * 设置同名站点标识。允许输入数字、英文、"." 、"-" 和 "_" 组合，长度 200 个字符以内。
+                     * @param _aliasZoneName 同名站点标识。允许输入数字、英文、"." 、"-" 和 "_" 组合，长度 200 个字符以内。
                      * 
                      */
-                    void SetOriginalNameServers(const std::vector<std::string>& _originalNameServers);
+                    void SetAliasZoneName(const std::string& _aliasZoneName);
 
                     /**
-                     * 判断参数 OriginalNameServers 是否已赋值
-                     * @return OriginalNameServers 是否已赋值
+                     * 判断参数 AliasZoneName 是否已赋值
+                     * @return AliasZoneName 是否已赋值
                      * 
                      */
-                    bool OriginalNameServersHasBeenSet() const;
+                    bool AliasZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云分配的 NS 列表。
-                     * @return NameServers 腾讯云分配的 NS 列表。
+                     * 获取站点加速区域，取值有：
+<li> global：全球可用区；</li>
+<li> mainland：中国大陆可用区；</li>
+<li> overseas：全球可用区（不含中国大陆）。</li>
+                     * @return Area 站点加速区域，取值有：
+<li> global：全球可用区；</li>
+<li> mainland：中国大陆可用区；</li>
+<li> overseas：全球可用区（不含中国大陆）。</li>
                      * 
                      */
-                    std::vector<std::string> GetNameServers() const;
+                    std::string GetArea() const;
 
                     /**
-                     * 设置腾讯云分配的 NS 列表。
-                     * @param _nameServers 腾讯云分配的 NS 列表。
+                     * 设置站点加速区域，取值有：
+<li> global：全球可用区；</li>
+<li> mainland：中国大陆可用区；</li>
+<li> overseas：全球可用区（不含中国大陆）。</li>
+                     * @param _area 站点加速区域，取值有：
+<li> global：全球可用区；</li>
+<li> mainland：中国大陆可用区；</li>
+<li> overseas：全球可用区（不含中国大陆）。</li>
                      * 
                      */
-                    void SetNameServers(const std::vector<std::string>& _nameServers);
+                    void SetArea(const std::string& _area);
 
                     /**
-                     * 判断参数 NameServers 是否已赋值
-                     * @return NameServers 是否已赋值
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
                      * 
                      */
-                    bool NameServersHasBeenSet() const;
+                    bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取站点状态，取值有：
-<li> active：NS 已切换； </li>
-<li> pending：NS 未切换；</li>
-<li> moved：NS 已切走；</li>
-<li> deactivated：被封禁。 </li>
-<li> initializing：待绑定套餐。 </li>
-                     * @return Status 站点状态，取值有：
-<li> active：NS 已切换； </li>
-<li> pending：NS 未切换；</li>
-<li> moved：NS 已切走；</li>
-<li> deactivated：被封禁。 </li>
-<li> initializing：待绑定套餐。 </li>
-                     * 
-                     */
-                    std::string GetStatus() const;
-
-                    /**
-                     * 设置站点状态，取值有：
-<li> active：NS 已切换； </li>
-<li> pending：NS 未切换；</li>
-<li> moved：NS 已切走；</li>
-<li> deactivated：被封禁。 </li>
-<li> initializing：待绑定套餐。 </li>
-                     * @param _status 站点状态，取值有：
-<li> active：NS 已切换； </li>
-<li> pending：NS 未切换；</li>
-<li> moved：NS 已切走；</li>
-<li> deactivated：被封禁。 </li>
-<li> initializing：待绑定套餐。 </li>
-                     * 
-                     */
-                    void SetStatus(const std::string& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入；</li>
-                     * @return Type 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入；</li>
+                     * 获取站点接入类型，取值有：
+<li> full：NS 接入类型；</li>
+<li> partial：CNAME 接入类型；</li>
+<li> noDomainAccess：无域名接入类型；</li>
+<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
+<li> pages：Pages 类型。</li>
+                     * @return Type 站点接入类型，取值有：
+<li> full：NS 接入类型；</li>
+<li> partial：CNAME 接入类型；</li>
+<li> noDomainAccess：无域名接入类型；</li>
+<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
+<li> pages：Pages 类型。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入；</li>
-                     * @param _type 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入；</li>
+                     * 设置站点接入类型，取值有：
+<li> full：NS 接入类型；</li>
+<li> partial：CNAME 接入类型；</li>
+<li> noDomainAccess：无域名接入类型；</li>
+<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
+<li> pages：Pages 类型。</li>
+                     * @param _type 站点接入类型，取值有：
+<li> full：NS 接入类型；</li>
+<li> partial：CNAME 接入类型；</li>
+<li> noDomainAccess：无域名接入类型；</li>
+<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
+<li> pages：Pages 类型。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -210,94 +192,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取站点是否关闭。
-                     * @return Paused 站点是否关闭。
-                     * 
-                     */
-                    bool GetPaused() const;
-
-                    /**
-                     * 设置站点是否关闭。
-                     * @param _paused 站点是否关闭。
-                     * 
-                     */
-                    void SetPaused(const bool& _paused);
-
-                    /**
-                     * 判断参数 Paused 是否已赋值
-                     * @return Paused 是否已赋值
-                     * 
-                     */
-                    bool PausedHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启 CNAME 加速，取值有：
-<li> enabled：开启；</li>
-<li> disabled：关闭。</li>
-                     * @return CnameSpeedUp 是否开启 CNAME 加速，取值有：
-<li> enabled：开启；</li>
-<li> disabled：关闭。</li>
-                     * 
-                     */
-                    std::string GetCnameSpeedUp() const;
-
-                    /**
-                     * 设置是否开启 CNAME 加速，取值有：
-<li> enabled：开启；</li>
-<li> disabled：关闭。</li>
-                     * @param _cnameSpeedUp 是否开启 CNAME 加速，取值有：
-<li> enabled：开启；</li>
-<li> disabled：关闭。</li>
-                     * 
-                     */
-                    void SetCnameSpeedUp(const std::string& _cnameSpeedUp);
-
-                    /**
-                     * 判断参数 CnameSpeedUp 是否已赋值
-                     * @return CnameSpeedUp 是否已赋值
-                     * 
-                     */
-                    bool CnameSpeedUpHasBeenSet() const;
-
-                    /**
-                     * 获取CNAME 接入状态，取值有：
-<li> finished：站点已验证；</li>
-<li> pending：站点验证中。</li>
-                     * @return CnameStatus CNAME 接入状态，取值有：
-<li> finished：站点已验证；</li>
-<li> pending：站点验证中。</li>
-                     * 
-                     */
-                    std::string GetCnameStatus() const;
-
-                    /**
-                     * 设置CNAME 接入状态，取值有：
-<li> finished：站点已验证；</li>
-<li> pending：站点验证中。</li>
-                     * @param _cnameStatus CNAME 接入状态，取值有：
-<li> finished：站点已验证；</li>
-<li> pending：站点验证中。</li>
-                     * 
-                     */
-                    void SetCnameStatus(const std::string& _cnameStatus);
-
-                    /**
-                     * 判断参数 CnameStatus 是否已赋值
-                     * @return CnameStatus 是否已赋值
-                     * 
-                     */
-                    bool CnameStatusHasBeenSet() const;
-
-                    /**
-                     * 获取资源标签列表。
-                     * @return Tags 资源标签列表。
+                     * 获取站点关联的标签。
+                     * @return Tags 站点关联的标签。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置资源标签列表。
-                     * @param _tags 资源标签列表。
+                     * 设置站点关联的标签。
+                     * @param _tags 站点关联的标签。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -329,6 +232,69 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取NS 类型站点详情。仅当 Type = full 时返回值。
+                     * @return NSDetail NS 类型站点详情。仅当 Type = full 时返回值。
+                     * 
+                     */
+                    NSDetail GetNSDetail() const;
+
+                    /**
+                     * 设置NS 类型站点详情。仅当 Type = full 时返回值。
+                     * @param _nSDetail NS 类型站点详情。仅当 Type = full 时返回值。
+                     * 
+                     */
+                    void SetNSDetail(const NSDetail& _nSDetail);
+
+                    /**
+                     * 判断参数 NSDetail 是否已赋值
+                     * @return NSDetail 是否已赋值
+                     * 
+                     */
+                    bool NSDetailHasBeenSet() const;
+
+                    /**
+                     * 获取CNAME 类型站点详情。仅当 Type = partial 时返回值。
+                     * @return CNAMEDetail CNAME 类型站点详情。仅当 Type = partial 时返回值。
+                     * 
+                     */
+                    CNAMEDetail GetCNAMEDetail() const;
+
+                    /**
+                     * 设置CNAME 类型站点详情。仅当 Type = partial 时返回值。
+                     * @param _cNAMEDetail CNAME 类型站点详情。仅当 Type = partial 时返回值。
+                     * 
+                     */
+                    void SetCNAMEDetail(const CNAMEDetail& _cNAMEDetail);
+
+                    /**
+                     * 判断参数 CNAMEDetail 是否已赋值
+                     * @return CNAMEDetail 是否已赋值
+                     * 
+                     */
+                    bool CNAMEDetailHasBeenSet() const;
+
+                    /**
+                     * 获取DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。
+                     * @return DNSPodDetail DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。
+                     * 
+                     */
+                    DNSPodDetail GetDNSPodDetail() const;
+
+                    /**
+                     * 设置DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。
+                     * @param _dNSPodDetail DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。
+                     * 
+                     */
+                    void SetDNSPodDetail(const DNSPodDetail& _dNSPodDetail);
+
+                    /**
+                     * 判断参数 DNSPodDetail 是否已赋值
+                     * @return DNSPodDetail 是否已赋值
+                     * 
+                     */
+                    bool DNSPodDetailHasBeenSet() const;
 
                     /**
                      * 获取站点创建时间。
@@ -373,87 +339,74 @@ namespace TencentCloud
                     bool ModifiedOnHasBeenSet() const;
 
                     /**
-                     * 获取站点接入地域，取值有：
-<li> global：全球；</li>
-<li> mainland：中国大陆；</li>
-<li> overseas：境外区域。</li>
-                     * @return Area 站点接入地域，取值有：
-<li> global：全球；</li>
-<li> mainland：中国大陆；</li>
-<li> overseas：境外区域。</li>
+                     * 获取站点状态，取值有：
+<li> active：NS 已切换； </li>
+<li> pending：NS 未切换；</li>
+<li> moved：NS 已切走；</li>
+<li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
+                     * @return Status 站点状态，取值有：
+<li> active：NS 已切换； </li>
+<li> pending：NS 未切换；</li>
+<li> moved：NS 已切走；</li>
+<li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * 
                      */
-                    std::string GetArea() const;
+                    std::string GetStatus() const;
 
                     /**
-                     * 设置站点接入地域，取值有：
-<li> global：全球；</li>
-<li> mainland：中国大陆；</li>
-<li> overseas：境外区域。</li>
-                     * @param _area 站点接入地域，取值有：
-<li> global：全球；</li>
-<li> mainland：中国大陆；</li>
-<li> overseas：境外区域。</li>
+                     * 设置站点状态，取值有：
+<li> active：NS 已切换； </li>
+<li> pending：NS 未切换；</li>
+<li> moved：NS 已切走；</li>
+<li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
+                     * @param _status 站点状态，取值有：
+<li> active：NS 已切换； </li>
+<li> pending：NS 未切换；</li>
+<li> moved：NS 已切走；</li>
+<li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      * 
                      */
-                    void SetArea(const std::string& _area);
+                    void SetStatus(const std::string& _status);
 
                     /**
-                     * 判断参数 Area 是否已赋值
-                     * @return Area 是否已赋值
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
                      * 
                      */
-                    bool AreaHasBeenSet() const;
+                    bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义 NS 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VanityNameServers 用户自定义 NS 信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CNAME 接入状态，取值有：
+<li> finished：站点已验证；</li>
+<li> pending：站点验证中。</li>
+                     * @return CnameStatus CNAME 接入状态，取值有：
+<li> finished：站点已验证；</li>
+<li> pending：站点验证中。</li>
                      * 
                      */
-                    VanityNameServers GetVanityNameServers() const;
+                    std::string GetCnameStatus() const;
 
                     /**
-                     * 设置用户自定义 NS 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vanityNameServers 用户自定义 NS 信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置CNAME 接入状态，取值有：
+<li> finished：站点已验证；</li>
+<li> pending：站点验证中。</li>
+                     * @param _cnameStatus CNAME 接入状态，取值有：
+<li> finished：站点已验证；</li>
+<li> pending：站点验证中。</li>
                      * 
                      */
-                    void SetVanityNameServers(const VanityNameServers& _vanityNameServers);
+                    void SetCnameStatus(const std::string& _cnameStatus);
 
                     /**
-                     * 判断参数 VanityNameServers 是否已赋值
-                     * @return VanityNameServers 是否已赋值
+                     * 判断参数 CnameStatus 是否已赋值
+                     * @return CnameStatus 是否已赋值
                      * 
                      */
-                    bool VanityNameServersHasBeenSet() const;
-
-                    /**
-                     * 获取用户自定义 NS IP 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VanityNameServersIps 用户自定义 NS IP 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<VanityNameServersIps> GetVanityNameServersIps() const;
-
-                    /**
-                     * 设置用户自定义 NS IP 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vanityNameServersIps 用户自定义 NS IP 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetVanityNameServersIps(const std::vector<VanityNameServersIps>& _vanityNameServersIps);
-
-                    /**
-                     * 判断参数 VanityNameServersIps 是否已赋值
-                     * @return VanityNameServersIps 是否已赋值
-                     * 
-                     */
-                    bool VanityNameServersIpsHasBeenSet() const;
+                    bool CnameStatusHasBeenSet() const;
 
                     /**
                      * 获取展示状态，取值有：
@@ -489,56 +442,6 @@ namespace TencentCloud
                     bool ActiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取站点别名。数字、英文、-和_组合，限制20个字符。
-                     * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-                     * 
-                     */
-                    std::string GetAliasZoneName() const;
-
-                    /**
-                     * 设置站点别名。数字、英文、-和_组合，限制20个字符。
-                     * @param _aliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
-                     * 
-                     */
-                    void SetAliasZoneName(const std::string& _aliasZoneName);
-
-                    /**
-                     * 判断参数 AliasZoneName 是否已赋值
-                     * @return AliasZoneName 是否已赋值
-                     * 
-                     */
-                    bool AliasZoneNameHasBeenSet() const;
-
-                    /**
-                     * 获取是否伪站点，取值有：
-<li> 0：非伪站点；</li>
-<li> 1：伪站点。</li>
-                     * @return IsFake 是否伪站点，取值有：
-<li> 0：非伪站点；</li>
-<li> 1：伪站点。</li>
-                     * 
-                     */
-                    int64_t GetIsFake() const;
-
-                    /**
-                     * 设置是否伪站点，取值有：
-<li> 0：非伪站点；</li>
-<li> 1：伪站点。</li>
-                     * @param _isFake 是否伪站点，取值有：
-<li> 0：非伪站点；</li>
-<li> 1：伪站点。</li>
-                     * 
-                     */
-                    void SetIsFake(const int64_t& _isFake);
-
-                    /**
-                     * 判断参数 IsFake 是否已赋值
-                     * @return IsFake 是否已赋值
-                     * 
-                     */
-                    bool IsFakeHasBeenSet() const;
-
-                    /**
                      * 获取锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      * @return LockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      * 
@@ -560,18 +463,101 @@ namespace TencentCloud
                     bool LockStatusHasBeenSet() const;
 
                     /**
-                     * 获取归属权验证信息。
+                     * 获取站点是否关闭。
+                     * @return Paused 站点是否关闭。
+                     * 
+                     */
+                    bool GetPaused() const;
+
+                    /**
+                     * 设置站点是否关闭。
+                     * @param _paused 站点是否关闭。
+                     * 
+                     */
+                    void SetPaused(const bool& _paused);
+
+                    /**
+                     * 判断参数 Paused 是否已赋值
+                     * @return Paused 是否已赋值
+                     * 
+                     */
+                    bool PausedHasBeenSet() const;
+
+                    /**
+                     * 获取是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+
+                     * @return IsFake 是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+
+                     * 
+                     */
+                    int64_t GetIsFake() const;
+
+                    /**
+                     * 设置是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+
+                     * @param _isFake 是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+
+                     * 
+                     */
+                    void SetIsFake(const int64_t& _isFake);
+
+                    /**
+                     * 判断参数 IsFake 是否已赋值
+                     * @return IsFake 是否已赋值
+                     * 
+                     */
+                    bool IsFakeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> enabled：开启；</li>
+<li> disabled：关闭。</li>
+                     * @return CnameSpeedUp 是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> enabled：开启；</li>
+<li> disabled：关闭。</li>
+                     * 
+                     */
+                    std::string GetCnameSpeedUp() const;
+
+                    /**
+                     * 设置是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> enabled：开启；</li>
+<li> disabled：关闭。</li>
+                     * @param _cnameSpeedUp 是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> enabled：开启；</li>
+<li> disabled：关闭。</li>
+                     * 
+                     */
+                    void SetCnameSpeedUp(const std::string& _cnameSpeedUp);
+
+                    /**
+                     * 判断参数 CnameSpeedUp 是否已赋值
+                     * @return CnameSpeedUp 是否已赋值
+                     * 
+                     */
+                    bool CnameSpeedUpHasBeenSet() const;
+
+                    /**
+                     * 获取归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnershipVerification 归属权验证信息。
+                     * @return OwnershipVerification 归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OwnershipVerification GetOwnershipVerification() const;
 
                     /**
-                     * 设置归属权验证信息。
+                     * 设置归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownershipVerification 归属权验证信息。
+                     * @param _ownershipVerification 归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -583,6 +569,98 @@ namespace TencentCloud
                      * 
                      */
                     bool OwnershipVerificationHasBeenSet() const;
+
+                    /**
+                     * 获取站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * @return OriginalNameServers 站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * 
+                     */
+                    std::vector<std::string> GetOriginalNameServers() const;
+
+                    /**
+                     * 设置站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * @param _originalNameServers 站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * 
+                     */
+                    void SetOriginalNameServers(const std::vector<std::string>& _originalNameServers);
+
+                    /**
+                     * 判断参数 OriginalNameServers 是否已赋值
+                     * @return OriginalNameServers 是否已赋值
+                     * 
+                     */
+                    bool OriginalNameServersHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * @return NameServers 腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * 
+                     */
+                    std::vector<std::string> GetNameServers() const;
+
+                    /**
+                     * 设置腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * @param _nameServers 腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     * 
+                     */
+                    void SetNameServers(const std::vector<std::string>& _nameServers);
+
+                    /**
+                     * 判断参数 NameServers 是否已赋值
+                     * @return NameServers 是否已赋值
+                     * 
+                     */
+                    bool NameServersHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VanityNameServers 用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VanityNameServers GetVanityNameServers() const;
+
+                    /**
+                     * 设置用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vanityNameServers 用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVanityNameServers(const VanityNameServers& _vanityNameServers);
+
+                    /**
+                     * 判断参数 VanityNameServers 是否已赋值
+                     * @return VanityNameServers 是否已赋值
+                     * 
+                     */
+                    bool VanityNameServersHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VanityNameServersIps 用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VanityNameServersIps> GetVanityNameServersIps() const;
+
+                    /**
+                     * 设置用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vanityNameServersIps 用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVanityNameServersIps(const std::vector<VanityNameServersIps>& _vanityNameServersIps);
+
+                    /**
+                     * 判断参数 VanityNameServersIps 是否已赋值
+                     * @return VanityNameServersIps 是否已赋值
+                     * 
+                     */
+                    bool VanityNameServersIpsHasBeenSet() const;
 
                 private:
 
@@ -599,61 +677,33 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 站点当前使用的 NS 列表。
+                     * 同名站点标识。允许输入数字、英文、"." 、"-" 和 "_" 组合，长度 200 个字符以内。
                      */
-                    std::vector<std::string> m_originalNameServers;
-                    bool m_originalNameServersHasBeenSet;
+                    std::string m_aliasZoneName;
+                    bool m_aliasZoneNameHasBeenSet;
 
                     /**
-                     * 腾讯云分配的 NS 列表。
+                     * 站点加速区域，取值有：
+<li> global：全球可用区；</li>
+<li> mainland：中国大陆可用区；</li>
+<li> overseas：全球可用区（不含中国大陆）。</li>
                      */
-                    std::vector<std::string> m_nameServers;
-                    bool m_nameServersHasBeenSet;
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                     /**
-                     * 站点状态，取值有：
-<li> active：NS 已切换； </li>
-<li> pending：NS 未切换；</li>
-<li> moved：NS 已切走；</li>
-<li> deactivated：被封禁。 </li>
-<li> initializing：待绑定套餐。 </li>
-                     */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入；</li>
-<li> noDomainAccess：无域名接入；</li>
+                     * 站点接入类型，取值有：
+<li> full：NS 接入类型；</li>
+<li> partial：CNAME 接入类型；</li>
+<li> noDomainAccess：无域名接入类型；</li>
+<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
+<li> pages：Pages 类型。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 站点是否关闭。
-                     */
-                    bool m_paused;
-                    bool m_pausedHasBeenSet;
-
-                    /**
-                     * 是否开启 CNAME 加速，取值有：
-<li> enabled：开启；</li>
-<li> disabled：关闭。</li>
-                     */
-                    std::string m_cnameSpeedUp;
-                    bool m_cnameSpeedUpHasBeenSet;
-
-                    /**
-                     * CNAME 接入状态，取值有：
-<li> finished：站点已验证；</li>
-<li> pending：站点验证中。</li>
-                     */
-                    std::string m_cnameStatus;
-                    bool m_cnameStatusHasBeenSet;
-
-                    /**
-                     * 资源标签列表。
+                     * 站点关联的标签。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -663,6 +713,24 @@ namespace TencentCloud
                      */
                     std::vector<Resource> m_resources;
                     bool m_resourcesHasBeenSet;
+
+                    /**
+                     * NS 类型站点详情。仅当 Type = full 时返回值。
+                     */
+                    NSDetail m_nSDetail;
+                    bool m_nSDetailHasBeenSet;
+
+                    /**
+                     * CNAME 类型站点详情。仅当 Type = partial 时返回值。
+                     */
+                    CNAMEDetail m_cNAMEDetail;
+                    bool m_cNAMEDetailHasBeenSet;
+
+                    /**
+                     * DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。
+                     */
+                    DNSPodDetail m_dNSPodDetail;
+                    bool m_dNSPodDetailHasBeenSet;
 
                     /**
                      * 站点创建时间。
@@ -677,27 +745,23 @@ namespace TencentCloud
                     bool m_modifiedOnHasBeenSet;
 
                     /**
-                     * 站点接入地域，取值有：
-<li> global：全球；</li>
-<li> mainland：中国大陆；</li>
-<li> overseas：境外区域。</li>
+                     * 站点状态，取值有：
+<li> active：NS 已切换； </li>
+<li> pending：NS 未切换；</li>
+<li> moved：NS 已切走；</li>
+<li> deactivated：被封禁。 </li>
+<li> initializing：待绑定套餐。 </li>
                      */
-                    std::string m_area;
-                    bool m_areaHasBeenSet;
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
-                     * 用户自定义 NS 信息。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CNAME 接入状态，取值有：
+<li> finished：站点已验证；</li>
+<li> pending：站点验证中。</li>
                      */
-                    VanityNameServers m_vanityNameServers;
-                    bool m_vanityNameServersHasBeenSet;
-
-                    /**
-                     * 用户自定义 NS IP 信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<VanityNameServersIps> m_vanityNameServersIps;
-                    bool m_vanityNameServersIpsHasBeenSet;
+                    std::string m_cnameStatus;
+                    bool m_cnameStatusHasBeenSet;
 
                     /**
                      * 展示状态，取值有：
@@ -709,31 +773,66 @@ namespace TencentCloud
                     bool m_activeStatusHasBeenSet;
 
                     /**
-                     * 站点别名。数字、英文、-和_组合，限制20个字符。
-                     */
-                    std::string m_aliasZoneName;
-                    bool m_aliasZoneNameHasBeenSet;
-
-                    /**
-                     * 是否伪站点，取值有：
-<li> 0：非伪站点；</li>
-<li> 1：伪站点。</li>
-                     */
-                    int64_t m_isFake;
-                    bool m_isFakeHasBeenSet;
-
-                    /**
                      * 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作；</li><li> plan_migrate：套餐迁移中，不允许进行修改操作。</li>
                      */
                     std::string m_lockStatus;
                     bool m_lockStatusHasBeenSet;
 
                     /**
-                     * 归属权验证信息。
+                     * 站点是否关闭。
+                     */
+                    bool m_paused;
+                    bool m_pausedHasBeenSet;
+
+                    /**
+                     * 是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+
+                     */
+                    int64_t m_isFake;
+                    bool m_isFakeHasBeenSet;
+
+                    /**
+                     * 是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：
+<li> enabled：开启；</li>
+<li> disabled：关闭。</li>
+                     */
+                    std::string m_cnameSpeedUp;
+                    bool m_cnameSpeedUpHasBeenSet;
+
+                    /**
+                     * 归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OwnershipVerification m_ownershipVerification;
                     bool m_ownershipVerificationHasBeenSet;
+
+                    /**
+                     * 站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     */
+                    std::vector<std::string> m_originalNameServers;
+                    bool m_originalNameServersHasBeenSet;
+
+                    /**
+                     * 腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+                     */
+                    std::vector<std::string> m_nameServers;
+                    bool m_nameServersHasBeenSet;
+
+                    /**
+                     * 用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VanityNameServers m_vanityNameServers;
+                    bool m_vanityNameServersHasBeenSet;
+
+                    /**
+                     * 用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VanityNameServersIps> m_vanityNameServersIps;
+                    bool m_vanityNameServersIpsHasBeenSet;
 
                 };
             }

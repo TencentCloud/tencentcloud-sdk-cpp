@@ -83,7 +83,8 @@ DeployContainerApplicationRequest::DeployContainerApplicationRequest() :
     m_k8sNamespaceNameHasBeenSet(false),
     m_staticIpEnabledHasBeenSet(false),
     m_podManagementPolicyTypeHasBeenSet(false),
-    m_partitionHasBeenSet(false)
+    m_partitionHasBeenSet(false),
+    m_incrementalDeploymentHasBeenSet(false)
 {
 }
 
@@ -642,6 +643,14 @@ string DeployContainerApplicationRequest::ToJsonString() const
         string key = "Partition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partition, allocator);
+    }
+
+    if (m_incrementalDeploymentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncrementalDeployment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_incrementalDeployment, allocator);
     }
 
 
@@ -1626,6 +1635,22 @@ void DeployContainerApplicationRequest::SetPartition(const int64_t& _partition)
 bool DeployContainerApplicationRequest::PartitionHasBeenSet() const
 {
     return m_partitionHasBeenSet;
+}
+
+bool DeployContainerApplicationRequest::GetIncrementalDeployment() const
+{
+    return m_incrementalDeployment;
+}
+
+void DeployContainerApplicationRequest::SetIncrementalDeployment(const bool& _incrementalDeployment)
+{
+    m_incrementalDeployment = _incrementalDeployment;
+    m_incrementalDeploymentHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::IncrementalDeploymentHasBeenSet() const
+{
+    return m_incrementalDeploymentHasBeenSet;
 }
 
 

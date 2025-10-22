@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tms/v20201229/model/CreateFinancialLLMTaskRequest.h>
+#include <tencentcloud/tms/v20201229/model/CreateFinancialLLMTaskResponse.h>
+#include <tencentcloud/tms/v20201229/model/GetFinancialLLMTaskResultRequest.h>
+#include <tencentcloud/tms/v20201229/model/GetFinancialLLMTaskResultResponse.h>
 #include <tencentcloud/tms/v20201229/model/TextModerationRequest.h>
 #include <tencentcloud/tms/v20201229/model/TextModerationResponse.h>
 
@@ -39,11 +43,35 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateFinancialLLMTaskResponse> CreateFinancialLLMTaskOutcome;
+                typedef std::future<CreateFinancialLLMTaskOutcome> CreateFinancialLLMTaskOutcomeCallable;
+                typedef std::function<void(const TmsClient*, const Model::CreateFinancialLLMTaskRequest&, CreateFinancialLLMTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFinancialLLMTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFinancialLLMTaskResultResponse> GetFinancialLLMTaskResultOutcome;
+                typedef std::future<GetFinancialLLMTaskResultOutcome> GetFinancialLLMTaskResultOutcomeCallable;
+                typedef std::function<void(const TmsClient*, const Model::GetFinancialLLMTaskResultRequest&, GetFinancialLLMTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFinancialLLMTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 
 
+
+                /**
+                 *创建金融大模型审校任务
+                 * @param req CreateFinancialLLMTaskRequest
+                 * @return CreateFinancialLLMTaskOutcome
+                 */
+                CreateFinancialLLMTaskOutcome CreateFinancialLLMTask(const Model::CreateFinancialLLMTaskRequest &request);
+                void CreateFinancialLLMTaskAsync(const Model::CreateFinancialLLMTaskRequest& request, const CreateFinancialLLMTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFinancialLLMTaskOutcomeCallable CreateFinancialLLMTaskCallable(const Model::CreateFinancialLLMTaskRequest& request);
+
+                /**
+                 *获取金融大模型审校任务结果
+                 * @param req GetFinancialLLMTaskResultRequest
+                 * @return GetFinancialLLMTaskResultOutcome
+                 */
+                GetFinancialLLMTaskResultOutcome GetFinancialLLMTaskResult(const Model::GetFinancialLLMTaskResultRequest &request);
+                void GetFinancialLLMTaskResultAsync(const Model::GetFinancialLLMTaskResultRequest& request, const GetFinancialLLMTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFinancialLLMTaskResultOutcomeCallable GetFinancialLLMTaskResultCallable(const Model::GetFinancialLLMTaskResultRequest& request);
 
                 /**
                  *本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。

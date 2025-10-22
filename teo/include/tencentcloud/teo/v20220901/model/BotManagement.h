@@ -24,7 +24,10 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/BotManagementCustomRules.h>
+#include <tencentcloud/teo/v20220901/model/BasicBotSettings.h>
 #include <tencentcloud/teo/v20220901/model/ClientAttestationRules.h>
+#include <tencentcloud/teo/v20220901/model/BrowserImpersonationDetection.h>
 
 
 namespace TencentCloud
@@ -48,15 +51,78 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。
-                     * @return ClientAttestationRules 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。
+                     * 获取Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * @return Enabled Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 
+                     */
+                    std::string GetEnabled() const;
+
+                    /**
+                     * 设置Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * @param _enabled Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 
+                     */
+                    void SetEnabled(const std::string& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     * 
+                     */
+                    bool EnabledHasBeenSet() const;
+
+                    /**
+                     * 获取Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。
+                     * @return CustomRules Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。
+                     * 
+                     */
+                    BotManagementCustomRules GetCustomRules() const;
+
+                    /**
+                     * 设置Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。
+                     * @param _customRules Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。
+                     * 
+                     */
+                    void SetCustomRules(const BotManagementCustomRules& _customRules);
+
+                    /**
+                     * 判断参数 CustomRules 是否已赋值
+                     * @return CustomRules 是否已赋值
+                     * 
+                     */
+                    bool CustomRulesHasBeenSet() const;
+
+                    /**
+                     * 获取Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。
+                     * @return BasicBotSettings Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。
+                     * 
+                     */
+                    BasicBotSettings GetBasicBotSettings() const;
+
+                    /**
+                     * 设置Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。
+                     * @param _basicBotSettings Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。
+                     * 
+                     */
+                    void SetBasicBotSettings(const BasicBotSettings& _basicBotSettings);
+
+                    /**
+                     * 判断参数 BasicBotSettings 是否已赋值
+                     * @return BasicBotSettings 是否已赋值
+                     * 
+                     */
+                    bool BasicBotSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。
+                     * @return ClientAttestationRules 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。
                      * 
                      */
                     ClientAttestationRules GetClientAttestationRules() const;
 
                     /**
-                     * 设置客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。
-                     * @param _clientAttestationRules 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。
+                     * 设置客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。
+                     * @param _clientAttestationRules 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。
                      * 
                      */
                     void SetClientAttestationRules(const ClientAttestationRules& _clientAttestationRules);
@@ -68,13 +134,58 @@ namespace TencentCloud
                      */
                     bool ClientAttestationRulesHasBeenSet() const;
 
+                    /**
+                     * 获取配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。
+                     * @return BrowserImpersonationDetection 配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。
+                     * 
+                     */
+                    BrowserImpersonationDetection GetBrowserImpersonationDetection() const;
+
+                    /**
+                     * 设置配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。
+                     * @param _browserImpersonationDetection 配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。
+                     * 
+                     */
+                    void SetBrowserImpersonationDetection(const BrowserImpersonationDetection& _browserImpersonationDetection);
+
+                    /**
+                     * 判断参数 BrowserImpersonationDetection 是否已赋值
+                     * @return BrowserImpersonationDetection 是否已赋值
+                     * 
+                     */
+                    bool BrowserImpersonationDetectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。
+                     * Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     */
+                    std::string m_enabled;
+                    bool m_enabledHasBeenSet;
+
+                    /**
+                     * Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。
+                     */
+                    BotManagementCustomRules m_customRules;
+                    bool m_customRulesHasBeenSet;
+
+                    /**
+                     * Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。
+                     */
+                    BasicBotSettings m_basicBotSettings;
+                    bool m_basicBotSettingsHasBeenSet;
+
+                    /**
+                     * 客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。
                      */
                     ClientAttestationRules m_clientAttestationRules;
                     bool m_clientAttestationRulesHasBeenSet;
+
+                    /**
+                     * 配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。
+                     */
+                    BrowserImpersonationDetection m_browserImpersonationDetection;
+                    bool m_browserImpersonationDetectionHasBeenSet;
 
                 };
             }

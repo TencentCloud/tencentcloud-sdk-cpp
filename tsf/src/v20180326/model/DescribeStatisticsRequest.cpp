@@ -38,7 +38,8 @@ DescribeStatisticsRequest::DescribeStatisticsRequest() :
     m_bucketKeyHasBeenSet(false),
     m_dbNameHasBeenSet(false),
     m_namespaceIdListHasBeenSet(false),
-    m_configCenterInstanceIdHasBeenSet(false)
+    m_configCenterInstanceIdHasBeenSet(false),
+    m_serviceFilterHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string DescribeStatisticsRequest::ToJsonString() const
         string key = "ConfigCenterInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_configCenterInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -451,6 +460,22 @@ void DescribeStatisticsRequest::SetConfigCenterInstanceId(const string& _configC
 bool DescribeStatisticsRequest::ConfigCenterInstanceIdHasBeenSet() const
 {
     return m_configCenterInstanceIdHasBeenSet;
+}
+
+string DescribeStatisticsRequest::GetServiceFilter() const
+{
+    return m_serviceFilter;
+}
+
+void DescribeStatisticsRequest::SetServiceFilter(const string& _serviceFilter)
+{
+    m_serviceFilter = _serviceFilter;
+    m_serviceFilterHasBeenSet = true;
+}
+
+bool DescribeStatisticsRequest::ServiceFilterHasBeenSet() const
+{
+    return m_serviceFilterHasBeenSet;
 }
 
 

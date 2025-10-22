@@ -126,6 +126,49 @@ VclmClient::DescribeImageAnimateJobOutcomeCallable VclmClient::DescribeImageAnim
     return task->get_future();
 }
 
+VclmClient::DescribeImageToVideoGeneralJobOutcome VclmClient::DescribeImageToVideoGeneralJob(const DescribeImageToVideoGeneralJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageToVideoGeneralJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageToVideoGeneralJobResponse rsp = DescribeImageToVideoGeneralJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageToVideoGeneralJobOutcome(rsp);
+        else
+            return DescribeImageToVideoGeneralJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageToVideoGeneralJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeImageToVideoGeneralJobAsync(const DescribeImageToVideoGeneralJobRequest& request, const DescribeImageToVideoGeneralJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageToVideoGeneralJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribeImageToVideoGeneralJobOutcomeCallable VclmClient::DescribeImageToVideoGeneralJobCallable(const DescribeImageToVideoGeneralJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageToVideoGeneralJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageToVideoGeneralJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VclmClient::DescribePortraitSingJobOutcome VclmClient::DescribePortraitSingJob(const DescribePortraitSingJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePortraitSingJob");
@@ -291,6 +334,49 @@ VclmClient::SubmitImageAnimateJobOutcomeCallable VclmClient::SubmitImageAnimateJ
         [this, request]()
         {
             return this->SubmitImageAnimateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitImageToVideoGeneralJobOutcome VclmClient::SubmitImageToVideoGeneralJob(const SubmitImageToVideoGeneralJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitImageToVideoGeneralJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitImageToVideoGeneralJobResponse rsp = SubmitImageToVideoGeneralJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitImageToVideoGeneralJobOutcome(rsp);
+        else
+            return SubmitImageToVideoGeneralJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitImageToVideoGeneralJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitImageToVideoGeneralJobAsync(const SubmitImageToVideoGeneralJobRequest& request, const SubmitImageToVideoGeneralJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitImageToVideoGeneralJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitImageToVideoGeneralJobOutcomeCallable VclmClient::SubmitImageToVideoGeneralJobCallable(const SubmitImageToVideoGeneralJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitImageToVideoGeneralJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitImageToVideoGeneralJob(request);
         }
     );
 
