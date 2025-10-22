@@ -38,9 +38,9 @@ namespace TencentCloud
         void SetReqTimeout(int64_t timeoutOfMs);
         void SetConnectTimeout(int64_t timeoutOfMs);
 
-        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
+        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
         void SendRequestAsync(HttpRequest request, CompletionHandler handler);
 
         void SetProxy(const NetworkProxy &proxy);
