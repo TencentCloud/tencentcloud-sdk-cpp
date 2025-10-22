@@ -16,7 +16,6 @@
 
 #include <tencentcloud/core/http/HttpClient.h>
 #include <tencentcloud/core/utils/Utils.h>
-#include <cassert>
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -95,7 +94,7 @@ HttpClient::HttpClient() :
 {
     m_curlm = curl_multi_init();
     m_asyncRunning = true;
-    m_asyncReqHandler = std::thread{&HttpClient::AsyncReqSender, this};
+    m_asyncReqHandler = std::thread{&HttpClient::AsyncReqHandler, this};
 }
 
 HttpClient::~HttpClient()
@@ -273,6 +272,7 @@ void HttpClient::SendRequestAsync(HttpRequest request, CompletionHandler handler
 {
     CURL* curl_handle = curl_easy_init();
     auto ctx = new AsyncReqContext{request, {}, std::move(handler)};
+    ctx->curl_handle = curl_handle;
 
     std::string url = ctx->request.GetUrl().ToString();
     switch (ctx->request.GetMethod())
@@ -330,88 +330,114 @@ void HttpClient::SendRequestAsync(HttpRequest request, CompletionHandler handler
     curl_easy_setopt(curl_handle, CURLOPT_ERRORBUFFER, ctx->curl_err_buffer);
 
     {
-        std::lock_guard<std::mutex> lock_guard{m_asyncReqsMu};
-        m_asyncReqs.push_back(ctx);
+        std::lock_guard<std::mutex> lock_guard{m_pendingReqsMu};
+        m_pendingReqs.push_back(ctx);
     }
 
     curl_multi_wakeup(m_curlm);
 }
 
-void HttpClient::AsyncReqSender()
+
+void HttpClient::AsyncReqHandler()
 {
     while (m_asyncRunning)
     {
+        CURLMcode err;
+
         {
-            std::lock_guard<std::mutex> lock_guard{m_asyncReqsMu};
-            for (const auto& async_req : m_asyncReqs)
-            {
-                curl_multi_add_handle(m_curlm, async_req->curl_handle);
-            }
-            m_asyncReqs.clear();
+            std::lock_guard<std::mutex> lock_guard{m_pendingReqsMu};
 
-            int _ = 1;
-            CURLMcode err = curl_multi_perform(m_curlm, &_);
-            if (err)
+            if (!m_pendingReqs.empty())
             {
-                std::cerr << "curl_multi_perform:" << curl_multi_strerror(err) << std::endl;
-                curl_multi_cleanup(m_curlm);
-                m_curlm = curl_multi_init();
-                continue;
-            }
-
-            int ready_handles;
-            err = curl_multi_poll(m_curlm, nullptr, 0, 0, &ready_handles);
-            if (err)
-            {
-                std::cerr << "curl_multi_poll:" << curl_multi_strerror(err) << std::endl;
-                curl_multi_cleanup(m_curlm);
-                m_curlm = curl_multi_init();
-                continue;
-            }
-
-            while (ready_handles > 0)
-            {
-                const CURLMsg* msg = curl_multi_info_read(m_curlm, &ready_handles);
-                if (msg && (msg->msg == CURLMSG_DONE))
+                for (const auto& async_req : m_pendingReqs)
                 {
-                    AsyncReqContext* ctx;
-                    curl_easy_getinfo(msg->easy_handle, CURLINFO_PRIVATE, &ctx);
-
+                    err = curl_multi_add_handle(m_curlm, async_req->curl_handle);
+                    if (err)
                     {
-                        int64_t response_code = 0;
-                        curl_easy_getinfo(msg->easy_handle, CURLINFO_RESPONSE_CODE, &response_code);
-                        ctx->response.SetStatusCode(response_code);
-#ifdef ENABLE_COMPRESS_MODULE
-                        if (ctx->response.Header("Content-Encoding").find("gzip") != std::string::npos)
-                        {
-                            std::string decompressData;
-                            if (TryDecompress(ctx->response.Body(), ctx->response.BodySize(), decompressData))
-                            {
-                                ctx->response.SetBody(decompressData);
-                            }
-                        }
-#endif // ENABLE_COMPRESS_MODULE
-
-                        if (response_code != 200)
-                        {
-                            std::string errorMsg = "status=" + std::to_string(response_code) + ", " + ctx->response.
-                                m_body;
-                            ctx->completion_handler(HttpResponseOutcome(Core::Error("ServiceNetworkError", errorMsg)));
-                        }
-                        else
-                        {
-                            ctx->completion_handler(HttpResponseOutcome(ctx->response));
-                        }
+                        std::cerr << "curl_multi_add_handle:" << curl_multi_strerror(err) << std::endl;
+                        async_req->completion_handler(
+                            HttpResponseOutcome(Core::Error("ClientError", curl_multi_strerror(err))));
                     }
+                }
+                m_pendingReqs.clear();
 
-                    curl_slist_free_all(ctx->curl_header_buffer);
-                    delete ctx;
-
-                    curl_multi_remove_handle(m_curlm, msg->easy_handle);
-                    curl_easy_cleanup(msg->easy_handle);
+                int running_handles = 1;
+                err = curl_multi_perform(m_curlm, &running_handles);
+                if (err)
+                {
+                    std::cerr << "curl_multi_perform:" << curl_multi_strerror(err) << std::endl;
+                    curl_multi_cleanup(m_curlm);
+                    m_curlm = curl_multi_init();
+                    continue;
                 }
             }
         }
+
+        int ready_handles;
+        err = curl_multi_poll(m_curlm, nullptr, 0, 5000, &ready_handles);
+        if (err)
+        {
+            std::cerr << "curl_multi_poll:" << curl_multi_strerror(err) << std::endl;
+            curl_multi_cleanup(m_curlm);
+            m_curlm = curl_multi_init();
+            continue;
+        }
+
+        int running_handles = 1;
+        err = curl_multi_perform(m_curlm, &running_handles);
+        if (err)
+        {
+            std::cerr << "curl_multi_perform:" << curl_multi_strerror(err) << std::endl;
+            curl_multi_cleanup(m_curlm);
+            m_curlm = curl_multi_init();
+            continue;
+        }
+
+
+        CURLMsg* msg;
+        do
+        {
+            msg = curl_multi_info_read(m_curlm, &ready_handles);
+            if (msg && (msg->msg == CURLMSG_DONE))
+            {
+                AsyncReqContext* ctx;
+                curl_easy_getinfo(msg->easy_handle, CURLINFO_PRIVATE, &ctx);
+
+                {
+                    int64_t response_code = 0;
+                    curl_easy_getinfo(msg->easy_handle, CURLINFO_RESPONSE_CODE, &response_code);
+                    ctx->response.SetStatusCode(response_code);
+#ifdef ENABLE_COMPRESS_MODULE
+                    if (ctx->response.Header("Content-Encoding").find("gzip") != std::string::npos)
+                    {
+                        std::string decompressData;
+                        if (TryDecompress(ctx->response.Body(), ctx->response.BodySize(), decompressData))
+                        {
+                            ctx->response.SetBody(decompressData);
+                        }
+                    }
+#endif // ENABLE_COMPRESS_MODULE
+
+                    if (response_code != 200)
+                    {
+                        std::string errorMsg = "status=" + std::to_string(response_code) + ", " + ctx->response.
+                            m_body;
+                        ctx->completion_handler(HttpResponseOutcome(Core::Error("ServiceNetworkError", errorMsg)));
+                    }
+                    else
+                    {
+                        ctx->completion_handler(HttpResponseOutcome(ctx->response));
+                    }
+                }
+
+                curl_slist_free_all(ctx->curl_header_buffer);
+                delete ctx;
+
+                curl_multi_remove_handle(m_curlm, msg->easy_handle);
+                curl_easy_cleanup(msg->easy_handle);
+            }
+        }
+        while (msg);
     }
 }
 
@@ -420,16 +446,21 @@ size_t HttpClient::CurlReadHeader(char* ptr, size_t size, size_t nitems, void* u
 {
     auto* ctx = static_cast<AsyncReqContext*>(userp);
     std::string line(ptr);
-    auto pos = line.find(':');
-    if (pos != std::string::npos)
+
+    // remove trailing \r\n or \n
+    while (!line.empty() && (line.back() == '\r' || line.back() == '\n'))
+        line.resize(line.size() - 1);
+
+    size_t colon_pos = line.find(": ");
+    if (colon_pos == std::string::npos)
     {
-        std::string name = line.substr(0, pos);
-        std::string value = line.substr(pos + 2);
-        size_t p = 0;
-        if ((p = value.rfind('\r')) != std::string::npos)
-            value[p] = '\0';
-        ctx->response.SetHeader(name, value);
+        // invalid format
+        return nitems * size;;
     }
+
+    const auto key = line.substr(0, colon_pos);
+    const auto value = line.substr(colon_pos + 2);
+    ctx->response.SetHeader(key, value);
     return nitems * size;
 }
 

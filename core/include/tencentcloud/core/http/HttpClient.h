@@ -58,7 +58,7 @@ namespace TencentCloud
         bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
 #endif // ENABLE_COMPRESS_MODULE
 
-        void AsyncReqSender();
+        void AsyncReqHandler();
 
         static size_t CurlReadHeader(char* ptr, size_t size, size_t nmemb, void* userp);
         static size_t CurlReadBody(char* ptr, size_t size, size_t nmemb, void* userp);
@@ -76,8 +76,8 @@ namespace TencentCloud
         };
 
         bool m_asyncRunning;
-        std::vector<AsyncReqContext*> m_asyncReqs;
-        std::mutex m_asyncReqsMu;
+        std::vector<AsyncReqContext*> m_pendingReqs;
+        std::mutex m_pendingReqsMu;
         std::thread m_asyncReqHandler;
         CURLM* m_curlm;
     };
